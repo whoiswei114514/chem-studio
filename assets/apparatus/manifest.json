@@ -1,0 +1,5684 @@
+{
+  "format": "chem-studio-art",
+  "version": 1,
+  "license": "WTFPL-2.0",
+  "author": "Chem Studio contributors",
+  "method": "Programmatic schematic drawing from authored geometric primitives; no raster tracing.",
+  "assets": [
+    {
+      "id": "studio:beaker",
+      "name": "烧杯",
+      "category": "容器",
+      "search": "beaker",
+      "svg": "beaker.svg",
+      "sha256": "05abbafc399baf62caadf3506ca6d638ca723c385359bb32f26d976150ec44b7",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:conical-flask",
+      "name": "锥形瓶",
+      "category": "容器",
+      "search": "conical flask",
+      "svg": "conical-flask.svg",
+      "sha256": "9d8fabd9a595d337c0d95d87c910fa186f1da2745b1d7fff67515e84942cdb04",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 36,
+          "depth": 24,
+          "target": [
+            80,
+            146
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:test-tube",
+      "name": "试管",
+      "category": "容器",
+      "search": "test tube",
+      "svg": "test-tube.svg",
+      "sha256": "0d499efec25abd27e9f4a2d9c524df235df412ea8c6f973d7a44139fa09949be",
+      "width": 70,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 35,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 30,
+          "depth": 28,
+          "target": [
+            35,
+            135
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:round-bottom-flask",
+      "name": "圆底烧瓶",
+      "category": "容器",
+      "search": "round bottom flask",
+      "svg": "round-bottom-flask.svg",
+      "sha256": "5df7429027d44dc47163907c8ef954f95faa610579afd7fa6bb5e5ed10d79597",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 38,
+          "depth": 25,
+          "target": [
+            80,
+            140
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 1,
+      "variants": [
+        {
+          "id": "studio:round-bottom-flask",
+          "name": "圆底烧瓶",
+          "category": "容器",
+          "search": "round bottom flask",
+          "svg": "round-bottom-flask.svg",
+          "sha256": "5df7429027d44dc47163907c8ef954f95faa610579afd7fa6bb5e5ed10d79597",
+          "width": 160,
+          "height": 200,
+          "ports": [
+            {
+              "id": "mouth",
+              "x": 80,
+              "y": 12,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 38,
+              "depth": 25,
+              "target": [
+                80,
+                140
+              ]
+            },
+            {
+              "id": "base",
+              "x": 80,
+              "y": 182,
+              "dx": 0,
+              "dy": 1,
+              "type": "base",
+              "diameter": 0
+            }
+          ],
+          "boreCount": -1,
+          "neckCount": 1
+        },
+        {
+          "svg": "round-bottom-flask-necks-2.svg",
+          "sha256": "365894a1b635bdfb40e3384ef403b9188209ac77e689ef79b0ddf815e61cb9fd",
+          "width": 160,
+          "height": 200,
+          "ports": [
+            {
+              "id": "mouth",
+              "x": 65,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                65,
+                143
+              ]
+            },
+            {
+              "id": "mouth-2",
+              "x": 95,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                95,
+                143
+              ]
+            }
+          ],
+          "neckCount": 2,
+          "boreCount": -1
+        },
+        {
+          "svg": "round-bottom-flask-necks-3.svg",
+          "sha256": "2f913f821c5509fe330f91b0ca98a220f760b845efc1447fd157315bea113af1",
+          "width": 160,
+          "height": 200,
+          "ports": [
+            {
+              "id": "mouth",
+              "x": 50,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                50,
+                143
+              ]
+            },
+            {
+              "id": "mouth-2",
+              "x": 80,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                80,
+                143
+              ]
+            },
+            {
+              "id": "mouth-3",
+              "x": 110,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                110,
+                143
+              ]
+            }
+          ],
+          "neckCount": 3,
+          "boreCount": -1
+        },
+        {
+          "svg": "round-bottom-flask-necks-4.svg",
+          "sha256": "7dc7ad4f9c0ecf1ec68f54cf5623dd2b5b33b2f96ee6567b0f1d4f6f147714a7",
+          "width": 160,
+          "height": 200,
+          "ports": [
+            {
+              "id": "mouth",
+              "x": 35,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                35,
+                143
+              ]
+            },
+            {
+              "id": "mouth-2",
+              "x": 65,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                65,
+                143
+              ]
+            },
+            {
+              "id": "mouth-3",
+              "x": 95,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                95,
+                143
+              ]
+            },
+            {
+              "id": "mouth-4",
+              "x": 125,
+              "y": 18,
+              "dx": 0,
+              "dy": -1,
+              "type": "glass-female",
+              "diameter": 18,
+              "depth": 22,
+              "target": [
+                125,
+                143
+              ]
+            }
+          ],
+          "neckCount": 4,
+          "boreCount": -1
+        }
+      ]
+    },
+    {
+      "id": "studio:volumetric-flask",
+      "name": "容量瓶",
+      "category": "容器",
+      "search": "volumetric flask",
+      "svg": "volumetric-flask.svg",
+      "sha256": "275cec3766c621d5e9d1cf005dcc88db2644718292b8cf752b779398c215c260",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 22,
+          "depth": 25,
+          "target": [
+            80,
+            140
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 1
+    },
+    {
+      "id": "studio:gas-jar",
+      "name": "集气瓶",
+      "category": "容器",
+      "search": "gas jar",
+      "svg": "gas-jar.svg",
+      "sha256": "55c5a1d455eed689e620f2f5d2f1fe81f8dc57ed9915c98f856166bfe0bafb11",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 14,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 84,
+          "depth": 24,
+          "target": [
+            80,
+            144
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:test-tube-with-side-arm",
+      "name": "侧支试管",
+      "category": "容器",
+      "search": "test tube with side arm",
+      "svg": "test-tube-with-side-arm.svg",
+      "sha256": "9255c058ee1d107318e32988cef7ad72f429a704c44156c5b17fd1a0eb38405a",
+      "width": 70,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 35,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 30,
+          "depth": 28,
+          "target": [
+            35,
+            135
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 66,
+          "y": 36,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:conical-flask-with-side-arm",
+      "name": "侧支锥形瓶",
+      "category": "容器",
+      "search": "conical flask with side arm",
+      "svg": "conical-flask-with-side-arm.svg",
+      "sha256": "1fa2be3f3e21406115d96f8ef1377f11f82a5d2e68d782f1e2e376f7863cddf3",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 36,
+          "depth": 24,
+          "target": [
+            80,
+            146
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 137,
+          "y": 38,
+          "dx": 0.87,
+          "dy": -0.5,
+          "type": "tube",
+          "diameter": 13
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:boiling-flask",
+      "name": "平底烧瓶",
+      "category": "容器",
+      "search": "boiling flask",
+      "svg": "boiling-flask.svg",
+      "sha256": "f4e34646620bba90f9aedaf6561519041dc927717b89c66946e9572eb6f373fd",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 38,
+          "depth": 25,
+          "target": [
+            80,
+            140
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 1
+    },
+    {
+      "id": "studio:displacement-beaker",
+      "name": "溢流杯",
+      "category": "容器",
+      "search": "displacement beaker",
+      "svg": "displacement-beaker.svg",
+      "sha256": "13b3ade643b6231e7889a23f275bafd7ec372e17cb1379c16994e59a7f6f51aa",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 153,
+          "y": 88,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 12
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:eureka",
+      "name": "排水罐",
+      "category": "容器",
+      "search": "eureka",
+      "svg": "eureka.svg",
+      "sha256": "13b3ade643b6231e7889a23f275bafd7ec372e17cb1379c16994e59a7f6f51aa",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 153,
+          "y": 88,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 12
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:watch-glass",
+      "name": "表面皿",
+      "category": "容器",
+      "search": "watch glass",
+      "svg": "watch-glass.svg",
+      "sha256": "a6de3fac8b2f89994985f859ac4c1f2858af34c735728a2ca6a544d47414ceff",
+      "width": 160,
+      "height": 70,
+      "ports": [
+        {
+          "id": "base",
+          "x": 80,
+          "y": 52,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tank",
+      "name": "水槽",
+      "category": "容器",
+      "search": "tank",
+      "svg": "tank.svg",
+      "sha256": "05abbafc399baf62caadf3506ca6d638ca723c385359bb32f26d976150ec44b7",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ice-bath",
+      "name": "冰浴",
+      "category": "容器",
+      "search": "ice bath",
+      "svg": "ice-bath.svg",
+      "sha256": "7da8559f197bea2b740dcc7c81a4673618461d2e26982a3dec69d14b0b1ec981",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:weight-boat",
+      "name": "称量舟",
+      "category": "容器",
+      "search": "weight boat",
+      "svg": "weight-boat.svg",
+      "sha256": "7edf25d3c803df9a846420800cd982a1a60c848be3c79225f466b81c08602ce2",
+      "width": 160,
+      "height": 70,
+      "ports": [
+        {
+          "id": "base",
+          "x": 80,
+          "y": 52,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:calorimetry-cup",
+      "name": "量热杯",
+      "category": "容器",
+      "search": "calorimetry cup",
+      "svg": "calorimetry-cup.svg",
+      "sha256": "125cb0b50b81c31f54850fd132ca0d0748dfd50cdf6908b85534f09463007801",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:thermos",
+      "name": "真空保温瓶",
+      "category": "容器",
+      "search": "thermos",
+      "svg": "thermos.svg",
+      "sha256": "92162abd649920a9aab67e6bffcf09d484418df4aa124f97fe862d89535a59f5",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 14,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 40,
+          "depth": 24,
+          "target": [
+            80,
+            144
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:wash-bottle",
+      "name": "洗瓶",
+      "category": "容器",
+      "search": "wash bottle",
+      "svg": "wash-bottle.svg",
+      "sha256": "02b3f7b438b3381a095c42fd74bfd2ff6bfc87278edffe9e69dcd83716ceb373",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 14,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 40,
+          "depth": 24,
+          "target": [
+            80,
+            144
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 149,
+          "y": 30,
+          "dx": 0.7,
+          "dy": 0.7,
+          "type": "tube",
+          "diameter": 10
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:stemmed-glass",
+      "name": "高脚杯",
+      "category": "容器",
+      "search": "stemmed glass",
+      "svg": "stemmed-glass.svg",
+      "sha256": "3701cb6a14cfdb5cccbaf4721abd4b68268f9c8b25afb355ff1cd6680b525ed7",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:schlenk-flask",
+      "name": "施伦克瓶",
+      "category": "容器",
+      "search": "schlenk flask",
+      "svg": "schlenk-flask.svg",
+      "sha256": "fdc0644c3b48e74396b9a2d2417e1dde7ce8947458abe4e1d1b0980d2abc1bb7",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 38,
+          "depth": 25,
+          "target": [
+            80,
+            140
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 132,
+          "y": 83,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 12
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 1
+    },
+    {
+      "id": "studio:distillation-flask",
+      "name": "蒸馏烧瓶",
+      "category": "容器",
+      "search": "distillation flask",
+      "svg": "distillation-flask.svg",
+      "sha256": "ccf50f8d014e5e26157c9241d286c058e08197ecaf0a235d118c8e101f1d06a1",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 38,
+          "depth": 25,
+          "target": [
+            80,
+            140
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 132,
+          "y": 83,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 12
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 1
+    },
+    {
+      "id": "studio:pycnometer",
+      "name": "比重瓶",
+      "category": "容器",
+      "search": "pycnometer",
+      "svg": "pycnometer.svg",
+      "sha256": "87b94a4f4e37d130e54f5aa6b6baf14b882f172f94a80121e6bef34145e6859f",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 38,
+          "depth": 25,
+          "target": [
+            80,
+            140
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 1
+    },
+    {
+      "id": "studio:reagent-bottle",
+      "name": "试剂瓶",
+      "category": "容器",
+      "search": "reagent bottle",
+      "svg": "reagent-bottle.svg",
+      "sha256": "f27b6e9371cd14e3c390691324d3d88c05e695d43fe02db4ca013e1baef7c31b",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 14,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 40,
+          "depth": 24,
+          "target": [
+            80,
+            144
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:bottle",
+      "name": "玻璃瓶",
+      "category": "容器",
+      "search": "bottle",
+      "svg": "bottle.svg",
+      "sha256": "f27b6e9371cd14e3c390691324d3d88c05e695d43fe02db4ca013e1baef7c31b",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 80,
+          "y": 14,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 40,
+          "depth": 24,
+          "target": [
+            80,
+            144
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tlc-chamber",
+      "name": "展开缸",
+      "category": "容器",
+      "search": "tlc chamber",
+      "svg": "tlc-chamber.svg",
+      "sha256": "4c6c06141bb11d029f44c7a8534d72d1a8633f1808ee763765694f8b7e261b0b",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:water-bath",
+      "name": "水浴锅",
+      "category": "容器",
+      "search": "water bath",
+      "svg": "water-bath.svg",
+      "sha256": "8fb7d1577218e6b166f9f6928cb94433e60957301b89f7ec21df549fd4b3ce36",
+      "width": 160,
+      "height": 200,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 82,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 105,
+          "depth": 25,
+          "target": [
+            82,
+            150
+          ]
+        },
+        {
+          "id": "base",
+          "x": 80,
+          "y": 182,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:evaporating-dish",
+      "name": "蒸发皿",
+      "category": "容器",
+      "search": "evaporating dish",
+      "svg": "evaporating-dish.svg",
+      "sha256": "0775999326798ef0fced7311bae2661c48590940fa7c9ab0842faa6ca8d91bec",
+      "width": 160,
+      "height": 70,
+      "ports": [
+        {
+          "id": "base",
+          "x": 80,
+          "y": 52,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tube",
+      "name": "直玻璃管",
+      "category": "导管",
+      "search": "tube",
+      "svg": "tube.svg",
+      "sha256": "ab0ee669b47316ca7cb38c0b86f8605bb0b081b8897293f91fb4e903a7df6605",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 70,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            70,
+            15,
+            70,
+            45
+          ],
+          "edge": [
+            78,
+            10,
+            62,
+            10
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 70,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            70,
+            160,
+            70,
+            130
+          ],
+          "edge": [
+            62,
+            165,
+            78,
+            165
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tube-bend",
+      "name": "90° 弯管",
+      "category": "导管",
+      "search": "tube bend",
+      "svg": "tube-bend.svg",
+      "sha256": "795f45db61435019cad9813c24323ed39e50c8d5038e5dda63b237dc0ea57906",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 18,
+          "y": 155,
+          "dx": -1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            23,
+            155,
+            53,
+            155
+          ],
+          "edge": [
+            18,
+            147,
+            18,
+            163
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 120,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            120,
+            17,
+            120,
+            47
+          ],
+          "edge": [
+            128,
+            12,
+            112,
+            12
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:s-bent-tube",
+      "name": "S 形管",
+      "category": "导管",
+      "search": "s bent tube",
+      "svg": "s-bent-tube.svg",
+      "sha256": "d2cad74ded0b8764728e053cf59544541a056165db261ba1b0f175e7a71d5590",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 100,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            100,
+            17,
+            100,
+            47
+          ],
+          "edge": [
+            108,
+            12,
+            92,
+            12
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 40,
+          "y": 166,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            40,
+            161,
+            40,
+            131
+          ],
+          "edge": [
+            32,
+            166,
+            48,
+            166
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:u-bent-tube",
+      "name": "U 形管",
+      "category": "导管",
+      "search": "u bent tube",
+      "svg": "u-bent-tube.svg",
+      "sha256": "5f6136e755f64c3e46b650b0898f42be6f79cf21708f9ac5d69366d6f7fc8bc4",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 35,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            35,
+            17,
+            35,
+            47
+          ],
+          "edge": [
+            43,
+            12,
+            27,
+            12
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 105,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            105,
+            17,
+            105,
+            47
+          ],
+          "edge": [
+            113,
+            12,
+            97,
+            12
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:rubber-tube",
+      "name": "橡胶软管",
+      "category": "导管",
+      "search": "rubber tube",
+      "svg": "rubber-tube.svg",
+      "sha256": "721532fde8369270bcd7632ec8c8deca663a39dcec4f2d338fc390389d1209da",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 16,
+          "y": 32,
+          "dx": -1,
+          "dy": 0,
+          "type": "hose",
+          "diameter": 20,
+          "segment": [
+            21,
+            32,
+            51,
+            32
+          ],
+          "edge": [
+            16,
+            24,
+            16,
+            40
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 122,
+          "y": 152,
+          "dx": 1,
+          "dy": 0,
+          "type": "hose",
+          "diameter": 20,
+          "segment": [
+            117,
+            152,
+            87,
+            152
+          ],
+          "edge": [
+            122,
+            160,
+            122,
+            144
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:capillary-tube",
+      "name": "毛细管",
+      "category": "导管",
+      "search": "capillary tube",
+      "svg": "capillary-tube.svg",
+      "sha256": "827c9e3a654c56d0da139ad5102647135b0e60d0a8fafb551e049a4b51e4134b",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 70,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 11,
+          "segment": [
+            70,
+            15,
+            70,
+            45
+          ],
+          "edge": [
+            73.5,
+            10,
+            66.5,
+            10
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 70,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 11,
+          "segment": [
+            70,
+            160,
+            70,
+            130
+          ],
+          "edge": [
+            66.5,
+            165,
+            73.5,
+            165
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tube-adapter",
+      "name": "变径接头",
+      "category": "导管",
+      "search": "tube adapter",
+      "svg": "tube-adapter.svg",
+      "sha256": "d982ee18738df349059002fb11e7ca128505cfbd280637781ae78dd70f857e8e",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 70,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 34
+        },
+        {
+          "id": "outlet",
+          "x": 70,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 16
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:3-way-crossing",
+      "name": "交叉导管",
+      "category": "导管",
+      "search": "3 way crossing",
+      "svg": "3-way-crossing.svg",
+      "sha256": "a5134e872afd019b25ecf3b499627859c9e4c91a7bd0c0fe68b865beb6fb812f",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 20,
+          "y": 75,
+          "dx": -1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            25,
+            75,
+            55,
+            75
+          ],
+          "edge": [
+            20,
+            67,
+            20,
+            83
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 120,
+          "y": 75,
+          "dx": 1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            115,
+            75,
+            85,
+            75
+          ],
+          "edge": [
+            120,
+            83,
+            120,
+            67
+          ]
+        },
+        {
+          "id": "branch-2",
+          "x": 70,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            70,
+            17,
+            70,
+            47
+          ],
+          "edge": [
+            78,
+            12,
+            62,
+            12
+          ]
+        },
+        {
+          "id": "branch-3",
+          "x": 70,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            70,
+            160,
+            70,
+            130
+          ],
+          "edge": [
+            62,
+            165,
+            78,
+            165
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:cable",
+      "name": "电缆",
+      "category": "导管",
+      "search": "cable",
+      "svg": "cable.svg",
+      "sha256": "c5a5412f6e63ff4e3e24650567a99e7dd8318b85acf5d5069bdf173ae9ec794c",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 16,
+          "y": 32,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 9,
+          "segment": [
+            21,
+            32,
+            51,
+            32
+          ],
+          "edge": [
+            16,
+            29.5,
+            16,
+            34.5
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 122,
+          "y": 152,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 9,
+          "segment": [
+            117,
+            152,
+            87,
+            152
+          ],
+          "edge": [
+            122,
+            154.5,
+            122,
+            149.5
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:salt-bridge",
+      "name": "盐桥",
+      "category": "导管",
+      "search": "salt bridge",
+      "svg": "salt-bridge.svg",
+      "sha256": "5f6136e755f64c3e46b650b0898f42be6f79cf21708f9ac5d69366d6f7fc8bc4",
+      "width": 140,
+      "height": 180,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 35,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            35,
+            17,
+            35,
+            47
+          ],
+          "edge": [
+            43,
+            12,
+            27,
+            12
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 105,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            105,
+            17,
+            105,
+            47
+          ],
+          "edge": [
+            113,
+            12,
+            97,
+            12
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:graham",
+      "name": "蛇形冷凝管",
+      "category": "冷凝与蒸馏",
+      "search": "graham",
+      "svg": "graham.svg",
+      "sha256": "4e76a10a21d755f71d0bbf16bd7ed653f3d865b7e9cf6a810b5339426996545d",
+      "width": 110,
+      "height": 260,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 55,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 20,
+          "depth": 20
+        },
+        {
+          "id": "outlet",
+          "x": 55,
+          "y": 248,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 20,
+          "depth": 22
+        },
+        {
+          "id": "water-out",
+          "x": 7,
+          "y": 66,
+          "dx": -1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 12
+        },
+        {
+          "id": "water-in",
+          "x": 103,
+          "y": 191,
+          "dx": 1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:allihn",
+      "name": "球形冷凝管",
+      "category": "冷凝与蒸馏",
+      "search": "allihn",
+      "svg": "allihn.svg",
+      "sha256": "aa3d2e5085ac4a48e756422b50b3d433ff18efb41f8cab8d445cec732e5447f1",
+      "width": 110,
+      "height": 260,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 55,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 20,
+          "depth": 20
+        },
+        {
+          "id": "outlet",
+          "x": 55,
+          "y": 248,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 20,
+          "depth": 22
+        },
+        {
+          "id": "water-out",
+          "x": 7,
+          "y": 66,
+          "dx": -1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 12
+        },
+        {
+          "id": "water-in",
+          "x": 103,
+          "y": 191,
+          "dx": 1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:liebig-condenser",
+      "name": "直形冷凝管",
+      "category": "冷凝与蒸馏",
+      "search": "liebig condenser",
+      "svg": "liebig-condenser.svg",
+      "sha256": "3ee3fb654c5013413cff37b7f028dab1a8beeae720de0a1087ee841fe575cca9",
+      "width": 110,
+      "height": 260,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 55,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 20,
+          "depth": 20
+        },
+        {
+          "id": "outlet",
+          "x": 55,
+          "y": 248,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 20,
+          "depth": 22
+        },
+        {
+          "id": "water-out",
+          "x": 7,
+          "y": 66,
+          "dx": -1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 12
+        },
+        {
+          "id": "water-in",
+          "x": 103,
+          "y": 191,
+          "dx": 1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:fractionating-column",
+      "name": "分馏柱",
+      "category": "冷凝与蒸馏",
+      "search": "fractionating column",
+      "svg": "fractionating-column.svg",
+      "sha256": "7e5286125f8108fc937671cd5217a059276d4d012be5066661f8b65d6356ee44",
+      "width": 110,
+      "height": 260,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 55,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 20,
+          "depth": 20
+        },
+        {
+          "id": "outlet",
+          "x": 55,
+          "y": 248,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 20,
+          "depth": 22
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:thiele-tube",
+      "name": "提勒熔点管",
+      "category": "冷凝与蒸馏",
+      "search": "thiele tube",
+      "svg": "thiele-tube.svg",
+      "sha256": "bb26cf7f35444e3ee90b69808a6b1f253770b395173ff1d5e5adf14aee0f2784",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 73,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 50
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:cold-finger",
+      "name": "冷指",
+      "category": "冷凝与蒸馏",
+      "search": "cold finger",
+      "svg": "cold-finger.svg",
+      "sha256": "fd42f682409dcb39e7515b85c34d6f47ee4ff9f0c1da73fa71920bc713e3c58f",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 62,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "coolant",
+          "diameter": 12
+        },
+        {
+          "id": "outlet",
+          "x": 78,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "coolant",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:distillation-head",
+      "name": "蒸馏头",
+      "category": "冷凝与蒸馏",
+      "search": "distillation head",
+      "svg": "distillation-head.svg",
+      "sha256": "7b03b5b597e23f31fb594ae582d8f759b9c30c8897aa7212ffaec2f3bee65567",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 66,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 20
+        },
+        {
+          "id": "outlet",
+          "x": 124,
+          "y": 92,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 16
+        },
+        {
+          "id": "base",
+          "x": 66,
+          "y": 196,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 20
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:claisen",
+      "name": "克莱森接头",
+      "category": "冷凝与蒸馏",
+      "search": "claisen",
+      "svg": "claisen.svg",
+      "sha256": "a4f6c8a11d961fd56890ce6c0d00f7d96d1eaf9f6a76f231c451faa33afefb01",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 66,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 20
+        },
+        {
+          "id": "outlet",
+          "x": 124,
+          "y": 92,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 16
+        },
+        {
+          "id": "base",
+          "x": 66,
+          "y": 196,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 20
+        },
+        {
+          "id": "mouth-right",
+          "x": 112,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:dean-stark-trap",
+      "name": "分水器",
+      "category": "冷凝与蒸馏",
+      "search": "dean stark trap",
+      "svg": "dean-stark-trap.svg",
+      "sha256": "4bb0bdf5cbc2b449226ae8ac566996778dd7d4cf0151cda76513147b36b1e131",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 53,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-male",
+          "diameter": 16
+        },
+        {
+          "id": "outlet",
+          "x": 122,
+          "y": 17,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:drying-tube",
+      "name": "干燥管",
+      "category": "冷凝与蒸馏",
+      "search": "drying tube",
+      "svg": "drying-tube.svg",
+      "sha256": "90bf45843faa159d9805e52cb8df5100e8cede539a851e72f9b99e78df8c9a97",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 67,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20
+        },
+        {
+          "id": "outlet",
+          "x": 67,
+          "y": 198,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 20
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:filter-funnel",
+      "name": "过滤漏斗",
+      "category": "过滤与分液",
+      "search": "filter funnel",
+      "svg": "filter-funnel.svg",
+      "sha256": "4f0957d20a40b0b1becaa68175cb79d5e5c912efca461e3b651d23455cca7341",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 70,
+          "y": 22,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 116
+        },
+        {
+          "id": "stem",
+          "x": 70,
+          "y": 198,
+          "dx": 0,
+          "dy": 1,
+          "type": "stem",
+          "diameter": 16,
+          "segment": [
+            70,
+            190,
+            70,
+            115
+          ],
+          "depth": 80
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:thistle-tube",
+      "name": "长颈漏斗",
+      "category": "过滤与分液",
+      "search": "thistle tube",
+      "svg": "thistle-tube.svg",
+      "sha256": "b0bff4dd01be518d28ac2074610d0154343f44d4676f3ed09d930bd1135c9b85",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 70,
+          "y": 15,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 72
+        },
+        {
+          "id": "stem",
+          "x": 70,
+          "y": 198,
+          "dx": 0,
+          "dy": 1,
+          "type": "stem",
+          "diameter": 16,
+          "segment": [
+            70,
+            190,
+            70,
+            115
+          ],
+          "depth": 80
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:separatory-funnel",
+      "name": "分液漏斗",
+      "category": "过滤与分液",
+      "search": "separatory funnel",
+      "svg": "separatory-funnel.svg",
+      "sha256": "9c62edab80a20abf015bf3ecdedbfa46c679196cbadab86d42d3bc2543fd4c0f",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 70,
+          "y": 16,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 26
+        },
+        {
+          "id": "stem",
+          "x": 70,
+          "y": 198,
+          "dx": 0,
+          "dy": 1,
+          "type": "stem",
+          "diameter": 16,
+          "segment": [
+            70,
+            190,
+            70,
+            115
+          ],
+          "depth": 80
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:dropping-funnel",
+      "name": "滴液漏斗",
+      "category": "过滤与分液",
+      "search": "dropping funnel",
+      "svg": "dropping-funnel.svg",
+      "sha256": "9c62edab80a20abf015bf3ecdedbfa46c679196cbadab86d42d3bc2543fd4c0f",
+      "width": 140,
+      "height": 210,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 70,
+          "y": 16,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 26
+        },
+        {
+          "id": "stem",
+          "x": 70,
+          "y": 198,
+          "dx": 0,
+          "dy": 1,
+          "type": "stem",
+          "diameter": 16,
+          "segment": [
+            70,
+            190,
+            70,
+            115
+          ],
+          "depth": 80
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:cylinder",
+      "name": "量筒",
+      "category": "测量",
+      "search": "cylinder",
+      "svg": "cylinder.svg",
+      "sha256": "54d4af632c2f58334661e3174ac406b23902982e5df42099627fda9646055d97",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 40,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 34
+        },
+        {
+          "id": "base",
+          "x": 40,
+          "y": 248,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pipette",
+      "name": "移液管",
+      "category": "测量",
+      "search": "pipette",
+      "svg": "pipette.svg",
+      "sha256": "75ea46f13232d8f6d753b1171b3b9c1471b1280694620afb3e4387bb4235c32d",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "stem",
+          "x": 40,
+          "y": 244,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 10,
+          "segment": [
+            40,
+            234,
+            40,
+            170
+          ]
+        },
+        {
+          "id": "mouth",
+          "x": 40,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:mohr",
+      "name": "刻度吸管",
+      "category": "测量",
+      "search": "mohr",
+      "svg": "mohr.svg",
+      "sha256": "d1ee78797c4239a42c5e0e3f353234e3c28cecc2998d50b6d8753d5ef7bb6a04",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "stem",
+          "x": 40,
+          "y": 244,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 10,
+          "segment": [
+            40,
+            234,
+            40,
+            170
+          ]
+        },
+        {
+          "id": "mouth",
+          "x": 40,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:burette",
+      "name": "滴定管",
+      "category": "测量",
+      "search": "burette",
+      "svg": "burette.svg",
+      "sha256": "04ba301f025f555a0dc337b89dfec1f4ac40bce5945a7cb0adee6bbdd06ee41c",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "stem",
+          "x": 40,
+          "y": 244,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 10,
+          "segment": [
+            40,
+            234,
+            40,
+            170
+          ]
+        },
+        {
+          "id": "mouth",
+          "x": 40,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:eudiometer",
+      "name": "量气管",
+      "category": "测量",
+      "search": "eudiometer",
+      "svg": "eudiometer.svg",
+      "sha256": "d1ee78797c4239a42c5e0e3f353234e3c28cecc2998d50b6d8753d5ef7bb6a04",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "stem",
+          "x": 40,
+          "y": 244,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 10,
+          "segment": [
+            40,
+            234,
+            40,
+            170
+          ]
+        },
+        {
+          "id": "mouth",
+          "x": 40,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:thermometer",
+      "name": "温度计",
+      "category": "测量",
+      "search": "thermometer",
+      "svg": "thermometer.svg",
+      "sha256": "cc8f541aaa4500440af55c02b7f71032d7abe7d4acee81aca5a0b2a99d39a33e",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "stem",
+          "x": 40,
+          "y": 244,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 16,
+          "segment": [
+            40,
+            234,
+            40,
+            170
+          ]
+        },
+        {
+          "id": "mouth",
+          "x": 40,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:hydrometer",
+      "name": "液体比重计",
+      "category": "测量",
+      "search": "hydrometer",
+      "svg": "hydrometer.svg",
+      "sha256": "75ea46f13232d8f6d753b1171b3b9c1471b1280694620afb3e4387bb4235c32d",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "stem",
+          "x": 40,
+          "y": 244,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 10,
+          "segment": [
+            40,
+            234,
+            40,
+            170
+          ]
+        },
+        {
+          "id": "mouth",
+          "x": 40,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 18
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:dynamometer",
+      "name": "测力计",
+      "category": "测量",
+      "search": "dynamometer",
+      "svg": "dynamometer.svg",
+      "sha256": "5341e04ca086e11e263fa98f5ef5388761f9ad5383eda8810fc51ba163bfa600",
+      "width": 80,
+      "height": 260,
+      "ports": [
+        {
+          "id": "hook",
+          "x": 42,
+          "y": 237,
+          "dx": 0,
+          "dy": 1,
+          "type": "hook",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:digital-thermometer",
+      "name": "数字温度计",
+      "category": "测量",
+      "search": "digital thermometer",
+      "svg": "digital-thermometer.svg",
+      "sha256": "420cf93ab91699792b0ad2d8514b87e326a59dbccd3b81a0790db4d8dddbe509",
+      "width": 110,
+      "height": 210,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 55,
+          "y": 194,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 8,
+          "segment": [
+            55,
+            180,
+            55,
+            113
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ph-probe",
+      "name": "pH 探头",
+      "category": "测量",
+      "search": "ph probe",
+      "svg": "ph-probe.svg",
+      "sha256": "bde4d6e88ec4a5896ce46f021c558ed49162cf1f4a8a4936b366c352fdc64097",
+      "width": 110,
+      "height": 210,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 55,
+          "y": 194,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 8,
+          "segment": [
+            55,
+            180,
+            55,
+            113
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pump",
+      "name": "三阀吸球",
+      "category": "移液与注射",
+      "search": "pump",
+      "svg": "pump.svg",
+      "sha256": "608cc30461acd62f3fda479482686a65833d4c9b209c917c9c09c27b91bd09c3",
+      "width": 100,
+      "height": 230,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 50,
+          "y": 200,
+          "dx": 0,
+          "dy": 1,
+          "type": "pipette-filler",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:suction-pear",
+      "name": "吸耳球",
+      "category": "移液与注射",
+      "search": "suction pear",
+      "svg": "suction-pear.svg",
+      "sha256": "352f0cdf0eac30790f17eff925408ef28c39677260d0487c7cd16cc3d3fdf616",
+      "width": 100,
+      "height": 230,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 50,
+          "y": 200,
+          "dx": 0,
+          "dy": 1,
+          "type": "pipette-filler",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:dropper-pipette",
+      "name": "滴管",
+      "category": "移液与注射",
+      "search": "dropper pipette",
+      "svg": "dropper-pipette.svg",
+      "sha256": "d48a83458a28356c96e68a6f6557a86f60c69d84159bf17f1da69628d3b4470e",
+      "width": 100,
+      "height": 230,
+      "ports": [
+        {
+          "id": "tip",
+          "x": 50,
+          "y": 215,
+          "dx": 0,
+          "dy": 1,
+          "type": "stem",
+          "diameter": 10,
+          "segment": [
+            50,
+            205,
+            50,
+            95
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:plastic-pipette",
+      "name": "塑料滴管",
+      "category": "移液与注射",
+      "search": "plastic pipette",
+      "svg": "plastic-pipette.svg",
+      "sha256": "3e13cb6fe77d30347f60e211a546121c13b69cbe936735dda481fdc75357af53",
+      "width": 100,
+      "height": 230,
+      "ports": [
+        {
+          "id": "tip",
+          "x": 50,
+          "y": 215,
+          "dx": 0,
+          "dy": 1,
+          "type": "stem",
+          "diameter": 10,
+          "segment": [
+            50,
+            205,
+            50,
+            95
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pipette-bottle",
+      "name": "滴瓶",
+      "category": "移液与注射",
+      "search": "pipette bottle",
+      "svg": "pipette-bottle.svg",
+      "sha256": "d734eef6a9bc92bcb4322258a38fdc6493caa43f4980c9e706ac072680e1e8a2",
+      "width": 100,
+      "height": 230,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:syringe",
+      "name": "注射器",
+      "category": "移液与注射",
+      "search": "syringe",
+      "svg": "syringe.svg",
+      "sha256": "4c5369ace7194e5e1eed46be9aaccf7984d6a183855a107b532fc235d71fcc42",
+      "width": 100,
+      "height": 230,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 50,
+          "y": 220,
+          "dx": 0,
+          "dy": 1,
+          "type": "luer-male",
+          "diameter": 10
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:gas-syringe",
+      "name": "气体注射器",
+      "category": "移液与注射",
+      "search": "gas syringe",
+      "svg": "gas-syringe.svg",
+      "sha256": "9e6b0580a72ebf64b7f3e93f8dfe92c485022cc4f15a285df22eb203922ef43e",
+      "width": 100,
+      "height": 230,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 50,
+          "y": 196,
+          "dx": 0,
+          "dy": 1,
+          "type": "luer-male",
+          "diameter": 10
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:needle",
+      "name": "针头",
+      "category": "移液与注射",
+      "search": "needle",
+      "svg": "needle.svg",
+      "sha256": "cfb0855efc0de47ec511e491cd7e41a91168abac73ae605d827f7cd4a4cd7a2c",
+      "width": 100,
+      "height": 230,
+      "ports": [
+        {
+          "id": "tip",
+          "x": 50,
+          "y": 205,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 6,
+          "segment": [
+            50,
+            200,
+            50,
+            60
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:bung",
+      "name": "木塞 / 橡胶塞",
+      "category": "塞子与密封",
+      "search": "bung",
+      "svg": "bung.svg",
+      "sha256": "633f3aafba83730182ee41ddc410118ab1221c2f964128c04399b437d37b8df6",
+      "width": 100,
+      "height": 75,
+      "ports": [
+        {
+          "id": "plug",
+          "x": 50,
+          "y": 65,
+          "dx": 0,
+          "dy": 1,
+          "type": "plug",
+          "diameter": 52,
+          "depth": 36
+        }
+      ],
+      "boreCount": 0,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:glass-stopper",
+      "name": "玻璃塞",
+      "category": "塞子与密封",
+      "search": "glass stopper",
+      "svg": "glass-stopper.svg",
+      "sha256": "6f28f7a20529da82224980e84735e8ead81347ad61a6090d9ac93f78a94e1dfe",
+      "width": 100,
+      "height": 75,
+      "ports": [
+        {
+          "id": "plug",
+          "x": 50,
+          "y": 65,
+          "dx": 0,
+          "dy": 1,
+          "type": "plug",
+          "diameter": 52,
+          "depth": 36
+        }
+      ],
+      "boreCount": 0,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:septum-seal",
+      "name": "隔膜密封盖",
+      "category": "塞子与密封",
+      "search": "septum seal",
+      "svg": "septum-seal.svg",
+      "sha256": "441432876aba2606cd3b102d80b85398299233873c5f7360d00d67d86ec496d0",
+      "width": 100,
+      "height": 75,
+      "ports": [
+        {
+          "id": "plug",
+          "x": 50,
+          "y": 65,
+          "dx": 0,
+          "dy": 1,
+          "type": "plug",
+          "diameter": 52,
+          "depth": 36
+        }
+      ],
+      "boreCount": 0,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:bunsen",
+      "name": "本生灯",
+      "category": "加热",
+      "search": "bunsen",
+      "svg": "bunsen.svg",
+      "sha256": "e780ed2a8392267e92a7425014702ed3dc5d26feeb531aa84fd6f365cf242222",
+      "width": 180,
+      "height": 190,
+      "ports": [
+        {
+          "id": "gas",
+          "x": 153,
+          "y": 136,
+          "dx": 1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 11
+        },
+        {
+          "id": "surface",
+          "x": 85,
+          "y": 48,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:flame",
+      "name": "火焰",
+      "category": "加热",
+      "search": "flame",
+      "svg": "flame.svg",
+      "sha256": "749a753d30e8aaec5246ec5a7a882ccd6e58c2e8cb37b4a3facdf7b31a735a45",
+      "width": 180,
+      "height": 190,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:hot-plate",
+      "name": "加热板",
+      "category": "加热",
+      "search": "hot plate",
+      "svg": "hot-plate.svg",
+      "sha256": "61f239724245ceea1ce4d9c3738b7c089dac8ad11d675a9f4ab64af3d5ddcb71",
+      "width": 180,
+      "height": 190,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 76,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:magnetic-stirrer-heater",
+      "name": "磁力加热搅拌器",
+      "category": "加热",
+      "search": "magnetic stirrer heater",
+      "svg": "magnetic-stirrer-heater.svg",
+      "sha256": "04256f7dd2b4ba67b63df9dba96ba9896bf5e4b7245c9722ff21c8c3dbf95780",
+      "width": 180,
+      "height": 190,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 76,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:sand-bath",
+      "name": "砂浴",
+      "category": "加热",
+      "search": "sand bath",
+      "svg": "sand-bath.svg",
+      "sha256": "9bdb92deb695c132fd8d2381fdac1a4d5db05b0917f6edaf1901e00f16fdaf2d",
+      "width": 180,
+      "height": 190,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 56,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:heating-mantle",
+      "name": "电热套",
+      "category": "加热",
+      "search": "heating mantle",
+      "svg": "heating-mantle.svg",
+      "sha256": "fcb2aaa8c8b460e059bf715dcefbb3a8b897e13e122105858e15bc906fd79a97",
+      "width": 180,
+      "height": 190,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 56,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:oven",
+      "name": "烘箱",
+      "category": "加热",
+      "search": "oven",
+      "svg": "oven.svg",
+      "sha256": "020fd8c46893679a8365b2da8179a869ea9b7e82e921c7ae9271bd8131f93762",
+      "width": 180,
+      "height": 190,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:kettle",
+      "name": "水壶",
+      "category": "加热",
+      "search": "kettle",
+      "svg": "kettle.svg",
+      "sha256": "032b931866acf9a08dec0e82d62c46f5a9bc922b74c22817d0738e9a4c0bef1a",
+      "width": 180,
+      "height": 190,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:retort-stand",
+      "name": "铁架台",
+      "category": "支撑与夹持",
+      "search": "retort stand",
+      "svg": "retort-stand.svg",
+      "sha256": "23cced7d455ac35e5e0cbfb4d7aedb55bedaafb135c08ef5dac073aae5da5919",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "rail",
+          "x": 40,
+          "y": 75,
+          "dx": 0,
+          "dy": -1,
+          "type": "rail",
+          "diameter": 7,
+          "segment": [
+            40,
+            20,
+            40,
+            170
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tripod",
+      "name": "三脚架",
+      "category": "支撑与夹持",
+      "search": "tripod",
+      "svg": "tripod.svg",
+      "sha256": "0ed198a66659994f2942ca95d61b2bfd07588db15796e55afb624ee1588f5716",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 34,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:test-tube-rack",
+      "name": "试管架",
+      "category": "支撑与夹持",
+      "search": "test tube rack",
+      "svg": "test-tube-rack.svg",
+      "sha256": "91727e552e3580a5d9d8434f052a1ff45e8dc264844d73a4918ab1a91621490a",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "rack-40",
+          "x": 40,
+          "y": 70,
+          "dx": 0,
+          "dy": -1,
+          "type": "rack",
+          "diameter": 20
+        },
+        {
+          "id": "rack-73",
+          "x": 73,
+          "y": 70,
+          "dx": 0,
+          "dy": -1,
+          "type": "rack",
+          "diameter": 20
+        },
+        {
+          "id": "rack-106",
+          "x": 106,
+          "y": 70,
+          "dx": 0,
+          "dy": -1,
+          "type": "rack",
+          "diameter": 20
+        },
+        {
+          "id": "rack-139",
+          "x": 139,
+          "y": 70,
+          "dx": 0,
+          "dy": -1,
+          "type": "rack",
+          "diameter": 20
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:retort-ring",
+      "name": "铁圈",
+      "category": "支撑与夹持",
+      "search": "retort ring",
+      "svg": "retort-ring.svg",
+      "sha256": "9ae1aa1d9087a1f3bb3ee444be6006f861e1b573d9380efa643e06654db54ba9",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "clamp",
+          "x": 16,
+          "y": 72,
+          "dx": -1,
+          "dy": 0,
+          "type": "clamp",
+          "diameter": 8
+        },
+        {
+          "id": "surface",
+          "x": 119,
+          "y": 72,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:clamp",
+      "name": "万能夹",
+      "category": "支撑与夹持",
+      "search": "clamp",
+      "svg": "clamp.svg",
+      "sha256": "ca5083f9731561a2b83f3a9cbca8e87ed6df074a9aa5fc6ecca9094adc91f834",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "clamp",
+          "x": 12,
+          "y": 100,
+          "dx": -1,
+          "dy": 0,
+          "type": "clamp",
+          "diameter": 8
+        },
+        {
+          "id": "grip",
+          "x": 146,
+          "y": 100,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip",
+          "diameter": 25
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:clamp-front",
+      "name": "夹具正视图",
+      "category": "支撑与夹持",
+      "search": "clamp front",
+      "svg": "clamp-front.svg",
+      "sha256": "09b6f3a0f639168f9bb8cb0036a45a3c9e7b7f1e07a65f485702902ab2588648",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "clamp",
+          "x": 12,
+          "y": 100,
+          "dx": -1,
+          "dy": 0,
+          "type": "clamp",
+          "diameter": 8
+        },
+        {
+          "id": "grip",
+          "x": 146,
+          "y": 100,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip",
+          "diameter": 25
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:g-clamp",
+      "name": "G 形夹",
+      "category": "支撑与夹持",
+      "search": "g clamp",
+      "svg": "g-clamp.svg",
+      "sha256": "5dbbdbb39bc950b7ee89dd44705383095c0c7961fff832bff3319d2ebc0d74c5",
+      "width": 180,
+      "height": 200,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:plastic-joint-clip",
+      "name": "磨口夹",
+      "category": "支撑与夹持",
+      "search": "plastic joint clip",
+      "svg": "plastic-joint-clip.svg",
+      "sha256": "4419aaa3a1e3ace2e49f2a5b44a45939d886a3071e9e4d5986a7cde6da453a1a",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "clip",
+          "x": 90,
+          "y": 80,
+          "dx": 0,
+          "dy": -1,
+          "type": "clip",
+          "diameter": 24
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tongs",
+      "name": "坩埚钳",
+      "category": "支撑与夹持",
+      "search": "tongs",
+      "svg": "tongs.svg",
+      "sha256": "f1aecc2ef34e7efb90ce0991862a9308573bf8ae7307da140c895a6df80b1faa",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "grip",
+          "x": 95,
+          "y": 163,
+          "dx": 0,
+          "dy": 1,
+          "type": "grip",
+          "diameter": 38
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:test-tube-holder",
+      "name": "试管夹",
+      "category": "支撑与夹持",
+      "search": "test tube holder",
+      "svg": "test-tube-holder.svg",
+      "sha256": "f1aecc2ef34e7efb90ce0991862a9308573bf8ae7307da140c895a6df80b1faa",
+      "width": 180,
+      "height": 200,
+      "ports": [
+        {
+          "id": "grip",
+          "x": 95,
+          "y": 163,
+          "dx": 0,
+          "dy": 1,
+          "type": "grip",
+          "diameter": 38
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tweezers",
+      "name": "镊子",
+      "category": "支撑与夹持",
+      "search": "tweezers",
+      "svg": "tweezers.svg",
+      "sha256": "30d29ea3f163d76f0472dbabca738c6ba787a1065daa4132ea2c8f0b0f5cd253",
+      "width": 180,
+      "height": 200,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:peg",
+      "name": "木夹",
+      "category": "支撑与夹持",
+      "search": "peg",
+      "svg": "peg.svg",
+      "sha256": "16103898580150891c5210724d3b86acf92efe732aa11fe5a9b517f5aa64fe96",
+      "width": 180,
+      "height": 200,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:stirring-rod",
+      "name": "玻璃搅拌棒",
+      "category": "实验小工具",
+      "search": "stirring rod",
+      "svg": "stirring-rod.svg",
+      "sha256": "c5048f2deef9f1b65b070c98b5233f59e5b8794b41d330d6d39373f024e0a13a",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:wooden-splint",
+      "name": "木条",
+      "category": "实验小工具",
+      "search": "wooden splint",
+      "svg": "wooden-splint.svg",
+      "sha256": "848214ad9a4a8a316fec7ef4222a466180d34c4403bad1675ba38b5dabeca87f",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:metal-strip",
+      "name": "金属条",
+      "category": "实验小工具",
+      "search": "metal strip",
+      "svg": "metal-strip.svg",
+      "sha256": "382e5bc799852a22b3fd97dd67ae57a030898b5005d1902d81b7e1584b21df47",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:spatula",
+      "name": "药匙",
+      "category": "实验小工具",
+      "search": "spatula",
+      "svg": "spatula.svg",
+      "sha256": "560eeed589139ed9cc7147313e1cf10df5342ffc6aa08c1337461a324bd51a5e",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pencil",
+      "name": "铅笔",
+      "category": "实验小工具",
+      "search": "pencil",
+      "svg": "pencil.svg",
+      "sha256": "a746b98de1f2a6809b383d3c23818f7a663396143ecbb587d63d7414a4088b82",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:felt-tip-pen",
+      "name": "记号笔",
+      "category": "实验小工具",
+      "search": "felt tip pen",
+      "svg": "felt-tip-pen.svg",
+      "sha256": "52d3f1e7af76c4e7d79396865cfd5e810e26698fccf78f96ec06ca48a6099c65",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:swab",
+      "name": "棉签",
+      "category": "实验小工具",
+      "search": "swab",
+      "svg": "swab.svg",
+      "sha256": "3b055bcc4dad670460873ae6d5f9b2077930007387feed248d7aad04fe2d78b6",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pestle",
+      "name": "研杵",
+      "category": "实验小工具",
+      "search": "pestle",
+      "svg": "pestle.svg",
+      "sha256": "5c9494d641dfe11922169be64cdf60d2ed27a37441346b03e4c62cbb1cdce8e7",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:nail",
+      "name": "铁钉",
+      "category": "实验小工具",
+      "search": "nail",
+      "svg": "nail.svg",
+      "sha256": "82b55276e55ae2379d059912ca9cdbcb17b87bdb5bf8f02ab6217dd6d930ef24",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "probe",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:electrode",
+      "name": "电极",
+      "category": "实验小工具",
+      "search": "electrode",
+      "svg": "electrode.svg",
+      "sha256": "c5048f2deef9f1b65b070c98b5233f59e5b8794b41d330d6d39373f024e0a13a",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "wire",
+          "x": 170,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 12,
+          "segment": [
+            150,
+            58,
+            30,
+            58
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:magnetic-stir-bar",
+      "name": "磁力搅拌子",
+      "category": "实验小工具",
+      "search": "magnetic stir bar",
+      "svg": "magnetic-stir-bar.svg",
+      "sha256": "b3022bdca2e6d667fe1da4b863cd98a508d012016bd056666c4ef281c49a59cf",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "contents",
+          "x": 90,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "contents",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:stirbar2",
+      "name": "椭圆搅拌子",
+      "category": "实验小工具",
+      "search": "stirbar2",
+      "svg": "stirbar2.svg",
+      "sha256": "2e0618f62c9ece7758e4e1f17dfaefd909681566d22bee615f20d3cb8007038d",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "contents",
+          "x": 90,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "contents",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:wire-gauze",
+      "name": "金属纱网",
+      "category": "实验小工具",
+      "search": "wire gauze",
+      "svg": "wire-gauze.svg",
+      "sha256": "b77637c7ee820ac6c4fde37a0dc0dc3060e6e94aa56d488f4fc3e23bcb2a4d58",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 16,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:bench-mat",
+      "name": "实验台垫",
+      "category": "实验小工具",
+      "search": "bench mat",
+      "svg": "bench-mat.svg",
+      "sha256": "113ade4a4522e972e4223452fc4143cc6f111ce0b00a17b9919dfa6cc5b0dd84",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 16,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:sieve",
+      "name": "筛网",
+      "category": "实验小工具",
+      "search": "sieve",
+      "svg": "sieve.svg",
+      "sha256": "0081d2f36c1e2b8871bb53d16274273e269c46e375df2a0c38cec9a6d0c8a7d4",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 16,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:filter-paper",
+      "name": "滤纸",
+      "category": "实验小工具",
+      "search": "filter paper",
+      "svg": "filter-paper.svg",
+      "sha256": "7bd05e769288bc430442beca586712b6c50cbb9d041999ab1cc9649700293c29",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 16,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:clay-triangle",
+      "name": "泥三角",
+      "category": "实验小工具",
+      "search": "clay triangle",
+      "svg": "clay-triangle.svg",
+      "sha256": "c1384f68cbc15853a2d5a33d29da0485882bf9d0671289e4793cc68691660cc3",
+      "width": 180,
+      "height": 120,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:capsule-pill",
+      "name": "胶囊",
+      "category": "实验小工具",
+      "search": "capsule pill",
+      "svg": "capsule-pill.svg",
+      "sha256": "80a7b08eb9f52f6b8e47c4b00e8c48bfb38c46613a4b31a82f8e5047e17be8bc",
+      "width": 180,
+      "height": 120,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:syringe-filter",
+      "name": "针式过滤器",
+      "category": "实验小工具",
+      "search": "syringe filter",
+      "svg": "syringe-filter.svg",
+      "sha256": "db117760d94c0f737642dbd03e8f6f377266a8bea090e8dc2710caa9923586de",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 36,
+          "y": 60,
+          "dx": -1,
+          "dy": 0,
+          "type": "luer-female",
+          "diameter": 12
+        },
+        {
+          "id": "outlet",
+          "x": 145,
+          "y": 60,
+          "dx": 1,
+          "dy": 0,
+          "type": "luer-male",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:spe-cartridge",
+      "name": "固相萃取柱",
+      "category": "实验小工具",
+      "search": "spe cartridge",
+      "svg": "spe-cartridge.svg",
+      "sha256": "5030b0b601e88caad87a2c5f53c49143ebafc6c41f5ba4c01cc5fc39c4af5dc8",
+      "width": 180,
+      "height": 120,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 162,
+          "y": 61,
+          "dx": 1,
+          "dy": 0,
+          "type": "luer-male",
+          "diameter": 10
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:paperclip",
+      "name": "回形针",
+      "category": "实验小工具",
+      "search": "paperclip",
+      "svg": "paperclip.svg",
+      "sha256": "f1c51a88158123ea19371819043a7cf05fa81669d5d6721a08d0d5925d36af9d",
+      "width": 180,
+      "height": 120,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:adhesive-tape",
+      "name": "胶带",
+      "category": "实验小工具",
+      "search": "adhesive tape",
+      "svg": "adhesive-tape.svg",
+      "sha256": "f219523af23ba8c78f1e404f9621577cbfb0a22e66e088a65874bff08aa6ed43",
+      "width": 180,
+      "height": 120,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:scissors",
+      "name": "剪刀",
+      "category": "实验小工具",
+      "search": "scissors",
+      "svg": "scissors.svg",
+      "sha256": "4cb591b6e0c9700f87d8965cad10ed45de9eb8acfbea8a8b4beb313635cfc5a5",
+      "width": 180,
+      "height": 120,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:corkborer",
+      "name": "打孔器",
+      "category": "实验小工具",
+      "search": "corkborer",
+      "svg": "corkborer.svg",
+      "sha256": "b8cf02f1133075c65b321aef0a0f740e5decded5615a2d65935865aa3dd225be",
+      "width": 180,
+      "height": 120,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:mortar",
+      "name": "研钵",
+      "category": "陶瓷",
+      "search": "mortar",
+      "svg": "mortar.svg",
+      "sha256": "2c1acc89da5d7a04776f4c3cdc0316bbb0e1eae00dc1b971c58321f550c2fa5a",
+      "width": 170,
+      "height": 135,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 85,
+          "y": 30,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 90
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:crucible",
+      "name": "坩埚",
+      "category": "陶瓷",
+      "search": "crucible",
+      "svg": "crucible.svg",
+      "sha256": "70db837cc9b39dea119710827bbe32deb2d73ae761ffbfbbb193680f2a956abf",
+      "width": 170,
+      "height": 135,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 85,
+          "y": 30,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 90
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:crucible-cover",
+      "name": "坩埚盖",
+      "category": "陶瓷",
+      "search": "crucible cover",
+      "svg": "crucible-cover.svg",
+      "sha256": "5f6bc863324d11b816fd353b23a5b797209603f1f6b06563de64e79cd950649f",
+      "width": 170,
+      "height": 135,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 85,
+          "y": 30,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 90
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:spotting-tile",
+      "name": "点滴板",
+      "category": "陶瓷",
+      "search": "spotting tile",
+      "svg": "spotting-tile.svg",
+      "sha256": "90a6771d371b5ed86531581b0867da6f590458b8330682fcb07788d0ed949b33",
+      "width": 170,
+      "height": 135,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 85,
+          "y": 30,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 90
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:balance",
+      "name": "电子天平",
+      "category": "设备",
+      "search": "balance",
+      "svg": "balance.svg",
+      "sha256": "3db4f0faf6771ec33e4446f03269d57e9fb1e7570988ad335475e681fbe1555e",
+      "width": 200,
+      "height": 170,
+      "ports": [
+        {
+          "id": "surface",
+          "x": 100,
+          "y": 37,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:fume-hood",
+      "name": "通风橱",
+      "category": "设备",
+      "search": "fume hood",
+      "svg": "fume-hood.svg",
+      "sha256": "91751f913f7097008eb29b69adf4104209fceedd07ea12a203ee37acdf7d988f",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:microscope",
+      "name": "显微镜",
+      "category": "设备",
+      "search": "microscope",
+      "svg": "microscope.svg",
+      "sha256": "365942401947ea06ddc89cbb60dd826aa2866153d4ea0369510bc713c5e09380",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:vacuum-pump",
+      "name": "真空泵",
+      "category": "设备",
+      "search": "vacuum pump",
+      "svg": "vacuum-pump.svg",
+      "sha256": "2cc15eedb34ef60339eb394105925a8f3497ca190420f6c3251510daeca957d9",
+      "width": 200,
+      "height": 170,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 137,
+          "y": 55,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:syringe-pump",
+      "name": "注射泵",
+      "category": "设备",
+      "search": "syringe pump",
+      "svg": "syringe-pump.svg",
+      "sha256": "9ae3f7d7198cdf1aadd213f0ae0668716fc3e755c1746214e954289229d88133",
+      "width": 200,
+      "height": 170,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 20,
+          "y": 65,
+          "dx": -1,
+          "dy": 0,
+          "type": "luer-male",
+          "diameter": 8
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:piston-chamber",
+      "name": "活塞气室",
+      "category": "设备",
+      "search": "piston chamber",
+      "svg": "piston-chamber.svg",
+      "sha256": "aec5c0a2924b06f4321e96af5595622249201546e37f5c42717d5e34fe18906e",
+      "width": 200,
+      "height": 170,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 10,
+          "y": 53,
+          "dx": -1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:gas-cylinder",
+      "name": "气瓶",
+      "category": "设备",
+      "search": "gas cylinder",
+      "svg": "gas-cylinder.svg",
+      "sha256": "9b4564bc13094e0ddef2f740fce98287069e668d777b6a8da964f59f4df9f543",
+      "width": 110,
+      "height": 240,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 73,
+          "y": 14,
+          "dx": 1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 12
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:desiccator",
+      "name": "干燥器",
+      "category": "设备",
+      "search": "desiccator",
+      "svg": "desiccator.svg",
+      "sha256": "bd2b888bdf0adbe57f776a741e3f236c4c45920c00706c82691bcbe8b140cf34",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:table",
+      "name": "实验桌",
+      "category": "设备",
+      "search": "table",
+      "svg": "table.svg",
+      "sha256": "0fa0d9cce59580ada5a2e689426e1e66e53ddd2189dab646c4aca89341e7fab4",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:desk-lamp",
+      "name": "台灯",
+      "category": "设备",
+      "search": "desk lamp",
+      "svg": "desk-lamp.svg",
+      "sha256": "05a25e6a6b2a6db2725188a042edba1346d8604d68484b43e5812c201e79f9fc",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:desk-fan",
+      "name": "台式风扇",
+      "category": "设备",
+      "search": "desk fan",
+      "svg": "desk-fan.svg",
+      "sha256": "a803a7fee89623a109daa28866327134aa4959c5026a12b3dc4ed0c738d432a6",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:computer",
+      "name": "电脑",
+      "category": "设备",
+      "search": "computer",
+      "svg": "computer.svg",
+      "sha256": "e3a4b098576a25afa58f66770c794f4421beff3fe212d4bf7a448305f366c261",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:camera",
+      "name": "相机",
+      "category": "设备",
+      "search": "camera",
+      "svg": "camera.svg",
+      "sha256": "31f2adaad1969ad5a96056a68efabb78ae401ee2a8b93a0269384205784caa9f",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:videocamera",
+      "name": "摄像机",
+      "category": "设备",
+      "search": "videocamera",
+      "svg": "videocamera.svg",
+      "sha256": "cabb9528b513bad64d745b0ab8970dae6d926771900877b4f7887ea00388bbbb",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:timer",
+      "name": "秒表",
+      "category": "设备",
+      "search": "timer",
+      "svg": "timer.svg",
+      "sha256": "3e1435474ea4243c01274b34e8c7056874161642e83da0036a774a493e97ab38",
+      "width": 200,
+      "height": 170,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:powerpack",
+      "name": "直流电源",
+      "category": "电学",
+      "search": "powerpack",
+      "svg": "powerpack.svg",
+      "sha256": "2f647136d93c5b65c9264142059cf34de4f0f7ad52a7a1b5ba71b4f18b4da784",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 42,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 138,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:battery",
+      "name": "电池",
+      "category": "电学",
+      "search": "battery",
+      "svg": "battery.svg",
+      "sha256": "68cdf36d6514570755af09771e5dfa047ca3f96b14bd1498497a03b62322f002",
+      "width": 90,
+      "height": 170,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 45,
+          "y": 15,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 45,
+          "y": 154,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:digital-ammeter",
+      "name": "数字电流表",
+      "category": "电学",
+      "search": "digital ammeter",
+      "svg": "digital-ammeter.svg",
+      "sha256": "ea5532be6d3c00cb7b3015b70438272fbd0341a98d1b2b8c9fd0d9b974445579",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 42,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 138,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:digital-voltmeter",
+      "name": "数字电压表",
+      "category": "电学",
+      "search": "digital voltmeter",
+      "svg": "digital-voltmeter.svg",
+      "sha256": "5f018ae4c0173863c7d87f62f94b509b78bb3895aa1c70c9386580ba6a012d70",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 42,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 138,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:multimeter",
+      "name": "万用表",
+      "category": "电学",
+      "search": "multimeter",
+      "svg": "multimeter.svg",
+      "sha256": "91cb0ee7bce46f481dd2eb676906257f04f87d979d18ef9e27286b93a52b1524",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 42,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 138,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:resistor",
+      "name": "电阻",
+      "category": "电学",
+      "search": "resistor",
+      "svg": "resistor.svg",
+      "sha256": "872651d1de77efeb52f63b8179537690f04c31f1e954133a3704f47c8974bf0e",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "a",
+          "x": 10,
+          "y": 75,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 170,
+          "y": 75,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:lamp",
+      "name": "灯泡",
+      "category": "电学",
+      "search": "lamp",
+      "svg": "lamp.svg",
+      "sha256": "aded890e2fd57f209305a6ea746cc609cb5ec95ad26420c42ce5a1c203447090",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 73,
+          "y": 141,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 107,
+          "y": 141,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:diode",
+      "name": "二极管",
+      "category": "电学",
+      "search": "diode",
+      "svg": "diode.svg",
+      "sha256": "1eeb1840bec0c3b60a320df102f389013765f1787eeb2493f2a3bae323d9d53d",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "a",
+          "x": 10,
+          "y": 75,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 170,
+          "y": 75,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:led",
+      "name": "发光二极管",
+      "category": "电学",
+      "search": "led",
+      "svg": "led.svg",
+      "sha256": "905b5a28422fc5e6a3af0ecbd214835ffef621201e702c6a6cee8ad8483f4bcc",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 73,
+          "y": 141,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 107,
+          "y": 141,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:capacitor",
+      "name": "电容",
+      "category": "电学",
+      "search": "capacitor",
+      "svg": "capacitor.svg",
+      "sha256": "8d4f2ef28e6c0a052af80a78d2f6d1b7e685fbf7fb9dbb9aa3fc99a3fdd4cabc",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "a",
+          "x": 10,
+          "y": 75,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 170,
+          "y": 75,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:magnet",
+      "name": "磁铁",
+      "category": "电学",
+      "search": "magnet",
+      "svg": "magnet.svg",
+      "sha256": "57b37b110b0ad66e4765eadabe14be3d856f718d989d2dd744ceec2a8f66870c",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:compass",
+      "name": "指南针",
+      "category": "电学",
+      "search": "compass",
+      "svg": "compass.svg",
+      "sha256": "827b9686ab0cd587c448ff075d5639abd3191e27de193b7c5e8703cc58aa7792",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:solenoid",
+      "name": "螺线管",
+      "category": "电学",
+      "search": "solenoid",
+      "svg": "solenoid.svg",
+      "sha256": "3808c5fe0f09e7f5934b4d84094573fadbb4f1603aa330d4bb3ff7f754e456b9",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "a",
+          "x": 10,
+          "y": 76,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 174,
+          "y": 76,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:petri-dish",
+      "name": "培养皿",
+      "category": "生物实验",
+      "search": "petri dish",
+      "svg": "petri-dish.svg",
+      "sha256": "408c559bc2e8cbb67c3b7295a855536cf9788379cff49a35952096f811bd3b23",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:petri-top",
+      "name": "培养皿俯视图",
+      "category": "生物实验",
+      "search": "petri top",
+      "svg": "petri-top.svg",
+      "sha256": "dbdc300afd3b7ac80ba7cc8e495f92ca961aaafa8aa6cdb1177a8fac8d042bd2",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:choice-chamber",
+      "name": "选择室",
+      "category": "生物实验",
+      "search": "choice chamber",
+      "svg": "choice-chamber.svg",
+      "sha256": "e08450e1b3793f6f293c300bdac045497e8f15a4a66dc09b5dc5756a5f073c21",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:microscope-slide",
+      "name": "载玻片",
+      "category": "生物实验",
+      "search": "microscope slide",
+      "svg": "microscope-slide.svg",
+      "sha256": "e0e55b76984ee6454efaa7f343bea08a60d8b232750270b9b9f651f183b847e3",
+      "width": 180,
+      "height": 100,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:cover-slip",
+      "name": "盖玻片",
+      "category": "生物实验",
+      "search": "cover slip",
+      "svg": "cover-slip.svg",
+      "sha256": "5e80e1e5c840b854671503265fdcc37b80a82862f92a0bc4901dd55ef579f5a5",
+      "width": 180,
+      "height": 100,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:quadrat",
+      "name": "样方框",
+      "category": "生物实验",
+      "search": "quadrat",
+      "svg": "quadrat.svg",
+      "sha256": "7f07c1951c0de5a160a1239b39e62c7239df31cd3b2efd736ae31460ca5f3e93",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:bacteria",
+      "name": "杆菌示意",
+      "category": "生物实验",
+      "search": "bacteria",
+      "svg": "bacteria.svg",
+      "sha256": "4e15576988a69315cece27864f62799463d6159f71fd6f3666a8ce88ffa7f6a7",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:seed",
+      "name": "种子",
+      "category": "生物实验",
+      "search": "seed",
+      "svg": "seed.svg",
+      "sha256": "50a96a524b42f64b90e6028888f262143b48539531c77f3324a04449ca4591da",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:potato",
+      "name": "马铃薯",
+      "category": "生物实验",
+      "search": "potato",
+      "svg": "potato.svg",
+      "sha256": "1e0df98f46703a70c33da4ad376db62a9174aadd8ef1dab164e6c7d6825b6ee3",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:agar",
+      "name": "琼脂块",
+      "category": "生物实验",
+      "search": "agar",
+      "svg": "agar.svg",
+      "sha256": "22ad110dac5d4435f3275b8527cc18e9d4bd10adf5d72e568daff03b0abe539f",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pot",
+      "name": "花盆",
+      "category": "生物实验",
+      "search": "pot",
+      "svg": "pot.svg",
+      "sha256": "b24601ca21731add4fd6dd334d15783b8a0b9259606010174a85f2a5d1c027dc",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:daisy",
+      "name": "雏菊",
+      "category": "生物实验",
+      "search": "daisy",
+      "svg": "daisy.svg",
+      "sha256": "3eb1ed16b4c1390d7714c3dd2e1804211b387b84aa9755e1a3c1d23d85a1b15b",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tree",
+      "name": "树",
+      "category": "生物实验",
+      "search": "tree",
+      "svg": "tree.svg",
+      "sha256": "87fb7600ee239d0ad973d03c24517c943d93aa6afacb89e6cbfd27bc8ef51457",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:leaf",
+      "name": "叶片",
+      "category": "生物实验",
+      "search": "leaf",
+      "svg": "leaf.svg",
+      "sha256": "973c284d5772b1b67937c4cb43ad81ff01dabb627ed08c44c103d9cc5b68a7d6",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:plant-shoot",
+      "name": "植物幼苗",
+      "category": "生物实验",
+      "search": "plant shoot",
+      "svg": "plant-shoot.svg",
+      "sha256": "794aca6bfc9c4955d16fdb6c826000c72bbb8757ad71e0a1887f432615eb30b8",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:shoot",
+      "name": "嫩枝",
+      "category": "生物实验",
+      "search": "shoot",
+      "svg": "shoot.svg",
+      "sha256": "e3f4be136af4d54c72e56c4b44b6e9068256b8d2d5cc26242be36330e84f78ee",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pond-weed",
+      "name": "水草",
+      "category": "生物实验",
+      "search": "pond weed",
+      "svg": "pond-weed.svg",
+      "sha256": "0aa3cc2af556c5532c96038c00b6e920f0d26f3aa8c23e14817d57e78e70fd83",
+      "width": 180,
+      "height": 180,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:bubbles",
+      "name": "气泡",
+      "category": "物质与填充",
+      "search": "bubbles",
+      "svg": "bubbles.svg",
+      "sha256": "4b144d58d4ca38bc6a3eeb5b865725e655a882604e0189216e630905e0fc9b46",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:beads",
+      "name": "微珠",
+      "category": "物质与填充",
+      "search": "beads",
+      "svg": "beads.svg",
+      "sha256": "ce01a9c80dad7d3ca48621b8da8c7fa6754ca9a89133108927f2603d79d8af72",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:particles",
+      "name": "颗粒",
+      "category": "物质与填充",
+      "search": "particles",
+      "svg": "particles.svg",
+      "sha256": "b528c40b13828c8e453155dd703f768ac78c754f6a9dc49201d3d3b528a62e17",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:crystals",
+      "name": "晶体",
+      "category": "物质与填充",
+      "search": "crystals",
+      "svg": "crystals.svg",
+      "sha256": "4076976182577b53e367fc7cb64ce498f74d6bcef8bd79889b8c304e8bb8620d",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:drop",
+      "name": "液滴",
+      "category": "物质与填充",
+      "search": "drop",
+      "svg": "drop.svg",
+      "sha256": "55a0462e3a78354f598e805c0b0e1a10c521527a7ae2b91b3fa51f05807df080",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ice-cube",
+      "name": "冰块",
+      "category": "物质与填充",
+      "search": "ice cube",
+      "svg": "ice-cube.svg",
+      "sha256": "a33ed06033bfe9dc512c82354d613e7900bb5e85b7ac309f09dfda4e5a6bb041",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:powder",
+      "name": "粉末",
+      "category": "物质与填充",
+      "search": "powder",
+      "svg": "powder.svg",
+      "sha256": "cbbe5e89dce53994620fcf5854bd11c80a1d98c9b99c2d22d6c062432f9fead9",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:dirt",
+      "name": "土壤",
+      "category": "物质与填充",
+      "search": "dirt",
+      "svg": "dirt.svg",
+      "sha256": "6117e6224008a9e8f46fb4b5a6491ced4e3bf48d42c2207b8bd4eaf060a44106",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:smoke",
+      "name": "烟雾",
+      "category": "物质与填充",
+      "search": "smoke",
+      "svg": "smoke.svg",
+      "sha256": "b19c7cec3c8b516bcbbc476f4ed2d8c40b99afccf44d0b27d52c7040a7e467c5",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:glass-wool",
+      "name": "玻璃棉",
+      "category": "物质与填充",
+      "search": "glass wool",
+      "svg": "glass-wool.svg",
+      "sha256": "a6f0cb988f07a17dfd7f9672554cb2643c616cf9ea2be2ba013510a853cca01d",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:steel-wool",
+      "name": "钢丝绒",
+      "category": "物质与填充",
+      "search": "steel wool",
+      "svg": "steel-wool.svg",
+      "sha256": "faf4527a8708804a2b7be1d58d785ae251122212dc9aa3926f7d283ee400eeb4",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:cotton-wool",
+      "name": "脱脂棉",
+      "category": "物质与填充",
+      "search": "cotton wool",
+      "svg": "cotton-wool.svg",
+      "sha256": "4dcffa027d12d5975c0ff74feb68cea42e53ae53677ad2ecf59010364d76708c",
+      "width": 170,
+      "height": 130,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ph-paper",
+      "name": "pH 试纸",
+      "category": "测量与防护",
+      "search": "ph paper",
+      "svg": "ph-paper.svg",
+      "sha256": "836f602242deb89e4d291c87cc98e2036c1702390ceb6fc76739179c91f623c0",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:litmus-paper",
+      "name": "石蕊试纸",
+      "category": "测量与防护",
+      "search": "litmus paper",
+      "svg": "litmus-paper.svg",
+      "sha256": "37e1a1d6f7fc8ed4cf300cae7eead395fcc50f69af0a1c0bd73520bbc48e543c",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ruler",
+      "name": "直尺",
+      "category": "测量与防护",
+      "search": "ruler",
+      "svg": "ruler.svg",
+      "sha256": "b7f80c9ab01e63b621f8f6be8e8f2e72de4e0630238d58c5a440d64a1a296ddb",
+      "width": 180,
+      "height": 75,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tape-measure",
+      "name": "卷尺",
+      "category": "测量与防护",
+      "search": "tape measure",
+      "svg": "tape-measure.svg",
+      "sha256": "83baee0f390bb7720b15b7c5a94148aafaf834929e1cd896013a4553e80f2a6f",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:protractor",
+      "name": "量角器",
+      "category": "测量与防护",
+      "search": "protractor",
+      "svg": "protractor.svg",
+      "sha256": "5cfac53b2137173d08d6c3971ec222c5ab1ae6d468b427ba232bef067c197ee8",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tlc-plate",
+      "name": "薄层色谱板",
+      "category": "测量与防护",
+      "search": "tlc plate",
+      "svg": "tlc-plate.svg",
+      "sha256": "ad1503163c58264708ab04f4f1dcbd3c7786a30969bd299a742336d23cf17fe4",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:tlc-spot",
+      "name": "色谱斑点",
+      "category": "测量与防护",
+      "search": "tlc spot",
+      "svg": "tlc-spot.svg",
+      "sha256": "fa6c5fbdcc8ffc55adf3085dfe6e4c2562ade438e89e1d37ddd3b332da008294",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:faucet",
+      "name": "水龙头",
+      "category": "测量与防护",
+      "search": "faucet",
+      "svg": "faucet.svg",
+      "sha256": "3e9c8733dd6a0217905fbb10e47f527aef73a78fd107da4200b47df3fdd9c216",
+      "width": 180,
+      "height": 150,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 142,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 23
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:balloon",
+      "name": "气球",
+      "category": "测量与防护",
+      "search": "balloon",
+      "svg": "balloon.svg",
+      "sha256": "f79b4b829a49b520cc0b28301f2d0c74dec7c945326f169d475c4a9702e2adfd",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:soda-can",
+      "name": "易拉罐",
+      "category": "测量与防护",
+      "search": "soda can",
+      "svg": "soda-can.svg",
+      "sha256": "464655a5f40215aed94d8fd5086198295c77c911944ed3e07e2592b601c0f42d",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:goggles",
+      "name": "护目镜",
+      "category": "测量与防护",
+      "search": "goggles",
+      "svg": "goggles.svg",
+      "sha256": "d0f1ca4abdfd252d14dcf94a669ce01efaff9669f363d1011f26df3d6a6c83a3",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:lab-coat",
+      "name": "实验服",
+      "category": "测量与防护",
+      "search": "lab coat",
+      "svg": "lab-coat.svg",
+      "sha256": "9dcbfc1281bda955a2d41caea8fc53a333c8e3e45d89e6e1213844da574cd505",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:glove",
+      "name": "手套",
+      "category": "测量与防护",
+      "search": "glove",
+      "svg": "glove.svg",
+      "sha256": "0236b144df6af34ad4c7c250f664bc5bbfe083bc6a51303b10bcd21a695a61e2",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:hand",
+      "name": "手部示意",
+      "category": "测量与防护",
+      "search": "hand",
+      "svg": "hand.svg",
+      "sha256": "5da8483e6a9aa0d098e502dfc3e2a76de8d64ca47d99f0539b0d58886566cb33",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:magnifying-glass",
+      "name": "放大镜",
+      "category": "测量与防护",
+      "search": "magnifying glass",
+      "svg": "magnifying-glass.svg",
+      "sha256": "33c7e502a991db8e40b1a042c291eaf6787f4722ed7acafcf12aaca266a735eb",
+      "width": 180,
+      "height": 150,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:prism",
+      "name": "三棱镜",
+      "category": "光学",
+      "search": "prism",
+      "svg": "prism.svg",
+      "sha256": "19693499c1e8adfed9135e9f6739162974d74bf979781ac3297864ce4118f494",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:lens",
+      "name": "凸透镜",
+      "category": "光学",
+      "search": "lens",
+      "svg": "lens.svg",
+      "sha256": "3127d24c32bdce9fa9b1cba5e74689ceea1efdca9b5e91a943b282b7e7314c77",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:glass-block",
+      "name": "玻璃砖",
+      "category": "光学",
+      "search": "glass block",
+      "svg": "glass-block.svg",
+      "sha256": "ce52f48de3864bec4a3a7a8b664938236ed1e358a34c57ba49ad54bea6b516ee",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:mirror",
+      "name": "平面镜",
+      "category": "光学",
+      "search": "mirror",
+      "svg": "mirror.svg",
+      "sha256": "561395bb80651a198eb1ea1c74de321101601dd2d7a34b2e344b17f56b1ea469",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:curved-mirror",
+      "name": "凹面镜",
+      "category": "光学",
+      "search": "curved mirror",
+      "svg": "curved-mirror.svg",
+      "sha256": "f73ec2dbedd6438e4af1b3a07743a3fd0f067701e99ae70a1e7e4b3646f57b8d",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:raybox",
+      "name": "光源盒",
+      "category": "光学",
+      "search": "raybox",
+      "svg": "raybox.svg",
+      "sha256": "dac3141b4d938c1a75235eb233c0445f1df1e2c9b98292d25327b5591e79d0ff",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ray",
+      "name": "光线",
+      "category": "光学",
+      "search": "ray",
+      "svg": "ray.svg",
+      "sha256": "116f4a146d01a9a90f98e03d4a3f2911701ee6f04f78a54a46be87149dda5a54",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:sun",
+      "name": "太阳",
+      "category": "光学",
+      "search": "sun",
+      "svg": "sun.svg",
+      "sha256": "b06581a29db50bdb2b50f2740894ea2bf1b3655535901645004db8bdc025363b",
+      "width": 190,
+      "height": 160,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:trolley",
+      "name": "小车",
+      "category": "力学",
+      "search": "trolley",
+      "svg": "trolley.svg",
+      "sha256": "2adaf505cb0ed2e23b9a2710bcd46cd2b44a94279c2dd1b5852aeeb038018a0a",
+      "width": 190,
+      "height": 165,
+      "ports": [
+        {
+          "id": "hook",
+          "x": 172,
+          "y": 90,
+          "dx": 1,
+          "dy": 0,
+          "type": "hanger",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ramp",
+      "name": "斜面",
+      "category": "力学",
+      "search": "ramp",
+      "svg": "ramp.svg",
+      "sha256": "34943ba895491f6a39a30b36516b172c87d4faa1bc1dca6376869c86be6cb222",
+      "width": 190,
+      "height": 165,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:light-gate",
+      "name": "光电门",
+      "category": "力学",
+      "search": "light gate",
+      "svg": "light-gate.svg",
+      "sha256": "26d4ca1d7b5570a476ec34a976652abe0c635918d791e306f8dc71183291a92e",
+      "width": 190,
+      "height": 165,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:pulley",
+      "name": "滑轮",
+      "category": "力学",
+      "search": "pulley",
+      "svg": "pulley.svg",
+      "sha256": "4df9cf7e25523b94597215b2130942efbd80b25881069b116bf74feb59732094",
+      "width": 190,
+      "height": 165,
+      "ports": [
+        {
+          "id": "hanger",
+          "x": 95,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "hanger",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:spring",
+      "name": "弹簧",
+      "category": "力学",
+      "search": "spring",
+      "svg": "spring.svg",
+      "sha256": "2848f1e3651b0da7dbb606014803f2e8ef5ccd0f59c8314126508147630c4738",
+      "width": 190,
+      "height": 165,
+      "ports": [
+        {
+          "id": "top",
+          "x": 95,
+          "y": 9,
+          "dx": 0,
+          "dy": -1,
+          "type": "hanger",
+          "diameter": 0
+        },
+        {
+          "id": "bottom",
+          "x": 95,
+          "y": 151,
+          "dx": 0,
+          "dy": 1,
+          "type": "hook",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:slotted-weight",
+      "name": "钩码",
+      "category": "力学",
+      "search": "slotted weight",
+      "svg": "slotted-weight.svg",
+      "sha256": "9baf425317ec1b0bc12b8d2296e2fca230497ce8e6517be86237b9cb3797b2d8",
+      "width": 190,
+      "height": 165,
+      "ports": [
+        {
+          "id": "hanger",
+          "x": 77,
+          "y": 25,
+          "dx": 0,
+          "dy": -1,
+          "type": "hanger",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:rectangle",
+      "name": "矩形框",
+      "category": "图形与标记",
+      "search": "rectangle",
+      "svg": "rectangle.svg",
+      "sha256": "4316a166f79f9d7d4ca6a7a198b308d1d4a60d4ccef2e2e9fe808de89b707c0b",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ellipse",
+      "name": "椭圆",
+      "category": "图形与标记",
+      "search": "ellipse",
+      "svg": "ellipse.svg",
+      "sha256": "032bcdd0a09c63aa90913f59ecb3fbc687262b280b951054cc0ec00230421890",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:triangle",
+      "name": "三角形",
+      "category": "图形与标记",
+      "search": "triangle",
+      "svg": "triangle.svg",
+      "sha256": "351868bc903f5e64894456b16195295c54865851ca6838508a30b83436c48612",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:line",
+      "name": "直线",
+      "category": "图形与标记",
+      "search": "line",
+      "svg": "line.svg",
+      "sha256": "06bb892ca9b8aa5db9db271e147a58739f8dc662f4be1a3b06278a0e99b2f850",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:arrow",
+      "name": "箭头",
+      "category": "图形与标记",
+      "search": "arrow",
+      "svg": "arrow.svg",
+      "sha256": "bffe86981a2391c63c012960798b6fceb39caa63fa0878bcc78fa7951ced6ec6",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:curve",
+      "name": "曲线",
+      "category": "图形与标记",
+      "search": "curve",
+      "svg": "curve.svg",
+      "sha256": "bfb1f24650eab91ed24bde58b239f1fe6ea1ecfae8da838df2b82bca5a0701e1",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:curved-arrow",
+      "name": "曲线箭头",
+      "category": "图形与标记",
+      "search": "curved arrow",
+      "svg": "curved-arrow.svg",
+      "sha256": "febb9623bbe1d3019a4b2f805cfa7b446c1ac3cca1896f55bd6aaa9003e76f1a",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:stir-arrow",
+      "name": "旋转箭头",
+      "category": "图形与标记",
+      "search": "stir arrow",
+      "svg": "stir-arrow.svg",
+      "sha256": "f139b6eb1e14228c4ab03db1b41aef902e8d87ae3a31d487e34b43ecab966161",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:cross",
+      "name": "十字",
+      "category": "图形与标记",
+      "search": "cross",
+      "svg": "cross.svg",
+      "sha256": "906d83daa8353b5263f2658a30a32101f767feb251a87bad1642e1eee7f8b468",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:cuboid",
+      "name": "长方体",
+      "category": "图形与标记",
+      "search": "cuboid",
+      "svg": "cuboid.svg",
+      "sha256": "b0726cbcdec7b0a96fc791866bbadbd75b6d76e27889ada870d7b2ce4841f5aa",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:isocube",
+      "name": "立方体",
+      "category": "图形与标记",
+      "search": "isocube",
+      "svg": "isocube.svg",
+      "sha256": "2f9c1c47667a118ae3b7785c6486c7059038a6c150831a75bbe518a97c438a8b",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:3dcylinder",
+      "name": "圆柱体",
+      "category": "图形与标记",
+      "search": "3dcylinder",
+      "svg": "3dcylinder.svg",
+      "sha256": "b29a818d4232bd3a5f45a9d403b1e52acf14ccb19925645cc2c179494974e63d",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:label",
+      "name": "标签",
+      "category": "图形与标记",
+      "search": "label",
+      "svg": "label.svg",
+      "sha256": "17090a60d3b892d4860a77b984bd83c2632b9f9629500ca4e39d82eb6c28c12e",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:eye",
+      "name": "眼睛",
+      "category": "图形与标记",
+      "search": "eye",
+      "svg": "eye.svg",
+      "sha256": "4388a3dbc9bfb7ba2df71bf13b56dad2094e571172919910ef20539dd4516b65",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:ghs-hazard",
+      "name": "危险提示菱形",
+      "category": "图形与标记",
+      "search": "ghs hazard",
+      "svg": "ghs-hazard.svg",
+      "sha256": "ac8ff561c2672f069bac12cbb62b467ef41ce5ba1ae6be239cce8be72c3b459a",
+      "width": 180,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0
+    }
+  ]
+}

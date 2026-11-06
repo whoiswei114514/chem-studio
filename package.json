@@ -1,0 +1,10 @@
+{
+  "name": "chem-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chem Studio 桌面化学工作台的构建依赖",
+  "license": "WTFPL",
+  "engines": { "node": ">=20" },
+  "dependencies": { "three": "0.187.0", "lucide-static": "1.69.0" },
+  "devDependencies": { "esbuild": "0.28.2" }
+}

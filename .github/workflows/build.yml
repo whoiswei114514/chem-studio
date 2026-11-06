@@ -1,0 +1,55 @@
+name: Windows 构建与测试
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          path-type: inherit
+          update: true
+          install: >-
+            mingw-w64-ucrt-x86_64-gcc
+            mingw-w64-ucrt-x86_64-cmake
+            mingw-w64-ucrt-x86_64-ninja
+            mingw-w64-ucrt-x86_64-qt6-base
+            mingw-w64-ucrt-x86_64-qt6-svg
+            mingw-w64-ucrt-x86_64-openbabel
+            mingw-w64-ucrt-x86_64-boost
+      - name: JS 与 WebView2 SDK
+        shell: pwsh
+        run: |
+          npm ci
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./scripts/setup-deps.ps1
+      - name: 检查器材生成结果
+        shell: pwsh
+        run: |
+          node scripts/generate-apparatus.cjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git diff --exit-code -- assets/apparatus
+      - name: 编译
+        shell: msys2 {0}
+        run: |
+          pwsh.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 -ToolchainDirectory "$(cygpath -w /ucrt64)" -Jobs 2
+      - name: 默认测试
+        shell: msys2 {0}
+        run: ctest --test-dir build --output-on-failure -j 1
+      - name: 保存测试报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: build/Testing/
