@@ -197,8 +197,8 @@ if(CHEM_ENABLE_DESKTOP_TESTS)
   if(CHEM_ENABLE_ASSET_TESTS)
     add_test(NAME workspace COMMAND chem_workspace_tests -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
   else()
-    add_test(NAME workspace COMMAND chem_workspace_tests projectRoundtrip pageExports threeDimensionalUi
-      publicSourcePreview biochemistryCatalog structureDrawingWorkflow invalidInput -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
+    add_test(NAME workspace COMMAND chem_workspace_tests hiddenEditorSmilesExports projectRoundtrip pageExports threeDimensionalUi
+      publicSourcePreview biochemistryCatalog structurePendingGuards structureDrawingWorkflow invalidInput -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
   endif()
   set_tests_properties(workspace PROPERTIES TIMEOUT 120 ENVIRONMENT "QT_QPA_PLATFORM=windows" RESOURCE_LOCK desktop_input)
 endif()

@@ -10,9 +10,15 @@ StructureEditor::StructureEditor(QWidget* parent) : MoleculeView(parent, "struct
         if (message["hostRevision"].toDouble() != double(hostRevision))
             return;
         const auto type = message["type"].toString();
+        const auto revision = quint64(message["revision"].toDouble());
         if (type == "structure-pending") {
+            if (revision < canvasRevision) return;
+            canvasRevision = revision;
+            pendingUserEdit = true;
             setPending(true);
+            emit editStarted();
         } else if (type == "structure") {
+            if (revision < canvasRevision) return;
             const auto ket = message["ket"].toString();
             const auto svg = message["svg"].toString();
             if (ket.size() > 2 * 1024 * 1024 || svg.size() > 8 * 1024 * 1024 ||
@@ -45,6 +51,7 @@ StructureEditor::StructureEditor(QWidget* parent) : MoleculeView(parent, "struct
             current.remove("hostRevision");
             current.remove("revision");
             current.remove("changed");
+            canvasRevision = revision;
             setPending(false);
             emit documentChanged(current, message["changed"].toBool());
         } else if (type == "structure-error") {
@@ -54,6 +61,7 @@ StructureEditor::StructureEditor(QWidget* parent) : MoleculeView(parent, "struct
     });
 }
 void StructureEditor::setPending(bool value) {
+    if (!value) pendingUserEdit = false;
     if (pending != value) {
         pending = value;
         emit pendingChanged(value);
@@ -61,6 +69,8 @@ void StructureEditor::setPending(bool value) {
 }
 void StructureEditor::loadStructure(const QString& data) {
     ++hostRevision;
+    canvasRevision = 0;
+    pendingUserEdit = false;
     current = {};
     queued = data;
     hasQueued = true;
@@ -74,5 +84,6 @@ void StructureEditor::deliver() {
 }
 QJsonObject StructureEditor::document() const { return current; }
 bool StructureEditor::isPending() const { return pending; }
+bool StructureEditor::isEditPending() const { return pending && pendingUserEdit; }
 quint64 StructureEditor::revision() const { return hostRevision; }
 }

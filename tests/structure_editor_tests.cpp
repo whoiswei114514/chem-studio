@@ -8,6 +8,40 @@
 class StructureEditorTests : public QObject {
     Q_OBJECT
   private slots:
+    void hostLoadingIsNotAUserEdit() {
+        chem::StructureEditor editor;
+        editor.loadStructure("CCO");
+        QVERIFY(editor.isPending());
+        QVERIFY(!editor.isEditPending());
+        editor.telemetry({{"type", "structure-pending"},
+                          {"hostRevision", double(editor.revision())}, {"revision", 2}});
+        QVERIFY(editor.isEditPending());
+        editor.loadStructure("CC");
+        QVERIFY(editor.isPending());
+        QVERIFY(!editor.isEditPending());
+        editor.telemetry({{"type", "structure"}, {"hostRevision", double(editor.revision())},
+                          {"revision", 1}, {"ket", "{}"}, {"mol", "CURRENT"}});
+        QVERIFY(!editor.isPending());
+        QVERIFY(!editor.isEditPending());
+    }
+    void staleSnapshotDoesNotFinishNewEdit() {
+        chem::StructureEditor editor;
+        editor.loadStructure("CCO");
+        const double host = editor.revision();
+        editor.telemetry({{"type", "structure"}, {"hostRevision", host}, {"revision", 1},
+                          {"ket", "{}"}, {"mol", "FIRST"}});
+        QVERIFY(!editor.isPending());
+        editor.telemetry({{"type", "structure-pending"}, {"hostRevision", host}, {"revision", 3}});
+        QVERIFY(editor.isPending());
+        editor.telemetry({{"type", "structure"}, {"hostRevision", host}, {"revision", 2},
+                          {"ket", "{}"}, {"mol", "STALE"}});
+        QVERIFY(editor.isPending());
+        QCOMPARE(editor.document()["mol"].toString(), QString("FIRST"));
+        editor.telemetry({{"type", "structure"}, {"hostRevision", host}, {"revision", 3},
+                          {"ket", "{}"}, {"mol", "LATEST"}});
+        QVERIFY(!editor.isPending());
+        QCOMPARE(editor.document()["mol"].toString(), QString("LATEST"));
+    }
     void offlineNativeEditor() {
         chem::initializeChemistry();
         chem::StructureEditor editor;

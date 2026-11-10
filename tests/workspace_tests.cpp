@@ -173,6 +173,52 @@ class WorkspaceTests : public QObject {
         window->drawing->undoStack.clear();
         source->setCurrentIndex(source->findData(previousSource));
     }
+    void hiddenEditorSmilesExports() {
+        MainWindow hidden(true);
+        auto* tabs = hidden.findChild<QTabBar*>("moleculeTabs");
+        QVERIFY(tabs);
+        tabs->setCurrentIndex(0);
+        hidden.showPage(3);
+        hidden.show();
+        hidden.moleculeSourceMol.clear();
+        hidden.smilesInput->setText("CCO");
+        hidden.generateMolecule();
+        QTRY_VERIFY_WITH_TIMEOUT(!hidden.moleculeBusy && hidden.currentMolecule.formula == "C2H6O", 15000);
+        QVERIFY(!hidden.structureEditor->isReady());
+        QVERIFY(hidden.structureEditor->isPending());
+        QVERIFY(hidden.contentError().isEmpty());
+        for (const auto& format : QStringList{"SVG", "MOL", "SMILES", "PDF", "PNG"})
+            QVERIFY(hidden.writeExport(format, temporary.filePath("hidden-editor." + format.toLower())));
+        QFile mol(temporary.filePath("hidden-editor.mol"));
+        QVERIFY(mol.open(QIODevice::ReadOnly));
+        QCOMPARE(moleculeFromMolfile(QString::fromUtf8(mol.readAll())).formula, QString("C2H6O"));
+        tabs->setCurrentIndex(1);
+        QTRY_VERIFY_WITH_TIMEOUT(hidden.molecule3D->isReady(), 15000);
+        QVERIFY(!hidden.structureEditor->isReady());
+        QVERIFY(hidden.writeExport("MOL", temporary.filePath("hidden-editor-3d.mol")));
+        QFile mol3d(temporary.filePath("hidden-editor-3d.mol"));
+        QVERIFY(mol3d.open(QIODevice::ReadOnly));
+        QVERIFY(mol3d.readAll().contains("3D"));
+    }
+    void structurePendingGuards() {
+        window->showPage(3);
+        window->moleculeSourceMol.clear();
+        window->smilesInput->setText("CCO");
+        window->generateMolecule();
+        QTRY_VERIFY_WITH_TIMEOUT(!window->moleculeBusy && !window->structureEditor->isPending(), 15000);
+        QVERIFY(!window->moleculeSourceIsDrawing);
+        QVERIFY(window->contentError().isEmpty());
+        window->dirty = false;
+        const double host = window->structureEditor->revision();
+        window->structureEditor->telemetry({{"type", "structure-pending"},
+                                            {"hostRevision", host}, {"revision", 100}});
+        QVERIFY(!window->contentError().isEmpty());
+        QVERIFY(window->dirty);
+        for (const auto& format : QStringList{"SVG", "MOL", "SMILES", "KET", "PDF", "PNG"})
+            QVERIFY(!window->writeExport(format, temporary.filePath("pending." + format.toLower())));
+        window->generateMolecule();
+        QTRY_VERIFY_WITH_TIMEOUT(!window->moleculeBusy && !window->structureEditor->isPending(), 15000);
+    }
     void structureDrawingWorkflow() {
         window->showPage(3);
         auto* tabs = window->findChild<QTabBar*>("moleculeTabs");
@@ -262,6 +308,7 @@ class WorkspaceTests : public QObject {
         QVERIFY(window->writeExport("PDF", QDir(dir).filePath("apparatus.pdf")));
         QVERIFY(window->writeExport("SVG", QDir(dir).filePath("apparatus.svg")));
         window->showPage(3);
+        QTRY_VERIFY_WITH_TIMEOUT(!window->moleculeBusy && !window->structureEditor->isPending(), 15000);
         QVERIFY(window->writeExport("PDF", QDir(dir).filePath("molecule.pdf")));
         QVERIFY(window->writeExport("PNG", QDir(dir).filePath("molecule.png")));
         QVERIFY(window->writeExport("MOL", QDir(dir).filePath("molecule.mol")));
@@ -789,6 +836,7 @@ class WorkspaceTests : public QObject {
         QTest::mouseClick(tabs, Qt::LeftButton, {}, tabs->tabRect(1).center());
         QTRY_VERIFY_WITH_TIMEOUT(window->molecule3D->isReady(), 15000);
         QCOMPARE(window->moleculeViews->currentIndex(), 1);
+        QTRY_VERIFY_WITH_TIMEOUT(!window->moleculeBusy && !window->structureEditor->isPending(), 15000);
         const auto molPath = temporary.filePath("three-dimensional.mol");
         QVERIFY(window->writeExport("MOL", molPath));
         QFile file(molPath);

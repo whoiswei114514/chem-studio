@@ -59,6 +59,7 @@ async function snapshot(changed = true) {
   } catch (error) {
     if (current !== revision || epoch !== hostRevision) return;
     const svg = ket ? await structureSvg(ket).catch(() => '') : '';
+    if (current !== revision || epoch !== hostRevision) return;
     lastSnapshot = {ket, mol: '', rxn: '', smiles: '', svg, error: String(error.message || error)};
     showError(lastSnapshot.error);
     post({type: 'structure', ...lastSnapshot, revision: current, hostRevision: epoch, changed});

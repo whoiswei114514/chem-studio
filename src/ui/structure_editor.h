@@ -10,15 +10,19 @@ class StructureEditor : public MoleculeView {
     void loadStructure(const QString& data);
     QJsonObject document() const;
     bool isPending() const;
+    bool isEditPending() const;
     quint64 revision() const;
   signals:
     void documentChanged(const QJsonObject& document, bool userEdit);
+    void editStarted();
     void pendingChanged(bool pending);
   private:
     QJsonObject current;
     QString queued;
     quint64 hostRevision = 0;
+    quint64 canvasRevision = 0;
     bool pending = false;
+    bool pendingUserEdit = false;
     bool hasQueued = false;
     void setPending(bool value);
     void deliver();

@@ -1180,6 +1180,10 @@ QWidget* MainWindow::moleculePage() {
     });
     tabs->setCurrentIndex(2);
     connect(structureEditor, &StructureEditor::documentChanged, this, &MainWindow::applyStructureDocument);
+    connect(structureEditor, &StructureEditor::editStarted, this, [this] {
+        markDirty();
+        ++moleculeRevision;
+    });
     connect(structureEditor, &StructureEditor::pendingChanged, this, [this](bool pending) {
         if (pending && moleculeSourceIsDrawing) {
             ++moleculeRevision;
@@ -1710,10 +1714,12 @@ QString MainWindow::currentHtml() const {
 }
 QString MainWindow::contentError() const {
     const int page = pages->currentIndex();
+    if (page == 3 && structureEditor->isPending() &&
+        (moleculeSourceIsDrawing || structureEditor->isEditPending()))
+        return QStringLiteral("请稍候，结构正在更新");
     if (page == 1 && !reactionValid)
         return QStringLiteral("请先配平当前反应");
     if (page == 3 && moleculeSourceIsDrawing) {
-        if (structureEditor->isPending()) return QStringLiteral("请稍候，结构正在更新");
         if (structureDocument["svg"].toString().isEmpty()) return QStringLiteral("结构画布为空");
         if (moleculeViews->currentIndex() != 1) return {};
     }
