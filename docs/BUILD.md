@@ -14,7 +14,7 @@ pacman -S --needed mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-cmake mingw-w
 
 如果更新要求关闭终端，请重开 UCRT64 后继续更新。
 
-3. 安装 Node.js 20 或更高版本，以及 [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/)。
+3. 安装 Node.js 24.14.1 或更高版本，以及 [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/)。
 4. 打开 PowerShell，进入项目根目录。
 
 ## 编译
@@ -27,6 +27,8 @@ npm ci
 ```
 
 `setup-deps.ps1` 下载指定版本的 WebView2 SDK；SDK 与运行时是两件事。JS 依赖版本由 `package-lock.json` 锁定。器材 SVG 已提交在仓库中，编译时会打包进程序，不必下载额外素材。
+
+结构绘制使用 Ketcher 3.18.0 和 Indigo WASM 1.46.0。构建脚本生成 `build/structure-editor`，包含 JS、样式、Worker、WASM 和依赖许可。运行时无需联网或启动端口服务；部署时必须复制整个目录，不能只复制 EXE。默认依赖与 Three.js 共用 `node_modules`，也可通过 CMake `CHEM_EDITOR_MODULES` 指定独立位置。
 
 默认构建目录为 `build`，默认使用 `C:\msys64\ucrt64`。自定义位置：
 

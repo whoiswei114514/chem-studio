@@ -3,6 +3,7 @@
 #include "core/runtime_paths.h"
 #include "drawing.h"
 #include "molecule_view.h"
+#include "structure_editor.h"
 #include <QApplication>
 #include <QButtonGroup>
 #include <QBuffer>
@@ -245,13 +246,40 @@ MainWindow::MainWindow(bool automatic) : automated(automatic) {
     projectName->setMinimumWidth(170);
     tl->addWidget(projectName, 1);
     tl->addWidget(tool("file-plus-2", QStringLiteral("清空工作区"), [this] { newProject(); }));
+    tl->addWidget(tool("save", QStringLiteral("保存项目"), [this] {
+        if (structureEditor->isPending()) {
+            report(QStringLiteral("请稍候，绘制结构正在更新"), true);
+            return;
+        }
+        auto path = currentFile;
+        if (path.isEmpty())
+            path = QFileDialog::getSaveFileName(this, QStringLiteral("保存项目"), projectName->text() + ".chem",
+                                                "Chem Studio (*.chem)");
+        if (path.isEmpty()) return;
+        if (!path.endsWith(".chem", Qt::CaseInsensitive)) path += ".chem";
+        QString error;
+        if (!saveProject(path, state(), &error)) { report(error, true); return; }
+        currentFile = path;
+        dirty = false;
+        report(QStringLiteral("项目已保存"));
+    }));
+    tl->addWidget(tool("folder-open", QStringLiteral("打开项目"), [this] {
+        if (dirty && QMessageBox::question(this, QStringLiteral("打开项目"),
+            QStringLiteral("当前项目有未保存的更改。仍要打开其他项目？"),
+            QMessageBox::Discard | QMessageBox::Cancel, QMessageBox::Cancel) != QMessageBox::Discard)
+            return;
+        const auto path = QFileDialog::getOpenFileName(this, QStringLiteral("打开项目"), {}, "Chem Studio (*.chem)");
+        if (path.isEmpty()) return;
+        try { restore(loadProject(path)); currentFile = path; report(QStringLiteral("项目已打开")); }
+        catch (const std::exception& error) { report(QString::fromUtf8(error.what()), true); }
+    }));
     auto* exportButton = new QToolButton;
     exportButton->setIcon(icon("download"));
     exportButton->setText(QStringLiteral("导出"));
     exportButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     exportButton->setPopupMode(QToolButton::InstantPopup);
     auto* menu = new QMenu(exportButton);
-    for (const auto& format : QStringList{"PDF", "SVG", "PNG", "HTML", "LaTeX", "MOL", "SMILES"}) {
+    for (const auto& format : QStringList{"PDF", "SVG", "PNG", "HTML", "LaTeX", "MOL", "SMILES", "KET", "RXN"}) {
         auto* a = menu->addAction(format);
         connect(a, &QAction::triggered, this, [this, format] { exportFile(format); });
     }
@@ -1067,7 +1095,14 @@ QWidget* MainWindow::moleculePage() {
     head->addWidget(heading(QStringLiteral("分子结构")));
     head->addStretch();
     auto* import = command(QStringLiteral("导入 MOL"), "folder-open");
+    import->setText(QStringLiteral("导入结构"));
     head->addWidget(import);
+    auto* clearStructure = tool("file-plus-2", QStringLiteral("新建结构"), [this] {
+        if (!structureEditor->isReady()) return;
+        structureEditor->send({{"type", "clear-structure"}});
+    });
+    clearStructure->setObjectName("clearStructure");
+    head->addWidget(clearStructure);
     l->addLayout(head);
     auto* row = new QHBoxLayout;
     smilesInput = new QLineEdit("Cn1c(=O)c2c(ncn2C)n(C)c1=O");
@@ -1101,6 +1136,7 @@ QWidget* MainWindow::moleculePage() {
     tabs->setObjectName("moleculeTabs");
     tabs->addTab(QStringLiteral("二维结构"));
     tabs->addTab(QStringLiteral("三维构象"));
+    tabs->addTab(QStringLiteral("结构绘制"));
     tabs->setExpanding(false);
     viewBar->addWidget(tabs);
     viewBar->addStretch();
@@ -1129,6 +1165,8 @@ QWidget* MainWindow::moleculePage() {
     moleculeViews->addWidget(moleculePreview);
     molecule3D = new MoleculeView;
     moleculeViews->addWidget(molecule3D);
+    structureEditor = new StructureEditor;
+    moleculeViews->addWidget(structureEditor);
     l->addWidget(moleculeViews, 1);
     controlLayout->addWidget(
         tool("maximize", QStringLiteral("适合画布"), [this] { molecule3D->send({{"type", "fit"}}); }));
@@ -1140,6 +1178,18 @@ QWidget* MainWindow::moleculePage() {
         moleculeViews->setCurrentIndex(index);
         controls->setVisible(index == 1);
     });
+    tabs->setCurrentIndex(2);
+    connect(structureEditor, &StructureEditor::documentChanged, this, &MainWindow::applyStructureDocument);
+    connect(structureEditor, &StructureEditor::pendingChanged, this, [this](bool pending) {
+        if (pending && moleculeSourceIsDrawing) {
+            ++moleculeRevision;
+            report(QStringLiteral("正在更新绘制结构"));
+        } else if (!pending && pages && pages->currentIndex() == 3) {
+            report(QStringLiteral("结构已更新"));
+        }
+    });
+    connect(structureEditor, &MoleculeView::failure, this,
+            [this](const QString& error) { report(error, true); });
     auto syncControls = [this, hydrogen, rotate] {
         molecule3D->send({{"type", "representation"}, {"value", moleculeMode->currentData().toString()}});
         molecule3D->send({{"type", "hydrogens"}, {"value", hydrogen->isChecked()}});
@@ -1207,15 +1257,18 @@ QWidget* MainWindow::moleculePage() {
     moleculeInfo->setWordWrap(true);
     moleculeInfo->setMinimumHeight(70);
     l->addWidget(moleculeInfo);
-    connect(run, &QPushButton::clicked, this, &MainWindow::generateMolecule);
-    connect(smilesInput, &QLineEdit::returnPressed, this, &MainWindow::generateMolecule);
+    connect(run, &QPushButton::clicked, this, [this] { generateMolecule(); });
+    connect(smilesInput, &QLineEdit::returnPressed, this, [this] { generateMolecule(); });
     connect(smilesInput, &QLineEdit::textEdited, this, [this] {
         moleculeSourceMol.clear();
+        moleculeSourceIsDrawing = false;
+        structureDocument = {};
         markDirty();
     });
-    connect(import, &QPushButton::clicked, this, [this] {
+    connect(import, &QPushButton::clicked, this, [this, tabs] {
         auto path =
-            QFileDialog::getOpenFileName(this, QStringLiteral("导入分子结构"), {}, "MOL (*.mol *.sdf)");
+            QFileDialog::getOpenFileName(this, QStringLiteral("导入分子结构"), {},
+                "Chemical structure (*.mol *.sdf *.rxn *.ket *.smi *.smiles *.cml *.cdxml)");
         if (path.isEmpty())
             return;
         QFile file(path);
@@ -1227,13 +1280,49 @@ QWidget* MainWindow::moleculePage() {
             report(QStringLiteral("MOL 文件超过 2 MB"), true);
             return;
         }
-        moleculeSourceMol = QString::fromUtf8(file.readAll());
-        generateMolecule();
+        loadEditableStructure(QString::fromUtf8(file.readAll()));
         markDirty();
     });
     return page;
 }
-void MainWindow::generateMolecule() {
+void MainWindow::loadEditableStructure(const QString& data) {
+    moleculeSourceMol = data;
+    moleculeSourceIsDrawing = true;
+    structureDocument = {};
+    structureEditor->loadStructure(data);
+    if (auto* tabs = findChild<QTabBar*>("moleculeTabs")) tabs->setCurrentIndex(2);
+}
+QByteArray MainWindow::moleculeSvg() const {
+    return moleculeSourceIsDrawing ? structureDocument["svg"].toString().toUtf8() : currentMolecule.svg.toUtf8();
+}
+void MainWindow::applyStructureDocument(const QJsonObject& document, bool userEdit) {
+    structureDocument = document;
+    if (!userEdit && !moleculeSourceIsDrawing)
+        return;
+    moleculeSourceIsDrawing = true;
+    moleculeSourceMol = document["mol"].toString();
+    smilesInput->setText(document["smiles"].toString());
+    moleculePreview->load(document["svg"].toString().toUtf8());
+    moleculePreview->renderer()->setAspectRatioMode(Qt::KeepAspectRatio);
+    if (userEdit) markDirty();
+    if (document["empty"].toBool() || document["reaction"].toBool() || moleculeSourceMol.isEmpty()) {
+        ++moleculeRevision;
+        moleculePending = false;
+        currentMolecule = {};
+        molecule3D->setMolecule({{"atoms", QJsonArray{}}, {"bonds", QJsonArray{}}});
+        moleculeInfo->setText(document["empty"].toBool() ? QStringLiteral("画布为空") :
+            document["reaction"].toBool() ? QStringLiteral("反应绘图") :
+            document["error"].toString().toHtmlEscaped());
+        return;
+    }
+    generateMolecule(true);
+}
+void MainWindow::generateMolecule(bool fromEditor) {
+    if (!fromEditor) {
+        moleculeSourceIsDrawing = false;
+        structureDocument = {};
+        structureEditor->loadStructure(moleculeSourceMol.isEmpty() ? smilesInput->text() : moleculeSourceMol);
+    }
     ++moleculeRevision;
     if (moleculeBusy) {
         moleculePending = true;
@@ -1248,9 +1337,10 @@ void MainWindow::generateMolecule() {
     struct Result {
         Molecule molecule;
         QString error;
+        QString warning;
     };
     auto* watcher = new QFutureWatcher<Result>(this);
-    connect(watcher, &QFutureWatcher<Result>::finished, this, [this, watcher, smiles, revision] {
+    connect(watcher, &QFutureWatcher<Result>::finished, this, [this, watcher, smiles, molfile, fromEditor, revision] {
         const auto job = watcher->result();
         moleculeBusy = false;
         if (revision == moleculeRevision && smilesInput->text() == smiles) {
@@ -1260,9 +1350,10 @@ void MainWindow::generateMolecule() {
                 if (!moleculeSourceMol.isEmpty())
                     smilesInput->setText(result.smiles);
                 calculatedSmiles = smilesInput->text();
-                moleculePreview->load(result.svg.toUtf8());
+                moleculePreview->load(fromEditor ? moleculeSvg() : result.svg.toUtf8());
                 moleculePreview->renderer()->setAspectRatioMode(Qt::KeepAspectRatio);
-                molecule3D->setMolecule(result.toJson());
+                molecule3D->setMolecule(result.molfile3D.isEmpty() ?
+                    QJsonObject{{"atoms", QJsonArray{}}, {"bonds", QJsonArray{}}} : result.toJson());
                 const auto heavyAtoms = std::count_if(result.atoms.begin(), result.atoms.end(),
                                                       [](const Atom& a) { return a.number != 1; });
                 moleculeInfo->setText(
@@ -1273,17 +1364,20 @@ void MainWindow::generateMolecule() {
                         .arg(result.exactMass, 0, 'f', 6)
                         .arg(heavyAtoms)
                         .arg(result.bonds.size()));
+                if (!job.warning.isEmpty())
+                    moleculeInfo->setText(moleculeInfo->text() + "<br/>" + job.warning.toHtmlEscaped());
             } else {
                 currentMolecule = {};
-                moleculePreview->load(
-                    QByteArray("<svg xmlns='http://www.w3.org/2000/svg' width='640' height='640'/>"));
+                if (!fromEditor)
+                    moleculePreview->load(
+                        QByteArray("<svg xmlns='http://www.w3.org/2000/svg' width='640' height='640'/>"));
                 molecule3D->setMolecule({{"atoms", QJsonArray{}}, {"bonds", QJsonArray{}}});
                 moleculeInfo->setText(job.error.toHtmlEscaped());
             }
         }
         watcher->deleteLater();
         if (moleculePending)
-            generateMolecule();
+            generateMolecule(moleculeSourceIsDrawing);
     });
     watcher->setFuture(QtConcurrent::run([smiles, molfile] {
         Result result;
@@ -1291,7 +1385,13 @@ void MainWindow::generateMolecule() {
             result.molecule =
                 molfile.isEmpty() ? moleculeFromSmiles(smiles, true) : moleculeFromMolfile(molfile, true);
         } catch (const std::exception& e) {
-            result.error = QString::fromUtf8(e.what());
+            const auto error3D = QString::fromUtf8(e.what());
+            try {
+                result.molecule = molfile.isEmpty() ? moleculeFromSmiles(smiles) : moleculeFromMolfile(molfile);
+                result.warning = QStringLiteral("仅二维结构：") + error3D;
+            } catch (const std::exception& error) {
+                result.error = QString::fromUtf8(error.what());
+            }
         } catch (...) {
             result.error = QStringLiteral("分子计算失败");
         }
@@ -1602,7 +1702,7 @@ QString MainWindow::currentHtml() const {
     if (pages->currentIndex() == 4)
         return "<p>" + elementDetail->text() + "</p>";
     if (pages->currentIndex() == 2 || pages->currentIndex() == 3) {
-        const auto svg = pages->currentIndex() == 2 ? drawing->svgData() : currentMolecule.svg.toUtf8();
+        const auto svg = pages->currentIndex() == 2 ? drawing->svgData() : moleculeSvg();
         return "<html><meta charset='utf-8'><body><img width='800' src='data:image/svg+xml;base64," +
                QString::fromLatin1(svg.toBase64()) + "'/></body></html>";
     }
@@ -1612,6 +1712,13 @@ QString MainWindow::contentError() const {
     const int page = pages->currentIndex();
     if (page == 1 && !reactionValid)
         return QStringLiteral("请先配平当前反应");
+    if (page == 3 && moleculeSourceIsDrawing) {
+        if (structureEditor->isPending()) return QStringLiteral("请稍候，结构正在更新");
+        if (structureDocument["svg"].toString().isEmpty()) return QStringLiteral("结构画布为空");
+        if (moleculeViews->currentIndex() != 1) return {};
+    }
+    if (page == 3 && moleculeViews->currentIndex() == 1 && currentMolecule.molfile3D.isEmpty())
+        return QStringLiteral("该结构尚未生成有效三维构象");
     if (page == 3 &&
         (moleculeBusy || currentMolecule.smiles.isEmpty() || calculatedSmiles != smilesInput->text()))
         return QStringLiteral("请先完成当前分子结构的计算");
@@ -1655,7 +1762,7 @@ void MainWindow::insertIntoOffice() {
         else {
             QSaveFile file(image);
             if (file.open(QIODevice::WriteOnly)) {
-                file.write(currentMolecule.svg.toUtf8());
+                file.write(moleculeSvg());
                 ok = file.commit();
             }
         }
@@ -1731,6 +1838,8 @@ QJsonObject MainWindow::state() const {
             {"masses", masses},
             {"moleculeSourceMol", moleculeSourceMol},
             {"moleculeView", moleculeViews->currentIndex()},
+            {"structureDocument", structureDocument},
+            {"moleculeSourceIsDrawing", moleculeSourceIsDrawing},
             {"drawing", drawing->state()},
             {"snippets", snippets},
             {"page", pages->currentIndex()}};
@@ -1742,8 +1851,12 @@ void MainWindow::restore(const QJsonObject& o) {
     reactionInput->setText(o["reaction"].toString());
     smilesInput->setText(o["smiles"].toString());
     moleculeSourceMol = o["moleculeSourceMol"].toString();
+    structureDocument = o["structureDocument"].toObject();
+    moleculeSourceIsDrawing = o["moleculeSourceIsDrawing"].toBool(!structureDocument["ket"].toString().isEmpty());
+    if (moleculeSourceIsDrawing)
+        structureEditor->loadStructure(structureDocument["ket"].toString());
     if (auto* tabs = findChild<QTabBar*>("moleculeTabs"))
-        tabs->setCurrentIndex(qBound(0, o["moleculeView"].toInt(), 1));
+        tabs->setCurrentIndex(qBound(0, o["moleculeView"].toInt(), 2));
     drawing->restore(o["drawing"].toArray());
     drawing->undoStack.clear();
     if (o["snippets"].isArray())
@@ -1757,7 +1870,7 @@ void MainWindow::restore(const QJsonObject& o) {
             spin->setValue(masses[row].toDouble());
     loading = false;
     dirty = false;
-    generateMolecule();
+    if (!moleculeSourceIsDrawing) generateMolecule();
 }
 void MainWindow::newProject() {
     if (dirty) {
@@ -1776,6 +1889,9 @@ void MainWindow::newProject() {
     reactionInput->setText("H2 + O2 -> H2O");
     smilesInput->setText("CCO");
     moleculeSourceMol.clear();
+    structureDocument = {};
+    moleculeSourceIsDrawing = false;
+    structureEditor->loadStructure("");
     balanceReaction();
     generateMolecule();
     autosave->stop();
@@ -1796,7 +1912,7 @@ void MainWindow::exportFile(const QString& format) {
         report(QStringLiteral("LaTeX 导出适用于当前配平反应"), true);
         return;
     }
-    if ((format == "MOL" || format == "SMILES") && page != 3) {
+    if ((format == "MOL" || format == "SMILES" || format == "KET" || format == "RXN") && page != 3) {
         report(QStringLiteral("请先打开分子结构页面"), true);
         return;
     }
@@ -1844,9 +1960,14 @@ bool MainWindow::writeExport(const QString& format, const QString& path) {
     const bool view3D = page == 3 && moleculeViews->currentIndex() == 1;
     if (format == "LaTeX" && page != 1)
         return false;
-    if ((format == "MOL" || format == "SMILES") && page != 3)
+    if ((format == "MOL" || format == "SMILES" || format == "KET" || format == "RXN") && page != 3)
         return false;
     if (view3D && format != "MOL" && format != "SMILES")
+        return false;
+    if (page == 3 && moleculeSourceIsDrawing &&
+        ((format == "MOL" && structureDocument["mol"].toString().isEmpty()) ||
+         (format == "SMILES" && structureDocument["smiles"].toString().isEmpty()) ||
+         (format == "RXN" && structureDocument["rxn"].toString().isEmpty())))
         return false;
     bool ok = false;
     if (format == "SVG") {
@@ -1855,7 +1976,7 @@ bool MainWindow::writeExport(const QString& format, const QString& path) {
         else if (pages->currentIndex() == 3) {
             QSaveFile f(path);
             if (f.open(QIODevice::WriteOnly)) {
-                f.write(currentMolecule.svg.toUtf8());
+                f.write(moleculeSvg());
                 ok = f.commit();
             }
         } else {
@@ -1865,7 +1986,7 @@ bool MainWindow::writeExport(const QString& format, const QString& path) {
         if (pages->currentIndex() == 2)
             ok = drawing->exportPng(path);
         else if (pages->currentIndex() == 3) {
-            QSvgRenderer renderer(currentMolecule.svg.toUtf8());
+            QSvgRenderer renderer(moleculeSvg());
             renderer.setAspectRatioMode(Qt::KeepAspectRatio);
             QImage image(1280, 960, QImage::Format_ARGB32);
             image.fill(Qt::white);
@@ -1894,7 +2015,7 @@ bool MainWindow::writeExport(const QString& format, const QString& path) {
             writer.setPageSize(QPageSize(QPageSize::A4));
             writer.setResolution(144);
             if (page == 2 || page == 3) {
-                QSvgRenderer renderer(page == 2 ? drawing->svgData() : currentMolecule.svg.toUtf8());
+                QSvgRenderer renderer(page == 2 ? drawing->svgData() : moleculeSvg());
                 renderer.setAspectRatioMode(Qt::KeepAspectRatio);
                 QPainter painter(&writer);
                 if (!painter.isActive() || !renderer.isValid())
@@ -1918,14 +2039,20 @@ bool MainWindow::writeExport(const QString& format, const QString& path) {
             if (format == "LaTeX")
                 data = currentReaction.latex();
             else if (format == "MOL")
-                data = view3D ? currentMolecule.molfile3D : currentMolecule.molfile;
+                data = view3D ? currentMolecule.molfile3D : moleculeSourceIsDrawing ?
+                    structureDocument["mol"].toString() : currentMolecule.molfile;
             else if (format == "SMILES")
-                data = currentMolecule.smiles + "\n";
+                data = (moleculeSourceIsDrawing ? structureDocument["smiles"].toString() : currentMolecule.smiles) + "\n";
+            else if (format == "KET")
+                data = structureDocument["ket"].toString();
+            else if (format == "RXN")
+                data = structureDocument["rxn"].toString();
             else if (format == "HTML")
                 data = currentHtml();
             else
                 return false;
             const auto bytes = data.toUtf8();
+            if (bytes.isEmpty()) return false;
             ok = f.write(bytes) == bytes.size() && f.commit();
         }
     }

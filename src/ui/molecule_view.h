@@ -8,7 +8,7 @@ namespace chem {
 class MoleculeView : public QWidget {
     Q_OBJECT
   public:
-    explicit MoleculeView(QWidget* parent = nullptr);
+    explicit MoleculeView(QWidget* parent = nullptr, const QString& entryPage = "viewer/index.html");
     ~MoleculeView() override;
     void setMolecule(const QJsonObject& molecule);
     void send(const QJsonObject& message);

@@ -16,6 +16,7 @@ class QTimer;
 namespace chem {
 class DrawingView;
 class MoleculeView;
+class StructureEditor;
 class MainWindow : public QMainWindow {
     Q_OBJECT
     friend class WorkspaceTests;
@@ -54,6 +55,9 @@ class MainWindow : public QMainWindow {
     QSvgWidget* moleculePreview = nullptr;
     QStackedWidget* moleculeViews = nullptr;
     MoleculeView* molecule3D = nullptr;
+    StructureEditor* structureEditor = nullptr;
+    QJsonObject structureDocument;
+    bool moleculeSourceIsDrawing = false;
     QComboBox* moleculeMode = nullptr;
     QString moleculeImagePath;
     QString moleculeImageFormat;
@@ -82,7 +86,10 @@ class MainWindow : public QMainWindow {
     void formatEditor();
     void balanceReaction();
     void updateStoichiometry();
-    void generateMolecule();
+    void generateMolecule(bool fromEditor = false);
+    void applyStructureDocument(const QJsonObject& document, bool userEdit);
+    void loadEditableStructure(const QString& data);
+    QByteArray moleculeSvg() const;
     void refreshLibrary();
     void editSnippet(bool create);
     void markDirty();

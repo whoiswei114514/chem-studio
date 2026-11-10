@@ -1,5 +1,6 @@
 #include "ui/main_window.h"
 #include "ui/molecule_view.h"
+#include "ui/structure_editor.h"
 #include "ui/drawing.h"
 #include "core/document.h"
 #include <QDir>
@@ -171,6 +172,60 @@ class WorkspaceTests : public QObject {
         window->drawing->restore(previousDrawing);
         window->drawing->undoStack.clear();
         source->setCurrentIndex(source->findData(previousSource));
+    }
+    void structureDrawingWorkflow() {
+        window->showPage(3);
+        auto* tabs = window->findChild<QTabBar*>("moleculeTabs");
+        QVERIFY(tabs);
+        tabs->setCurrentIndex(2);
+        QVERIFY(window->structureEditor->isVisible());
+        window->loadEditableStructure("C[C@H](O)C(=O)O");
+        QTRY_VERIFY_WITH_TIMEOUT(!window->structureEditor->isPending() && !window->moleculeBusy &&
+            window->moleculeSourceIsDrawing && window->currentMolecule.formula == "C3H6O3", 30000);
+        QVERIFY(window->structureDocument["smiles"].toString().contains('@'));
+        const auto saved = window->state();
+        const auto ket = window->structureDocument["ket"].toString();
+        const auto dir = temporary.path();
+        for (const auto& format : QStringList{"MOL", "SMILES", "KET", "SVG", "PNG", "PDF", "HTML"})
+            QVERIFY2(window->writeExport(format, QDir(dir).filePath("drawn." + format.toLower())), qPrintable(format));
+        QVERIFY(!window->writeExport("RXN", QDir(dir).filePath("invalid.rxn")));
+        QFile mol(QDir(dir).filePath("drawn.mol"));
+        QVERIFY(mol.open(QIODevice::ReadOnly));
+        QCOMPARE(moleculeFromMolfile(QString::fromUtf8(mol.readAll())).formula, QString("C3H6O3"));
+        QFile svg(QDir(dir).filePath("drawn.svg"));
+        QVERIFY(svg.open(QIODevice::ReadOnly));
+        QVERIFY(QSvgRenderer(svg.readAll()).isValid());
+        QVERIFY(window->currentHtml().contains("data:image/svg+xml;base64"));
+        const auto project = QDir(dir).filePath("drawn.chem");
+        QVERIFY(saveProject(project, saved));
+        window->loadEditableStructure("CCO");
+        QTRY_VERIFY_WITH_TIMEOUT(!window->structureEditor->isPending() && !window->moleculeBusy &&
+            window->currentMolecule.formula == "C2H6O", 15000);
+        window->restore(loadProject(project));
+        QTRY_VERIFY_WITH_TIMEOUT(!window->structureEditor->isPending() && !window->moleculeBusy &&
+            window->currentMolecule.formula == "C3H6O3", 15000);
+        QCOMPARE(tabs->currentIndex(), 2);
+        QCOMPARE(QJsonDocument::fromJson(window->structureDocument["ket"].toString().toUtf8()).object()["mol0"].toObject()["bonds"],
+                 QJsonDocument::fromJson(ket.toUtf8()).object()["mol0"].toObject()["bonds"]);
+        tabs->setCurrentIndex(1);
+        QVERIFY(window->contentError().isEmpty());
+        tabs->setCurrentIndex(2);
+        window->structureEditor->send({{"type", "clear-structure"}});
+        QTRY_VERIFY_WITH_TIMEOUT(window->structureDocument["empty"].toBool(), 15000);
+        QVERIFY(!window->contentError().isEmpty());
+        QVERIFY(!window->writeExport("SVG", QDir(dir).filePath("empty.svg")));
+        window->smilesInput->setText("CCO");
+        window->moleculeSourceMol.clear();
+        window->generateMolecule();
+        QTRY_VERIFY_WITH_TIMEOUT(!window->moleculeBusy && window->currentMolecule.formula == "C2H6O", 15000);
+        const auto directory = qEnvironmentVariable("CHEM_STRUCTURE_RESULTS");
+        if (!directory.isEmpty()) {
+            window->resize(1440, 940);
+            QTest::qWait(300);
+            const auto p = window->mapToGlobal(QPoint());
+            QVERIFY(window->screen()->grabWindow(0, p.x(), p.y(), window->width(), window->height())
+                .save(QDir(directory).filePath("workspace-editor.png")));
+        }
     }
     void projectRoundtrip() {
         window->reactionInput->setText("C2H5OH + O2 -> CO2 + H2O");

@@ -117,6 +117,7 @@ struct MoleculeView::Impl {
     bool initializedCom = false;
     QLabel* placeholder = nullptr;
     QString url;
+    QString entryPage;
     ~Impl() {
         if (controller)
             controller->Close();
@@ -129,11 +130,13 @@ struct MoleculeView::Impl {
     }
 };
 
-MoleculeView::MoleculeView(QWidget* parent) : QWidget(parent), d(std::make_unique<Impl>()) {
+MoleculeView::MoleculeView(QWidget* parent, const QString& entryPage) : QWidget(parent), d(std::make_unique<Impl>()) {
+    d->entryPage = entryPage;
     setAttribute(Qt::WA_NativeWindow);
     setMinimumSize(300, 250);
     auto* layout = new QVBoxLayout(this);
-    d->placeholder = new QLabel(QStringLiteral("正在打开三维视图…"));
+    d->placeholder = new QLabel(entryPage.startsWith("structure-editor/") ?
+        QStringLiteral("正在打开结构编辑器…") : QStringLiteral("正在打开三维视图…"));
     d->placeholder->setAlignment(Qt::AlignCenter);
     d->placeholder->setWordWrap(true);
     layout->addWidget(d->placeholder);
@@ -209,8 +212,9 @@ void MoleculeView::initialize() {
         emit failure(QStringLiteral("缺少 WebView2Loader.dll，请重新构建程序"));
         return;
     }
-    d->url = QUrl::fromLocalFile(QDir(QCoreApplication::applicationDirPath()).filePath("viewer/index.html"))
-                 .toString();
+    d->url = d->entryPage.startsWith("structure-editor/") ?
+        "https://chem-studio.local/" + d->entryPage :
+        QUrl::fromLocalFile(QDir(QCoreApplication::applicationDirPath()).filePath(d->entryPage)).toString();
     const auto profile = QDir(applicationDataDirectory()).filePath("webview2");
     QDir().mkpath(profile);
     QPointer<MoleculeView> owner(this);
@@ -245,6 +249,21 @@ void MoleculeView::initialize() {
                     if (!d.web) {
                         emit owner->failure(QStringLiteral("无法访问三维画布"));
                         return S_OK;
+                    }
+                    if (d.entryPage.startsWith("structure-editor/")) {
+                        ICoreWebView2_3* mapping = nullptr;
+                        GUID iid{};
+                        CLSIDFromString(L"{a0d6df20-3b92-416d-aa0c-437a9c727857}", &iid);
+                        const auto query = d.web->QueryInterface(iid, reinterpret_cast<void**>(&mapping));
+                        const auto folder = QCoreApplication::applicationDirPath().toStdWString();
+                        const auto result = SUCCEEDED(query) && mapping ?
+                            mapping->SetVirtualHostNameToFolderMapping(L"chem-studio.local", folder.c_str(),
+                                COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY_CORS) : E_NOINTERFACE;
+                        if (mapping) mapping->Release();
+                        if (FAILED(result)) {
+                            emit owner->failure(QStringLiteral("无法建立离线结构编辑器资源映射"));
+                            return S_OK;
+                        }
                     }
                     ICoreWebView2Settings* settings = nullptr;
                     if (SUCCEEDED(d.web->get_Settings(&settings))) {

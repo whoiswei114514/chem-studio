@@ -10,6 +10,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CHEM_DEPS_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/deps" CACHE PATH "External development dependencies")
 set(CHEM_NODE_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/node_modules" CACHE PATH "Node dependency directory")
+set(CHEM_EDITOR_MODULES "${CHEM_NODE_MODULES}" CACHE PATH "Chemical editor Node dependency directory")
 set(CHEM_WEBVIEW2_ROOT "${CHEM_DEPS_ROOT}/webview2" CACHE PATH "Extracted WebView2 SDK")
 option(CHEM_ENABLE_ASSET_TESTS "Run tests requiring locally licensed artwork packs" OFF)
 option(CHEM_ENABLE_DESKTOP_TESTS "Run Windows desktop tests (moves the mouse)" OFF)
@@ -90,6 +91,7 @@ add_executable(ChemStudio WIN32
   src/ui/drawing.cpp src/ui/drawing.h
   src/ui/apparatus_library.cpp src/ui/apparatus_library.h
   src/ui/molecule_view.cpp src/ui/molecule_view.h
+  src/ui/structure_editor.cpp src/ui/structure_editor.h
   "${CMAKE_CURRENT_BINARY_DIR}/icons.qrc"
 )
 find_program(NODE_EXECUTABLE node REQUIRED)
@@ -97,7 +99,13 @@ add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/viewer/viewer.js" "${CMAK
   COMMAND "${NODE_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/scripts/build-viewer.cjs" "${CHEM_NODE_MODULES}" "${CMAKE_CURRENT_BINARY_DIR}/viewer"
   DEPENDS src/viewer/viewer.js src/viewer/index.html scripts/build-viewer.cjs VERBATIM)
 add_custom_target(chem_viewer_assets DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/viewer/viewer.js" "${CMAKE_CURRENT_BINARY_DIR}/viewer/index.html")
-add_dependencies(ChemStudio chem_viewer_assets)
+add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/structure-editor/index.html"
+  COMMAND "${NODE_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/scripts/build-structure-editor.cjs"
+    "${CHEM_EDITOR_MODULES}" "${CMAKE_CURRENT_BINARY_DIR}/structure-editor"
+  DEPENDS scripts/build-structure-editor.cjs src/structure-editor/editor.jsx
+    src/structure-editor/editor.css src/structure-editor/index.html VERBATIM)
+add_custom_target(chem_structure_assets DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/structure-editor/index.html")
+add_dependencies(ChemStudio chem_viewer_assets chem_structure_assets)
 target_include_directories(ChemStudio SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
 target_compile_definitions(ChemStudio PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
 configure_file("${CHEM_WEBVIEW2_ROOT}/build/native/x64/WebView2Loader.dll" "${CMAKE_CURRENT_BINARY_DIR}/WebView2Loader.dll" COPYONLY)
@@ -165,23 +173,32 @@ target_link_libraries(chem_viewer_tests PRIVATE chem_core Qt6::Widgets Qt6::Test
 target_include_directories(chem_viewer_tests SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
 target_compile_definitions(chem_viewer_tests PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN CHEM_DEPS_ROOT="${CHEM_DEPS_ROOT}")
 add_dependencies(chem_viewer_tests chem_viewer_assets)
+add_executable(chem_structure_tests tests/structure_editor_tests.cpp src/ui/structure_editor.cpp
+  src/ui/structure_editor.h src/ui/molecule_view.cpp src/ui/molecule_view.h)
+target_link_libraries(chem_structure_tests PRIVATE chem_core Qt6::Widgets Qt6::Test ole32 uuid)
+target_include_directories(chem_structure_tests SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
+target_compile_definitions(chem_structure_tests PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
+add_dependencies(chem_structure_tests chem_structure_assets)
 if(CHEM_ENABLE_DESKTOP_TESTS)
+  add_test(NAME structure_editor COMMAND chem_structure_tests -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/structure_editor.txt,txt")
+  set_tests_properties(structure_editor PROPERTIES TIMEOUT 120 RESOURCE_LOCK desktop_input)
   add_test(NAME native_viewer COMMAND chem_viewer_tests -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/native_viewer.txt,txt")
   set_tests_properties(native_viewer PROPERTIES TIMEOUT 50 RESOURCE_LOCK desktop_input)
 endif()
 add_executable(chem_workspace_tests tests/workspace_tests.cpp src/ui/main_window.cpp src/ui/main_window.h
   src/ui/drawing.cpp src/ui/drawing.h src/ui/apparatus_library.cpp src/ui/apparatus_library.h
-  src/ui/molecule_view.cpp src/ui/molecule_view.h "${CMAKE_CURRENT_BINARY_DIR}/icons.qrc")
+  src/ui/molecule_view.cpp src/ui/molecule_view.h src/ui/structure_editor.cpp src/ui/structure_editor.h
+  "${CMAKE_CURRENT_BINARY_DIR}/icons.qrc")
 target_link_libraries(chem_workspace_tests PRIVATE chem_office Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent Qt6::Test)
 target_include_directories(chem_workspace_tests SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
 target_compile_definitions(chem_workspace_tests PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN CHEM_VERSION="${PROJECT_VERSION}" CHEM_DEPS_ROOT="${CHEM_DEPS_ROOT}")
-add_dependencies(chem_workspace_tests chem_viewer_assets)
+add_dependencies(chem_workspace_tests chem_viewer_assets chem_structure_assets)
 if(CHEM_ENABLE_DESKTOP_TESTS)
   if(CHEM_ENABLE_ASSET_TESTS)
     add_test(NAME workspace COMMAND chem_workspace_tests -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
   else()
     add_test(NAME workspace COMMAND chem_workspace_tests projectRoundtrip pageExports threeDimensionalUi
-      publicSourcePreview biochemistryCatalog invalidInput -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
+      publicSourcePreview biochemistryCatalog structureDrawingWorkflow invalidInput -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
   endif()
   set_tests_properties(workspace PROPERTIES TIMEOUT 120 ENVIRONMENT "QT_QPA_PLATFORM=windows" RESOURCE_LOCK desktop_input)
 endif()
