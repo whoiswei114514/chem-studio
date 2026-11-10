@@ -20,6 +20,7 @@
 
 static void initializeArtworkResource() {
     Q_INIT_RESOURCE(apparatus);
+    Q_INIT_RESOURCE(biochemistry);
 }
 
 namespace chem {
@@ -929,9 +930,7 @@ ApparatusGeometry originalGeometry(const QDir& directory, const QJsonObject& ent
     }
     return geometry;
 }
-QVector<ApparatusArtwork> originalLibrary() {
-    initializeArtworkResource();
-    const QDir directory(qEnvironmentVariable("CHEM_STUDIO_ART_DIR", ":/apparatus"));
+QVector<ApparatusArtwork> manifestLibrary(const QDir& directory) {
     const auto manifest = readJson(directory.filePath("manifest.json"));
     QVector<ApparatusArtwork> result;
     if (manifest["format"] != "chem-studio-art")
@@ -1150,7 +1149,11 @@ QVector<ApparatusArtwork> legacyLibrary() {
 }
 } // namespace
 const QVector<ApparatusArtwork>& apparatusArtwork() {
-    static const auto library = originalLibrary() + chemixLibrary() + legacyLibrary();
+    static const auto library = [] {
+        initializeArtworkResource();
+        return manifestLibrary(QDir(qEnvironmentVariable("CHEM_STUDIO_ART_DIR", ":/apparatus"))) +
+            manifestLibrary(QDir(":/biochemistry")) + chemixLibrary() + legacyLibrary();
+    }();
     return library;
 }
 const ApparatusArtwork* findArtwork(const QString& id) {

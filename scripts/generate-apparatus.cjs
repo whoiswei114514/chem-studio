@@ -1,5 +1,6 @@
 // Chem Studio schematic artwork. Coordinates and paths are authored here.
 // This generator has no image input and uses no downloaded artwork.
+// The separately reviewed assets/biochemistry pack is not generated or changed here.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');

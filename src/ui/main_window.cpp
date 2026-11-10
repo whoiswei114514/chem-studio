@@ -811,6 +811,7 @@ QWidget* MainWindow::drawingPage() {
     auto* catalogSource = new QComboBox;
     catalogSource->setObjectName("apparatusSource");
     catalogSource->addItem(QStringLiteral("实验器材"), "studio");
+    catalogSource->addItem(QStringLiteral("生化器材"), "bio");
     const auto definitions = apparatusDefinitions();
     for (const auto& source : QStringList{"chemix", "legacy"})
         if (std::any_of(definitions.begin(), definitions.end(), [&source](const auto& d) {
@@ -834,7 +835,7 @@ QWidget* MainWindow::drawingPage() {
     palette->setWordWrap(true);
     const QStringList basics{"arrow", "line", "label", "rectangle", "ellipse"};
     for (const auto& d : definitions) {
-        if (!d.id.startsWith("studio:") && !d.id.startsWith("legacy:") && !d.id.startsWith("chemix:") && !basics.contains(d.id))
+        if (!d.id.startsWith("studio:") && !d.id.startsWith("bio:") && !d.id.startsWith("legacy:") && !d.id.startsWith("chemix:") && !basics.contains(d.id))
             continue;
         auto* item = new QListWidgetItem(d.name, palette);
         item->setData(Qt::UserRole, d.id);
@@ -863,6 +864,7 @@ QWidget* MainWindow::drawingPage() {
             auto* item = palette->item(row);
             const auto id = item->data(Qt::UserRole).toString();
             const auto category = id.startsWith("studio:") ? QString("studio")
+                                  : id.startsWith("bio:") ? QString("bio")
                                   : id.startsWith("legacy:") ? QString("legacy")
                                   : id.startsWith("chemix:") ? QString("chemix")
                                   : basics.contains(id)    ? QString("shapes")

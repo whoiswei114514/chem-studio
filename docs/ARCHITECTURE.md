@@ -7,6 +7,7 @@
 | `src/office` | Windows Office COM 集成 |
 | `src/viewer` | Three.js 三维分子显示 |
 | `assets/apparatus` | 221 项器材的 SVG、变体与连接口清单 |
+| `assets/biochemistry` | 34 项经审阅的生化 SVG、分类、连接口与逐项许可来源 |
 | `scripts` | 构建、启动、SDK 准备和器材绘图脚本 |
 | `tests` | QtTest 回归与桌面集成检查 |
 
@@ -14,7 +15,7 @@
 
 ## 器材图
 
-内置器材由 `scripts/generate-apparatus.cjs` 定义，使用几何路径、圆、矩形和文字等 SVG 元素。绘图脚本没有图片输入，不运行位图描摹。`manifest.json` 保存名称、分类、尺寸、校验和以及连接口。
+基础器材由 `scripts/generate-apparatus.cjs` 定义，使用几何路径、圆、矩形和文字等 SVG 元素。基础绘图脚本没有图片输入，不运行位图描摹。`manifest.json` 保存名称、分类、尺寸、校验和以及连接口。生化素材以独立的可编辑 SVG 源文件保存在 `assets/biochemistry`，基础生成脚本不修改该目录。
 
 ```powershell
 node scripts/generate-apparatus.cjs
@@ -25,6 +26,8 @@ node scripts/generate-apparatus.cjs
 坐标以 SVG 的 `viewBox` 为基准。连接口的 `x/y` 为本地图形坐标，`dx/dy` 为朝外方向，`diameter` 为接口宽度。`segment` 定义允许插入的直线段，`edge` 定义开口两侧，`target` 定义内部目标位置。加载时统一换算成画布中的相对坐标。
 
 使用新的 `studio:` ID 添加器材，避免复用其他器材 ID。新增变体时保证各变体的端口与形状对应。仅有装饰意义的符号可以没有机械连接口。
+
+生化素材使用独立的 `bio:` ID 和 Qt 资源前缀 `/biochemistry`，在“生化器材”来源下检索。清单的 `width/height` 为逻辑绘图尺寸，可以与 SVG 原始尺寸同比例缩放；端口位置、宽度、深度和线段需同步缩放，加载时再归一化。第三方图必须保留清单中的作者、许可、来源、原始 Git blob 哈希和修改说明。
 
 ## 开发检查
 

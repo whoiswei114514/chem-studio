@@ -1,0 +1,1129 @@
+{
+  "format": "chem-studio-art",
+  "version": 1,
+  "license": "per-asset",
+  "approvedDate": "2026-11-11",
+  "assets": [
+    {
+      "id": "bio:graduated-centrifuge-tube",
+      "name": "刻度离心管",
+      "category": "取样与离心",
+      "search": "graduated centrifuge tube 刻度 玻璃 离心管",
+      "svg": "graduated-centrifuge-tube.svg",
+      "sha256": "5734ae0a25198f10e514a64c747c72f57f5993533a1b6df7e0a19a70bfe02cc9",
+      "width": 84,
+      "height": 244,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "带塞玻璃离心管，圆底/锥底过渡及刻度；与普通试管区分。",
+      "lecturePrintedPages": [
+        9,
+        24,
+        59,
+        61
+      ],
+      "lecturePdfPages": [
+        10,
+        25,
+        60,
+        62
+      ]
+    },
+    {
+      "id": "bio:glass-pipette-rack",
+      "name": "玻璃吸量管架",
+      "category": "取样与离心",
+      "search": "glass pipette rack 吸量管 移液管 架",
+      "svg": "glass-pipette-rack.svg",
+      "sha256": "63448229ea050df51c34e938c1bd9d6504603847938326a22d1ac4202a9d571c",
+      "width": 240,
+      "height": 148,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "支承长玻璃移液管的水平架，不用微量移液器悬挂架替代。",
+      "lecturePrintedPages": [
+        6,
+        11
+      ],
+      "lecturePdfPages": [
+        7,
+        12
+      ]
+    },
+    {
+      "id": "bio:buchner-funnel",
+      "name": "布氏漏斗",
+      "category": "分离与纯化",
+      "search": "buchner funnel 布氏 抽滤 漏斗 Buchner",
+      "svg": "buchner-funnel.svg",
+      "sha256": "809dec69961f0d9cc6bed782fef02066983259abb0f947a71ecb895920b57396",
+      "width": 122,
+      "height": 218,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 61,
+          "y": 42,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 70,
+          "depth": 35,
+          "target": [
+            61,
+            93
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 61,
+          "y": 196,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 28,
+          "depth": 8,
+          "segment": [
+            61,
+            137,
+            61,
+            191
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "本机 PNG 版 legacy:asset-0603 已有；开源 SVG 版补齐。多孔滤板以虚线剖示，位于杯底而非杯口。",
+      "lecturePrintedPages": [
+        21,
+        51
+      ],
+      "lecturePdfPages": [
+        22,
+        52
+      ]
+    },
+    {
+      "id": "bio:analytical-balance",
+      "name": "带防风罩分析天平",
+      "category": "分析与计量",
+      "search": "analytical balance 分析天平 防风罩 称量",
+      "svg": "analytical-balance.svg",
+      "sha256": "b3da60af1ce504fb860cb6212231a0ad92ad0b1574238bc294b5ac80f5fdc369",
+      "width": 224,
+      "height": 230,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "防风罩、滑动玻璃门、称量盘与读数面板；现有电子天平没有防风罩。",
+      "lecturePrintedPages": [
+        59,
+        61
+      ],
+      "lecturePdfPages": [
+        60,
+        62
+      ]
+    },
+    {
+      "id": "bio:two-pan-balance",
+      "name": "托盘天平",
+      "category": "分析与计量",
+      "search": "two pan balance 托盘天平 双盘 称量",
+      "svg": "two-pan-balance.svg",
+      "sha256": "29d9bbb3cab60fb322ad5c4f9d86c000c58044cd52b16527f3f788a41da1b0f5",
+      "width": 246,
+      "height": 178,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "双托盘、水平横梁与中央指针；本机 PNG 版 legacy:asset-0628 已有。",
+      "lecturePrintedPages": [
+        49,
+        59
+      ],
+      "lecturePdfPages": [
+        50,
+        60
+      ]
+    },
+    {
+      "id": "bio:glass-atomizer",
+      "name": "实验用玻璃喷雾器",
+      "category": "实验小工具",
+      "search": "glass atomizer 喷雾器 气囊 薄层 色谱 TLC",
+      "svg": "glass-atomizer.svg",
+      "sha256": "2e2fa2ac070454c2a45f535c39861fbadc97012050c6fa036e6f78dc8045db98",
+      "width": 300,
+      "height": 300,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "按厂家球囊式薄层色谱喷雾器外形重画：锥形储液瓶、磨口喷头、开放喷口、后部进气接管和橡胶气囊。",
+      "lecturePrintedPages": [
+        13,
+        14
+      ],
+      "lecturePdfPages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "bio:hair-dryer",
+      "name": "电吹风",
+      "category": "实验小工具",
+      "search": "hair dryer 吹风机 电吹风 干燥",
+      "svg": "hair-dryer.svg",
+      "sha256": "78f7ac131bd8ca2d994a3a2563d8cda9f713b9319475ef5590965c3baf60e4dd",
+      "width": 292,
+      "height": 300,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "按常规吹风机外形重画连续机壳：左侧开放出风口、右后部进风网、后置长握柄、双档开关和底部出线。",
+      "lecturePrintedPages": [
+        13,
+        14
+      ],
+      "lecturePdfPages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "bio:microliter-syringe",
+      "name": "微量进样器",
+      "category": "取样与离心",
+      "search": "microliter syringe 微量进样器 注射器 微升",
+      "svg": "microliter-syringe.svg",
+      "sha256": "f95f89866c571c4151bc527dc9c7f288482a33b196980737671df43659e5144f",
+      "width": 107.14285714285714,
+      "height": 300,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "重画金属拇指盘、细推杆、玻璃刻度筒和锁针接头；刻度由上部 5 至下部 0，单位合并为 5 µL。",
+      "lecturePrintedPages": [
+        45,
+        47
+      ],
+      "lecturePdfPages": [
+        46,
+        48
+      ]
+    },
+    {
+      "id": "bio:scalpel",
+      "name": "解剖刀",
+      "category": "实验小工具",
+      "search": "scalpel 解剖刀 手术刀",
+      "svg": "scalpel.svg",
+      "sha256": "99d7e63907413dca114ff9bc92b5abefc6de69be2067ec038fbbdc12d3874311",
+      "width": 82,
+      "height": 243,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "可辨认的弧形刀刃、安装柄及防滑刻纹；是解剖刀，不是普通厨刀。",
+      "lecturePrintedPages": [
+        49
+      ],
+      "lecturePdfPages": [
+        50
+      ]
+    },
+    {
+      "id": "bio:porcelain-staining-tray",
+      "name": "白瓷盘 / 染色脱色槽",
+      "category": "电泳与成像",
+      "search": "porcelain staining tray 白瓷盘 染色 脱色 凝胶 膜",
+      "svg": "porcelain-staining-tray.svg",
+      "sha256": "384b526d0ac8183b6c0c347e63b7cbe105cfce1366f995a363f182fa07a5c10d",
+      "width": 245,
+      "height": 146,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "无孔浅盘，适合放整片凝胶/膜；与现有凹孔点滴板和深水槽区分。",
+      "lecturePrintedPages": [
+        45,
+        47
+      ],
+      "lecturePdfPages": [
+        46,
+        48
+      ]
+    },
+    {
+      "id": "bio:dialysis-bag",
+      "name": "透析袋",
+      "category": "分离与纯化",
+      "search": "dialysis bag 透析袋 半透膜 透析",
+      "svg": "dialysis-bag.svg",
+      "sha256": "c2316a8cd050f59031637cfb62cd026c0fb39ef580996bc1783e6236ef258eb8",
+      "width": 116,
+      "height": 232,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "两端夹闭的柔性半透膜袋；不将它画成普通硬质试管。",
+      "lecturePrintedPages": [
+        49,
+        51
+      ],
+      "lecturePdfPages": [
+        50,
+        52
+      ]
+    },
+    {
+      "id": "bio:tissue-homogenizer",
+      "name": "高速组织捣碎机",
+      "category": "生化设备",
+      "search": "tissue homogenizer 组织捣碎机 匀浆机",
+      "svg": "tissue-homogenizer.svg",
+      "sha256": "c386487083bbe813b89dc42c58e28ea2f466457a0b87f43884799268b6738684",
+      "width": 184,
+      "height": 248,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "采用讲义相符的杯式组织捣碎机：杯盖、玻璃杯、底部刀组及驱动底座。",
+      "lecturePrintedPages": [
+        24,
+        49
+      ],
+      "lecturePdfPages": [
+        25,
+        50
+      ]
+    },
+    {
+      "id": "bio:gel-chromatography-column",
+      "name": "葡聚糖 / CMC 层析柱",
+      "category": "分离与纯化",
+      "search": "gel chromatography column 层析柱 葡聚糖 CMC Sephadex 色谱柱",
+      "svg": "gel-chromatography-column.svg",
+      "sha256": "d1e69a04c7ca80b3a6edf1a433328080e56220eb2e37f7a2034705604d6e772d",
+      "width": 104,
+      "height": 294,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 51,
+          "y": 17,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 44,
+          "depth": 24,
+          "target": [
+            51,
+            209
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 51,
+          "y": 273,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 16,
+          "depth": 8,
+          "segment": [
+            51,
+            263,
+            51,
+            270
+          ]
+        },
+        {
+          "id": "grip",
+          "x": 51,
+          "y": 110,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0,
+          "segment": [
+            51,
+            40,
+            51,
+            210
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "独立玻璃柱、支承滤板、底部活塞与出口；默认空柱，不把 HPLC 整机或 SPE 小柱冒充层析柱。",
+      "lecturePrintedPages": [
+        51,
+        58,
+        59,
+        60
+      ],
+      "lecturePdfPages": [
+        52,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "id": "bio:membrane-electrophoresis-tank",
+      "name": "膜 / 干胶水平电泳槽",
+      "category": "电泳与成像",
+      "search": "membrane electrophoresis tank 醋酸纤维膜 干胶 滤纸桥 水平 电泳槽",
+      "svg": "membrane-electrophoresis-tank.svg",
+      "sha256": "73def07e40f08bdfa5956ce3ab6ec31251fae24075cb9ea0aa154df8a1d68404",
+      "width": 282,
+      "height": 186,
+      "ports": [
+        {
+          "id": "negative",
+          "x": 49,
+          "y": 55,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive",
+          "x": 235,
+          "y": 49,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "两端缓冲液槽，中间支承板及滤纸桥；适配讲义的醋酸纤维膜和水平干胶电泳，非垂直板电泳。",
+      "lecturePrintedPages": [
+        16,
+        17,
+        45,
+        47
+      ],
+      "lecturePdfPages": [
+        17,
+        18,
+        46,
+        48
+      ]
+    },
+    {
+      "id": "bio:disc-electrophoresis-tank",
+      "name": "圆盘 / 管式电泳槽",
+      "category": "电泳与成像",
+      "search": "disc electrophoresis tank 圆盘 管式 玻璃管 电泳槽",
+      "svg": "disc-electrophoresis-tank.svg",
+      "sha256": "e05dcfb815afc7dbfdd8c1fa6fbb64d0c2562014c54b58b319cf479590dfb253",
+      "width": 294.4099378881987,
+      "height": 300,
+      "ports": [
+        {
+          "id": "negative",
+          "x": 96.8944099378882,
+          "y": 35.40372670807454,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive",
+          "x": 249.68944099378882,
+          "y": 211.49068322981367,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "重画同轴双槽和承重支架；玻璃管穿过上槽底部密封圈，上口位于上槽内，下口伸入下槽，示意上负下正。",
+      "lecturePrintedPages": [
+        54,
+        55
+      ],
+      "lecturePdfPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "bio:agarose-electrophoresis-tank",
+      "name": "琼脂糖水平电泳槽",
+      "category": "电泳与成像",
+      "search": "agarose electrophoresis tank 琼脂糖 水平 电泳槽 DNA",
+      "svg": "agarose-electrophoresis-tank.svg",
+      "sha256": "5705f796c82fe3f4a84f3e75fc928158a8c759e34d4375f59b122070a7034ef7",
+      "width": 278,
+      "height": 174,
+      "ports": [
+        {
+          "id": "negative",
+          "x": 49,
+          "y": 43,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive",
+          "x": 228,
+          "y": 41,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "浸没式凝胶托盘、样品孔以及两端电极；与滤纸桥式膜电泳槽区分，默认不带实验条带。",
+      "lecturePrintedPages": [
+        64,
+        65,
+        68
+      ],
+      "lecturePdfPages": [
+        65,
+        66,
+        69
+      ]
+    },
+    {
+      "id": "bio:incubator-shaker",
+      "name": "恒温摇床",
+      "category": "生化设备",
+      "search": "incubator shaker 恒温摇床 振荡培养",
+      "svg": "incubator-shaker.svg",
+      "sha256": "77b52e4bafb01e832c94dd5f75a548e6a357170e798b05038cf262b3555f8217",
+      "width": 238,
+      "height": 240,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "温控箱体、观察窗和装有锥形瓶夹的振荡平台；不以普通加热箱或外置振荡器替代。",
+      "lecturePrintedPages": [
+        68
+      ],
+      "lecturePdfPages": [
+        69
+      ]
+    },
+    {
+      "id": "bio:microwave-oven",
+      "name": "微波炉",
+      "category": "生化设备",
+      "search": "microwave oven 微波炉 加热",
+      "svg": "microwave-oven.svg",
+      "sha256": "5bfd27b493ab77e020120e3cc1fec18b8f575814a3e96799da581cd02f6d4df9",
+      "width": 254,
+      "height": 183,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "带屏蔽网观察窗、门把手和时间面板；与现有烘箱区分。",
+      "lecturePrintedPages": [
+        64,
+        65,
+        68
+      ],
+      "lecturePdfPages": [
+        65,
+        66,
+        69
+      ]
+    },
+    {
+      "id": "bio:gel-documentation-system",
+      "name": "凝胶成像仪",
+      "category": "电泳与成像",
+      "search": "gel documentation system 凝胶成像仪 透照 拍摄",
+      "svg": "gel-documentation-system.svg",
+      "sha256": "c05fec46d356c5919d2e915f75d94829a16b7061bc30331f3b47541c0fba6746",
+      "width": 226,
+      "height": 246,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "遮光箱剖视示意：顶部相机向下拍摄、底部透照平台、凝胶在平台上；非普通相机。",
+      "lecturePrintedPages": [
+        64,
+        65,
+        68
+      ],
+      "lecturePdfPages": [
+        65,
+        66,
+        69
+      ]
+    },
+    {
+      "id": "bio:electrophoresis-power-supply",
+      "name": "电泳专用稳压电源",
+      "category": "电泳与成像",
+      "search": "electrophoresis power supply 电泳电源 稳压 直流 输出",
+      "svg": "electrophoresis-power-supply.svg",
+      "sha256": "d8b5ff1eeb8f8180f3b9b65be267da564fec6bb649297c05cdaeed69b5afd405",
+      "width": 235,
+      "height": 176,
+      "ports": [
+        {
+          "id": "negative-1",
+          "x": 45,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive-1",
+          "x": 64,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative-2",
+          "x": 95,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive-2",
+          "x": 114,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative-3",
+          "x": 145,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive-3",
+          "x": 164,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "已有通用直流电源；此为专用面板和成对输出插孔的形态补充，不代表软件电路计算能力。",
+      "lecturePrintedPages": [
+        17,
+        45,
+        54,
+        64,
+        65,
+        68
+      ],
+      "lecturePdfPages": [
+        18,
+        46,
+        55,
+        65,
+        66,
+        69
+      ]
+    },
+    {
+      "id": "bio:benchtop-ph-meter",
+      "name": "台式 pH 计",
+      "category": "分析与计量",
+      "search": "benchtop ph meter pH计 酸度计 电极",
+      "svg": "benchtop-ph-meter.svg",
+      "sha256": "67acfe012142f0195a2282a6656d87df2ac3483ce18b5b281eeb1d049e236a6f",
+      "width": 268,
+      "height": 202,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "包含读数主机、电极支架、玻璃电极与连接线；已有 pH 探头只是部件。",
+      "lecturePrintedPages": [
+        54
+      ],
+      "lecturePdfPages": [
+        55
+      ]
+    },
+    {
+      "id": "bio:nucleic-acid-spin-column",
+      "name": "核酸吸附柱 / 收集管",
+      "category": "分离与纯化",
+      "search": "nucleic acid spin column 核酸吸附柱 收集管 纯化 DNA RNA",
+      "svg": "nucleic-acid-spin-column.svg",
+      "sha256": "578e4c6e1131191d08bfea60deaa77926c03733f58595379ee55f13b842a9f24",
+      "width": 114,
+      "height": 231,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "吸附柱嵌入收集管，膜片在柱内，柱出口悬空不接触收集管底；非 SPE 注射筒。",
+      "lecturePrintedPages": [
+        64,
+        65,
+        68,
+        69
+      ],
+      "lecturePdfPages": [
+        65,
+        66,
+        69,
+        70
+      ]
+    },
+    {
+      "id": "bio:gel-casting-tray",
+      "name": "制胶托盘与梳子",
+      "category": "电泳与成像",
+      "search": "gel casting tray 制胶托盘 梳子 琼脂糖",
+      "svg": "gel-casting-tray.svg",
+      "sha256": "f4626f8b25fe9f92aa76f0bed49e27663e1ffeab4cb347184d7f4b2d36c960fc",
+      "width": 234,
+      "height": 173,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "制胶梳齿朝下、插入胶层形成加样孔；托盘与电泳槽为不同部件。",
+      "lecturePrintedPages": [
+        65
+      ],
+      "lecturePdfPages": [
+        66
+      ]
+    },
+    {
+      "id": "bio:gel-loading-comb",
+      "name": "电泳制胶梳",
+      "category": "电泳与成像",
+      "search": "gel loading comb 制胶梳 加样孔 电泳",
+      "svg": "gel-loading-comb.svg",
+      "sha256": "179dbe4f721ce5a73024f890b1607244060be3e44267f57812025c3b0b3b7e23",
+      "width": 222,
+      "height": 86,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "与制胶托盘配套的独立部件，方便后续拖放；不是额外一种实验仪器。",
+      "lecturePrintedPages": [
+        65
+      ],
+      "lecturePdfPages": [
+        66
+      ]
+    },
+    {
+      "id": "bio:refrigerated-centrifuge",
+      "name": "冷冻离心机",
+      "category": "取样与离心",
+      "search": "refrigerated centrifuge 冷冻离心机 温控 低温",
+      "svg": "refrigerated-centrifuge.svg",
+      "sha256": "7518c157d50bee270e089ac3148435936ee510a10f7b5f538db958c7234fc24d",
+      "width": 238,
+      "height": 246,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "通用台式冷冻离心机：开放机盖、转子、转速与温控显示、散热侧板；非具体型号复刻。",
+      "lecturePrintedPages": [
+        23,
+        24,
+        50
+      ],
+      "lecturePdfPages": [
+        24,
+        25,
+        51
+      ]
+    },
+    {
+      "id": "bio:online-spectrophotometer",
+      "name": "分光光度计（可见光 / 紫外）",
+      "category": "分析与计量",
+      "search": "online spectrophotometer 分光光度计 可见光 紫外 UV 吸光度",
+      "svg": "online-spectrophotometer.svg",
+      "sha256": "a5aebf469b3de8f610c4075a8f95c4594581bb1675e3a01d71a035becbe68593",
+      "width": 260,
+      "height": 145.4237288135593,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-3.0",
+      "author": "Servier",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/spectrophotometer.svg",
+      "sourceGitBlobSha": "880d295186b195ea28ede8cf7a5c9296675e2943",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "limitations": "仅提供通用分光光度计外观，不冒充 721 具体型号；玻璃与石英材质不由外观证明。",
+      "lecturePrintedPages": [
+        6,
+        9,
+        11,
+        25,
+        31,
+        35,
+        39,
+        61
+      ],
+      "lecturePdfPages": [
+        7,
+        10,
+        12,
+        26,
+        32,
+        36,
+        40,
+        62
+      ]
+    },
+    {
+      "id": "bio:online-centrifuge",
+      "name": "台式离心机",
+      "category": "取样与离心",
+      "search": "online centrifuge 台式离心机 离心",
+      "svg": "online-centrifuge.svg",
+      "sha256": "a91aaae7cea067869fe328ead9cd2769bc9f5a14817876a0702054d8cd072a32",
+      "width": 197.34939759036146,
+      "height": 260,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-3.0",
+      "author": "Servier",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/centrifuge.svg",
+      "sourceGitBlobSha": "d99a3468c95c552aa399e91af35f062c3c1e8690",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "limitations": "通用台式外观，冷冻离心机型号尚需另行确认。",
+      "lecturePrintedPages": [
+        9,
+        21,
+        24,
+        49,
+        54,
+        64,
+        68
+      ],
+      "lecturePdfPages": [
+        10,
+        22,
+        25,
+        50,
+        55,
+        65,
+        69
+      ]
+    },
+    {
+      "id": "bio:online-cuvette",
+      "name": "比色皿（玻璃 / 石英）",
+      "category": "分析与计量",
+      "search": "online cuvette 比色皿 玻璃 石英 光度计 cuvette",
+      "svg": "online-cuvette.svg",
+      "sha256": "cfa8f1c4fc62a3d00c71748cc1ead546f335569d84322b029b108a29956e143c",
+      "width": 47.36914129319193,
+      "height": 140,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-3.0",
+      "author": "Servier",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/cuvette.svg",
+      "sourceGitBlobSha": "8af932f73f75006871601be42240b4142f110a7d",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "limitations": "仅提供通用分光光度计外观，不冒充 721 具体型号；玻璃与石英材质不由外观证明。",
+      "lecturePrintedPages": [
+        10,
+        11,
+        25
+      ],
+      "lecturePdfPages": [
+        11,
+        12,
+        26
+      ]
+    },
+    {
+      "id": "bio:online-micropipette",
+      "name": "微量移液器",
+      "category": "取样与离心",
+      "search": "online micropipette 微量移液器 移液枪 加样枪 pipette",
+      "svg": "online-micropipette.svg",
+      "sha256": "7545f53948330b0485a04b7151bb01b7ea488ae9062e491623387bf3c72ae86d",
+      "width": 58.04090169649081,
+      "height": 250,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-3.0",
+      "author": "Servier",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Chemistry/Servier/micropipette.svg",
+      "sourceGitBlobSha": "01ca60b3d5b1ac9403b3186caedc2fec57935c8a",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "lecturePrintedPages": [
+        64,
+        68,
+        71,
+        72
+      ],
+      "lecturePdfPages": [
+        65,
+        69,
+        72,
+        73
+      ]
+    },
+    {
+      "id": "bio:online-microtube",
+      "name": "微量离心管",
+      "category": "取样与离心",
+      "search": "online microtube 微量离心管 EP管 Eppendorf",
+      "svg": "online-microtube.svg",
+      "sha256": "80d84f827c18df4750fc1856f39beb39286cec3a76a20ff6cd62c92ab8f6c236",
+      "width": 66.66666666666667,
+      "height": 110,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-3.0",
+      "author": "Servier",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/General_items/Servier/microtube-closed-blue-empty.svg",
+      "sourceGitBlobSha": "248b1eb9a74ea04d04098bc7897e6cb8249abf0c",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "lecturePrintedPages": [
+        45,
+        47,
+        64,
+        69
+      ],
+      "lecturePdfPages": [
+        46,
+        48,
+        65,
+        70
+      ]
+    },
+    {
+      "id": "bio:online-tip-box",
+      "name": "移液器吸头盒",
+      "category": "取样与离心",
+      "search": "online tip box 吸头盒 枪头盒 移液器",
+      "svg": "online-tip-box.svg",
+      "sha256": "fbe530dab31fa530527250ee99ca2d230278249f9eaf674e3389502f29cc39bd",
+      "width": 219.99999999999997,
+      "height": 126.48246546227415,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-4.0",
+      "author": "DBCLS",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-4.0/Lab_apparatus/DBCLS/pipette-tip-box.svg",
+      "sourceGitBlobSha": "3824e583e286c8afac4a1852e1edf324bcd46ed3",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "lecturePrintedPages": [
+        71
+      ],
+      "lecturePdfPages": [
+        72
+      ]
+    },
+    {
+      "id": "bio:online-incubator-servier",
+      "name": "恒温培养箱",
+      "category": "生化设备",
+      "search": "online incubator servier 恒温培养箱 培养",
+      "svg": "online-incubator-servier.svg",
+      "sha256": "efa3101bf4fa8b619d0196861690ee1560f83d46d9508c079b73bf16aa65857e",
+      "width": 197.24812030075188,
+      "height": 260,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-3.0",
+      "author": "Servier",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/incubator.svg",
+      "sourceGitBlobSha": "9cb5018322e6fffaf401b6dd324cf81418ea6f58",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "lecturePrintedPages": [
+        54,
+        68
+      ],
+      "lecturePdfPages": [
+        55,
+        69
+      ]
+    },
+    {
+      "id": "bio:online-freezer",
+      "name": "实验室低温冰箱",
+      "category": "生化设备",
+      "search": "online freezer 低温冰箱 冷藏 冷冻",
+      "svg": "online-freezer.svg",
+      "sha256": "d55714348b2e37fcf775514ab36f620eb084c17d5e8e6c66e10a76d80c3cace3",
+      "width": 120.88737201365187,
+      "height": 280,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-4.0",
+      "author": "DBCLS",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-4.0/Lab_apparatus/DBCLS/freezer.svg",
+      "sourceGitBlobSha": "63a8d6ff6a2f935706ee1209fc73a1c8a7ac814b",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "lecturePrintedPages": [
+        24,
+        49,
+        68
+      ],
+      "lecturePdfPages": [
+        25,
+        50,
+        69
+      ]
+    },
+    {
+      "id": "bio:online-autoclave",
+      "name": "高压灭菌锅",
+      "category": "生化设备",
+      "search": "online autoclave 高压灭菌锅 灭菌 autoclave",
+      "svg": "online-autoclave.svg",
+      "sha256": "6e28cdaee735bb3eec1f6345ab416a1e8fe092956beec747667dc3a9cb2cc602",
+      "width": 149.6583375828659,
+      "height": 290,
+      "ports": [],
+      "boreCount": -1,
+      "neckCount": 0,
+      "license": "CC-BY-4.0",
+      "author": "DBCLS",
+      "origin": "adapted-online",
+      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-4.0/Lab_apparatus/DBCLS/autoclave.svg",
+      "sourceGitBlobSha": "bff42f91157f95bf60d74c0692d66acee40fb009",
+      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
+      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "lecturePrintedPages": [
+        68
+      ],
+      "lecturePdfPages": [
+        69
+      ]
+    }
+  ]
+}

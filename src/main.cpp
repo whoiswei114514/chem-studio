@@ -1,5 +1,6 @@
 #include "ui/main_window.h"
 #include <QApplication>
+#include <QComboBox>
 #include <QDir>
 #include <QFileInfo>
 #include <QFont>
@@ -37,6 +38,12 @@ int main(int argc, char** argv) {
     const int pageIndex = args.indexOf("--page");
     if (pageIndex >= 0 && pageIndex + 1 < args.size())
         window.showPage(qBound(0, args[pageIndex + 1].toInt(), 5));
+    const int sourceIndex = args.indexOf("--apparatus-source");
+    if (sourceIndex >= 0 && sourceIndex + 1 < args.size())
+        if (auto* source = window.findChild<QComboBox*>("apparatusSource")) {
+            const int index = source->findData(args[sourceIndex + 1]);
+            if (index >= 0) source->setCurrentIndex(index);
+        }
     if (snapshot) {
         int i = args.indexOf("--screenshots");
         QString dir = i + 1 < args.size() ? args[i + 1] : "screenshots";

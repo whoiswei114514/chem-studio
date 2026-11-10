@@ -72,6 +72,17 @@ QString manualReason(const chem::ApparatusArtwork& art) {
         "raybox", "ray", "lens", "glass-block", "mirror", "curved-mirror", "prism", "light-gate", "pulley",
     };
     const auto id = art.id.section(':', 1);
+    static const QSet<QString> biochemistryManual{
+        "graduated-centrifuge-tube", "glass-pipette-rack", "analytical-balance", "two-pan-balance",
+        "glass-atomizer", "hair-dryer", "microliter-syringe", "scalpel", "porcelain-staining-tray",
+        "dialysis-bag", "tissue-homogenizer", "incubator-shaker", "microwave-oven",
+        "gel-documentation-system", "benchtop-ph-meter", "nucleic-acid-spin-column",
+        "gel-casting-tray", "gel-loading-comb", "refrigerated-centrifuge", "online-spectrophotometer",
+        "online-centrifuge", "online-cuvette", "online-micropipette", "online-microtube",
+        "online-tip-box", "online-incubator-servier", "online-freezer", "online-autoclave",
+    };
+    if (art.id.startsWith("bio:") && biochemistryManual.contains(id))
+        return "Reviewed closed container, handheld tool, bundled device or self-contained illustration; placement remains manual.";
     if (art.id.startsWith("chemix:") && diagrams.contains(id))
         return "Illustration or top-view diagram; no mechanical connector is represented.";
     if (art.id.startsWith("chemix:") && manual.contains(id))

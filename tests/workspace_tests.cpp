@@ -13,6 +13,7 @@
 #include <QListWidget>
 #include <QScreen>
 #include <QPainter>
+#include <QSvgRenderer>
 #include <QPushButton>
 #include <QSignalSpy>
 #include <QStackedWidget>
@@ -104,6 +105,73 @@ class WorkspaceTests : public QObject {
                 << "DPR" << window->devicePixelRatioF();
         QTRY_VERIFY_WITH_TIMEOUT(!window->currentMolecule.smiles.isEmpty() && !window->moleculeBusy, 15000);
     }
+    void biochemistryCatalog() {
+        window->showPage(2);
+        auto* source = window->findChild<QComboBox*>("apparatusSource");
+        auto* category = window->findChild<QComboBox*>("apparatusCategory");
+        auto* search = window->findChild<QLineEdit*>("apparatusSearch");
+        auto* palette = window->findChild<QListWidget*>("apparatusPalette");
+        QVERIFY(source && category && search && palette);
+        QVERIFY(source->findData("bio") >= 0);
+        const auto previousSource = source->currentData();
+        const auto previousDrawing = window->drawing->state();
+        source->setCurrentIndex(source->findData("bio"));
+        search->clear();
+        QCOMPARE(category->count(), 7);
+        const auto visible = [&] {
+            int count = 0;
+            for (int row = 0; row < palette->count(); ++row)
+                if (!palette->item(row)->isHidden()) ++count;
+            return count;
+        };
+        QCOMPARE(visible(), 34);
+        for (int row = 0; row < palette->count(); ++row)
+            if (!palette->item(row)->isHidden())
+                QVERIFY(palette->item(row)->data(Qt::UserRole).toString().startsWith("bio:"));
+        category->setCurrentIndex(category->findData(QStringLiteral("电泳与成像")));
+        QCOMPARE(visible(), 8);
+        search->setText(QStringLiteral("圆盘"));
+        QCOMPARE(visible(), 1);
+        category->setCurrentIndex(0);
+        search->setText("pipette");
+        QCOMPARE(visible(), 2);
+        search->setText(QStringLiteral("移液枪"));
+        QCOMPARE(visible(), 1);
+        search->setText(QStringLiteral("电吹风"));
+        QCOMPARE(visible(), 1);
+        window->drawing->restore({});
+        for (int row = 0; row < palette->count(); ++row)
+            if (!palette->item(row)->isHidden())
+                QVERIFY(QMetaObject::invokeMethod(palette, "itemDoubleClicked", Qt::DirectConnection,
+                                                 Q_ARG(QListWidgetItem*, palette->item(row))));
+        QCOMPARE(window->drawing->state().size(), 1);
+        QCOMPARE(window->drawing->state()[0].toObject()["kind"].toString(), QString("bio:hair-dryer"));
+        window->drawing->restore({});
+        const QStringList examples{"glass-atomizer", "hair-dryer", "disc-electrophoresis-tank",
+                                   "tissue-homogenizer", "nucleic-acid-spin-column", "gel-casting-tray"};
+        for (int index = 0; index < examples.size(); ++index)
+            window->drawing->addApparatus("bio:" + examples[index],
+                {double(80 + index % 3 * 370), double(60 + index / 3 * 370)});
+        window->drawing->scene()->clearSelection();
+        search->clear();
+        const auto directory = qEnvironmentVariable("CHEM_WORKSPACE_RESULTS");
+        for (const QSize size : {QSize(1440, 940), QSize(1050, 740)}) {
+            window->resize(size);
+            window->drawing->fitCanvas();
+            QTest::qWait(180);
+            QVERIFY(window->rect().contains(QRect(source->mapTo(window.get(), QPoint()), source->size())));
+            QVERIFY(source->fontMetrics().horizontalAdvance(source->currentText()) < source->width() - 24);
+            if (!directory.isEmpty()) {
+                QVERIFY(QDir().mkpath(directory));
+                QVERIFY(window->grab().save(QDir(directory).filePath(
+                    QString("biochemistry-%1.png").arg(size.width()))));
+            }
+        }
+        QVERIFY(QSvgRenderer(window->drawing->svgData()).isValid());
+        window->drawing->restore(previousDrawing);
+        window->drawing->undoStack.clear();
+        source->setCurrentIndex(source->findData(previousSource));
+    }
     void projectRoundtrip() {
         window->reactionInput->setText("C2H5OH + O2 -> CO2 + H2O");
         window->balanceReaction();
@@ -166,7 +234,7 @@ class WorkspaceTests : public QObject {
         const QStringList basics{"arrow", "line", "label", "rectangle", "ellipse"};
         for (int row = 0; row < palette->count(); ++row) {
             const auto id = palette->item(row)->data(Qt::UserRole).toString();
-            QVERIFY(id.startsWith("legacy:") || id.startsWith("chemix:") || basics.contains(id));
+            QVERIFY(id.startsWith("studio:") || id.startsWith("bio:") || id.startsWith("legacy:") || id.startsWith("chemix:") || basics.contains(id));
         }
         source->setCurrentIndex(source->findData("shapes"));
         int visible = 0;
