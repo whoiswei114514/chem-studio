@@ -1,0 +1,3368 @@
+{
+  "format": "chem-studio-art",
+  "version": 1,
+  "license": "per-asset",
+  "approved": true,
+  "merged": true,
+  "assets": [
+    {
+      "id": "physics:digital-oscilloscope",
+      "name": "双通道数字示波器",
+      "category": "电学与电子测量",
+      "search": "digital oscilloscope 示波器 波形 oscilloscope scope CH1 CH2",
+      "svg": "digital-oscilloscope.svg",
+      "width": 300,
+      "height": 210,
+      "sha256": "4e792237400273b311811d0f401abf7d6721b67c628825835566e3d2c8c05c36",
+      "ports": [
+        {
+          "id": "ch1",
+          "x": 199,
+          "y": 155,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "ch2",
+          "x": 228,
+          "y": 155,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "trigger",
+          "x": 255,
+          "y": 155,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 145,
+          "y": 186,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "可辨认的网格显示、垂直/时基旋钮、双通道 BNC 与外触发端口；波形仅为面板示意，不模拟采样。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:function-generator",
+      "name": "函数 / 信号发生器",
+      "category": "电学与电子测量",
+      "search": "function generator 信号源 函数发生器 正弦 方波 function signal generator",
+      "svg": "function-generator.svg",
+      "width": 300,
+      "height": 210,
+      "sha256": "544e98847b5948c9c62087695b917a1b39bfcddaf5f9c2b5acf8468ad0d40628",
+      "ports": [
+        {
+          "id": "ch1",
+          "x": 189,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "ch2",
+          "x": 219,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "sync",
+          "x": 250,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 145,
+          "y": 186,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "独立频率/幅度显示、调节旋钮、两路输出和同步 BNC；不将其画成示波器。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:oscilloscope-probe",
+      "name": "示波器探头",
+      "category": "电学与电子测量",
+      "search": "oscilloscope probe 探头 示波器 probe BNC 接地夹",
+      "svg": "oscilloscope-probe.svg",
+      "width": 290,
+      "height": 130,
+      "sha256": "da21892e0ad9735c6b38e1f86dc1d61c19fa87ff82517f71a41014a8ee45e375",
+      "ports": [
+        {
+          "id": "tip",
+          "x": 16,
+          "y": 72,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "ground",
+          "x": 33,
+          "y": 108,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "bnc",
+          "x": 275,
+          "y": 62,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "grip-site",
+          "x": 101,
+          "y": 72,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "探针、10X 探头本体、独立地线夹与 BNC 插头；接地端不是另一个测量通道。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:dual-dc-supply",
+      "name": "双路台式直流稳压电源",
+      "category": "电工设备",
+      "search": "dual dc supply 电源 稳压 限流 DC supply",
+      "svg": "dual-dc-supply.svg",
+      "width": 300,
+      "height": 210,
+      "sha256": "b148d5e14e87df5eab099733e41e27623cc85ddc2bfd0fc6c17bce830bf27547",
+      "ports": [
+        {
+          "id": "CH1-negative",
+          "x": 62,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "CH1-positive",
+          "x": 99,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "CH2-negative",
+          "x": 180,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "CH2-positive",
+          "x": 217,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "earth",
+          "x": 143,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 145,
+          "y": 186,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "两路可调输出及保护接地；接地端不算第三路输出。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:frequency-counter",
+      "name": "频率计",
+      "category": "电学与电子测量",
+      "search": "frequency counter 频率 计数 frequency counter",
+      "svg": "frequency-counter.svg",
+      "width": 280,
+      "height": 190,
+      "sha256": "22062378844f753f03cb9ac33f0c0cdeb98faf0c62f2d3c5a813c826aeff94be",
+      "ports": [
+        {
+          "id": "input-a",
+          "x": 154,
+          "y": 136,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "input-b",
+          "x": 203,
+          "y": 136,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 137,
+          "y": 163,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "输入连接器与门控/量程按钮；不是波形源。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:lcr-meter",
+      "name": "台式 LCR 电桥",
+      "category": "电学与电子测量",
+      "search": "lcr meter 电桥 电感 电容 阻抗 LCR bridge meter",
+      "svg": "lcr-meter.svg",
+      "width": 280,
+      "height": 200,
+      "sha256": "a8f94a5c101097a897e57cd692224be308f871558861efba83117dba5f179680",
+      "ports": [
+        {
+          "id": "hcur",
+          "x": 157,
+          "y": 148,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hpot",
+          "x": 184,
+          "y": 148,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "lpot",
+          "x": 211,
+          "y": 148,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "lcur",
+          "x": 238,
+          "y": 148,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 137,
+          "y": 172,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "四端测量连接器（HCUR、HPOT、LPOT、LCUR），不简化为电源输出。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:ac-millivoltmeter",
+      "name": "交流毫伏表",
+      "category": "电学与电子测量",
+      "search": "ac millivoltmeter 毫伏表 交流 mV AC millivoltmeter",
+      "svg": "ac-millivoltmeter.svg",
+      "width": 245,
+      "height": 220,
+      "sha256": "8786c38ab4225ac3db5fa1cd85313dcc905c656763dacab626ee13ac32a535bd",
+      "ports": [
+        {
+          "id": "input",
+          "x": 156,
+          "y": 159,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 116,
+          "y": 192,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "指针式交流低电压测量仪，输入 BNC 与量程旋钮。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:analog-galvanometer",
+      "name": "灵敏检流计",
+      "category": "电学与电子测量",
+      "search": "analog galvanometer 检流计 零点 电桥 galvanometer",
+      "svg": "analog-galvanometer.svg",
+      "width": 230,
+      "height": 200,
+      "sha256": "9c960c04cfc8d2f43244489ccb5136e66b9d3f7e67f65ead7ed3c72141803706",
+      "ports": [
+        {
+          "id": "negative",
+          "x": 70,
+          "y": 139,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive",
+          "x": 161,
+          "y": 139,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 115,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "中央零位指针表，可辨正负偏转。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:decade-resistance-box",
+      "name": "十进电阻箱",
+      "category": "电工设备",
+      "search": "decade resistance box 电阻箱 可调 电阻 decade resistor",
+      "svg": "decade-resistance-box.svg",
+      "width": 280,
+      "height": 165,
+      "sha256": "f16a1ef68e194f9e539c127c6fa23dfc32ca3ea07f8105cb89b48b4700995826",
+      "ports": [
+        {
+          "id": "a",
+          "x": 34,
+          "y": 138,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 218,
+          "y": 138,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 125,
+          "y": 122,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "多个十进旋钮和两个电路端子；不作为电源。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:sliding-rheostat",
+      "name": "滑动变阻器",
+      "category": "电工设备",
+      "search": "sliding rheostat 变阻器 滑片 电阻 rheostat",
+      "svg": "sliding-rheostat.svg",
+      "width": 280,
+      "height": 185,
+      "sha256": "d57b3469cf21468e4b319ee1ddcc8b40967f25e64e4d58531c37eebeacbf09bd",
+      "ports": [
+        {
+          "id": "left-coil",
+          "x": 46,
+          "y": 121,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "right-coil",
+          "x": 231,
+          "y": 121,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "slider",
+          "x": 139,
+          "y": 36,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 140,
+          "y": 152,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "线绕电阻体、上方滑杆和独立滑片触点；仅保留真实三个节点。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:breadboard",
+      "name": "无焊面包板",
+      "category": "电工设备",
+      "search": "breadboard 面包板 电子 实验 breadboard",
+      "svg": "breadboard.svg",
+      "width": 280,
+      "height": 175,
+      "sha256": "e1db8b6a6e25ad3b0120a05700eeb7a10a0ab83c1232ad6f96e81f094d361c5e",
+      "ports": [
+        {
+          "id": "base",
+          "x": 140,
+          "y": 145,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-1",
+          "x": 31,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-2",
+          "x": 31,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-3",
+          "x": 31,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-4",
+          "x": 31,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-5",
+          "x": 31,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-6",
+          "x": 31,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-7",
+          "x": 31,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-1-8",
+          "x": 31,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-1",
+          "x": 41,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-2",
+          "x": 41,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-3",
+          "x": 41,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-4",
+          "x": 41,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-5",
+          "x": 41,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-6",
+          "x": 41,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-7",
+          "x": 41,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-2-8",
+          "x": 41,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-1",
+          "x": 51,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-2",
+          "x": 51,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-3",
+          "x": 51,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-4",
+          "x": 51,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-5",
+          "x": 51,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-6",
+          "x": 51,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-7",
+          "x": 51,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-3-8",
+          "x": 51,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-1",
+          "x": 61,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-2",
+          "x": 61,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-3",
+          "x": 61,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-4",
+          "x": 61,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-5",
+          "x": 61,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-6",
+          "x": 61,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-7",
+          "x": 61,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-4-8",
+          "x": 61,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-1",
+          "x": 71,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-2",
+          "x": 71,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-3",
+          "x": 71,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-4",
+          "x": 71,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-5",
+          "x": 71,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-6",
+          "x": 71,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-7",
+          "x": 71,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-5-8",
+          "x": 71,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-1",
+          "x": 81,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-2",
+          "x": 81,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-3",
+          "x": 81,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-4",
+          "x": 81,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-5",
+          "x": 81,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-6",
+          "x": 81,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-7",
+          "x": 81,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-6-8",
+          "x": 81,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-1",
+          "x": 91,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-2",
+          "x": 91,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-3",
+          "x": 91,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-4",
+          "x": 91,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-5",
+          "x": 91,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-6",
+          "x": 91,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-7",
+          "x": 91,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-7-8",
+          "x": 91,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-1",
+          "x": 101,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-2",
+          "x": 101,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-3",
+          "x": 101,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-4",
+          "x": 101,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-5",
+          "x": 101,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-6",
+          "x": 101,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-7",
+          "x": 101,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-8-8",
+          "x": 101,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-1",
+          "x": 111,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-2",
+          "x": 111,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-3",
+          "x": 111,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-4",
+          "x": 111,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-5",
+          "x": 111,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-6",
+          "x": 111,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-7",
+          "x": 111,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-9-8",
+          "x": 111,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-1",
+          "x": 121,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-2",
+          "x": 121,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-3",
+          "x": 121,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-4",
+          "x": 121,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-5",
+          "x": 121,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-6",
+          "x": 121,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-7",
+          "x": 121,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-10-8",
+          "x": 121,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-1",
+          "x": 131,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-2",
+          "x": 131,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-3",
+          "x": 131,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-4",
+          "x": 131,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-5",
+          "x": 131,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-6",
+          "x": 131,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-7",
+          "x": 131,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-11-8",
+          "x": 131,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-1",
+          "x": 141,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-2",
+          "x": 141,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-3",
+          "x": 141,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-4",
+          "x": 141,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-5",
+          "x": 141,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-6",
+          "x": 141,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-7",
+          "x": 141,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-12-8",
+          "x": 141,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-1",
+          "x": 151,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-2",
+          "x": 151,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-3",
+          "x": 151,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-4",
+          "x": 151,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-5",
+          "x": 151,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-6",
+          "x": 151,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-7",
+          "x": 151,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-13-8",
+          "x": 151,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-1",
+          "x": 161,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-2",
+          "x": 161,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-3",
+          "x": 161,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-4",
+          "x": 161,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-5",
+          "x": 161,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-6",
+          "x": 161,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-7",
+          "x": 161,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-14-8",
+          "x": 161,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-1",
+          "x": 171,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-2",
+          "x": 171,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-3",
+          "x": 171,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-4",
+          "x": 171,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-5",
+          "x": 171,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-6",
+          "x": 171,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-7",
+          "x": 171,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-15-8",
+          "x": 171,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-1",
+          "x": 181,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-2",
+          "x": 181,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-3",
+          "x": 181,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-4",
+          "x": 181,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-5",
+          "x": 181,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-6",
+          "x": 181,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-7",
+          "x": 181,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-16-8",
+          "x": 181,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-1",
+          "x": 191,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-2",
+          "x": 191,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-3",
+          "x": 191,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-4",
+          "x": 191,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-5",
+          "x": 191,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-6",
+          "x": 191,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-7",
+          "x": 191,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-17-8",
+          "x": 191,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-1",
+          "x": 201,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-2",
+          "x": 201,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-3",
+          "x": 201,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-4",
+          "x": 201,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-5",
+          "x": 201,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-6",
+          "x": 201,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-7",
+          "x": 201,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-18-8",
+          "x": 201,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-1",
+          "x": 211,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-2",
+          "x": 211,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-3",
+          "x": 211,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-4",
+          "x": 211,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-5",
+          "x": 211,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-6",
+          "x": 211,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-7",
+          "x": 211,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-19-8",
+          "x": 211,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-1",
+          "x": 221,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-2",
+          "x": 221,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-3",
+          "x": 221,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-4",
+          "x": 221,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-5",
+          "x": 221,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-6",
+          "x": 221,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-7",
+          "x": 221,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-20-8",
+          "x": 221,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-1",
+          "x": 231,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-2",
+          "x": 231,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-3",
+          "x": 231,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-4",
+          "x": 231,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-5",
+          "x": 231,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-6",
+          "x": 231,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-7",
+          "x": 231,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-21-8",
+          "x": 231,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-1",
+          "x": 241,
+          "y": 38,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-2",
+          "x": 241,
+          "y": 58,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-3",
+          "x": 241,
+          "y": 69,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-4",
+          "x": 241,
+          "y": 78,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-5",
+          "x": 241,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-6",
+          "x": 241,
+          "y": 109,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-7",
+          "x": 241,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hole-22-8",
+          "x": 241,
+          "y": 137,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "双端电源母线与中间隔槽；孔很多，默认不添加会误导内部连通关系的统一端口。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:knife-switch",
+      "name": "单刀闸刀开关",
+      "category": "电工设备",
+      "search": "knife switch 开关 单刀 单掷 knife switch",
+      "svg": "knife-switch.svg",
+      "width": 250,
+      "height": 150,
+      "sha256": "f3fc372c6998ed26cda9fa8e6ae8bf334cf97064c3004ac0d2b29449d3e6e546",
+      "ports": [
+        {
+          "id": "a",
+          "x": 50,
+          "y": 97,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 178,
+          "y": 97,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 110,
+          "y": 108,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "明确画成断开状态，闸刀有绝缘手柄。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:isolation-transformer",
+      "name": "实验变压器",
+      "category": "电工设备",
+      "search": "isolation transformer 变压器 初级 次级 电磁 transformer",
+      "svg": "isolation-transformer.svg",
+      "width": 230,
+      "height": 210,
+      "sha256": "892986c3ceb611fcb43420354cd752c681295aec21fa46426d96a0bf70376e55",
+      "ports": [
+        {
+          "id": "primary-a",
+          "x": 30,
+          "y": 32,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "primary-b",
+          "x": 57,
+          "y": 32,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "secondary-a",
+          "x": 163,
+          "y": 32,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "secondary-b",
+          "x": 190,
+          "y": 32,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 115,
+          "y": 183,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "铁芯和两个绕组明确分离，四个电气端子；无仿真变比。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:dc-motor",
+      "name": "直流电动机",
+      "category": "电工设备",
+      "search": "dc motor 电机 马达 DC motor",
+      "svg": "dc-motor.svg",
+      "width": 270,
+      "height": 185,
+      "sha256": "6c4d7ddf7fe59edd9bf9a7993dd8cda74aadfaf38e0d77e650eab17970ac9a08",
+      "ports": [
+        {
+          "id": "positive",
+          "x": 166,
+          "y": 47,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 195,
+          "y": 47,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 140,
+          "y": 164,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "带散热筋的机壳、端盖轴承、同轴输出轴、固定底脚和独立直流接线盒。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:clamp-meter",
+      "name": "钳形电流表",
+      "category": "电学与电子测量",
+      "search": "clamp meter 钳形表 电流 clamp meter",
+      "svg": "clamp-meter.svg",
+      "width": 125,
+      "height": 280,
+      "sha256": "b52f0ae9907f4315a1057343ea852c2fe54b26ac9e0197db183cec2c54fa4bb4",
+      "ports": [
+        {
+          "id": "com",
+          "x": 47,
+          "y": 232,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "voltage",
+          "x": 78,
+          "y": 232,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "grip-site",
+          "x": 63,
+          "y": 156,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "顶部钳口有分缝，底部 COM/V 插孔不作为被测电流钳口。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:wheatstone-bridge",
+      "name": "惠斯通电桥实验板",
+      "category": "电工设备",
+      "search": "wheatstone bridge 惠斯通 电阻桥 检流 电桥 wheatstone",
+      "svg": "wheatstone-bridge.svg",
+      "width": 280,
+      "height": 220,
+      "sha256": "64205356502144da04485354e592249cd032d06b56755b70d4dc066f11dba0f7",
+      "ports": [
+        {
+          "id": "a",
+          "x": 140,
+          "y": 48,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 62,
+          "y": 108,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "c",
+          "x": 140,
+          "y": 168,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d",
+          "x": 218,
+          "y": 108,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 140,
+          "y": 197,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "电桥菱形四臂与中央检流计；四个节点可接线，结构示意而非可调仿真。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:vernier-caliper",
+      "name": "游标卡尺",
+      "category": "力学与计量",
+      "search": "vernier caliper 卡尺 游标 长度 vernier caliper",
+      "svg": "vernier-caliper.svg",
+      "width": 310,
+      "height": 160,
+      "sha256": "e70da1a20bcb0e11b5ef488206879badc6fd1b8bec742553e001d19e36a29ca9",
+      "ports": [
+        {
+          "id": "grip-site",
+          "x": 31,
+          "y": 95,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "外测量爪、内测量爪、主尺、游标及深度杆。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:micrometer",
+      "name": "外径千分尺",
+      "category": "力学与计量",
+      "search": "micrometer 千分尺 螺旋测微器 micrometer",
+      "svg": "micrometer.svg",
+      "width": 290,
+      "height": 200,
+      "sha256": "e0b1cb1c520cfd5618dd2bf9650cfcc96462dccc87c65fe8319f116869d5f0cf",
+      "ports": [
+        {
+          "id": "grip-site",
+          "x": 91,
+          "y": 173,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "测砧与测微螺杆同轴、测量间隙留空；尺架、锁紧件、固定套筒、微分筒和棘轮各自连接。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:spring-dynamometer",
+      "name": "弹簧测力计",
+      "category": "力学与计量",
+      "search": "spring dynamometer 测力计 弹簧秤 牛顿 force spring dynamometer",
+      "svg": "spring-dynamometer.svg",
+      "width": 110,
+      "height": 285,
+      "sha256": "91d6984edfe2e3b345f80c93b41bc3c65ee4c3e20febbf679f4e0272677bb601",
+      "ports": [
+        {
+          "id": "hook",
+          "x": 52,
+          "y": 272,
+          "dx": 0,
+          "dy": 1,
+          "type": "hook",
+          "diameter": 0
+        },
+        {
+          "id": "hanger",
+          "x": 46,
+          "y": 6,
+          "dx": 0,
+          "dy": -1,
+          "type": "hanger",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "上吊环固定于外壳；弹簧下端连续连接指针拉杆和挂钩，右侧标尺由上向下递增。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:force-sensor",
+      "name": "力传感器",
+      "category": "力学与计量",
+      "search": "force sensor 力 传感器 force sensor",
+      "svg": "force-sensor.svg",
+      "width": 270,
+      "height": 125,
+      "sha256": "2f79f41c453279d69f9d9c6fd7fc88950f342f0fce89b5e1e514e9d93b6ef98b",
+      "ports": [
+        {
+          "id": "hook",
+          "x": 28,
+          "y": 80,
+          "dx": -1,
+          "dy": 0,
+          "type": "hook",
+          "diameter": 0
+        },
+        {
+          "id": "signal",
+          "x": 248,
+          "y": 56,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "grip-site",
+          "x": 116,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "测力挂钩与信号连接器分开；不虚构实时测力。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:air-track",
+      "name": "气垫导轨",
+      "category": "力学实验",
+      "search": "air track 气垫 导轨 空气 air track",
+      "svg": "air-track.svg",
+      "width": 320,
+      "height": 160,
+      "sha256": "4b2ed5a3645cb716a2facbe91d43b9ed7d1a08e8b3f1f74dee73cc92a85c7eed",
+      "ports": [
+        {
+          "id": "base",
+          "x": 152,
+          "y": 123,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "air-in",
+          "x": 311,
+          "y": 88,
+          "dx": 0,
+          "dy": 1,
+          "type": "air-in",
+          "diameter": 0
+        },
+        {
+          "id": "track",
+          "x": 156,
+          "y": 47,
+          "dx": 0,
+          "dy": -1,
+          "type": "air-rail",
+          "diameter": 0,
+          "segment": [
+            51,
+            47,
+            265,
+            47
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "三棱/箱形导轨、顶部气孔、调平脚及末端进气口；默认独立导轨不带滑块。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:air-track-glider",
+      "name": "气垫导轨滑块",
+      "category": "力学实验",
+      "search": "air track glider 滑块 挡光片 气垫 glider",
+      "svg": "air-track-glider.svg",
+      "width": 210,
+      "height": 170,
+      "sha256": "9661843c89977552100473a2a8377727921e65f0679c1992c999a98951f4c3de",
+      "ports": [
+        {
+          "id": "carriage",
+          "x": 115,
+          "y": 76,
+          "dx": 0,
+          "dy": 1,
+          "type": "air-glider",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "倒 V 形滑块跨骑三棱导轨，下方通槽完整留空；挡光片固定在顶部，两端安装缓冲杆。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:air-track-pump",
+      "name": "气垫导轨气源",
+      "category": "力学实验",
+      "search": "air track pump 气源 鼓风 气泵 air blower",
+      "svg": "air-track-pump.svg",
+      "width": 230,
+      "height": 190,
+      "sha256": "a60aa0b0d526eae0ae206c6f8953abb919ef467941adbd0fe6e2bd3fe59f5b80",
+      "ports": [
+        {
+          "id": "base",
+          "x": 110,
+          "y": 167,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "air-out",
+          "x": 219,
+          "y": 113,
+          "dx": 1,
+          "dy": 0,
+          "type": "air-out",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "带进风格栅、风量旋钮、开关和提手的鼓风气源，侧面设粗软管接头。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:photogate-timer",
+      "name": "光电门计时器",
+      "category": "力学与计量",
+      "search": "photogate timer 光电门 计时 计数 timer photogate",
+      "svg": "photogate-timer.svg",
+      "width": 280,
+      "height": 190,
+      "sha256": "30a54a05e9c371da1861247b5deebed834f14dfebd022ff4455c6069f262d42e",
+      "ports": [
+        {
+          "id": "gate-a",
+          "x": 135,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "gate-b",
+          "x": 181,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "trigger",
+          "x": 226,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 137,
+          "y": 163,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "独立计时主机，光电门传感器使用现有器材或其他部件。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:single-pendulum",
+      "name": "单摆实验架",
+      "category": "力学实验",
+      "search": "single pendulum 单摆 摆长 周期 pendulum",
+      "svg": "single-pendulum.svg",
+      "width": 220,
+      "height": 300,
+      "sha256": "2ec73f861ddb5807e0f75e9202f02b412aeb33dfbd3e4e4e479f0b11b09bad41",
+      "ports": [
+        {
+          "id": "base",
+          "x": 112,
+          "y": 288,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "固定悬点、细线与摆球，支架单独承重，不将摆线误画为连杆。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:lever-apparatus",
+      "name": "杠杆平衡实验架",
+      "category": "力学实验",
+      "search": "lever apparatus 杠杆 平衡 力矩 lever",
+      "svg": "lever-apparatus.svg",
+      "width": 300,
+      "height": 230,
+      "sha256": "144abb9174190bca5f7ba1c80e3a585548291bcce1003a8a0604426529e0da5e",
+      "ports": [
+        {
+          "id": "base",
+          "x": 155,
+          "y": 212,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "中央支点、刻度杆、悬挂配重；配重不与杆融成一体。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:pulley-block",
+      "name": "动滑轮组",
+      "category": "力学实验",
+      "search": "pulley block 滑轮组 定滑轮 动滑轮 pulley block",
+      "svg": "pulley-block.svg",
+      "width": 210,
+      "height": 310,
+      "sha256": "ce1b0c35ade4773990fb6924a75ae179bb51774cda182132d6018d1d9a636b4a",
+      "ports": [
+        {
+          "id": "hanger",
+          "x": 109,
+          "y": 8,
+          "dx": 0,
+          "dy": -1,
+          "type": "hanger",
+          "diameter": 0
+        },
+        {
+          "id": "hook",
+          "x": 106,
+          "y": 290,
+          "dx": 0,
+          "dy": 1,
+          "type": "hook",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "两只上固定轮、一只下动轮；一根绳从动轮吊架固定端连续绕过三轮，自由端下垂。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:rotational-inertia-apparatus",
+      "name": "转动惯量实验仪",
+      "category": "力学实验",
+      "search": "rotational inertia apparatus 转动 惯量 转盘 rotational inertia",
+      "svg": "rotational-inertia-apparatus.svg",
+      "width": 280,
+      "height": 245,
+      "sha256": "5dead5a91455a0336746482e8d06671ee45a011d015df23a1a2487167969d4c2",
+      "ports": [
+        {
+          "id": "base",
+          "x": 139,
+          "y": 219,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "水平转盘、中央轴、绕线轴、固定转向滑轮及悬重；悬重与底座之间留有下落空间。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:free-fall-apparatus",
+      "name": "自由落体实验架",
+      "category": "力学实验",
+      "search": "free fall apparatus 自由落体 重力 加速度 free fall",
+      "svg": "free-fall-apparatus.svg",
+      "width": 190,
+      "height": 300,
+      "sha256": "ae67ae602c7f06f6dbd7e011c34e1a6fb7d45be22151457c7ac59ee389966b38",
+      "ports": [
+        {
+          "id": "base",
+          "x": 98,
+          "y": 285,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "电磁释放头、钢球、两只光电门与接球垫；虚线是运动路径不是绳。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:optical-bench",
+      "name": "光具座 / 光学导轨",
+      "category": "光学实验",
+      "search": "optical bench 光具座 导轨 凸透镜 屏 optical bench",
+      "svg": "optical-bench.svg",
+      "width": 320,
+      "height": 170,
+      "sha256": "388f42105f4a45847caf6ebf7e6d33225daa1e55ab6daea17005006eda06f792",
+      "ports": [
+        {
+          "id": "base",
+          "x": 163,
+          "y": 148,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "track",
+          "x": 158,
+          "y": 121,
+          "dx": 0,
+          "dy": -1,
+          "type": "optical-rail",
+          "diameter": 0,
+          "segment": [
+            22,
+            121,
+            300,
+            121
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "光学导轨、滑座、两片透镜与屏，常见教学组合；不是电子电路。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:laser-source",
+      "name": "实验激光光源",
+      "category": "光学实验",
+      "search": "laser source 激光 光源 laser",
+      "svg": "laser-source.svg",
+      "width": 275,
+      "height": 170,
+      "sha256": "3b393213b328ef0fa0540fb30d92d5b7a11ce922b6d274ead300523169a1341a",
+      "ports": [
+        {
+          "id": "base",
+          "x": 152,
+          "y": 153,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "carriage",
+          "x": 152,
+          "y": 153,
+          "dx": 0,
+          "dy": 1,
+          "type": "optical-carriage",
+          "diameter": 0
+        },
+        {
+          "id": "beam-out",
+          "x": 73,
+          "y": 60,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-out",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "圆柱激光头由两道抱箍固定，支杆可调高；红色光束从前端出光孔沿轴线引出。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:optical-screen",
+      "name": "光学接收屏",
+      "category": "光学实验",
+      "search": "optical screen 光屏 接收屏 screen",
+      "svg": "optical-screen.svg",
+      "width": 190,
+      "height": 230,
+      "sha256": "3347481000ab5c23604f1fa581861b5653e24a44a5324276ad6f8bfaf548a85b",
+      "ports": [
+        {
+          "id": "base",
+          "x": 95,
+          "y": 211,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "carriage",
+          "x": 95,
+          "y": 211,
+          "dx": 0,
+          "dy": 1,
+          "type": "optical-carriage",
+          "diameter": 0
+        },
+        {
+          "id": "beam-in",
+          "x": 95,
+          "y": 88,
+          "dx": 1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "白色屏面与中心十字线，屏面用于自由排版。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:double-slit",
+      "name": "双缝实验片",
+      "category": "光学实验",
+      "search": "double slit 双缝 干涉 double slit",
+      "svg": "double-slit.svg",
+      "width": 160,
+      "height": 190,
+      "sha256": "baa4a56fc059768b33c5a9b4c62ef40de153dbe17fde0e2e40f579a8089aaf97",
+      "ports": [
+        {
+          "id": "carriage",
+          "x": 80,
+          "y": 170,
+          "dx": 0,
+          "dy": 1,
+          "type": "optical-carriage",
+          "diameter": 0
+        },
+        {
+          "id": "beam-in",
+          "x": 76,
+          "y": 86,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        },
+        {
+          "id": "beam-out",
+          "x": 85,
+          "y": 86,
+          "dx": 1,
+          "dy": 0,
+          "type": "optical-out",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "仅两个竖直狭缝，不使用多缝条纹冒充双缝。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:diffraction-grating",
+      "name": "衍射光栅片",
+      "category": "光学实验",
+      "search": "diffraction grating 光栅 衍射 diffraction grating",
+      "svg": "diffraction-grating.svg",
+      "width": 160,
+      "height": 190,
+      "sha256": "ccc9780a48f4987ce82319731f6f3bb2fec6e071e2f859d47cc7623ca5241988",
+      "ports": [
+        {
+          "id": "carriage",
+          "x": 80,
+          "y": 170,
+          "dx": 0,
+          "dy": 1,
+          "type": "optical-carriage",
+          "diameter": 0
+        },
+        {
+          "id": "beam-in",
+          "x": 78,
+          "y": 86,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        },
+        {
+          "id": "beam-out",
+          "x": 82,
+          "y": 86,
+          "dx": 1,
+          "dy": 0,
+          "type": "optical-out",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "平行密栅线示意，不把数条实验条纹当成光栅材料。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:spectrometer",
+      "name": "分光计",
+      "category": "光学实验",
+      "search": "spectrometer 分光计 三棱镜 测角 spectrometer",
+      "svg": "spectrometer.svg",
+      "width": 300,
+      "height": 260,
+      "sha256": "8fa07799d58c8908b16c0ec40c69e07d56db64f14db3a29b6e9e0c82c15a0e04",
+      "ports": [
+        {
+          "id": "base",
+          "x": 149,
+          "y": 250,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "beam-in",
+          "x": 18,
+          "y": 110,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "平行光管与转动望远镜对准棱镜中心，各有承重支架；棱镜台、刻度盘、游标和三只调平脚清晰分开。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:michelson-interferometer",
+      "name": "迈克尔逊干涉仪",
+      "category": "光学实验",
+      "search": "michelson interferometer 迈克尔逊 干涉仪 Michelson interferometer",
+      "svg": "michelson-interferometer.svg",
+      "width": 300,
+      "height": 245,
+      "sha256": "6122923f572ed62210d5e682429d863b62af7d4be0fac59aeed4da377cf59826",
+      "ports": [
+        {
+          "id": "base",
+          "x": 150,
+          "y": 213,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "beam-in",
+          "x": 31,
+          "y": 123,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        },
+        {
+          "id": "beam-out",
+          "x": 149,
+          "y": 200,
+          "dx": 0,
+          "dy": 1,
+          "type": "optical-out",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "俯视光路：左侧入射、上/右正交反射镜、45 度分束片及下方观察出口；红线为光路示意。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:tuning-fork",
+      "name": "音叉与共鸣箱",
+      "category": "波动与声学实验",
+      "search": "tuning fork 音叉 共鸣 声 tuning fork",
+      "svg": "tuning-fork.svg",
+      "width": 200,
+      "height": 240,
+      "sha256": "3b967929bb87b70b63e7fb364e07e69515c341016482cc735170a2cb1eb15968",
+      "ports": [
+        {
+          "id": "base",
+          "x": 101,
+          "y": 208,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "U 形金属叉、叉柄和独立木共鸣箱。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:resonance-tube",
+      "name": "共振空气柱实验装置",
+      "category": "波动与声学实验",
+      "search": "resonance tube 共振 空气柱 声速 resonance tube",
+      "svg": "resonance-tube.svg",
+      "width": 210,
+      "height": 300,
+      "sha256": "e4a28d03534c9350a880f930716a3d7df899e81f0187269d0be777a68c0764c4",
+      "ports": [
+        {
+          "id": "base",
+          "x": 110,
+          "y": 292,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "开口共振管与储水杯由底部接嘴、软管连通，静止水面等高；夹具固定玻璃管，储水杯沿支杆升降。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:wave-driver",
+      "name": "机械波振动源",
+      "category": "波动与声学实验",
+      "search": "wave driver 振动源 机械波 弦 驻波 wave driver",
+      "svg": "wave-driver.svg",
+      "width": 250,
+      "height": 205,
+      "sha256": "529aff405a4bc5a023f5dceec1990e15f39d493cf1f3d1e0bf23580210f87a2a",
+      "ports": [
+        {
+          "id": "input-a",
+          "x": 76,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "input-b",
+          "x": 109,
+          "y": 157,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 124,
+          "y": 187,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "hook",
+          "x": 131,
+          "y": 35,
+          "dx": 0,
+          "dy": -1,
+          "type": "hook",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "振动杆与驱动膜片同轴，上端带连接环；正面为交流信号输入插孔和开关。",
+      "origin": "authored"
+    },
+    {
+      "id": "physics:ripple-tank",
+      "name": "水波演示槽",
+      "category": "波动与声学实验",
+      "search": "ripple tank 水波 波纹 ripple tank",
+      "svg": "ripple-tank.svg",
+      "width": 300,
+      "height": 245,
+      "sha256": "bda22ee74469fc268a243cd0cbd9fbd4e855fd9218db66a2aabd7b37180870be",
+      "ports": [
+        {
+          "id": "base",
+          "x": 150,
+          "y": 210,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "浅水槽、点波源、支腿及下方投影屏，波纹为教学示意。",
+      "origin": "authored"
+    }
+  ]
+}

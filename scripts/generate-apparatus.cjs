@@ -22,7 +22,92 @@ class Art {
   svg(){return `<svg xmlns="http://www.w3.org/2000/svg" width="${this.w}" height="${this.h}" viewBox="0 0 ${this.w} ${this.h}"><g stroke="${C.ink}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">${this.nodes.join('')}</g></svg>\n`;}
 }
 const entries=[];
+function correctInterfaces(id, a) {
+  const update = (name, data) => Object.assign(a.ports.find(p => p.id === name), data);
+  const remove = name => { a.ports = a.ports.filter(p => p.id !== name); };
+  const pipe = (d, width) => {
+    a.p(d, 'none', {stroke: C.ink, 'stroke-width': width, 'stroke-linecap': 'butt'});
+    a.p(d, 'none', {stroke: '#f4f9f8', 'stroke-width': width - 4, 'stroke-linecap': 'butt'});
+  };
+  const surface = (name, x1, y1, x2, y2) => a.port(name, (x1+x2)/2, (y1+y2)/2,
+    y2-y1, x1-x2, 'surface', 0, {segment:[x1,y1,x2,y2]});
+  if (['beaker','displacement-beaker','eureka','tank','water-bath','ice-bath','tlc-chamber'].includes(id))
+    update('mouth', {x:76.5, diameter:121, edge:[16,34,137,34]});
+  const pipes = {
+    'test-tube-with-side-arm':['M50 48 H66 V36',6],
+    'conical-flask-with-side-arm':['M98 57 L137 38',13],
+    'displacement-beaker':['M137 64 H153 V88',12], 'eureka':['M137 64 H153 V88',12],
+    'wash-bottle':['M80 10 V8 H126 L149 30',10],
+    'distillation-flask':['M99 55 H132 V83',12], 'schlenk-flask':['M99 55 H132 V83',12],
+    'spe-cartridge':['M128 61 H162',10], 'piston-chamber':['M25 53 H10',12],
+    'vacuum-pump':['M137 86 V55',12], 'syringe-pump':['M39 65 H20',8],
+    'gas-cylinder':['M65 18 H80',10],
+  };
+  if (pipes[id]) pipe(...pipes[id]);
+  if (id === 'test-tube-with-side-arm') update('outlet', {diameter:6});
+  if (id === 'gas-cylinder') update('outlet', {x:80,y:18,diameter:10});
+  if (['graham','allihn','liebig-condenser'].includes(id)) pipe('M24 66 H7 M86 191 H103',12);
+  if (id === 'cold-finger') {
+    pipe('M62 28 V10 M78 28 V10',8);
+    update('inlet', {diameter:8}); update('outlet', {diameter:8});
+  }
+  if (id === 'distillation-head' || id === 'claisen') {
+    pipe(id === 'claisen' ? 'M76 66 H130 V92' : 'M76 66 H124 V92',16);
+    if (id === 'claisen') { pipe('M76 122 H112 V12',18); update('outlet', {x:130}); }
+  }
+  if (id === 'dean-stark-trap') pipe('M112 38 H122 V17',18);
+  if (id === 'pipette') update('mouth', {diameter:10, type:'pipette-stem'});
+  if (id === 'mohr') update('mouth', {diameter:26, type:'pipette-stem'});
+  if (id === 'burette') update('mouth', {diameter:26, type:'mouth'});
+  if (id === 'thermometer' || id === 'hydrometer') {
+    remove('mouth');
+    if (id === 'thermometer') update('stem', {y:241, diameter:34, segment:[40,200,40,30]});
+    else {
+      a.line(35,10,45,10); a.line(35,244,45,244);
+      update('stem', {type:'immersible', diameter:10});
+    }
+  }
+  if (id === 'eudiometer') {
+    a.nodes=[];
+    a.p('M27 10 V225 A13 13 0 0 0 53 225 V10'); a.ticks(47,30,14,12,14);
+    remove('stem'); update('mouth', {type:'mouth',diameter:26});
+    a.port('base',40,238,0,1,'base',0);
+  }
+  if (id === 'syringe') update('outlet', {type:'probe',diameter:2.4,segment:[50,218,50,198]});
+  if (id === 'gas-syringe') update('outlet', {diameter:14});
+  if (id === 'glass-stopper') update('plug', {y:68,diameter:22,depth:30});
+  if (id === 'septum-seal') { a.boreCount=-1; update('plug', {y:56,diameter:74,type:'lid'}); }
+  if (id === 'crucible-cover') { remove('mouth'); a.port('lid',85,96,0,1,'lid',133); }
+  if (id === 'crucible') update('mouth', {y:26,diameter:110});
+  if (id === 'mortar') update('mouth', {y:38,diameter:140});
+  if (id === 'spotting-tile') {
+    remove('mouth');
+    for(let y=37;y<109;y+=34)for(let x=39;x<146;x+=45)a.port(`well-${x}-${y}`,x,y,0,-1,'well',0);
+  }
+  const bases = {'pipette-bottle':[50,210],'oven':[90,175],'kettle':[85,161],
+    'microscope':[100,159],'fume-hood':[100,159],'desiccator':[100,144],
+    'desk-lamp':[88,164],'desk-fan':[99,164],'computer':[100,162],
+    'petri-dish':[90,130],'pot':[90,158],'soda-can':[90,131]};
+  if (bases[id]) a.port('base',...bases[id],0,1,'base',0);
+  if (id==='table') surface('surface',10,48,190,48);
+  if (id==='oven') surface('surface',37,126,116,126);
+  if (id==='desiccator') surface('surface',36,105,164,105);
+  if (id==='fume-hood') surface('surface',29,140,171,140);
+  if (id==='microscope') surface('surface',28,101,137,101);
+  if (id==='ramp') surface('surface',12,139,176,34);
+  if (id==='clay-triangle') a.port('surface',90,64,0,-1,'surface',0);
+  if (id==='peg') a.port('grip',64,167,0,1,'grip',0);
+  if (id==='tlc-plate') a.port('lane',90,120,0,-1,'lane',0,{segment:[39,120,141,120]});
+  if (id==='tlc-spot') a.port('spot',90,74,0,1,'spot',0);
+  if (id==='balloon') a.port('hanger',90,147,0,1,'hanger',0);
+  if (id==='light-gate') {
+    a.circle(141,43,5,C.ink); a.port('signal',141,43,0,1,'wire',0);
+    a.port('grip-site',48,100,1,0,'grip-site',0);
+  }
+  if (id==='lamp') { a.line(73,131,73,141); a.line(107,131,107,141); }
+}
 function save(id,name,category,a){
+  correctInterfaces(id,a);
   const svg=a.svg();fs.writeFileSync(path.join(target,id+'.svg'),svg);
   const e={id:'studio:'+id,name,category,search:id.replaceAll('-',' '),svg:id+'.svg',sha256:crypto.createHash('sha256').update(svg).digest('hex'),width:a.w,height:a.h,ports:a.ports,boreCount:a.boreCount,neckCount:a.neckCount};
   entries.push(e);return e;
@@ -52,7 +137,7 @@ function vessel(id){
  }else{
    const wide=id==='gas-jar';a.p(wide?'M34 14 H38 V171 Q38 181 48 181 H112 Q122 181 122 171 V14 H126':'M56 15 H60 V45 Q27 56 27 80 V171 Q27 183 40 183 H120 Q133 183 133 171 V80 Q133 56 100 45 V15 H104');a.port('mouth',80,14,0,-1,'mouth',wide?84:40,{depth:24,target:[80,144]});
    if(['reagent-bottle','bottle','thermos','wash-bottle'].includes(id)){a.rect(55,4,50,10,C.metal,2);a.rect(48,90,64,43,'none',3);}
-   if(id==='wash-bottle'){a.p('M80 10 V2 H126 L149 30');a.port('outlet',149,30,.7,.7,'tube',10);}
+   if(id==='wash-bottle'){a.p('M80 10 V8 H126 L149 30');a.port('outlet',149,30,.7,.7,'tube',10);}
    if(id==='thermos')a.p('M41 76 V166 H119 V76');
  }
  a.port('base',a.w/2,a.h-18,0,1,'base',0);return a;

@@ -699,6 +699,8 @@ class GeometryTests : public QObject {
         auto* first = selected(view);
         view.addApparatus("gas-jar", {570.5, 390.25});
         auto* second = selected(view);
+        first->portTypes["mouth"] = "wire";
+        second->portTypes["mouth"] = "wire";
         QVERIFY(view.connectItems(first->id, "mouth", second->id, "mouth"));
         for (auto* item : view.scene()->items()) item->setSelected(true);
         const auto a = first->mapToScene(first->transformOriginPoint());

@@ -247,7 +247,8 @@ MainWindow::MainWindow(bool automatic) : automated(automatic) {
     tl->addWidget(projectName, 1);
     tl->addWidget(tool("file-plus-2", QStringLiteral("清空工作区"), [this] { newProject(); }));
     tl->addWidget(tool("save", QStringLiteral("保存项目"), [this] {
-        if (structureEditor->isPending()) {
+        if (structureEditor->isPending() &&
+            (moleculeSourceIsDrawing || structureEditor->isEditPending())) {
             report(QStringLiteral("请稍候，绘制结构正在更新"), true);
             return;
         }
@@ -749,7 +750,15 @@ QWidget* MainWindow::drawingPage() {
             {"lining", QStringLiteral("滤纸底端")}, {"lining-seat", QStringLiteral("滤纸承接处")},
             {"lid", QStringLiteral("盖底")}, {"clip", QStringLiteral("磨口夹")},
             {"contents", QStringLiteral("器内元件")}, {"contents-seat", QStringLiteral("容器内部")},
-            {"hook", QStringLiteral("挂钩")}, {"hanger", QStringLiteral("悬挂口")}};
+            {"hook", QStringLiteral("挂钩")}, {"hanger", QStringLiteral("悬挂口")},
+            {"ch1", "CH1"}, {"ch2", "CH2"}, {"sync", "SYNC"}, {"trigger", QStringLiteral("外触发")},
+            {"input-a", QStringLiteral("输入 A")}, {"input-b", QStringLiteral("输入 B")},
+            {"bnc", "BNC"}, {"tip", QStringLiteral("探针")}, {"ground", QStringLiteral("接地夹")},
+            {"earth", QStringLiteral("保护接地")}, {"signal", QStringLiteral("信号")},
+            {"com", "COM"}, {"voltage", QStringLiteral("电压输入")},
+            {"air-in", QStringLiteral("进气口")}, {"air-out", QStringLiteral("出气口")},
+            {"beam-in", QStringLiteral("入射光口")}, {"beam-out", QStringLiteral("出射光口")},
+            {"track", QStringLiteral("导轨")}, {"carriage", QStringLiteral("滑座")}};
         const auto portName = [&labels](const DrawingItem* item, const QString& port) {
             if (item->portTypes.value(port) == "sensor-socket")
                 return QStringLiteral("温度计口");
@@ -757,6 +766,8 @@ QWidget* MainWindow::drawingPage() {
                 return QStringLiteral("管架位置 %1").arg(port.mid(5));
             if (port.startsWith("wire-"))
                 return QStringLiteral("接线端 %1").arg(port.mid(5));
+            if (port.startsWith("hole-"))
+                return QStringLiteral("插孔 %1").arg(port.mid(5));
             if (port.startsWith("lane-"))
                 return QStringLiteral("层析泳道 %1").arg(port.mid(5));
             if (port.startsWith("clip-"))
@@ -840,6 +851,7 @@ QWidget* MainWindow::drawingPage() {
     catalogSource->setObjectName("apparatusSource");
     catalogSource->addItem(QStringLiteral("实验器材"), "studio");
     catalogSource->addItem(QStringLiteral("生化器材"), "bio");
+    catalogSource->addItem(QStringLiteral("物理与电工器材"), "physics");
     const auto definitions = apparatusDefinitions();
     for (const auto& source : QStringList{"chemix", "legacy"})
         if (std::any_of(definitions.begin(), definitions.end(), [&source](const auto& d) {
@@ -863,7 +875,7 @@ QWidget* MainWindow::drawingPage() {
     palette->setWordWrap(true);
     const QStringList basics{"arrow", "line", "label", "rectangle", "ellipse"};
     for (const auto& d : definitions) {
-        if (!d.id.startsWith("studio:") && !d.id.startsWith("bio:") && !d.id.startsWith("legacy:") && !d.id.startsWith("chemix:") && !basics.contains(d.id))
+        if (!d.id.startsWith("studio:") && !d.id.startsWith("bio:") && !d.id.startsWith("physics:") && !d.id.startsWith("legacy:") && !d.id.startsWith("chemix:") && !basics.contains(d.id))
             continue;
         auto* item = new QListWidgetItem(d.name, palette);
         item->setData(Qt::UserRole, d.id);
@@ -893,6 +905,7 @@ QWidget* MainWindow::drawingPage() {
             const auto id = item->data(Qt::UserRole).toString();
             const auto category = id.startsWith("studio:") ? QString("studio")
                                   : id.startsWith("bio:") ? QString("bio")
+                                  : id.startsWith("physics:") ? QString("physics")
                                   : id.startsWith("legacy:") ? QString("legacy")
                                   : id.startsWith("chemix:") ? QString("chemix")
                                   : basics.contains(id)    ? QString("shapes")
@@ -974,6 +987,17 @@ QWidget* MainWindow::drawingPage() {
     necks->setObjectName("drawingNecks");
     necks->setFixedWidth(80);
     geometry->addWidget(necks);
+    auto* attenuationLabel = new QLabel(QStringLiteral("探头倍率"));
+    auto* attenuation = new QDoubleSpinBox;
+    attenuation->setObjectName("drawingProbeAttenuation");
+    attenuation->setToolTip(QStringLiteral("探头衰减倍率"));
+    attenuation->setRange(1, 1000);
+    attenuation->setDecimals(0);
+    attenuation->setSuffix("X");
+    attenuation->setKeyboardTracking(false);
+    attenuation->setFixedWidth(96);
+    geometry->addWidget(attenuationLabel);
+    geometry->addWidget(attenuation);
     auto* resetTransform = tool("refresh-cw", QStringLiteral("重置大小与角度"), [this] {
         drawing->resetSelectionTransform();
     });
@@ -996,12 +1020,20 @@ QWidget* MainWindow::drawingPage() {
     geometry->addStretch();
     l->addLayout(geometry);
     const auto refresh = [this, x, y, rotation, scale, width, height, necks, resetTransform, aspect,
-                          openingsLabel, depthLabel, depth] {
+                          openingsLabel, depthLabel, depth, attenuationLabel, attenuation] {
         const auto selected = drawing->scene()->selectedItems();
         auto* item = selected.size() == 1 ? dynamic_cast<DrawingItem*>(selected.front()) : nullptr;
         for (auto* spin : {x, y, rotation, scale, width, height}) spin->setEnabled(item != nullptr);
         resetTransform->setEnabled(item != nullptr);
         aspect->setEnabled(item != nullptr);
+        const bool probe = item && item->kind == "physics:oscilloscope-probe";
+        attenuationLabel->setVisible(probe);
+        attenuation->setVisible(probe);
+        attenuation->setEnabled(probe);
+        const QSignalBlocker ba(attenuation);
+        if (probe) attenuation->setValue(item->probeAttenuation);
+        openingsLabel->setVisible(!probe);
+        necks->setVisible(!probe);
         const QSignalBlocker bn(necks);
         const auto counts = item ? item->boreCount >= 0 ? QVector<int>{0, 1, 2} : item->availableNeckCounts() :
                                    QVector<int>();
@@ -1055,6 +1087,9 @@ QWidget* MainWindow::drawingPage() {
     connect(width, &QDoubleSpinBox::valueChanged, drawing, &DrawingView::setSelectionWidth);
     connect(height, &QDoubleSpinBox::valueChanged, drawing, &DrawingView::setSelectionHeight);
     connect(depth, &QDoubleSpinBox::valueChanged, drawing, &DrawingView::setSelectionInsertionDepth);
+    connect(attenuation, &QDoubleSpinBox::valueChanged, this, [this](double value) {
+        drawing->setSelectionProbeAttenuation(qRound(value));
+    });
     connect(necks, &QComboBox::currentIndexChanged, this, [this, necks](int index) {
         if (index < 0)
             return;

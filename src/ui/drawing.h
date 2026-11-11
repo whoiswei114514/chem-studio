@@ -42,10 +42,12 @@ class DrawingItem : public QGraphicsObject {
     QSet<QString> customPorts;
     int neckCount = 0;
     int boreCount = -1;
+    int probeAttenuation = 10;
     double stretchX = 1, stretchY = 1;
     std::shared_ptr<QSvgRenderer> renderer;
     explicit DrawingItem(QString type, QGraphicsItem* parent = nullptr);
     QRectF boundingRect() const override;
+    QPainterPath shape() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
     QJsonObject json() const;
     static DrawingItem* fromJson(const QJsonObject& object);
@@ -62,6 +64,10 @@ class DrawingItem : public QGraphicsObject {
     void setInkColor(QColor color);
     void setStretch(double horizontal, double vertical);
     QSizeF displayedSize() const;
+    QStringList flexiblePorts() const;
+    bool isFlexiblePort(const QString& port) const;
+    void moveFlexiblePort(const QString& port, QPointF scenePosition, QPointF sceneDirection = {});
+    QRectF visualRect() const;
 
   protected:
     QVariant itemChange(GraphicsItemChange change, const QVariant& value) override;
@@ -72,6 +78,8 @@ class DrawingItem : public QGraphicsObject {
     QImage exportArtwork;
     bool rasterizeExport = false;
     void applyGeometry(const ApparatusGeometry& geometry, bool preservePivot);
+    QPainterPath flexibleShape() const;
+    void paintFlexible(QPainter* painter) const;
 };
 class DrawingView : public QGraphicsView {
     Q_OBJECT
@@ -104,6 +112,7 @@ class DrawingView : public QGraphicsView {
     void setSelectionHeight(double height);
     void setSelectionNeckCount(int count);
     void setSelectionBoreCount(int count);
+    void setSelectionProbeAttenuation(int value);
     double selectionInsertionDepth() const;
     void setSelectionInsertionDepth(double depth);
     void resetSelectionTransform();
@@ -157,7 +166,7 @@ class DrawingView : public QGraphicsView {
     QJsonArray beforeDrag;
     bool preciseDrag = false;
     bool spaceDown = false;
-    enum class DragMode { None, Move, Resize, Rotate, Pan };
+    enum class DragMode { None, Move, Resize, Rotate, Pan, Port };
     DragMode activeDrag = DragMode::None;
     struct TransformState {
         QPointer<DrawingItem> item;
@@ -177,6 +186,17 @@ class DrawingView : public QGraphicsView {
     bool fitting = false;
     bool extendingWorkspace = false;
     bool updatingConnections = false;
+    QPointer<DrawingItem> draggedPortItem, portCandidate;
+    QString draggedPort, candidatePort;
+    QPointF portPointer, portDirectionAnchor;
+    QPointF portDragDirection, portSnapPointer;
+    double portSnapDistance = 0;
+    QPointF terminalGrabPoint;
+    bool draggingTerminalBody = false;
+    bool portMoved = false;
+    QPair<DrawingItem*, QString> portAt(QPointF position, bool selectedOnly = false) const;
+    QPair<DrawingItem*, QString> terminalAt(QPointF position) const;
+    void updatePortDrag(QPointF position);
     QList<DrawingItem*> selectedShapes() const;
     QPolygonF selectionFrame() const;
     QVector<QPointF> handlePositions() const;

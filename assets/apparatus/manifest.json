@@ -17,16 +17,22 @@
       "ports": [
         {
           "id": "mouth",
-          "x": 82,
+          "x": 76.5,
           "y": 34,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 105,
+          "diameter": 121,
           "depth": 25,
           "target": [
             82,
             150
+          ],
+          "edge": [
+            16,
+            34,
+            137,
+            34
           ]
         },
         {
@@ -419,7 +425,7 @@
       "category": "容器",
       "search": "test tube with side arm",
       "svg": "test-tube-with-side-arm.svg",
-      "sha256": "9255c058ee1d107318e32988cef7ad72f429a704c44156c5b17fd1a0eb38405a",
+      "sha256": "0f72e3c01bcba499d8e2988ce14131e71d6448351f8326b1210f73f2372ce102",
       "width": 70,
       "height": 200,
       "ports": [
@@ -444,7 +450,7 @@
           "dx": 0,
           "dy": -1,
           "type": "tube",
-          "diameter": 12
+          "diameter": 6
         }
       ],
       "boreCount": -1,
@@ -456,7 +462,7 @@
       "category": "容器",
       "search": "conical flask with side arm",
       "svg": "conical-flask-with-side-arm.svg",
-      "sha256": "1fa2be3f3e21406115d96f8ef1377f11f82a5d2e68d782f1e2e376f7863cddf3",
+      "sha256": "5d09b518971a5cd6c8d554a2a612b137430860f9245cc9105521ecf43b8ceeba",
       "width": 160,
       "height": 200,
       "ports": [
@@ -539,22 +545,28 @@
       "category": "容器",
       "search": "displacement beaker",
       "svg": "displacement-beaker.svg",
-      "sha256": "13b3ade643b6231e7889a23f275bafd7ec372e17cb1379c16994e59a7f6f51aa",
+      "sha256": "9a14ffd4d50e5591d99482060a1c96f36b1e97a902cb5dd5aaa602926426259c",
       "width": 160,
       "height": 200,
       "ports": [
         {
           "id": "mouth",
-          "x": 82,
+          "x": 76.5,
           "y": 34,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 105,
+          "diameter": 121,
           "depth": 25,
           "target": [
             82,
             150
+          ],
+          "edge": [
+            16,
+            34,
+            137,
+            34
           ]
         },
         {
@@ -585,22 +597,28 @@
       "category": "容器",
       "search": "eureka",
       "svg": "eureka.svg",
-      "sha256": "13b3ade643b6231e7889a23f275bafd7ec372e17cb1379c16994e59a7f6f51aa",
+      "sha256": "9a14ffd4d50e5591d99482060a1c96f36b1e97a902cb5dd5aaa602926426259c",
       "width": 160,
       "height": 200,
       "ports": [
         {
           "id": "mouth",
-          "x": 82,
+          "x": 76.5,
           "y": 34,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 105,
+          "diameter": 121,
           "depth": 25,
           "target": [
             82,
             150
+          ],
+          "edge": [
+            16,
+            34,
+            137,
+            34
           ]
         },
         {
@@ -660,16 +678,22 @@
       "ports": [
         {
           "id": "mouth",
-          "x": 82,
+          "x": 76.5,
           "y": 34,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 105,
+          "diameter": 121,
           "depth": 25,
           "target": [
             82,
             150
+          ],
+          "edge": [
+            16,
+            34,
+            137,
+            34
           ]
         },
         {
@@ -697,16 +721,22 @@
       "ports": [
         {
           "id": "mouth",
-          "x": 82,
+          "x": 76.5,
           "y": 34,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 105,
+          "diameter": 121,
           "depth": 25,
           "target": [
             82,
             150
+          ],
+          "edge": [
+            16,
+            34,
+            137,
+            34
           ]
         },
         {
@@ -825,7 +855,7 @@
       "category": "容器",
       "search": "wash bottle",
       "svg": "wash-bottle.svg",
-      "sha256": "02b3f7b438b3381a095c42fd74bfd2ff6bfc87278edffe9e69dcd83716ceb373",
+      "sha256": "90eb06f2aff491071e76e750c21758c4aed4b570edd30f8b844bb1fef51b957b",
       "width": 160,
       "height": 200,
       "ports": [
@@ -894,7 +924,7 @@
       "category": "容器",
       "search": "schlenk flask",
       "svg": "schlenk-flask.svg",
-      "sha256": "fdc0644c3b48e74396b9a2d2417e1dde7ce8947458abe4e1d1b0980d2abc1bb7",
+      "sha256": "9071ce01f39464d226d91cb24617bee744234eb53a4762cdded6c05878f6a7a1",
       "width": 160,
       "height": 200,
       "ports": [
@@ -940,7 +970,7 @@
       "category": "容器",
       "search": "distillation flask",
       "svg": "distillation-flask.svg",
-      "sha256": "ccf50f8d014e5e26157c9241d286c058e08197ecaf0a235d118c8e101f1d06a1",
+      "sha256": "c8a79a85d73727b7cfeb9dfc1ded0a87c1130dc48e21e556f7044d6f6348cefa",
       "width": 160,
       "height": 200,
       "ports": [
@@ -1103,16 +1133,22 @@
       "ports": [
         {
           "id": "mouth",
-          "x": 82,
+          "x": 76.5,
           "y": 34,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 105,
+          "diameter": 121,
           "depth": 25,
           "target": [
             82,
             150
+          ],
+          "edge": [
+            16,
+            34,
+            137,
+            34
           ]
         },
         {
@@ -1140,16 +1176,22 @@
       "ports": [
         {
           "id": "mouth",
-          "x": 82,
+          "x": 76.5,
           "y": 34,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 105,
+          "diameter": 121,
           "depth": 25,
           "target": [
             82,
             150
+          ],
+          "edge": [
+            16,
+            34,
+            137,
+            34
           ]
         },
         {
@@ -1772,7 +1814,7 @@
       "category": "冷凝与蒸馏",
       "search": "graham",
       "svg": "graham.svg",
-      "sha256": "4e76a10a21d755f71d0bbf16bd7ed653f3d865b7e9cf6a810b5339426996545d",
+      "sha256": "fd3e20b25bbde0abb2d8ea355c6b0366dbcc4d6457d8c55d5943f1ef97cdd16a",
       "width": 110,
       "height": 260,
       "ports": [
@@ -1824,7 +1866,7 @@
       "category": "冷凝与蒸馏",
       "search": "allihn",
       "svg": "allihn.svg",
-      "sha256": "aa3d2e5085ac4a48e756422b50b3d433ff18efb41f8cab8d445cec732e5447f1",
+      "sha256": "6401f3771f51792b4600551f1d5ecfe354c921dcdd42bde9990fedbd8596ca71",
       "width": 110,
       "height": 260,
       "ports": [
@@ -1876,7 +1918,7 @@
       "category": "冷凝与蒸馏",
       "search": "liebig condenser",
       "svg": "liebig-condenser.svg",
-      "sha256": "3ee3fb654c5013413cff37b7f028dab1a8beeae720de0a1087ee841fe575cca9",
+      "sha256": "fd1994121e7ed7671333ab2c414931ab1bed0064b614d42401c9874480dadf04",
       "width": 110,
       "height": 260,
       "ports": [
@@ -1985,7 +2027,7 @@
       "category": "冷凝与蒸馏",
       "search": "cold finger",
       "svg": "cold-finger.svg",
-      "sha256": "fd42f682409dcb39e7515b85c34d6f47ee4ff9f0c1da73fa71920bc713e3c58f",
+      "sha256": "c8480a85bf4b37a8944ccff858222c83500c7da91a18805997303408c415f6e2",
       "width": 140,
       "height": 210,
       "ports": [
@@ -1996,7 +2038,7 @@
           "dx": 0,
           "dy": -1,
           "type": "coolant",
-          "diameter": 12
+          "diameter": 8
         },
         {
           "id": "outlet",
@@ -2005,7 +2047,7 @@
           "dx": 0,
           "dy": -1,
           "type": "coolant",
-          "diameter": 12
+          "diameter": 8
         }
       ],
       "boreCount": -1,
@@ -2017,7 +2059,7 @@
       "category": "冷凝与蒸馏",
       "search": "distillation head",
       "svg": "distillation-head.svg",
-      "sha256": "7b03b5b597e23f31fb594ae582d8f759b9c30c8897aa7212ffaec2f3bee65567",
+      "sha256": "bf002bdf91a266b1e6f985aafd73b943d99bbd1c7d52a94396eddd1eb4ede2b9",
       "width": 140,
       "height": 210,
       "ports": [
@@ -2058,7 +2100,7 @@
       "category": "冷凝与蒸馏",
       "search": "claisen",
       "svg": "claisen.svg",
-      "sha256": "a4f6c8a11d961fd56890ce6c0d00f7d96d1eaf9f6a76f231c451faa33afefb01",
+      "sha256": "6c59e3cb149993d26a3710c68fbcaca45b6e818a3b217b7d634d811d8f343a6d",
       "width": 140,
       "height": 210,
       "ports": [
@@ -2073,7 +2115,7 @@
         },
         {
           "id": "outlet",
-          "x": 124,
+          "x": 130,
           "y": 92,
           "dx": 0,
           "dy": 1,
@@ -2108,7 +2150,7 @@
       "category": "冷凝与蒸馏",
       "search": "dean stark trap",
       "svg": "dean-stark-trap.svg",
-      "sha256": "4bb0bdf5cbc2b449226ae8ac566996778dd7d4cf0151cda76513147b36b1e131",
+      "sha256": "1f6bc11bc0d59f7abbb7efdd55e2d4b63bbee96f6174a251b7affaac95c113e4",
       "width": 140,
       "height": 210,
       "ports": [
@@ -2385,8 +2427,8 @@
           "y": 10,
           "dx": 0,
           "dy": -1,
-          "type": "tube",
-          "diameter": 18
+          "type": "pipette-stem",
+          "diameter": 10
         }
       ],
       "boreCount": -1,
@@ -2423,8 +2465,8 @@
           "y": 10,
           "dx": 0,
           "dy": -1,
-          "type": "tube",
-          "diameter": 18
+          "type": "pipette-stem",
+          "diameter": 26
         }
       ],
       "boreCount": -1,
@@ -2461,8 +2503,8 @@
           "y": 10,
           "dx": 0,
           "dy": -1,
-          "type": "tube",
-          "diameter": 18
+          "type": "mouth",
+          "diameter": 26
         }
       ],
       "boreCount": -1,
@@ -2474,33 +2516,27 @@
       "category": "测量",
       "search": "eudiometer",
       "svg": "eudiometer.svg",
-      "sha256": "d1ee78797c4239a42c5e0e3f353234e3c28cecc2998d50b6d8753d5ef7bb6a04",
+      "sha256": "2bf5c0ae11b4a5adbcac5282187f4efc815156c5bb98c27a802fea985b065a19",
       "width": 80,
       "height": 260,
       "ports": [
-        {
-          "id": "stem",
-          "x": 40,
-          "y": 244,
-          "dx": 0,
-          "dy": 1,
-          "type": "probe",
-          "diameter": 10,
-          "segment": [
-            40,
-            234,
-            40,
-            170
-          ]
-        },
         {
           "id": "mouth",
           "x": 40,
           "y": 10,
           "dx": 0,
           "dy": -1,
-          "type": "tube",
-          "diameter": 18
+          "type": "mouth",
+          "diameter": 26
+        },
+        {
+          "id": "base",
+          "x": 40,
+          "y": 238,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
         }
       ],
       "boreCount": -1,
@@ -2519,26 +2555,17 @@
         {
           "id": "stem",
           "x": 40,
-          "y": 244,
+          "y": 241,
           "dx": 0,
           "dy": 1,
           "type": "probe",
-          "diameter": 16,
+          "diameter": 34,
           "segment": [
             40,
-            234,
+            200,
             40,
-            170
+            30
           ]
-        },
-        {
-          "id": "mouth",
-          "x": 40,
-          "y": 10,
-          "dx": 0,
-          "dy": -1,
-          "type": "tube",
-          "diameter": 18
         }
       ],
       "boreCount": -1,
@@ -2550,7 +2577,7 @@
       "category": "测量",
       "search": "hydrometer",
       "svg": "hydrometer.svg",
-      "sha256": "75ea46f13232d8f6d753b1171b3b9c1471b1280694620afb3e4387bb4235c32d",
+      "sha256": "3050e4993e7f1b3090c6076467c48fb5267c5ab7d0147461e6c354cf460752d8",
       "width": 80,
       "height": 260,
       "ports": [
@@ -2560,7 +2587,7 @@
           "y": 244,
           "dx": 0,
           "dy": 1,
-          "type": "probe",
+          "type": "immersible",
           "diameter": 10,
           "segment": [
             40,
@@ -2568,15 +2595,6 @@
             40,
             170
           ]
-        },
-        {
-          "id": "mouth",
-          "x": 40,
-          "y": 10,
-          "dx": 0,
-          "dy": -1,
-          "type": "tube",
-          "diameter": 18
         }
       ],
       "boreCount": -1,
@@ -2776,7 +2794,17 @@
       "sha256": "d734eef6a9bc92bcb4322258a38fdc6493caa43f4980c9e706ac072680e1e8a2",
       "width": 100,
       "height": 230,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 50,
+          "y": 210,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -2796,8 +2824,14 @@
           "y": 220,
           "dx": 0,
           "dy": 1,
-          "type": "luer-male",
-          "diameter": 10
+          "type": "probe",
+          "diameter": 2.4,
+          "segment": [
+            50,
+            218,
+            50,
+            198
+          ]
         }
       ],
       "boreCount": -1,
@@ -2820,7 +2854,7 @@
           "dx": 0,
           "dy": 1,
           "type": "luer-male",
-          "diameter": 10
+          "diameter": 14
         }
       ],
       "boreCount": -1,
@@ -2892,12 +2926,12 @@
         {
           "id": "plug",
           "x": 50,
-          "y": 65,
+          "y": 68,
           "dx": 0,
           "dy": 1,
           "type": "plug",
-          "diameter": 52,
-          "depth": 36
+          "diameter": 22,
+          "depth": 30
         }
       ],
       "boreCount": 0,
@@ -2916,15 +2950,15 @@
         {
           "id": "plug",
           "x": 50,
-          "y": 65,
+          "y": 56,
           "dx": 0,
           "dy": 1,
-          "type": "plug",
-          "diameter": 52,
+          "type": "lid",
+          "diameter": 74,
           "depth": 36
         }
       ],
-      "boreCount": 0,
+      "boreCount": -1,
       "neckCount": 0
     },
     {
@@ -3073,7 +3107,32 @@
       "sha256": "020fd8c46893679a8365b2da8179a869ea9b7e82e921c7ae9271bd8131f93762",
       "width": 180,
       "height": 190,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 90,
+          "y": 175,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "surface",
+          "x": 76.5,
+          "y": 126,
+          "dx": 0,
+          "dy": -79,
+          "type": "surface",
+          "diameter": 0,
+          "segment": [
+            37,
+            126,
+            116,
+            126
+          ]
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -3086,7 +3145,17 @@
       "sha256": "032b931866acf9a08dec0e82d62c46f5a9bc922b74c22817d0738e9a4c0bef1a",
       "width": 180,
       "height": 190,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 85,
+          "y": 161,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -3392,7 +3461,17 @@
       "sha256": "16103898580150891c5210724d3b86acf92efe732aa11fe5a9b517f5aa64fe96",
       "width": 180,
       "height": 200,
-      "ports": [],
+      "ports": [
+        {
+          "id": "grip",
+          "x": 64,
+          "y": 167,
+          "dx": 0,
+          "dy": 1,
+          "type": "grip",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -3833,7 +3912,17 @@
       "sha256": "c1384f68cbc15853a2d5a33d29da0485882bf9d0671289e4793cc68691660cc3",
       "width": 180,
       "height": 120,
-      "ports": [],
+      "ports": [
+        {
+          "id": "surface",
+          "x": 90,
+          "y": 64,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -3888,7 +3977,7 @@
       "category": "实验小工具",
       "search": "spe cartridge",
       "svg": "spe-cartridge.svg",
-      "sha256": "5030b0b601e88caad87a2c5f53c49143ebafc6c41f5ba4c01cc5fc39c4af5dc8",
+      "sha256": "8f47b94d27f3961ca9c171c303caccd4f0d83cf4776b96bb83920b6eda2037ac",
       "width": 180,
       "height": 120,
       "ports": [
@@ -3970,11 +4059,11 @@
         {
           "id": "mouth",
           "x": 85,
-          "y": 30,
+          "y": 38,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 90
+          "diameter": 140
         }
       ],
       "boreCount": -1,
@@ -3993,11 +4082,11 @@
         {
           "id": "mouth",
           "x": 85,
-          "y": 30,
+          "y": 26,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 90
+          "diameter": 110
         }
       ],
       "boreCount": -1,
@@ -4014,13 +4103,13 @@
       "height": 135,
       "ports": [
         {
-          "id": "mouth",
+          "id": "lid",
           "x": 85,
-          "y": 30,
+          "y": 96,
           "dx": 0,
-          "dy": -1,
-          "type": "mouth",
-          "diameter": 90
+          "dy": 1,
+          "type": "lid",
+          "diameter": 133
         }
       ],
       "boreCount": -1,
@@ -4037,13 +4126,85 @@
       "height": 135,
       "ports": [
         {
-          "id": "mouth",
-          "x": 85,
-          "y": 30,
+          "id": "well-39-37",
+          "x": 39,
+          "y": 37,
           "dx": 0,
           "dy": -1,
-          "type": "mouth",
-          "diameter": 90
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-84-37",
+          "x": 84,
+          "y": 37,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-129-37",
+          "x": 129,
+          "y": 37,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-39-71",
+          "x": 39,
+          "y": 71,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-84-71",
+          "x": 84,
+          "y": 71,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-129-71",
+          "x": 129,
+          "y": 71,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-39-105",
+          "x": 39,
+          "y": 105,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-84-105",
+          "x": 84,
+          "y": 105,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
+        },
+        {
+          "id": "well-129-105",
+          "x": 129,
+          "y": 105,
+          "dx": 0,
+          "dy": -1,
+          "type": "well",
+          "diameter": 0
         }
       ],
       "boreCount": -1,
@@ -4081,7 +4242,32 @@
       "sha256": "91751f913f7097008eb29b69adf4104209fceedd07ea12a203ee37acdf7d988f",
       "width": 200,
       "height": 170,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 100,
+          "y": 159,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "surface",
+          "x": 100,
+          "y": 140,
+          "dx": 0,
+          "dy": -142,
+          "type": "surface",
+          "diameter": 0,
+          "segment": [
+            29,
+            140,
+            171,
+            140
+          ]
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4094,7 +4280,32 @@
       "sha256": "365942401947ea06ddc89cbb60dd826aa2866153d4ea0369510bc713c5e09380",
       "width": 200,
       "height": 170,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 100,
+          "y": 159,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "surface",
+          "x": 82.5,
+          "y": 101,
+          "dx": 0,
+          "dy": -109,
+          "type": "surface",
+          "diameter": 0,
+          "segment": [
+            28,
+            101,
+            137,
+            101
+          ]
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4104,7 +4315,7 @@
       "category": "设备",
       "search": "vacuum pump",
       "svg": "vacuum-pump.svg",
-      "sha256": "2cc15eedb34ef60339eb394105925a8f3497ca190420f6c3251510daeca957d9",
+      "sha256": "03088390d8d5a11f564c4ab14a5425e82b3537208429568bbcd483e8acf17631",
       "width": 200,
       "height": 170,
       "ports": [
@@ -4127,7 +4338,7 @@
       "category": "设备",
       "search": "syringe pump",
       "svg": "syringe-pump.svg",
-      "sha256": "9ae3f7d7198cdf1aadd213f0ae0668716fc3e755c1746214e954289229d88133",
+      "sha256": "fd098d7172519beebc6cc6b9823ff3696eb4e42d924edc9a7c33a43bbe16b0e9",
       "width": 200,
       "height": 170,
       "ports": [
@@ -4150,7 +4361,7 @@
       "category": "设备",
       "search": "piston chamber",
       "svg": "piston-chamber.svg",
-      "sha256": "aec5c0a2924b06f4321e96af5595622249201546e37f5c42717d5e34fe18906e",
+      "sha256": "fa3f05d0932dacfed81b2ebb5662192d3a8809abc3d2ed240ca9cda41ccd1226",
       "width": 200,
       "height": 170,
       "ports": [
@@ -4173,18 +4384,18 @@
       "category": "设备",
       "search": "gas cylinder",
       "svg": "gas-cylinder.svg",
-      "sha256": "9b4564bc13094e0ddef2f740fce98287069e668d777b6a8da964f59f4df9f543",
+      "sha256": "b287efc5815257ead2f854ccdfcc7cd271c79fc364462c5523c8d883558c744e",
       "width": 110,
       "height": 240,
       "ports": [
         {
           "id": "outlet",
-          "x": 73,
-          "y": 14,
+          "x": 80,
+          "y": 18,
           "dx": 1,
           "dy": 0,
           "type": "tube",
-          "diameter": 12
+          "diameter": 10
         }
       ],
       "boreCount": -1,
@@ -4199,7 +4410,32 @@
       "sha256": "bd2b888bdf0adbe57f776a741e3f236c4c45920c00706c82691bcbe8b140cf34",
       "width": 200,
       "height": 170,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 100,
+          "y": 144,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        },
+        {
+          "id": "surface",
+          "x": 100,
+          "y": 105,
+          "dx": 0,
+          "dy": -128,
+          "type": "surface",
+          "diameter": 0,
+          "segment": [
+            36,
+            105,
+            164,
+            105
+          ]
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4212,7 +4448,23 @@
       "sha256": "0fa0d9cce59580ada5a2e689426e1e66e53ddd2189dab646c4aca89341e7fab4",
       "width": 200,
       "height": 170,
-      "ports": [],
+      "ports": [
+        {
+          "id": "surface",
+          "x": 100,
+          "y": 48,
+          "dx": 0,
+          "dy": -180,
+          "type": "surface",
+          "diameter": 0,
+          "segment": [
+            10,
+            48,
+            190,
+            48
+          ]
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4225,7 +4477,17 @@
       "sha256": "05a25e6a6b2a6db2725188a042edba1346d8604d68484b43e5812c201e79f9fc",
       "width": 200,
       "height": 170,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 88,
+          "y": 164,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4238,7 +4500,17 @@
       "sha256": "a803a7fee89623a109daa28866327134aa4959c5026a12b3dc4ed0c738d432a6",
       "width": 200,
       "height": 170,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 99,
+          "y": 164,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4251,7 +4523,17 @@
       "sha256": "e3a4b098576a25afa58f66770c794f4421beff3fe212d4bf7a448305f366c261",
       "width": 200,
       "height": 170,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 100,
+          "y": 162,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4492,7 +4774,7 @@
       "category": "电学",
       "search": "lamp",
       "svg": "lamp.svg",
-      "sha256": "aded890e2fd57f209305a6ea746cc609cb5ec95ad26420c42ce5a1c203447090",
+      "sha256": "4c0389285305490d6806797c6f66f629d4a1a5c11222ce8bffc5b841aec3ff29",
       "width": 180,
       "height": 150,
       "ports": [
@@ -4681,7 +4963,17 @@
       "sha256": "408c559bc2e8cbb67c3b7295a855536cf9788379cff49a35952096f811bd3b23",
       "width": 180,
       "height": 180,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 90,
+          "y": 130,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -4811,7 +5103,17 @@
       "sha256": "b24601ca21731add4fd6dd334d15783b8a0b9259606010174a85f2a5d1c027dc",
       "width": 180,
       "height": 180,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 90,
+          "y": 158,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -5123,7 +5425,23 @@
       "sha256": "ad1503163c58264708ab04f4f1dcbd3c7786a30969bd299a742336d23cf17fe4",
       "width": 180,
       "height": 150,
-      "ports": [],
+      "ports": [
+        {
+          "id": "lane",
+          "x": 90,
+          "y": 120,
+          "dx": 0,
+          "dy": -1,
+          "type": "lane",
+          "diameter": 0,
+          "segment": [
+            39,
+            120,
+            141,
+            120
+          ]
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -5136,7 +5454,17 @@
       "sha256": "fa6c5fbdcc8ffc55adf3085dfe6e4c2562ade438e89e1d37ddd3b332da008294",
       "width": 180,
       "height": 150,
-      "ports": [],
+      "ports": [
+        {
+          "id": "spot",
+          "x": 90,
+          "y": 74,
+          "dx": 0,
+          "dy": 1,
+          "type": "spot",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -5172,7 +5500,17 @@
       "sha256": "f79b4b829a49b520cc0b28301f2d0c74dec7c945326f169d475c4a9702e2adfd",
       "width": 180,
       "height": 150,
-      "ports": [],
+      "ports": [
+        {
+          "id": "hanger",
+          "x": 90,
+          "y": 147,
+          "dx": 0,
+          "dy": 1,
+          "type": "hanger",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -5185,7 +5523,17 @@
       "sha256": "464655a5f40215aed94d8fd5086198295c77c911944ed3e07e2592b601c0f42d",
       "width": 180,
       "height": 150,
-      "ports": [],
+      "ports": [
+        {
+          "id": "base",
+          "x": 90,
+          "y": 131,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -5390,7 +5738,23 @@
       "sha256": "34943ba895491f6a39a30b36516b172c87d4faa1bc1dca6376869c86be6cb222",
       "width": 190,
       "height": 165,
-      "ports": [],
+      "ports": [
+        {
+          "id": "surface",
+          "x": 94,
+          "y": 86.5,
+          "dx": -105,
+          "dy": -164,
+          "type": "surface",
+          "diameter": 0,
+          "segment": [
+            12,
+            139,
+            176,
+            34
+          ]
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },
@@ -5400,10 +5764,29 @@
       "category": "力学",
       "search": "light gate",
       "svg": "light-gate.svg",
-      "sha256": "26d4ca1d7b5570a476ec34a976652abe0c635918d791e306f8dc71183291a92e",
+      "sha256": "a9ba2d13046dea27fd8561c8747828bcb902f3beddcaf5f158c235096413476e",
       "width": 190,
       "height": 165,
-      "ports": [],
+      "ports": [
+        {
+          "id": "signal",
+          "x": 141,
+          "y": 43,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "grip-site",
+          "x": 48,
+          "y": 100,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0
+        }
+      ],
       "boreCount": -1,
       "neckCount": 0
     },

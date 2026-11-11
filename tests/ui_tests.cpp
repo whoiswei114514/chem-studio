@@ -276,6 +276,8 @@ class DrawingTests : public QObject {
         auto* a = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
         view.addApparatus("gas-jar", {620, 390});
         auto* b = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
+        a->portTypes["mouth"] = "wire";
+        b->portTypes["mouth"] = "wire";
         view.connectItems(a->id, "mouth", b->id, "mouth");
         QGraphicsPathItem* connection = nullptr;
         for (auto* item : view.scene()->items())
@@ -304,15 +306,17 @@ class DrawingTests : public QObject {
         chem::DrawingView view;
         view.addApparatus("flask", {200, 200});
         auto* a = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
-        view.addApparatus("gas-jar", {600, 300});
+        view.addApparatus("rectangle", {600, 300});
         auto* b = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
+        b->ports["plug"] = {0.5, 1};
+        b->portTypes["plug"] = "plug";
+        b->portDirections["plug"] = {0, 1};
         const auto wanted = a->portPosition("mouth");
         view.scene()->setProperty("precise", true);
-        b->setRotation(180);
-        b->setPos(b->pos() + wanted - b->portPosition("mouth") + QPointF(4, 3));
+        b->setPos(b->pos() + wanted - b->portPosition("plug") + QPointF(4, 3));
         view.scene()->setProperty("precise", false);
         QVERIFY(view.snapSelectionToPort(12));
-        QVERIFY(QLineF(b->portPosition("mouth"), wanted).length() < 1e-8);
+        QVERIFY(QLineF(b->portPosition("plug"), wanted).length() < 1e-8);
     }
     void selectedConnectorsNeverTransformTwice() {
         chem::DrawingView view;
@@ -321,6 +325,8 @@ class DrawingTests : public QObject {
         auto* a = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
         view.addApparatus("gas-jar", {630, 400});
         auto* b = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
+        a->portTypes["mouth"] = "wire";
+        b->portTypes["mouth"] = "wire";
         QVERIFY(view.connectItems(a->id, "mouth", b->id, "mouth"));
         QVERIFY(!view.connectItems(a->id, "mouth", b->id, "mouth"));
         for (auto* item : view.scene()->items())

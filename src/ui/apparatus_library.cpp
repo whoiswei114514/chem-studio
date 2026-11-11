@@ -21,6 +21,7 @@
 static void initializeArtworkResource() {
     Q_INIT_RESOURCE(apparatus);
     Q_INIT_RESOURCE(biochemistry);
+    Q_INIT_RESOURCE(physics);
 }
 
 namespace chem {
@@ -1152,7 +1153,8 @@ const QVector<ApparatusArtwork>& apparatusArtwork() {
     static const auto library = [] {
         initializeArtworkResource();
         return manifestLibrary(QDir(qEnvironmentVariable("CHEM_STUDIO_ART_DIR", ":/apparatus"))) +
-            manifestLibrary(QDir(":/biochemistry")) + chemixLibrary() + legacyLibrary();
+            manifestLibrary(QDir(":/biochemistry")) + manifestLibrary(QDir(":/physics")) +
+            chemixLibrary() + legacyLibrary();
     }();
     return library;
 }

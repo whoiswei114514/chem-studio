@@ -46,7 +46,7 @@ $env:PATH = 'C:\msys64\ucrt64\bin;' + $env:PATH
 ctest --test-dir build --output-on-failure
 ```
 
-默认测试包括化学核心、编辑与撤销、图片文字、整库 SVG 渲染、塞子与弯管连接、示例图和画布几何。测试报告位于 `build/Testing`。
+默认测试包括化学核心、编辑与撤销、图片文字、整库 SVG 渲染、器材接口、探头和柔性端点连接、倍率与保存恢复、示例图和画布几何。测试报告位于 `build/Testing`。
 
 需要检查 WebView2、窗口和页面导出时，开启桌面测试，在已解锁的交互桌面执行：
 
@@ -56,6 +56,8 @@ ctest --test-dir build --output-on-failure -j 1
 ```
 
 `-WithLocalArtworkTests` 用于外部素材适配的开发回归，需要相应资源，不属于默认测试。部分完整桌面回归会移动鼠标，执行时请预留桌面。
+
+桌面测试中的 `physics_workspace` 使用内置 SVG 验证大小窗口、探头本体转向及三端接线，不需要私人 PNG 素材包。若原生鼠标测试提示无法取得前台窗口，请将测试窗口切到前台后重跑；不要跳过失败断言。
 
 ## 常见问题
 

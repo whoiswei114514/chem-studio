@@ -15,6 +15,7 @@
 #include <QPainter>
 #include <QPaintEngine>
 #include <QPainterPath>
+#include <QPainterPathStroker>
 #include <QSvgGenerator>
 #include <QUuid>
 #include <QWheelEvent>
@@ -66,7 +67,8 @@ QImage rasterArtwork(QSvgRenderer* renderer, QSizeF size) {
     return image;
 }
 QString portType(const DrawingItem* item, const QString& port) {
-    return item->portTypes.value(port, port.startsWith("base") ? QString("base") : QString("socket"));
+    return item->portTypes.value(port, port.startsWith("base") ? QString("base") :
+                                port == "mouth" ? QString("mouth") : QString("socket"));
 }
 bool probePort(const QString& type) {
     return type == "probe" || type == "stem";
@@ -84,6 +86,11 @@ bool femalePort(const QString& type) {
 bool rigidMode(const QString& mode) {
     return mode == "joint" || mode == "insertion" || mode == "support" || mode == "contact";
 }
+bool slidingSupport(const QString& role) {
+    return role == "base" || role == "clamp" || role == "grip-site" || role == "spot" ||
+           role == "lining" || role == "lid" || role == "clip" ||
+           role == "air-glider" || role == "optical-carriage";
+}
 QString assemblyMode(const DrawingItem* source, const QString& from, const DrawingItem* target,
                      const QString& to) {
     const auto a = portType(source, from), b = portType(target, to);
@@ -93,7 +100,8 @@ QString assemblyMode(const DrawingItem* source, const QString& from, const Drawi
     if (pair("clamp", "rail") || pair("base", "surface") || pair("grip", "grip-site") ||
         pair("base", "rack") || pair("lining", "lining-seat") || pair("lid", "mouth") ||
         pair("clip", "clip-seat") || pair("spot", "lane") || pair("hook", "hanger") ||
-        pair("contents", "contents-seat") || pair("spot", "well"))
+        pair("contents", "contents-seat") || pair("spot", "well") ||
+        pair("air-glider", "air-rail") || pair("optical-carriage", "optical-rail"))
         return "support";
     if ((probePort(a) && (b == "bore" || b == "mouth" || b == "glass-female" || b == "sensor-socket")) ||
         (probePort(b) && (a == "bore" || a == "mouth" || a == "glass-female" || a == "sensor-socket")) ||
@@ -118,17 +126,17 @@ QString assemblyMode(const DrawingItem* source, const QString& from, const Drawi
         (b == "hose" && (a == "tube" || a == "coolant" || a == "pipette-stem" || a == "luer-male" || malePort(a))) ||
         pair("tube", "tube"))
         return "joint";
-    if (pair("wire", "wire") ||
-        (source->artwork.isEmpty() && target->artwork.isEmpty() &&
-         (a == "socket" || a == "mouth") && (b == "socket" || b == "mouth")))
-        return "contact";
     return {};
 }
 bool hosePorts(const DrawingItem* source, const QString& from, const DrawingItem* target, const QString& to) {
+    const auto a = portType(source, from), b = portType(target, to);
+    const auto delivery = [](const QString& type) { return type == "hose" || type == "tube" || type == "delivery"; };
+    if ((a == "mouth" && delivery(b)) || (b == "mouth" && delivery(a)))
+        return true;
     const auto fluid = [](const QString& type) {
         return type == "tube" || type == "hose" || type == "coolant" || type == "delivery" ||
                type == "pipette-stem" || type == "luer-male" || malePort(type) ||
-               type == "socket" || type == "mouth" || type == "glass-female" || type == "vapor-female";
+               type == "socket" || type == "glass-female" || type == "vapor-female";
     };
     return fluid(portType(source, from)) && fluid(portType(target, to));
 }
@@ -137,11 +145,12 @@ bool portOccupied(const DrawingItem* item, const QString& port, const QString& o
 bool sameAssembly(QGraphicsScene* scene, const QString& from, const QString& to);
 bool compatiblePorts(const DrawingItem* source, const QString& from, const DrawingItem* target,
                      const QString& to) {
+    if ((source->isFlexiblePort(from) || target->isFlexiblePort(to)) &&
+        portType(source, from) == "wire" && portType(target, to) == "wire")
+        return true;
     const auto mode = assemblyMode(source, from, target, to);
     if (mode.isEmpty())
         return false;
-    if (mode == "contact" && source->artwork.isEmpty() && target->artwork.isEmpty())
-        return QPointF::dotProduct(source->portDirection(from), target->portDirection(to)) < -0.8;
     return true;
 }
 QPointF closestPoint(QPointF point, const QLineF& segment) {
@@ -170,8 +179,7 @@ QVector<PortMatch> nearbyPorts(DrawingItem* moved, double distance, QPointF tran
             for (auto to = target->ports.cbegin(); to != target->ports.cend(); ++to) {
                 if (!compatiblePorts(moved, from.key(), target, to.key()))
                     continue;
-                if (portOccupied(moved, from.key(), target->id, to.key()) ||
-                    portOccupied(target, to.key(), moved->id, from.key()))
+                if (portOccupied(moved, from.key()) || portOccupied(target, to.key()))
                     continue;
                 const auto source = moved->portPosition(from.key()) + translation;
                 auto destination = target->portPosition(to.key());
@@ -408,11 +416,175 @@ bool DrawingItem::setBoreDiameter(const QString& port, double diameter) {
     return true;
 }
 QRectF DrawingItem::boundingRect() const {
-    return QRectF(QPointF(-5, -5), size + QSizeF(10, 10));
+    return visualRect().adjusted(-5, -5, 5, 5);
+}
+QStringList DrawingItem::flexiblePorts() const {
+    if (kind == "physics:oscilloscope-probe")
+        return {"tip", "ground", "bnc"};
+    const bool cable = kind == "chemix:cable" || kind == "studio:cable";
+    const bool hose = kind == "chemix:rubber-tube" || kind == "studio:rubber-tube" || kind == "legacy:asset-0667";
+    QStringList result;
+    if (cable || hose)
+        for (const auto& name : ports.keys())
+            if (portTypes.value(name) == (cable ? "wire" : "hose")) result.append(name);
+    return result.size() >= 2 ? result : QStringList();
+}
+bool DrawingItem::isFlexiblePort(const QString& port) const {
+    return ports.contains(port) && flexiblePorts().contains(port);
+}
+namespace {
+QPointF localPort(const DrawingItem* item, const QString& port) {
+    const auto p = item->ports.value(port);
+    return {p.x() * item->size.width(), p.y() * item->size.height()};
+}
+QTransform terminalTransform(const DrawingItem* item, const QString& port) {
+    const auto at = localPort(item, port), normal = item->portDirections.value(port, {1, 0});
+    QTransform transform;
+    transform.translate(at.x(), at.y());
+    transform.rotate(std::atan2(normal.y(), normal.x()) * 180 / M_PI);
+    if (item->kind == "physics:oscilloscope-probe") transform.scale(item->size.width() / 290, item->size.width() / 290);
+    return transform;
+}
+QRectF terminalBounds(const QString& port) {
+    if (port == "tip") return {-112, -13, 114, 26};
+    if (port == "bnc") return {-43, -14, 45, 28};
+    if (port == "ground") return {-20, -7, 22, 14};
+    return {};
+}
+QPainterPath flexibleCurve(QPointF a, QPointF b, QPointF outwardA, QPointF outwardB) {
+    const auto unit = [](QPointF p) { const double length = std::hypot(p.x(), p.y()); return length > 1e-9 ? p / length : QPointF(1, 0); };
+    const double bend = qBound(24.0, QLineF(a, b).length() * .38, 180.0);
+    QPainterPath curve(a);
+    curve.cubicTo(a - unit(outwardA) * bend, b - unit(outwardB) * bend, b);
+    return curve;
+}
+QVector<QPainterPath> leadCurves(const DrawingItem* item) {
+    const auto ends = item->flexiblePorts();
+    if (ends.isEmpty()) return {};
+    if (item->kind == "physics:oscilloscope-probe") {
+        const auto tip = terminalTransform(item, "tip"), bnc = terminalTransform(item, "bnc"), ground = terminalTransform(item, "ground");
+        return {flexibleCurve(tip.map(QPointF(-110, 0)), bnc.map(QPointF(-41, 0)),
+                             item->portDirections["tip"], item->portDirections["bnc"]),
+                flexibleCurve(tip.map(QPointF(-75, -12)), ground.map(QPointF(-17, 0)),
+                             item->portDirections["tip"], item->portDirections["ground"])};
+    }
+    return {flexibleCurve(localPort(item, ends[0]), localPort(item, ends[1]),
+                         item->portDirections.value(ends[0]), item->portDirections.value(ends[1]))};
+}
+}
+QPainterPath DrawingItem::flexibleShape() const {
+    QPainterPath path;
+    for (const auto& curve : leadCurves(this)) {
+        QPainterPathStroker stroker;
+        stroker.setWidth(kind == "physics:oscilloscope-probe" ? 10 : 18);
+        path = path.united(stroker.createStroke(curve));
+    }
+    if (kind == "physics:oscilloscope-probe") {
+        for (const auto& port : flexiblePorts()) {
+            QPainterPath body;
+            body.addRect(terminalBounds(port));
+            path = path.united(terminalTransform(this, port).map(body));
+        }
+    }
+    return path;
+}
+QRectF DrawingItem::visualRect() const {
+    return flexiblePorts().isEmpty() ? QRectF(QPointF(), size) : flexibleShape().boundingRect();
+}
+QPainterPath DrawingItem::shape() const {
+    if (!flexiblePorts().isEmpty()) return flexibleShape();
+    return QGraphicsObject::shape();
+}
+void DrawingItem::moveFlexiblePort(const QString& port, QPointF position, QPointF direction) {
+    if (!isFlexiblePort(port) || !std::isfinite(position.x()) || !std::isfinite(position.y())) return;
+    if (QLineF(portPosition(port), position).length() < 1e-8 &&
+        (direction.isNull() || QLineF(portDirection(port), direction).length() < 1e-8)) return;
+    const auto local = mapFromScene(position);
+    if (std::abs(local.x()) > 100000 || std::abs(local.y()) > 100000) return;
+    prepareGeometryChange();
+    ports[port] = {local.x() / size.width(), local.y() / size.height()};
+    if (std::hypot(direction.x(), direction.y()) > 1e-9) {
+        auto normal = mapFromScene(position + direction) - local;
+        const auto length = std::hypot(normal.x(), normal.y());
+        if (length > 1e-9) portDirections[port] = normal / length;
+    }
+    if (kind == "physics:oscilloscope-probe" && port == "tip") {
+        const auto grip = terminalTransform(this, "tip").map(QPointF(-85, 0));
+        ports["grip-site"] = {grip.x() / size.width(), grip.y() / size.height()};
+    } else if (portTypes.value(port) == "hose" && ports.contains("grip-site")) {
+        const auto ends = flexiblePorts();
+        ports["grip-site"] = (ports[ends[0]] + ports[ends[1]]) / 2;
+        portSegments["grip-site"] = {ports[ends[0]], ports[ends[1]]};
+    }
+    update();
+}
+void DrawingItem::paintFlexible(QPainter* painter) const {
+    const QColor outline = colorCustomized ? ink : QColor("#294454");
+    const auto curves = leadCurves(this);
+    const bool probe = kind == "physics:oscilloscope-probe";
+    const bool hose = !probe && portTypes.value(flexiblePorts().front()) == "hose";
+    painter->setBrush(Qt::NoBrush);
+    for (int i = 0; i < curves.size(); ++i) {
+        painter->setPen(QPen(probe ? (i == 0 && !colorCustomized ? QColor("#258f89") : outline) : outline,
+                            hose ? 12 : probe && i == 1 ? 2 : 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        painter->drawPath(curves[i]);
+        if (hose) {
+            painter->setPen(QPen(QColor("#edf5f2"), 8, Qt::SolidLine, Qt::FlatCap, Qt::RoundJoin));
+            painter->drawPath(curves[i]);
+        }
+    }
+    if (!probe) return;
+    for (const auto& name : flexiblePorts()) {
+        painter->save();
+        painter->setTransform(terminalTransform(this, name), true);
+        painter->setPen(QPen(outline, 2.2));
+        painter->setBrush(QColor("#c6d2d7"));
+        if (name == "tip") {
+            painter->drawRoundedRect(QRectF(-110, -12, 52, 24), 4, 4);
+            QPainterPath nose;
+            nose.moveTo(-58, -7); nose.lineTo(-31, -7); nose.lineTo(-15, 0);
+            nose.lineTo(-31, 7); nose.lineTo(-58, 7); nose.closeSubpath();
+            painter->setBrush(QColor("#f8faf9")); painter->drawPath(nose);
+            painter->drawLine(QPointF(-15, 0), QPointF());
+            painter->save();
+            painter->translate(-84, 0);
+            const auto textAxis = painter->worldTransform().map(QPointF(1, 0)) - painter->worldTransform().map(QPointF());
+            if (textAxis.x() < 0) painter->rotate(180);
+            const auto text = QString::number(probeAttenuation) + "X";
+            painter->setFont(QFont("Arial", 8));
+            const double textWidth = painter->fontMetrics().horizontalAdvance(text);
+            if (textWidth > 42) {
+                auto font = painter->font();
+                font.setPointSizeF(font.pointSizeF() * 42 / textWidth);
+                painter->setFont(font);
+            }
+            painter->drawText(QRectF(-22, -10, 44, 20), Qt::AlignCenter, text);
+            painter->restore();
+        } else if (name == "bnc") {
+            painter->drawRoundedRect(QRectF(-41, -13, 29, 26), 3, 3);
+            painter->setBrush(QColor("#c9a048")); painter->drawRect(QRectF(-12, -8, 12, 16));
+        } else {
+            QPainterPath clip;
+            clip.moveTo(0, 0); clip.lineTo(-6, -5); clip.lineTo(-17, -5);
+            clip.lineTo(-17, 5); clip.lineTo(-6, 5); clip.closeSubpath();
+            painter->setBrush(outline); painter->drawPath(clip);
+        }
+        painter->restore();
+    }
 }
 void DrawingItem::paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*) {
     p->save();
     p->setRenderHint(QPainter::Antialiasing);
+    if (!flexiblePorts().isEmpty()) {
+        paintFlexible(p);
+        if (!label.isEmpty()) {
+            p->setPen(ink);
+            p->setFont(QFont("Microsoft YaHei UI", 10));
+            p->drawText(visualRect(), Qt::AlignCenter | Qt::TextWordWrap, label);
+        }
+        p->restore();
+        return;
+    }
     p->save();
     p->scale(size.width() / 100.0, size.height() / 100.0);
     QPen pen(ink, 1.8);
@@ -740,7 +912,7 @@ QJsonObject DrawingItem::json() const {
     customNames.sort();
     for (const auto& name : customNames)
         custom.append(name);
-    return {{"kind", kind},       {"id", id},
+    QJsonObject object{{"kind", kind},       {"id", id},
             {"label", label},     {"x", pos().x()},
             {"y", pos().y()},     {"w", size.width()},
             {"h", size.height()}, {"rotation", rotation()},
@@ -750,25 +922,31 @@ QJsonObject DrawingItem::json() const {
             {"portDiameters", diameters}, {"portTypes", types}, {"portSegments", segments},
             {"portEdges", edges},
             {"portDepths", depths}, {"portTargets", targets}, {"boreCount", boreCount},
-            {"portSchema", 5},
+            {"portSchema", 7},
             {"customPorts", custom}, {"neckCount", neckCount}, {"colorCustomized", colorCustomized},
             {"stretchX", stretchX}, {"stretchY", stretchY},
             {"pivot", QJsonArray{transformOriginPoint().x(), transformOriginPoint().y()}}};
+    if (kind == "physics:oscilloscope-probe") object["probeAttenuation"] = probeAttenuation;
+    return object;
 }
 DrawingItem* DrawingItem::fromJson(const QJsonObject& o) {
     auto* item = new DrawingItem(o["kind"].toString());
     if (!o["id"].toString().isEmpty())
         item->id = o["id"].toString();
     item->label = o["label"].toString();
+    const int attenuation = o["probeAttenuation"].toInt(10);
+    if (attenuation >= 1 && attenuation <= 1000) item->probeAttenuation = attenuation;
     if (o["neckCount"].toInt() > 0)
         item->setNeckCount(o["neckCount"].toInt());
     if (item->boreCount >= 0)
         item->setBoreCount(o["boreCount"].toInt(0));
-    const bool migratePorts = o["portSchema"].toInt() < 5 && findArtwork(item->kind);
+    const bool migratePhysics = o["portSchema"].toInt() < 6 && item->kind.startsWith("physics:") && findArtwork(item->kind);
+    const bool migrateAuthored = o["portSchema"].toInt() < 7 && item->kind.startsWith("studio:") && findArtwork(item->kind);
+    const bool migratePorts = migratePhysics || migrateAuthored || (o["portSchema"].toInt() < 5 && findArtwork(item->kind));
     QSet<QString> declaredCustom;
     for (const auto& value : o["customPorts"].toArray())
         declaredCustom.insert(value.toString());
-    if (o.contains("artwork")) {
+    if (o.contains("artwork") && !migratePhysics && !migrateAuthored) {
         item->artwork = o["artwork"].toString().toUtf8();
         item->renderer = item->artwork.isEmpty() ? nullptr : std::make_shared<QSvgRenderer>(item->artwork);
         item->rasterizeExport = needsClippedExport(item->artwork);
@@ -882,7 +1060,7 @@ class DrawingConnection : public QGraphicsPathItem {
         : from(std::move(a)), fromPort(std::move(ap)), to(std::move(b)), toPort(std::move(bp)),
           mode(std::move(connectionMode)) {
         setFlag(ItemIsSelectable, !rigid());
-        if (rigid()) {
+        if (rigid() || mode == "lead") {
             setAcceptedMouseButtons(Qt::NoButton);
             setVisible(false);
         }
@@ -930,15 +1108,21 @@ class DrawingConnection : public QGraphicsPathItem {
         const bool attachment = mode == "support" || mode == "contact";
         const auto start = attachment ? attachmentPoint(source, true) : source->portPosition(fromPort),
                    end = attachment ? attachmentPoint(destination, false) : destination->portPosition(toPort);
-        if (rigid() || QLineF(start, end).length() < 0.5) {
+        if (rigid() || mode == "lead" || QLineF(start, end).length() < 0.5) {
             QPainterPath joined(start);
             joined.lineTo(end);
             setPath(joined);
             return;
         }
         const double a = source->portDiameter(fromPort), b = destination->portDiameter(toPort);
-        diameter = mode == "wire" ? 2 : qBound(4.0, a > 0 && b > 0 ? qMin(a, b) : 8.0, 20.0);
+        diameter = mode == "beam" ? 1.5 : mode == "wire" ? 2 : qBound(4.0, a > 0 && b > 0 ? qMin(a, b) : 8.0, 20.0);
         setPen(QPen(ink, diameter, Qt::SolidLine, Qt::FlatCap, Qt::RoundJoin));
+        if (mode == "beam") {
+            QPainterPath ray(start);
+            ray.lineTo(end);
+            setPath(ray);
+            return;
+        }
         const QPointF departure = source->portDirection(fromPort),
                       arrival = destination->portDirection(toPort);
         const auto first = start + departure * 24, last = end + arrival * 24;
@@ -1019,7 +1203,7 @@ class DrawingConnection : public QGraphicsPathItem {
         setPath(route);
     }
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override {
-        if (rigid())
+        if (rigid() || mode == "lead")
             return;
         painter->setRenderHint(QPainter::Antialiasing);
         painter->setPen(
@@ -1027,7 +1211,7 @@ class DrawingConnection : public QGraphicsPathItem {
                  diameter, Qt::SolidLine, Qt::FlatCap, Qt::RoundJoin));
         painter->setBrush(Qt::NoBrush);
         painter->drawPath(path());
-        if (mode != "wire") {
+        if (mode == "hose") {
             painter->setPen(QPen(Qt::white, qMax(1.0, diameter - 3), Qt::SolidLine, Qt::FlatCap, Qt::RoundJoin));
             painter->drawPath(path());
         }
@@ -1078,7 +1262,8 @@ bool portOccupied(const DrawingItem* item, const QString& port, const QString& o
     if (!item->scene())
         return false;
     const auto role = portType(item, port);
-    if (role == "rail" || role == "surface" || role == "grip-site" || role == "lane")
+    if (role == "rail" || role == "surface" || role == "grip-site" || role == "lane" ||
+        role == "air-rail" || role == "optical-rail")
         return false;
     for (auto* object : item->scene()->items()) {
         const auto* link = dynamic_cast<DrawingConnection*>(object);
@@ -1141,8 +1326,22 @@ bool sameAssembly(QGraphicsScene* scene, const QString& from, const QString& to)
 }
 QString connectionMode(DrawingItem* from, const QString& a, DrawingItem* to, const QString& b,
                        DrawingView::ConnectionMode requested) {
+    const auto first = portType(from, a), second = portType(to, b);
+    const auto pair = [&first, &second](const QString& x, const QString& y) {
+        return (first == x && second == y) || (first == y && second == x);
+    };
+    if (pair("optical-out", "optical-in"))
+        return requested == DrawingView::ConnectionMode::Automatic ? QString("beam") : QString();
+    if (pair("air-out", "air-in"))
+        return requested == DrawingView::ConnectionMode::Assembly ? QString() : QString("hose");
+    if (from->isFlexiblePort(a) || to->isFlexiblePort(b)) {
+        if (first == "wire" && second == "wire")
+            return requested == DrawingView::ConnectionMode::Automatic ? QString("lead") : QString();
+        if (requested != DrawingView::ConnectionMode::Hose && !assemblyMode(from, a, to, b).isEmpty())
+            return "lead";
+    }
     if (portType(from, a) == "wire" && portType(to, b) == "wire")
-        return requested == DrawingView::ConnectionMode::Assembly ? QString() : QString("wire");
+        return requested == DrawingView::ConnectionMode::Automatic ? QString("wire") : QString();
     const auto assembly = assemblyMode(from, a, to, b);
     if (requested != DrawingView::ConnectionMode::Hose &&
         (assembly == "joint" || assembly == "insertion" || assembly == "support"))
@@ -1241,8 +1440,24 @@ void DrawingView::restore(const QJsonArray& a) {
         if (o["kind"] != "connection")
             continue;
         auto mode = o["mode"].toString("hose");
-        if (!QStringList{"hose", "wire", "joint", "insertion", "support", "contact"}.contains(mode))
-            mode = "hose";
+        if (!QStringList{"hose", "wire", "joint", "insertion", "support", "contact", "beam", "lead"}.contains(mode))
+            continue;
+        auto* source = shapeById(scene(), o["from"].toString());
+        auto* destination = shapeById(scene(), o["to"].toString());
+        if (!source || !destination || source == destination ||
+            !source->ports.contains(o["fromPort"].toString()) || !destination->ports.contains(o["toPort"].toString()))
+            continue;
+        const auto fromPort = o["fromPort"].toString(), toPort = o["toPort"].toString();
+        if (mode == "contact" && portType(source, fromPort) == "wire" && portType(destination, toPort) == "wire")
+            mode = "wire";
+        if ((mode == "wire" || mode == "joint") &&
+            connectionMode(source, fromPort, destination, toPort, ConnectionMode::Automatic) == "lead")
+            mode = "lead";
+        const auto expected = connectionMode(source, fromPort, destination, toPort,
+            mode == "hose" ? ConnectionMode::Hose : rigidMode(mode) ? ConnectionMode::Assembly : ConnectionMode::Automatic);
+        if (expected != mode || portOccupied(source, fromPort) || portOccupied(destination, toPort) ||
+            (rigidMode(mode) && sameAssembly(scene(), source->id, destination->id)))
+            continue;
         auto* link = new DrawingConnection(o["from"].toString(), o["fromPort"].toString(), o["to"].toString(),
                                            o["toPort"].toString(), mode);
         link->id = o["id"].toString();
@@ -1268,6 +1483,7 @@ void DrawingView::restore(const QJsonArray& a) {
     emit changed();
 }
 void DrawingView::commit(const QJsonArray& before, const QString& title, const QStringList& selection) {
+    if (activeDrag == DragMode::Port) return;
     auto after = state();
     if (before != after) {
         undoStack.push(new SnapshotCommand(this, before, after, title,
@@ -1537,6 +1753,17 @@ void DrawingView::setSelectionHeight(double height) {
         commit(before, QStringLiteral("器材高度"));
     }
 }
+void DrawingView::setSelectionProbeAttenuation(int value) {
+    const auto shapes = selectedShapes();
+    if (shapes.size() != 1 || shapes.front()->kind != "physics:oscilloscope-probe" || value < 1 || value > 1000)
+        return;
+    auto* probe = shapes.front();
+    if (probe->probeAttenuation == value) return;
+    const auto before = state();
+    probe->probeAttenuation = value;
+    probe->update();
+    commit(before, QStringLiteral("修改探头倍率"));
+}
 void DrawingView::setSelectionNeckCount(int count) {
     const auto shapes = selectedShapes();
     if (shapes.size() != 1 || !shapes.front()->availableNeckCounts().contains(count))
@@ -1647,8 +1874,8 @@ bool DrawingView::snapSelectionToPort(double distance) {
         return false;
     const auto candidates = nearbyPorts(moved, distance);
     for (const auto& match : candidates) {
-        const auto mode = assemblyMode(moved, match.from, match.target, match.to);
-        if (!matePorts(moved, match.from, match.target, match.to, mode))
+        const auto mode = connectionMode(moved, match.from, match.target, match.to, ConnectionMode::Automatic);
+        if (mode != "lead" && !matePorts(moved, match.from, match.target, match.to, mode))
             continue;
         auto* link = new DrawingConnection(moved->id, match.from, match.target->id, match.to, mode);
         if (mode == "support" || mode == "contact")
@@ -2029,7 +2256,7 @@ bool DrawingView::connectItems(const QString& from, const QString& fromPort, con
                                 probePort(a) || a == "plug" || a == "delivery" ||
                                 a == "pipette-filler" || a == "lining" || a == "lid" || a == "clip" ||
                                 a == "spot" || a == "hook" || a == "contents" || a == "immersible" ||
-                                a == "base" || a == "clamp" || a == "grip-site" ||
+                                a == "base" || a == "clamp" || a == "grip-site" || a == "air-glider" || a == "optical-carriage" ||
                                 (a == "tube" && (b == "bore" || b == "mouth" || b == "glass-female"));
         moved = moveSource ? source : destination;
         const bool fitted = moveSource ? matePorts(source, fromPort, destination, toPort, mode) :
@@ -2040,6 +2267,7 @@ bool DrawingView::connectItems(const QString& from, const QString& fromPort, con
         }
     }
     auto* connection = new DrawingConnection(from, fromPort, to, toPort, mode);
+    if (mode == "beam") connection->ink = QColor("#c75b55");
     if (mode == "support" || mode == "contact")
         connection->captureAttachment(source, destination);
     scene()->addItem(connection);
@@ -2065,7 +2293,7 @@ void DrawingView::connectSelection() {
                 continue;
             const auto mode = connectionMode(from, a, to, b, ConnectionMode::Automatic);
             const double distance = QLineF(from->portPosition(a), to->portPosition(b)).length() +
-                                    (mode == "hose" || mode == "wire" ? 1000000 : 0);
+                                    (rigidMode(mode) ? 1000000 : 0);
             if (distance < closest) {
                 closest = distance;
                 fp = a; tp = b;
@@ -2163,6 +2391,15 @@ void DrawingView::updateConnections(DrawingItem* changedItem) {
         if (auto* link = dynamic_cast<DrawingConnection*>(object))
             links.append(link);
     QSet<DrawingConnection*> broken;
+    for (auto* link : links) {
+        auto* source = shapeById(scene(), link->from);
+        auto* destination = shapeById(scene(), link->to);
+        if (!source || !destination || !source->ports.contains(link->fromPort) ||
+            !destination->ports.contains(link->toPort) ||
+            connectionMode(source, link->fromPort, destination, link->toPort,
+                link->mode == "hose" ? ConnectionMode::Hose : link->rigid() ? ConnectionMode::Assembly : ConnectionMode::Automatic) != link->mode)
+            broken.insert(link);
+    }
     if (changedItem) {
         QSet<QString> visited{changedItem->id};
         QList<DrawingItem*> pending{changedItem};
@@ -2180,8 +2417,7 @@ void DrawingView::updateConnections(DrawingItem* changedItem) {
                     insertingPort(sourceType))
                     continue;
                 if (shape == changedItem && activeDrag == DragMode::Move && link->mode == "support" &&
-                    (sourceType == "base" || sourceType == "clamp" || sourceType == "grip-site" ||
-                     sourceType == "spot" || sourceType == "lining" || sourceType == "lid" || sourceType == "clip"))
+                    slidingSupport(sourceType))
                     continue;
                 auto* peer = shapeById(scene(), first ? link->to : link->from);
                 if (!peer || visited.contains(peer->id) || (changedItem->isSelected() && peer->isSelected()))
@@ -2204,6 +2440,16 @@ void DrawingView::updateConnections(DrawingItem* changedItem) {
                 pending.append(peer);
             }
         }
+    }
+    // A flexible lead pins only the plugged endpoint; its other ends and the equipment remain independent.
+    for (auto* link : links) {
+        if (broken.contains(link) || link->mode != "lead") continue;
+        auto* a = shapeById(scene(), link->from);
+        auto* b = shapeById(scene(), link->to);
+        if (a->isFlexiblePort(link->fromPort) && (!b->isFlexiblePort(link->toPort) || changedItem != b))
+            a->moveFlexiblePort(link->fromPort, b->portPosition(link->toPort), -b->portDirection(link->toPort));
+        else if (b->isFlexiblePort(link->toPort))
+            b->moveFlexiblePort(link->toPort, a->portPosition(link->fromPort), -a->portDirection(link->fromPort));
     }
     for (auto* link : links)
         if (broken.contains(link))
@@ -2346,13 +2592,13 @@ QPolygonF DrawingView::selectionFrame() const {
         return {};
     if (shapes.size() == 1) {
         auto* shape = shapes.front();
-        return QPolygonF{shape->mapToScene(0, 0), shape->mapToScene(shape->size.width(), 0),
-                         shape->mapToScene(shape->size.width(), shape->size.height()),
-                         shape->mapToScene(0, shape->size.height())};
+        const auto bounds = shape->visualRect();
+        return QPolygonF{shape->mapToScene(bounds.topLeft()), shape->mapToScene(bounds.topRight()),
+                         shape->mapToScene(bounds.bottomRight()), shape->mapToScene(bounds.bottomLeft())};
     }
     QRectF rectangle;
     for (const auto* shape : shapes)
-        rectangle = rectangle.united(shape->mapRectToScene(QRectF(QPointF(), shape->size)));
+        rectangle = rectangle.united(shape->mapRectToScene(shape->visualRect()));
     return QPolygonF{rectangle.topLeft(), rectangle.topRight(), rectangle.bottomRight(), rectangle.bottomLeft()};
 }
 QVector<QPointF> DrawingView::handlePositions() const {
@@ -2413,10 +2659,23 @@ void DrawingView::drawForeground(QPainter* painter, const QRectF&) {
             const auto type = portType(shape, it.key());
             painter->setPen(QPen(type == "base" || type == "surface" || type == "rail" ?
                                 QColor("#777f88") : QColor("#167d8d"), 1));
-            painter->setBrush(Qt::white);
-            painter->drawEllipse(center, 3, 3);
+            painter->setBrush(portOccupied(shape, it.key()) ? QColor("#d5e9e4") : Qt::white);
+            const double radius = shape->isFlexiblePort(it.key()) ? 5 : 3;
+            painter->drawEllipse(center, radius, radius);
             const auto end = center + shape->portDirection(it.key()) * 7;
             painter->drawLine(center, end);
+        }
+    }
+    if (activeDrag == DragMode::Port && draggedPortItem) {
+        if (!draggedPortItem->isFlexiblePort(draggedPort)) {
+            painter->setPen(QPen(QColor("#258f89"), 2, Qt::DashLine));
+            painter->drawLine(viewportTransform().map(draggedPortItem->portPosition(draggedPort)),
+                              viewportTransform().map(portPointer));
+        }
+        if (portCandidate) {
+            painter->setPen(QPen(QColor("#087f69"), 2));
+            painter->setBrush(QColor("#d5e9e4"));
+            painter->drawEllipse(viewportTransform().map(portCandidate->portPosition(candidatePort)), 7, 7);
         }
     }
     const auto positions = handlePositions();
@@ -2467,6 +2726,102 @@ void DrawingView::beginTransform(int handle, QPointF position) {
         viewport()->setCursor(Qt::SizeAllCursor);
     }
 }
+QPair<DrawingItem*, QString> DrawingView::terminalAt(QPointF position) const {
+    auto* item = dynamic_cast<DrawingItem*>(itemAt(position.toPoint()));
+    if (!item || item->kind != "physics:oscilloscope-probe") return {nullptr, {}};
+    const auto local = item->mapFromScene(viewportTransform().inverted().map(position));
+    const auto ends = item->flexiblePorts();
+    for (auto it = ends.crbegin(); it != ends.crend(); ++it)
+        if (terminalBounds(*it).contains(terminalTransform(item, *it).inverted().map(local))) return {item, *it};
+    return {nullptr, {}};
+}
+QPair<DrawingItem*, QString> DrawingView::portAt(QPointF position, bool selectedOnly) const {
+    QPair<DrawingItem*, QString> nearest{nullptr, {}};
+    double distance = 8;
+    for (auto* object : scene()->items()) {
+        auto* item = dynamic_cast<DrawingItem*>(object);
+        if (!item || (selectedOnly && !item->isSelected())) continue;
+        for (const auto& port : item->ports.keys()) {
+            const auto d = QLineF(position, viewportTransform().map(item->portPosition(port))).length();
+            if (d < distance) { nearest = {item, port}; distance = d; }
+        }
+    }
+    return nearest;
+}
+void DrawingView::updatePortDrag(QPointF position) {
+    if (!draggedPortItem) return;
+    portPointer = viewportTransform().inverted().map(position);
+    if (!portMoved && QLineF(viewportTransform().map(dragStart), position).length() < 3) return;
+    if (!portMoved) {
+        // Replugging a single endpoint must leave the other leads attached.
+        for (auto* object : scene()->items()) {
+            auto* link = dynamic_cast<DrawingConnection*>(object);
+            if (link && ((link->from == draggedPortItem->id && link->fromPort == draggedPort) ||
+                         (link->to == draggedPortItem->id && link->toPort == draggedPort))) delete link;
+        }
+        portMoved = true;
+    }
+    if (draggedPortItem->isFlexiblePort(draggedPort)) {
+        // Ignore sub-pixel jitter and duplicate release events when choosing the terminal's heading.
+        if (QLineF(viewportTransform().map(portDirectionAnchor), position).length() >= 3) {
+            portDragDirection = portPointer - portDirectionAnchor;
+            portDirectionAnchor = portPointer;
+        }
+        auto direction = portDragDirection;
+        if (draggingTerminalBody) {
+            // Rotate about the picked point, then keep that same point beneath the pointer.
+            draggedPortItem->moveFlexiblePort(draggedPort, draggedPortItem->portPosition(draggedPort), direction);
+            const auto grabbed = draggedPortItem->mapToScene(terminalTransform(draggedPortItem, draggedPort).map(terminalGrabPoint));
+            portPointer += draggedPortItem->portPosition(draggedPort) - grabbed;
+            direction = {};
+        }
+        draggedPortItem->moveFlexiblePort(draggedPort, portPointer, direction);
+    }
+    // Hold a nearby socket through small cursor corrections, independent of the preview's rotation.
+    const bool retained = portCandidate &&
+        QLineF(viewportTransform().map(portSnapPointer), position).length() <= 10 &&
+        canConnectItems(draggedPortItem->id, draggedPort, portCandidate->id, candidatePort);
+    if (retained) {
+        const auto socket = viewportTransform().map(portCandidate->portPosition(candidatePort));
+        double distance = QLineF(viewportTransform().map(portPointer), socket).length();
+        if (draggingTerminalBody) distance = qMin(distance, QLineF(position, socket).length());
+        if (distance < portSnapDistance) {
+            portSnapDistance = distance;
+            portSnapPointer = viewportTransform().inverted().map(position);
+        }
+    }
+    if (!retained) {
+        portCandidate = nullptr;
+        candidatePort.clear();
+        const QList<QPointF> targets = draggingTerminalBody ?
+            QList<QPointF>{viewportTransform().map(portPointer), position} :
+            QList<QPointF>{viewportTransform().map(portPointer)};
+        for (const auto& target : targets) {
+            double distance = 14;
+            for (auto* object : scene()->items()) {
+                auto* item = dynamic_cast<DrawingItem*>(object);
+                if (!item || item == draggedPortItem) continue;
+                for (const auto& port : item->ports.keys()) {
+                    const auto d = QLineF(target, viewportTransform().map(item->portPosition(port))).length();
+                    if (d < distance && canConnectItems(draggedPortItem->id, draggedPort, item->id, port)) {
+                        distance = d; portCandidate = item; candidatePort = port;
+                    }
+                }
+            }
+            if (portCandidate) {
+                portSnapDistance = distance;
+                portSnapPointer = viewportTransform().inverted().map(position);
+                break;
+            }
+        }
+    }
+    if (portCandidate && draggedPortItem->isFlexiblePort(draggedPort)) {
+        portPointer = portCandidate->portPosition(candidatePort);
+        draggedPortItem->moveFlexiblePort(draggedPort, portPointer, -portCandidate->portDirection(candidatePort));
+    }
+    updateConnections(draggedPortItem);
+    viewport()->update();
+}
 void DrawingView::mousePressEvent(QMouseEvent* event) {
     if (activeDrag != DragMode::None)
         cancelDrag();
@@ -2480,6 +2835,32 @@ void DrawingView::mousePressEvent(QMouseEvent* event) {
         return;
     }
     const int handle = handleAt(event->position());
+    if (event->button() == Qt::LeftButton && !(event->modifiers() & (Qt::AltModifier | Qt::ControlModifier))) {
+        auto endpoint = portAt(event->position(), true);
+        if (!endpoint.first) endpoint = portAt(event->position());
+        const auto terminal = terminalAt(event->position());
+        const bool directEnd = endpoint.first && endpoint.first->isFlexiblePort(endpoint.second) &&
+            QLineF(event->position(), viewportTransform().map(endpoint.first->portPosition(endpoint.second))).length() <= 5;
+        const bool body = terminal.first && !directEnd && handle < 0;
+        if (body) endpoint = terminal;
+        if (endpoint.first && (handle < 0 || endpoint.first->isFlexiblePort(endpoint.second))) {
+            beforeDrag = state();
+            dragSelection = selectedIds(scene());
+            scene()->clearSelection(); endpoint.first->setSelected(true);
+            draggedPortItem = endpoint.first; draggedPort = endpoint.second;
+            portDragDirection = draggedPortItem->portDirection(draggedPort);
+            portCandidate = nullptr; candidatePort.clear();
+            draggingTerminalBody = body;
+            if (body) terminalGrabPoint = terminalTransform(draggedPortItem, draggedPort).inverted().map(
+                draggedPortItem->mapFromScene(viewportTransform().inverted().map(event->position())));
+            previousPrecise = scene()->property("precise").toBool();
+            scene()->setProperty("precise", true);
+            dragStart = portPointer = portDirectionAnchor = viewportTransform().inverted().map(event->position());
+            activeDrag = DragMode::Port; portMoved = false; autoFit = false;
+            viewport()->grabMouse(); viewport()->setCursor(Qt::CrossCursor);
+            event->accept(); return;
+        }
+    }
     if (event->button() == Qt::LeftButton && handle >= 0 && !(event->modifiers() & Qt::AltModifier)) {
         beginTransform(handle, event->position());
         event->accept();
@@ -2498,6 +2879,10 @@ void DrawingView::mousePressEvent(QMouseEvent* event) {
     }
 }
 void DrawingView::mouseMoveEvent(QMouseEvent* event) {
+    if (activeDrag == DragMode::Port) {
+        updatePortDrag(event->position());
+        event->accept(); return;
+    }
     if (activeDrag == DragMode::Pan) {
         const auto delta = event->position() - panStart;
         const auto inverse = viewportTransform().inverted();
@@ -2581,7 +2966,17 @@ void DrawingView::mouseMoveEvent(QMouseEvent* event) {
         QToolTip::hideText();
     } else {
         const int handle = handleAt(event->position());
-        if (handle >= 0) {
+        auto endpoint = portAt(event->position(), true);
+        const auto terminal = terminalAt(event->position());
+        if (terminal.first && handle < 0) endpoint = terminal;
+        if (endpoint.first && (handle < 0 || endpoint.first->isFlexiblePort(endpoint.second))) {
+            QGraphicsView::mouseMoveEvent(event);
+            const QMap<QString, QString> names{{"tip", QStringLiteral("探针")}, {"ground", QStringLiteral("接地夹")},
+                {"bnc", QStringLiteral("BNC 插头")}, {"inlet", QStringLiteral("入口")}, {"outlet", QStringLiteral("出口")}};
+            viewport()->setCursor(Qt::CrossCursor);
+            QToolTip::showText(event->globalPosition().toPoint(), names.value(endpoint.second, endpoint.second), viewport());
+            return;
+        } else if (handle >= 0) {
             viewport()->setCursor(handle == int(Handle::Rotation) ? Qt::CrossCursor : Qt::SizeAllCursor);
             QToolTip::showText(event->globalPosition().toPoint(),
                               handle == int(Handle::Rotation) ? QStringLiteral("旋转") : QStringLiteral("调整大小"),
@@ -2594,6 +2989,19 @@ void DrawingView::mouseMoveEvent(QMouseEvent* event) {
     QGraphicsView::mouseMoveEvent(event);
 }
 void DrawingView::mouseReleaseEvent(QMouseEvent* event) {
+    if (activeDrag == DragMode::Port) {
+        updatePortDrag(event->position());
+        if (portMoved && draggedPortItem && portCandidate)
+            connectItems(draggedPortItem->id, draggedPort, portCandidate->id, candidatePort);
+        activeDrag = DragMode::None;
+        scene()->setProperty("precise", previousPrecise);
+        if (QWidget::mouseGrabber() == viewport()) viewport()->releaseMouse();
+        viewport()->unsetCursor();
+        draggedPortItem = nullptr; portCandidate = nullptr;
+        updateConnections();
+        commit(beforeDrag, QStringLiteral("拖动连接端"), dragSelection);
+        beforeDrag = {}; event->accept(); return;
+    }
     if (activeDrag == DragMode::Pan) {
         activeDrag = DragMode::None;
         if (QWidget::mouseGrabber() == viewport())
@@ -2636,8 +3044,7 @@ void DrawingView::mouseReleaseEvent(QMouseEvent* event) {
                     continue;
                 const auto role = portType(shape, port);
                 if (link->mode == "support") {
-                    if (role != "base" && role != "clamp" && role != "grip-site" && role != "spot" &&
-                        role != "lining" && role != "lid" && role != "clip")
+                    if (!slidingSupport(role))
                         continue;
                     auto a = shape->portPosition(port), b = receiver->portPosition(receivingPort);
                     const auto project = [](DrawingItem* item, const QString& port, QPointF at) {
@@ -2694,6 +3101,7 @@ void DrawingView::cancelDrag() {
     const auto before = beforeDrag;
     const auto selection = dragSelection;
     activeDrag = DragMode::None;
+    draggedPortItem = nullptr; portCandidate = nullptr;
     dragItems.clear();
     if (QWidget::mouseGrabber() == viewport())
         viewport()->releaseMouse();

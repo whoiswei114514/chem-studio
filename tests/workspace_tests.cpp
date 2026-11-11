@@ -7,6 +7,7 @@
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QTimer>
+#include <QElapsedTimer>
 #include <QDoubleSpinBox>
 #include <QFile>
 #include <QJsonDocument>
@@ -336,7 +337,7 @@ class WorkspaceTests : public QObject {
         const QStringList basics{"arrow", "line", "label", "rectangle", "ellipse"};
         for (int row = 0; row < palette->count(); ++row) {
             const auto id = palette->item(row)->data(Qt::UserRole).toString();
-            QVERIFY(id.startsWith("studio:") || id.startsWith("bio:") || id.startsWith("legacy:") || id.startsWith("chemix:") || basics.contains(id));
+            QVERIFY(id.startsWith("studio:") || id.startsWith("bio:") || id.startsWith("physics:") || id.startsWith("legacy:") || id.startsWith("chemix:") || basics.contains(id));
         }
         source->setCurrentIndex(source->findData("shapes"));
         int visible = 0;
@@ -907,14 +908,34 @@ class WorkspaceTests : public QObject {
         const auto imagePath = temporary.filePath(QStringLiteral("插入图片.png"));
         QVERIFY(reference.save(imagePath));
         bool fileDialogOpened = false;
-        QTimer::singleShot(200, [&] {
+        QTimer fileDialogTimer;
+        QElapsedTimer fileDialogDeadline;
+        fileDialogTimer.setInterval(100);
+        connect(&fileDialogTimer, &QTimer::timeout, [&] {
             if (auto* dialog = qobject_cast<QFileDialog*>(QApplication::activeModalWidget())) {
+                const bool firstAttempt = !fileDialogOpened;
                 fileDialogOpened = true;
+                if (fileDialogDeadline.elapsed() > 10000) {
+                    fileDialogTimer.stop();
+                    dialog->reject();
+                    return;
+                }
                 dialog->selectFile(imagePath);
-                QMetaObject::invokeMethod(dialog, "accept", Qt::DirectConnection);
+                auto* filename = dialog->findChild<QLineEdit*>("fileNameEdit");
+                if (filename) filename->setText(imagePath);
+                if (firstAttempt)
+                    qInfo() << "File dialog input" << (filename ? filename->objectName() : QString())
+                            << "focused" << (filename && filename->hasFocus())
+                            << "selected" << dialog->selectedFiles();
+                if (dialog->selectedFiles().contains(QFileInfo(imagePath).absoluteFilePath()))
+                    QMetaObject::invokeMethod(dialog, "accept", Qt::DirectConnection);
+                if (!dialog->isVisible()) fileDialogTimer.stop();
             }
         });
+        fileDialogDeadline.start();
+        fileDialogTimer.start();
         QTest::mouseClick(imageButton, Qt::LeftButton);
+        fileDialogTimer.stop();
         QVERIFY(fileDialogOpened);
         auto* picture = dynamic_cast<DrawingItem*>(view->scene()->selectedItems().front());
         QVERIFY(picture && picture->kind == "image");

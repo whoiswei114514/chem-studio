@@ -40,6 +40,11 @@ void selectOnly(DrawingView& view, DrawingItem* item) {
     view.scene()->clearSelection();
     item->setSelected(true);
 }
+QJsonObject bodyState(const QJsonObject& state) {
+    auto body = state;
+    body.remove("ports"); body.remove("portDirections"); body.remove("portSegments");
+    return body;
+}
 QString counterpart(const QString& role) {
     static const QMap<QString, QString> roles{
         {"mouth", "probe"}, {"glass-female", "glass-male"}, {"vapor-female", "vapor-male"},
@@ -53,6 +58,9 @@ QString counterpart(const QString& role) {
         {"lining-seat", "lining"}, {"lid", "mouth"}, {"clip", "clip-seat"}, {"clip-seat", "clip"},
         {"rack", "base"}, {"lane", "spot"}, {"spot", "lane"}, {"hook", "hanger"}, {"hanger", "hook"},
         {"contents", "contents-seat"}, {"contents-seat", "contents"}, {"well", "spot"},
+        {"air-in", "air-out"}, {"air-out", "air-in"}, {"air-rail", "air-glider"}, {"air-glider", "air-rail"},
+        {"optical-in", "optical-out"}, {"optical-out", "optical-in"},
+        {"optical-rail", "optical-carriage"}, {"optical-carriage", "optical-rail"},
     };
     return roles.value(role);
 }
@@ -81,11 +89,34 @@ QString manualReason(const chem::ApparatusArtwork& art) {
         "online-centrifuge", "online-cuvette", "online-micropipette", "online-microtube",
         "online-tip-box", "online-incubator-servier", "online-freezer", "online-autoclave",
     };
+    static const QSet<QString> physicsManual{
+        "breadboard",
+        "vernier-caliper",
+        "micrometer",
+        "air-track-glider",
+        "single-pendulum",
+        "lever-apparatus",
+        "pulley-block",
+        "rotational-inertia-apparatus",
+        "free-fall-apparatus",
+        "optical-bench",
+        "laser-source",
+        "optical-screen",
+        "double-slit",
+        "diffraction-grating",
+        "spectrometer",
+        "michelson-interferometer",
+        "tuning-fork",
+        "resonance-tube",
+        "ripple-tank",
+    };
+    if (art.id.startsWith("physics:") && physicsManual.contains(id))
+        return "Self-contained physics illustration or handheld tool; no additional connector is implied.";
     if (art.id.startsWith("bio:") && biochemistryManual.contains(id))
         return "Reviewed closed container, handheld tool, bundled device or self-contained illustration; placement remains manual.";
-    if (art.id.startsWith("chemix:") && diagrams.contains(id))
+    if ((art.id.startsWith("chemix:") || art.id.startsWith("studio:")) && diagrams.contains(id))
         return "Illustration or top-view diagram; no mechanical connector is represented.";
-    if (art.id.startsWith("chemix:") && manual.contains(id))
+    if ((art.id.startsWith("chemix:") || art.id.startsWith("studio:")) && manual.contains(id))
         return "Handheld tool or self-contained drawing; placement remains manual.";
     if (art.id == "legacy:asset-0692")
         return "Flame illustration; no mechanical connector is represented.";
@@ -511,7 +542,10 @@ class CatalogAssemblyTests : public QObject {
         QSignalSpy failures(&view, &DrawingView::operationFailed);
         QVERIFY2(view.connectItems(target->id, parts[1], moved->id, parts[3], DrawingView::ConnectionMode::Assembly),
                  qPrintable(parts.join('/') + (failures.isEmpty() ? QString() : failures.last()[0].toString())));
-        QCOMPARE(target->json(), fixed);
+        if (target->isFlexiblePort(parts[1])) {
+            QCOMPARE(bodyState(target->json()), bodyState(fixed));
+            QVERIFY(QLineF(target->portPosition(parts[1]), moved->portPosition(parts[3])).length() < 1e-7);
+        } else QCOMPARE(target->json(), fixed);
         QCOMPARE(view.state().size(), 3);
         const auto assembled = view.state();
         view.undoStack.undo(); QCOMPARE(view.state(), before);
@@ -538,7 +572,10 @@ class CatalogAssemblyTests : public QObject {
         const auto link = linkState(view);
         QCOMPARE(link["fromPort"].toString(), parts[3]);
         QCOMPARE(link["toPort"].toString(), parts[1]);
-        QCOMPARE(target->json(), fixed);
+        if (target->isFlexiblePort(parts[1])) {
+            QCOMPARE(bodyState(target->json()), bodyState(fixed));
+            QVERIFY(QLineF(target->portPosition(parts[1]), moved->portPosition(parts[3])).length() < 1e-7);
+        } else QCOMPARE(target->json(), fixed);
         QCOMPARE(view.state().size(), 3);
     }
     void supportedAssemblyRotatesAsOne() {
