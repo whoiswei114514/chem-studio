@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="170" height="135" viewBox="0 0 170 135">
 <title>坩埚盖</title>
-<path d="M74 52 C74 42 96 42 96 52 L92 66 H78 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M18 96 Q85 46 152 96 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="18" y="92" width="134" height="6" rx="3" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
+<path d="M74 52 C74 42 96 42 96 52 L92 66 H78 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M18 96 Q85 45 152 96 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M42 84 Q85 57 128 84" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <rect x="18" y="92" width="134" height="6" rx="3" fill="#F8FAF9" stroke="#294454" stroke-width="2.3"/>
 </svg>

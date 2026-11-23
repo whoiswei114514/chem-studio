@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
 <title>木夹</title>
-<path d="M58 18 L80 22 L76 170 L56 168 Z" fill="#D79B59" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M84 22 L106 26 L92 172 L72 170 Z" fill="#D79B59" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <circle cx="79" cy="102" r="12" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
-      <circle cx="79" cy="102" r="5" fill="#3D5968" stroke="none"/>
+<path d="M58 18 H78 L75 168 L56 168 L60 120 L54 102 Z" fill="#D79B59" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M84 22 L104 25 L92 170 L73 169 L79 118 L86 102 Z" fill="#D79B59" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
+      <circle cx="79" cy="102" r="11.5" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
+      <circle cx="79" cy="102" r="4.5" fill="#3D5968" stroke="none"/>
+      <line x1="65" y1="30" x2="65" y2="86" stroke="#B57B42" stroke-width="1.2"/>
+      <line x1="94" y1="34" x2="91" y2="88" stroke="#B57B42" stroke-width="1.2"/>
 </svg>

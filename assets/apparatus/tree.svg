@@ -3,11 +3,10 @@
 <title>树</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M78 96 L70 168 H110 L102 96 Z" fill="#D79B59" stroke="#294454" stroke-width="2.3"/>
-      <circle cx="54" cy="76" r="30" fill="#6DA37C" stroke="#294454" stroke-width="2.2"/>
-      <circle cx="126" cy="74" r="32" fill="#6DA37C" stroke="#294454" stroke-width="2.2"/>
-      <circle cx="90" cy="44" r="32" fill="#C0D4CF" stroke="#294454" stroke-width="2.2"/>
-      <circle cx="90" cy="84" r="34" fill="#6DA37C" stroke="#294454" stroke-width="2.2"/>
+      <path d="M78 96 L70 168 H110 L102 96 Z" fill="#D79B59" stroke="#294454" stroke-width="2.4"/>
+      <path d="M90 112 L72 90 M90 108 L108 88" fill="none" stroke="#294454" stroke-width="2.2"/>
+      <path d="M52 104 C28 104 20 80 34 62 C36 42 54 32 68 38 C76 18 106 18 114 38 C130 34 146 46 146 64 C160 82 150 104 128 104 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.4"/>
+      <path d="M54 58 C58 38 82 28 104 34" fill="none" stroke="#C0D4CF" stroke-width="4.0"/>
     </g>
   
 </svg>

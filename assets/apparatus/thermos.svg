@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>真空保温瓶</title>
-<path d="M56 14 H104 M60 19 V45 Q27 56 27 80 V171 Q27 183 40 183 H120 Q133 183 133 171 V80 Q133 56 100 45 V19" fill="#F8FAF9" stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M40 70 V165 Q40 172 48 172 H112 Q120 172 120 165 V70" fill="#DCE5E8" stroke="#3D5968" stroke-width="1.6"/>
-  <rect x="27" y="90" width="106" height="12" fill="#258F89" stroke="#294454" stroke-width="1.6"/>
-  <rect x="58" y="14" width="44" height="5" rx="2.5" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
+<path d="M60 14 Q63 15 63 22 V42 Q40 52 40 72 V146 A40 40 0 0 0 120 146 V72 Q120 52 97 42 V22 Q97 15 100 14" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M68 20 V47 Q50 56 50 74 V146 A30 30 0 0 0 110 146 V74 Q110 56 92 47 V20" fill="none" stroke="#3D5968" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

@@ -28,7 +28,7 @@
           ]
         }
       ],
-      "sha256": "9bd6cfd06081de302d128736e48592bba5298f46b676c3a9305f71ec4ca7fa6e",
+      "sha256": "5f0bc9f64ec34d2f9d32266e76a634393e41d3e5ee13f82ace79160bc243bcee",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -81,7 +81,7 @@
           ]
         }
       ],
-      "sha256": "0f73d405d715111ff782d72f89f72dcc334420aa017c1fa8d006fb5be62b155c",
+      "sha256": "0b788853dcd049f6386ff469b3c20ccd0fa2e6c02501a85f52d9eda074916f5e",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -134,7 +134,7 @@
           ]
         }
       ],
-      "sha256": "e11ee22c8de01d8cd7b3f8866aaabd11e81c5ecad3b0055b21a48ad2c6d4d6e5",
+      "sha256": "fc2b2a3eea4639cf8ad57ef14f733861a5dde39fd20054b3310b58b4637d0120",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -175,7 +175,7 @@
           "depth": 5
         }
       ],
-      "sha256": "d67ff1b2a2ea1c4fe1e69a039862403457efcab49954215ab59ed25602b98a75",
+      "sha256": "5c396529d707a4f4ddd95d78f9c80a984668c764c3be88913aa9fc69d225d5cd",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -216,7 +216,7 @@
           ]
         }
       ],
-      "sha256": "03a417b7880b45b69673114783bfe363d032c509b98e3a8d161fd9111d290248",
+      "sha256": "997eec0b5518f79ecfb62ffade3d255b679bb434bde601c49b093058f5ea72de",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -309,7 +309,7 @@
           ]
         }
       ],
-      "sha256": "e77cb80238d5a40205ca42af56e585cb467e03b5132c40cbe996a784245d4d48",
+      "sha256": "8c6e1cbd3b386f0b6633bc4cab2394ae7141cccca2c0c155a0c5d0ef76334c5a",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -402,7 +402,7 @@
           ]
         }
       ],
-      "sha256": "00bcc33379714f54b634aa43d3f4405dfd69b4b8b163b0606b5073743dc08d5a",
+      "sha256": "6b8a3d2a2f8255bd6a0d5903a70c7ec7341d6b4cbe6106f600428414a4978322",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -495,7 +495,7 @@
           ]
         }
       ],
-      "sha256": "2ccbb37f593533d53c7a2ef0ca9535eb6997b5568537079455591005fd78766f",
+      "sha256": "cd44193e8d99e590aa1afb935d5d415b79cfaf6962b3f77414a13651d2a33b1b",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -588,7 +588,7 @@
           ]
         }
       ],
-      "sha256": "4914334167cdaf21ac9e3df048eaee994314a90be7fc366d6b73bdf2fd61e82b",
+      "sha256": "7ad4f34bd732d9a26d727b1d124093f42196390759fee018f0e1de23f5ea75ec",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -649,7 +649,7 @@
           ]
         }
       ],
-      "sha256": "b533a7948c913117d54d56fa541a1c45b264c639a99d67573613ad458724fdf9",
+      "sha256": "7e04c74e6221dd437fea3f4b2d8ea513ba65f37e2b2ca6df2feda8d4d43e2ca3",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -742,7 +742,7 @@
           ]
         }
       ],
-      "sha256": "fe2ae01f39709537f5ed7f5dfd2a2f45e04fd02d30dad9aa19340e01b204ad42",
+      "sha256": "fbe3549989e7dfbde4f94613847c48b4c4505ee37360aaf461b3e7394acb713d",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -803,7 +803,7 @@
           ]
         }
       ],
-      "sha256": "57199ffde799ff7fc4b371eb93dc2b805b0b3cfddb8b91f1e441b0c872f76382",
+      "sha256": "a92117784a7408de2e3b0a9c0c2c5dacbdeb871bad35df5cea607f733e88f9b8",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -884,7 +884,7 @@
           ]
         }
       ],
-      "sha256": "c93fc694cdeb2ecdc7ea666ceb4f55331ba812906b9442076e7b30d44dd92e56",
+      "sha256": "b3503f1674afe8e52f4c13d52a79f0c82cda744a4cac0eadbbd1c4bb3535192a",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -961,7 +961,7 @@
           ]
         }
       ],
-      "sha256": "d1cc42cb8760bb38475346b07958f7786c7a84ec46bf34fac67699c1f77ff65d",
+      "sha256": "48ec7d02b02d65f6cd33e5c6e3df1bfc8ac6580cd494e8304056a48c2e03ac92",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1018,7 +1018,7 @@
           ]
         }
       ],
-      "sha256": "b91f002b36118a84791f630d0172cb9c788da853ad9b6ac27472477b7f4d42f8",
+      "sha256": "fa47869ef6a1b4ccd9226c2f8be54f4058f73f0a215e399e1019def9019843f8",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1085,7 +1085,7 @@
           ]
         }
       ],
-      "sha256": "c28abdeb958ccb59e1e6473c9053a9375f50d53ef55fb770e76e670e8ade8a78",
+      "sha256": "b26af2a3f31477a8a296e47ee4cf0508cff93ed8e5195408bfed081e30cf8008",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1152,7 +1152,7 @@
           ]
         }
       ],
-      "sha256": "db491d1685767b781735ba3f1a4e1339651256f4a867c9424eb4154beb868c7c",
+      "sha256": "5a4df4ca23cc893c1af3787582d92b6888b646a4586302ad1ac5129114ace03b",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1229,7 +1229,7 @@
           ]
         }
       ],
-      "sha256": "01e3e21774915e09a70917eef21edee11810df6d82ee3e7e730a9faaf6b0755f",
+      "sha256": "7ffb8939cf524b63ffd5564140e0b3ada5b9df62a633afd865bb3505c9594584",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1261,18 +1261,18 @@
         },
         {
           "id": "outlet-1",
-          "x": 45,
-          "y": 131.053,
-          "dx": -0.5,
-          "dy": 0.866,
+          "x": 38.698,
+          "y": 130.239,
+          "dx": -0.559,
+          "dy": 0.829,
           "type": "glass-male",
-          "diameter": 14.4,
+          "diameter": 13.6,
           "depth": 22,
           "edge": [
-            51.235,
-            134.653,
-            38.765,
-            127.453
+            44.335,
+            134.041,
+            33.06,
+            126.436
           ]
         },
         {
@@ -1282,29 +1282,29 @@
           "dx": 0,
           "dy": 1,
           "type": "glass-male",
-          "diameter": 14.4,
+          "diameter": 13.6,
           "depth": 22,
           "edge": [
-            66.8,
+            67.2,
             144,
-            81.2,
+            80.8,
             144
           ]
         },
         {
           "id": "outlet-3",
-          "x": 103,
-          "y": 131.053,
-          "dx": 0.5,
-          "dy": 0.866,
+          "x": 109.302,
+          "y": 130.239,
+          "dx": 0.559,
+          "dy": 0.829,
           "type": "glass-male",
-          "diameter": 14.4,
+          "diameter": 13.6,
           "depth": 22,
           "edge": [
-            109.235,
-            127.453,
-            96.765,
-            134.653
+            114.94,
+            126.436,
+            103.665,
+            134.041
           ]
         },
         {
@@ -1338,7 +1338,7 @@
           ]
         }
       ],
-      "sha256": "622e0d8883538ae89b95cd3c79d6c6d1736623b8203efea580fb85b3d06a0ed6",
+      "sha256": "d947cb035e33e3a55fdc20f428d7c5fd2cb1b1298176bc8dd26deac7a7cc05fc",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1403,7 +1403,7 @@
           ]
         }
       ],
-      "sha256": "777be554706a6996beadeee3679538ef2e5de5a5695d59eaec3915f6cfbe2b19",
+      "sha256": "39c27d098043e241e041ae9da81d9450f89931619777896adf5a3dc07e5e1afb",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1464,7 +1464,7 @@
           ]
         }
       ],
-      "sha256": "1fcbd28af3f7fe672007ddcf9adb7c3b5c8d23850454716196e2795b2fe5b287",
+      "sha256": "6b5dcd9dd7b754f659110e1fb239f960bbb4c44cede6a2d7bb35e665fda39eed",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1525,7 +1525,7 @@
           ]
         }
       ],
-      "sha256": "7bca7de454c609b99807da934a90533616919554d09427272104704e0f4737cb",
+      "sha256": "a2cddd21ef6c8a631d95a7f87bc0cadb91f7cd74846d84d80b6d391835a53961",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1582,7 +1582,7 @@
           ]
         }
       ],
-      "sha256": "91393e3b331ed365567fb8c865155e89c9b33ea48cf8cd7942a72b3c4df702e7",
+      "sha256": "3160832beeb9d5957a2869332db5f02bee07acad5e6eb7788c8dee459bdffbdb",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1643,7 +1643,7 @@
           ]
         }
       ],
-      "sha256": "b6146e798e742819b439d132adcf306b4421c770c16b3ea7d06e52dfe85f4153",
+      "sha256": "583809465adddd0bd0c51ba2aa16cd71fa214c15a127dd7dc826206ff7d0dc7f",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1708,7 +1708,7 @@
           ]
         }
       ],
-      "sha256": "9d591f12c02c03e0f8163f8c0b8fca46b6d3708ac1e8133eaaed05b67c89a49c",
+      "sha256": "b3487215d6f925b1d3d3ddecccdf6323f24797c859f3f0bf7ddc5b1e57acd937",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1769,7 +1769,7 @@
           ]
         }
       ],
-      "sha256": "7f5816594c68326a71a59aeee39bba3535449b1117a6dd7d2ca3fea87343d334",
+      "sha256": "ce1b21db4f8bc6a53c3e12b1d6e770bcf0caa4725ee5e59b508cf127ac687b14",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1826,7 +1826,7 @@
           ]
         }
       ],
-      "sha256": "709971b81e0c9d50c960be8f1d58e3dbb116fc701ddce74cf52ddef8906664d0",
+      "sha256": "1ee7726c8194a35b5aff79dc8f041e0e2903be137bb7f6a4ccc47421d2c67c8f",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1887,7 +1887,7 @@
           ]
         }
       ],
-      "sha256": "4f926054ceccb7fd6b3fc032dce8c91ed18ea0b6c6dca9a2e662fc77efe0f971",
+      "sha256": "8838dcd432e8c0cce9902edd476b8d497a18d4462527dfe15e92591e589f6297",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -1958,7 +1958,7 @@
           ]
         }
       ],
-      "sha256": "011d2fcf7f81895e46bac0ba346c5e316a1b1842444811972a6ce6e3effa2e2f",
+      "sha256": "633743ae710aef30ea7125cb4076a04084029535b77e7066707e6ac4464c9456",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2001,7 +2001,7 @@
           "type": "base"
         }
       ],
-      "sha256": "ef0cd460873b1842c865e69ac116ff9831ae346a422a8dac78d86619e780cd7a",
+      "sha256": "55d4b112b1b190961d3136862b8cec0070da3bca82d0d4e9baade0254b4275de",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2058,7 +2058,7 @@
           ]
         }
       ],
-      "sha256": "024c1974cd239631f7cd361de6aac7d1a239b4cd0f74fa7e8b13c08167c847f0",
+      "sha256": "a29138d4d9550b89f6a9931ddba7f819b7ef5dfb639112136da116066b293483",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2115,7 +2115,7 @@
           ]
         }
       ],
-      "sha256": "66cf448a6d9028b0355279ded7be924497883e13eaad36bcb5c17c2bfa4ac77c",
+      "sha256": "290d4c692ae98d760cb710318d6d93d68c0f76bbeba04be2fedccf6629113518",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2184,7 +2184,7 @@
           ]
         }
       ],
-      "sha256": "9ec5c44f42095c21145b08b9045272ca823d6d2dc6923253bc57d7505d96f337",
+      "sha256": "7079e27f5183a92ba364ae243c5cb30bf80058435fcc5c0896b7c03ca5a19a46",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2245,7 +2245,7 @@
           ]
         }
       ],
-      "sha256": "88a9f0775544f505f35a37439e5b7af6b08ac6b01f53efc31c7bdfa7838783c4",
+      "sha256": "a61171eeebf9b23008bf0f260526446efe979341b86f6bf13b78577650abd4f8",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2490,7 +2490,7 @@
           ]
         }
       ],
-      "sha256": "92eac0991ce2c7e4145e3ce00ffb36e0aaf9a0338ef4852284f896f5e6bf31d5",
+      "sha256": "e48fd4ce0e793d63c03bd2f818e3f066d7539a89a764676bb58d9c2ffb897530",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2553,7 +2553,7 @@
           ]
         }
       ],
-      "sha256": "18f5a9cf82efd8aa30ae7bc003a30682a10304760b9b17b1093e0b18814f8c41",
+      "sha256": "413153195230946b1132aad86b33708c946339d47d12f8cc16500d182fd7a527",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2630,7 +2630,7 @@
           ]
         }
       ],
-      "sha256": "f73d4b1eedcc0ff3e8f131acc25e65f8b0e5d3d5390e4dc9cd2f7677438772ef",
+      "sha256": "30eb3c7082e27699a6fb6d9e086dcb90b022805b5accdd52dcff5e403bfd1175",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2689,7 +2689,7 @@
           "type": "base"
         }
       ],
-      "sha256": "7a849127ff368001431854b79e37b4ed18ebf953042da424a6f1365e5241312d",
+      "sha256": "24f10c816761664b11971dcabcfd8aad544cac3799d0f5bc02338ebe76aa7a37",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2760,7 +2760,7 @@
           ]
         }
       ],
-      "sha256": "486141f44abc124141e9951a141a9aad3ff51a3d13f80464bdae89c9b6fdc3bc",
+      "sha256": "9f93bcf19fbcf9afb4c63b8bd8aeb988da3f3e218a5172a74db9f7b4c419f96a",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2831,7 +2831,7 @@
           ]
         }
       ],
-      "sha256": "a926745d6a414c3d96794de75a3d00ab2052d1029e13cb19da4b3b09ca56062a",
+      "sha256": "c1d51e3810ad9cbc6891f7e3d8385be5b2167da7ed205cce5302e7624666acfe",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2898,7 +2898,7 @@
           ]
         }
       ],
-      "sha256": "2b9890e5784cda7e80e657fe7164d2beddbdbe3306c6701ce75ab678efa4aadb",
+      "sha256": "551f2fe04d9ae585d76a19661a538aaf38979b6b9dedb4efb116aac671ef5ac0",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"
@@ -2988,7 +2988,7 @@
           "type": "base"
         }
       ],
-      "sha256": "523d17a4ece7ee5d48bc85d89e21422b14ebfff8468e67ee46113fc22061db49",
+      "sha256": "376d8d9c1d7e8bc8d32da19443ef78b6e6bdb263ded4f45533bfd6aafc77d836",
       "author": "Chem Studio contributors",
       "license": "WTFPL-2.0",
       "origin": "authored"

@@ -3,16 +3,17 @@
 <title>电阻</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="12" y="72.5" width="38" height="5" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <rect x="130" y="72.5" width="38" height="5" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="10" cy="75" r="4" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="170" cy="75" r="4" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <path d="M48 60 Q48 54 56 54 H64 Q68 58 72 58 H108 Q112 58 116 54 H124 Q132 54 132 60 V90 Q132 96 124 96 H116 Q112 92 108 92 H72 Q68 92 64 96 H56 Q48 96 48 90 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.3"/>
-      <rect x="57" y="55" width="7" height="40" fill="#D79B59" stroke="none"/>
-      <rect x="74" y="59" width="7" height="32" fill="#294454" stroke="none"/>
-      <rect x="90" y="59" width="7" height="32" fill="#258F89" stroke="none"/>
-      <rect x="116" y="55" width="7" height="40" fill="#C9A048" stroke="none"/>
-      <text x="90" y="118" fill="#3D5968" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">1.0 kΩ  ±5%</text>
+      <rect x="12" y="72.5" width="36" height="5" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
+      <rect x="132" y="72.5" width="36" height="5" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
+      <circle cx="10" cy="75" r="4.2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
+      <circle cx="170" cy="75" r="4.2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
+      <path d="M44 62 Q44 52 55 52 H62 Q68 57 73 57 H107 Q112 57 118 52 H125 Q136 52 136 62 V88 Q136 98 125 98 H118 Q112 93 107 93 H73 Q68 93 62 98 H55 Q44 98 44 88 Z" fill="#EAD7BD" stroke="#294454" stroke-width="2.4"/>
+      <rect x="55" y="53.5" width="7" height="43" fill="#B57B42" stroke="none"/>
+      <rect x="75" y="58.5" width="6.5" height="33" fill="#294454" stroke="none"/>
+      <rect x="90" y="58.5" width="6.5" height="33" fill="#C84B31" stroke="none"/>
+      <rect x="118" y="53.5" width="7" height="43" fill="#C9A048" stroke="none"/>
+      <path d="M52 58 H128" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="2.4"/>
+      <path d="M44 62 Q44 52 55 52 H62 Q68 57 73 57 H107 Q112 57 118 52 H125 Q136 52 136 62 V88 Q136 98 125 98 H118 Q112 93 107 93 H73 Q68 93 62 98 H55 Q44 98 44 88 Z" fill="none" stroke="#294454" stroke-width="2.4"/>
     </g>
   
 </svg>

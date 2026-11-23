@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>量热杯</title>
-<rect x="19" y="44" width="126" height="137" rx="6" fill="#DCE5E8" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="33" y="48" width="98" height="123" rx="4" fill="#F8FAF9" stroke="#3D5968" stroke-width="1.6"/>
-  <rect x="29.5" y="34" width="105" height="10" rx="2.5" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
+<path d="M38 42 L48 171 Q48 179 56 179 H108 Q116 179 116 171 L126 42" fill="none" stroke="#3D5968" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M29.5 34 Q33 35 34 42 L44 174 Q45 181 54 181 H110 Q119 181 120 174 L130 42 Q131 35 134.5 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38 42 H126" fill="none" stroke="#DCE8EC" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

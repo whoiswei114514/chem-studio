@@ -2,9 +2,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="140" viewBox="0 0 180 140">
 <title>十字</title>
 
-    <g stroke="#294454" stroke-width="3.4" stroke-linecap="round">
-      <line x1="56" y1="36" x2="124" y2="104"/>
-      <line x1="124" y1="36" x2="56" y2="104"/>
-    </g>
+    <path d="M78 24 H102 V58 H136 V82 H102 V116 H78 V82 H44 V58 H78 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
   
 </svg>

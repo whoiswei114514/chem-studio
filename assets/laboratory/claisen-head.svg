@@ -2,21 +2,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="94" height="154" viewBox="0 0 94 154">
 <title>克氏双口蒸馏头</title>
 <path d="
-      M12.5 44 V128 H31.5 V86
-      C44 84 79.5 78 79.5 58
-      V26 H60.5 V54
-      C60.5 64 40 66 31.5 66
-      V44 Z"
-      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-  
-  
-  <polygon points="34,25.7 10,25.7 12.5,44 31.5,44" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="6.8" y="22" width="30.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
-  <line x1="12.5" y1="44" x2="31.5" y2="44" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
-  <polygon points="82,7.7 58,7.7 60.5,26 79.5,26" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="54.8" y="4" width="30.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
-  <line x1="60.5" y1="26" x2="79.5" y2="26" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
-  
-  <polygon points="33.5,128 10.5,128 13.2,150 30.8,150" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="9" y1="128" x2="35" y2="128" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+      M12.5 44 V128
+      M31.5 128 V86
+      C44 84 79.5 78 79.5 58 V26
+      M60.5 26 V54
+      C60.5 64 40 66 31.5 66 V44"
+      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 22 Q12 23 12 26.5 L12.5 44" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 22 Q32 23 32 26.5 L31.5 44" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 44 Q22 46.2 30 44" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M58 4 Q60 5 60 8.5 L60.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M82 4 Q80 5 80 8.5 L79.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62 26 Q70 28.2 78 26" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="8.5" y1="128" x2="35.5" y2="128" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M10.5 128 L13.2 150" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M33.5 128 L30.8 150" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M11.5 130.2 Q22 132.4 32.5 130.2" fill="none" stroke="#DCE8EC" stroke-width="1.3" stroke-linecap="round"/>
 </svg>

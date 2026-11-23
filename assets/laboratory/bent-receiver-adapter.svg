@@ -2,14 +2,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="92" height="104" viewBox="0 0 92 104">
 <title>弯形接收管</title>
 <path d="
-      M29.4499615 17.483629
+      M29.58 17.001
       L52 24
       Q74 28 74 52
-      V94 L71.5 100 L63.5 98 V54
+      V94 L71.5 100 M63.5 98 V54
       Q62 40 46 39
-      L25.0500385 33.904371 Z"
-      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-  
-  <polygon points="12.55,9.849 6.598,32.066 24.921,34.387 29.58,17.001" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="9.753,5.994 2.247,34.006 6.304,35.093 13.81,7.081" fill="#FFFFFF" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+      L24.921 34.387"
+      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.976 8.892 Q9.425 11.083 12.805 11.988 L29.58 17.001" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3.024 31.108 Q4.507 29.435 7.888 30.341 L24.921 34.387" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

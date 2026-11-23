@@ -9,8 +9,10 @@ const LAB_DIR = path.resolve(__dirname, '../assets/laboratory');
 // Classic Flat Scientific Line-Art Design Tokens (#294454 house palette, Qt QSvgRenderer safe).
 // Zero <linearGradient>/<radialGradient>, zero url(#...), zero cross-hatched XXX joints.
 const C = {
-  stroke: '#294454',       // Primary outer walls (2.2-2.4)
-  inner: '#3D5968',        // Internal tubes / coils / hardware (1.5)
+  stroke: '#294454',       // Primary outer walls (2.2-2.6)
+  glassSw: 2.6,            // Bold uniform glassware contour weight
+  hintArc: '#DCE8EC',      // Subtle inner joint hint curve
+  inner: '#3D5968',        // Internal tubes / coils / hardware (1.5-1.8)
   tick: '#7E939E',         // Graduations & subtle markings (1.0)
   muted: '#9AB0B8',        // Subtle back coil / light strokes
   frostStroke: '#7E939E',  // Legacy alias
@@ -91,67 +93,84 @@ function hatchedTrapezoid(idPrefix, sx, sy, ex, ey, hw0, hw1, opts = {}) {
   return `<polygon points="${p0L.join(',')} ${p0R.join(',')} ${p1R.join(',')} ${p1L.join(',')}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
 }
 
-// Vertical female joint: rim at (cx, yTop), smooth unadorned socket walls
+// Vertical female joint: open outward-flared rim at (cx, yTop), smooth open socket walls (NO horizontal top/bottom bars)
 function verticalFemaleJoint(idPrefix, cx, yTop, len = 22, hwTop = 12, hwBot = 9.5, opts = {}) {
-  const lipH = opts.lipH ?? 4.2;
-  const rimExtra = opts.rimExtra ?? 3.2;
-  const lipRx = r(lipH / 2);
-  const neckWall = `<rect x="${r(cx - hwTop - rimExtra)}" y="${r(yTop)}" width="${r((hwTop + rimExtra) * 2)}" height="${r(lipH)}" rx="${lipRx}" fill="${opts.amber ? C.amberLight : '#FFFFFF'}" stroke="${C.stroke}" stroke-width="2.1"/>`;
-  const cone = hatchedTrapezoid(idPrefix, cx, yTop + lipH - 0.5, cx, yTop + len, hwTop, hwBot, { sw: 2.2, amber: opts.amber, fill: opts.fill || 'none' });
-  const ring = opts.noBaseRing ? '' : `<line x1="${r(cx - hwBot)}" y1="${r(yTop + len)}" x2="${r(cx + hwBot)}" y2="${r(yTop + len)}" stroke="${C.inner}" stroke-width="1.3" stroke-linecap="round"/>`;
-  return `${cone}\n  ${neckWall}\n  ${ring}`;
+  const sw = opts.sw || C.glassSw;
+  const hwWaist = Math.max(hwBot + 0.5, hwTop - 2.3);
+  const yWaist = yTop + 4.5;
+  const yBot = yTop + len;
+  const lWall = `M${r(cx - hwTop)} ${r(yTop)} Q${r(cx - hwWaist)} ${r(yTop + 1)} ${r(cx - hwWaist)} ${r(yWaist)} L${r(cx - hwBot)} ${r(yBot)}`;
+  const rWall = `M${r(cx + hwTop)} ${r(yTop)} Q${r(cx + hwWaist)} ${r(yTop + 1)} ${r(cx + hwWaist)} ${r(yWaist)} L${r(cx + hwBot)} ${r(yBot)}`;
+  const bg = opts.amber
+    ? `<polygon points="${r(cx - hwWaist)},${r(yWaist)} ${r(cx + hwWaist)},${r(yWaist)} ${r(cx + hwBot)},${r(yBot)} ${r(cx - hwBot)},${r(yBot)}" fill="${C.amberLight}" stroke="none"/>\n  `
+    : '';
+  const ring = (opts.noBaseRing || opts.amber)
+    ? ''
+    : `\n  <path d="M${r(cx - hwBot + 1.5)} ${r(yBot)} Q${r(cx)} ${r(yBot + 2.2)} ${r(cx + hwBot - 1.5)} ${r(yBot)}" fill="none" stroke="${C.hintArc}" stroke-width="1.4" stroke-linecap="round"/>`;
+  return `${bg}<path d="${lWall}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n  <path d="${rWall}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>${ring}`;
 }
 
-// Vertical male joint cone: shoulder at yTop, tip at yTop + len
+// Vertical male joint cone: shoulder collar at yTop, open tapered glass walls ending at yTop + len
 function verticalMaleJoint(idPrefix, cx, yTop, len = 22, hwTop = 12, hwBot = 9, opts = {}) {
-  const cone = hatchedTrapezoid(idPrefix, cx, yTop, cx, yTop + len, hwTop, hwBot, { sw: 2.2, amber: opts.amber, fill: opts.fill || '#FFFFFF' });
-  const collar = opts.collar === false ? '' : `<line x1="${r(cx - hwTop - 1.5)}" y1="${r(yTop)}" x2="${r(cx + hwTop + 1.5)}" y2="${r(yTop)}" stroke="${C.stroke}" stroke-width="2.2" stroke-linecap="round"/>`;
+  const sw = opts.sw || C.glassSw;
+  const yBot = yTop + len;
+  const collar = opts.collar === false ? '' : `<line x1="${r(cx - hwTop - 2.0)}" y1="${r(yTop)}" x2="${r(cx + hwTop + 2.0)}" y2="${r(yTop)}" stroke="${C.stroke}" stroke-width="${r(sw - 0.2)}" stroke-linecap="round"/>\n  `;
+  const innerLine = `<path d="M${r(cx - hwTop + 1)} ${r(yTop + 2.2)} Q${r(cx)} ${r(yTop + 4.4)} ${r(cx + hwTop - 1)} ${r(yTop + 2.2)}" fill="none" stroke="${C.hintArc}" stroke-width="1.3" stroke-linecap="round"/>`;
   let drip = '';
   if (opts.dripTip) {
-    drip = `<path d="M${r(cx - 4.5)} ${r(yTop + len)} L${r(cx - 3.5)} ${r(yTop + len + 7)} L${r(cx + 3.5)} ${r(yTop + len + 4)} L${r(cx + 4.5)} ${r(yTop + len)} Z" fill="none" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>`;
+    drip = `\n  <path d="M${r(cx - 4.5)} ${r(yBot)} L${r(cx - 3.5)} ${r(yBot + 7)} L${r(cx + 3.5)} ${r(yBot + 4)} L${r(cx + 4.5)} ${r(yBot)}" fill="none" stroke="${C.stroke}" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>`;
   }
-  return `${drip}\n  ${cone}\n  ${collar}`;
+  return `${collar}<path d="M${r(cx - hwTop)} ${r(yTop)} L${r(cx - hwBot)} ${r(yBot)}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>\n  <path d="M${r(cx + hwTop)} ${r(yTop)} L${r(cx + hwBot)} ${r(yBot)}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>\n  ${innerLine}${drip}`;
 }
 
-// Angled male joint cone from shoulder (sx, sy) along unit dir (ux, uy) for length len
+// Angled male joint cone from shoulder (sx, sy) along unit dir (ux, uy) for length len (open tip)
 function angledMaleJoint(idPrefix, sx, sy, ux, uy, len = 22, hwTop = 12, hwBot = 9) {
+  const sw = C.glassSw;
   const ex = sx + ux * len;
   const ey = sy + uy * len;
   const tx = -uy;
   const ty = ux;
-  const cone = hatchedTrapezoid(idPrefix, sx, sy, ex, ey, hwTop, hwBot, { sw: 2.2, fill: '#FFFFFF' });
-  const collar = `<line x1="${r(sx - tx * (hwTop + 1.5))}" y1="${r(sy - ty * (hwTop + 1.5))}" x2="${r(sx + tx * (hwTop + 1.5))}" y2="${r(sy + ty * (hwTop + 1.5))}" stroke="${C.stroke}" stroke-width="2.2" stroke-linecap="round"/>`;
+  const p = (s, w) => [r(sx + ux * s + tx * w), r(sy + uy * s + ty * w)];
+  const l0 = p(0, -hwTop);
+  const r0 = p(0, hwTop);
+  const l1 = p(len, -hwBot);
+  const r1 = p(len, hwBot);
+  const c0 = p(0, -(hwTop + 2.0));
+  const c1 = p(0, hwTop + 2.0);
   return {
-    svg: `${cone}\n  ${collar}`,
+    svg: `<line x1="${c0[0]}" y1="${c0[1]}" x2="${c1[0]}" y2="${c1[1]}" stroke="${C.stroke}" stroke-width="${r(sw - 0.2)}" stroke-linecap="round"/>\n  <line x1="${l0[0]}" y1="${l0[1]}" x2="${l1[0]}" y2="${l1[1]}" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>\n  <line x1="${r0[0]}" y1="${r0[1]}" x2="${r1[0]}" y2="${r1[1]}" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>`,
     tip: [r(ex), r(ey)],
-    edge: [r(ex - tx * hwBot), r(ey - ty * hwBot), r(ex + tx * hwBot), r(ey + ty * hwBot)],
+    edge: [l1[0], l1[1], r1[0], r1[1]],
+    l0,
+    r0,
     diameter: r(hwBot * 2),
   };
 }
 
-// Angled female joint socket with lip at (lx, ly) going inward along (-ox, -oy)
+// Angled female joint socket with open flared lip at (lx, ly) going inward along (-ox, -oy)
 function angledFemaleJoint(idPrefix, lx, ly, ox, oy, len = 22, hwTop = 12, hwBot = 9.5) {
+  const sw = C.glassSw;
   const ux = -ox;
   const uy = -oy;
   const tx = -uy;
   const ty = ux;
-  const lipH = 4.2;
-  const rimExtra = 3.0;
-  const sx = lx + ux * (lipH - 0.5);
-  const sy = ly + uy * (lipH - 0.5);
+  const hwWaist = Math.max(hwBot + 0.5, hwTop - 2.3);
+  const p = (along, w) => [r(lx + ux * along + tx * w), r(ly + uy * along + ty * w)];
+  const lt = p(0, -hwTop), rt = p(0, hwTop);
+  const lc = p(1.0, -hwWaist), rc = p(1.0, hwWaist);
+  const lw = p(4.5, -hwWaist), rw = p(4.5, hwWaist);
+  const lb = p(len, -hwBot), rb = p(len, hwBot);
   const ex = lx + ux * len;
   const ey = ly + uy * len;
-  const cone = hatchedTrapezoid(idPrefix, sx, sy, ex, ey, hwTop, hwBot, { sw: 2.2, fill: 'none' });
-  const p = (along, w) => [r(lx + ux * along + tx * w), r(ly + uy * along + ty * w)];
-  const lp1 = p(0, -(hwTop + rimExtra));
-  const lp2 = p(0, hwTop + rimExtra);
-  const lp3 = p(lipH, hwTop + rimExtra);
-  const lp4 = p(lipH, -(hwTop + rimExtra));
-  const lip = `<polygon points="${lp1.join(',')} ${lp2.join(',')} ${lp3.join(',')} ${lp4.join(',')}" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>`;
+  const svg =
+    `<path d="M${lt[0]} ${lt[1]} Q${lc[0]} ${lc[1]} ${lw[0]} ${lw[1]} L${lb[0]} ${lb[1]}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+    `  <path d="M${rt[0]} ${rt[1]} Q${rc[0]} ${rc[1]} ${rw[0]} ${rw[1]} L${rb[0]} ${rb[1]}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
   return {
-    svg: `${cone}\n  ${lip}`,
+    svg,
     lip: [r(lx), r(ly)],
-    edge: [r(lx - tx * hwTop), r(ly - ty * hwTop), r(lx + tx * hwTop), r(ly + ty * hwTop)],
+    edge: [lt[0], lt[1], rt[0], rt[1]],
+    lb,
+    rb,
     diameter: r(hwTop * 2),
     innerEnd: [r(ex), r(ey)],
   };
@@ -241,18 +260,18 @@ function buildWaterCondenser({ id, name, search, innerSvg }) {
   const male = verticalMaleJoint(id, cx, 326, 24, 11.5, 8.8);
 
     const outerWall = `<path d="
-    M${cx - 8} 28 V48
-    C${cx - 8} 54 ${cx - jHw} 54 ${cx - jHw} ${jTop + 10}
+    M${cx - 9.5} 28 V48
+    C${cx - 9.5} 54 ${cx - jHw} 54 ${cx - jHw} ${jTop + 10}
     V${jBot - 10}
-    C${cx - jHw} ${jBot} ${cx - 8} ${jBot} ${cx - 8} ${jBot + 8}
+    C${cx - jHw} ${jBot} ${cx - 9.5} ${jBot} ${cx - 9.5} ${jBot + 8}
     V326
-    H${cx + 8}
+    M${cx + 9.5} 326
     V${jBot + 8}
-    C${cx + 8} ${jBot} ${cx + jHw} ${jBot} ${cx + jHw} ${jBot - 10}
+    C${cx + 9.5} ${jBot} ${cx + jHw} ${jBot} ${cx + jHw} ${jBot - 10}
     V${jTop + 10}
-    C${cx + jHw} 54 ${cx + 8} 54 ${cx + 8} 48
-    V28 Z"
-    fill="none" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>`;
+    C${cx + jHw} 54 ${cx + 9.5} 54 ${cx + 9.5} 48
+    V28"
+    fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
 
   const jacketSealTop = `<path d="M${cx - 10} ${jTop + 4} Q${cx} ${jTop + 9} ${cx + 10} ${jTop + 4}" fill="none" stroke="${C.inner}" stroke-width="1.3"/>`;
   const jacketSealBot = `<path d="M${cx - 10} ${jBot - 4} Q${cx} ${jBot - 9} ${cx + 10} ${jBot - 4}" fill="none" stroke="${C.inner}" stroke-width="1.3"/>`;
@@ -296,10 +315,11 @@ function buildAssets() {
   {
     const id = 'ground-glass-stopper';
     const W = 40, H = 68, cx = 20;
-    const cone = verticalMaleJoint(id, cx, 33, 31, 14, 10.5, { collar: false });
-    const head = `<path d="M${cx - 16} 19 C${cx - 16} 8 ${cx - 9} 3 ${cx} 3 C${cx + 9} 3 ${cx + 16} 8 ${cx + 16} 19 C${cx + 16} 26 ${cx + 11} 30 ${cx + 14} 33 H${cx - 14} C${cx - 11} 30 ${cx - 16} 26 ${cx - 16} 19 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
+    const cone = verticalMaleJoint(id, cx, 33, 31, 14, 10.5, { collar: false, sw: 2.5 });
+    const tipClose = `<line x1="${cx - 10.5}" y1="64" x2="${cx + 10.5}" y2="64" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round"/>`;
+    const head = `<path d="M${cx - 16} 19 C${cx - 16} 8 ${cx - 9} 3 ${cx} 3 C${cx + 9} 3 ${cx + 16} 8 ${cx + 16} 19 C${cx + 16} 26 ${cx + 11} 30 ${cx + 14} 33 H${cx - 14} C${cx - 11} 30 ${cx - 16} 26 ${cx - 16} 19 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.5" stroke-linejoin="round"/>
       <rect x="${cx - 15}" y="30" width="30" height="3.2" rx="1.6" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="1.6"/>`;
-    const body = `${cone}\n  ${head}\n  ${specularHighlight(cx - 8, 9, 25, 2.8, 0.8)}`;
+    const body = `${cone}\n  ${tipClose}\n  ${head}`;
     assets.push({
       id, name: '玻璃磨口塞（圆头）', category: '瓶塞与磨口接头',
       search: '玻璃塞 磨口瓶塞 round head ground glass stopper 实心玻璃密封件，圆头便于抓取，下部磨砂锥面嵌入试剂瓶或容量瓶的磨口。',
@@ -310,14 +330,14 @@ function buildAssets() {
     });
   }
 
-  // 2. lab:clear-reagent-bottle (polished existing)
+  // 2. lab:clear-reagent-bottle (open flared ground neck + bold glassSw)
   {
     const id = 'clear-reagent-bottle';
     const W = 94, H = 168, cx = 47;
-    const bottle = `<path d="M${cx - 14} 24 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 14} 36 V24 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const bottle = `<path d="M${cx - 12.5} 27 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 12.5} 36 V27" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const baseThick = `<path d="M${cx - 39} 157 Q${cx} 160 ${cx + 39} 157" fill="none" stroke="${C.inner}" stroke-width="1.2"/>`;
     const fem = verticalFemaleJoint(id, cx, 3, 24, 15, 12.5);
-    const body = `${bottle}\n  ${baseThick}\n  ${specularHighlight(cx - 34, 72, 150, 3.6, 0.78)}\n  ${fem}`;
+    const body = `${bottle}\n  ${baseThick}\n  ${fem}`;
     assets.push({
       id, name: '透明磨口试剂瓶（开口）', category: '试剂储存',
       search: '无色试剂瓶 细口瓶 reagent bottle clear glass 储存试剂和溶液，瓶口可装可拆卸的玻璃磨口塞。',
@@ -330,17 +350,18 @@ function buildAssets() {
     });
   }
 
-  // 3. lab:amber-reagent-bottle (polished existing)
+  // 3. lab:amber-reagent-bottle (open flared ground neck + flat amber fill + bold glassSw)
   {
     const id = 'amber-reagent-bottle';
     const W = 94, H = 168, cx = 47;
-    const bottle = `<path d="M${cx - 14} 24 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 14} 36 V24 Z" fill="url(#${id}-amber)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const amberFill = `<path d="M${cx - 12.5} 27 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 12.5} 36 V27 Z" fill="${C.amberLight}" stroke="none"/>`;
+    const bottle = `<path d="M${cx - 12.5} 27 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 12.5} 36 V27" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const fem = verticalFemaleJoint(id, cx, 3, 24, 15, 12.5, { amber: true });
     const label = `<rect x="${cx - 32}" y="86" width="64" height="50" rx="3" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="1.6"/>
       <line x1="${cx - 24}" y1="102" x2="${cx + 24}" y2="102" stroke="#CBD5E1" stroke-width="1.2"/>
       <line x1="${cx - 24}" y1="114" x2="${cx + 18}" y2="114" stroke="#CBD5E1" stroke-width="1.2"/>
       <line x1="${cx - 24}" y1="126" x2="${cx + 12}" y2="126" stroke="#CBD5E1" stroke-width="1.2"/>`;
-    const body = `${bottle}\n  ${specularHighlight(cx - 34, 72, 150, 3.2, 0.45)}\n  ${label}\n  ${fem}`;
+    const body = `${amberFill}\n  ${fem}\n  ${bottle}\n  ${label}`;
     assets.push({
       id, name: '棕色磨口试剂瓶（开口）', category: '试剂储存',
       search: '棕色试剂瓶 棕瓶 避光瓶 amber reagent bottle 保护光敏试剂，带空白标签和可装玻璃塞的磨口。',
@@ -353,12 +374,12 @@ function buildAssets() {
     });
   }
 
-  // 4. lab:ball-joint (polished existing)
+  // 4. lab:ball-joint (polished existing, open tube inlet + bold glassSw)
   {
     const id = 'ball-joint';
     const W = 148, H = 48, cy = 24;
-    const tube = `<rect x="2" y="${cy - 13}" width="112" height="26" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const ball = `<path d="M114 ${cy - 13} L123 ${cy - 20} A21 21 0 0 1 144 ${cy} A21 21 0 0 1 123 ${cy + 20} L114 ${cy + 13} Z" fill="${C.glassEdge}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const tube = `<path d="M2 ${cy - 13} H114 M2 ${cy + 13} H114" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
+    const ball = `<path d="M114 ${cy - 13} L123 ${cy - 20} A21 21 0 0 1 144 ${cy} A21 21 0 0 1 123 ${cy + 20} L114 ${cy + 13}" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const frostArc = `<path d="M122 ${cy - 16} A18 18 0 0 1 139 ${cy} A18 18 0 0 1 122 ${cy + 16}" fill="none" stroke="${C.inner}" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>`;
     const hi = '';
     assets.push({
@@ -372,13 +393,13 @@ function buildAssets() {
     });
   }
 
-  // 5. lab:socket-joint (polished existing)
+  // 5. lab:socket-joint (polished existing, open tube outlet + bold glassSw)
   {
     const id = 'socket-joint';
     const W = 148, H = 52, cy = 26;
-    const tube = `<rect x="34" y="${cy - 13}" width="112" height="26" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const cup = `<path d="M4 ${cy - 22} A24 24 0 0 1 25 ${cy - 13} H34 V${cy + 13} H25 A24 24 0 0 1 4 ${cy + 22} Z" fill="${C.glassEdge}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const cupRim = `<ellipse cx="6" cy="${cy}" rx="3.2" ry="20" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>`;
+    const tube = `<path d="M34 ${cy - 13} H146 M34 ${cy + 13} H146" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
+    const cup = `<path d="M4 ${cy - 22} A24 24 0 0 1 25 ${cy - 13} H34 M34 ${cy + 13} H25 A24 24 0 0 1 4 ${cy + 22}" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const cupRim = `<path d="M4 ${cy - 22} Q9 ${cy} 4 ${cy + 22}" fill="none" stroke="${C.inner}" stroke-width="1.5" stroke-linecap="round"/>`;
     const hi = '';
     assets.push({
       id, name: '球形磨口接头（球窝）', category: '瓶塞与磨口接头',
@@ -416,16 +437,16 @@ function buildAssets() {
     const vaporFem = angledFemaleJoint(id, 130, 74, ux, uy, 22, 11, 8.8);
     const male = verticalMaleJoint(id, cx, 276, 24, 11.5, 8.8, { dripTip: false });
 
-    const sideBranch = `<polygon points="${cx + 24},78 ${r(vaporFem.innerEnd[0] - tx * 9.5)},${r(vaporFem.innerEnd[1] - ty * 9.5)} ${r(vaporFem.innerEnd[0] + tx * 9.5)},${r(vaporFem.innerEnd[1] + ty * 9.5)} ${cx + 24},104" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const sideBranch = `<path d="M${cx + 26} 78 L${vaporFem.lb[0]} ${vaporFem.lb[1]} M${vaporFem.rb[0]} ${vaporFem.rb[1]} L${cx + 26} 102" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const outerBody = `<path d="
       M${cx - 18} 12 H${cx + 18} V52
       C${cx + 26} 58 ${cx + 26} 68 ${cx + 26} 78
-      V246
+      M${cx + 26} 102 V246
       C${cx + 26} 262 ${cx + 11.5} 264 ${cx + 11.5} 276
-      H${cx - 11.5}
+      M${cx - 11.5} 276
       C${cx - 11.5} 264 ${cx - 26} 262 ${cx - 26} 246
-      V66 C${cx - 26} 56 ${cx - 18} 52 ${cx - 18} 48 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      V66 C${cx - 26} 56 ${cx - 18} 52 ${cx - 18} 48 V12"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Clean cap seam
     const capRing = `<line x1="${cx - 24}" y1="54" x2="${cx + 24}" y2="54" stroke="${C.inner}" stroke-width="1.3"/>`;
     const body = `
@@ -536,10 +557,10 @@ function buildAssets() {
     const W = 44, H = 320, cx = 22;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 12, 9.5);
     const male = verticalMaleJoint(id, cx, 292, 24, 11.5, 8.8);
-    const tube = `<rect x="${cx - 9.5}" y="28" width="19" height="264" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const tube = `<path d="M${cx - 9.5} 28 V292 M${cx + 9.5} 28 V292" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
     const innerBore = `<line x1="${cx - 5.5}" y1="32" x2="${cx - 5.5}" y2="288" stroke="${C.inner}" stroke-width="1.0"/>
       <line x1="${cx + 5.5}" y1="32" x2="${cx + 5.5}" y2="288" stroke="${C.inner}" stroke-width="1.0"/>`;
-    const body = `${tube}\n  ${innerBore}\n  ${specularHighlight(cx - 3.5, 34, 286, 2.4, 0.78)}\n  ${fem}\n  ${male}`;
+    const body = `${tube}\n  ${innerBore}\n  ${fem}\n  ${male}`;
     assets.push({
       id, name: '空气冷凝管', category: '冷凝与回流',
       search: '空气冷凝管 air condenser 无水套 高沸点蒸馏 空气冷却 直管冷凝 用于沸点高于140℃液体的蒸馏冷凝，无需通水。',
@@ -564,7 +585,7 @@ function buildAssets() {
     const male = verticalMaleJoint(id, cx, 326, 24, 11.5, 8.8);
 
     // Outer open vapor jacket cylinder
-    const outer = `<path d="M${cx - 9.5} 28 V38 Q${cx - hw} 42 ${cx - hw} ${jTop + 10} V${jBot - 10} Q${cx - hw} ${jBot} ${cx - 11.5} 308 V326 H${cx + 11.5} V308 Q${cx + hw} ${jBot} ${cx + hw} ${jBot - 10} V${jTop + 10} Q${cx + hw} 42 ${cx + 9.5} 38 V28 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const outer = `<path d="M${cx - 9.5} 28 V38 Q${cx - hw} 42 ${cx - hw} ${jTop + 10} V${jBot - 10} Q${cx - hw} ${jBot} ${cx - 11.5} 308 V326 M${cx + 11.5} 326 V308 Q${cx + hw} ${jBot} ${cx + hw} ${jBot - 10} V${jTop + 10} Q${cx + hw} 42 ${cx + 9.5} 38 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Helical double-pass coil inside vapor jacket (central return stem + outer helix)
     const turns = 10;
     const y0 = 96, y1 = 282, pitch = (y1 - y0) / turns, amp = 11.5;
@@ -609,17 +630,16 @@ function buildAssets() {
     const ux = 0.965926, uy = 0.258819;
     const sx = 64, sy = 44; // shoulder start of sidearm male cone
     const sideCone = angledMaleJoint(id, sx, sy, ux, uy, 22, 11, 8.6);
-    const tx = -uy, ty = ux;
     // Smooth 75-degree bent elbow tube from (cx, 78) curving cleanly into sidearm shoulder (sx, sy)
     const elbow = `<path d="
       M${cx - 10} 78 V34
       C${cx - 10} 13 ${cx + 8} 10 ${cx + 22} 14
-      L${r(sx - tx * 10)} ${r(sy - ty * 10)}
-      L${r(sx + tx * 10)} ${r(sy + ty * 10)}
+      L${sideCone.l0[0]} ${sideCone.l0[1]}
+      M${sideCone.r0[0]} ${sideCone.r0[1]}
       L${cx + 15} 37
       Q${cx + 10} 36 ${cx + 10} 42
-      V78 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      V78"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const hi = '';
     assets.push({
       id, name: '无支管蒸馏头', category: '蒸馏与分馏',
@@ -642,17 +662,15 @@ function buildAssets() {
     const ux = 0.965926, uy = 0.258819;
     const sx = 64, sy = 64;
     const sideCone = angledMaleJoint(id, sx, sy, ux, uy, 22, 11, 8.6);
-    const tx = -uy, ty = ux;
     const tube = `<path d="
-      M${cx - 10} 26 V106 H${cx + 10} V65
-      L${r(sx + tx * 9.5)} ${r(sy + ty * 9.5)}
-      L${r(sx - tx * 9.5)} ${r(sy - ty * 9.5)}
-      L${cx + 10} 44 V26 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      M${cx - 10.5} 26 V106
+      M${cx + 10.5} 26 V44 L${sideCone.l0[0]} ${sideCone.l0[1]}
+      M${sideCone.r0[0]} ${sideCone.r0[1]} L${cx + 10.5} 65 V106"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '带支管蒸馏头', category: '蒸馏与分馏',
       search: '带支管蒸馏头 75度蒸馏头 克氏蒸馏头 standard distillation head 顶部接温度计套管，下口接烧瓶，75°侧支管接冷凝管。',
-      width: W, height: H, svg: wrapSvg(id, '带支管蒸馏头', W, H, `${tube}\n  ${specularHighlight(cx - 5.5, 30, 100, 2.4, 0.78)}\n  ${fem}\n  ${male}\n  ${sideCone.svg}`),
+      width: W, height: H, svg: wrapSvg(id, '带支管蒸馏头', W, H, `${tube}\n  ${fem}\n  ${male}\n  ${sideCone.svg}`),
       ports: [
         { id: 'inlet', x: cx, y: 4, dx: 0, dy: -1, type: 'sensor-socket', diameter: 25, depth: 75, edge: [cx - 12.5, 4, cx + 12.5, 4], target: [cx, 54] },
         { id: 'outlet', x: cx, y: 128, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 22, edge: [cx - 8.8, 128, cx + 8.8, 128] },
@@ -670,16 +688,16 @@ function buildAssets() {
     const fem2 = verticalFemaleJoint(id, cx2, 4, 22, 12, 9.5);
     const male = verticalMaleJoint(id, cx1, 128, 22, 11.5, 8.8);
     const bodyPath = `<path d="
-      M${cx1 - 9.5} 44 V128 H${cx1 + 9.5} V86
-      C${cx1 + 22} 84 ${cx2 + 9.5} 78 ${cx2 + 9.5} 58
-      V26 H${cx2 - 9.5} V54
-      C${cx2 - 9.5} 64 ${cx1 + 18} 66 ${cx1 + 9.5} 66
-      V44 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      M${cx1 - 9.5} 44 V128
+      M${cx1 + 9.5} 128 V86
+      C${cx1 + 22} 84 ${cx2 + 9.5} 78 ${cx2 + 9.5} 58 V26
+      M${cx2 - 9.5} 26 V54
+      C${cx2 - 9.5} 64 ${cx1 + 18} 66 ${cx1 + 9.5} 66 V44"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '克氏双口蒸馏头', category: '蒸馏与分馏',
       search: '克氏蒸馏头 克莱森头 双口蒸馏头 Claisen adapter head 减压蒸馏 加料与测温 双磨口上部接口，防止暴沸并同时插入温度计与滴液漏斗。',
-      width: W, height: H, svg: wrapSvg(id, '克氏双口蒸馏头', W, H, `${bodyPath}\n  ${specularHighlight(cx1 - 5, 48, 122, 2.4, 0.78)}\n  ${specularHighlight(cx2 - 5, 30, 62, 2.4, 0.78)}\n  ${fem1}\n  ${fem2}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '克氏双口蒸馏头', W, H, `${bodyPath}\n  ${fem1}\n  ${fem2}\n  ${male}`),
       ports: [
         { id: 'inlet', x: cx1, y: 22, dx: 0, dy: -1, type: 'glass-female', diameter: 24, depth: 22, edge: [cx1 - 12, 22, cx1 + 12, 22] },
         { id: 'inlet-2', x: cx2, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 24, depth: 22, edge: [cx2 - 12, 4, cx2 + 12, 4] },
@@ -689,21 +707,21 @@ function buildAssets() {
     });
   }
 
-  // 15. lab:ground-conical-flask (磨口锥形瓶)
+  // 15. lab:ground-conical-flask (磨口锥形瓶 — open flared female ground neck + bold glassSw)
   {
     const id = 'ground-conical-flask';
     const W = 114, H = 168, cx = 57;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 13, 10.5);
     const body = `<path d="
-      M${cx - 11} 28 V44
+      M${cx - 10.5} 28 V44
       L${cx - 49} 142
       Q${cx - 53} 154 ${cx - 48} 160
       Q${cx - 43} 165 ${cx - 34} 165
       H${cx + 34}
       Q${cx + 43} 165 ${cx + 48} 160
       Q${cx + 53} 154 ${cx + 49} 142
-      L${cx + 11} 44 V28 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      L${cx + 10.5} 44 V28"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const baseLine = '';
     const hi = '';
     const grads = `<g stroke="${C.tick}" stroke-width="1.1" stroke-linecap="round">
@@ -724,7 +742,7 @@ function buildAssets() {
     });
   }
 
-  // 16. lab:bent-receiver-adapter (105°弯形接收管 / 尾接管 — vapor-female 105° upper-left + delivery bottom)
+  // 16. lab:bent-receiver-adapter (105°弯形接收管 / 尾接管 — open vapor-female 105° + open delivery bottom)
   {
     const id = 'bent-receiver-adapter';
     const W = 92, H = 104;
@@ -732,17 +750,17 @@ function buildAssets() {
     const fem = angledFemaleJoint(id, 6, 20, ox, oy, 22, 11.5, 9.0);
     const outX = 68, outY = 100;
     const elbow = `<path d="
-      M${fem.innerEnd[0] - oy * 8.5} ${fem.innerEnd[1] + ox * 8.5}
+      M${fem.lb[0]} ${fem.lb[1]}
       L52 24
       Q74 28 74 52
-      V94 L${outX + 3.5} ${outY} L${outX - 4.5} ${outY - 2} V54
+      V94 L${outX + 3.5} ${outY} M${outX - 4.5} ${outY - 2} V54
       Q${outX - 6} 40 46 39
-      L${fem.innerEnd[0] + oy * 8.5} ${fem.innerEnd[1] - ox * 8.5} Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      L${fem.rb[0]} ${fem.rb[1]}"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '弯形接收管', category: '蒸馏与分馏',
       search: '弯形接收管 105度尾接管 牛角尾接管 bent receiver adapter 接在冷凝管末端，将馏分引入接收瓶。',
-      width: W, height: H, svg: wrapSvg(id, '弯形接收管', W, H, `${elbow}\n  ${specularHighlight(63, 48, 86, 2.2, 0.78)}\n  ${fem.svg}`),
+      width: W, height: H, svg: wrapSvg(id, '弯形接收管', W, H, `${elbow}\n  ${fem.svg}`),
       ports: [
         { id: 'inlet', x: fem.lip[0], y: fem.lip[1], dx: r(ox), dy: r(oy), type: 'vapor-female', diameter: fem.diameter, depth: 22, edge: fem.edge },
         { id: 'outlet', x: outX, y: outY, dx: 0, dy: 1, type: 'delivery', diameter: 8, depth: 8, edge: [outX - 4, outY, outX + 4, outY], segment: [outX, 58, outX, outY - 2] },
@@ -751,16 +769,16 @@ function buildAssets() {
     });
   }
 
-  // 17. lab:straight-receiver-adapter (直形接收管 / 尾接管)
+  // 17. lab:straight-receiver-adapter (直形接收管 / 尾接管 — open top & beveled bottom delivery tip)
   {
     const id = 'straight-receiver-adapter';
     const W = 40, H = 112, cx = 20;
     const fem = verticalFemaleJoint(id, cx, 4, 22, 12, 9.5);
-    const tube = `<path d="M${cx - 8} 26 V64 L${cx - 4.5} 84 V108 L${cx + 4.5} 105 V84 L${cx + 8} 64 V26 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const tube = `<path d="M${cx - 9.5} 26 V64 L${cx - 4.5} 84 V108 L${cx + 4.5} 105 V84 L${cx + 9.5} 64 V26" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '直形接收管', category: '蒸馏与分馏',
       search: '直形接收管 直尾接管 straight receiver delivery adapter 接在冷凝管下端将液体直接导入接收容器。',
-      width: W, height: H, svg: wrapSvg(id, '直形接收管', W, H, `${tube}\n  ${specularHighlight(cx - 3.5, 32, 82, 2.2, 0.78)}\n  ${fem}`),
+      width: W, height: H, svg: wrapSvg(id, '直形接收管', W, H, `${tube}\n  ${fem}`),
       ports: [
         { id: 'inlet', x: cx, y: 4, dx: 0, dy: -1, type: 'vapor-female', diameter: 24, depth: 22, edge: [cx - 12, 4, cx + 12, 4] },
         { id: 'outlet', x: cx, y: 108, dx: 0, dy: 1, type: 'delivery', diameter: 9, depth: 8, edge: [cx - 4.5, 107, cx + 4.5, 106], segment: [cx, 54, cx, 104] },
@@ -769,26 +787,26 @@ function buildAssets() {
     });
   }
 
-  // 18. lab:vacuum-receiver-adapter (真空接收管 / 带抽气口尾接管 — vapor-female + glass-male + vacuum tube barb)
+  // 18. lab:vacuum-receiver-adapter (真空接收管 / 带抽气口尾接管 — open vapor-female + glass-male + vacuum tube barb)
   {
     const id = 'vacuum-receiver-adapter';
     const W = 116, H = 128, outX = 64;
     const ox = -0.965926, oy = -0.258819;
     const fem = angledFemaleJoint(id, 6, 20, ox, oy, 22, 11.5, 9.0);
-    const male = verticalMaleJoint(id, outX, 100, 24, 11.5, 8.8, { dripTip: true });
-    const vac = oliveBarb(id, outX + 10, 48, 1, 36, 4.8, 4.0);
+    const male = verticalMaleJoint(id, outX, 100, 24, 11.5, 8.8, { dripTip: false });
+    const vac = oliveBarb(id, outX + 11.5, 48, 1, 34.5, 4.8, 4.0);
     const bodyTube = `<path d="
-      M${fem.innerEnd[0] - oy * 8.5} ${fem.innerEnd[1] + ox * 8.5}
-      L54 24 Q74 28 74 48 V100 H${outX - 10} V50
-      Q${outX - 10} 40 46 39
-      L${fem.innerEnd[0] + oy * 8.5} ${fem.innerEnd[1] - ox * 8.5} Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    // Drip guide inner stem protruding smoothly into male cone
-    const dripInner = `<path d="M${outX} 44 V100 L${outX + 3} 106" fill="none" stroke="${C.inner}" stroke-width="1.3" stroke-linecap="round"/>`;
+      M${fem.lb[0]} ${fem.lb[1]}
+      L54 24 Q${outX + 11.5} 28 ${outX + 11.5} 43 M${outX + 11.5} 53 V100 M${outX - 11.5} 100 V50
+      Q${outX - 11.5} 40 46 39
+      L${fem.rb[0]} ${fem.rb[1]}"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    // Internal glass drip guide stem ending cleanly inside cone
+    const dripInner = `<path d="M${outX} 46 V100 L${outX + 2.5} 108" fill="none" stroke="${C.inner}" stroke-width="1.5" stroke-linecap="round"/>`;
     assets.push({
       id, name: '真空接收管', category: '蒸馏与分馏',
       search: '真空接收管 带抽气口尾接管 减压蒸馏接收管 vacuum receiver adapter 侧面带真空抽气支管，下端标准磨口密闭接磨口锥形瓶或圆底烧瓶。',
-      width: W, height: H, svg: wrapSvg(id, '真空接收管', W, H, `${vac.svg}\n  ${bodyTube}\n  ${dripInner}\n  ${specularHighlight(outX - 6, 52, 95, 2.2, 0.78)}\n  ${fem.svg}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '真空接收管', W, H, `${vac.svg}\n  ${bodyTube}\n  ${dripInner}\n  ${fem.svg}\n  ${male}`),
       ports: [
         { id: 'inlet', x: fem.lip[0], y: fem.lip[1], dx: r(ox), dy: r(oy), type: 'vapor-female', diameter: fem.diameter, depth: 22, edge: fem.edge },
         { id: 'outlet', x: outX, y: 124, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 24, edge: [outX - 8.8, 124, outX + 8.8, 124] },
@@ -805,34 +823,30 @@ function buildAssets() {
     const ox = -0.965926, oy = -0.258819;
     const fem = angledFemaleJoint(id, 6, 22, ox, oy, 22, 11.5, 9.0);
     const vac = oliveBarb(id, cx + 18, 44, 1, 34, 4.8, 4.0);
-    // 3 lower male udders: left (-30 deg), center (0 deg), right (+30 deg)
-    const aL = rad(-30), aR = rad(30);
+    // 3 lower male udders with crisp clearance: left (-34 deg), center (0 deg), right (+34 deg)
+    const aL = rad(-34), aR = rad(34);
     const uL = [Math.sin(aL), Math.cos(aL)];
     const uR = [Math.sin(aR), Math.cos(aR)];
-    const mL = angledMaleJoint(id, cx - 18, 112, uL[0], uL[1], 22, 9.5, 7.2);
-    const mC = verticalMaleJoint(id, cx, 122, 22, 9.5, 7.2);
-    const mR = angledMaleJoint(id, cx + 18, 112, uR[0], uR[1], 22, 9.5, 7.2);
-    const tLx = -uL[1], tLy = uL[0];
-    const tRx = -uR[1], tRy = uR[0];
+    const mL = angledMaleJoint(id, cx - 23, 112, uL[0], uL[1], 22, 8.8, 6.8);
+    const mC = verticalMaleJoint(id, cx, 122, 22, 9.0, 6.8);
+    const mR = angledMaleJoint(id, cx + 23, 112, uR[0], uR[1], 22, 8.8, 6.8);
     const bulb = `<path d="
-      M${fem.innerEnd[0] - oy * 8.5} ${fem.innerEnd[1] + ox * 8.5}
-      L62 24 Q92 26 92 52 V76
-      C96 86 101 98 ${r(cx + 18 + tRx * 9.5)} ${r(112 + tRy * 9.5)}
-      L${r(cx + 18 - tRx * 9.5)} ${r(112 - tRy * 9.5)}
-      L${cx + 9.5} 122 H${cx - 9.5}
-      L${r(cx - 18 + tLx * 9.5)} ${r(112 + tLy * 9.5)}
-      L${r(cx - 18 - tLx * 9.5)} ${r(112 - tLy * 9.5)}
-      C50 98 54 86 56 76 V42
-      L${fem.innerEnd[0] + oy * 8.5} ${fem.innerEnd[1] - ox * 8.5} Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      M${fem.lb[0]} ${fem.lb[1]}
+      L62 24 Q92 26 92 40 M92 49 V76
+      C98 86 105 98 ${mR.r0[0]} ${mR.r0[1]}
+      M${mR.l0[0]} ${mR.l0[1]} L${cx + 9.0} 122
+      M${cx - 9.0} 122 L${mL.r0[0]} ${mL.r0[1]}
+      M${mL.l0[0]} ${mL.l0[1]} C46 98 52 86 56 76 V42
+      L${fem.rb[0]} ${fem.rb[1]}"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '多头接收管（牛角管）', category: '蒸馏与分馏',
       search: '牛角管 多头接收管 三头分配管 cow receiver adapter 减压分馏收集不同沸点馏分，无需拆卸装置即可转动切换接收瓶。',
-      width: W, height: H, svg: wrapSvg(id, '多头接收管（牛角管）', W, H, `${vac.svg}\n  ${bulb}\n  ${specularHighlight(cx - 12, 48, 102, 2.8, 0.78)}\n  ${fem.svg}\n  ${mL.svg}\n  ${mC}\n  ${mR.svg}`),
+      width: W, height: H, svg: wrapSvg(id, '多头接收管（牛角管）', W, H, `${vac.svg}\n  ${bulb}\n  ${fem.svg}\n  ${mL.svg}\n  ${mC}\n  ${mR.svg}`),
       ports: [
         { id: 'inlet', x: fem.lip[0], y: fem.lip[1], dx: r(ox), dy: r(oy), type: 'vapor-female', diameter: fem.diameter, depth: 22, edge: fem.edge },
         { id: 'outlet-1', x: mL.tip[0], y: mL.tip[1], dx: r(uL[0]), dy: r(uL[1]), type: 'glass-male', diameter: mL.diameter, depth: 22, edge: mL.edge },
-        { id: 'outlet-2', x: cx, y: 144, dx: 0, dy: 1, type: 'glass-male', diameter: 14.4, depth: 22, edge: [cx - 7.2, 144, cx + 7.2, 144] },
+        { id: 'outlet-2', x: cx, y: 144, dx: 0, dy: 1, type: 'glass-male', diameter: 13.6, depth: 22, edge: [cx - 6.8, 144, cx + 6.8, 144] },
         { id: 'outlet-3', x: mR.tip[0], y: mR.tip[1], dx: r(uR[0]), dy: r(uR[1]), type: 'glass-male', diameter: mR.diameter, depth: 22, edge: mR.edge },
         { id: 'vacuum', ...vac.port, type: 'tube' },
         { id: 'grip-site', x: cx, y: 74, dx: 1, dy: 0, type: 'grip-site', segment: [cx, 48, cx, 102] },
@@ -862,17 +876,17 @@ function buildAssets() {
     });
   }
 
-  // 21. lab:reducing-adapter (磨口变径接头 — wide top glass-female + narrow bottom glass-male)
+  // 21. lab:reducing-adapter (磨口变径接头 — wide open glass-female + narrow bottom glass-male)
   {
     const id = 'reducing-adapter';
     const W = 50, H = 98, cx = 25;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 14.5, 12);
     const male = verticalMaleJoint(id, cx, 70, 24, 10.5, 8.0);
-    const bodyTube = `<path d="M${cx - 12} 28 V42 L${cx - 10.5} 56 V70 H${cx + 10.5} V56 L${cx + 12} 42 V28 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const bodyTube = `<path d="M${cx - 12} 28 V42 L${cx - 10.5} 56 V70 M${cx + 10.5} 70 V56 L${cx + 12} 42 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '磨口变径接头', category: '瓶塞与磨口接头',
       search: '变径接头 大小头 磨口转换头 reducing adapter 连接不同标准磨口尺寸（如24/29转19/26）的玻璃仪器。',
-      width: W, height: H, svg: wrapSvg(id, '磨口变径接头', W, H, `${bodyTube}\n  ${specularHighlight(cx - 6, 34, 64, 2.4, 0.78)}\n  ${fem}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '磨口变径接头', W, H, `${bodyTube}\n  ${fem}\n  ${male}`),
       ports: [
         { id: 'inlet', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 29, depth: 24, edge: [cx - 14.5, 4, cx + 14.5, 4] },
         { id: 'outlet', x: cx, y: 94, dx: 0, dy: 1, type: 'glass-male', diameter: 16, depth: 24, edge: [cx - 8, 94, cx + 8, 94] },
@@ -886,13 +900,13 @@ function buildAssets() {
     const id = 'gas-inlet-adapter';
     const W = 82, H = 92, cx = 24;
     const male = verticalMaleJoint(id, cx, 64, 24, 11.5, 8.8);
-    const dome = `<path d="M${cx - 11.5} 64 V24 C${cx - 11.5} 12 ${cx + 11.5} 12 ${cx + 11.5} 24 V64 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const dome = `<path d="M${cx - 11.5} 64 V24 C${cx - 11.5} 12 ${cx + 11.5} 12 ${cx + 11.5} 24 V27 M${cx + 11.5} 37 V64" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const barb = oliveBarb(id, cx + 11.5, 32, 1, 41, 4.8, 4.0);
     const valve = drawStopcock(id, cx + 32, 32, { w: 14, h: 8, teal: true });
     assets.push({
       id, name: '磨口气体导入接头', category: '瓶塞与磨口接头',
       search: '气体导入接头 抽气头 真空接头 gas inlet vacuum adapter 磨口反应瓶通入惰性气体保护或连接真空管路。',
-      width: W, height: H, svg: wrapSvg(id, '磨口气体导入接头', W, H, `${barb.svg}\n  ${dome}\n  ${valve}\n  ${specularHighlight(cx - 5.5, 22, 58, 2.2, 0.78)}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '磨口气体导入接头', W, H, `${barb.svg}\n  ${dome}\n  ${valve}\n  ${male}`),
       ports: [
         { id: 'inlet', ...barb.port, type: 'tube' },
         { id: 'outlet', x: cx, y: 88, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 24, edge: [cx - 8.8, 88, cx + 8.8, 88] },
@@ -911,8 +925,8 @@ function buildAssets() {
       C${cx - 10} 54 ${cx - 46} 76 ${cx - 46} 108
       C${cx - 46} 138 ${cx - 18} 156 ${cx} 156
       C${cx + 18} 156 ${cx + 46} 138 ${cx + 46} 108
-      C${cx + 46} 76 ${cx + 10} 54 ${cx + 10} 42 V28 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      C${cx + 46} 76 ${cx + 10} 54 ${cx + 10} 42 V28"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const hi = '';
     assets.push({
       id, name: '梨形磨口烧瓶', category: '反应容器',
@@ -932,17 +946,17 @@ function buildAssets() {
     const W = 54, H = 330, cx = 27;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 12.5, 10);
     const male = verticalMaleJoint(id, cx, 302, 24, 11.5, 8.8);
-    const col = `<path d="M${cx - 10} 28 V42 Q${cx - 16} 46 ${cx - 16} 56 V274 Q${cx - 16} 284 ${cx - 11.5} 290 V302 H${cx + 11.5} V290 Q${cx + 16} 284 ${cx + 16} 274 V56 Q${cx + 16} 46 ${cx + 10} 42 V28 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const col = `<path d="M${cx - 10} 28 V42 Q${cx - 16} 46 ${cx - 16} 56 V274 Q${cx - 16} 284 ${cx - 11.5} 290 V302 M${cx + 11.5} 302 V290 Q${cx + 16} 284 ${cx + 16} 274 V56 Q${cx + 16} 46 ${cx + 10} 42 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Staggered horizontal & upward/downward pointed glass Vigreux indentations
     const spikes = [];
     for (let y = 66; y <= 268; y += 18) {
-      spikes.push(`<path d="M${cx - 16} ${y - 4} Q${cx - 3} ${y - 1} ${cx - 3} ${y} Q${cx - 3} ${y + 1} ${cx - 16} ${y + 4}" fill="none" stroke="${C.inner}" stroke-width="1.4"/>`);
-      spikes.push(`<path d="M${cx + 16} ${y + 5} Q${cx + 3} ${y + 8} ${cx + 3} ${y + 9} Q${cx + 3} ${y + 10} ${cx + 16} ${y + 13}" fill="none" stroke="${C.inner}" stroke-width="1.4"/>`);
+      spikes.push(`<path d="M${cx - 16} ${y - 4} Q${cx - 3} ${y - 1} ${cx - 3} ${y} Q${cx - 3} ${y + 1} ${cx - 16} ${y + 4}" fill="none" stroke="${C.inner}" stroke-width="1.5"/>`);
+      spikes.push(`<path d="M${cx + 16} ${y + 5} Q${cx + 3} ${y + 8} ${cx + 3} ${y + 9} Q${cx + 3} ${y + 10} ${cx + 16} ${y + 13}" fill="none" stroke="${C.inner}" stroke-width="1.5"/>`);
     }
     assets.push({
       id, name: '刺形分馏柱', category: '蒸馏与分馏',
       search: '刺形分馏柱 韦氏分馏柱 Vigreux fractionating column 柱内壁带多组向内玻璃尖刺，增大气液接触面积，用于精密分馏。',
-      width: W, height: H, svg: wrapSvg(id, '刺形分馏柱', W, H, `${col}\n  ${spikes.join('\n  ')}\n  ${specularHighlight(cx - 11, 56, 274, 2.4, 0.72)}\n  ${fem}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '刺形分馏柱', W, H, `${col}\n  ${spikes.join('\n  ')}\n  ${fem}\n  ${male}`),
       ports: [
         { id: 'inlet', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 25, depth: 24, edge: [cx - 12.5, 4, cx + 12.5, 4] },
         { id: 'outlet', x: cx, y: 326, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 24, edge: [cx - 8.8, 326, cx + 8.8, 326] },
@@ -957,15 +971,15 @@ function buildAssets() {
     const W = 82, H = 264, cx = 46;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 12.5, 10);
     const male = verticalMaleJoint(id, cx, 236, 24, 11.5, 8.8, { dripTip: false });
-    const bypass = `<path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 10}" fill="none" stroke="${C.stroke}" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 10}" fill="none" stroke="url(#${id}-glass)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const body = `<path d="M${cx - 10} 28 V48 C${cx - 22} 54 ${cx - 22} 60 ${cx - 22} 70 V142 C${cx - 22} 158 ${cx - 8} 168 ${cx - 8} 174 V236 H${cx + 8} V174 C${cx + 8} 168 ${cx + 22} 158 ${cx + 22} 142 V70 C${cx + 22} 60 ${cx + 22} 54 ${cx + 10} 48 V28 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const bypass = `<path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 8}" fill="none" stroke="${C.stroke}" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 8}" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const body = `<path d="M${cx - 10} 28 V48 C${cx - 22} 54 ${cx - 22} 60 ${cx - 22} 70 V142 C${cx - 22} 158 ${cx - 8} 168 ${cx - 8} 174 V236 M${cx + 8} 236 V174 C${cx + 8} 168 ${cx + 22} 158 ${cx + 22} 142 V70 C${cx + 22} 60 ${cx + 22} 54 ${cx + 10} 48 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const valve = drawStopcock(id, cx, 198, { w: 22, h: 9, teal: true });
     const grads = graduationMarks(cx + 20, 74, 140, 5, 5, 6);
     assets.push({
       id, name: '磨口恒压滴液漏斗', category: '加料与滴液',
       search: '恒压滴液漏斗 磨口滴液漏斗 pressure equalizing addition funnel 旁通气压平衡管保证在密闭惰性气体或减压体系中匀速滴加液体。',
-      width: W, height: H, svg: wrapSvg(id, '磨口恒压滴液漏斗', W, H, `${bypass}\n  ${body}\n  ${grads}\n  ${specularHighlight(cx - 16, 68, 142, 2.8, 0.78)}\n  ${valve}\n  ${fem}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '磨口恒压滴液漏斗', W, H, `${bypass}\n  ${body}\n  ${grads}\n  ${valve}\n  ${fem}\n  ${male}`),
       ports: [
         { id: 'mouth', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 25, depth: 24, edge: [cx - 12.5, 4, cx + 12.5, 4], target: [cx, 145] },
         { id: 'outlet', x: cx, y: 260, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 24, edge: [cx - 8.8, 260, cx + 8.8, 260] },
@@ -974,7 +988,7 @@ function buildAssets() {
     });
   }
 
-  // 26. lab:soxhlet-extractor (磨口索氏提取器 — clear siphon arm + vapor bypass + top glass-female + bottom glass-male)
+  // 26. lab:soxhlet-extractor (磨口索氏提取器 — clear siphon arm + vapor bypass + open top glass-female + bottom glass-male)
   {
     const id = 'soxhlet-extractor';
     const W = 108, H = 266, cx = 54;
@@ -982,16 +996,16 @@ function buildAssets() {
     const male = verticalMaleJoint(id, cx, 238, 24, 11.5, 8.8);
     // Left vapor bypass tube
     const vaporBypass = `<path d="M${cx - 8} 214 H${cx - 32} Q${cx - 42} 214 ${cx - 42} 204 V56 Q${cx - 42} 46 ${cx - 32} 46 H${cx - 16}" fill="none" stroke="${C.stroke}" stroke-width="7.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M${cx - 8} 214 H${cx - 32} Q${cx - 42} 214 ${cx - 42} 204 V56 Q${cx - 42} 46 ${cx - 32} 46 H${cx - 16}" fill="none" stroke="url(#${id}-glass)" stroke-width="4.0" stroke-linecap="round" stroke-linejoin="round"/>`;
+      <path d="M${cx - 8} 214 H${cx - 32} Q${cx - 42} 214 ${cx - 42} 204 V56 Q${cx - 42} 46 ${cx - 32} 46 H${cx - 16}" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Right siphon return tube (arches UP to near chamber top and returns DOWN into lower stem)
     const siphon = `<path d="M${cx + 22} 178 H${cx + 34} Q${cx + 42} 178 ${cx + 42} 170 V86 C${cx + 42} 72 ${cx + 30} 72 ${cx + 30} 86 V196 Q${cx + 30} 204 ${cx + 22} 204 H${cx + 8}" fill="none" stroke="${C.stroke}" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M${cx + 22} 178 H${cx + 34} Q${cx + 42} 178 ${cx + 42} 170 V86 C${cx + 42} 72 ${cx + 30} 72 ${cx + 30} 86 V196 Q${cx + 30} 204 ${cx + 22} 204 H${cx + 8}" fill="none" stroke="#E0F2FE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const chamber = `<path d="M${cx - 16} 28 V50 Q${cx - 22} 54 ${cx - 22} 64 V172 Q${cx - 22} 186 ${cx - 8} 192 V238 H${cx + 8} V192 Q${cx + 22} 186 ${cx + 22} 172 V64 Q${cx + 22} 54 ${cx + 16} 50 V28 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      <path d="M${cx + 22} 178 H${cx + 34} Q${cx + 42} 178 ${cx + 42} 170 V86 C${cx + 42} 72 ${cx + 30} 72 ${cx + 30} 86 V196 Q${cx + 30} 204 ${cx + 22} 204 H${cx + 8}" fill="none" stroke="#E6F4F3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const chamber = `<path d="M${cx - 13.5} 28 V48 Q${cx - 22} 54 ${cx - 22} 64 V172 Q${cx - 22} 186 ${cx - 8} 192 V238 M${cx + 8} 238 V192 Q${cx + 22} 186 ${cx + 22} 172 V64 Q${cx + 22} 54 ${cx + 13.5} 48 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const thimble = `<rect x="${cx - 14}" y="90" width="28" height="86" rx="6" fill="${C.chassisTop}" stroke="${C.tick}" stroke-width="1.2" stroke-dasharray="4 3"/>`;
     assets.push({
       id, name: '磨口索氏提取器', category: '提取与萃取',
       search: '索氏提取器 脂肪抽提器 Soxhlet extractor 固液连续萃取 虹吸管 蒸汽旁通管 回流提取。',
-      width: W, height: H, svg: wrapSvg(id, '磨口索氏提取器', W, H, `${vaporBypass}\n  ${siphon}\n  ${chamber}\n  ${thimble}\n  ${specularHighlight(cx - 16, 62, 172, 2.8, 0.78)}\n  ${fem}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '磨口索氏提取器', W, H, `${vaporBypass}\n  ${siphon}\n  ${chamber}\n  ${thimble}\n  ${fem}\n  ${male}`),
       ports: [
         { id: 'inlet', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 32, depth: 24, edge: [cx - 16, 4, cx + 16, 4] },
         { id: 'outlet', x: cx, y: 262, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 24, edge: [cx - 8.8, 262, cx + 8.8, 262] },
@@ -1010,13 +1024,13 @@ function buildAssets() {
       C${cx - 10} 126 ${cx - 44} 142 ${cx - 44} 174
       C${cx - 44} 202 ${cx - 24} 220 ${cx} 220
       C${cx + 24} 220 ${cx + 44} 202 ${cx + 44} 174
-      C${cx + 44} 142 ${cx + 10} 126 ${cx + 10} 112 V28 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      C${cx + 44} 142 ${cx + 10} 126 ${cx + 10} 112 V28"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const hi = '';
     assets.push({
       id, name: '凯氏定氮烧瓶', category: '反应容器',
       search: '凯氏定氮烧瓶 长颈消解瓶 Kjeldahl flask 食品蛋白质消化 定氮消解与蒸馏用长颈圆底梨形烧瓶。',
-      width: W, height: H, svg: wrapSvg(id, '凯氏定氮烧瓶', W, H, `${body}\n  ${specularHighlight(cx - 5.5, 34, 114, 2.4, 0.78)}\n  ${hi}\n  ${fem}`),
+      width: W, height: H, svg: wrapSvg(id, '凯氏定氮烧瓶', W, H, `${body}\n  ${hi}\n  ${fem}`),
       ports: [
         { id: 'mouth', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 25, depth: 24, edge: [cx - 12.5, 4, cx + 12.5, 4], target: [cx, 198] },
         { id: 'base', x: cx, y: 220, dx: 0, dy: 1, type: 'base' },
@@ -1032,18 +1046,17 @@ function buildAssets() {
     const male = verticalMaleJoint(id, cx, 124, 24, 11.5, 8.8);
     const ux = 0.965926, uy = 0.258819;
     const sideCone = angledMaleJoint(id, 84, 52, ux, uy, 22, 10, 7.8);
-    const tx = -uy, ty = ux;
     // Smooth spherical anti-splash Kjeldahl bulb + curved swan neck into 75° vapor delivery cone
     const bulb = `<path d="
       M${cx - 9} 124 V92
       C${cx - 29} 86 ${cx - 29} 40 ${cx - 9} 34
       C${cx - 4} 20 ${cx + 22} 16 ${cx + 36} 30
-      L${r(84 - tx * 8)} ${r(52 - ty * 8)}
-      L${r(84 + tx * 8)} ${r(52 + ty * 8)}
+      L${sideCone.l0[0]} ${sideCone.l0[1]}
+      M${sideCone.r0[0]} ${sideCone.r0[1]}
       L${cx + 24} 44
       C${cx + 27} 66 ${cx + 24} 87 ${cx + 9} 92
-      V124 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      V124"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Internal anti-splash curved J-baffle tube inside the Kjeldahl bulb
     const baffle = `<path d="M${cx} 122 V66 C${cx} 52 ${cx - 12} 48 ${cx - 12} 58" fill="none" stroke="${C.inner}" stroke-width="2.0" stroke-linecap="round"/>
       <path d="M${cx + 12} 46 C${cx + 12} 33 ${cx + 23} 33 ${cx + 30} 39" fill="none" stroke="${C.inner}" stroke-width="2.0" stroke-linecap="round"/>`;
@@ -1059,19 +1072,19 @@ function buildAssets() {
     });
   }
 
-  // 29. lab:sintered-glass-funnel (玻璃砂芯漏斗)
+  // 29. lab:sintered-glass-funnel (玻璃砂芯漏斗 — open rim + bold glassSw + beveled delivery tip)
   {
     const id = 'sintered-glass-funnel';
     const W = 104, H = 196, cx = 52;
-    const cup = `<path d="M12 14 V82 C12 104 42 114 44 124 V190 L60 184 V124 C62 114 92 104 92 82 V14 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const rim = `<ellipse cx="${cx}" cy="14" rx="40" ry="7.5" fill="#F8FAFC" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const cup = `<path d="M12 14 V82 C12 104 42 114 44 124 V190 L60 184 V124 C62 114 92 104 92 82 V14" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const rim = `<path d="M12 14 Q52 9 92 14" fill="none" stroke="${C.muted}" stroke-width="1.2" stroke-linecap="round"/>`;
     // Porous sintered glass fritted plate (G3/G4)
     const frit = `<rect x="15" y="76" width="74" height="10" rx="2" fill="#E2E8F0" stroke="${C.inner}" stroke-width="1.6"/>
       <line x1="18" y1="81" x2="86" y2="81" stroke="${C.frostStroke}" stroke-width="2.0" stroke-dasharray="2 3"/>`;
     assets.push({
       id, name: '玻璃砂芯漏斗', category: '过滤与分离',
       search: '砂芯漏斗 垂熔玻璃漏斗 sintered fritted glass funnel G3 G4 耐酸碱腐蚀，无需滤纸直接减压抽滤沉淀或晶体的玻璃过滤器。',
-      width: W, height: H, svg: wrapSvg(id, '玻璃砂芯漏斗', W, H, `${cup}\n  ${frit}\n  ${rim}\n  ${specularHighlight(22, 24, 72, 3.0, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '玻璃砂芯漏斗', W, H, `${cup}\n  ${frit}\n  ${rim}`),
       ports: [
         { id: 'mouth', x: cx, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 80, depth: 56, edge: [12, 14, 92, 14], target: [cx, 74] },
         { id: 'outlet', x: cx, y: 190, dx: 0, dy: 1, type: 'delivery', diameter: 16, depth: 8, edge: [cx - 8, 184, cx + 8, 184], segment: [cx, 126, cx, 186] },
@@ -1080,17 +1093,17 @@ function buildAssets() {
     });
   }
 
-  // 30. lab:weighing-bottle (磨口称量瓶 — wide low-form cylindrical glass weighing jar with frosted rim)
+  // 30. lab:weighing-bottle (磨口称量瓶 — wide low-form open flared weighing bottle)
   {
     const id = 'weighing-bottle';
     const W = 74, H = 96, cx = 37;
-    const fem = verticalFemaleJoint(id, cx, 4, 18, 24, 21.5, { lipH: 3.5, rimExtra: 2.5 });
-    const jar = `<path d="M${cx - 24} 22 V84 Q${cx - 24} 92 ${cx - 16} 92 H${cx + 16} Q${cx + 24} 92 ${cx + 24} 84 V22 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const baseLine = `<path d="M${cx - 19} 86 Q${cx} 89 ${cx + 19} 86" fill="none" stroke="${C.inner}" stroke-width="1.1"/>`;
+    const fem = verticalFemaleJoint(id, cx, 4, 18, 24, 21.5);
+    const jar = `<path d="M${cx - 21.5} 22 V84 Q${cx - 21.5} 92 ${cx - 14} 92 H${cx + 14} Q${cx + 21.5} 92 ${cx + 21.5} 84 V22" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const baseLine = `<path d="M${cx - 17} 86 Q${cx} 89 ${cx + 17} 86" fill="none" stroke="${C.inner}" stroke-width="1.1"/>`;
     assets.push({
       id, name: '磨口称量瓶', category: '称量与储存',
       search: '称量瓶 磨口称量瓶 weighing bottle 精密分析称量易吸潮或挥发样品的扁形/高形带磨口玻璃瓶。',
-      width: W, height: H, svg: wrapSvg(id, '磨口称量瓶', W, H, `${jar}\n  ${baseLine}\n  ${specularHighlight(cx - 16, 28, 80, 2.8, 0.78)}\n  ${fem}`),
+      width: W, height: H, svg: wrapSvg(id, '磨口称量瓶', W, H, `${jar}\n  ${baseLine}\n  ${fem}`),
       ports: [
         { id: 'mouth', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 48, depth: 18, edge: [cx - 24, 4, cx + 24, 4], target: [cx, 78] },
         { id: 'base', x: cx, y: 92, dx: 0, dy: 1, type: 'base' },
@@ -1098,19 +1111,18 @@ function buildAssets() {
     });
   }
 
-  // 31. lab:iodine-flask (碘量瓶 / 水封瓶 — flared funnel cup around frosted female neck)
+  // 31. lab:iodine-flask (碘量瓶 / 水封瓶 — open flared bell water-seal gutter cup + open neck)
   {
     const id = 'iodine-flask';
     const W = 114, H = 176, cx = 57;
-    const body = `<path d="M${cx - 11} 36 V52 L${cx - 49} 150 Q${cx - 53} 162 ${cx - 48} 168 Q${cx - 43} 173 ${cx - 34} 173 H${cx + 34} Q${cx + 43} 173 ${cx + 48} 168 Q${cx + 53} 162 ${cx + 49} 150 L${cx + 11} 52 V36 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    // Flared bell water-seal gutter cup surrounding the neck
-    const cup = `<path d="M${cx - 23} 6 L${cx - 11} 38 H${cx + 11} L${cx + 23} 6 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <ellipse cx="${cx}" cy="6" rx="23" ry="4" fill="#F8FAFC" stroke="${C.stroke}" stroke-width="2.0"/>`;
-    const fem = verticalFemaleJoint(id, cx, 10, 22, 12, 9.5, { lipH: 3.4, rimExtra: 1.5 });
+    const body = `<path d="M${cx - 11} 36 V52 L${cx - 49} 150 Q${cx - 53} 162 ${cx - 48} 168 Q${cx - 43} 173 ${cx - 34} 173 H${cx + 34} Q${cx + 43} 173 ${cx + 48} 168 Q${cx + 53} 162 ${cx + 49} 150 L${cx + 11} 52 V36" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    // Flared bell water-seal gutter cup surrounding the neck (open top)
+    const cup = `<path d="M${cx - 23} 6 L${cx - 11} 38 H${cx + 11} L${cx + 23} 6" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const fem = verticalFemaleJoint(id, cx, 10, 22, 12, 9.5);
     assets.push({
       id, name: '碘量瓶（水封瓶）', category: '反应容器',
       search: '碘量瓶 水封瓶 iodine flask 磨口喇叭水封槽，加碘化钾溶液液封防止单质碘挥发逸出，用于碘量法滴定。',
-      width: W, height: H, svg: wrapSvg(id, '碘量瓶（水封瓶）', W, H, `${body}\n  ${cup}\n  ${fem}\n  ${specularHighlight(cx - 34, 96, 152, 3.2, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '碘量瓶（水封瓶）', W, H, `${body}\n  ${cup}\n  ${fem}`),
       ports: [
         { id: 'mouth', x: cx, y: 10, dx: 0, dy: -1, type: 'glass-female', diameter: 24, depth: 22, edge: [cx - 12, 10, cx + 12, 10], target: [cx, 150] },
         { id: 'base', x: cx, y: 173, dx: 0, dy: 1, type: 'base' },
@@ -1119,19 +1131,19 @@ function buildAssets() {
     });
   }
 
-  // 32. lab:nessler-tube (具塞比色管 — tall flat-bottom graduated colorimetric cylinder with 25/50mL ring mark)
+  // 32. lab:nessler-tube (具塞比色管 — open flared female ground socket + graduated tube)
   {
     const id = 'nessler-tube';
     const W = 52, H = 228, cx = 26;
     const fem = verticalFemaleJoint(id, cx, 4, 22, 12, 10);
-    const tube = `<path d="M${cx - 12} 26 V218 Q${cx - 12} 224 ${cx - 6} 224 H${cx + 6} Q${cx + 12} 224 ${cx + 12} 218 V26 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const ringMark = `<line x1="${cx - 12}" y1="62" x2="${cx + 12}" y2="62" stroke="${C.tealDark}" stroke-width="1.4"/>
+    const tube = `<path d="M${cx - 10} 26 V218 Q${cx - 10} 224 ${cx - 4} 224 H${cx + 4} Q${cx + 10} 224 ${cx + 10} 218 V26" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const ringMark = `<line x1="${cx - 10}" y1="62" x2="${cx + 10}" y2="62" stroke="${C.tealDark}" stroke-width="1.5"/>
       <text x="${cx}" y="58" font-size="6.8" font-family="Segoe UI, sans-serif" fill="${C.tealDark}" text-anchor="middle">50mL</text>`;
-    const grads = graduationMarks(cx + 11, 82, 200, 8, 4, 4.5);
+    const grads = graduationMarks(cx + 9, 82, 200, 8, 4, 4.5);
     assets.push({
       id, name: '具塞比色管', category: '计量与比色',
       search: '比色管 具塞比色管 纳氏比色管 Nessler tube colorimetric cylinder 目视比色分析标准管，带有精准定容刻度线和磨砂瓶口。',
-      width: W, height: H, svg: wrapSvg(id, '具塞比色管', W, H, `${tube}\n  ${ringMark}\n  ${grads}\n  ${specularHighlight(cx - 7, 32, 214, 2.2, 0.78)}\n  ${fem}`),
+      width: W, height: H, svg: wrapSvg(id, '具塞比色管', W, H, `${tube}\n  ${ringMark}\n  ${grads}\n  ${fem}`),
       ports: [
         { id: 'mouth', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 24, depth: 22, edge: [cx - 12, 4, cx + 12, 4], target: [cx, 198] },
         { id: 'base', x: cx, y: 224, dx: 0, dy: 1, type: 'base' },
@@ -1146,15 +1158,15 @@ function buildAssets() {
     const W = 108, H = 228, cx = 54;
     const inBarb = oliveBarb(id, cx - 12, 24, -1, 36, 4.8, 4.0);
     const outBarb = oliveBarb(id, cx + 12, 34, 1, 36, 4.8, 4.0);
-    const jar = `<path d="M${cx - 18} 58 V70 L${cx - 32} 84 V212 Q${cx - 32} 224 ${cx - 20} 224 H${cx + 20} Q${cx + 32} 224 ${cx + 32} 212 V84 L${cx + 18} 70 V58 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const jar = `<path d="M${cx - 18} 58 V70 L${cx - 32} 84 V212 Q${cx - 32} 224 ${cx - 20} 224 H${cx + 20} Q${cx + 32} 224 ${cx + 32} 212 V84 L${cx + 18} 70 V58" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const joint = verticalMaleJoint(id, cx, 50, 20, 17, 14.5);
-    const head = `<path d="M${cx - 17} 50 V18 C${cx - 17} 8 ${cx + 17} 8 ${cx + 17} 18 V50 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const head = `<path d="M${cx - 17} 50 V18 C${cx - 17} 8 ${cx + 17} 8 ${cx + 17} 18 V50" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
     const dipTube = `<path d="M${cx - 12} 24 H${cx - 4} Q${cx} 24 ${cx} 29 V196" fill="none" stroke="${C.inner}" stroke-width="3.2" stroke-linecap="round"/>
       <rect x="${cx - 6}" y="196" width="12" height="15" rx="3" fill="#E2E8F0" stroke="${C.inner}" stroke-width="1.6"/>`;
     assets.push({
       id, name: '磨口气体洗瓶', category: '气体处理与干燥',
       search: '气体洗瓶 德雷克塞尔洗瓶 gas washing bottle Drechsel 长管进气到底部砂芯气泡分散头，短管出气，用于吸收杂质或干燥气体。',
-      width: W, height: H, svg: wrapSvg(id, '磨口气体洗瓶', W, H, `${inBarb.svg}\n  ${outBarb.svg}\n  ${jar}\n  ${dipTube}\n  ${joint}\n  ${head}\n  ${specularHighlight(cx - 24, 90, 210, 3.0, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '磨口气体洗瓶', W, H, `${inBarb.svg}\n  ${outBarb.svg}\n  ${jar}\n  ${dipTube}\n  ${joint}\n  ${head}`),
       ports: [
         { id: 'inlet', ...inBarb.port, type: 'tube' },
         { id: 'outlet', ...outBarb.port, type: 'tube' },
@@ -1170,15 +1182,15 @@ function buildAssets() {
     const W = 104, H = 226, cx = 52;
     const inBarb = oliveBarb(id, cx - 14, 24, -1, 32, 5.2, 4.4);
     const outBarb = oliveBarb(id, cx + 14, 38, 1, 32, 5.2, 4.4);
-    const trap = `<path d="M${cx - 22} 58 V192 C${cx - 22} 214 ${cx + 22} 214 ${cx + 22} 192 V58 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const flange = `<rect x="${cx - 26}" y="52" width="52" height="10" rx="3" fill="url(#${id}-frost)" stroke="${C.stroke}" stroke-width="2.0"/>`;
-    const head = `<path d="M${cx - 16} 52 V18 C${cx - 16} 8 ${cx + 16} 8 ${cx + 16} 18 V52 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const trap = `<path d="M${cx - 22} 58 V192 C${cx - 22} 214 ${cx + 22} 214 ${cx + 22} 192 V58" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const flange = `<rect x="${cx - 26}" y="52" width="52" height="10" rx="3" fill="url(#${id}-frost)" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const head = `<path d="M${cx - 16} 52 V18 C${cx - 16} 8 ${cx + 16} 8 ${cx + 16} 18 V52" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
     const dip = `<path d="M${cx - 14} 24 H${cx - 4} Q${cx} 24 ${cx} 29 V178" fill="none" stroke="${C.inner}" stroke-width="4.4" stroke-linecap="round"/>
       <path d="M${cx - 14} 24 H${cx - 4} Q${cx} 24 ${cx} 29 V178" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>`;
     assets.push({
       id, name: '真空冷阱', category: '真空与无水无氧',
       search: '真空冷阱 液氮冷阱 cold trap 捕集减压蒸馏或真空管路中的低沸点溶剂蒸气，保护油封真空泵。',
-      width: W, height: H, svg: wrapSvg(id, '真空冷阱', W, H, `${inBarb.svg}\n  ${outBarb.svg}\n  ${trap}\n  ${dip}\n  ${flange}\n  ${head}\n  ${specularHighlight(cx - 15, 68, 190, 2.8, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '真空冷阱', W, H, `${inBarb.svg}\n  ${outBarb.svg}\n  ${trap}\n  ${dip}\n  ${flange}\n  ${head}`),
       ports: [
         { id: 'inlet', ...inBarb.port, type: 'tube' },
         { id: 'outlet', ...outBarb.port, type: 'tube' },
@@ -1250,11 +1262,11 @@ function buildAssets() {
     });
   }
 
-  // 37. lab:vacuum-capillary (减压蒸馏毛细管 — slender glass capillary tube with top flare & drawn hair-fine tip)
+  // 37. lab:vacuum-capillary (减压蒸馏毛细管 — slender glass capillary tube with open flare & hair-fine tip)
   {
     const id = 'vacuum-capillary';
     const W = 28, H = 226, cx = 14;
-    const cap = `<path d="M${cx - 5.5} 6 H${cx + 5.5} L${cx + 4} 14 V152 L${cx + 2.5} 222 H${cx - 2.5} L${cx - 4} 152 V14 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="1.8" stroke-linejoin="round"/>
+    const cap = `<path d="M${cx - 5.5} 6 L${cx - 4} 14 V152 L${cx - 2.5} 222 M${cx + 2.5} 222 L${cx + 4} 152 V14 L${cx + 5.5} 6" fill="none" stroke="${C.stroke}" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
       <line x1="${cx}" y1="12" x2="${cx}" y2="218" stroke="${C.teal}" stroke-width="1.0"/>`;
     assets.push({
       id, name: '减压蒸馏毛细管', category: '蒸馏与分馏',
@@ -1271,7 +1283,7 @@ function buildAssets() {
   {
     const id = 'three-way-stopcock';
     const W = 96, H = 76, cx = 48, cy = 24;
-    const tee = `<path d="M4 ${cy - 6} H${cx - 12} Q${cx} ${cy - 14} ${cx + 12} ${cy - 6} H92 V${cy + 6} H${cx + 12} L${cx + 6} ${cy + 14} V72 H${cx - 6} V${cy + 14} L${cx - 12} ${cy + 6} H4 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const tee = `<path d="M4 ${cy - 6} H${cx - 12} Q${cx} ${cy - 14} ${cx + 12} ${cy - 6} H92 M92 ${cy + 6} H${cx + 12} L${cx + 6} ${cy + 14} V72 M${cx - 6} 72 V${cy + 14} L${cx - 12} ${cy + 6} H4" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const barrel = `<circle cx="${cx}" cy="${cy}" r="11.5" fill="url(#${id}-frost)" stroke="${C.stroke}" stroke-width="2.0"/>
       <path d="M${cx - 7} ${cy} H${cx + 7} M${cx} ${cy} V${cy + 7}" fill="none" stroke="${C.tealDark}" stroke-width="2.4" stroke-linecap="round"/>
       <rect x="${cx - 13}" y="${cy - 3}" width="26" height="6" rx="3" fill="${C.ptfe}" stroke="${C.inner}" stroke-width="1.2"/>`;
@@ -1295,14 +1307,14 @@ function buildAssets() {
     const femTop = verticalFemaleJoint(id, jx, 4, 22, 12, 9.5);
     const maleBot = verticalMaleJoint(id, jx, 110, 22, 11.5, 8.8);
     const vacBarb = oliveBarb(id, 214, 70, 1, 30, 4.6, 3.8);
-    // Horizontal double-walled heating jacket + inner sample boat tube + right desiccant bulb
+    // Horizontal double-walled heating jacket + inner sample boat tube + right desiccant bulb (open top/bottom joints)
     const outerJacket = `<path d="
-      M20 50 H${jx - 10} V26 H${jx + 10} V50 H148
-      Q158 50 158 60 V80 Q158 90 148 90 H${jx + 10} V110 H${jx - 10} V90 H20
-      Q10 90 10 80 V60 Q10 50 20 50 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const innerChamber = `<rect x="6" y="58" width="160" height="24" rx="5" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.6"/>
-      <rect x="40" y="70" width="52" height="7" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.1"/>`;
+      M20 50 H${jx - 9.5} V26
+      M${jx + 9.5} 26 V50 H148 Q158 50 158 60 V80 Q158 90 148 90 H${jx + 11.5} V110
+      M${jx - 11.5} 110 V90 H20 Q10 90 10 80 V60 Q10 50 20 50"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const innerChamber = `<rect x="14" y="59" width="150" height="22" rx="4" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.5"/>
+      <rect x="44" y="70" width="52" height="7" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.1"/>`;
     const desiccantBulb = `<path d="M166 60 H178 C184 44 214 44 214 70 C214 96 184 96 178 80 H166 Z" fill="none" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
       <circle cx="192" cy="70" r="9" fill="${C.coolFill}" stroke="${C.inner}" stroke-width="1.1" stroke-dasharray="2 2"/>`;
     const stopcock = drawStopcock(id, 172, 70, { w: 12, h: 7, teal: true });
@@ -1319,7 +1331,7 @@ function buildAssets() {
     });
   }
 
-  // 40. lab:kipp-generator (启普发生器 — 3-bulb Kipp's gas generator with side delivery stopcock)
+  // 40. lab:kipp-generator (启普发生器 — 3-bulb Kipp's gas generator with open flared top socket & side delivery stopcock)
   {
     const id = 'kipp-generator';
     const W = 128, H = 264, cx = 56;
@@ -1327,7 +1339,7 @@ function buildAssets() {
     const outBarb = oliveBarb(id, cx + 38, 126, 1, 26, 4.8, 4.0);
     const stopcock = drawStopcock(id, cx + 49, 126, { w: 14, h: 8, teal: true });
     const glassBody = `<path d="
-      M${cx - 12} 26 V40
+      M${cx - 10.5} 26 V40
       C${cx - 40} 48 ${cx - 42} 84 ${cx - 22} 98
       C${cx - 42} 112 ${cx - 42} 148 ${cx - 24} 162
       C${cx - 42} 176 ${cx - 44} 214 ${cx - 24} 230
@@ -1335,8 +1347,8 @@ function buildAssets() {
       Q${cx + 36} 260 ${cx + 34} 252 L${cx + 24} 230
       C${cx + 44} 214 ${cx + 42} 176 ${cx + 24} 162
       C${cx + 42} 148 ${cx + 42} 112 ${cx + 22} 98
-      C${cx + 42} 84 ${cx + 40} 48 ${cx + 12} 40 V26 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+      C${cx + 42} 84 ${cx + 40} 48 ${cx + 10.5} 40 V26"
+      fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Internal long thistle funnel tube reaching down to the bottom reservoir + perforated constricting ring
     const innerFunnel = `<path d="M${cx - 6} 98 V216 M${cx + 6} 98 V216" fill="none" stroke="${C.inner}" stroke-width="1.6"/>
       <line x1="${cx - 23}" y1="162" x2="${cx - 6}" y2="162" stroke="${C.inner}" stroke-width="2.0" stroke-dasharray="3 2"/>
@@ -1356,11 +1368,11 @@ function buildAssets() {
     });
   }
 
-  // 41. lab:acid-burette (酸式滴定管 — graduated glass column + PTFE/glass side stopcock + fine tip)
+  // 41. lab:acid-burette (酸式滴定管 — open flared top, bold glass walls, PTFE stopcock, open tip)
   {
     const id = 'acid-burette';
     const W = 40, H = 340, cx = 20;
-    const tube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V274 L${cx - 4} 296 L${cx - 2.5} 336 H${cx + 2.5} L${cx + 4} 296 L${cx + 6} 274 V10 L${cx + 8} 4 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>`;
+    const tube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V274 L${cx - 4} 296 L${cx - 2.5} 336 M${cx + 2.5} 336 L${cx + 4} 296 L${cx + 6} 274 V10 L${cx + 8} 4" fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
     const valve = drawStopcock(id, cx, 290, { w: 18, h: 8, glass: true, teal: true });
     const grads = graduationMarks(cx + 5.5, 24, 260, 20, 5, 4.5);
     const labels = `<text x="${cx - 1}" y="29" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="end">0</text>
@@ -1368,7 +1380,7 @@ function buildAssets() {
     assets.push({
       id, name: '酸式滴定管', category: '滴定与移液',
       search: '酸式滴定管 玻璃旋塞滴定管 acid burette 用于盛装酸性或强氧化性标准溶液（如高锰酸钾、盐酸），玻璃或聚四氟乙烯活塞控制滴速。',
-      width: W, height: H, svg: wrapSvg(id, '酸式滴定管', W, H, `${tube}\n  ${grads}\n  ${labels}\n  ${specularHighlight(cx - 3, 18, 266, 1.8, 0.78)}\n  ${valve}`),
+      width: W, height: H, svg: wrapSvg(id, '酸式滴定管', W, H, `${tube}\n  ${grads}\n  ${labels}\n  ${valve}`),
       ports: [
         { id: 'mouth', x: cx, y: 4, dx: 0, dy: -1, type: 'mouth', diameter: 16, depth: 10, edge: [cx - 8, 4, cx + 8, 4], target: [cx, 44] },
         { id: 'outlet', x: cx, y: 336, dx: 0, dy: 1, type: 'delivery', diameter: 5, depth: 8, edge: [cx - 2.5, 336, cx + 2.5, 336], segment: [cx, 300, cx, 332] },
@@ -1377,21 +1389,21 @@ function buildAssets() {
     });
   }
 
-  // 42. lab:alkaline-burette (碱式滴定管 — graduated tube + latex rubber tubing + glass bead pinch valve + tip)
+  // 42. lab:alkaline-burette (碱式滴定管 — open flared top + rubber pinch valve + open tip)
   {
     const id = 'alkaline-burette';
     const W = 40, H = 340, cx = 20;
-    const upperTube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V272 H${cx + 6} V10 L${cx + 8} 4 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>`;
-    const rubber = `<rect x="${cx - 5.5}" y="272" width="11" height="32" rx="2" fill="${C.amberMid}" stroke="${C.stroke}" stroke-width="1.8"/>
+    const upperTube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V272 M${cx + 6} 272 V10 L${cx + 8} 4" fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const rubber = `<rect x="${cx - 5.5}" y="272" width="11" height="32" rx="2" fill="${C.amberMid}" stroke="${C.stroke}" stroke-width="1.9"/>
       <circle cx="${cx}" cy="288" r="3.8" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="1.4"/>`;
-    const tip = `<path d="M${cx - 4.5} 304 L${cx - 2.5} 336 H${cx + 2.5} L${cx + 4.5} 304 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>`;
+    const tip = `<path d="M${cx - 4.5} 304 L${cx - 2.5} 336 M${cx + 2.5} 336 L${cx + 4.5} 304" fill="none" stroke="${C.stroke}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>`;
     const grads = graduationMarks(cx + 5.5, 24, 260, 20, 5, 4.5);
     const labels = `<text x="${cx - 1}" y="29" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="end">0</text>
       <text x="${cx - 1}" y="262" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="end">50</text>`;
     assets.push({
       id, name: '碱式滴定管', category: '滴定与移液',
       search: '碱式滴定管 胶管玻璃珠滴定管 alkaline burette 下端乳胶管内含玻璃珠，挤压放液，专用于盛装NaOH等碱性标准溶液。',
-      width: W, height: H, svg: wrapSvg(id, '碱式滴定管', W, H, `${upperTube}\n  ${tip}\n  ${rubber}\n  ${grads}\n  ${labels}\n  ${specularHighlight(cx - 3, 18, 266, 1.8, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '碱式滴定管', W, H, `${upperTube}\n  ${tip}\n  ${rubber}\n  ${grads}\n  ${labels}`),
       ports: [
         { id: 'mouth', x: cx, y: 4, dx: 0, dy: -1, type: 'mouth', diameter: 16, depth: 10, edge: [cx - 8, 4, cx + 8, 4], target: [cx, 44] },
         { id: 'outlet', x: cx, y: 336, dx: 0, dy: 1, type: 'delivery', diameter: 5, depth: 8, edge: [cx - 2.5, 336, cx + 2.5, 336], segment: [cx, 306, cx, 332] },
@@ -1400,7 +1412,7 @@ function buildAssets() {
     });
   }
 
-  // 43. lab:volumetric-pipette (大肚移液管 — slender top stem + meniscus mark + central bulb + tapered tip)
+  // 43. lab:volumetric-pipette (大肚移液管 — open top & tip, bold slender walls)
   {
     const id = 'volumetric-pipette';
     const W = 32, H = 316, cx = 16;
@@ -1409,12 +1421,12 @@ function buildAssets() {
       C${cx - 4} 122 ${cx - 12} 128 ${cx - 12} 146
       V176
       C${cx - 12} 194 ${cx - 4} 200 ${cx - 4} 212
-      V288 L${cx - 2.5} 312 H${cx + 2.5} L${cx + 4} 288
+      V288 L${cx - 2.5} 312 M${cx + 2.5} 312 L${cx + 4} 288
       V212
       C${cx + 4} 200 ${cx + 12} 194 ${cx + 12} 176
       V146
-      C${cx + 12} 128 ${cx + 4} 122 ${cx + 4} 110 V4 Z"
-      fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>`;
+      C${cx + 12} 128 ${cx + 4} 122 ${cx + 4} 110 V4"
+      fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
     const mark = `<line x1="${cx - 4.5}" y1="68" x2="${cx + 4.5}" y2="68" stroke="${C.tealDark}" stroke-width="1.5"/>
       <text x="${cx}" y="164" font-size="7" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="middle">25</text>`;
     assets.push({
@@ -1471,7 +1483,7 @@ function buildAssets() {
       <path d="M${cx} 15 C${cx + 6} 26 ${cx + 6} 36 ${cx} 39 C${cx - 6} 36 ${cx - 6} 26 ${cx} 15 Z" fill="${C.teal}"/>`;
     const wickCollar = `<rect x="${cx - 4}" y="38" width="8" height="10" rx="1.5" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="1.8"/>
       <rect x="${cx - 12}" y="48" width="24" height="9" rx="3" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="2.0"/>`;
-    const body = `<path d="M${cx - 14} 57 H${cx + 14} V66 C${cx + 32} 76 ${cx + 42} 96 ${cx + 40} 118 Q${cx + 39} 132 ${cx + 24} 132 H${cx - 24} Q${cx - 39} 132 ${cx - 40} 118 C${cx - 42} 96 ${cx - 32} 76 ${cx - 14} 66 Z" fill="none" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+    const body = `<path d="M${cx - 14} 57 H${cx + 14} V66 C${cx + 32} 76 ${cx + 42} 96 ${cx + 40} 118 Q${cx + 39} 132 ${cx + 24} 132 H${cx - 24} Q${cx - 39} 132 ${cx - 40} 118 C${cx - 42} 96 ${cx - 32} 76 ${cx - 14} 66 Z" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linejoin="round"/>
       <path d="M${cx - 36} 104 Q${cx} 107 ${cx + 36} 104 L${cx + 34} 121 Q${cx} 126 ${cx - 34} 121 Z" fill="${C.coolFill}" stroke="${C.teal}" stroke-width="1.2"/>
       <path d="M${cx} 48 V122" fill="none" stroke="${C.inner}" stroke-width="1.4" stroke-dasharray="3 2"/>`;
     assets.push({

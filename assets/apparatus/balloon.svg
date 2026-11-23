@@ -2,6 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
 <title>气球</title>
 <path d="M90 120 C76 128 98 136 90 147" fill="none" stroke="#294454" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M84 110 L78 120 H102 L96 110 Z" fill="#258F89" stroke="#294454" stroke-width="2.0" stroke-linejoin="round"/>
-      <ellipse cx="90" cy="60" rx="54" ry="50" fill="#258F89" stroke="#294454" stroke-width="2.3"/>
+      <path d="M84 111 L78 120 H102 L96 111 Z" fill="#258F89" stroke="#294454" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M90 10 C125 10 144 36 140 66 C136 94 112 112 90 112 C68 112 44 94 40 66 C36 36 55 10 90 10 Z" fill="#258F89" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M56 38 C59 27 67 21 76 19" fill="none" stroke="#D4EAE8" stroke-width="3.0" stroke-linecap="round"/>
 </svg>

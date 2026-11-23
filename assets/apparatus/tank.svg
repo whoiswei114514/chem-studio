@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>水槽</title>
-<path d="M18 88 Q48 84 77 88 T135 88 V179 H18 Z" fill="#E6F4F3" stroke="none"/>
-  <path d="M18 88 Q48 84 77 88 T135 88" fill="none" stroke="#258F89" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M14 34 H139 L137 40 V177 Q137 181 133 181 H20 Q16 181 16 177 V40 Z" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="16" y1="39" x2="137" y2="39" stroke="#3D5968" stroke-width="1.2"/>
+<path d="M22 92 Q50 88 78 92 T132 92 V178 H22 Z" fill="#E6F4F3" stroke="none"/>
+  <path d="M22 92 Q50 88 78 92 T132 92" fill="none" stroke="#258F89" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M16 34 Q21 35 21 41 V174 Q21 180 27 180 H127 Q133 180 133 174 V41 Q133 35 137 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

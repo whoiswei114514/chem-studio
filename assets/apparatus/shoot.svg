@@ -3,12 +3,11 @@
 <title>嫩枝</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M88 164 Q86 102 92 24" fill="none" stroke="#6DA37C" stroke-width="4.4"/>
-      <path d="M88 164 Q86 102 92 24" fill="none" stroke="#294454" stroke-width="1.4"/>
-      <line x1="83" y1="166" x2="94" y2="162" stroke="#294454" stroke-width="2.2"/>
-      <path d="M88 124 Q42 112 36 86 Q74 86 88 118 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.2"/>
-      <path d="M90 94 Q138 84 142 58 Q104 58 90 88 Z" fill="#C0D4CF" stroke="#294454" stroke-width="2.2"/>
-      <path d="M91 62 Q48 52 46 28 Q78 28 91 56 Z" fill="#C0D4CF" stroke="#294454" stroke-width="2.2"/>
+      <path d="M84 162 L96 154 L94 42 Q90 38 86 42 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.4"/>
+      <ellipse cx="90" cy="158" rx="6.2" ry="2.6" transform="rotate(-32 90 158)" fill="#C0D4CF" stroke="#294454" stroke-width="1.6"/>
+      <path d="M88 70 Q54 58 50 32 Q78 32 88 60 Z" fill="#C0D4CF" stroke="#294454" stroke-width="2.2"/>
+      <path d="M92 64 Q126 52 130 26 Q102 26 92 54 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.2"/>
+      <path d="M90 42 Q84 20 90 12 Q96 20 90 42 Z" fill="#C0D4CF" stroke="#294454" stroke-width="1.8"/>
     </g>
   
 </svg>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>圆底烧瓶</title>
-<path d="M55.5 18 Q58.2 18 58.8 23 L63.6 81.654 A52 52 0 1 0 96.4 81.654 L101.2 23 Q101.8 18 104.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M74.5 18 Q71.8 18 71.2 23 L76 79.154 Q80 78 84 79.154 L88.8 23 Q88.2 18 85.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M65.5 25 Q68.5 26 68.5 29.5 L68.5 59.076 A62 62 0 1 0 123.698 76.017 L138.529 55.604 Q140.586 52.772 143.197 53.433" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M94.5 25 Q91.5 26 91.5 29.5 L91.5 59.076 A62 62 0 0 1 108.327 64.849 L123.158 44.436 Q125.215 41.605 123.78 39.326" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70.7 56.076 Q80 58.576 89.3 56.076" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M111.87 63.715 Q116.306 70.029 123.682 72.297" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
 </svg>

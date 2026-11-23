@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="230" viewBox="0 0 100 230">
 <title>三阀吸球</title>
-<path d="M44 200 V152 C-4 138 6 48 50 48 C94 48 104 138 56 152 V200 Z" fill="#C84B31" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-  <rect x="44" y="18" width="12" height="31" rx="4" fill="#C84B31" stroke="#294454" stroke-width="2.1"/>
-  <rect x="42" y="184" width="16" height="16" rx="2" fill="#586F7C" stroke="#294454" stroke-width="2.1"/>
+<path d="M44 200 V152 C-2 138 6 48 50 48 C94 48 102 138 56 152 V200" fill="#C84B31" stroke="#294454" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="44" y="18" width="12" height="31" rx="4" fill="#C84B31" stroke="#294454" stroke-width="2.2"/>
+  <rect x="42" y="184" width="16" height="16" rx="2" fill="#586F7C" stroke="#294454" stroke-width="2.2"/>
   <circle cx="50" cy="34" r="7" fill="#DFBE8F" stroke="#294454" stroke-width="1.8"/><text x="50" y="36.8" fill="#294454" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">A</text><circle cx="30" cy="96" r="8" fill="#DFBE8F" stroke="#294454" stroke-width="1.8"/><text x="30" y="98.8" fill="#294454" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">S</text><circle cx="70" cy="96" r="8" fill="#DFBE8F" stroke="#294454" stroke-width="1.8"/><text x="70" y="98.8" fill="#294454" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">E</text>
 </svg>

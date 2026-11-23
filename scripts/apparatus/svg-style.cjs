@@ -10,6 +10,7 @@ const C = {
   // Primary uniform line work & typography
   stroke: '#294454',       // Primary outer walls (stroke-width 2.2-2.5, round cap/join)
   ink: '#294454',          // Alias matching classic C.ink
+  glassSw: 2.8,            // Bold uniform glassware contour weight for 160x200 vessels
   inner: '#3D5968',        // Internal glass tubes, coils, fittings (stroke-width 1.4-1.8)
   tick: '#7E939E',         // Graduations, subtle scale marks (stroke-width 1.0-1.3)
   muted: '#9AB0B8',        // Secondary borders & light guide lines
@@ -76,8 +77,9 @@ const C = {
 };
 
 const SW = {
-  outer: 2.3,
-  inner: 1.5,
+  glassSw: 2.8,
+  outer: 2.4,
+  inner: 1.6,
   tick: 1.2,
 };
 
@@ -636,6 +638,7 @@ module.exports = {
   C,
   PALETTE: C,
   SW,
+  glassSw: SW.glassSw,
   FONT,
   MONO,
   URL_SUFFIX_FILLS,

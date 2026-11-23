@@ -3,10 +3,9 @@
 <title>真空冷阱</title>
 <path d="M38 18.8 L18.16 19.4 L16.16 17.5 L6 19.6 L6 28.4 L16.16 30.5 L18.16 28.6 L38 29.2 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
   <path d="M66 32.8 L85.84 33.4 L87.84 31.5 L98 33.6 L98 42.4 L87.84 44.5 L85.84 42.6 L66 43.2 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
-  <path d="M30 58 V192 C30 214 74 214 74 192 V58 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M30 58 V192 C30 214 74 214 74 192 V58" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#3D5968" stroke-width="4.4" stroke-linecap="round"/>
       <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
-  <rect x="26" y="52" width="52" height="10" rx="3" fill="#FFFFFF" stroke="#294454" stroke-width="2.0"/>
-  <path d="M36 52 V18 C36 8 68 8 68 18 V52 Z" fill="none" stroke="#294454" stroke-width="2.2"/>
-  
+  <rect x="26" y="52" width="52" height="10" rx="3" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
+  <path d="M36 52 V18 C36 8 68 8 68 18 V52" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

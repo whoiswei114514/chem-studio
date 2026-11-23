@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160">
 <title>曲颈甑</title>
-<path d="M39 28 V54 C10 68 12 138 56 138 C86 138 100 114 96 86 C116 90 144 114 181.764 136.472 L186.236 127.528 C142 102 106 60 66 54 V28" fill="none" stroke="#294454" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
-  <polygon points="56.8,31.7 39.2,31.7 40.8,48 55.2,48" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="37" y="28" width="22" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
-  <line x1="40.8" y1="48" x2="55.2" y2="48" stroke="#3D5968" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M39 48 V54 C10 68 12 138 56 138 C86 138 100 114 96 86 C116 90 144 114 181.764 136.472 M186.236 127.528 C142 102 106 60 66 54 V48" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M37 28 Q38.5 29 38.5 32.5 L40 48" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M59 28 Q57.5 29 57.5 32.5 L56 48" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41.5 48 Q48 50.2 54.5 48" fill="none" stroke="#DCE8EC" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="190" viewBox="0 0 180 190">
 <title>火焰</title>
-<path d="M90 12 C132 54 148 102 136 142 C126 170 108 178 90 178 C68 178 48 166 42 138 C34 100 58 66 72 44 C78 62 84 66 86 50 C88 32 90 22 90 12 Z" fill="#F4B942" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M90 86 C112 112 115 146 104 164 C96 172 84 172 76 164 C65 146 68 112 90 86 Z" fill="#D9ECF2" stroke="#294454" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M90 8 C112 54 132 102 128 142 C124 168 108 180 90 180 C72 180 56 168 52 142 C48 102 68 54 90 8 Z" fill="#F4B942" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M90 68 C105 102 110 144 103 166 C96 175 84 175 77 166 C70 144 75 102 90 68 Z" fill="#D9ECF2" stroke="#294454" stroke-width="1.8" stroke-linejoin="round"/>
 </svg>

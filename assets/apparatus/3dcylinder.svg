@@ -4,8 +4,8 @@
 
     <g stroke-linecap="round" stroke-linejoin="round">
       <path d="M50 34 V104 A40 16 0 0 0 130 104 V34 Z" fill="#F4F9F8" stroke="none"/>
-      <path d="M50 34 V104 A40 16 0 0 0 130 104 V34" fill="none" stroke="#294454" stroke-width="2.2"/>
-      <ellipse cx="90" cy="34" rx="40" ry="16" fill="#D9ECF2" stroke="#294454" stroke-width="2.2"/>
+      <path d="M50 34 V104 A40 16 0 0 0 130 104 V34" fill="none" stroke="#294454" stroke-width="2.8"/>
+      <ellipse cx="90" cy="34" rx="40" ry="16" fill="#D9ECF2" stroke="#294454" stroke-width="2.8"/>
     </g>
   
 </svg>

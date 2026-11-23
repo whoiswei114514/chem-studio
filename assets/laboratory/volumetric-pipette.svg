@@ -6,12 +6,12 @@
       C12 122 4 128 4 146
       V176
       C4 194 12 200 12 212
-      V288 L13.5 312 H18.5 L20 288
+      V288 L13.5 312 M18.5 312 L20 288
       V212
       C20 200 28 194 28 176
       V146
-      C28 128 20 122 20 110 V4 Z"
-      fill="none" stroke="#294454" stroke-width="2.0" stroke-linejoin="round"/>
+      C28 128 20 122 20 110 V4"
+      fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
   <line x1="11.5" y1="68" x2="20.5" y2="68" stroke="#1F6F6B" stroke-width="1.5"/>
       <text x="16" y="164" font-size="7" font-family="Segoe UI, sans-serif" fill="#7E939E" text-anchor="middle">25</text>
   

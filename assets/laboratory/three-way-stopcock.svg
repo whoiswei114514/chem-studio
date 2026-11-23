@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
 <title>T形三通玻璃活塞</title>
-<path d="M4 18 H36 Q48 10 60 18 H92 V30 H60 L54 38 V72 H42 V38 L36 30 H4 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M4 18 H36 Q48 10 60 18 H92 M92 30 H60 L54 38 V72 M42 72 V38 L36 30 H4" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="48" cy="24" r="11.5" fill="#FFFFFF" stroke="#294454" stroke-width="2.0"/>
       <path d="M41 24 H55 M48 24 V31" fill="none" stroke="#1F6F6B" stroke-width="2.4" stroke-linecap="round"/>
       <rect x="35" y="21" width="26" height="6" rx="3" fill="#F8FAF9" stroke="#3D5968" stroke-width="1.2"/>

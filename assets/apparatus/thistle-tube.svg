@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
 <title>长颈漏斗</title>
-<path d="M34 15 H106 M34 15 Q34 58 63 63 V198 H77 V63 Q106 58 106 15" fill="none" stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M34 15 C30 34 29 52 46 61 C59 68 63 75 63 85 V198" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M106 15 C110 34 111 52 94 61 C81 68 77 75 77 85 V198" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>

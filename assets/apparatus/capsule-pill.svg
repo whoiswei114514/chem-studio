@@ -3,9 +3,10 @@
 <title>胶囊</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M90 38 H56 A22 22 0 0 0 56 82 H90 Z" fill="#258F89" stroke="#294454" stroke-width="2.3"/>
-      <path d="M90 38 H124 A22 22 0 0 1 124 82 H90 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.3"/>
-      <line x1="90" y1="38" x2="90" y2="82" stroke="#294454" stroke-width="2.2"/>
+      <path d="M90 38 H56 A22 22 0 0 0 56 82 H90 Z" fill="#258F89" stroke="#294454" stroke-width="2.4"/>
+      <path d="M90 38 H124 A22 22 0 0 1 124 82 H90 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.4"/>
+      <path d="M46 50 Q52 44 64 44 H120" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="2.6"/>
+      <line x1="90" y1="38" x2="90" y2="82" stroke="#294454" stroke-width="2.4"/>
     </g>
   
 </svg>

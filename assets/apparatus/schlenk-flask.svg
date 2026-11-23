@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>施伦克瓶</title>
-<path d="M59 12 Q63 12 64 19 V68 C24 88 26 166 80 181 C134 166 136 88 96 68 V59 H126 V83 M138 83 V58 Q138 47 127 47 H96 V19 Q97 12 101 12" fill="none" stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-  <g>
-    <path d="M123 64 L141 65.2 L141 70.8 L123 72 Z" fill="#F8FAF9" stroke="#294454" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="116" y="61.5" width="7" height="13" rx="2" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
-    <rect x="141" y="64.5" width="5" height="7" rx="1.5" fill="#C6D2D7" stroke="#294454" stroke-width="1.6"/>
-    <line x1="129.5" y1="65.5" x2="134.5" y2="70.5" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
-  </g>
+<path d="M47 12 Q51 13 51 20 V83.7 A50 50 0 1 0 86.408 79.411 L143.092 31.829" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M81 12 Q77 13 77 20 V68 L136.404 23.863" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M53 84 Q64 81 75 84" fill="none" stroke="#DCE8EC" stroke-width="1.5" stroke-linecap="round"/>
+  <g><polygon points="98.993,48.999 112.62,63.676 117.599,59.496 105.504,43.533" fill="#F8FAF9" stroke="#294454" stroke-width="2.0" stroke-linejoin="round"/><polygon points="93.152,44.762 97.653,50.124 106.845,42.408 102.344,37.046" fill="#258F89" stroke="#294454" stroke-width="1.8" stroke-linejoin="round"/><polygon points="112.428,63.837 115.322,67.284 120.683,62.782 117.79,59.335" fill="#C6D2D7" stroke="#294454" stroke-width="1.6" stroke-linejoin="round"/></g>
 </svg>

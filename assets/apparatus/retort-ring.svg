@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
 <title>铁圈</title>
-<ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="#294454" stroke-width="6.8"/>
+<ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="#294454" stroke-width="7.2"/>
       <ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="#C6D2D7" stroke-width="2.8"/>
-      <rect x="16" y="63" width="15" height="18" rx="3" fill="#3D5968" stroke="#294454" stroke-width="2.2"/>
-      <rect x="6" y="69" width="10" height="6" rx="2" fill="#258F89" stroke="#294454" stroke-width="1.6"/>
+      <rect x="16" y="62" width="15" height="20" rx="3" fill="#3D5968" stroke="#294454" stroke-width="2.2"/>
+      <rect x="4" y="69" width="12" height="6" rx="2" fill="#C9A048" stroke="#294454" stroke-width="1.7"/>
+      <line x1="6" y1="64" x2="6" y2="80" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
       <rect x="31" y="69" width="44" height="6" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
 </svg>

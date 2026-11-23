@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="116" height="128" viewBox="0 0 116 128">
 <title>真空接收管</title>
-<path d="M74 43.2 L96.32 43.8 L98.32 41.9 L110 44 L110 52 L98.32 54.1 L96.32 52.2 L74 52.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+<path d="M75.5 43.2 L96.89 43.8 L98.89 41.9 L110 44 L110 52 L98.89 54.1 L96.89 52.2 L75.5 52.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
   <path d="
-      M29.4499615 17.483629
-      L54 24 Q74 28 74 48 V100 H54 V50
-      Q54 40 46 39
-      L25.0500385 33.904371 Z"
-      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M64 44 V100 L67 106" fill="none" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
-  
-  <polygon points="12.55,9.849 6.598,32.066 24.921,34.387 29.58,17.001" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="9.753,5.994 2.247,34.006 6.304,35.093 13.81,7.081" fill="#FFFFFF" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
-  <path d="M59.5 124 L60.5 131 L67.5 128 L68.5 124 Z" fill="none" stroke="#294454" stroke-width="2.0" stroke-linejoin="round"/>
-  <polygon points="75.5,100 52.5,100 55.2,124 72.8,124" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="51" y1="100" x2="77" y2="100" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+      M29.58 17.001
+      L54 24 Q75.5 28 75.5 43 M75.5 53 V100 M52.5 100 V50
+      Q52.5 40 46 39
+      L24.921 34.387"
+      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 46 V100 L66.5 108" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M8.976 8.892 Q9.425 11.083 12.805 11.988 L29.58 17.001" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3.024 31.108 Q4.507 29.435 7.888 30.341 L24.921 34.387" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="50.5" y1="100" x2="77.5" y2="100" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M52.5 100 L55.2 124" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M75.5 100 L72.8 124" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M53.5 102.2 Q64 104.4 74.5 102.2" fill="none" stroke="#DCE8EC" stroke-width="1.3" stroke-linecap="round"/>
 </svg>

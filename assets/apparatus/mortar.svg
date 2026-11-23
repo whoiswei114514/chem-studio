@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="170" height="135" viewBox="0 0 170 135">
 <title>研钵</title>
-<path d="M15 38 C16 90 42 114 54 116 V122 H116 V116 C128 114 154 90 155 38 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <ellipse cx="85" cy="38" rx="70" ry="15" fill="#F8FAF9" stroke="#294454" stroke-width="2.3"/>
-      <ellipse cx="85" cy="39" rx="58" ry="10.5" fill="#DCE5E8" stroke="#3D5968" stroke-width="1.4"/>
+<path d="M14 38 L22 48 C25 90 44 111 54 114 V122 H116 V114 C126 111 145 90 148 48 L156 38 Z" fill="#F2F2EE" stroke="none"/>
+  <path d="M24 46 Q85 56 146 46" fill="none" stroke="#7E939E" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M32 58 C34 86 46 100 56 104" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
+      <line x1="54" y1="114" x2="116" y2="114" stroke="#3D5968" stroke-width="1.6"/>
+  <path d="M14 38 L22 48 C25 90 44 111 54 114 V122 H116 V114 C126 111 145 90 148 48 L156 38" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

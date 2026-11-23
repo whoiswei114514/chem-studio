@@ -2,7 +2,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180">
 <title>90° 弯管</title>
 <path d="M18 155 H88 Q120 155 120 123 V12" fill="none" stroke="#294454" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M18 155 H88 Q120 155 120 123 V12" fill="none" stroke="#FFFFFF" stroke-width="15.4" stroke-linecap="butt" stroke-linejoin="round"/>
-  <line x1="18" y1="165" x2="18" y2="145" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
-  <line x1="110" y1="12" x2="130" y2="12" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M18 155 H88 Q120 155 120 123 V12" fill="none" stroke="#FFFFFF" stroke-width="14.8" stroke-linecap="butt" stroke-linejoin="round"/>
 </svg>

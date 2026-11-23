@@ -6,10 +6,10 @@
       C42 54 6 76 6 108
       C6 138 34 156 52 156
       C70 156 98 138 98 108
-      C98 76 62 54 62 42 V28 Z"
-      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+      C98 76 62 54 62 42 V28"
+      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
   
-  <polygon points="64.5,7.7 39.5,7.7 42,28 62,28" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="36.3" y="4" width="31.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
-  <line x1="42" y1="28" x2="62" y2="28" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M39.5 4 Q41.5 5 41.5 8.5 L42 28" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64.5 4 Q62.5 5 62.5 8.5 L62 28" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M43.5 28 Q52 30.2 60.5 28" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
 </svg>

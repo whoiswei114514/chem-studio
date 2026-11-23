@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
 <title>G 形夹</title>
-<path d="M142 36 H52 Q24 36 24 64 V128 Q24 156 52 156 H142 V134 H56 Q46 134 46 124 V68 Q46 58 56 58 H142 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="122" y="66" width="8" height="106" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <rect x="110" y="58" width="32" height="10" rx="3" fill="#3D5968" stroke="#294454" stroke-width="2.0"/>
-      <rect x="100" y="170" width="52" height="7" rx="3" fill="#258F89" stroke="#294454" stroke-width="2.0"/>
+<path d="M142 28 H54 Q24 28 24 58 V130 Q24 160 54 160 H142 V136 H58 Q48 136 48 126 V62 Q48 52 58 52 H142 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M134 36 H56 Q34 36 34 58 V130 Q34 152 56 152 H134" fill="none" stroke="#3D5968" stroke-width="1.6"/>
+      <rect x="120" y="64" width="10" height="106" rx="2" fill="#DCE5E8" stroke="#294454" stroke-width="2.1"/>
+      <path d="M120 74 H130 M120 82 H130 M120 90 H130 M120 98 H130 M120 106 H130 M120 114 H130 M120 122 H130" stroke="#7E939E" stroke-width="1.2"/>
+      <rect x="108" y="56" width="34" height="10" rx="3" fill="#C9A048" stroke="#294454" stroke-width="2.0"/>
+      <rect x="98" y="168" width="54" height="8" rx="4" fill="#258F89" stroke="#294454" stroke-width="2.1"/>
 </svg>

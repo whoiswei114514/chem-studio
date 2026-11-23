@@ -3,19 +3,19 @@
 <title>电解装置</title>
 <path d="M44 73.2 L27.88 72.6 L25.88 74.5 L18 72.4 L18 63.6 L25.88 61.5 L27.88 63.4 L44 62.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M136 62.8 L152.12 63.4 L154.12 61.5 L162 63.6 L162 72.4 L154.12 74.5 L152.12 72.6 L136 73.2 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="28" y="168" width="124" height="12" rx="4" fill="#F8FAF9" stroke="#294454" stroke-width="2.3"/>
+  <rect x="28" y="168" width="124" height="12" rx="4" fill="#F8FAF9" stroke="#294454" stroke-width="2.5"/>
   <path d="M46 80 V128 A44 44 0 0 0 134 128 V80 H114 V128 A24 24 0 0 1 66 128 V80 Z" fill="#E6F4F3" stroke="none"/>
   <line x1="46" y1="80" x2="66" y2="80" stroke="#258F89" stroke-width="1.4"/>
   <line x1="114" y1="80" x2="134" y2="80" stroke="#258F89" stroke-width="1.4"/>
-  <path d="M44 44 V128 A46 46 0 0 0 136 128 V44 H112 V128 A22 22 0 0 1 68 128 V44 Z" fill="none" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-  <rect x="53" y="28" width="6" height="94" rx="1" fill="#3D5968" stroke="#294454" stroke-width="1.6"/>
-  <rect x="121" y="28" width="6" height="94" rx="1" fill="#3D5968" stroke="#294454" stroke-width="1.6"/>
+  <path d="M44 44 V128 A46 46 0 0 0 136 128 V44 H112 V128 A22 22 0 0 1 68 128 V44 Z" fill="none" stroke="#294454" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="53" y="28" width="6" height="94" rx="1" fill="#3D5968" stroke="#294454" stroke-width="1.7"/>
+  <rect x="121" y="28" width="6" height="94" rx="1" fill="#3D5968" stroke="#294454" stroke-width="1.7"/>
   <circle cx="52" cy="96" r="2.2" fill="#FFFFFF" stroke="#258F89" stroke-width="1.0"/>
   <circle cx="59" cy="86" r="2.5" fill="#FFFFFF" stroke="#258F89" stroke-width="1.0"/>
   <circle cx="120" cy="94" r="2.2" fill="#FFFFFF" stroke="#258F89" stroke-width="1.0"/>
   <circle cx="127" cy="85" r="2.6" fill="#FFFFFF" stroke="#258F89" stroke-width="1.0"/>
-  <path d="M42 36 H70 L68 48 H44 Z" fill="#586F7C" stroke="#294454" stroke-width="2.1"/>
-  <path d="M110 36 H138 L136 48 H112 Z" fill="#586F7C" stroke="#294454" stroke-width="2.1"/>
+  <path d="M42 36 H70 L68 48 H44 Z" fill="#586F7C" stroke="#294454" stroke-width="2.2"/>
+  <path d="M110 36 H138 L136 48 H112 Z" fill="#586F7C" stroke="#294454" stroke-width="2.2"/>
   <circle cx="56" cy="22" r="6.2" fill="#C84B31" stroke="#294454" stroke-width="1.8"/><circle cx="56" cy="22" r="3.224" fill="#F8FAF9" stroke="#294454" stroke-width="1.1"/><circle cx="56" cy="22" r="1.736" fill="#294454" stroke="none"/><text x="56" y="12" fill="#3D5968" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">+</text>
   <circle cx="124" cy="22" r="6.2" fill="#294454" stroke="#294454" stroke-width="1.8"/><circle cx="124" cy="22" r="3.224" fill="#F8FAF9" stroke="#294454" stroke-width="1.1"/><circle cx="124" cy="22" r="1.736" fill="#294454" stroke="none"/><text x="124" y="12" fill="#3D5968" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">-</text>
 </svg>

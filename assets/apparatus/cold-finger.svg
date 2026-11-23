@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
 <title>冷指</title>
-<path d="M58 26 V10 H66 V156 M74 156 V10 H82 V26" fill="none" stroke="#294454" stroke-width="2.0" stroke-linejoin="round"/>
-  <path d="M46 32 V166 Q70 192 94 166 V32" fill="#E6F4F3" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-  <line x1="62" y1="32" x2="62" y2="158" stroke="#3D5968" stroke-width="1.5"/>
-  <line x1="78" y1="32" x2="78" y2="96" stroke="#3D5968" stroke-width="1.5"/>
-  <rect x="30" y="26" width="80" height="6" rx="3" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
+<path d="M58 10 V82 M66 10 V162 M74 10 V82 M82 10 V82" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M47 94 V168 A23 23 0 0 0 93 168 V94" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="70" y1="94" x2="70" y2="176" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M40 82 H100 L95 96 H45 Z" fill="#F8FAF9" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
 </svg>

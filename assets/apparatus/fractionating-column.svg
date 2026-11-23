@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="110" height="260" viewBox="0 0 110 260">
 <title>分馏柱</title>
-<path d="M44 32 V39 C44 45 35 46 35 54 V210 C35 218 44 219 44 225 V226 H66 V225 C66 219 75 218 75 210 V54 C75 46 66 45 66 39 V32" fill="none" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-  <path d="M35 58 C46 60 50 62 50 64 C50 66 46 68 35 70" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M75 67 C64 69 60 71 60 73 C60 75 64 77 75 79" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M35 80 C46 82 50 84 50 86 C50 88 46 90 35 92" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M75 89 C64 91 60 93 60 95 C60 97 64 99 75 101" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M35 102 C46 104 50 106 50 108 C50 110 46 112 35 114" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M75 111 C64 113 60 115 60 117 C60 119 64 121 75 123" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M35 124 C46 126 50 128 50 130 C50 132 46 134 35 136" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M75 133 C64 135 60 137 60 139 C60 141 64 143 75 145" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M35 146 C46 148 50 150 50 152 C50 154 46 156 35 158" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M75 155 C64 157 60 159 60 161 C60 163 64 165 75 167" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M35 168 C46 170 50 172 50 174 C50 176 46 178 35 180" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M75 177 C64 179 60 181 60 183 C60 185 64 187 75 189" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M35 190 C46 192 50 194 50 196 C50 198 46 200 35 202" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M75 199 C64 201 60 203 60 205 C60 207 64 209 75 211" fill="none" stroke="#3D5968" stroke-width="1.5" stroke-linecap="round"/>
-  <polygon points="62.8,13.7 47.2,13.7 48.6,32 61.4,32" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="45" y="10" width="20" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
-  <line x1="48.6" y1="32" x2="61.4" y2="32" stroke="#3D5968" stroke-width="1.4" stroke-linecap="round"/>
-  
-  <polygon points="67,226 43,226 45.2,248 64.8,248" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="41.5" y1="226" x2="68.5" y2="226" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M46 32 V39 C46 45 37 46 37 54 V210 C37 218 46 219 46 225 V226 M64 226 V225 C64 219 73 218 73 210 V54 C73 46 64 45 64 39 V32" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M37 58 C47 60 50 62 50 64 C50 66 47 68 37 70" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M73 67 C63 69 60 71 60 73 C60 75 63 77 73 79" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M37 80 C47 82 50 84 50 86 C50 88 47 90 37 92" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M73 89 C63 91 60 93 60 95 C60 97 63 99 73 101" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M37 102 C47 104 50 106 50 108 C50 110 47 112 37 114" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M73 111 C63 113 60 115 60 117 C60 119 63 121 73 123" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M37 124 C47 126 50 128 50 130 C50 132 47 134 37 136" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M73 133 C63 135 60 137 60 139 C60 141 63 143 73 145" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M37 146 C47 148 50 150 50 152 C50 154 47 156 37 158" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M73 155 C63 157 60 159 60 161 C60 163 63 165 73 167" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M37 168 C47 170 50 172 50 174 C50 176 47 178 37 180" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M73 177 C63 179 60 181 60 183 C60 185 63 187 73 189" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M37 190 C47 192 50 194 50 196 C50 198 47 200 37 202" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M73 199 C63 201 60 203 60 205 C60 207 63 209 73 211" fill="none" stroke="#3D5968" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M45 10 Q46.8 11 46.8 14.5 L46 32" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M65 10 Q63.2 11 63.2 14.5 L64 32" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47.5 32 Q55 34.2 62.5 32" fill="none" stroke="#DCE8EC" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M40.8 226 H69.2" fill="none" stroke="#294454" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M43 226 L45.2 248" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M67 226 L64.8 248" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 228.2 Q55 230.5 66 228.2" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
 </svg>

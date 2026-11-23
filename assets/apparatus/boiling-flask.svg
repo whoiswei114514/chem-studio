@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>平底烧瓶</title>
-<path d="M59 12 Q63 12 64 19 V65 Q64 72 56 76 C18 96 22 158 50 180 H110 C138 158 142 96 104 76 Q96 72 96 65 V19 Q97 12 101 12" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M61 12 Q65 13 65 20 V67 A60 60 0 0 0 44 172 Q49 181 58 181 H102 Q111 181 116 172 A60 60 0 0 0 95 67 V20 Q95 13 99 12" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M67 68 Q80 65 93 68" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
 </svg>

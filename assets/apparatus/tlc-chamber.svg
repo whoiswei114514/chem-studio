@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>展开缸</title>
-<path d="M18 144 H135 V177 Q135 181 131 181 H22 Q18 181 18 177 Z" fill="#E6F4F3" stroke="none"/>
-  <line x1="18" y1="144" x2="135" y2="144" stroke="#258F89" stroke-width="1.5"/>
-  <polygon points="50,62 96,58 104,168 58,170" fill="#F8FAF9" stroke="#3D5968" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M22 144 H132 V175 Q132 180 127 180 H27 Q22 180 22 175 Z" fill="#E6F4F3" stroke="none"/>
+  <line x1="22" y1="144" x2="132" y2="144" stroke="#258F89" stroke-width="1.6"/>
+  <polygon points="50,62 96,58 104,168 58,170" fill="#F8FAF9" stroke="#3D5968" stroke-width="1.7" stroke-linejoin="round"/>
   <line x1="57" y1="152" x2="102" y2="150" stroke="#9AB0B8" stroke-width="1.1" stroke-dasharray="3 2.5"/>
   <line x1="53" y1="84" x2="98" y2="81" stroke="#258F89" stroke-width="1.1" stroke-dasharray="3 2.5"/>
   <circle cx="68" cy="126" r="3.6" fill="#258F89" stroke="#294454" stroke-width="1.2"/>
   <circle cx="84" cy="98" r="3.8" fill="#C9A048" stroke="#294454" stroke-width="1.2"/>
   <circle cx="67" cy="151" r="2.2" fill="#9AB0B8" stroke="none"/>
   <circle cx="87" cy="150" r="2.2" fill="#9AB0B8" stroke="none"/>
-  <path d="M14 34 H139 L137 40 V177 Q137 181 133 181 H20 Q16 181 16 177 V40 Z" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 34 Q21 35 21 41 V174 Q21 180 27 180 H127 Q133 180 133 174 V41 Q133 35 137 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

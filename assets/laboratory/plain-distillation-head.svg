@@ -4,16 +4,18 @@
 <path d="
       M12 78 V34
       C12 13 30 10 44 14
-      L66.588 34.341
-      L61.412 53.659
+      L66.847 33.375
+      M61.153 54.625
       L37 37
       Q32 36 32 42
-      V78 Z"
-      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+      V78"
+      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
   
-  
-  <polygon points="33.5,78 10.5,78 13.2,100 30.8,100" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="9" y1="78" x2="35" y2="78" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
-  <polygon points="66.847,33.375 61.153,54.625 83.025,58.001 87.476,41.387" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="67.235" y1="31.926" x2="60.765" y2="56.074" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="8.5" y1="78" x2="35.5" y2="78" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M10.5 78 L13.2 100" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M33.5 78 L30.8 100" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M11.5 80.2 Q22 82.4 32.5 80.2" fill="none" stroke="#DCE8EC" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="67.365" y1="31.443" x2="60.635" y2="56.557" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
+  <line x1="66.847" y1="33.375" x2="87.476" y2="41.387" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="61.153" y1="54.625" x2="83.025" y2="58.001" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
 <title>易拉罐</title>
-<path d="M52 24 H128 L134 36 V122 L126 131 H54 L46 122 V36 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="46" y="54" width="88" height="48" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
-      <ellipse cx="90" cy="24" rx="38" ry="6" fill="#F8FAF9" stroke="#294454" stroke-width="2.0"/>
-      <ellipse cx="90" cy="24" rx="12" ry="2.5" fill="#7E939E" stroke="none"/>
+<path d="M52 16 H128 L135 28 V122 L127 131 H53 L45 122 V28 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
+      <rect x="45" y="48" width="90" height="54" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
+      <line x1="56" y1="34" x2="56" y2="116" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round" opacity="0.5"/>
+      <ellipse cx="90" cy="16" rx="38" ry="6" fill="#F8FAF9" stroke="#294454" stroke-width="2.1"/>
+      <ellipse cx="90" cy="16" rx="12" ry="2.5" fill="#3D5968" stroke="none"/>
 </svg>

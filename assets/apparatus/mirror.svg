@@ -2,7 +2,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="190" height="160" viewBox="0 0 190 160">
 <title>平面镜</title>
 <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="88" y="18" width="12" height="124" rx="2" fill="#F4F9F8" stroke="#294454" stroke-width="2.3"/>
-      <line x1="100" y1="24" x2="112" y2="15" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="36" x2="112" y2="27" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="48" x2="112" y2="39" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="60" x2="112" y2="51" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="72" x2="112" y2="63" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="84" x2="112" y2="75" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="96" x2="112" y2="87" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="108" x2="112" y2="99" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="120" x2="112" y2="111" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="132" x2="112" y2="123" stroke="#3D5968" stroke-width="1.6"/>
+      <line x1="100" y1="26" x2="112" y2="18" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="37.4" x2="112" y2="29.4" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="48.8" x2="112" y2="40.8" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="60.2" x2="112" y2="52.2" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="71.6" x2="112" y2="63.6" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="83" x2="112" y2="75" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="94.4" x2="112" y2="86.4" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="105.8" x2="112" y2="97.8" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="117.2" x2="112" y2="109.2" stroke="#3D5968" stroke-width="1.6"/><line x1="100" y1="128.6" x2="112" y2="120.6" stroke="#3D5968" stroke-width="1.6"/>
+      <rect x="88" y="18" width="12" height="124" rx="2" fill="#F4F9F8" stroke="#294454" stroke-width="2.8"/>
+      <line x1="92" y1="30" x2="92" y2="90" stroke="#FFFFFF" stroke-width="2.2"/>
     </g>
 </svg>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>圆底烧瓶</title>
-<path d="M40.5 18 Q43.2 18 43.8 23 L53.4 86.318 A52 52 0 1 0 106.6 86.318 L116.2 23 Q116.8 18 119.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M59.5 18 Q56.8 18 56.2 23 L65.8 80.976 Q69.8 79.01 73.8 79.371 L73.8 23 Q73.2 18 70.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M89.5 18 Q86.8 18 86.2 23 L86.2 79.371 Q90.2 79.01 94.2 80.976 L103.8 23 Q103.2 18 100.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.913 55.371 Q17.498 54.62 19.653 57.378 L35.141 77.202 A62 62 0 1 0 124.859 77.202 L140.347 57.378 Q142.502 54.62 145.087 55.371" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M33.037 41.211 Q31.683 43.538 33.837 46.296 L49.325 66.12 A62 62 0 0 1 69.5 58.896 L69.5 29.5 Q69.5 26 66.5 25" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M93.5 25 Q90.5 26 90.5 29.5 L90.5 58.896 A62 62 0 0 1 110.675 66.12 L126.163 46.296 Q128.317 43.538 126.963 41.211" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35.028 73.483 Q41.925 71.267 45.745 65.11" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M71.7 55.896 Q80 58.396 88.3 55.896" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M114.255 65.11 Q118.075 71.267 124.972 73.483" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
 </svg>

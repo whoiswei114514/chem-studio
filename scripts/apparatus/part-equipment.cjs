@@ -22,10 +22,11 @@ module.exports = function registerEquipment(register) {
     segment: [x1, y1, x2, y2],
   });
   const basePort = (x, y) => ({ id: 'base', x, y, dx: 0, dy: 1, type: 'base', diameter: 0 });
+  const glassSw = C.glassSw || 2.8;
   const flamePaths = (cx, yTop, yBot, outerW, innerW) => {
     const h = yBot - yTop;
-    const outer = `M${r(cx)} ${r(yTop)} C${r(cx + outerW * 0.9)} ${r(yTop + h * 0.36)} ${r(cx + outerW)} ${r(yBot - h * 0.14)} ${r(cx)} ${r(yBot)} C${r(cx - outerW)} ${r(yBot - h * 0.14)} ${r(cx - outerW * 0.9)} ${r(yTop + h * 0.36)} ${r(cx)} ${r(yTop)} Z`;
-    const core = `M${r(cx)} ${r(yTop + h * 0.34)} C${r(cx + innerW)} ${r(yTop + h * 0.58)} ${r(cx + innerW)} ${r(yBot - h * 0.08)} ${r(cx)} ${r(yBot)} C${r(cx - innerW)} ${r(yBot - h * 0.08)} ${r(cx - innerW)} ${r(yTop + h * 0.58)} ${r(cx)} ${r(yTop + h * 0.34)} Z`;
+    const outer = `M${r(cx)} ${r(yTop)} C${r(cx + outerW * 0.72)} ${r(yTop + h * 0.36)} ${r(cx + outerW)} ${r(yBot - h * 0.12)} ${r(cx)} ${r(yBot)} C${r(cx - outerW)} ${r(yBot - h * 0.12)} ${r(cx - outerW * 0.72)} ${r(yTop + h * 0.36)} ${r(cx)} ${r(yTop)} Z`;
+    const core = `M${r(cx)} ${r(yTop + h * 0.38)} C${r(cx + innerW)} ${r(yTop + h * 0.62)} ${r(cx + innerW)} ${r(yBot - h * 0.08)} ${r(cx)} ${r(yBot)} C${r(cx - innerW)} ${r(yBot - h * 0.08)} ${r(cx - innerW)} ${r(yTop + h * 0.62)} ${r(cx)} ${r(yTop + h * 0.38)} Z`;
     return { outer, core };
   };
 
@@ -37,17 +38,19 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'bunsen';
     const cx = 85;
-    const { outer, core } = flamePaths(cx, 6, 48, 12, 5.5);
-    const flame = `<path d="${outer}" fill="${C.flameBlue}" stroke="${C.stroke}" stroke-width="1.8" stroke-linejoin="round"/>
+    const { outer, core } = flamePaths(cx, 6, 48, 12.5, 5.8);
+    const flame = `<path d="${outer}" fill="${C.flameBlue}" stroke="${C.stroke}" stroke-width="1.9" stroke-linejoin="round"/>
       <path d="${core}" fill="${C.flameCore}" stroke="none"/>`;
-    const gasPipe = `<path d="M95 130.5 H137 L142 131.5 L144 129.5 L153 130.5 V141.5 L144 142.5 L142 140.5 L137 141.5 H95 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
-    const base = `<path d="M24 164 C24 152 46 148 85 148 C124 148 146 152 146 164 L148 170 H22 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <ellipse cx="${cx}" cy="167" rx="62" ry="7" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="70" y="138" width="30" height="14" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2"/>`;
-    const collar = `<rect x="71" y="110" width="28" height="24" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <ellipse cx="${cx}" cy="122" rx="6" ry="5" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>`;
-    const chimney = `<rect x="75" y="48" width="20" height="64" rx="1.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="73" y="48" width="24" height="6" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const gasPipe = `<path d="M94 131.5 H131 L136 129.5 L138 131.5 L144 129.5 L146 131.5 L153 130.5 V141.5 L146 140.5 L144 142.5 L138 140.5 L136 142.5 L131 140.5 H94 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>`;
+    const base = `<path d="M26 168 C26 155 44 150 85 150 C126 150 144 155 144 168 L148 175 H22 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M34 164 Q85 157 136 164" fill="none" stroke="${C.inner}" stroke-width="1.4" stroke-linecap="round"/>
+      <rect x="20" y="173" width="130" height="6" rx="2.5" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <rect x="72" y="141" width="26" height="12" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.1"/>`;
+    const collar = `<rect x="74" y="114" width="22" height="23" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <ellipse cx="${cx}" cy="125.5" rx="4.5" ry="5.5" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <line x1="74" y1="118" x2="96" y2="118" stroke="${C.brassDark}" stroke-width="1.4"/>`;
+    const chimney = `<rect x="78" y="48" width="14" height="68" rx="1.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <rect x="75.5" y="48" width="19" height="6" rx="1.8" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>`;
     register(id, '本生灯', '加热', {
       width: 180,
       height: 190,
@@ -60,12 +63,12 @@ module.exports = function registerEquipment(register) {
     });
   }
 
-  // flame (180x190) — classic flat dual-tone flame
+  // flame (180x190) — tall tapered flat dual-tone Bunsen/alcohol flame
   {
     const id = 'flame';
     const cx = 90;
-    const body = `<path d="M${cx} 12 C${cx + 42} 54 ${cx + 58} 102 ${cx + 46} 142 C${cx + 36} 170 ${cx + 18} 178 ${cx} 178 C${cx - 22} 178 ${cx - 42} 166 ${cx - 48} 138 C${cx - 56} 100 ${cx - 32} 66 ${cx - 18} 44 C${cx - 12} 62 ${cx - 6} 66 ${cx - 4} 50 C${cx - 2} 32 ${cx} 22 ${cx} 12 Z" fill="#F4B942" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M${cx} 86 C${cx + 22} 112 ${cx + 25} 146 ${cx + 14} 164 C${cx + 6} 172 ${cx - 6} 172 ${cx - 14} 164 C${cx - 25} 146 ${cx - 22} 112 ${cx} 86 Z" fill="${C.coolant}" stroke="${C.stroke}" stroke-width="1.8" stroke-linejoin="round"/>`;
+    const body = `<path d="M${cx} 8 C${cx + 22} 54 ${cx + 42} 102 ${cx + 38} 142 C${cx + 34} 168 ${cx + 18} 180 ${cx} 180 C${cx - 18} 180 ${cx - 34} 168 ${cx - 38} 142 C${cx - 42} 102 ${cx - 22} 54 ${cx} 8 Z" fill="#F4B942" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M${cx} 68 C${cx + 15} 102 ${cx + 20} 144 ${cx + 13} 166 C${cx + 6} 175 ${cx - 6} 175 ${cx - 13} 166 C${cx - 20} 144 ${cx - 15} 102 ${cx} 68 Z" fill="${C.coolant}" stroke="${C.stroke}" stroke-width="1.8" stroke-linejoin="round"/>`;
     register(id, '火焰', '加热', {
       width: 180,
       height: 190,
@@ -78,19 +81,21 @@ module.exports = function registerEquipment(register) {
   // hot-plate (180x190) — surface: (90, 76)
   {
     const id = 'hot-plate';
-    const plate = `<rect x="14" y="76" width="152" height="14" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <line x1="22" y1="86" x2="158" y2="86" stroke="${C.tick}" stroke-width="1.3" stroke-linecap="round"/>`;
-    const body = S.chassis(id, 18, 90, 144, 72, { rx: 8 });
+    const plate = `<rect x="14" y="76" width="152" height="12" rx="3.5" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <line x1="22" y1="84" x2="158" y2="84" stroke="${C.muted}" stroke-width="1.2" stroke-linecap="round"/>
+      <rect x="26" y="88" width="128" height="4" fill="${C.inner}" stroke="none"/>`;
+    const body = S.chassis(id, 18, 91, 144, 71, { rx: 8, footInset: 16 });
     const oled = S.oledScreen(
       id,
-      30,
+      28,
       110,
       64,
       36,
-      S.screenText(62, 132, '180°C', 11.5, C.stroke)
+      S.screenText(60, 133, '180°C', 11.5, C.stroke)
     );
-    const knob = S.rotaryKnob(id, 128, 128, 13, 35, { teal: true, ticks: 7 });
-    const indicator = `<circle cx="104" cy="128" r="4" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.5"/>`;
+    const knob = S.rotaryKnob(id, 132, 128, 13.5, 35, { teal: true, ticks: 7 });
+    const indicator = `<circle cx="104" cy="128" r="4" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.5"/>
+      <rect x="148" y="148" width="10" height="4" rx="1" fill="${C.muted}"/>`;
     register(id, '加热板', '加热', {
       width: 180,
       height: 190,
@@ -103,20 +108,21 @@ module.exports = function registerEquipment(register) {
   // magnetic-stirrer-heater (180x190) — surface: (90, 76)
   {
     const id = 'magnetic-stirrer-heater';
-    const plate = `<rect x="14" y="76" width="152" height="14" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <line x1="76" y1="82" x2="104" y2="82" stroke="${C.teal}" stroke-width="2.2" stroke-linecap="round"/>`;
-    const body = S.chassis(id, 18, 90, 144, 72, { rx: 8 });
+    const plate = `<rect x="14" y="76" width="152" height="12" rx="3.5" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <line x1="74" y1="82" x2="106" y2="82" stroke="${C.teal}" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="26" y="88" width="128" height="4" fill="${C.inner}" stroke="none"/>`;
+    const body = S.chassis(id, 18, 91, 144, 71, { rx: 8, footInset: 16 });
     const oled = S.oledScreen(
       id,
       24,
-      106,
+      107,
       64,
       38,
-      S.screenText(56, 122, '350 rpm', 8.2, C.stroke) +
-        S.screenText(56, 136, '80.0 °C', 8.2, C.teal)
+      S.screenText(56, 123, '350 rpm', 8.2, C.stroke) +
+        S.screenText(56, 137, '80.0 °C', 8.2, C.teal)
     );
-    const k1 = S.rotaryKnob(id, 108, 125, 10, -25, { ticks: 5 });
-    const k2 = S.rotaryKnob(id, 142, 125, 10, 40, { teal: true, ticks: 5 });
+    const k1 = S.rotaryKnob(id, 108, 126, 10.5, -25, { ticks: 5 });
+    const k2 = S.rotaryKnob(id, 142, 126, 10.5, 40, { teal: true, ticks: 5 });
     register(id, '磁力加热搅拌器', '加热', {
       width: 180,
       height: 190,
@@ -129,14 +135,16 @@ module.exports = function registerEquipment(register) {
   // heating-mantle (180x190) — surface: (90, 56)
   {
     const id = 'heating-mantle';
-    const cup = `<path d="M22 56 H158 L148 118 Q90 132 32 118 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <ellipse cx="90" cy="56" rx="68" ry="15" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <ellipse cx="90" cy="57" rx="54" ry="10.5" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.6"/>
-      <path d="M44 58 Q90 66 136 58" fill="none" stroke="${C.tick}" stroke-width="1.2" stroke-dasharray="3 2"/>`;
-    const base = S.chassis(id, 24, 114, 132, 54, { rx: 6 });
-    const oled = S.oledScreen(id, 36, 130, 56, 26, S.screenText(64, 147, '150 °C', 9, C.stroke));
-    const knob = S.rotaryKnob(id, 128, 143, 10, 20, { teal: true, ticks: 5 });
-    const led = `<circle cx="104" cy="143" r="3.8" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.4"/>`;
+    const cup = `<path d="M20 56 H160 L152 114 Q90 128 28 114 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      ${S.ventSlots(34, 78, 4, 18, 6)}
+      ${S.ventSlots(128, 78, 4, 18, 6)}
+      <ellipse cx="90" cy="56" rx="70" ry="15" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <ellipse cx="90" cy="57" rx="54" ry="10.5" fill="${C.chassisBot}" stroke="${C.inner}" stroke-width="1.6"/>
+      <path d="M44 58 Q90 66 136 58" fill="none" stroke="${C.inner}" stroke-width="1.3" stroke-dasharray="3 2"/>`;
+    const base = S.chassis(id, 24, 112, 132, 56, { rx: 6 });
+    const oled = S.oledScreen(id, 36, 129, 56, 26, S.screenText(64, 146, '150 °C', 9, C.stroke));
+    const knob = S.rotaryKnob(id, 128, 142, 10.5, 20, { teal: true, ticks: 5 });
+    const led = `<circle cx="104" cy="142" r="3.8" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.4"/>`;
     register(id, '电热套', '加热', {
       width: 180,
       height: 190,
@@ -150,18 +158,19 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'sand-bath';
     const sandDots = [
-      [56, 56], [70, 53], [84, 57], [98, 53], [112, 56], [126, 55],
-      [64, 60], [78, 61], [92, 59], [106, 61], [120, 60],
+      [50, 56], [64, 52], [78, 56], [92, 52], [106, 56], [120, 53], [134, 57],
+      [58, 60], [72, 62], [86, 59], [100, 62], [114, 59], [128, 61],
     ]
       .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.3" fill="${C.brassDark}" stroke="none"/>`)
       .join('');
-    const pan = `<path d="M22 56 H158 L148 118 H32 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <ellipse cx="90" cy="56" rx="68" ry="13" fill="${C.corkLight}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <ellipse cx="90" cy="56" rx="58" ry="9" fill="#EAD79B" stroke="${C.brassDark}" stroke-width="1.2"/>
+    const pan = `<path d="M18 68 H10 Q8 68 8 73 V82 Q8 87 12 87 H22 M162 68 H170 Q172 68 172 73 V82 Q172 87 168 87 H158" fill="none" stroke="${C.stroke}" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M20 56 H160 L150 118 H30 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <ellipse cx="90" cy="56" rx="70" ry="13.5" fill="${C.corkLight}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <ellipse cx="90" cy="56" rx="60" ry="9.5" fill="#EAD79B" stroke="${C.brassDark}" stroke-width="1.2"/>
       ${sandDots}`;
-    const base = S.chassis(id, 26, 118, 128, 50, { rx: 6 });
-    const oled = S.oledScreen(id, 38, 132, 54, 24, S.screenText(65, 148, '220 °C', 8.5, C.stroke));
-    const knob = S.rotaryKnob(id, 128, 144, 9.5, 30, { teal: true });
+    const base = S.chassis(id, 26, 116, 128, 52, { rx: 6 });
+    const oled = S.oledScreen(id, 38, 131, 54, 25, S.screenText(65, 147, '220 °C', 8.5, C.stroke));
+    const knob = S.rotaryKnob(id, 128, 143, 10, 30, { teal: true, ticks: 5 });
     register(id, '砂浴', '加热', {
       width: 180,
       height: 190,
@@ -174,16 +183,17 @@ module.exports = function registerEquipment(register) {
   // kettle (180x190) — base: (85, 161)
   {
     const id = 'kettle';
-    const handle = `<path d="M128 76 H156 Q168 76 168 92 V132 Q168 144 152 144 H132" fill="none" stroke="${C.stroke}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M128 76 H156 Q168 76 168 92 V132 Q168 144 152 144 H132" fill="none" stroke="${C.inner}" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const spout = `<path d="M32 98 L10 56 L40 72 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>`;
-    const body = `<path d="M36 62 H128 L138 148 Q138 156 128 156 H42 Q32 156 32 148 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="28" y="154" width="114" height="8" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="44" y="48" width="76" height="14" rx="4" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="70" y="38" width="24" height="10" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="108" y="78" width="12" height="58" rx="3" fill="${C.glassTop}" stroke="${C.inner}" stroke-width="1.6"/>
-      <rect x="110" y="96" width="8" height="38" rx="2" fill="${C.liquid}" stroke="none"/>
-      ${S.gradTicks(118, 84, 130, 4, 2, 4, { dir: -1 })}`;
+    const handle = `<path d="M124 54 H154 Q166 54 166 70 V126 Q166 140 150 140 H134" fill="none" stroke="${C.stroke}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M124 54 H154 Q166 54 166 70 V126 Q166 140 150 140 H134" fill="none" stroke="${C.inner}" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const spout = `<path d="M36 72 L12 42 L18 39 L40 50 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>`;
+    const body = `<path d="M40 38 H120 L136 148 Q136 155 126 155 H34 Q24 155 24 148 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M38 40 L26 148 H35 L46 40 Z" fill="${C.chassisTop}" stroke="none" opacity="0.65"/>
+      <rect x="20" y="153" width="120" height="8" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <path d="M40 38 C42 26 118 26 120 38 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="68" y="21" width="24" height="8" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <rect x="104" y="58" width="12" height="72" rx="3" fill="${C.glassTop}" stroke="${C.inner}" stroke-width="1.6"/>
+      <rect x="106" y="84" width="8" height="44" rx="2" fill="${C.coolant}" stroke="none"/>
+      ${S.gradTicks(114, 66, 122, 4, 2, 4, { dir: -1 })}`;
     register(id, '水壶', '加热', {
       width: 180,
       height: 190,
@@ -194,26 +204,32 @@ module.exports = function registerEquipment(register) {
   }
 
   // ice-bath (160x200) — mouth: (76.5, 34, d=121, edge=[16,34,137,34]), base: (80, 182)
+  // Unsealed open glass bath rim (NO closing horizontal line across mouth!)
   {
     const id = 'ice-bath';
-    const bathFluid = `<path d="M28 74 Q82 80 135 74 V166 Q135 178 124 178 H39 Q28 178 28 166 Z" fill="${C.coolantLight}" stroke="${C.inner}" stroke-width="1.3"/>`;
+    const glassBody = `<path d="M16 34 L27 42 V167 Q27 180 40 180 H124 Q137 180 137 167 V34 Z" fill="${C.glassTop}" stroke="none"/>`;
+    const bathFluid = `<path d="M27 72 Q82 78 137 72 V167 Q137 179 124 179 H40 Q27 179 27 167 Z" fill="${C.coolantLight}" stroke="none"/>
+      <path d="M28 72 Q82 77 136 72" fill="none" stroke="${C.teal}" stroke-width="1.5" stroke-linecap="round"/>`;
     const cubes = [
-      [48, 98, 25, -12],
-      [84, 88, 27, 15],
-      [64, 130, 24, 8],
-      [100, 126, 25, -18],
+      [48, 98, 25, -14],
+      [82, 86, 26, 14],
+      [112, 102, 24, -8],
+      [62, 132, 24, 9],
+      [98, 128, 25, -18],
+      [78, 156, 22, 6],
     ]
       .map(
         ([x, y, s, deg]) =>
-          `<g transform="translate(${x},${y}) rotate(${deg})"><rect x="${-s / 2}" y="${-s / 2}" width="${s}" height="${s}" rx="4" fill="${C.glass}" stroke="${C.stroke}" stroke-width="1.8"/></g>`
+          `<g transform="translate(${x},${y}) rotate(${deg})"><rect x="${-s / 2}" y="${-s / 2}" width="${s}" height="${s}" rx="4" fill="${C.glass}" stroke="${C.stroke}" stroke-width="1.8"/><line x1="${-s / 4}" y1="${-s / 3}" x2="${s / 4}" y2="${-s / 3}" stroke="${C.chassisTop}" stroke-width="1.6" stroke-linecap="round"/></g>`
       )
       .join('\n  ');
-    const wall = `<path d="M16 34 L27 42 V167 Q27 180 40 180 H125 Q137 180 137 167 V34" fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M27 34 Q82 40 137 34" fill="none" stroke="${C.tick}" stroke-width="1.4" stroke-linecap="round"/>`;
+    const wall = `<path d="M16 34 L27 42 V167 Q27 180 40 180 H124 Q137 180 137 167 V34" fill="none" stroke="${C.stroke}" stroke-width="${glassSw}" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="137" y1="34" x2="142" y2="30" stroke="${C.stroke}" stroke-width="${glassSw}" stroke-linecap="round"/>
+      <path d="M33 48 V162" fill="none" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round"/>`;
     register(id, '冰浴', '容器', {
       width: 160,
       height: 200,
-      svg: `${bathFluid}\n  ${cubes}\n  ${wall}`,
+      svg: `${glassBody}\n  ${bathFluid}\n  ${cubes}\n  ${wall}`,
       search: 'ice bath 冰浴 冰水浴槽 低温冷却槽',
       ports: [
         {
@@ -234,12 +250,12 @@ module.exports = function registerEquipment(register) {
   }
 
   // water-bath (160x200) — mouth: (76.5, 34, d=121, edge=[16,34,137,34]), base: (80, 182)
-  // Authentic classic flat matte thermostatic water bath with stainless top ring & light #EEF6F1 controller
+  // Recessed open-mouth stainless deck (unsealed top gap between flanges) + light #EEF6F1 controller
   {
     const id = 'water-bath';
-    const topDeck = `<rect x="16" y="34" width="121" height="12" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="28" y="34" width="97" height="5" rx="2" fill="${C.coolant}" stroke="${C.inner}" stroke-width="1.3"/>
-      <rect x="38" y="39" width="77" height="4" rx="1.5" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.2"/>`;
+    const topOpening = `<rect x="30" y="34" width="93" height="10" fill="${C.coolant}" stroke="none"/>
+      <path d="M16 34 V46 H137 V34 H123 V40 H30 V34 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M32 39 Q76.5 42 121 39" fill="none" stroke="${C.teal}" stroke-width="1.5" stroke-linecap="round"/>`;
     const handles = `<path d="M22 66 H14 Q10 66 10 72 V86 Q10 92 14 92 H22" fill="none" stroke="${C.stroke}" stroke-width="2.3" stroke-linecap="round"/>
       <path d="M131 66 H139 Q143 66 143 72 V86 Q143 92 139 92 H131" fill="none" stroke="${C.stroke}" stroke-width="2.3" stroke-linecap="round"/>`;
     const body = `<rect x="22" y="46" width="109" height="130" rx="5" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3"/>
@@ -261,7 +277,7 @@ module.exports = function registerEquipment(register) {
     register(id, '水浴锅', '容器', {
       width: 160,
       height: 200,
-      svg: `${handles}\n  ${body}\n  ${topDeck}\n  ${ctrl}`,
+      svg: `${handles}\n  ${body}\n  ${topOpening}\n  ${ctrl}`,
       search: 'water bath thermostatic bath 水浴锅 恒温水浴锅 恒温加热水浴槽',
       ports: [
         {
@@ -285,18 +301,17 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'oven';
     const body = S.chassis(id, 14, 14, 152, 156, { rx: 7, footH: 5 });
-    const door = `<rect x="22" y="28" width="96" height="132" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="31" y="40" width="78" height="106" rx="3" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <line x1="35" y1="88" x2="105" y2="88" stroke="${C.inner}" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="35" y1="126" x2="105" y2="126" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round"/>
-      <rect x="111" y="74" width="5" height="36" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.6"/>`;
-    const panel = `<rect x="122" y="28" width="37" height="132" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="125" y="35" width="31" height="25" rx="2.5" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.4"/>
-      ${S.screenText(140.5, 47, '105', 8.5, C.stroke)}
-      ${S.screenText(140.5, 56, '°C', 6.5, C.teal)}
-      ${S.rotaryKnob(id, 140.5, 86, 8.5, 25, { teal: true })}
-      <circle cx="140.5" cy="116" r="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.3"/>
-      <rect x="133" y="132" width="15" height="16" rx="2" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.5"/>`;
+    const door = `<rect x="22" y="28" width="90" height="132" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="30" y="40" width="74" height="106" rx="3" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <line x1="34" y1="88" x2="100" y2="88" stroke="${C.inner}" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="34" y1="126" x2="100" y2="126" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="105" y="74" width="5" height="36" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.6"/>`;
+    const panel = `<rect x="116" y="28" width="44" height="132" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <rect x="120" y="35" width="36" height="22" rx="2.5" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.4"/>
+      ${S.screenText(138, 49.5, '105°C', 7.8, C.stroke)}
+      ${S.rotaryKnob(id, 138, 86, 9, 25, { teal: true })}
+      <circle cx="138" cy="116" r="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.3"/>
+      <rect x="130" y="132" width="16" height="16" rx="2" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.5"/>`;
     register(id, '烘箱', '加热', {
       width: 180,
       height: 190,
@@ -309,8 +324,9 @@ module.exports = function registerEquipment(register) {
   // magnetic-stir-bar (180x120) — contents: (90, 58)
   {
     const id = 'magnetic-stir-bar';
-    const bar = `<rect x="36" y="44" width="108" height="28" rx="9" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="85" y="42" width="10" height="32" rx="3" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.8"/>`;
+    const bar = `<rect x="24" y="40" width="132" height="36" rx="14" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <line x1="40" y1="47" x2="140" y2="47" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="84" y="37" width="12" height="42" rx="3.5" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.8"/>`;
     register(id, '磁力搅拌子', '实验小工具', {
       width: 180,
       height: 120,
@@ -323,8 +339,9 @@ module.exports = function registerEquipment(register) {
   // stirbar2 (180x120) — contents: (90, 58)
   {
     const id = 'stirbar2';
-    const bar = `<ellipse cx="90" cy="58" rx="50" ry="17" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <path d="M90 41 C94 49 94 67 90 75" fill="none" stroke="${C.tick}" stroke-width="1.5"/>`;
+    const bar = `<ellipse cx="90" cy="58" rx="60" ry="21" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <path d="M46 47 Q90 42 134 47" fill="none" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round"/>
+      <path d="M90 37 C95 47 95 69 90 79" fill="none" stroke="${C.tick}" stroke-width="1.6"/>`;
     register(id, '椭圆搅拌子', '实验小工具', {
       width: 180,
       height: 120,
@@ -338,14 +355,15 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'wire-gauze';
     let grid = '';
-    for (let x = 30; x <= 150; x += 10) grid += strokeLine(x, 22, x, 98, 0.95, C.tick);
-    for (let y = 26; y <= 94; y += 10) grid += strokeLine(24, y, 156, y, 0.95, C.tick);
+    for (let x = 30; x <= 150; x += 10) grid += strokeLine(x, 21, x, 99, 0.95, C.tick);
+    for (let y = 25; y <= 95; y += 10) grid += strokeLine(24, y, 156, y, 0.95, C.tick);
     const frame = `<rect x="20" y="16" width="140" height="88" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3"/>
       ${grid}
       <rect x="20" y="16" width="140" height="88" rx="4" fill="none" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="23" y="19" width="134" height="82" rx="2" fill="none" stroke="${C.chassisBot}" stroke-width="2.4"/>
-      <ellipse cx="90" cy="60" rx="34" ry="28" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <ellipse cx="90" cy="60" rx="27" ry="21" fill="none" stroke="${C.muted}" stroke-width="1.1" stroke-dasharray="3 2"/>`;
+      <rect x="23" y="19" width="134" height="82" rx="2" fill="none" stroke="${C.chassisBot}" stroke-width="2.6"/>
+      <path d="M20 26 L30 16 M150 16 L160 26 M20 94 L30 104 M150 104 L160 94" stroke="${C.stroke}" stroke-width="1.6" stroke-linecap="round"/>
+      <ellipse cx="90" cy="60" rx="35" ry="29" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="1.9"/>
+      <ellipse cx="90" cy="60" rx="27" ry="21" fill="none" stroke="${C.muted}" stroke-width="1.2" stroke-dasharray="3 2"/>`;
     register(id, '金属纱网', '实验小工具', {
       width: 180,
       height: 120,
@@ -358,11 +376,13 @@ module.exports = function registerEquipment(register) {
   // clay-triangle (180x120) — surface: (90, 64)
   {
     const id = 'clay-triangle';
-    const wire = `<path d="M30 98 L90 14 L150 98 Z" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>`;
+    const wire = `<path d="M30 98 L90 14 L150 98 Z" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>
+      <path d="M26 101 L18 106 M154 101 L162 106 M90 14 V6" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>`;
     const sleeves = `
-      <rect x="60" y="92" width="60" height="12" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <g transform="translate(60, 56) rotate(-54.5)"><rect x="-28" y="-6" width="56" height="12" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.0"/></g>
-      <g transform="translate(120, 56) rotate(54.5)"><rect x="-28" y="-6" width="56" height="12" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.0"/></g>`;
+      <rect x="60" y="92" width="60" height="12" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <line x1="68" y1="95" x2="112" y2="95" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+      <g transform="translate(60, 56) rotate(-54.5)"><rect x="-28" y="-6" width="56" height="12" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.1"/></g>
+      <g transform="translate(120, 56) rotate(54.5)"><rect x="-28" y="-6" width="56" height="12" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.1"/></g>`;
     register(id, '泥三角', '实验小工具', {
       width: 180,
       height: 120,
@@ -376,14 +396,17 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'tripod';
     const legs = `
-      <path d="M34 40 L18 182 H25 L42 42 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M146 40 L162 182 H155 L138 42 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <rect x="86.5" y="45" width="7" height="144" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="16" y="180" width="11" height="6" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="153" y="180" width="11" height="6" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="84.5" y="185" width="11" height="6" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>`;
-    const ring = `<ellipse cx="90" cy="34" rx="60" ry="13" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <ellipse cx="90" cy="34" rx="46" ry="8" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.0"/>`;
+      <path d="M35 42 L17 183 H25 L43 44 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M145 42 L163 183 H155 L137 44 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="86.5" y="45" width="7" height="145" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="33" y="41" width="12" height="9" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="135" y="41" width="12" height="9" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="15" y="181" width="12" height="6" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="153" y="181" width="12" height="6" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="84" y="187" width="12" height="6" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.6"/>`;
+    const ring = `<path d="M30 34 A60 13 0 1 0 150 34 V40 A60 13 0 1 1 30 40 Z" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <ellipse cx="90" cy="34" rx="60" ry="13" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <ellipse cx="90" cy="34" rx="45" ry="7.8" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.1"/>`;
     register(id, '三脚架', '支撑与夹持', {
       width: 180,
       height: 200,
@@ -394,16 +417,18 @@ module.exports = function registerEquipment(register) {
   }
 
   // crucible (170x135) — mouth: (85, 26, d=110)
+  // Unsealed open flared ceramic rim (NO flat closing top bar)
   {
     const id = 'crucible';
-    const body = `<path d="M30 26 L46 112 Q50 124 85 124 Q120 124 124 112 L140 26 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M52 117 Q85 124 118 117" fill="none" stroke="${C.tick}" stroke-width="1.3"/>
-      <ellipse cx="85" cy="26" rx="55" ry="10" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <ellipse cx="85" cy="26" rx="47" ry="6.5" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.3"/>`;
+    const fill = `<path d="M29 26 L36 33 L46 112 Q50 124 85 124 Q120 124 124 112 L134 33 L141 26 Z" fill="${C.porcelainMid}" stroke="none"/>`;
+    const shade = `<path d="M37 35 Q85 41 133 35" fill="none" stroke="${C.tick}" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M44 46 L52 108" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M52 117 Q85 124 118 117" fill="none" stroke="${C.tick}" stroke-width="1.4"/>`;
+    const wall = `<path d="M29 26 L36 33 L46 112 Q50 124 85 124 Q120 124 124 112 L134 33 L141 26" fill="none" stroke="${C.stroke}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`;
     register(id, '坩埚', '陶瓷', {
       width: 170,
       height: 135,
-      svg: body,
+      svg: `${fill}\n  ${shade}\n  ${wall}`,
       search: 'crucible 坩埚 瓷坩埚 灼烧容器 高温灰化',
       ports: [{ id: 'mouth', x: 85, y: 26, dx: 0, dy: -1, type: 'mouth', diameter: 110 }],
     });
@@ -412,9 +437,10 @@ module.exports = function registerEquipment(register) {
   // crucible-cover (170x135) — lid: (85, 96, d=133)
   {
     const id = 'crucible-cover';
-    const cover = `<path d="M74 52 C74 42 96 42 96 52 L92 66 H78 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M18 96 Q85 46 152 96 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="18" y="92" width="134" height="6" rx="3" fill="${C.porcelainTop}" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const cover = `<path d="M74 52 C74 42 96 42 96 52 L92 66 H78 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M18 96 Q85 45 152 96 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M42 84 Q85 57 128 84" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <rect x="18" y="92" width="134" height="6" rx="3" fill="${C.porcelainTop}" stroke="${C.stroke}" stroke-width="2.3"/>`;
     register(id, '坩埚盖', '陶瓷', {
       width: 170,
       height: 135,
@@ -425,41 +451,47 @@ module.exports = function registerEquipment(register) {
   }
 
   // evaporating-dish (160x70) — base: (80, 52)
+  // Unsealed open wide shallow porcelain dish with pouring lip flare
   {
     const id = 'evaporating-dish';
-    const dish = `<path d="M12 18 C16 42 36 52 54 52 H106 C124 52 144 42 148 18 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M50 52 H110" fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse cx="80" cy="18" rx="68" ry="9.5" fill="${C.porcelainTop}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <ellipse cx="80" cy="18.5" rx="60" ry="6.2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.2"/>`;
+    const fill = `<path d="M12 18 L20 26 C26 44 42 52 54 52 H106 C118 52 134 44 140 26 L148 18 Z" fill="${C.porcelainMid}" stroke="none"/>`;
+    const detail = `<path d="M22 25 Q80 31 138 25" fill="none" stroke="${C.tick}" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M50 52 H110" fill="none" stroke="${C.stroke}" stroke-width="2.5" stroke-linecap="round"/>`;
+    const wall = `<path d="M12 18 L20 26 C26 44 42 52 54 52 H106 C118 52 134 44 140 26 L148 18" fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
     register(id, '蒸发皿', '容器', {
       width: 160,
       height: 70,
-      svg: dish,
+      svg: `${fill}\n  ${detail}\n  ${wall}`,
       search: 'evaporating dish 蒸发皿 瓷蒸发皿 浓缩结晶',
       ports: [basePort(80, 52)],
     });
   }
 
   // mortar (170x135) — mouth: (85, 38, d=140)
+  // Heavy glazed porcelain mortar with pouring lip flare & pedestal base (unsealed open top)
   {
     const id = 'mortar';
-    const bowl = `<path d="M15 38 C16 90 42 114 54 116 V122 H116 V116 C128 114 154 90 155 38 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <ellipse cx="85" cy="38" rx="70" ry="15" fill="${C.porcelainTop}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <ellipse cx="85" cy="39" rx="58" ry="10.5" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>`;
+    const fill = `<path d="M14 38 L22 48 C25 90 44 111 54 114 V122 H116 V114 C126 111 145 90 148 48 L156 38 Z" fill="${C.porcelainMid}" stroke="none"/>`;
+    const rim = `<path d="M24 46 Q85 56 146 46" fill="none" stroke="${C.tick}" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M32 58 C34 86 46 100 56 104" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
+      <line x1="54" y1="114" x2="116" y2="114" stroke="${C.inner}" stroke-width="1.6"/>`;
+    const wall = `<path d="M14 38 L22 48 C25 90 44 111 54 114 V122 H116 V114 C126 111 145 90 148 48 L156 38" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`;
     register(id, '研钵', '陶瓷', {
       width: 170,
       height: 135,
-      svg: bowl,
+      svg: `${fill}\n  ${rim}\n  ${wall}`,
       search: 'mortar 研钵 瓷研钵 研磨固体',
       ports: [{ id: 'mouth', x: 85, y: 38, dx: 0, dy: -1, type: 'mouth', diameter: 140 }],
     });
   }
 
   // pestle (180x120) — probe: (170, 58, d=12, seg=[150,58,30,58])
+  // Bold heavy porcelain pestle club silhouette matching mortar weight
   {
     const id = 'pestle';
-    const body = `<path d="M18 51 C12 51 12 65 18 65 L122 71 C138 77 170 76 170 58 C170 40 138 39 122 45 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M128 45 C124 53 124 63 128 71" fill="none" stroke="${C.tick}" stroke-width="1.2" stroke-dasharray="2 2"/>`;
+    const body = `<path d="M18 47 C9 47 9 69 18 69 L112 77 C134 86 170 84 170 58 C170 32 134 30 112 39 Z" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M24 52 L114 44 C132 38 152 40 158 46" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M126 42 C121 52 121 64 126 74" fill="none" stroke="${C.tick}" stroke-width="1.4" stroke-dasharray="2.5 2.5"/>`;
     register(id, '研杵', '实验小工具', {
       width: 180,
       height: 120,
@@ -497,8 +529,9 @@ module.exports = function registerEquipment(register) {
   // weight-boat (160x70) — base: (80, 52)
   {
     const id = 'weight-boat';
-    const boat = `<path d="M14 14 H146 L130 52 H30 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M22 18 H138 L124 47 H36 Z" fill="${C.chassisTop}" stroke="${C.tick}" stroke-width="1.3" stroke-linejoin="round"/>`;
+    const boat = `<path d="M12 14 H148 L131 52 H29 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M21 18 H139 L125 47 H35 Z" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.4" stroke-linejoin="round"/>
+      <line x1="12" y1="14" x2="148" y2="14" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>`;
     register(id, '称量舟', '容器', {
       width: 160,
       height: 70,
@@ -543,13 +576,14 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'sieve';
     let mesh = '';
-    for (let x = 44; x <= 136; x += 9) mesh += strokeLine(x, 22, x, 90, 0.9, C.tick);
-    for (let y = 26; y <= 88; y += 9) mesh += strokeLine(34, y, 146, y, 0.9, C.tick);
-    const body = `<rect x="26" y="16" width="128" height="86" rx="4" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="34" y="22" width="112" height="68" rx="3" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.6"/>
+    for (let x = 42; x <= 138; x += 9) mesh += strokeLine(x, 22, x, 86, 0.95, C.tick);
+    for (let y = 26; y <= 84; y += 9) mesh += strokeLine(34, y, 146, y, 0.95, C.tick);
+    const body = `<path d="M22 16 H158 L150 96 Q150 104 142 104 H38 Q30 104 30 96 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <rect x="22" y="16" width="136" height="10" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="33" y="23" width="114" height="63" rx="3" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.6"/>
       ${mesh}
-      <rect x="34" y="22" width="112" height="68" rx="3" fill="none" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="26" y="94" width="128" height="8" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>`;
+      <rect x="33" y="23" width="114" height="63" rx="3" fill="none" stroke="${C.stroke}" stroke-width="1.8"/>
+      <rect x="31" y="92" width="118" height="8" rx="2" fill="${C.brassDark}" stroke="${C.stroke}" stroke-width="1.8"/>`;
     register(id, '筛网', '实验小工具', {
       width: 180,
       height: 120,
@@ -584,8 +618,8 @@ module.exports = function registerEquipment(register) {
   // tlc-spot (180x150) — spot: (90, 74)
   {
     const id = 'tlc-spot';
-    const spot = `<ellipse cx="90" cy="74" rx="18" ry="12" fill="${C.tealLight}" stroke="${C.teal}" stroke-width="1.3" stroke-dasharray="3 2"/>
-      <ellipse cx="90" cy="74" rx="11" ry="7.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.9"/>`;
+    const spot = `<ellipse cx="90" cy="74" rx="24" ry="16" fill="${C.tealLight}" stroke="${C.teal}" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <ellipse cx="90" cy="74" rx="15" ry="10" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.1"/>`;
     register(id, '色谱斑点', '测量与防护', {
       width: 180,
       height: 150,
@@ -598,18 +632,23 @@ module.exports = function registerEquipment(register) {
   // vacuum-pump (200x170) — inlet: (137, 55, d=12)
   {
     const id = 'vacuum-pump';
-    const inletBarb = `<path d="M132 82 V68 L130 66 L131 55 H143 L144 66 L142 68 V82 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const inletBarb = `<path d="M132 82 V68 L130 66 L131 55 H143 L144 66 L142 68 V82 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
+      <line x1="131" y1="61" x2="143" y2="61" stroke="${C.brassDark}" stroke-width="1.4"/>`;
     const housing = S.chassis(id, 18, 70, 96, 80, { rx: 8 }) +
       S.chassis(id, 110, 82, 72, 68, { rx: 5, accentBar: false, footInset: 10 });
     const fan = `<circle cx="66" cy="112" r="28" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
       <circle cx="66" cy="112" r="22" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.3"/>
-      ${S.ventSlots(46, 98, 6, 40, 5.5)}`;
-    const gauge = `<circle cx="152" cy="114" r="16" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <path d="M142 119 A11 11 0 1 1 162 119" fill="none" stroke="${C.teal}" stroke-width="1.8"/>
-      <line x1="152" y1="114" x2="144" y2="106" stroke="${C.red}" stroke-width="2.0" stroke-linecap="round"/>
-      <circle cx="152" cy="114" r="2.5" fill="${C.stroke}" stroke="none"/>
-      <rect x="122" y="132" width="14" height="10" rx="2" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.5"/>
-      <path d="M52 70 V58 H88 V70" fill="none" stroke="${C.stroke}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+      ${S.ventSlots(46, 98, 6, 40, 5.5)}
+      <line x1="36" y1="62" x2="36" y2="70" stroke="${C.inner}" stroke-width="3"/>
+      <line x1="46" y1="62" x2="46" y2="70" stroke="${C.inner}" stroke-width="3"/>
+      <line x1="94" y1="62" x2="94" y2="70" stroke="${C.inner}" stroke-width="3"/>`;
+    const gauge = `<circle cx="152" cy="113" r="16" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <path d="M142 118 A11 11 0 1 1 162 118" fill="none" stroke="${C.teal}" stroke-width="1.8"/>
+      <line x1="152" y1="113" x2="144" y2="105" stroke="${C.red}" stroke-width="2.0" stroke-linecap="round"/>
+      <circle cx="152" cy="113" r="2.5" fill="${C.stroke}" stroke="none"/>
+      <circle cx="122" cy="108" r="5" fill="${C.coolant}" stroke="${C.stroke}" stroke-width="1.5"/>
+      <rect x="118" y="130" width="16" height="11" rx="2" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.5"/>
+      <path d="M50 70 V55 H90 V70" fill="none" stroke="${C.stroke}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>`;
     register(id, '真空泵', '设备', {
       width: 200,
       height: 170,
@@ -637,6 +676,7 @@ module.exports = function registerEquipment(register) {
     const cradle = `<rect x="20" y="61" width="19" height="8" rx="1.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
       <rect x="39" y="51" width="88" height="28" rx="3" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="2.2"/>
       <rect x="42" y="55" width="54" height="20" fill="${C.liquid}" stroke="none"/>
+      ${S.gradTicks(52, 52, 92, 6, 3, 5, { dir: 1, vertical: false })}
       <rect x="96" y="54" width="12" height="22" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>
       <line x1="108" y1="65" x2="152" y2="65" stroke="${C.stroke}" stroke-width="5" stroke-linecap="round"/>
       <rect x="125" y="45" width="7" height="40" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8"/>
@@ -653,12 +693,15 @@ module.exports = function registerEquipment(register) {
   // gas-cylinder (110x240) — outlet: (80, 18, d=10)
   {
     const id = 'gas-cylinder';
-    const valve = `<rect x="47" y="14" width="16" height="16" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="39" y="7" width="32" height="6" rx="2.5" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
+    const valve = `<rect x="47" y="14" width="16" height="17" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <rect x="38" y="6" width="34" height="6" rx="2.5" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
       <path d="M63 13 H80 V23 H63 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="40" cy="21" r="6.5" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <line x1="40" y1="21" x2="43" y2="17" stroke="${C.red}" stroke-width="1.5"/>`;
-    const body = `<path d="M23 224 V58 C23 36 37 28 55 28 C73 28 87 36 87 58 V224 Q87 230 80 230 H30 Q23 230 23 224 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <line x1="74" y1="13" x2="74" y2="23" stroke="${C.brassDark}" stroke-width="1.3"/>
+      <circle cx="38" cy="21" r="7.5" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="1.9"/>
+      <line x1="38" y1="21" x2="42" y2="16.5" stroke="${C.red}" stroke-width="1.7" stroke-linecap="round"/>`;
+    const body = `<path d="M23 224 V58 C23 36 37 28 55 28 C73 28 87 36 87 58 V224 Q87 230 80 230 H30 Q23 230 23 224 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M31 60 C31 44 40 37 48 35" fill="none" stroke="${C.tealLight}" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="43" y="28" width="24" height="7" rx="2" fill="${C.brassDark}" stroke="${C.stroke}" stroke-width="1.6"/>
       <rect x="23" y="216" width="64" height="12" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
       <rect x="33" y="88" width="44" height="58" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="1.8"/>
       ${S.labelText(55, 118, 'GAS', 13, C.stroke)}
@@ -675,11 +718,12 @@ module.exports = function registerEquipment(register) {
   // ring-with-gauze [NEW] (180x200) — clamp: (16,72), surface: (119,66, seg:[78,66,160,66])
   {
     const id = 'ring-with-gauze';
-    const arm = `<rect x="16" y="64" width="14" height="16" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="6" y="69" width="10" height="6" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="30" y="69" width="48" height="6" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>`;
-    const ringFront = `<path d="M76 74 A43 11 0 0 0 162 74" fill="none" stroke="${C.stroke}" stroke-width="6.2" stroke-linecap="round"/>
-      <path d="M76 74 A43 11 0 0 0 162 74" fill="none" stroke="${C.chassisBot}" stroke-width="2.6" stroke-linecap="round"/>`;
+    const arm = `<rect x="16" y="63" width="15" height="18" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="4" y="69" width="12" height="6" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <line x1="6" y1="65" x2="6" y2="79" stroke="${C.stroke}" stroke-width="2.8" stroke-linecap="round"/>
+      <rect x="31" y="69" width="46" height="6" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const ringFront = `<path d="M76 74 A43 11.5 0 0 0 162 74" fill="none" stroke="${C.stroke}" stroke-width="6.4" stroke-linecap="round"/>
+      <path d="M76 74 A43 11.5 0 0 0 162 74" fill="none" stroke="${C.chassisBot}" stroke-width="2.6" stroke-linecap="round"/>`;
     let mesh = '';
     for (let x = 80; x <= 158; x += 8) mesh += strokeLine(x, 60, x, 72, 0.9, C.tick);
     const gauze = `<path d="M70 61 H168 L161 73 H77 Z" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
@@ -702,11 +746,11 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'combustion-spoon';
     const cx = 35;
-    const handle = `<path d="M${cx - 6} 18 A6 6 0 1 1 ${cx + 6} 18 V32 H${cx - 6} Z" fill="none" stroke="${C.stroke}" stroke-width="2.8"/>
+    const handle = `<path d="M${cx - 6.5} 18 A6.5 6.5 0 1 1 ${cx + 6.5} 18 V32 H${cx - 6.5} Z" fill="none" stroke="${C.stroke}" stroke-width="2.8"/>
       <rect x="20" y="30" width="30" height="7" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="${cx - 2.2}" y="37" width="4.4" height="148" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.8"/>`;
-    const cup = `<path d="M${cx - 10} 183 H${cx + 10} C${cx + 10} 197 ${cx - 10} 197 ${cx - 10} 183 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <ellipse cx="${cx}" cy="183" rx="10" ry="3.2" fill="${C.brassLight}" stroke="${C.stroke}" stroke-width="1.6"/>`;
+      <rect x="${cx - 2.3}" y="37" width="4.6" height="146" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.9"/>`;
+    const cup = `<path d="M${cx - 10.5} 182 H${cx + 10.5} C${cx + 10.5} 197 ${cx - 10.5} 197 ${cx - 10.5} 182 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
+      <ellipse cx="${cx}" cy="182" rx="10.5" ry="3.4" fill="${C.brassLight}" stroke="${C.stroke}" stroke-width="1.7"/>`;
     register(id, '燃烧匙', '加热', {
       width: 70,
       height: 210,
@@ -736,11 +780,13 @@ module.exports = function registerEquipment(register) {
   // retort-stand (180x200) — rail: (40, 75, d=7, seg:[40,20,40,170])
   {
     const id = 'retort-stand';
-    const base = `<rect x="14" y="176" width="152" height="14" rx="4" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="24" y="190" width="16" height="4" rx="1.5" fill="${C.stroke}"/>
-      <rect x="140" y="190" width="16" height="4" rx="1.5" fill="${C.stroke}"/>`;
-    const rod = `<rect x="33" y="167" width="14" height="10" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="36.5" y="10" width="7" height="160" rx="2.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const base = `<path d="M18 176 H162 L168 188 H12 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <rect x="12" y="185" width="156" height="6" rx="2.5" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <rect x="22" y="191" width="16" height="3.5" rx="1.5" fill="${C.stroke}"/>
+      <rect x="142" y="191" width="16" height="3.5" rx="1.5" fill="${C.stroke}"/>`;
+    const rod = `<rect x="31" y="168" width="18" height="9" rx="2.5" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="36.5" y="10" width="7" height="160" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <line x1="39" y1="14" x2="39" y2="165" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"/>`;
     register(id, '铁架台', '支撑与夹持', {
       width: 180,
       height: 200,
@@ -753,19 +799,22 @@ module.exports = function registerEquipment(register) {
   // clamp (180x200) — clamp: (12,100, d=8), grip: (146,100, d=25)
   {
     const id = 'clamp';
-    const body = `<rect x="12" y="90" width="18" height="20" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="4" y="97" width="8" height="6" rx="2" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="30" y="96.5" width="66" height="7" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="96" cy="100" r="7" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <path d="M98 96 L124 70 H158 C164 70 164 78 156 78 H128 L106 98 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M98 104 L124 130 H158 C164 130 164 122 156 122 H128 L106 102 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <rect x="136" y="70" width="22" height="7" rx="2.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="136" y="123" width="22" height="7" rx="2.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <line x1="130" y1="78" x2="130" y2="122" stroke="${C.stroke}" stroke-width="2.2" stroke-linecap="round"/>`;
+    const bosshead = `<rect x="12" y="88" width="18" height="24" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="3" y="97" width="9" height="6" rx="1.5" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <line x1="4" y1="92" x2="4" y2="108" stroke="${C.stroke}" stroke-width="2.8" stroke-linecap="round"/>`;
+    const shaft = `<rect x="30" y="96.5" width="66" height="7" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="64" y="93" width="12" height="14" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.8"/>`;
+    const jaws = `<path d="M96 95 C108 92 118 71 135 71 H158 C164 71 164 78 158 78 H137 C124 78 114 96 102 99 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>
+      <path d="M96 105 C108 108 118 129 135 129 H158 C164 129 164 122 158 122 H137 C124 122 114 104 102 101 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>
+      <rect x="134" y="71" width="25" height="7" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.7"/>
+      <rect x="134" y="122" width="25" height="7" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.7"/>
+      <circle cx="96" cy="100" r="6.5" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <line x1="128" y1="78" x2="128" y2="122" stroke="${C.stroke}" stroke-width="2.0" stroke-linecap="round"/>
+      <rect x="124.5" y="129" width="7" height="7" rx="1.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.5"/>`;
     register(id, '万能夹', '支撑与夹持', {
       width: 180,
       height: 200,
-      svg: body,
+      svg: `${bosshead}\n  ${shaft}\n  ${jaws}`,
       search: 'clamp universal clamp 万能夹 三爪夹 烧瓶夹 冷凝管夹',
       ports: [
         { id: 'clamp', x: 12, y: 100, dx: -1, dy: 0, type: 'clamp', diameter: 8 },
@@ -777,13 +826,15 @@ module.exports = function registerEquipment(register) {
   // clamp-front (180x200) — clamp: (12,100, d=8), grip: (146,100, d=25)
   {
     const id = 'clamp-front';
-    const body = `<rect x="12" y="90" width="16" height="20" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
+    const body = `<rect x="12" y="88" width="16" height="24" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="4" y="97" width="8" height="6" rx="1.5" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <line x1="5" y1="93" x2="5" y2="107" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>
       <rect x="28" y="96.5" width="90" height="7" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <path d="M84 92 L48 76 M84 108 L48 124 M96 92 L132 76 M96 108 L132 124" fill="none" stroke="${C.stroke}" stroke-width="4.5" stroke-linecap="round"/>
-      <path d="M84 92 L48 76 M84 108 L48 124 M96 92 L132 76 M96 108 L132 124" fill="none" stroke="${C.chassisBot}" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M46 66 C20 82 20 118 46 134 C50 137 55 132 51 127 C31 113 31 87 51 73 C55 68 50 63 46 66 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <path d="M134 66 C160 82 160 118 134 134 C130 137 125 132 129 127 C149 113 149 87 129 73 C125 68 130 63 134 66 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="82" y="86" width="16" height="28" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+      <path d="M116 96 L128 74 M116 104 L128 126" fill="none" stroke="${C.stroke}" stroke-width="4.2" stroke-linecap="round"/>
+      <path d="M116 96 L128 74 M116 104 L128 126" fill="none" stroke="${C.chassisBot}" stroke-width="2.0" stroke-linecap="round"/>
+      <path d="M130 68 C116 84 116 116 130 132 C134 136 139 131 135 125 C124 112 124 88 135 75 C139 69 134 64 130 68 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <path d="M162 68 C176 84 176 116 162 132 C158 136 153 131 157 125 C168 112 168 88 157 75 C153 69 158 64 162 68 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <rect x="110" y="90" width="12" height="20" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.9"/>`;
     register(id, '夹具正视图', '支撑与夹持', {
       width: 180,
       height: 200,
@@ -799,10 +850,11 @@ module.exports = function registerEquipment(register) {
   // retort-ring (180x200) — clamp: (16,72, d=8), surface: (119,72)
   {
     const id = 'retort-ring';
-    const body = `<ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="${C.stroke}" stroke-width="6.8"/>
+    const body = `<ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="${C.stroke}" stroke-width="7.2"/>
       <ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="${C.chassisBot}" stroke-width="2.8"/>
-      <rect x="16" y="63" width="15" height="18" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="6" y="69" width="10" height="6" rx="2" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="16" y="62" width="15" height="20" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="4" y="69" width="12" height="6" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.7"/>
+      <line x1="6" y1="64" x2="6" y2="80" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>
       <rect x="31" y="69" width="44" height="6" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>`;
     register(id, '铁圈', '支撑与夹持', {
       width: 180,
@@ -819,10 +871,12 @@ module.exports = function registerEquipment(register) {
   // g-clamp (180x200)
   {
     const id = 'g-clamp';
-    const body = `<path d="M142 36 H52 Q24 36 24 64 V128 Q24 156 52 156 H142 V134 H56 Q46 134 46 124 V68 Q46 58 56 58 H142 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="122" y="66" width="8" height="106" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="110" y="58" width="32" height="10" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="100" y="170" width="52" height="7" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const body = `<path d="M142 28 H54 Q24 28 24 58 V130 Q24 160 54 160 H142 V136 H58 Q48 136 48 126 V62 Q48 52 58 52 H142 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M134 36 H56 Q34 36 34 58 V130 Q34 152 56 152 H134" fill="none" stroke="${C.inner}" stroke-width="1.6"/>
+      <rect x="120" y="64" width="10" height="106" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <path d="M120 74 H130 M120 82 H130 M120 90 H130 M120 98 H130 M120 106 H130 M120 114 H130 M120 122 H130" stroke="${C.tick}" stroke-width="1.2"/>
+      <rect x="108" y="56" width="34" height="10" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="98" y="168" width="54" height="8" rx="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.1"/>`;
     register(id, 'G 形夹', '支撑与夹持', {
       width: 180,
       height: 200,
@@ -835,15 +889,19 @@ module.exports = function registerEquipment(register) {
   // test-tube-rack (180x200) — rack-40/73/106/139 at y=70, d=20
   {
     const id = 'test-tube-rack';
-    const rack = `<rect x="18" y="70" width="9" height="98" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="153" y="70" width="9" height="98" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.2"/>
+    const rack = `<rect x="18" y="70" width="10" height="98" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="152" y="70" width="10" height="98" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.2"/>
       <rect x="12" y="60" width="156" height="18" rx="4" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.3"/>
       <rect x="12" y="164" width="156" height="16" rx="4" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <circle cx="23" cy="69" r="2.2" fill="${C.corkDark}"/>
+      <circle cx="157" cy="69" r="2.2" fill="${C.corkDark}"/>
+      <circle cx="23" cy="172" r="2.2" fill="${C.corkDark}"/>
+      <circle cx="157" cy="172" r="2.2" fill="${C.corkDark}"/>
       ${[40, 73, 106, 139]
         .map(
           (x) =>
-            `<ellipse cx="${x}" cy="70" rx="10.5" ry="4.5" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="1.8"/>` +
-            `<ellipse cx="${x}" cy="168" rx="8" ry="2.8" fill="${C.corkDark}" stroke="${C.inner}" stroke-width="1.3"/>`
+            `<ellipse cx="${x}" cy="70" rx="11" ry="4.8" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="1.9"/>` +
+            `<ellipse cx="${x}" cy="169" rx="8.5" ry="3.2" fill="${C.corkDark}" stroke="${C.inner}" stroke-width="1.4"/>`
         )
         .join('')}`;
     register(id, '试管架', '支撑与夹持', {
@@ -866,15 +924,16 @@ module.exports = function registerEquipment(register) {
   // test-tube-holder (180x200) — grip: (95, 163, d=38)
   {
     const id = 'test-tube-holder';
-    const body = `<path d="M50 18 C54 34 74 44 82 68 L66 154 L46 168" fill="none" stroke="${C.stroke}" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M50 18 C54 34 74 44 82 68 L66 154 L46 168" fill="none" stroke="${C.chassisBot}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M134 18 C128 34 108 44 100 68 L120 154 L142 168" fill="none" stroke="${C.stroke}" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M134 18 C128 34 108 44 100 68 L120 154 L142 168" fill="none" stroke="${C.chassisBot}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="44" y="14" width="14" height="36" rx="4" transform="rotate(-14 51 32)" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="126" y="14" width="14" height="36" rx="4" transform="rotate(14 133 32)" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="91" cy="68" r="8" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="44" y="156" width="12" height="15" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="132" y="156" width="12" height="15" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.6"/>`;
+    const body = `<path d="M52 20 C56 38 76 48 84 68 L68 152 L50 166" fill="none" stroke="${C.stroke}" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M52 20 C56 38 76 48 84 68 L68 152 L50 166" fill="none" stroke="${C.chassisBot}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M132 20 C128 38 108 48 100 68 L118 152 L138 166" fill="none" stroke="${C.stroke}" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M132 20 C128 38 108 48 100 68 L118 152 L138 166" fill="none" stroke="${C.chassisBot}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M41 16 C41 10 53 10 55 17 L64 49 C65 55 53 58 50 51 Z" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>
+      <path d="M143 16 C143 10 131 10 129 17 L120 49 C119 55 131 58 134 51 Z" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>
+      <circle cx="92" cy="68" r="8" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <circle cx="92" cy="68" r="3" fill="${C.inner}"/>
+      <path d="M50 156 C44 162 46 172 56 172" fill="none" stroke="${C.teal}" stroke-width="5" stroke-linecap="round"/>
+      <path d="M138 156 C144 162 142 172 132 172" fill="none" stroke="${C.teal}" stroke-width="5" stroke-linecap="round"/>`;
     register(id, '试管夹', '支撑与夹持', {
       width: 180,
       height: 200,
@@ -887,10 +946,12 @@ module.exports = function registerEquipment(register) {
   // peg (180x200) — grip: (64, 167)
   {
     const id = 'peg';
-    const body = `<path d="M58 18 L80 22 L76 170 L56 168 Z" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M84 22 L106 26 L92 172 L72 170 Z" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <circle cx="79" cy="102" r="12" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <circle cx="79" cy="102" r="5" fill="${C.inner}" stroke="none"/>`;
+    const body = `<path d="M58 18 H78 L75 168 L56 168 L60 120 L54 102 Z" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M84 22 L104 25 L92 170 L73 169 L79 118 L86 102 Z" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <circle cx="79" cy="102" r="11.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <circle cx="79" cy="102" r="4.5" fill="${C.inner}" stroke="none"/>
+      <line x1="65" y1="30" x2="65" y2="86" stroke="${C.corkDark}" stroke-width="1.2"/>
+      <line x1="94" y1="34" x2="91" y2="88" stroke="${C.corkDark}" stroke-width="1.2"/>`;
     register(id, '木夹', '支撑与夹持', {
       width: 180,
       height: 200,
@@ -905,10 +966,10 @@ module.exports = function registerEquipment(register) {
     const id = 'tongs';
     const body = `<ellipse cx="48" cy="28" rx="14" ry="11" fill="none" stroke="${C.stroke}" stroke-width="4.5"/>
       <ellipse cx="136" cy="28" rx="14" ry="11" fill="none" stroke="${C.stroke}" stroke-width="4.5"/>
-      <path d="M56 38 L94 74 L68 158 Q64 170 76 172" fill="none" stroke="${C.stroke}" stroke-width="6.5" stroke-linecap="round"/>
-      <path d="M56 38 L94 74 L68 158 Q64 170 76 172" fill="none" stroke="${C.chassisBot}" stroke-width="3.0" stroke-linecap="round"/>
-      <path d="M128 38 L90 74 L118 158 Q122 170 110 172" fill="none" stroke="${C.stroke}" stroke-width="6.5" stroke-linecap="round"/>
-      <path d="M128 38 L90 74 L118 158 Q122 170 110 172" fill="none" stroke="${C.chassisBot}" stroke-width="3.0" stroke-linecap="round"/>
+      <path d="M56 38 L94 74 C76 108 66 136 71 158 C73 167 78 171 84 171" fill="none" stroke="${C.stroke}" stroke-width="6.2" stroke-linecap="round"/>
+      <path d="M56 38 L94 74 C76 108 66 136 71 158 C73 167 78 171 84 171" fill="none" stroke="${C.chassisBot}" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M128 38 L90 74 C108 108 118 136 113 158 C111 167 106 171 100 171" fill="none" stroke="${C.stroke}" stroke-width="6.2" stroke-linecap="round"/>
+      <path d="M128 38 L90 74 C108 108 118 136 113 158 C111 167 106 171 100 171" fill="none" stroke="${C.chassisBot}" stroke-width="2.8" stroke-linecap="round"/>
       <circle cx="92" cy="74" r="6" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>`;
     register(id, '坩埚钳', '支撑与夹持', {
       width: 180,
@@ -922,8 +983,9 @@ module.exports = function registerEquipment(register) {
   // tweezers (180x200)
   {
     const id = 'tweezers';
-    const body = `<path d="M74 22 C74 12 106 12 106 22 L102 126 L93 182 H87 L78 126 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M81 26 L88 180 M99 26 L92 180" fill="none" stroke="${C.inner}" stroke-width="1.5"/>
+    const body = `<path d="M74 22 C74 12 106 12 106 22 L102 126 L93 184 H87 L78 126 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M81 26 L88 182 M99 26 L92 182" fill="none" stroke="${C.inner}" stroke-width="1.5"/>
+      <line x1="87" y1="22" x2="87" y2="112" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
       ${S.gradTicks(79, 68, 108, 6, 2, 4, { dir: 1 })}
       ${S.gradTicks(101, 68, 108, 6, 2, 4, { dir: -1 })}`;
     register(id, '镊子', '支撑与夹持', {
@@ -941,8 +1003,10 @@ module.exports = function registerEquipment(register) {
     const body = S.chassis(id, 14, 10, 172, 149, { rx: 6, footH: 4, footInset: 16 }) +
       `<rect x="76" y="4" width="48" height="7" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>
       <rect x="28" y="34" width="144" height="106" rx="2" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.2"/>
+      ${S.ventSlots(44, 96, 3, 112, 6)}
       <rect x="28" y="34" width="144" height="48" fill="${C.glassTop}" stroke="${C.inner}" stroke-width="1.5"/>
       <rect x="28" y="78" width="144" height="6" rx="1.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="86" y="79.5" width="28" height="3" rx="1" fill="${C.inner}"/>
       <line x1="29" y1="140" x2="171" y2="140" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round"/>
       <rect x="122" y="15" width="50" height="14" rx="2.5" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.4"/>
       ${S.screenText(147, 25, '0.50 m/s', 7.0, C.stroke)}
@@ -973,8 +1037,9 @@ module.exports = function registerEquipment(register) {
   // goggles (180x150)
   {
     const id = 'goggles';
-    const body = `<path d="M18 52 Q90 42 162 52 L152 106 Q130 112 104 104 L90 88 L76 104 Q50 112 28 106 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+    const body = `<path d="M18 52 Q90 41 162 52 L152 106 Q130 112 104 104 L90 88 L76 104 Q50 112 28 106 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
       <path d="M26 56 Q90 48 154 56 L146 98 Q126 103 106 96 L90 80 L74 96 Q54 103 34 98 Z" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M40 66 L54 90 M116 64 L130 88" fill="none" stroke="#FFFFFF" stroke-width="3.0" stroke-linecap="round"/>
       <path d="M18 58 L8 68 M162 58 L172 68" fill="none" stroke="${C.teal}" stroke-width="4.5" stroke-linecap="round"/>`;
     register(id, '护目镜', '测量与防护', {
       width: 180,
@@ -985,15 +1050,18 @@ module.exports = function registerEquipment(register) {
     });
   }
 
-  // lab-coat (180x150)
+  // lab-coat (180x150) — tailored full-length lab coat silhouette
   {
     const id = 'lab-coat';
-    const body = `<path d="M64 16 L30 32 L12 82 L36 90 L48 56 V136 H132 V56 L144 90 L168 82 L150 32 L116 16 L90 40 Z" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M64 16 L76 48 L90 40 M116 16 L104 48 L90 40" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.6" stroke-linejoin="round"/>
-      <line x1="90" y1="40" x2="90" y2="136" stroke="${C.stroke}" stroke-width="1.8"/>
-      ${[54, 74, 94, 114].map((y) => `<circle cx="94" cy="${y}" r="2.2" fill="${C.teal}" stroke="none"/>`).join('')}
-      <rect x="104" y="84" width="18" height="22" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>
-      <rect x="54" y="48" width="16" height="18" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>`;
+    const body = `<path d="M68 12 L34 26 L14 86 L34 92 L48 54 V140 H132 V54 L146 92 L166 86 L146 26 L112 12 L90 38 Z" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M20 71 L38 77 M160 71 L142 77" fill="none" stroke="${C.inner}" stroke-width="1.6"/>
+      <path d="M68 12 L72 48 L90 38 M112 12 L108 48 L90 38" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.7" stroke-linejoin="round"/>
+      <line x1="90" y1="38" x2="90" y2="140" stroke="${C.stroke}" stroke-width="1.8"/>
+      ${[50, 70, 90, 110, 128].map((y) => `<circle cx="94" cy="${y}" r="2.2" fill="${C.teal}" stroke="none"/>`).join('')}
+      <rect x="55" y="46" width="16" height="19" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>
+      <line x1="60" y1="42" x2="60" y2="49" stroke="${C.teal}" stroke-width="2.0" stroke-linecap="round"/>
+      <rect x="55" y="90" width="21" height="26" rx="2.5" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>
+      <rect x="104" y="90" width="21" height="26" rx="2.5" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>`;
     register(id, '实验服', '测量与防护', {
       width: 180,
       height: 150,
@@ -1043,10 +1111,11 @@ module.exports = function registerEquipment(register) {
   // spatula (180x120) — probe: (170,58, d=12, seg:[150,58,30,58])
   {
     const id = 'spatula';
-    const body = `<rect x="12" y="50" width="38" height="16" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="48" y="54" width="84" height="8" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <ellipse cx="151" cy="58" rx="19" ry="10" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <ellipse cx="151" cy="58" rx="13" ry="5.5" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.2"/>`;
+    const body = `<rect x="10" y="49" width="42" height="18" rx="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <line x1="18" y1="54" x2="44" y2="54" stroke="${C.tealLight}" stroke-width="1.6" stroke-linecap="round"/>
+      <rect x="52" y="54" width="74" height="8" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <ellipse cx="148" cy="58" rx="22" ry="12.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <ellipse cx="149" cy="58" rx="15" ry="7.2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.3"/>`;
     register(id, '药匙', '实验小工具', {
       width: 180,
       height: 120,
@@ -1067,7 +1136,8 @@ module.exports = function registerEquipment(register) {
         const h = 66 + i * 4;
         return `<line x1="${x - 5}" y1="${y - 6}" x2="${x + w + 5}" y2="${y - 6}" stroke="${C.stroke}" stroke-width="4.5" stroke-linecap="round"/>
           <line x1="${x - 5}" y1="${y - 6}" x2="${x + w + 5}" y2="${y - 6}" stroke="${C.teal}" stroke-width="2.0" stroke-linecap="round"/>
-          <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+          <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
+          <line x1="${x + 2}" y1="${y + h - 4}" x2="${x + w - 2}" y2="${y + h - 4}" stroke="${C.brassDark}" stroke-width="1.4"/>`;
       })
       .join('\n  ');
     register(id, '打孔器', '实验小工具', {
@@ -1101,11 +1171,12 @@ module.exports = function registerEquipment(register) {
   // magnifying-glass (180x150)
   {
     const id = 'magnifying-glass';
-    const body = `<line x1="103" y1="91" x2="150" y2="134" stroke="${C.stroke}" stroke-width="14" stroke-linecap="round"/>
-      <line x1="103" y1="91" x2="150" y2="134" stroke="${C.teal}" stroke-width="9" stroke-linecap="round"/>
-      <rect x="98" y="84" width="14" height="14" rx="3" transform="rotate(42 105 91)" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="72" cy="61" r="44" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <circle cx="72" cy="61" r="37" fill="${C.glassTop}" stroke="${C.inner}" stroke-width="1.8"/>`;
+    const body = `<line x1="103" y1="91" x2="154" y2="138" stroke="${C.stroke}" stroke-width="15" stroke-linecap="round"/>
+      <line x1="103" y1="91" x2="154" y2="138" stroke="${C.teal}" stroke-width="9.5" stroke-linecap="round"/>
+      <rect x="97" y="83" width="14" height="14" rx="3" transform="rotate(42 104 90)" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <circle cx="70" cy="59" r="48" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <circle cx="70" cy="59" r="40" fill="${C.glassTop}" stroke="${C.inner}" stroke-width="1.9"/>
+      <path d="M46 42 A30 30 0 0 1 78 30" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>`;
     register(id, '放大镜', '测量与防护', {
       width: 180,
       height: 150,
@@ -1118,13 +1189,13 @@ module.exports = function registerEquipment(register) {
   // desk-lamp (200x170) — base: (88, 164)
   {
     const id = 'desk-lamp';
-    const body = `<ellipse cx="88" cy="156" rx="54" ry="9" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="80" y="142" width="16" height="12" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <path d="M88 142 L64 96 L122 44" fill="none" stroke="${C.stroke}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M88 142 L64 96 L122 44" fill="none" stroke="${C.chassisBot}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="64" cy="96" r="7" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <path d="M106 24 C122 10 146 14 156 32 L172 68 L112 78 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <ellipse cx="142" cy="73" rx="22" ry="6" transform="rotate(-10 142 73)" fill="${C.brassLight}" stroke="${C.stroke}" stroke-width="1.8"/>`;
+    const body = `<ellipse cx="88" cy="156" rx="56" ry="9.5" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <rect x="80" y="141" width="16" height="13" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <path d="M88 141 L58 92 L120 38" fill="none" stroke="${C.stroke}" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M88 141 L58 92 L120 38" fill="none" stroke="${C.chassisBot}" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="58" cy="92" r="7.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <path d="M104 20 C122 6 148 12 158 30 L176 68 L112 80 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <ellipse cx="144" cy="74" rx="24" ry="6.5" transform="rotate(-10 144 74)" fill="${C.brassLight}" stroke="${C.stroke}" stroke-width="1.8"/>`;
     register(id, '台灯', '设备', {
       width: 200,
       height: 170,
@@ -1140,15 +1211,16 @@ module.exports = function registerEquipment(register) {
     const blades = [0, 120, 240]
       .map(
         (deg) =>
-          `<path d="M99 67 C92 26 124 18 118 52 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8" transform="rotate(${deg} 99 67)"/>`
+          `<path d="M99 66 C91 22 128 14 121 51 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.9" transform="rotate(${deg} 99 66)"/>`
       )
       .join('');
-    const body = `<rect x="93" y="120" width="12" height="34" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <ellipse cx="99" cy="156" rx="48" ry="8" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <circle cx="99" cy="67" r="55" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>
-      <circle cx="99" cy="67" r="49" fill="none" stroke="${C.tick}" stroke-width="1.4"/>
+    const body = `<rect x="93" y="122" width="12" height="33" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <ellipse cx="99" cy="157" rx="50" ry="8.5" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <circle cx="99" cy="66" r="58" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <circle cx="99" cy="66" r="51" fill="none" stroke="${C.tick}" stroke-width="1.4"/>
+      <circle cx="99" cy="66" r="32" fill="none" stroke="${C.muted}" stroke-width="1.1"/>
       ${blades}
-      <circle cx="99" cy="67" r="11" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.2"/>`;
+      <circle cx="99" cy="66" r="11.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.2"/>`;
     register(id, '台式风扇', '设备', {
       width: 200,
       height: 170,
@@ -1346,7 +1418,7 @@ module.exports = function registerEquipment(register) {
       const y1 = 24 + ((i * 29) % 76);
       strands += `<path d="M${24 + i * 4} ${y0} C${130 - i * 3} ${14 + i * 5} ${28 + i * 6} ${116 - i * 3} ${144 - i * 3} ${y1}" fill="none" stroke="${i % 3 === 0 ? C.chassisTop : i % 2 ? C.tick : C.teal}" stroke-width="1.5" stroke-linecap="round"/>`;
     }
-    const pad = `<ellipse cx="85" cy="65" rx="64" ry="44" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="1.8" stroke-dasharray="3 3"/>`;
+    const pad = `<path d="M26 88 C10 66 24 38 48 44 C56 22 96 16 112 38 C140 24 162 58 144 86 C154 106 126 116 106 108 C84 120 42 114 26 88 Z" fill="${C.coolantLight}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>`;
     register(id, '玻璃棉', '物质与填充', {
       width: 170,
       height: 130,
@@ -1359,10 +1431,11 @@ module.exports = function registerEquipment(register) {
   // soda-can (180x150) — base: (90, 131)
   {
     const id = 'soda-can';
-    const body = `<path d="M52 24 H128 L134 36 V122 L126 131 H54 L46 122 V36 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="46" y="54" width="88" height="48" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <ellipse cx="90" cy="24" rx="38" ry="6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <ellipse cx="90" cy="24" rx="12" ry="2.5" fill="${C.tick}" stroke="none"/>`;
+    const body = `<path d="M52 16 H128 L135 28 V122 L127 131 H53 L45 122 V28 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <rect x="45" y="48" width="90" height="54" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <line x1="56" y1="34" x2="56" y2="116" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round" opacity="0.5"/>
+      <ellipse cx="90" cy="16" rx="38" ry="6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <ellipse cx="90" cy="16" rx="12" ry="2.5" fill="${C.inner}" stroke="none"/>`;
     register(id, '易拉罐', '测量与防护', {
       width: 180,
       height: 150,
@@ -1394,8 +1467,9 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'balloon';
     const body = `<path d="M90 120 C76 128 98 136 90 147" fill="none" stroke="${C.stroke}" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M84 110 L78 120 H102 L96 110 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>
-      <ellipse cx="90" cy="60" rx="54" ry="50" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.3"/>`;
+      <path d="M84 111 L78 120 H102 L96 111 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M90 10 C125 10 144 36 140 66 C136 94 112 112 90 112 C68 112 44 94 40 66 C36 36 55 10 90 10 Z" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M56 38 C59 27 67 21 76 19" fill="none" stroke="${C.tealLight}" stroke-width="3.0" stroke-linecap="round"/>`;
     register(id, '气球', '测量与防护', {
       width: 180,
       height: 150,
@@ -1422,7 +1496,7 @@ module.exports = function registerEquipment(register) {
       <rect x="162" y="41" width="9" height="8" rx="3" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="1.5"/>
       <rect x="162" y="71" width="9" height="8" rx="3" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="1.5"/>
       <rect x="82" y="45" width="26" height="30" rx="4" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <circle cx="95" cy="60" r="6" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.8"/>`;
+      <circle cx="95" cy="60" r="6" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.8"/>`;
     register(id, '滴定管夹', '支撑与夹持', {
       width: 190,
       height: 120,
@@ -1439,12 +1513,13 @@ module.exports = function registerEquipment(register) {
   // pinch-clamp [NEW] (120x120) — grip:(60,38, d=14)
   {
     const id = 'pinch-clamp';
-    const body = `<path d="M40 32 H80 M40 44 H80" fill="none" stroke="${C.stroke}" stroke-width="6.2" stroke-linecap="round"/>
-      <path d="M40 32 H80 M40 44 H80" fill="none" stroke="${C.chassisBot}" stroke-width="2.8" stroke-linecap="round"/>
-      <path d="M44 32 V56 L78 96 M76 32 V56 L42 96" fill="none" stroke="${C.stroke}" stroke-width="5.2" stroke-linecap="round"/>
-      <path d="M44 32 V56 L78 96 M76 32 V56 L42 96" fill="none" stroke="${C.chassisBot}" stroke-width="2.2" stroke-linecap="round"/>
-      <rect x="33" y="88" width="16" height="16" rx="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="71" y="88" width="16" height="16" rx="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const body = `<path d="M34 31 H86 M34 45 H86" fill="none" stroke="${C.stroke}" stroke-width="6.4" stroke-linecap="round"/>
+      <path d="M34 31 H86 M34 45 H86" fill="none" stroke="${C.chassisBot}" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M40 31 V58 L84 102 M80 31 V58 L36 102" fill="none" stroke="${C.stroke}" stroke-width="5.4" stroke-linecap="round"/>
+      <path d="M40 31 V58 L84 102 M80 31 V58 L36 102" fill="none" stroke="${C.chassisBot}" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="60" cy="68" r="4.5" fill="${C.brass}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="27" y="94" width="18" height="17" rx="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="75" y="94" width="18" height="17" rx="4" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>`;
     register(id, '止水夹', '导管', {
       width: 120,
       height: 120,
@@ -1462,18 +1537,20 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'balance';
     const pan = `<rect x="92" y="48" width="16" height="28" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="46" y="37" width="108" height="11" rx="4" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>`;
+      <rect x="44" y="37" width="112" height="11" rx="4" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
+      <line x1="52" y1="41" x2="148" y2="41" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>`;
     const base = S.chassis(id, 18, 74, 164, 78, { rx: 8 });
     const oled = S.oledScreen(
       id,
-      32,
+      30,
       96,
-      92,
+      94,
       40,
-      S.screenText(78, 121, '0.000 g', 13, C.stroke)
+      S.screenText(77, 121, '0.000 g', 13, C.stroke)
     );
-    const btns = S.softButton(134, 98, 34, 15, '', C.teal, C.stroke) +
-      S.softButton(134, 120, 34, 15, '', C.chassisTop, C.stroke);
+    const btns = S.softButton(132, 98, 36, 15, 'TARE', C.teal, C.chassisTop) +
+      S.softButton(132, 120, 36, 15, 'CAL', C.chassisTop, C.stroke) +
+      `<circle cx="170" cy="88" r="3" fill="${C.coolant}" stroke="${C.stroke}" stroke-width="1.2"/>`;
     register(id, '电子天平', '设备', {
       width: 200,
       height: 170,
@@ -1486,19 +1563,20 @@ module.exports = function registerEquipment(register) {
   // digital-thermometer (110x210) — probe: (55, 194, d=8, seg:[55,180,55,113])
   {
     const id = 'digital-thermometer';
-    const stem = `<path d="M51 88 H59 V190 Q59 194 55 194 Q51 194 51 190 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="47" y="84" width="16" height="16" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>`;
-    const head = S.chassis(id, 16, 12, 78, 74, { rx: 8, feet: false }) +
+    const stem = `<path d="M51.5 88 H58.5 V189 Q58.5 194 55 194 Q51.5 194 51.5 189 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <line x1="53.5" y1="102" x2="53.5" y2="184" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round"/>
+      <rect x="46" y="84" width="18" height="16" rx="3" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>`;
+    const head = S.chassis(id, 15, 12, 80, 74, { rx: 8, feet: false }) +
       S.oledScreen(
         id,
-        24,
+        23,
         25,
-        62,
+        64,
         34,
         S.screenText(55, 46, '24.8°C', 11.5, C.stroke)
       ) +
-      S.softButton(26, 65, 26, 13, '', C.chassisTop, C.stroke) +
-      S.softButton(58, 65, 26, 13, '', C.teal, C.stroke);
+      S.softButton(25, 65, 27, 13, '', C.chassisTop, C.stroke) +
+      S.softButton(58, 65, 27, 13, '', C.teal, C.stroke);
     register(id, '数字温度计', '测量', {
       width: 110,
       height: 210,
@@ -1577,18 +1655,20 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'timer';
     let ticks = '';
-    for (let i = 0; i < 12; i++) {
-      const t = (i * Math.PI) / 6;
-      ticks += `<line x1="${r(100 + 38 * Math.sin(t))}" y1="${r(94 - 38 * Math.cos(t))}" x2="${r(100 + 44 * Math.sin(t))}" y2="${r(94 - 44 * Math.cos(t))}" stroke="${C.stroke}" stroke-width="${i % 3 === 0 ? 2.0 : 1.2}"/>`;
+    for (let i = 0; i < 24; i++) {
+      const t = (i * Math.PI) / 12;
+      const major = i % 2 === 0;
+      ticks += `<line x1="${r(100 + (major ? 41 : 45) * Math.sin(t))}" y1="${r(94 - (major ? 41 : 45) * Math.cos(t))}" x2="${r(100 + 49 * Math.sin(t))}" y2="${r(94 - 49 * Math.cos(t))}" stroke="${C.stroke}" stroke-width="${i % 6 === 0 ? 2.2 : major ? 1.5 : 0.9}"/>`;
     }
-    const body = `<rect x="92" y="14" width="16" height="20" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="134" y="34" width="12" height="16" rx="2" transform="rotate(38 140 42)" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <circle cx="100" cy="94" r="56" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <circle cx="100" cy="94" r="47" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.8"/>
+    const body = `<rect x="91" y="10" width="18" height="22" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <rect x="87" y="9" width="26" height="6" rx="2.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.9"/>
+      <rect x="138" y="30" width="13" height="17" rx="2.5" transform="rotate(38 144 38)" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.9"/>
+      <circle cx="100" cy="94" r="60" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <circle cx="100" cy="94" r="51" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.8"/>
       ${ticks}
-      <line x1="100" y1="94" x2="100" y2="54" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round"/>
-      <line x1="100" y1="94" x2="128" y2="106" stroke="${C.red}" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="100" cy="94" r="4.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.6"/>`;
+      <line x1="100" y1="94" x2="100" y2="51" stroke="${C.stroke}" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="100" y1="94" x2="130" y2="106" stroke="${C.red}" stroke-width="1.9" stroke-linecap="round"/>
+      <circle cx="100" cy="94" r="5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.7"/>`;
     register(id, '秒表', '设备', {
       width: 200,
       height: 170,
@@ -1604,18 +1684,18 @@ module.exports = function registerEquipment(register) {
     const stem = `<rect x="51" y="86" width="8" height="98" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="2.0"/>
       <circle cx="55" cy="188.5" r="5.5" fill="${C.coolant}" stroke="${C.stroke}" stroke-width="2.0"/>
       <line x1="55" y1="88" x2="55" y2="181" stroke="${C.teal}" stroke-width="1.5"/>
-      <rect x="46" y="84" width="18" height="14" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.8"/>`;
-    const head = S.chassis(id, 16, 12, 78, 74, { rx: 8, feet: false }) +
+      <rect x="45" y="84" width="20" height="15" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.9"/>`;
+    const head = S.chassis(id, 15, 12, 80, 74, { rx: 8, feet: false }) +
       S.oledScreen(
         id,
-        24,
+        23,
         25,
-        62,
+        64,
         34,
         S.screenText(55, 46, 'pH 7.0', 11.5, C.stroke)
       ) +
-      S.softButton(26, 65, 26, 13, '', C.chassisTop, C.stroke) +
-      S.softButton(58, 65, 26, 13, '', C.teal, C.stroke);
+      S.softButton(25, 65, 27, 13, '', C.chassisTop, C.stroke) +
+      S.softButton(58, 65, 27, 13, '', C.teal, C.stroke);
     register(id, 'pH 探头', '测量', {
       width: 110,
       height: 210,
@@ -1661,8 +1741,10 @@ module.exports = function registerEquipment(register) {
   // electrode (180x120) — wire: (170, 58, d=12, seg:[150,58,30,58])
   {
     const id = 'electrode';
-    const body = `<rect x="16" y="48" width="122" height="20" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="138" y="44" width="18" height="28" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.0"/>
+    const body = `<rect x="12" y="48" width="12" height="20" rx="4" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="22" y="46" width="114" height="24" rx="2" fill="${C.coolantLight}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <line x1="28" y1="58" x2="132" y2="58" stroke="${C.teal}" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="136" y="42" width="20" height="32" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.1"/>
       <rect x="156" y="51" width="14" height="14" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.0"/>`;
     register(id, '电极', '实验小工具', {
       width: 180,
@@ -1676,14 +1758,14 @@ module.exports = function registerEquipment(register) {
   // dynamometer (80x260) — hook: (42, 237)
   {
     const id = 'dynamometer';
-    let coil = 'M40 50';
-    for (let y = 50; y < 146; y += 12) coil += ` L32 ${y + 4} L48 ${y + 9} L40 ${y + 12}`;
-    const body = `<path d="M40 30 V16 A8 8 0 1 1 28 22" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round"/>
-      <rect x="18" y="30" width="44" height="162" rx="10" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <rect x="25" y="42" width="30" height="136" rx="5" fill="${C.glassTop}" stroke="${C.inner}" stroke-width="1.5"/>
+    let coil = 'M40 48';
+    for (let y = 48; y < 146; y += 12) coil += ` L32 ${y + 4} L48 ${y + 9} L40 ${y + 12}`;
+    const body = `<path d="M40 28 V14 A8 8 0 1 1 28 20" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round"/>
+      <rect x="16" y="28" width="48" height="164" rx="11" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <rect x="24" y="40" width="32" height="140" rx="5" fill="${C.glassTop}" stroke="${C.inner}" stroke-width="1.6"/>
       <path d="${coil}" fill="none" stroke="${C.inner}" stroke-width="1.8" stroke-linejoin="round"/>
-      <rect x="27" y="144" width="26" height="5" rx="1.5" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.2"/>
-      ${S.gradTicks(55, 58, 162, 10, 2, 5, { dir: -1 })}
+      <rect x="26" y="144" width="28" height="5.5" rx="1.5" fill="${C.red}" stroke="${C.stroke}" stroke-width="1.3"/>
+      ${S.gradTicks(56, 56, 166, 11, 2, 5, { dir: -1 })}
       <path d="M40 192 V216 C52 216 54 232 42 237" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round"/>`;
     register(id, '测力计', '测量', {
       width: 80,
@@ -1697,18 +1779,19 @@ module.exports = function registerEquipment(register) {
   // multimeter (180x150) — positive: (42,116), negative: (138,116)
   {
     const id = 'multimeter';
-    const body = S.chassis(id, 18, 12, 144, 126, { rx: 9, feet: false, accentColor: C.teal }) +
+    const body = `<rect x="22" y="7" width="136" height="136" rx="12" fill="${C.teal}" stroke="${C.stroke}" stroke-width="2.4"/>` +
+      S.chassis(id, 27, 12, 126, 126, { rx: 8, feet: false, accentBar: false }) +
       S.oledScreen(
         id,
-        30,
-        25,
-        120,
+        35,
+        20,
+        110,
         38,
-        S.screenText(90, 49, '0.000 V', 15, C.stroke) + S.screenText(36, 36, 'DC', 7.5, C.teal, 'start')
+        S.screenText(90, 44, '0.000 V', 15.5, C.stroke) + S.screenText(41, 31, 'DC', 7.5, C.teal, 'start')
       ) +
-      S.rotaryKnob(id, 90, 96, 20, -35, { teal: true, ticks: 9 }) +
-      S.bindingPost(42, 116, C.red, 'VΩ', -12, 7.5) +
-      S.bindingPost(138, 116, C.inner, 'COM', -12, 7.5);
+      S.rotaryKnob(id, 90, 92, 23, -35, { teal: true, ticks: 11 }) +
+      S.bindingPost(42, 116, C.red, 'VΩ', -11, 7.2) +
+      S.bindingPost(138, 116, C.inner, 'COM', -11, 7.2);
     register(id, '万用表', '电学', {
       width: 180,
       height: 150,
@@ -1724,13 +1807,21 @@ module.exports = function registerEquipment(register) {
   // microscope (200x170) — base:(100,159), surface:(82.5,101, seg:[28,101,137,101])
   {
     const id = 'microscope';
-    const base = `<rect x="26" y="145" width="148" height="14" rx="5" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3"/>
-      <ellipse cx="82" cy="134" rx="22" ry="8" fill="${C.glass}" stroke="${C.stroke}" stroke-width="2.0"/>`;
-    const arm = `<path d="M148 145 V78 C148 42 122 24 88 26 L78 44 C104 42 128 54 128 84 V145 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
-      ${S.rotaryKnob(id, 134, 118, 11, 15, { teal: true })}`;
-    const stage = `<rect x="28" y="101" width="109" height="7" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <line x1="62" y1="98" x2="104" y2="98" stroke="${C.chassisBot}" stroke-width="2.0" stroke-linecap="round"/>`;
-    const head = `<g transform="translate(76, 52) rotate(26)"><rect x="-11" y="-36" width="22" height="58" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/><rect x="-8" y="-44" width="16" height="8" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/><rect x="-9" y="22" width="18" height="14" rx="2" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.8"/></g>`;
+    const base = `<path d="M26 159 H174 L170 144 H30 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <ellipse cx="82" cy="130" rx="22" ry="7.5" fill="${C.coolant}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <path d="M60 130 Q82 140 104 130" fill="none" stroke="${C.inner}" stroke-width="1.8"/>`;
+    const arm = `<path d="M148 144 V72 C148 34 122 18 88 20 L80 38 C108 36 128 50 128 80 V144 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      ${S.rotaryKnob(id, 138, 116, 12, 18, { teal: true })}`;
+    const stage = `<rect x="28" y="101" width="109" height="7" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <rect x="64" y="108" width="36" height="6" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <line x1="60" y1="98" x2="105" y2="98" stroke="${C.chassisBot}" stroke-width="2.2" stroke-linecap="round"/>`;
+    const head = `<g transform="translate(80, 44) rotate(24)">
+        <rect x="-10" y="-36" width="20" height="58" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+        <rect x="-8" y="-44" width="16" height="8" rx="2" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>
+        <ellipse cx="0" cy="22" rx="14" ry="5" fill="${C.inner}" stroke="${C.stroke}" stroke-width="1.8"/>
+        <rect x="-11" y="25" width="9" height="16" rx="2" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.8"/>
+        <rect x="2" y="25" width="9" height="13" rx="2" transform="rotate(-18 6 25)" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.7"/>
+      </g>`;
     register(id, '显微镜', '设备', {
       width: 200,
       height: 170,
@@ -1744,11 +1835,12 @@ module.exports = function registerEquipment(register) {
   {
     const id = 'calibration-weights';
     const body = `<circle cx="60" cy="20" r="4.5" fill="none" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="51" y="23" width="18" height="11" rx="4" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="46" y="34" width="28" height="10" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2"/>
-      <path d="M30 56 C30 46 38 44 60 44 C82 44 90 46 90 56 V132 Q90 138 82 138 H38 Q30 138 30 132 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.3" stroke-linejoin="round"/>
+      <rect x="50" y="23" width="20" height="11" rx="4" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="46" y="34" width="28" height="9" rx="3" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <path d="M30 56 C30 46 38 43 60 43 C82 43 90 46 90 56 V132 Q90 138 82 138 H38 Q30 138 30 132 Z" fill="${C.brass}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
       <rect x="30" y="128" width="60" height="8" rx="2" fill="${C.brassDark}" stroke="none"/>
       <ellipse cx="60" cy="48" rx="26" ry="4" fill="${C.brassLight}" stroke="none"/>
+      <line x1="38" y1="62" x2="38" y2="122" stroke="${C.brassLight}" stroke-width="2.2" stroke-linecap="round"/>
       ${S.labelText(60, 96, '100 g', 13, C.stroke)}`;
     register(id, '砝码', '测量', {
       width: 120,

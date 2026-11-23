@@ -1191,6 +1191,59 @@ class ButtonAuditTests : public QObject {
         const QPixmap v3Shot = captureCurrentWindow(2);
         QVERIFY(!v3Shot.isNull());
         QVERIFY(v3Shot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas-v3.png")));
+
+        // Capture Round 4 v4 mixed-apparatus verification canvas showcasing Classic Flat v4 upgrades
+        window->drawing->restore({});
+        window->drawing->scene()->setProperty("precise", true);
+        for (int n = 1; n <= 4; ++n) {
+            window->drawing->addApparatus("studio:round-bottom-flask", {60.0 + (n - 1) * 175.0, 50.0});
+            auto* f = singleSelectedDrawingItem(window->drawing);
+            QVERIFY(f && f->setNeckCount(n));
+        }
+        for (const auto& spec : QList<QPair<QString, QPointF>>{
+                 {"studio:conical-flask-with-side-arm", {765, 50}},
+                 {"studio:distillation-flask", {955, 50}},
+                 {"studio:schlenk-flask", {1140, 50}},
+                 {"studio:dean-stark-trap", {1320, 50}},
+                 {"studio:separatory-funnel", {70, 265}},
+                 {"studio:filter-funnel", {230, 285}},
+                 {"studio:thistle-tube", {380, 265}},
+                 {"studio:bunsen", {515, 290}},
+                 {"studio:clamp", {745, 315}},
+                 {"bio:online-spectrophotometer", {850, 535}},
+                 {"physics:digital-oscilloscope", {1175, 520}},
+             }) {
+            window->drawing->addApparatus(spec.first, spec.second);
+            auto* added = singleSelectedDrawingItem(window->drawing);
+            QVERIFY2(added && added->renderer && added->renderer->isValid(), qPrintable(spec.first));
+        }
+
+        window->drawing->addApparatus("studio:round-bottom-flask", {120, 690});
+        auto* v4Flask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v4Flask && v4Flask->setNeckCount(3));
+        window->drawing->addApparatus("lab:plain-distillation-head", {120, 530});
+        auto* v4Head = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v4Flask->id, "mouth-2", v4Head->id, "outlet"));
+        window->drawing->addApparatus("studio:liebig-condenser", {320, 580});
+        auto* v4Cond = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v4Head->id, "side", v4Cond->id, "inlet"));
+        window->drawing->addApparatus("lab:vacuum-receiver-adapter", {540, 690});
+        auto* v4Recv = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v4Cond->id, "outlet", v4Recv->id, "inlet"));
+        window->drawing->addApparatus("lab:ground-conical-flask", {550, 830});
+        auto* v4RecFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v4Recv->id, "outlet", v4RecFlask->id, "mouth"));
+
+        window->drawing->scene()->clearSelection();
+        window->drawing->scene()->setProperty("precise", false);
+        window->drawing->fitCanvas();
+        QTest::qWait(220);
+        const auto v4Svg = window->drawing->svgData();
+        QVERIFY(QSvgRenderer(v4Svg).isValid());
+        QVERIFY(!v4Svg.contains("<image") && !v4Svg.contains("<linearGradient") && !v4Svg.contains("<radialGradient"));
+        const QPixmap v4Shot = captureCurrentWindow(2);
+        QVERIFY(!v4Shot.isNull());
+        QVERIFY(v4Shot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas-v4.png")));
     }
 
     void cleanupTestCase() {

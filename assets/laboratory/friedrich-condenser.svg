@@ -4,16 +4,16 @@
 
       <path d="M40 15.2 L22.64 15.8 L20.64 13.9 L12 16 L12 24 L20.64 26.1 L22.64 24.2 L40 24.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
       <path d="M76 33.2 L93.36 33.8 L95.36 31.9 L104 34 L104 42 L95.36 44.1 L93.36 42.2 L76 42.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
-      <polygon points="82,78 106.071,72.594 112.569,90.454 82,104" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M84 78 L112.33 89.796 M106.31 73.252 L84 102" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="
       M40 12 H76 V52
       C84 58 84 68 84 78
-      V246
+      M84 102 V246
       C84 262 69.5 264 69.5 276
-      H46.5
+      M46.5 276
       C46.5 264 32 262 32 246
-      V66 C32 56 40 52 40 48 Z"
-      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+      V66 C32 56 40 52 40 48 V12"
+      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
       
       <path d="M41 48 V246 C41 258 75 258 75 246 V48 Z" fill="#E6F4F3" stroke="#3D5968" stroke-width="1.6"/>
       <line x1="58" y1="28" x2="58" y2="246" stroke="#1F6F6B" stroke-width="2.0" stroke-linecap="round"/>
@@ -35,9 +35,10 @@
   <path d="M41 223 C37 230 79 236 75 243" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
       <line x1="34" y1="54" x2="82" y2="54" stroke="#3D5968" stroke-width="1.3"/>
       
-      <polygon points="130.283,85.602 122.761,64.928 106.311,73.254 112.329,89.794" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="134.788,87.16 125.212,60.84 121.264,62.276 130.84,88.596" fill="#FFFFFF" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
-      
-  <polygon points="69.5,276 46.5,276 49.2,300 66.8,300" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="45" y1="276" x2="71" y2="276" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M133.762 84.34 Q132.241 83.084 128.951 84.281 L112.33 89.796" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M126.238 63.66 Q125.879 65.6 122.589 66.797 L106.31 73.252" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="44.5" y1="276" x2="71.5" y2="276" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M46.5 276 L49.2 300" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M69.5 276 L66.8 300" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M47.5 278.2 Q58 280.4 68.5 278.2" fill="none" stroke="#DCE8EC" stroke-width="1.3" stroke-linecap="round"/>
 </svg>

@@ -110,7 +110,7 @@ function wrapSvg(w, h, title, body) {
   const raw = `<?xml version="1.0" encoding="utf-8"?>\n` +
     `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">` +
     `<title>${title}</title>` +
-    `<g stroke="${P.ink}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none">${body}</g></svg>\n`;
+    `<g stroke="${P.ink}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">${body}</g></svg>\n`;
   return flattenSvgPaints(raw);
 }
 
@@ -285,20 +285,21 @@ function buildBiochemistrySpecs() {
         const major = i % 2 === 0;
         ticks += `<line x1="56" y1="${y}" x2="${major ? 41 : 47}" y2="${y}" stroke="${P.slate}" stroke-width="${major ? 1.2 : 0.9}"/>`;
       }
-      return `<rect x="23" y="10" width="38" height="18" rx="3" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.0"/>` +
-        `<rect x="21" y="25" width="42" height="5" rx="2" fill="#0F766E" stroke="${P.ink}" stroke-width="1.6"/>` +
+      return `<path d="M26 30 V174 L35 220 Q42 234 49 220 L58 174 V30 Z" fill="url(#g-glass)" stroke="none"/>` +
+        `<path d="M28 148 H56 L49 218 Q42 231 35 218 Z" fill="url(#g-liquid)" stroke="none"/>` +
+        `<path d="M28 148 Q42 152 56 148" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        `<path d="M26 30 V174 L35 220 Q42 234 49 220 L58 174 V30" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<rect x="23" y="10" width="38" height="18" rx="3" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<rect x="21" y="25" width="42" height="5" rx="2" fill="#0F766E" stroke="${P.ink}" stroke-width="1.8"/>` +
         `<line x1="28" y1="13" x2="28" y2="23" stroke="#CCFBF1" stroke-width="1.1"/>` +
         `<line x1="34" y1="13" x2="34" y2="23" stroke="#CCFBF1" stroke-width="1.1"/>` +
         `<line x1="40" y1="13" x2="40" y2="23" stroke="#CCFBF1" stroke-width="1.1"/>` +
         `<line x1="46" y1="13" x2="46" y2="23" stroke="#CCFBF1" stroke-width="1.1"/>` +
         `<line x1="52" y1="13" x2="52" y2="23" stroke="#CCFBF1" stroke-width="1.1"/>` +
         `<line x1="56" y1="13" x2="56" y2="23" stroke="#CCFBF1" stroke-width="1.1"/>` +
-        `<path d="M26 30 V174 L35 220 Q42 234 49 220 L58 174 V30 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
-        `<path d="M28 148 H56 L49 218 Q42 231 35 218 Z" fill="url(#g-liquid)" stroke="none"/>` +
-        `<path d="M28 148 Q42 152 56 148" stroke="${P.tealDark}" stroke-width="1.3"/>` +
         glassHighlight(30, 38, 30, 170, 2.8) +
         ticks +
-        labelText(37, 52, '15 mL', 7.5, P.slate, 'middle', true);
+        labelText(42, 48, '15 mL', 6.8, P.slate, 'middle', true);
     }, {
       notes: '带螺旋盖聚丙烯/玻璃刻度离心管，锥形底及清晰液面与刻度线。',
       lecturePrintedPages: [9, 24, 59, 61], lecturePdfPages: [10, 25, 60, 62],
@@ -340,15 +341,16 @@ function buildBiochemistrySpecs() {
         holes += `<circle cx="${hx}" cy="96" r="1.5" fill="${P.slate}" stroke="none"/>`;
         if (hx < 88) holes += `<circle cx="${hx + 4.5}" cy="100" r="1.5" fill="${P.slate}" stroke="none"/>`;
       }
-      // Ensure visible ink at (26,42)-(96,42) and (47,196)-(75,196)
-      return `<path d="M17 42 V98 Q18 122 47 136 V196 L52 200 H70 L75 196 V136 Q104 122 105 98 V42 Z" fill="#F8FAFC" stroke="${P.ink}" stroke-width="2.2"/>` +
-        `<path d="M19 46 H26 V98 Q26 116 49 131 V194 H55 V132 Q32 117 32 98 V46 Z" fill="#E2E8F0" stroke="none"/>` +
-        `<ellipse cx="61" cy="42" rx="44" ry="11" fill="#FFFFFF" stroke="${P.ink}" stroke-width="2.2"/>` +
-        `<ellipse cx="61" cy="42" rx="35" ry="6.5" fill="#E2E8F0" stroke="${P.slate}" stroke-width="1.3"/>` +
-        `<ellipse cx="61" cy="98" rx="36" ry="6" fill="#F1F5F9" stroke="${P.slate}" stroke-width="1.2" stroke-dasharray="3 3"/>` +
+      // Open unsealed porcelain mouth passing through exact port rim points (26,42)-(96,42) and (47,196)-(75,196)
+      return `<path d="M26 42 V98 Q26 122 47 136 V196 L52 200 H70 L75 196 V136 Q96 122 96 98 V42 Z" fill="#F8FAF9" stroke="none"/>` +
+        `<path d="M28 45 H34 V98 Q34 116 51 131 V195 H48 V135 Q28 121 28 98 Z" fill="#DCE5E8" stroke="none"/>` +
+        `<rect x="28" y="92" width="66" height="10" rx="1" fill="#EEF3F4" stroke="none"/>` +
+        `<line x1="28" y1="98" x2="94" y2="98" stroke="${P.slate}" stroke-width="1.3" stroke-dasharray="3 3"/>` +
         holes +
-        `<line x1="35" y1="112" x2="87" y2="112" stroke="${P.slate}" stroke-width="1.2"/>` +
-        `<line x1="47" y1="196" x2="75" y2="196" stroke="${P.ink}" stroke-width="2.0"/>`;
+        `<line x1="36" y1="112" x2="86" y2="112" stroke="${P.slate}" stroke-width="1.2"/>` +
+        `<path d="M20 44 Q20 38 26 42 V98 Q26 122 47 136 V196" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<path d="M75 196 V136 Q96 122 96 98 V42 Q102 38 102 44" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<line x1="47" y1="196" x2="75" y2="196" stroke="${P.ink}" stroke-width="2.2"/>`;
     }, {
       ports: [
         { id: 'mouth', x: 61, y: 42, dx: 0, dy: -1, type: 'mouth', diameter: 70, depth: 35, target: [61, 93] },
@@ -608,19 +610,17 @@ function buildBiochemistrySpecs() {
   // 13. gel-chromatography-column (ports: mouth dia=44 at (51,17), outlet dia=16 at (51,273), grip at (51,110))
   add('gel-chromatography-column', '葡聚糖 / CMC 层析柱', '分离与纯化',
     'gel chromatography column 层析柱 葡聚糖 CMC Sephadex 色谱柱', 104, 294, () => {
-      return `<path d="M29 17 V224 L43 242 V273 H59 V242 L73 224 V17" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
-        // Open top rim matching mouth diameter 44 (x=29..73)
-        `<ellipse cx="51" cy="17" rx="22" ry="5.5" fill="#F8FAFC" stroke="${P.ink}" stroke-width="2.0"/>` +
-        `<ellipse cx="51" cy="17" rx="18" ry="3.5" fill="#E6F2F7" stroke="${P.slate}" stroke-width="1.1"/>` +
+      return `<path d="M29 17 V224 L43 242 V273 H59 V242 L73 224 V17 Z" fill="url(#g-glass)" stroke="none"/>` +
         // Sintered frit disc
         `<rect x="30" y="220" width="42" height="6" rx="2" fill="#E2E8F0" stroke="${P.slate}" stroke-width="1.3"/>` +
         `<line x1="33" y1="223" x2="69" y2="223" stroke="${P.slate}" stroke-width="1.0" stroke-dasharray="2 3"/>` +
+        // Open unsealed flared glass walls hitting exact mouth (29,17)-(73,17) and outlet (43,273)-(59,273)
+        `<path d="M23 14 Q29 14 29 17 V224 L43 242 V273" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<path d="M59 273 V242 L73 224 V17 Q73 14 79 14" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
         // PTFE stopcock valve
         `<rect x="41" y="247" width="20" height="13" rx="2" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="1.8"/>` +
         `<line x1="26" y1="253.5" x2="78" y2="253.5" stroke="${P.ink}" stroke-width="3.2"/>` +
         `<circle cx="78" cy="253.5" r="4.5" fill="#F8FAFC" stroke="${P.ink}" stroke-width="1.6"/>` +
-        // Bottom outlet rim matching diameter 16 (x=43..59)
-        `<line x1="43" y1="273" x2="59" y2="273" stroke="${P.ink}" stroke-width="2.0"/>` +
         glassHighlight(34, 28, 34, 212, 2.8);
     }, {
       ports: [
@@ -885,12 +885,12 @@ function buildBiochemistrySpecs() {
   // 22. nucleic-acid-spin-column
   add('nucleic-acid-spin-column', '核酸吸附柱 / 收集管', '分离与纯化',
     'nucleic acid spin column 核酸吸附柱 收集管 纯化 DNA RNA 硅胶膜', 114, 231, () => {
-      return `<!-- Collection tube (2 mL) -->` +
-        `<path d="M30 82 V176 L46 214 Q57 224 68 214 L84 176 V82 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
-        `<ellipse cx="57" cy="82" rx="27" ry="6" fill="#F8FAFC" stroke="${P.ink}" stroke-width="1.8"/>` +
+      return `<!-- Collection tube (2 mL) with open flared rim -->` +
+        `<path d="M30 82 V176 L46 214 Q57 224 68 214 L84 176 V82 Z" fill="url(#g-glass)" stroke="none"/>` +
+        `<path d="M26 80 Q30 80 30 84 V176 L46 214 Q57 224 68 214 L84 176 V84 Q84 80 88 80" fill="none" stroke="${P.ink}" stroke-width="2.5"/>` +
         // Nested spin column (tip suspended above collection tube bottom!)
-        `<rect x="37" y="24" width="40" height="8" rx="2" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="1.8"/>` +
-        `<path d="M40 32 V124 L52 148 V158 H62 V148 L74 124 V32 Z" fill="#FFFFFF" fill-opacity="0.82" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<path d="M40 32 V124 L52 148 V158 H62 V148 L74 124 V32" fill="#FFFFFF" fill-opacity="0.82" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<rect x="37" y="24" width="40" height="8" rx="2" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.0"/>` +
         // Silica membrane & O-ring inside column
         `<rect x="42" y="114" width="30" height="7" rx="1" fill="#CBD5E1" stroke="${P.slate}" stroke-width="1.2"/>` +
         `<rect x="41" y="109" width="32" height="5" rx="1" fill="${P.teal}" stroke="${P.ink}" stroke-width="1.1"/>` +
@@ -1304,11 +1304,12 @@ function buildBiochemistrySpecs() {
           labelText(108, y + 2.5, lbl, 7, P.slate, 'end', true);
       }
       return `<!-- Canted neck + rectangular polystyrene flask body -->` +
-        `<path d="M72 42 L84 68 L40 94 V168 Q40 176 50 176 H122 Q132 176 132 168 V88 L108 62 L94 34 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<path d="M72 42 L84 68 L40 94 V168 Q40 176 50 176 H122 Q132 176 132 168 V88 L108 62 L94 34 Z" fill="url(#g-glass)" stroke="none"/>` +
         `<path d="M43 136 H129 V168 Q129 173 121 173 H51 Q43 173 43 168 Z" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M43 136 Q86 139 129 136" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        `<path d="M72 42 L84 68 L40 94 V168 Q40 176 50 176 H122 Q132 176 132 168 V88 L108 62 L94 34" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
         // Angled blue/teal vented screw cap
-        `<rect x="65" y="16" width="32" height="22" rx="3" transform="rotate(-22 81 27)" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<rect x="65" y="16" width="32" height="22" rx="3" transform="rotate(-22 81 27)" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.2"/>` +
         glassHighlight(50, 98, 50, 166, 2.8) +
         ticks;
     }, { notes: '斜颈 T-75 细胞培养瓶：带透气滤膜螺旋盖、透明聚苯乙烯扁平瓶身、体积刻度线与培养基液面。' });
@@ -1318,14 +1319,15 @@ function buildBiochemistrySpecs() {
     'fermenter bioreactor 台式发酵罐 生物反应器 搅拌 发酵', 260, 280, () => {
       return labFeet(24, 260, 212, 18, 7, 10) +
         // Control tower right/bottom L-console
-        `<rect x="20" y="170" width="220" height="90" rx="8" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<rect x="20" y="170" width="220" height="90" rx="8" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.4"/>` +
         `<rect x="22" y="172" width="216" height="6" rx="2" fill="${P.tealDark}" stroke="none"/>` +
         // Borosilicate bioreactor vessel on left-center deck
-        `<path d="M52 46 V154 Q52 170 98 170 Q144 170 144 154 V46 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<path d="M52 46 V154 Q52 170 98 170 Q144 170 144 154 V46 Z" fill="url(#g-glass)" stroke="none"/>` +
         `<path d="M55 86 H141 V154 Q141 167 98 167 Q55 167 55 154 Z" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M55 86 Q98 90 141 86" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        `<path d="M52 46 V154 Q52 170 98 170 Q144 170 144 154 V46" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
         // Headplate & motor
-        `<rect x="46" y="38" width="104" height="10" rx="3" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<rect x="46" y="38" width="104" height="10" rx="3" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="2.2"/>` +
         `<rect x="84" y="14" width="28" height="24" rx="3" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.8"/>` +
         // Agitator shaft + Rushton impellers + probes
         `<line x1="98" y1="48" x2="98" y2="152" stroke="${P.ink}" stroke-width="2.2"/>` +
@@ -1414,8 +1416,8 @@ function buildBiochemistrySpecs() {
   // 44. online-cuvette
   add('online-cuvette', '比色皿（玻璃 / 石英）', '分析与计量',
     'online cuvette 比色皿 玻璃 石英 光度计 cuvette', 56, 146, () => {
-      return `<!-- 10 mm optical quartz/glass cuvette with frosted gripping edges -->` +
-        `<rect x="13" y="14" width="30" height="118" rx="2" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
+      return `<!-- 10 mm optical quartz/glass cuvette with open top rim & frosted gripping edges -->` +
+        `<path d="M13 14 V130 Q13 132 15 132 H41 Q43 132 43 130 V14 Z" fill="url(#g-glass)" stroke="none"/>` +
         // Frosted side holding walls
         `<rect x="14" y="15" width="4.5" height="106" fill="#E2E8F0" stroke="none"/>` +
         `<rect x="37.5" y="15" width="4.5" height="106" fill="#E2E8F0" stroke="none"/>` +
@@ -1426,6 +1428,8 @@ function buildBiochemistrySpecs() {
         `<path d="M19 54 Q28 57 37 54" stroke="${P.tealDark}" stroke-width="1.3"/>` +
         // Thick optical fused base
         `<rect x="14" y="122" width="28" height="9" fill="#CBD5E1" fill-opacity="0.7" stroke="${P.slate}" stroke-width="1.0"/>` +
+        // Open unsealed quartz glass walls
+        `<path d="M10 14 H13 V130 Q13 132 15 132 H41 Q43 132 43 130 V14 H46" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
         glassHighlight(22, 22, 22, 114, 2.2) +
         labelText(28, 28, '10', 6.5, P.tealDark, 'middle', true);
     }, {
@@ -1475,10 +1479,11 @@ function buildBiochemistrySpecs() {
         `<rect x="21" y="12" width="32" height="9" rx="2" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.0"/>` +
         `<rect x="19" y="21" width="36" height="6" rx="2" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="1.8"/>` +
         // Cylindrical upper barrel tapering into sharp conical V-tip
-        `<path d="M23 27 V68 L32 108 Q37 116 42 108 L51 68 V27 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<path d="M23 27 V68 L32 108 Q37 116 42 108 L51 68 V27 Z" fill="url(#g-glass)" stroke="none"/>` +
         // Liquid sample fill + meniscus
         `<path d="M25 64 H49 L41 106 Q37 113 33 106 Z" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M25 64 Q37 67 49 64" stroke="${P.tealDark}" stroke-width="1.2"/>` +
+        `<path d="M23 27 V68 L32 108 Q37 116 42 108 L51 68 V27" fill="none" stroke="${P.ink}" stroke-width="2.5"/>` +
         // Graduations right
         `<line x1="49" y1="40" x2="43" y2="40" stroke="${P.slate}" stroke-width="1.0"/>` +
         `<line x1="49" y1="54" x2="43" y2="54" stroke="${P.slate}" stroke-width="1.0"/>` +
@@ -2624,19 +2629,21 @@ function buildPhysicsSpecs() {
         // Flexible siphon hose connecting tube bottom to reservoir bottom
         `<path d="M64 234 V252 Q64 264 80 264 H110 Q126 264 126 252 V190" fill="none" stroke="${P.ink}" stroke-width="7"/>` +
         `<path d="M64 234 V252 Q64 264 80 264 H110 Q126 264 126 252 V190" fill="none" stroke="#99F6E4" stroke-width="3.6"/>` +
-        // Open resonance glass tube
-        `<rect x="48" y="24" width="32" height="210" rx="2" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        // Open-top resonance glass tube (flared unsealed upper rim)
+        `<rect x="48" y="24" width="32" height="210" rx="2" fill="url(#g-glass)" stroke="none"/>` +
         `<rect x="50" y="156" width="28" height="76" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M50 156 Q64 159 78 156" stroke="${P.tealDark}" stroke-width="1.4"/>` +
+        `<path d="M44 22 Q48 22 48 26 V232 Q48 234 50 234 H78 Q80 234 80 232 V26 Q80 22 84 22" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
         ticks +
         glassHighlight(53, 32, 53, 224, 2.2) +
         // Clamp to tube & clamp to leveling reservoir
         `<rect x="44" y="64" width="112" height="8" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.4"/>` +
         `<rect x="108" y="132" width="48" height="7" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.4"/>` +
-        // Water reservoir cup (matched water level y=156!)
-        `<rect x="108" y="114" width="36" height="76" rx="4" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        // Open-top water leveling reservoir cup (matched water level y=156!)
+        `<rect x="108" y="114" width="36" height="76" rx="4" fill="url(#g-glass)" stroke="none"/>` +
         `<rect x="110" y="156" width="32" height="32" fill="url(#g-liquid)" stroke="none"/>` +
-        `<path d="M110 156 Q126 159 142 156" stroke="${P.tealDark}" stroke-width="1.3"/>`;
+        `<path d="M110 156 Q126 159 142 156" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        `<path d="M104 112 Q108 112 108 116 V186 Q108 190 112 190 H140 Q144 190 144 186 V116 Q144 112 148 112" fill="none" stroke="${P.ink}" stroke-width="2.5"/>`;
     }, [
       { id: 'base', x: 112, y: 288, dx: 0, dy: 1, type: 'base', diameter: 0 },
     ], '声速测量共振空气柱：带刻度开口玻璃管、连通器软管及沿立柱升降的等液面储水杯。');
@@ -3506,7 +3513,7 @@ function buildPhysicsSpecs() {
   add('calorimeter-electric', '电热式量热器', '热学与分子物理',
     'electric calorimeter 电热量热器 比热容 热功当量 焦耳定律', 168, 204, () => {
       return `<!-- Insulated double-wall calorimeter cup with inner copper liner cutaway -->` +
-        `<rect x="34" y="58" width="100" height="130" rx="6" fill="url(#g-chassis-h)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<rect x="34" y="58" width="100" height="130" rx="6" fill="url(#g-chassis-h)" stroke="${P.ink}" stroke-width="2.4"/>` +
         `<rect x="48" y="70" width="72" height="106" rx="4" fill="#FEF3C7" stroke="${P.brass}" stroke-width="1.8"/>` +
         `<rect x="51" y="96" width="66" height="78" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M51 96 Q84 99 117 96" stroke="${P.tealDark}" stroke-width="1.3"/>` +
@@ -3548,9 +3555,11 @@ function buildPhysicsSpecs() {
         `<path d="${spring}" fill="none" stroke="${P.brass}" stroke-width="2.2"/>` +
         `<circle cx="122" cy="126" r="3" fill="${P.red}" stroke="${P.ink}" stroke-width="1.0"/>` +
         `<path d="M108 164 V150 H136 V164" fill="none" stroke="${P.slate}" stroke-width="2.0"/>` +
-        // Petri liquid dish on adjustable scissor-jack platform
-        `<rect x="86" y="164" width="72" height="22" rx="3" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        // Open-top Petri liquid dish on adjustable scissor-jack platform
+        `<rect x="86" y="164" width="72" height="22" rx="3" fill="url(#g-glass)" stroke="none"/>` +
         `<rect x="88" y="172" width="68" height="12" fill="url(#g-liquid)" stroke="none"/>` +
+        `<path d="M88 172 Q122 174 156 172" stroke="${P.tealDark}" stroke-width="1.2"/>` +
+        `<path d="M83 162 Q86 162 86 165 V183 Q86 186 89 186 H155 Q158 186 158 183 V165 Q158 162 161 162" fill="none" stroke="${P.ink}" stroke-width="2.4"/>` +
         `<rect x="94" y="186" width="56" height="8" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.5"/>` +
         `<path d="M102 194 L142 222 M142 194 L102 222" stroke="${P.ink}" stroke-width="2.2"/>` +
         `<rect x="94" y="222" width="56" height="24" rx="2" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="1.8"/>`;

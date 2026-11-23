@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="260" viewBox="0 0 80 260">
 <title>移液管</title>
-<path d="M35 10 V94 Q17 105 17 133 Q17 161 35 172 V222 L38 244 H42 L45 222 V172 Q63 161 63 133 Q63 105 45 94 V10 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-  <line x1="34" y1="54" x2="46" y2="54" stroke="#C84B31" stroke-width="1.8"/>
+<path d="M35 10 V94 C24 105 24 157 35 168 V222 L38 244 M42 244 L45 222 V168 C56 157 56 105 45 94 V10" fill="none" stroke="#294454" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="34" y1="54" x2="46" y2="54" stroke="#C84B31" stroke-width="2.0"/>
 </svg>

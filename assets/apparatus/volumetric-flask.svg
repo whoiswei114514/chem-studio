@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>容量瓶</title>
-<path d="M67 12 Q70 12 70 18 V102 C20 134 26 176 54 183 H106 C134 176 140 134 90 102 V18 Q90 12 93 12" fill="none" stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-  <line x1="69" y1="62" x2="91" y2="62" stroke="#258F89" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M69 12 Q72 13 72 19 V98 C30 124 30 164 52 181 H108 C130 164 130 124 88 98 V19 Q88 13 91 12" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="71" y1="56" x2="89" y2="56" stroke="#258F89" stroke-width="2.0" stroke-linecap="round"/>
 </svg>

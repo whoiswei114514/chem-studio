@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
 <title>试管夹</title>
-<path d="M50 18 C54 34 74 44 82 68 L66 154 L46 168" fill="none" stroke="#294454" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M50 18 C54 34 74 44 82 68 L66 154 L46 168" fill="none" stroke="#C6D2D7" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M134 18 C128 34 108 44 100 68 L120 154 L142 168" fill="none" stroke="#294454" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M134 18 C128 34 108 44 100 68 L120 154 L142 168" fill="none" stroke="#C6D2D7" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="44" y="14" width="14" height="36" rx="4" transform="rotate(-14 51 32)" fill="#D79B59" stroke="#294454" stroke-width="2.0"/>
-      <rect x="126" y="14" width="14" height="36" rx="4" transform="rotate(14 133 32)" fill="#D79B59" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="91" cy="68" r="8" fill="#C9A048" stroke="#294454" stroke-width="2.0"/>
-      <rect x="44" y="156" width="12" height="15" rx="3" fill="#258F89" stroke="#294454" stroke-width="1.6"/>
-      <rect x="132" y="156" width="12" height="15" rx="3" fill="#258F89" stroke="#294454" stroke-width="1.6"/>
+<path d="M52 20 C56 38 76 48 84 68 L68 152 L50 166" fill="none" stroke="#294454" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M52 20 C56 38 76 48 84 68 L68 152 L50 166" fill="none" stroke="#C6D2D7" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M132 20 C128 38 108 48 100 68 L118 152 L138 166" fill="none" stroke="#294454" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M132 20 C128 38 108 48 100 68 L118 152 L138 166" fill="none" stroke="#C6D2D7" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M41 16 C41 10 53 10 55 17 L64 49 C65 55 53 58 50 51 Z" fill="#D79B59" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+      <path d="M143 16 C143 10 131 10 129 17 L120 49 C119 55 131 58 134 51 Z" fill="#D79B59" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+      <circle cx="92" cy="68" r="8" fill="#C9A048" stroke="#294454" stroke-width="2.0"/>
+      <circle cx="92" cy="68" r="3" fill="#3D5968"/>
+      <path d="M50 156 C44 162 46 172 56 172" fill="none" stroke="#258F89" stroke-width="5" stroke-linecap="round"/>
+      <path d="M138 156 C144 162 142 172 132 172" fill="none" stroke="#258F89" stroke-width="5" stroke-linecap="round"/>
 </svg>

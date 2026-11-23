@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
 <title>水草</title>
-
-    <g stroke-linecap="round" stroke-linejoin="round">
-      <line x1="18" y1="154" x2="162" y2="154" stroke="#258F89" stroke-width="2.0" stroke-dasharray="5 5"/>
-      <path d="M90 166 Q84 102 92 26" fill="none" stroke="#6DA37C" stroke-width="3.8"/>
-      <path d="M89 130 Q50 120 44 96 Q74 96 89 124 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.0"/>
-      <path d="M90 112 Q132 102 136 78 Q104 78 90 106 Z" fill="#C0D4CF" stroke="#294454" stroke-width="2.0"/>
-      <path d="M90 84 Q48 74 44 50 Q74 50 90 78 Z" fill="#C0D4CF" stroke="#294454" stroke-width="2.0"/>
-      <path d="M91 60 Q128 50 132 28 Q104 28 91 54 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="72" cy="40" r="4" fill="#F4F9F8" stroke="#258F89" stroke-width="1.4"/>
-      <circle cx="110" cy="24" r="5" fill="#F4F9F8" stroke="#258F89" stroke-width="1.4"/>
-      <circle cx="96" cy="14" r="3.5" fill="#F4F9F8" stroke="#258F89" stroke-width="1.4"/>
+<g stroke-linecap="round" stroke-linejoin="round">
+      <line x1="20" y1="154" x2="160" y2="154" stroke="#258F89" stroke-width="2.0" stroke-dasharray="5 5"/>
+      <line x1="90" y1="164" x2="90" y2="28" stroke="#6DA37C" stroke-width="4.0"/>
+      <line x1="90" y1="164" x2="90" y2="28" stroke="#294454" stroke-width="1.4"/>
+      <path d="M90 136 Q58 130 50 118 Q74 118 90 132 Z" fill="#6DA37C" stroke="#294454" stroke-width="1.8"/><path d="M90 136 Q122 130 130 118 Q106 118 90 132 Z" fill="#C0D4CF" stroke="#294454" stroke-width="1.8"/><path d="M90 114 Q58 108 50 96 Q74 96 90 110 Z" fill="#6DA37C" stroke="#294454" stroke-width="1.8"/><path d="M90 114 Q122 108 130 96 Q106 96 90 110 Z" fill="#C0D4CF" stroke="#294454" stroke-width="1.8"/><path d="M90 92 Q58 86 50 74 Q74 74 90 88 Z" fill="#6DA37C" stroke="#294454" stroke-width="1.8"/><path d="M90 92 Q122 86 130 74 Q106 74 90 88 Z" fill="#C0D4CF" stroke="#294454" stroke-width="1.8"/><path d="M90 70 Q58 64 50 52 Q74 52 90 66 Z" fill="#6DA37C" stroke="#294454" stroke-width="1.8"/><path d="M90 70 Q122 64 130 52 Q106 52 90 66 Z" fill="#C0D4CF" stroke="#294454" stroke-width="1.8"/><path d="M90 48 Q58 42 50 30 Q74 30 90 44 Z" fill="#6DA37C" stroke="#294454" stroke-width="1.8"/><path d="M90 48 Q122 42 130 30 Q106 30 90 44 Z" fill="#C0D4CF" stroke="#294454" stroke-width="1.8"/>
+      <circle cx="72" cy="30" r="3.8" fill="#F4F9F8" stroke="#258F89" stroke-width="1.5"/>
+      <circle cx="108" cy="20" r="4.8" fill="#F4F9F8" stroke="#258F89" stroke-width="1.5"/>
+      <circle cx="94" cy="12" r="3.2" fill="#F4F9F8" stroke="#258F89" stroke-width="1.5"/>
     </g>
-  
 </svg>

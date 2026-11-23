@@ -3,10 +3,10 @@
 <title>旋转箭头</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M46 66 A44 22 0 1 1 134 66" fill="none" stroke="#258F89" stroke-width="2.8"/>
-      <path d="M134 74 A44 22 0 1 1 46 74" fill="none" stroke="#258F89" stroke-width="2.8"/>
-      <polygon points="134,68 125,58 139,56" fill="#258F89" stroke="#294454" stroke-width="1.6"/>
-      <polygon points="46,72 55,82 41,84" fill="#258F89" stroke="#294454" stroke-width="1.6"/>
+      <path d="M46 66 A44 22 0 1 1 134 66" fill="none" stroke="#258F89" stroke-width="3.0"/>
+      <path d="M134 74 A44 22 0 1 1 46 74" fill="none" stroke="#258F89" stroke-width="3.0"/>
+      <polygon points="134,68 125,58 139,56" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
+      <polygon points="46,72 55,82 41,84" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
     </g>
   
 </svg>

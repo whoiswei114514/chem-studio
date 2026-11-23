@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>圆底烧瓶</title>
-<path d="M25.5 18 Q28.2 18 28.8 23 L43.2 94.261 A52 52 0 1 0 116.8 94.261 L131.2 23 Q131.8 18 134.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M44.5 18 Q41.8 18 41.2 23 L55.6 85.08 Q59.6 82.169 63.6 81.654 L58.8 23 Q58.2 18 55.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M74.5 18 Q71.8 18 71.2 23 L76 79.154 Q80 78 84 79.154 L88.8 23 Q88.2 18 85.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M104.5 18 Q101.8 18 101.2 23 L96.4 81.654 Q100.4 82.169 104.4 85.08 L118.8 23 Q118.2 18 115.5 18" fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.338 62.463 Q13.332 61.949 15.741 64.488 L31.622 81.224 A62 62 0 1 0 128.378 81.224 L144.259 64.488 Q146.668 61.949 148.662 62.463" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26.135 48.42 Q25.518 50.385 27.927 52.924 L43.809 69.659 A62 62 0 0 1 56.487 62.631 L50.71 40.295 Q49.834 36.906 47.841 36.389" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M67.591 31.281 Q66.099 32.7 66.975 36.088 L72.752 58.425 A62 62 0 0 1 87.248 58.425 L93.025 36.088 Q93.901 32.7 92.409 31.281" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112.159 36.389 Q110.166 36.906 109.29 40.295 L103.513 62.631 A62 62 0 0 1 116.191 69.659 L132.073 52.924 Q134.482 50.385 133.865 48.42" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31.153 77.533 Q37.371 75.079 40.148 68.998" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M57.866 59.176 Q64.494 60.044 69.871 56.072" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M90.129 56.072 Q95.506 60.044 102.134 59.176" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M119.852 68.998 Q122.629 75.079 128.847 77.533" fill="none" stroke="#DCE8EC" stroke-width="1.6" stroke-linecap="round"/>
 </svg>

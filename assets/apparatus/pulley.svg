@@ -3,12 +3,12 @@
 <title>滑轮</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M95 28 V12 C95 7 102 7 102 12" fill="none" stroke="#294454" stroke-width="2.2"/>
-      <path d="M51 148 V82 A44 44 0 0 1 139 82 V148" fill="none" stroke="#D79B59" stroke-width="2.4"/>
-      <circle cx="95" cy="82" r="44" fill="#C6D2D7" stroke="#294454" stroke-width="2.3"/>
-      <circle cx="95" cy="82" r="34" fill="#F8FAF9" stroke="#294454" stroke-width="1.6"/>
-      <rect x="88" y="28" width="14" height="58" rx="3" fill="#3D5968" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="95" cy="82" r="6" fill="#C9A048" stroke="#294454" stroke-width="1.6"/>
+      <path d="M95 28 V12 C95 7 103 7 103 12" fill="none" stroke="#294454" stroke-width="2.4"/>
+      <circle cx="95" cy="90" r="46" fill="#C6D2D7" stroke="#294454" stroke-width="2.4"/>
+      <circle cx="95" cy="90" r="37" fill="#F8FAF9" stroke="#3D5968" stroke-width="1.6"/>
+      <circle cx="95" cy="90" r="28" fill="none" stroke="#7E939E" stroke-width="1.2" stroke-dasharray="6 4"/>
+      <rect x="87" y="28" width="16" height="66" rx="4" fill="#3D5968" stroke="#294454" stroke-width="2.4"/>
+      <circle cx="95" cy="90" r="6.5" fill="#C9A048" stroke="#294454" stroke-width="1.8"/>
     </g>
   
 </svg>

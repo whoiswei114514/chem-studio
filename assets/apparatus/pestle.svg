@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
 <title>研杵</title>
-<path d="M18 51 C12 51 12 65 18 65 L122 71 C138 77 170 76 170 58 C170 40 138 39 122 45 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M128 45 C124 53 124 63 128 71" fill="none" stroke="#7E939E" stroke-width="1.2" stroke-dasharray="2 2"/>
+<path d="M18 47 C9 47 9 69 18 69 L112 77 C134 86 170 84 170 58 C170 32 134 30 112 39 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M24 52 L114 44 C132 38 152 40 158 46" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M126 42 C121 52 121 64 126 74" fill="none" stroke="#7E939E" stroke-width="1.4" stroke-dasharray="2.5 2.5"/>
 </svg>

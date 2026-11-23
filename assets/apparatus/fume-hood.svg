@@ -3,8 +3,10 @@
 <title>通风橱</title>
 <rect x="30" y="159" width="20" height="4" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="1.8"/><rect x="150" y="159" width="20" height="4" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="1.8"/><rect x="14" y="10" width="172" height="149" rx="6" fill="#DCE5E8" stroke="#294454" stroke-width="2.3"/><rect x="16" y="12" width="168" height="6" rx="3" fill="#258F89" stroke="none"/><rect x="20" y="21" width="160" height="132" rx="3" fill="none" stroke="#9AB0B8" stroke-width="1.0"/><rect x="76" y="4" width="48" height="7" rx="2" fill="#3D5968" stroke="#294454" stroke-width="1.8"/>
       <rect x="28" y="34" width="144" height="106" rx="2" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
+      <line x1="44" y1="96" x2="156" y2="96" stroke="#7E939E" stroke-width="1.4" stroke-linecap="round"/><line x1="44" y1="102" x2="156" y2="102" stroke="#7E939E" stroke-width="1.4" stroke-linecap="round"/><line x1="44" y1="108" x2="156" y2="108" stroke="#7E939E" stroke-width="1.4" stroke-linecap="round"/>
       <rect x="28" y="34" width="144" height="48" fill="#F4F9F8" stroke="#3D5968" stroke-width="1.5"/>
       <rect x="28" y="78" width="144" height="6" rx="1.5" fill="#C6D2D7" stroke="#294454" stroke-width="1.6"/>
+      <rect x="86" y="79.5" width="28" height="3" rx="1" fill="#3D5968"/>
       <line x1="29" y1="140" x2="171" y2="140" stroke="#294454" stroke-width="3.0" stroke-linecap="round"/>
       <rect x="122" y="15" width="50" height="14" rx="2.5" fill="#EEF6F1" stroke="#294454" stroke-width="1.4"/>
       <text x="147" y="25" fill="#294454" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="7" font-weight="700" text-anchor="middle">0.50 m/s</text>

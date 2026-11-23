@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
 <title>放大镜</title>
-<line x1="103" y1="91" x2="150" y2="134" stroke="#294454" stroke-width="14" stroke-linecap="round"/>
-      <line x1="103" y1="91" x2="150" y2="134" stroke="#258F89" stroke-width="9" stroke-linecap="round"/>
-      <rect x="98" y="84" width="14" height="14" rx="3" transform="rotate(42 105 91)" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="72" cy="61" r="44" fill="#C6D2D7" stroke="#294454" stroke-width="2.3"/>
-      <circle cx="72" cy="61" r="37" fill="#F4F9F8" stroke="#3D5968" stroke-width="1.8"/>
+<line x1="103" y1="91" x2="154" y2="138" stroke="#294454" stroke-width="15" stroke-linecap="round"/>
+      <line x1="103" y1="91" x2="154" y2="138" stroke="#258F89" stroke-width="9.5" stroke-linecap="round"/>
+      <rect x="97" y="83" width="14" height="14" rx="3" transform="rotate(42 104 90)" fill="#C9A048" stroke="#294454" stroke-width="2.0"/>
+      <circle cx="70" cy="59" r="48" fill="#C6D2D7" stroke="#294454" stroke-width="2.4"/>
+      <circle cx="70" cy="59" r="40" fill="#F4F9F8" stroke="#3D5968" stroke-width="1.9"/>
+      <path d="M46 42 A30 30 0 0 1 78 30" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
 </svg>
