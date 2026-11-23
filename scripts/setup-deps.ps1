@@ -42,20 +42,24 @@ $onnxReady = ($onnxRequired | Where-Object { -not (Test-Path -LiteralPath (Join-
 if ($onnxReady -or ((Test-Path -LiteralPath $onnxMarker) -and (Get-Content -LiteralPath $onnxMarker -Raw).Trim() -eq $OnnxRuntimeVersion)) {
     Write-Output "ONNX Runtime $OnnxRuntimeVersion 已准备：$onnxPath"
 } else {
-    $onnxArchive = Join-Path $depsPath "onnxruntime-win-x64-$OnnxRuntimeVersion.zip"
+    $onnxArchive = Join-Path $depsPath "microsoft.ml.onnxruntime.$OnnxRuntimeVersion.nupkg"
     if (-not (Test-Path -LiteralPath $onnxArchive)) {
-        $onnxUrl = "https://github.com/microsoft/onnxruntime/releases/download/v$OnnxRuntimeVersion/onnxruntime-win-x64-$OnnxRuntimeVersion.zip"
+        $onnxUrl = "https://api.nuget.org/v3-flatcontainer/microsoft.ml.onnxruntime/$OnnxRuntimeVersion/microsoft.ml.onnxruntime.$OnnxRuntimeVersion.nupkg"
         Invoke-WebRequest -Uri $onnxUrl -OutFile $onnxArchive
     }
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $archive = [IO.Compression.ZipFile]::OpenRead($onnxArchive)
     try {
-        $prefix = "onnxruntime-win-x64-$OnnxRuntimeVersion/"
         foreach ($entry in $archive.Entries) {
-            if (-not $entry.FullName.StartsWith($prefix)) { continue }
-            $relative = $entry.FullName.Substring($prefix.Length)
-            if ($relative -match '^include/[^/]+\.h$' -or
-                $relative -in @('lib/onnxruntime.dll', 'lib/onnxruntime_providers_shared.dll', 'LICENSE', 'ThirdPartyNotices.txt')) {
+            $relative = $null
+            if ($entry.FullName -match '^build/native/include/([^/]+\.h)$') {
+                $relative = "include/$($Matches[1])"
+            } elseif ($entry.FullName -in @('runtimes/win-x64/native/onnxruntime.dll', 'runtimes/win-x64/native/onnxruntime_providers_shared.dll')) {
+                $relative = "lib/$([IO.Path]::GetFileName($entry.FullName))"
+            } elseif ($entry.FullName -in @('LICENSE', 'ThirdPartyNotices.txt')) {
+                $relative = $entry.FullName
+            }
+            if ($relative) {
                 $destination = Join-Path $onnxPath $relative
                 New-Item -ItemType Directory -Path (Split-Path -Parent $destination) -Force | Out-Null
                 [IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $destination, $true)

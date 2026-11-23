@@ -41,4 +41,4 @@ queries.
 
 Model sources: https://huggingface.co/BAAI/bge-small-zh-v1.5 and
 https://huggingface.co/Xenova/bge-small-zh-v1.5. Native runtime source:
-https://github.com/microsoft/onnxruntime/releases/tag/v1.20.1.
+https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/1.20.1.
