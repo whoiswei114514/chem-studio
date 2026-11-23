@@ -1,104 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
 <title>植物幼苗</title>
-<defs>
-  <linearGradient id="plant-shoot-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
-    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
-    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-glass-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
-    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
-    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-metal" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#94A3B8"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-metal-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#E2E8F0"/>
-    <stop offset="45%" stop-color="#F8FAFC"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-porcelain" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#ECEBE4"/>
-    <stop offset="28%" stop-color="#FFFFFF"/>
-    <stop offset="68%" stop-color="#F4F3EE"/>
-    <stop offset="100%" stop-color="#DFDDD4"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-rubber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#475569"/>
-    <stop offset="28%" stop-color="#64748B"/>
-    <stop offset="72%" stop-color="#334155"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-cork" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#C98A4B"/>
-    <stop offset="30%" stop-color="#E7B98A"/>
-    <stop offset="72%" stop-color="#B9783A"/>
-    <stop offset="100%" stop-color="#9A5E26"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-accent" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#14B8A6"/>
-    <stop offset="100%" stop-color="#0F766E"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-copper" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#9A3412"/>
-    <stop offset="35%" stop-color="#FDBA74"/>
-    <stop offset="70%" stop-color="#EA580C"/>
-    <stop offset="100%" stop-color="#7C2D12"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-screen" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0F172A"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="plant-shoot-liquid" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
-    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
-  </linearGradient>
-</defs>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M90 152 V172 M90 156 L70 168 M90 160 L110 170 M82 162 L76 172" fill="none" stroke="#9A5E26" stroke-width="1.8"/>
-      <path d="M90 152 Q86 100 92 26" fill="none" stroke="#16A34A" stroke-width="4.2"/>
-      <path d="M90 152 Q86 100 92 26" fill="none" stroke="#1F2937" stroke-width="1.2"/>
-      <path d="M89 124 Q42 114 38 88 Q74 86 89 116 Z" fill="#86EFAC" stroke="#1F2937" stroke-width="2.0"/>
-      <path d="M91 96 Q138 86 142 60 Q106 58 91 88 Z" fill="#16A34A" stroke="#1F2937" stroke-width="2.0"/>
-      <path d="M91 64 Q50 54 48 30 Q78 30 91 56 Z" fill="#16A34A" stroke="#1F2937" stroke-width="2.0"/>
-      <path d="M92 40 Q124 30 128 14 Q102 14 92 34 Z" fill="#86EFAC" stroke="#1F2937" stroke-width="1.8"/>
+      <path d="M90 152 V172 M90 156 L70 168 M90 160 L110 170 M82 162 L76 172" fill="none" stroke="#B57B42" stroke-width="2.0"/>
+      <path d="M90 152 Q86 100 92 26" fill="none" stroke="#6DA37C" stroke-width="4.4"/>
+      <path d="M90 152 Q86 100 92 26" fill="none" stroke="#294454" stroke-width="1.4"/>
+      <path d="M89 124 Q42 114 38 88 Q74 86 89 116 Z" fill="#C0D4CF" stroke="#294454" stroke-width="2.2"/>
+      <path d="M91 96 Q138 86 142 60 Q106 58 91 88 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.2"/>
+      <path d="M91 64 Q50 54 48 30 Q78 30 91 56 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.2"/>
+      <path d="M92 40 Q124 30 128 14 Q102 14 92 34 Z" fill="#C0D4CF" stroke="#294454" stroke-width="2.0"/>
     </g>
   
 </svg>

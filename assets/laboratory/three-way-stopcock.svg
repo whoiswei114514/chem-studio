@@ -1,51 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
 <title>T形三通玻璃活塞</title>
-<defs>
-  <linearGradient id="three-way-stopcock-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="three-way-stopcock-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="three-way-stopcock-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="three-way-stopcock-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="three-way-stopcock-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="three-way-stopcock-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="three-way-stopcock-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M4 18 H36 Q48 10 60 18 H92 V30 H60 L54 38 V72 H42 V38 L36 30 H4 Z" fill="url(#three-way-stopcock-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <circle cx="48" cy="24" r="11.5" fill="url(#three-way-stopcock-frost)" stroke="#1F2937" stroke-width="2.0"/>
-      <path d="M41 24 H55 M48 24 V31" fill="none" stroke="#0F766E" stroke-width="2.4" stroke-linecap="round"/>
-      <rect x="35" y="21" width="26" height="6" rx="3" fill="#F8FAFC" fill-opacity="0.45" stroke="#334155" stroke-width="1.2"/>
+<path d="M4 18 H36 Q48 10 60 18 H92 V30 H60 L54 38 V72 H42 V38 L36 30 H4 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <circle cx="48" cy="24" r="11.5" fill="#FFFFFF" stroke="#294454" stroke-width="2.0"/>
+      <path d="M41 24 H55 M48 24 V31" fill="none" stroke="#1F6F6B" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="35" y="21" width="26" height="6" rx="3" fill="#F8FAF9" stroke="#3D5968" stroke-width="1.2"/>
 </svg>

@@ -1,57 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="98" viewBox="0 0 50 98">
 <title>磨口变径接头</title>
-<defs>
-  <linearGradient id="reducing-adapter-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="reducing-adapter-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="reducing-adapter-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="reducing-adapter-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="reducing-adapter-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="reducing-adapter-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="reducing-adapter-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M13 28 V42 L14.5 56 V70 H35.5 V56 L37 42 V28 Z" fill="url(#reducing-adapter-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <line x1="19" y1="34" x2="19" y2="64" stroke="#FFFFFF" stroke-width="2.4" stroke-opacity="0.78" stroke-linecap="round"/>
-  <polygon points="39.5,7.7 10.5,7.7 13,28 37,28" fill="url(#reducing-adapter-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="37.854" y1="9.7" x2="12.824" y2="15.2"/><line x1="12.146" y1="9.7" x2="37.176" y2="15.2"/><line x1="37.336" y1="13.9" x2="13.341" y2="19.4"/><line x1="12.664" y1="13.9" x2="36.659" y2="19.4"/><line x1="36.819" y1="18.1" x2="13.858" y2="23.6"/><line x1="13.181" y1="18.1" x2="36.142" y2="23.6"/><line x1="36.302" y1="22.3" x2="14.252" y2="26.8"/><line x1="13.698" y1="22.3" x2="35.748" y2="26.8"/></g>
-  <rect x="7.3" y="4" width="35.4" height="4.2" rx="2.1" fill="url(#reducing-adapter-glass)" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="13" y1="28" x2="37" y2="28" stroke="#334155" stroke-width="1.3"/>
+<path d="M13 28 V42 L14.5 56 V70 H35.5 V56 L37 42 V28 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
   
-  <polygon points="35.5,70 14.5,70 17,94 33,94" fill="url(#reducing-adapter-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="33.892" y1="72" x2="16.681" y2="77.5"/><line x1="16.108" y1="72" x2="33.319" y2="77.5"/><line x1="33.454" y1="76.2" x2="17.119" y2="81.7"/><line x1="16.546" y1="76.2" x2="32.881" y2="81.7"/><line x1="33.017" y1="80.4" x2="17.556" y2="85.9"/><line x1="16.983" y1="80.4" x2="32.444" y2="85.9"/><line x1="32.579" y1="84.6" x2="17.994" y2="90.1"/><line x1="17.421" y1="84.6" x2="32.006" y2="90.1"/><line x1="32.142" y1="88.8" x2="18.275" y2="92.8"/><line x1="17.858" y1="88.8" x2="31.725" y2="92.8"/></g>
-  <line x1="13" y1="70" x2="37" y2="70" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
+  <polygon points="39.5,7.7 10.5,7.7 13,28 37,28" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="7.3" y="4" width="35.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
+  <line x1="13" y1="28" x2="37" y2="28" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
+  
+  <polygon points="35.5,70 14.5,70 17,94 33,94" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="13" y1="70" x2="37" y2="70" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

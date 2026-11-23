@@ -1145,6 +1145,52 @@ class ButtonAuditTests : public QObject {
         const QPixmap mixedShot = captureCurrentWindow(2);
         QVERIFY(!mixedShot.isNull());
         QVERIFY(mixedShot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas.png")));
+
+        // Capture Round 3 v3 mixed-apparatus verification canvas with 1-4 neck RBFs, flat suction/distillation flasks, lab chain, bio & physics instruments
+        window->drawing->restore({});
+        window->drawing->scene()->setProperty("precise", true);
+        for (int n = 1; n <= 4; ++n) {
+            window->drawing->addApparatus("studio:round-bottom-flask", {70.0 + (n - 1) * 195.0, 70.0});
+            auto* f = singleSelectedDrawingItem(window->drawing);
+            QVERIFY(f && f->setNeckCount(n));
+        }
+        window->drawing->addApparatus("studio:conical-flask-with-side-arm", {870, 70});
+        window->drawing->addApparatus("studio:distillation-flask", {1070, 70});
+
+        window->drawing->addApparatus("studio:round-bottom-flask", {130, 420});
+        auto* v3Flask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v3Flask && v3Flask->setNeckCount(3));
+        window->drawing->addApparatus("lab:plain-distillation-head", {130, 260});
+        auto* v3Head = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v3Flask->id, "mouth-2", v3Head->id, "outlet"));
+        window->drawing->addApparatus("studio:liebig-condenser", {330, 310});
+        auto* v3Cond = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v3Head->id, "side", v3Cond->id, "inlet"));
+        window->drawing->addApparatus("lab:vacuum-receiver-adapter", {550, 420});
+        auto* v3Recv = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v3Cond->id, "outlet", v3Recv->id, "inlet"));
+        window->drawing->addApparatus("lab:ground-conical-flask", {560, 560});
+        auto* v3RecFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v3Recv->id, "outlet", v3RecFlask->id, "mouth"));
+
+        for (const auto& spec : QList<QPair<QString, QPointF>>{
+                 {"bio:online-spectrophotometer", {810, 390}},
+                 {"physics:digital-oscilloscope", {1110, 365}},
+             }) {
+            window->drawing->addApparatus(spec.first, spec.second);
+            auto* added = singleSelectedDrawingItem(window->drawing);
+            QVERIFY2(added && added->renderer && added->renderer->isValid(), qPrintable(spec.first));
+        }
+        window->drawing->scene()->clearSelection();
+        window->drawing->scene()->setProperty("precise", false);
+        window->drawing->fitCanvas();
+        QTest::qWait(220);
+        const auto v3Svg = window->drawing->svgData();
+        QVERIFY(QSvgRenderer(v3Svg).isValid());
+        QVERIFY(!v3Svg.contains("<image") && !v3Svg.contains("<linearGradient") && !v3Svg.contains("<radialGradient"));
+        const QPixmap v3Shot = captureCurrentWindow(2);
+        QVERIFY(!v3Shot.isNull());
+        QVERIFY(v3Shot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas-v3.png")));
     }
 
     void cleanupTestCase() {

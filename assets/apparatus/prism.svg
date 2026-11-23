@@ -1,107 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="190" height="160" viewBox="0 0 190 160">
 <title>三棱镜</title>
-<defs>
-  <linearGradient id="prism-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
-    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
-    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="prism-glass-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
-    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
-    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="prism-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="prism-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="prism-metal" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#94A3B8"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="prism-metal-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#E2E8F0"/>
-    <stop offset="45%" stop-color="#F8FAFC"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="prism-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="prism-porcelain" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#ECEBE4"/>
-    <stop offset="28%" stop-color="#FFFFFF"/>
-    <stop offset="68%" stop-color="#F4F3EE"/>
-    <stop offset="100%" stop-color="#DFDDD4"/>
-  </linearGradient>
-  <linearGradient id="prism-rubber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#475569"/>
-    <stop offset="28%" stop-color="#64748B"/>
-    <stop offset="72%" stop-color="#334155"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="prism-cork" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#C98A4B"/>
-    <stop offset="30%" stop-color="#E7B98A"/>
-    <stop offset="72%" stop-color="#B9783A"/>
-    <stop offset="100%" stop-color="#9A5E26"/>
-  </linearGradient>
-  <linearGradient id="prism-accent" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#14B8A6"/>
-    <stop offset="100%" stop-color="#0F766E"/>
-  </linearGradient>
-  <linearGradient id="prism-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="prism-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-  <linearGradient id="prism-copper" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#9A3412"/>
-    <stop offset="35%" stop-color="#FDBA74"/>
-    <stop offset="70%" stop-color="#EA580C"/>
-    <stop offset="100%" stop-color="#7C2D12"/>
-  </linearGradient>
-  <linearGradient id="prism-screen" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0F172A"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="prism-liquid" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
-    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
-  </linearGradient>
-</defs>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Incident white ray & dispersed spectral beams -->
-      <line x1="12" y1="84" x2="72" y2="84" stroke="#D97706" stroke-width="2.4"/>
-      <line x1="72" y1="84" x2="122" y2="78" stroke="#D97706" stroke-width="1.6"/>
-      <line x1="122" y1="78" x2="178" y2="62" stroke="#DC2626" stroke-width="2.0"/>
-      <line x1="123" y1="81" x2="178" y2="78" stroke="#F59E0B" stroke-width="2.0"/>
-      <line x1="125" y1="84" x2="178" y2="94" stroke="#16A34A" stroke-width="2.0"/>
-      <line x1="127" y1="87" x2="178" y2="110" stroke="#2563EB" stroke-width="2.0"/>
-      <!-- Optical equilateral borosilicate prism -->
-      <polygon points="95,24 44,128 146,128" fill="url(#prism-glass)" stroke="#1F2937" stroke-width="2.2"/>
-      <line x1="93" y1="34" x2="54" y2="118" stroke="#FFFFFF" stroke-width="2.2" stroke-opacity="0.78" stroke-linecap="round"/>
+      <line x1="12" y1="84" x2="72" y2="84" stroke="#C9A048" stroke-width="2.4"/>
+      <line x1="72" y1="84" x2="122" y2="78" stroke="#DFBE74" stroke-width="1.8"/>
+      <line x1="122" y1="78" x2="178" y2="62" stroke="#C84B31" stroke-width="2.0"/>
+      <line x1="123" y1="81" x2="178" y2="78" stroke="#C9A048" stroke-width="2.0"/>
+      <line x1="125" y1="84" x2="178" y2="94" stroke="#6DA37C" stroke-width="2.0"/>
+      <line x1="127" y1="87" x2="178" y2="110" stroke="#3A7CA5" stroke-width="2.0"/>
+      <polygon points="95,24 44,128 146,128" fill="#F4F9F8" fill-opacity="0.72" stroke="#294454" stroke-width="2.3"/>
     </g>
   
 </svg>

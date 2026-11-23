@@ -1,57 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="104" height="226" viewBox="0 0 104 226">
 <title>真空冷阱</title>
-<defs>
-  <linearGradient id="cold-trap-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="cold-trap-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="cold-trap-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="cold-trap-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="cold-trap-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="cold-trap-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="cold-trap-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M38 18.8 L18.16 19.4 L16.16 17.5 L6 19.6 L6 28.4 L16.16 30.5 L18.16 28.6 L38 29.2 Z" fill="url(#cold-trap-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="36.5" y1="22.4" x2="8" y2="22.4" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>
-  <path d="M66 32.8 L85.84 33.4 L87.84 31.5 L98 33.6 L98 42.4 L87.84 44.5 L85.84 42.6 L66 43.2 Z" fill="url(#cold-trap-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="67.5" y1="36.4" x2="96" y2="36.4" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>
-  <path d="M30 58 V192 C30 214 74 214 74 192 V58 Z" fill="url(#cold-trap-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#334155" stroke-width="4.6" stroke-linecap="round"/>
-      <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-opacity="0.7" stroke-linecap="round"/>
-  <rect x="26" y="52" width="52" height="10" rx="3" fill="url(#cold-trap-frost)" stroke="#1F2937" stroke-width="2.0"/>
-  <path d="M36 52 V18 C36 8 68 8 68 18 V52 Z" fill="url(#cold-trap-glass)" stroke="#1F2937" stroke-width="2.2"/>
-  <line x1="37" y1="68" x2="37" y2="190" stroke="#FFFFFF" stroke-width="2.8" stroke-opacity="0.78" stroke-linecap="round"/>
+<path d="M38 18.8 L18.16 19.4 L16.16 17.5 L6 19.6 L6 28.4 L16.16 30.5 L18.16 28.6 L38 29.2 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M66 32.8 L85.84 33.4 L87.84 31.5 L98 33.6 L98 42.4 L87.84 44.5 L85.84 42.6 L66 43.2 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M30 58 V192 C30 214 74 214 74 192 V58 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#3D5968" stroke-width="4.4" stroke-linecap="round"/>
+      <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="26" y="52" width="52" height="10" rx="3" fill="#FFFFFF" stroke="#294454" stroke-width="2.0"/>
+  <path d="M36 52 V18 C36 8 68 8 68 18 V52 Z" fill="none" stroke="#294454" stroke-width="2.2"/>
+  
 </svg>

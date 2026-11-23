@@ -1,55 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="136" height="304" viewBox="0 0 136 304">
 <title>弗里德里希回流冷凝管</title>
-<defs>
-  <linearGradient id="friedrich-condenser-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="friedrich-condenser-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="friedrich-condenser-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="friedrich-condenser-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="friedrich-condenser-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="friedrich-condenser-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="friedrich-condenser-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
 
-      <path d="M40 15.2 L22.64 15.8 L20.64 13.9 L12 16 L12 24 L20.64 26.1 L22.64 24.2 L40 24.8 Z" fill="url(#friedrich-condenser-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="38.5" y1="18.4" x2="14" y2="18.4" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>
-      <path d="M76 33.2 L93.36 33.8 L95.36 31.9 L104 34 L104 42 L95.36 44.1 L93.36 42.2 L76 42.8 Z" fill="url(#friedrich-condenser-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="77.5" y1="36.4" x2="102" y2="36.4" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>
-      <polygon points="82,78 106.071,72.594 112.569,90.454 82,104" fill="url(#friedrich-condenser-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M40 15.2 L22.64 15.8 L20.64 13.9 L12 16 L12 24 L20.64 26.1 L22.64 24.2 L40 24.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+      <path d="M76 33.2 L93.36 33.8 L95.36 31.9 L104 34 L104 42 L95.36 44.1 L93.36 42.2 L76 42.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+      <polygon points="82,78 106.071,72.594 112.569,90.454 82,104" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
       <path d="
       M40 12 H76 V52
       C84 58 84 68 84 78
@@ -58,33 +13,31 @@
       H46.5
       C46.5 264 32 262 32 246
       V66 C32 56 40 52 40 48 Z"
-      fill="url(#friedrich-condenser-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
       
-      <path d="M41 48 V246 C41 258 75 258 75 246 V48 Z" fill="url(#friedrich-condenser-coolant)" stroke="#334155" stroke-width="1.6"/>
-      <line x1="58" y1="28" x2="58" y2="246" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M41 76 C37 83 79 89 75 96" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 78 C79 85 37 91 41 98" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-  <path d="M41 97 C37 104 79 110 75 117" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 99 C79 106 37 112 41 119" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-  <path d="M41 118 C37 125 79 131 75 138" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 120 C79 127 37 133 41 140" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-  <path d="M41 139 C37 146 79 152 75 159" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 141 C79 148 37 154 41 161" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-  <path d="M41 160 C37 167 79 173 75 180" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 162 C79 169 37 175 41 182" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-  <path d="M41 181 C37 188 79 194 75 201" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 183 C79 190 37 196 41 203" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-  <path d="M41 202 C37 209 79 215 75 222" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 204 C79 211 37 217 41 224" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-  <path d="M41 223 C37 230 79 236 75 243" fill="none" stroke="#334155" stroke-width="1.7"/>
-  <path d="M75 225 C79 232 37 238 41 245" fill="none" stroke="#14B8A6" stroke-width="3.4" stroke-opacity="0.32"/>
-      <line x1="34" y1="54" x2="82" y2="54" stroke="#334155" stroke-width="1.3"/>
-      <line x1="37" y1="66" x2="37" y2="242" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.78" stroke-linecap="round"/>
-      <polygon points="130.283,85.602 122.761,64.928 106.311,73.254 112.329,89.794" fill="url(#friedrich-condenser-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="127.843" y1="84.745" x2="116.5" y2="69.655"/><line x1="121.442" y1="67.154" x2="122.448" y2="86.004"/><line x1="123.723" y1="85.706" x2="112.726" y2="71.566"/><line x1="117.668" y1="69.064" x2="118.329" y2="86.966"/><line x1="119.604" y1="86.668" x2="108.951" y2="73.476"/><line x1="113.894" y1="70.974" x2="114.209" y2="87.927"/><line x1="115.484" y1="87.63" x2="107.868" y2="74.024"/><line x1="110.12" y1="72.885" x2="113.027" y2="88.203"/></g>
-  <polygon points="134.788,87.16 125.212,60.84 121.264,62.276 130.84,88.596" fill="url(#friedrich-condenser-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M41 48 V246 C41 258 75 258 75 246 V48 Z" fill="#E6F4F3" stroke="#3D5968" stroke-width="1.6"/>
+      <line x1="58" y1="28" x2="58" y2="246" stroke="#1F6F6B" stroke-width="2.0" stroke-linecap="round"/>
+      <path d="M75 78 C79 85 37 91 41 98" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 76 C37 83 79 89 75 96" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M75 99 C79 106 37 112 41 119" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 97 C37 104 79 110 75 117" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M75 120 C79 127 37 133 41 140" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 118 C37 125 79 131 75 138" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M75 141 C79 148 37 154 41 161" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 139 C37 146 79 152 75 159" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M75 162 C79 169 37 175 41 182" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 160 C37 167 79 173 75 180" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M75 183 C79 190 37 196 41 203" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 181 C37 188 79 194 75 201" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M75 204 C79 211 37 217 41 224" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 202 C37 209 79 215 75 222" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+  <path d="M75 225 C79 232 37 238 41 245" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-dasharray="3 2.5"/>
+  <path d="M41 223 C37 230 79 236 75 243" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+      <line x1="34" y1="54" x2="82" y2="54" stroke="#3D5968" stroke-width="1.3"/>
       
-  <polygon points="69.5,276 46.5,276 49.2,300 66.8,300" fill="url(#friedrich-condenser-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="67.875" y1="278" x2="48.744" y2="283.5"/><line x1="48.125" y1="278" x2="67.256" y2="283.5"/><line x1="67.403" y1="282.2" x2="49.216" y2="287.7"/><line x1="48.597" y1="282.2" x2="66.784" y2="287.7"/><line x1="66.93" y1="286.4" x2="49.689" y2="291.9"/><line x1="49.07" y1="286.4" x2="66.311" y2="291.9"/><line x1="66.457" y1="290.6" x2="50.161" y2="296.1"/><line x1="49.543" y1="290.6" x2="65.839" y2="296.1"/><line x1="65.985" y1="294.8" x2="50.465" y2="298.8"/><line x1="50.015" y1="294.8" x2="65.535" y2="298.8"/></g>
-  <line x1="45" y1="276" x2="71" y2="276" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
+      <polygon points="130.283,85.602 122.761,64.928 106.311,73.254 112.329,89.794" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="134.788,87.16 125.212,60.84 121.264,62.276 130.84,88.596" fill="#FFFFFF" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+      
+  <polygon points="69.5,276 46.5,276 49.2,300 66.8,300" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="45" y1="276" x2="71" y2="276" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

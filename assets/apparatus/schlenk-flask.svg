@@ -1,108 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
 <title>施伦克瓶</title>
-<defs>
-  <linearGradient id="schlenk-flask-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
-    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
-    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-glass-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
-    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
-    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-metal" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#94A3B8"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-metal-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#E2E8F0"/>
-    <stop offset="45%" stop-color="#F8FAFC"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-porcelain" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#ECEBE4"/>
-    <stop offset="28%" stop-color="#FFFFFF"/>
-    <stop offset="68%" stop-color="#F4F3EE"/>
-    <stop offset="100%" stop-color="#DFDDD4"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-rubber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#475569"/>
-    <stop offset="28%" stop-color="#64748B"/>
-    <stop offset="72%" stop-color="#334155"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-cork" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#C98A4B"/>
-    <stop offset="30%" stop-color="#E7B98A"/>
-    <stop offset="72%" stop-color="#B9783A"/>
-    <stop offset="100%" stop-color="#9A5E26"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-accent" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#14B8A6"/>
-    <stop offset="100%" stop-color="#0F766E"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-copper" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#9A3412"/>
-    <stop offset="35%" stop-color="#FDBA74"/>
-    <stop offset="70%" stop-color="#EA580C"/>
-    <stop offset="100%" stop-color="#7C2D12"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-screen" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0F172A"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="schlenk-flask-liquid" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
-    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
-  </linearGradient>
-</defs>
-<path d="M97 49 H127 Q138 49 138 60 V83 H126 V61 H97 Z" fill="url(#schlenk-flask-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <path d="M102 52.5 H129 Q132 52.5 132 58 V79" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.72" stroke-linecap="round"/>
-  <path d="M61 12 V68 C22 86 24 166 80 181 C136 166 138 86 99 68 V12 Z" fill="url(#schlenk-flask-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <polygon points="95.8,15.7 64.2,15.7 66.8,36 93.2,36" fill="url(#schlenk-flask-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="94.144" y1="17.7" x2="66.561" y2="23.2"/><line x1="65.856" y1="17.7" x2="93.439" y2="23.2"/><line x1="93.606" y1="21.9" x2="67.099" y2="27.4"/><line x1="66.394" y1="21.9" x2="92.901" y2="27.4"/><line x1="93.068" y1="26.1" x2="67.636" y2="31.6"/><line x1="66.932" y1="26.1" x2="92.364" y2="31.6"/><line x1="92.53" y1="30.3" x2="68.046" y2="34.8"/><line x1="67.47" y1="30.3" x2="91.954" y2="34.8"/></g>
-  <rect x="61" y="12" width="38" height="4.2" rx="2.1" fill="url(#schlenk-flask-glass)" stroke="#1F2937" stroke-width="2"/>
-  <line x1="66.8" y1="36" x2="93.2" y2="36" stroke="#334155" stroke-width="1.3"/>
+<path d="M59 12 Q63 12 64 19 V68 C24 88 26 166 80 181 C134 166 136 88 96 68 V59 H126 V83 M138 83 V58 Q138 47 127 47 H96 V19 Q97 12 101 12" fill="none" stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
   <g>
-    <path d="M123 64 L141 65.2 L141 70.8 L123 72 Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.8" stroke-linejoin="round"/>
-    <rect x="116" y="61.5" width="7" height="13" rx="2" fill="#0F766E" stroke="#1F2937" stroke-width="1.6"/>
-    <rect x="141" y="64.5" width="5" height="7" rx="1.5" fill="#334155" stroke="#1F2937" stroke-width="1.4"/>
-    <line x1="129.5" y1="65.5" x2="134.5" y2="70.5" stroke="#334155" stroke-width="1.2"/>
+    <path d="M123 64 L141 65.2 L141 70.8 L123 72 Z" fill="#F8FAF9" stroke="#294454" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="116" y="61.5" width="7" height="13" rx="2" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
+    <rect x="141" y="64.5" width="5" height="7" rx="1.5" fill="#C6D2D7" stroke="#294454" stroke-width="1.6"/>
+    <line x1="129.5" y1="65.5" x2="134.5" y2="70.5" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
   </g>
-  <path d="M43 128 C44 100 56 85 67 74" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.78" stroke-linecap="round"/>
-  <text x="80" y="130" fill="#0F766E" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">SCHLENK</text>
 </svg>

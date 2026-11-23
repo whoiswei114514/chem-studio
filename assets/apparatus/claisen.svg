@@ -1,113 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
 <title>克莱森接头</title>
-<defs>
-  <linearGradient id="claisen-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
-    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
-    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="claisen-glass-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
-    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
-    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="claisen-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="claisen-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="claisen-metal" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#94A3B8"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="claisen-metal-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#E2E8F0"/>
-    <stop offset="45%" stop-color="#F8FAFC"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="claisen-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="claisen-porcelain" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#ECEBE4"/>
-    <stop offset="28%" stop-color="#FFFFFF"/>
-    <stop offset="68%" stop-color="#F4F3EE"/>
-    <stop offset="100%" stop-color="#DFDDD4"/>
-  </linearGradient>
-  <linearGradient id="claisen-rubber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#475569"/>
-    <stop offset="28%" stop-color="#64748B"/>
-    <stop offset="72%" stop-color="#334155"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="claisen-cork" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#C98A4B"/>
-    <stop offset="30%" stop-color="#E7B98A"/>
-    <stop offset="72%" stop-color="#B9783A"/>
-    <stop offset="100%" stop-color="#9A5E26"/>
-  </linearGradient>
-  <linearGradient id="claisen-accent" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#14B8A6"/>
-    <stop offset="100%" stop-color="#0F766E"/>
-  </linearGradient>
-  <linearGradient id="claisen-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="claisen-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-  <linearGradient id="claisen-copper" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#9A3412"/>
-    <stop offset="35%" stop-color="#FDBA74"/>
-    <stop offset="70%" stop-color="#EA580C"/>
-    <stop offset="100%" stop-color="#7C2D12"/>
-  </linearGradient>
-  <linearGradient id="claisen-screen" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0F172A"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="claisen-liquid" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
-    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
-  </linearGradient>
-</defs>
-<path d="M74 52 H116 Q137 52 137 70 V76 H123 V66 H74 Z" fill="url(#claisen-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M72 128 H106 Q119 128 119 112 V32 H105 V112 H72 Z" fill="url(#claisen-glass)" stroke="#1F2937" stroke-width="2.1" stroke-linejoin="round"/>
-  <polygon points="118.8,15.7 105.2,15.7 106.6,34 117.4,34" fill="url(#claisen-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="117.247" y1="17.7" x2="107.174" y2="23.2"/><line x1="106.753" y1="17.7" x2="116.826" y2="23.2"/><line x1="116.926" y1="21.9" x2="107.495" y2="27.4"/><line x1="107.074" y1="21.9" x2="116.505" y2="27.4"/><line x1="116.604" y1="26.1" x2="107.816" y2="31.6"/><line x1="107.396" y1="26.1" x2="116.184" y2="31.6"/><line x1="116.283" y1="30.3" x2="107.908" y2="32.8"/><line x1="107.717" y1="30.3" x2="116.092" y2="32.8"/></g>
-  <rect x="103" y="12" width="18" height="4.2" rx="2.1" fill="url(#claisen-glass)" stroke="#1F2937" stroke-width="2"/>
-  <line x1="106.6" y1="34" x2="117.4" y2="34" stroke="#334155" stroke-width="1.3"/>
-  <rect x="57" y="34" width="18" height="142" fill="url(#claisen-glass)" stroke="#1F2937" stroke-width="2.2"/>
-  <polygon points="73.8,15.7 58.2,15.7 59.6,34 72.4,34" fill="url(#claisen-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="72.247" y1="17.7" x2="60.174" y2="23.2"/><line x1="59.753" y1="17.7" x2="71.826" y2="23.2"/><line x1="71.926" y1="21.9" x2="60.495" y2="27.4"/><line x1="60.074" y1="21.9" x2="71.505" y2="27.4"/><line x1="71.604" y1="26.1" x2="60.816" y2="31.6"/><line x1="60.396" y1="26.1" x2="71.184" y2="31.6"/><line x1="71.283" y1="30.3" x2="60.908" y2="32.8"/><line x1="60.717" y1="30.3" x2="71.092" y2="32.8"/></g>
-  <rect x="56" y="12" width="20" height="4.2" rx="2.1" fill="url(#claisen-glass)" stroke="#1F2937" stroke-width="2"/>
-  <line x1="59.6" y1="34" x2="72.4" y2="34" stroke="#334155" stroke-width="1.3"/>
+<path d="M57 34 V174 M75 34 V110 M75 128 V174" fill="none" stroke="#294454" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M75 110 C94 110 105 96 105 74 V34 M75 128 C102 128 119 108 119 80 M119 62 V34" fill="none" stroke="#294454" stroke-width="2.3" stroke-linecap="round"/>
+  <line x1="119" y1="62" x2="123" y2="63" stroke="#294454" stroke-width="2.3" stroke-linecap="round"/>
+  <line x1="119" y1="80" x2="117" y2="81" stroke="#294454" stroke-width="2.3" stroke-linecap="round"/>
+  <polygon points="123.248,63.073 116.752,80.927 135.296,85.546 140.424,71.45" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="123.762" y1="61.66" x2="116.238" y2="82.34" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="73.8,15.7 58.2,15.7 59.6,34 72.4,34" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="56" y="12" width="20" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
+  <line x1="59.6" y1="34" x2="72.4" y2="34" stroke="#3D5968" stroke-width="1.4" stroke-linecap="round"/>
+  <polygon points="118.8,15.7 105.2,15.7 106.6,34 117.4,34" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="103" y="12" width="18" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.2"/>
+  <line x1="106.6" y1="34" x2="117.4" y2="34" stroke="#3D5968" stroke-width="1.4" stroke-linecap="round"/>
   
-  <polygon points="78,174 54,174 56.2,196 75.8,196" fill="url(#claisen-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="76.4" y1="176" x2="56.15" y2="181.5"/><line x1="55.6" y1="176" x2="75.85" y2="181.5"/><line x1="75.98" y1="180.2" x2="56.57" y2="185.7"/><line x1="56.02" y1="180.2" x2="75.43" y2="185.7"/><line x1="75.56" y1="184.4" x2="56.99" y2="189.9"/><line x1="56.44" y1="184.4" x2="75.01" y2="189.9"/><line x1="75.14" y1="188.6" x2="57.41" y2="194.1"/><line x1="56.86" y1="188.6" x2="74.59" y2="194.1"/><line x1="74.72" y1="192.8" x2="57.48" y2="194.8"/><line x1="57.28" y1="192.8" x2="74.52" y2="194.8"/></g>
-  <line x1="52.5" y1="174" x2="79.5" y2="174" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
-  
-  <polygon points="140,72 120,72 122.2,92 137.8,92" fill="url(#claisen-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="138.38" y1="74" x2="122.225" y2="79.5"/><line x1="121.62" y1="74" x2="137.775" y2="79.5"/><line x1="137.918" y1="78.2" x2="122.687" y2="83.7"/><line x1="122.082" y1="78.2" x2="137.313" y2="83.7"/><line x1="137.456" y1="82.4" x2="123.149" y2="87.9"/><line x1="122.544" y1="82.4" x2="136.851" y2="87.9"/><line x1="136.994" y1="86.6" x2="123.468" y2="90.8"/><line x1="123.006" y1="86.6" x2="136.532" y2="90.8"/></g>
-  <line x1="118.5" y1="72" x2="141.5" y2="72" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="61" y1="42" x2="61" y2="166" stroke="#FFFFFF" stroke-width="2.2" stroke-opacity="0.78" stroke-linecap="round"/>
+  <polygon points="78,174 54,174 56.2,196 75.8,196" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="52.5" y1="174" x2="79.5" y2="174" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

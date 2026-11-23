@@ -17,7 +17,7 @@
 
 ## 器材图
 
-基础器材由 `scripts/generate-apparatus.cjs` 及 `scripts/apparatus/`（`svg-style.cjs`、`part-glassware.cjs`、`part-equipment.cjs`、`part-science-misc.cjs`）生成，实验室与生化/物理器材分别由 `scripts/generate-laboratory-art.cjs` 与 `scripts/generate-biophys-art.cjs` 生成，全部采用 Qt `QSvgRenderer` 兼容的纯矢量渐变与几何路径，不含位图或 `<script>`。`manifest.json` 保存名称、分类、尺寸、校验和以及连接口。
+基础器材由 `scripts/generate-apparatus.cjs` 及 `scripts/apparatus/`（`svg-style.cjs`、`part-glassware.cjs`、`part-equipment.cjs`、`part-science-misc.cjs`）生成，实验室与生化/物理器材分别由 `scripts/generate-laboratory-art.cjs` 与 `scripts/generate-biophys-art.cjs` 生成，全部采用 Qt `QSvgRenderer` 兼容的经典扁平纯矢量几何路径（无渐变、无滤镜、不含位图或 `<script>`）。`manifest.json` 保存名称、分类、尺寸、校验和以及连接口。
 
 ```powershell
 node scripts/generate-apparatus.cjs

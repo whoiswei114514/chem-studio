@@ -1,51 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="264" viewBox="0 0 128 264">
 <title>启普发生器</title>
-<defs>
-  <linearGradient id="kipp-generator-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="kipp-generator-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="kipp-generator-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="kipp-generator-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="kipp-generator-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="kipp-generator-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="kipp-generator-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M94 121.2 L110.12 121.8 L112.12 119.9 L120 122 L120 130 L112.12 132.1 L110.12 130.2 L94 130.8 Z" fill="url(#kipp-generator-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="95.5" y1="124.4" x2="118" y2="124.4" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>
+<path d="M94 121.2 L110.12 121.8 L112.12 119.9 L120 122 L120 130 L112.12 132.1 L110.12 130.2 L94 130.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
   <path d="
       M44 26 V40
       C16 48 14 84 34 98
@@ -56,24 +12,23 @@
       C100 214 98 176 80 162
       C98 148 98 112 78 98
       C98 84 96 48 68 40 V26 Z"
-      fill="url(#kipp-generator-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M50 98 V216 M62 98 V216" fill="none" stroke="#334155" stroke-width="1.6"/>
-      <line x1="33" y1="162" x2="50" y2="162" stroke="#334155" stroke-width="2.0" stroke-dasharray="3 2"/>
-      <line x1="62" y1="162" x2="79" y2="162" stroke="#334155" stroke-width="2.0" stroke-dasharray="3 2"/>
-      <circle cx="41" cy="150" r="3.2" fill="#CBD5E1" stroke="#334155" stroke-width="1"/>
-      <circle cx="71" cy="150" r="3.2" fill="#CBD5E1" stroke="#334155" stroke-width="1"/>
-      <circle cx="37" cy="143" r="3.0" fill="#CBD5E1" stroke="#334155" stroke-width="1"/>
+      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M50 98 V216 M62 98 V216" fill="none" stroke="#3D5968" stroke-width="1.6"/>
+      <line x1="33" y1="162" x2="50" y2="162" stroke="#3D5968" stroke-width="2.0" stroke-dasharray="3 2"/>
+      <line x1="62" y1="162" x2="79" y2="162" stroke="#3D5968" stroke-width="2.0" stroke-dasharray="3 2"/>
+      <circle cx="41" cy="150" r="3.2" fill="#CBD5E1" stroke="#3D5968" stroke-width="1"/>
+      <circle cx="71" cy="150" r="3.2" fill="#CBD5E1" stroke="#3D5968" stroke-width="1"/>
+      <circle cx="37" cy="143" r="3.0" fill="#CBD5E1" stroke="#3D5968" stroke-width="1"/>
   <g>
-    <path d="M98 122 L112 123.2 L112 128.8 L98 130 Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.8" stroke-linejoin="round"/>
-    <rect x="91" y="119.5" width="7" height="13" rx="2" fill="#0F766E" stroke="#1F2937" stroke-width="1.6"/>
-    <rect x="112" y="122.5" width="5" height="7" rx="1.5" fill="#334155" stroke="#1F2937" stroke-width="1.4"/>
-    <line x1="102.5" y1="123.5" x2="107.5" y2="128.5" stroke="#334155" stroke-width="1.2"/>
+    <path d="M98 122 L112 123.2 L112 128.8 L98 130 Z" fill="#F8FAF9" stroke="#294454" stroke-width="1.9" stroke-linejoin="round"/>
+    <rect x="91" y="119.5" width="7" height="13" rx="2" fill="#258F89" stroke="#294454" stroke-width="1.7"/>
+    <rect x="112" y="122.5" width="5" height="7" rx="1.5" fill="#C6D2D7" stroke="#294454" stroke-width="1.5"/>
+    <line x1="102.5" y1="123.5" x2="107.5" y2="128.5" stroke="#3D5968" stroke-width="1.2"/>
   </g>
-  <line x1="29" y1="56" x2="29" y2="86" stroke="#FFFFFF" stroke-width="2.8" stroke-opacity="0.78" stroke-linecap="round"/>
-  <line x1="28" y1="118" x2="28" y2="148" stroke="#FFFFFF" stroke-width="2.8" stroke-opacity="0.78" stroke-linecap="round"/>
-  <line x1="27" y1="182" x2="27" y2="214" stroke="#FFFFFF" stroke-width="2.8" stroke-opacity="0.78" stroke-linecap="round"/>
-  <polygon points="69,7.7 43,7.7 45.5,26 66.5,26" fill="url(#kipp-generator-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="67.327" y1="9.7" x2="45.425" y2="15.2"/><line x1="44.673" y1="9.7" x2="66.575" y2="15.2"/><line x1="66.753" y1="13.9" x2="45.998" y2="19.4"/><line x1="45.247" y1="13.9" x2="66.002" y2="19.4"/><line x1="66.179" y1="18.1" x2="46.572" y2="23.6"/><line x1="45.821" y1="18.1" x2="65.428" y2="23.6"/><line x1="65.605" y1="22.3" x2="46.736" y2="24.8"/><line x1="46.395" y1="22.3" x2="65.264" y2="24.8"/></g>
-  <rect x="39.8" y="4" width="32.4" height="4.2" rx="2.1" fill="url(#kipp-generator-glass)" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="45.5" y1="26" x2="66.5" y2="26" stroke="#334155" stroke-width="1.3"/>
+  
+  
+  
+  <polygon points="69,7.7 43,7.7 45.5,26 66.5,26" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="39.8" y="4" width="32.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
+  <line x1="45.5" y1="26" x2="66.5" y2="26" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
 </svg>

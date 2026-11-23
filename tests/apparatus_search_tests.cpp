@@ -65,6 +65,16 @@ class ApparatusSearchTests : public QObject {
                          !e.category.contains("builtin"),
                      qPrintable(QString("Source-named category '%1' on %2").arg(e.category, e.id)));
         }
+        const QStringList hiddenIds{
+            "studio:stemmed-glass", "studio:soda-can", "studio:kettle", "studio:daisy", "studio:tree",
+            "studio:sun", "studio:hand", "studio:eye", "studio:camera", "studio:videocamera",
+            "studio:desk-fan", "studio:pencil", "studio:felt-tip-pen", "studio:paperclip", "studio:peg",
+            "studio:shoot", "studio:adhesive-tape", "studio:distillation-head", "studio:claisen",
+            "studio:fractionating-column", "studio:dynamometer", "studio:multimeter"};
+        for (const auto& hidden : hiddenIds) {
+            QVERIFY2(!seenIds.contains(hidden), qPrintable("Hidden item leaked into search entries: " + hidden));
+            QVERIFY2(chem::findArtwork(hidden) != nullptr, qPrintable("Hidden item lost alias/findArtwork: " + hidden));
+        }
     }
     void naturalLanguage_data() {
         QTest::addColumn<QString>("query");
@@ -128,6 +138,12 @@ class ApparatusSearchTests : public QObject {
             << QStringList{"physics:wheatstone-bridge"};
         QTest::newRow("water-bath-desc") << QStringLiteral("恒温水浴加热槽")
             << QStringList{"lab:digital-water-bath", "chemix:water-bath", "studio:water-bath"};
+        QTest::newRow("round-bottom-flask-nl") << QStringLiteral("圆底烧瓶")
+            << QStringList{"studio:round-bottom-flask"};
+        QTest::newRow("suction-flask-nl") << QStringLiteral("抽滤瓶")
+            << QStringList{"studio:conical-flask-with-side-arm"};
+        QTest::newRow("distillation-flask-nl") << QStringLiteral("蒸馏烧瓶")
+            << QStringList{"studio:distillation-flask"};
     }
     void naturalLanguage() {
         QFETCH(QString, query); QFETCH(QStringList, expected);
@@ -140,6 +156,19 @@ class ApparatusSearchTests : public QObject {
         QVERIFY2(std::any_of(expected.cbegin(), expected.cend(), [&](const auto& id) { return top.contains(id); }),
             qPrintable(query + ": " + top.join(", ")));
         if (query.endsWith(QStringLiteral("的瓶子"))) QVERIFY2(expected.contains(top.front()), qPrintable(query + ": " + top.join(", ")));
+    }
+    void hiddenClutterExcludedFromSearchResults() {
+        for (const QString& q : {QStringLiteral("高脚杯"), QStringLiteral("studio:stemmed-glass"), QStringLiteral("分馏柱"), QStringLiteral("数字万用表")}) {
+            const auto res = index->search(q);
+            for (const auto& hit : res.hits) {
+                QVERIFY(hit.id != "studio:stemmed-glass");
+                QVERIFY(hit.id != "studio:fractionating-column");
+                QVERIFY(hit.id != "studio:multimeter");
+                QVERIFY(hit.id != "studio:distillation-head");
+                QVERIFY(hit.id != "studio:claisen");
+                QVERIFY(hit.id != "studio:dynamometer");
+            }
+        }
     }
     void exactNamesAndWhitespace() {
         const auto result = index->search(QStringLiteral("  温度计  "));

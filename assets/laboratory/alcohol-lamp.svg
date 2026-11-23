@@ -1,56 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="94" height="136" viewBox="0 0 94 136">
 <title>酒精灯</title>
-<defs>
-  <linearGradient id="alcohol-lamp-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="alcohol-lamp-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="alcohol-lamp-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="alcohol-lamp-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="alcohol-lamp-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="alcohol-lamp-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="alcohol-lamp-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M47 4 C59 22 58 36 47 39 C36 36 35 22 47 4 Z" fill="#F59E0B" fill-opacity="0.88" stroke="#F59E0B" stroke-width="1.2"/>
-      <path d="M47 15 C53 26 53 36 47 39 C41 36 41 26 47 15 Z" fill="#38BDF8" fill-opacity="0.85"/>
-  <path d="M33 57 H61 V66 C79 76 89 96 87 118 Q86 132 71 132 H23 Q8 132 7 118 C5 96 15 76 33 66 Z" fill="url(#alcohol-lamp-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M11 104 Q47 107 83 104 L81 121 Q47 126 13 121 Z" fill="#E0F2FE" fill-opacity="0.52" stroke="#334155" stroke-width="1.0"/>
-      <path d="M47 48 V122" fill="none" stroke="#F8FAFC" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M47 48 V122" fill="none" stroke="#334155" stroke-width="1.2" stroke-dasharray="3 2"/>
-  <rect x="43" y="38" width="8" height="10" rx="1.5" fill="url(#alcohol-lamp-brass)" stroke="#1F2937" stroke-width="1.8"/>
-      <rect x="35" y="48" width="24" height="9" rx="3" fill="url(#alcohol-lamp-brass)" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="23" y1="82" x2="23" y2="120" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.78" stroke-linecap="round"/>
+<path d="M47 4 C59 22 58 36 47 39 C36 36 35 22 47 4 Z" fill="#EAD79B" stroke="#A88234" stroke-width="1.3"/>
+      <path d="M47 15 C53 26 53 36 47 39 C41 36 41 26 47 15 Z" fill="#258F89"/>
+  <path d="M33 57 H61 V66 C79 76 89 96 87 118 Q86 132 71 132 H23 Q8 132 7 118 C5 96 15 76 33 66 Z" fill="none" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M11 104 Q47 107 83 104 L81 121 Q47 126 13 121 Z" fill="#E6F4F3" stroke="#258F89" stroke-width="1.2"/>
+      <path d="M47 48 V122" fill="none" stroke="#3D5968" stroke-width="1.4" stroke-dasharray="3 2"/>
+  <rect x="43" y="38" width="8" height="10" rx="1.5" fill="#C9A048" stroke="#294454" stroke-width="1.8"/>
+      <rect x="35" y="48" width="24" height="9" rx="3" fill="#C9A048" stroke="#294454" stroke-width="2.0"/>
+  
 </svg>

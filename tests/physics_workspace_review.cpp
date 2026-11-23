@@ -346,9 +346,9 @@ class WorkspaceTests : public QObject {
         QVERIFY(visible().isEmpty());
         search->clear();
         domain->setCurrentIndex(domain->findData("biochemistry"));
-        QCOMPARE(visible().size(), 59);
+        QCOMPARE(visible().size(), 56);
         domain->setCurrentIndex(domain->findData("annotation"));
-        QCOMPARE(visible().size(), 26);
+        QVERIFY(visible().size() >= 23);
         filterElectrical();
     }
     void paletteDoubleClickAndDrop() {

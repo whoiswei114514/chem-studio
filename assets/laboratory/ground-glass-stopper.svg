@@ -1,54 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="68" viewBox="0 0 40 68">
 <title>玻璃磨口塞（圆头）</title>
-<defs>
-  <linearGradient id="ground-glass-stopper-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="ground-glass-stopper-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="ground-glass-stopper-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="ground-glass-stopper-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="ground-glass-stopper-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="ground-glass-stopper-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="ground-glass-stopper-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
 
-  <polygon points="34,33 6,33 9.5,64 30.5,64" fill="url(#ground-glass-stopper-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="32.374" y1="35" x2="8.247" y2="40.5"/><line x1="7.626" y1="35" x2="31.753" y2="40.5"/><line x1="31.9" y1="39.2" x2="8.721" y2="44.7"/><line x1="8.1" y1="39.2" x2="31.279" y2="44.7"/><line x1="31.426" y1="43.4" x2="9.195" y2="48.9"/><line x1="8.574" y1="43.4" x2="30.805" y2="48.9"/><line x1="30.952" y1="47.6" x2="9.669" y2="53.1"/><line x1="9.048" y1="47.6" x2="30.331" y2="53.1"/><line x1="30.477" y1="51.8" x2="10.144" y2="57.3"/><line x1="9.523" y1="51.8" x2="29.856" y2="57.3"/><line x1="30.003" y1="56" x2="10.618" y2="61.5"/><line x1="9.997" y1="56" x2="29.382" y2="61.5"/><line x1="29.529" y1="60.2" x2="10.765" y2="62.8"/><line x1="10.471" y1="60.2" x2="29.235" y2="62.8"/></g>
+  <polygon points="34,33 6,33 9.5,64 30.5,64" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   
-  <path d="M4 19 C4 8 11 3 20 3 C29 3 36 8 36 19 C36 26 31 30 34 33 H6 C9 30 4 26 4 19 Z" fill="url(#ground-glass-stopper-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-      <rect x="5" y="30" width="30" height="3.2" rx="1.6" fill="url(#ground-glass-stopper-glass)" stroke="#1F2937" stroke-width="1.6"/>
-  <line x1="12" y1="9" x2="12" y2="25" stroke="#FFFFFF" stroke-width="2.8" stroke-opacity="0.8" stroke-linecap="round"/>
+  <path d="M4 19 C4 8 11 3 20 3 C29 3 36 8 36 19 C36 26 31 30 34 33 H6 C9 30 4 26 4 19 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="5" y="30" width="30" height="3.2" rx="1.6" fill="none" stroke="#294454" stroke-width="1.6"/>
+  
 </svg>

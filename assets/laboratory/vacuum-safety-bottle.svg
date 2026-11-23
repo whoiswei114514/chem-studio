@@ -1,56 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="122" height="200" viewBox="0 0 122 200">
 <title>真空安全缓冲瓶</title>
-<defs>
-  <linearGradient id="vacuum-safety-bottle-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="vacuum-safety-bottle-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="vacuum-safety-bottle-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="vacuum-safety-bottle-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="vacuum-safety-bottle-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="vacuum-safety-bottle-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="vacuum-safety-bottle-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M43 17.2 L21.92 17.8 L19.92 15.9 L9 18 L9 26 L19.92 28.1 L21.92 26.2 L43 26.8 Z" fill="url(#vacuum-safety-bottle-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="41.5" y1="20.4" x2="11" y2="20.4" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>
-  <path d="M79 17.2 L100.08 17.8 L102.08 15.9 L113 18 L113 26 L102.08 28.1 L100.08 26.2 L79 26.8 Z" fill="url(#vacuum-safety-bottle-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
-  <line x1="80.5" y1="20.4" x2="111" y2="20.4" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>
-  <path d="M39 50 V66 L15 90 V184 Q15 196 27 196 H95 Q107 196 107 184 V90 L83 66 V50 Z" fill="url(#vacuum-safety-bottle-glass)" stroke="#1F2937" stroke-width="2.6" stroke-linejoin="round"/>
-  <path d="M43 22 H53 V96" fill="none" stroke="#334155" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M79 22 H69 V74" fill="none" stroke="#334155" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M41 26 H81 L77 52 H45 Z" fill="#334155" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="25" y1="94" x2="25" y2="180" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.78" stroke-linecap="round"/>
+<path d="M43 17.2 L21.92 17.8 L19.92 15.9 L9 18 L9 26 L19.92 28.1 L21.92 26.2 L43 26.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M79 17.2 L100.08 17.8 L102.08 15.9 L113 18 L113 26 L102.08 28.1 L100.08 26.2 L79 26.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M39 50 V66 L15 90 V184 Q15 196 27 196 H95 Q107 196 107 184 V90 L83 66 V50 Z" fill="none" stroke="#294454" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M43 22 H53 V96" fill="none" stroke="#3D5968" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M79 22 H69 V74" fill="none" stroke="#3D5968" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M41 26 H81 L77 52 H45 Z" fill="#3D5968" stroke="#294454" stroke-width="2.0"/>
+  
 </svg>

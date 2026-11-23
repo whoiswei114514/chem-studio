@@ -132,7 +132,7 @@ class WorkspaceTests : public QObject {
                 if (!palette->item(row)->isHidden()) ++count;
             return count;
         };
-        QCOMPARE(visible(), 59);
+        QCOMPARE(visible(), 56);
         category->setCurrentIndex(category->findData(QStringLiteral("电泳与成像")));
         QCOMPARE(visible(), 10);
         search->setText(QStringLiteral("圆盘"));
@@ -1035,8 +1035,12 @@ class WorkspaceTests : public QObject {
             if (!palette->item(row)->isHidden()) { first = palette->item(row); break; }
         QVERIFY(first);
         QVERIFY((QStringList{"chemix:plastic-joint-clip", "studio:plastic-joint-clip"}.contains(first->data(Qt::UserRole).toString())));
+        window->raise();
+        window->activateWindow();
+        QApplication::setActiveWindow(window.get());
+        QTest::qWait(50);
         search->setFocus(); QTest::keyClick(search, Qt::Key_Down);
-        QVERIFY(palette->hasFocus()); QTest::keyClick(palette, Qt::Key_Return);
+        QTRY_VERIFY(palette->hasFocus()); QTest::keyClick(palette, Qt::Key_Return);
         QCOMPARE(window->drawing->state().size(), 1);
         QVERIFY(undo->isEnabled()); QVERIFY(duplicate->isEnabled());
         undo->click(); QVERIFY(window->drawing->state().isEmpty()); QVERIFY(redo->isEnabled());

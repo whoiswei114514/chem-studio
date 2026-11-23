@@ -1,101 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
 <title>螺线管</title>
-<defs>
-  <linearGradient id="solenoid-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
-    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
-    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="solenoid-glass-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
-    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
-    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="solenoid-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="solenoid-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
-  </linearGradient>
-  <linearGradient id="solenoid-metal" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#94A3B8"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="solenoid-metal-v" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#E2E8F0"/>
-    <stop offset="45%" stop-color="#F8FAFC"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="solenoid-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="solenoid-porcelain" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#ECEBE4"/>
-    <stop offset="28%" stop-color="#FFFFFF"/>
-    <stop offset="68%" stop-color="#F4F3EE"/>
-    <stop offset="100%" stop-color="#DFDDD4"/>
-  </linearGradient>
-  <linearGradient id="solenoid-rubber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#475569"/>
-    <stop offset="28%" stop-color="#64748B"/>
-    <stop offset="72%" stop-color="#334155"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="solenoid-cork" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#C98A4B"/>
-    <stop offset="30%" stop-color="#E7B98A"/>
-    <stop offset="72%" stop-color="#B9783A"/>
-    <stop offset="100%" stop-color="#9A5E26"/>
-  </linearGradient>
-  <linearGradient id="solenoid-accent" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#14B8A6"/>
-    <stop offset="100%" stop-color="#0F766E"/>
-  </linearGradient>
-  <linearGradient id="solenoid-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="solenoid-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-  <linearGradient id="solenoid-copper" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#9A3412"/>
-    <stop offset="35%" stop-color="#FDBA74"/>
-    <stop offset="70%" stop-color="#EA580C"/>
-    <stop offset="100%" stop-color="#7C2D12"/>
-  </linearGradient>
-  <linearGradient id="solenoid-screen" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0F172A"/>
-    <stop offset="100%" stop-color="#1E293B"/>
-  </linearGradient>
-  <linearGradient id="solenoid-liquid" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
-    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
-  </linearGradient>
-</defs>
 <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M10 76 H44 M141 76 H174" fill="none" stroke="#EA580C" stroke-width="3.2"/>
-      <circle cx="10" cy="76" r="4" fill="url(#solenoid-brass)" stroke="#1F2937" stroke-width="1.5"/>
-      <circle cx="174" cy="76" r="4" fill="url(#solenoid-brass)" stroke="#1F2937" stroke-width="1.5"/>
-      <rect x="34" y="46" width="114" height="60" rx="4" fill="url(#solenoid-glass)" stroke="#1F2937" stroke-width="2.0"/>
-      <path d="M44 48 Q48 43 51 48 V104 Q48 109 44 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M53 48 Q57 43 60 48 V104 Q57 109 53 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M62 48 Q66 43 69 48 V104 Q66 109 62 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M71 48 Q75 43 78 48 V104 Q75 109 71 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M80 48 Q84 43 87 48 V104 Q84 109 80 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M89 48 Q93 43 96 48 V104 Q93 109 89 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M98 48 Q102 43 105 48 V104 Q102 109 98 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M107 48 Q111 43 114 48 V104 Q111 109 107 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M116 48 Q120 43 123 48 V104 Q120 109 116 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M125 48 Q129 43 132 48 V104 Q129 109 125 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/><path d="M134 48 Q138 43 141 48 V104 Q138 109 134 104 Z" fill="url(#solenoid-copper)" stroke="#7C2D12" stroke-width="1.1"/>
-      <line x1="40" y1="54" x2="142" y2="54" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.55" stroke-linecap="round"/>
+      <path d="M10 76 H44 M141 76 H174" fill="none" stroke="#D79B59" stroke-width="3.2"/>
+      <circle cx="10" cy="76" r="4" fill="#C9A048" stroke="#294454" stroke-width="1.8"/>
+      <circle cx="174" cy="76" r="4" fill="#C9A048" stroke="#294454" stroke-width="1.8"/>
+      <rect x="34" y="46" width="114" height="60" rx="4" fill="#F4F9F8" stroke="#294454" stroke-width="2.2"/>
+      <path d="M44 48 Q48 43 51 48 V104 Q48 109 44 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M53 48 Q57 43 60 48 V104 Q57 109 53 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M62 48 Q66 43 69 48 V104 Q66 109 62 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M71 48 Q75 43 78 48 V104 Q75 109 71 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M80 48 Q84 43 87 48 V104 Q84 109 80 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M89 48 Q93 43 96 48 V104 Q93 109 89 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M98 48 Q102 43 105 48 V104 Q102 109 98 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M107 48 Q111 43 114 48 V104 Q111 109 107 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M116 48 Q120 43 123 48 V104 Q120 109 116 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M125 48 Q129 43 132 48 V104 Q129 109 125 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/><path d="M134 48 Q138 43 141 48 V104 Q138 109 134 104 Z" fill="#D79B59" stroke="#294454" stroke-width="1.3"/>
     </g>
 </svg>

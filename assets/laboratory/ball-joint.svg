@@ -1,51 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="148" height="48" viewBox="0 0 148 48">
 <title>球形磨口接头（球头）</title>
-<defs>
-  <linearGradient id="ball-joint-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="ball-joint-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="ball-joint-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="ball-joint-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="ball-joint-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="ball-joint-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="ball-joint-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<rect x="2" y="11" width="112" height="26" fill="url(#ball-joint-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M114 11 L123 4 A21 21 0 0 1 144 24 A21 21 0 0 1 123 44 L114 37 Z" fill="url(#ball-joint-frost)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M122 8 A18 18 0 0 1 139 24 A18 18 0 0 1 122 40" fill="none" stroke="#64748B" stroke-width="1.0" stroke-dasharray="2.5 2.5"/>
-  <line x1="8" y1="17.5" x2="112" y2="17.5" stroke="#FFFFFF" stroke-width="3.0" stroke-opacity="0.78" stroke-linecap="round"/>
+<rect x="2" y="11" width="112" height="26" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M114 11 L123 4 A21 21 0 0 1 144 24 A21 21 0 0 1 123 44 L114 37 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M122 8 A18 18 0 0 1 139 24 A18 18 0 0 1 122 40" fill="none" stroke="#3D5968" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>
+  
 </svg>

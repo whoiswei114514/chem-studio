@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="92" height="104" viewBox="0 0 92 104">
 <title>弯形接收管</title>
-<defs>
-  <linearGradient id="bent-receiver-adapter-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="bent-receiver-adapter-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="bent-receiver-adapter-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="bent-receiver-adapter-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="bent-receiver-adapter-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="bent-receiver-adapter-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="bent-receiver-adapter-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
 <path d="
       M29.4499615 17.483629
       L52 24
@@ -51,9 +8,8 @@
       V94 L71.5 100 L63.5 98 V54
       Q62 40 46 39
       L25.0500385 33.904371 Z"
-      fill="url(#bent-receiver-adapter-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <line x1="63" y1="48" x2="63" y2="86" stroke="#FFFFFF" stroke-width="2.2" stroke-opacity="0.78" stroke-linecap="round"/>
-  <polygon points="12.55,9.849 6.598,32.066 24.921,34.387 29.58,17.001" fill="url(#bent-receiver-adapter-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="14.049" y1="11.983" x2="14.469" y2="31.665"/><line x1="8.962" y1="30.967" x2="19.167" y2="14.133"/><line x1="17.958" y1="13.625" x2="18.675" y2="32.198"/><line x1="13.168" y1="31.5" x2="23.076" y2="15.774"/><line x1="21.866" y1="15.266" x2="22.88" y2="32.731"/><line x1="17.373" y1="32.033" x2="26.984" y2="17.415"/><line x1="25.774" y1="16.907" x2="24.082" y2="32.883"/><line x1="21.579" y1="32.566" x2="28.101" y2="17.884"/></g>
-  <polygon points="9.753,5.994 2.247,34.006 6.304,35.093 13.81,7.081" fill="url(#bent-receiver-adapter-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
+      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  
+  <polygon points="12.55,9.849 6.598,32.066 24.921,34.387 29.58,17.001" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="9.753,5.994 2.247,34.006 6.304,35.093 13.81,7.081" fill="#FFFFFF" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
 </svg>

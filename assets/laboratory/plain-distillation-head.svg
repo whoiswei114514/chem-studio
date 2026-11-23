@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="104" viewBox="0 0 90 104">
 <title>无支管蒸馏头</title>
-<defs>
-  <linearGradient id="plain-distillation-head-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="plain-distillation-head-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="plain-distillation-head-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="plain-distillation-head-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="plain-distillation-head-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="plain-distillation-head-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="plain-distillation-head-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
 <path d="
       M12 78 V34
       C12 13 30 10 44 14
@@ -52,13 +9,11 @@
       L37 37
       Q32 36 32 42
       V78 Z"
-      fill="url(#plain-distillation-head-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M16.5 72 V35 C16.5 20 28 17 40 20" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-opacity="0.78" stroke-linecap="round"/>
+      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
   
-  <polygon points="33.5,78 10.5,78 13.2,100 30.8,100" fill="url(#plain-distillation-head-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="31.855" y1="80" x2="12.82" y2="85.5"/><line x1="12.145" y1="80" x2="31.18" y2="85.5"/><line x1="31.339" y1="84.2" x2="13.336" y2="89.7"/><line x1="12.661" y1="84.2" x2="30.664" y2="89.7"/><line x1="30.824" y1="88.4" x2="13.851" y2="93.9"/><line x1="13.176" y1="88.4" x2="30.149" y2="93.9"/><line x1="30.308" y1="92.6" x2="14.367" y2="98.1"/><line x1="13.692" y1="92.6" x2="29.633" y2="98.1"/><line x1="29.793" y1="96.8" x2="14.453" y2="98.8"/><line x1="14.207" y1="96.8" x2="29.547" y2="98.8"/></g>
-  <line x1="9" y1="78" x2="35" y2="78" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
-  <polygon points="66.847,33.375 61.153,54.625 83.025,58.001 87.476,41.387" fill="url(#plain-distillation-head-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="68.36" y1="35.455" x2="68.972" y2="54.424"/><line x1="63.504" y1="53.58" x2="73.517" y2="37.459"/><line x1="72.298" y1="36.985" x2="73.147" y2="55.068"/><line x1="67.679" y1="54.224" x2="77.456" y2="38.988"/><line x1="76.237" y1="38.515" x2="77.322" y2="55.713"/><line x1="71.855" y1="54.869" x2="81.394" y2="40.518"/><line x1="80.175" y1="40.044" x2="81.498" y2="56.357"/><line x1="76.03" y1="55.513" x2="85.332" y2="42.047"/><line x1="84.113" y1="41.574" x2="82.194" y2="56.465"/><line x1="80.206" y1="56.158" x2="85.989" y2="42.302"/></g>
-  <line x1="67.235" y1="31.926" x2="60.765" y2="56.074" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
+  
+  <polygon points="33.5,78 10.5,78 13.2,100 30.8,100" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="9" y1="78" x2="35" y2="78" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="66.847,33.375 61.153,54.625 83.025,58.001 87.476,41.387" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="67.235" y1="31.926" x2="60.765" y2="56.074" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

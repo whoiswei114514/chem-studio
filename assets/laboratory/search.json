@@ -1360,7 +1360,7 @@
   "studio:stemmed-glass": {
     "domain": "reaction",
     "category": "烧杯与常规容器",
-    "visible": true,
+    "visible": false,
     "name": "高脚杯",
     "search": "高脚杯 锥形高脚烧杯 stemmed glass 液体演示容器"
   },
@@ -1514,7 +1514,7 @@
   "studio:fractionating-column": {
     "domain": "separation",
     "category": "蒸馏与分馏",
-    "visible": true,
+    "visible": false,
     "name": "分馏柱",
     "search": "分馏柱 精馏柱 fractionating column 沸点相近液体混合物的分馏分离"
   },
@@ -1787,7 +1787,7 @@
   "studio:kettle": {
     "domain": "thermal",
     "category": "加热设备",
-    "visible": true,
+    "visible": false,
     "name": "水壶",
     "search": "水壶 电热水壶 kettle 烧水辅助器材"
   },
@@ -1871,7 +1871,7 @@
   "studio:peg": {
     "domain": "support",
     "category": "铁架与夹具",
-    "visible": true,
+    "visible": false,
     "name": "木夹",
     "search": "木制试管夹 木夹 wooden peg 夹持加热中的试管"
   },
@@ -1906,14 +1906,14 @@
   "studio:pencil": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "铅笔",
     "search": "铅笔 滤纸层析起点划线 pencil"
   },
   "studio:felt-tip-pen": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "马克笔",
     "search": "记号笔 玻璃标注笔 marker pen"
   },
@@ -2018,14 +2018,14 @@
   "studio:paperclip": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "回形针",
     "search": "曲别针 铁丝回形针 paperclip"
   },
   "studio:adhesive-tape": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "胶带",
     "search": "透明胶带 固定胶带 adhesive tape"
   },
@@ -2144,7 +2144,7 @@
   "studio:desk-fan": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "台式电风扇",
     "search": "电风扇 风干与蒸腾气流实验 desk fan"
   },
@@ -2158,14 +2158,14 @@
   "studio:camera": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "相机",
     "search": "数码相机 显微拍照记录 camera"
   },
   "studio:videocamera": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "摄像机",
     "search": "实验录影摄像机 video camera"
   },
@@ -2347,14 +2347,14 @@
   "studio:daisy": {
     "domain": "biochemistry",
     "category": "生物标本",
-    "visible": true,
+    "visible": false,
     "name": "雏菊",
     "search": "花卉植物 雏菊 daisy 植物解剖标本"
   },
   "studio:tree": {
     "domain": "biochemistry",
     "category": "生物标本",
-    "visible": true,
+    "visible": false,
     "name": "树",
     "search": "树木 植物标本示意图 tree"
   },
@@ -2375,7 +2375,7 @@
   "studio:shoot": {
     "domain": "biochemistry",
     "category": "生物标本",
-    "visible": true,
+    "visible": false,
     "name": "直苗",
     "search": "植物茎段 直立幼苗 shoot 向光性实验"
   },
@@ -2536,7 +2536,7 @@
   "studio:soda-can": {
     "domain": "support",
     "category": "实验台与通用工具",
-    "visible": true,
+    "visible": false,
     "name": "易拉罐",
     "search": "铝制易拉罐 热量或大气压演示道具 soda can"
   },
@@ -2564,7 +2564,7 @@
   "studio:hand": {
     "domain": "annotation",
     "category": "标注文本",
-    "visible": true,
+    "visible": false,
     "name": "手",
     "search": "操作手势 持握示意 hand"
   },
@@ -2627,7 +2627,7 @@
   "studio:sun": {
     "domain": "annotation",
     "category": "实验符号与物质",
-    "visible": true,
+    "visible": false,
     "name": "太阳",
     "search": "日光 光照反应条件 光合作用光源 sun"
   },
@@ -2767,7 +2767,7 @@
   "studio:eye": {
     "domain": "annotation",
     "category": "标注文本",
-    "visible": true,
+    "visible": false,
     "name": "眼睛",
     "search": "观察视角 平视读数示意 eye"
   },

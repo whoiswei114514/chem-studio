@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="112" height="152" viewBox="0 0 112 152">
 <title>凯氏定氮防溅球</title>
-<defs>
-  <linearGradient id="kjeldahl-distillation-head-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="kjeldahl-distillation-head-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="kjeldahl-distillation-head-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="kjeldahl-distillation-head-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="kjeldahl-distillation-head-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="kjeldahl-distillation-head-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="kjeldahl-distillation-head-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
 <path d="
       M25 124 V92
       C5 86 5 40 25 34
@@ -53,15 +10,13 @@
       L58 44
       C61 66 58 87 43 92
       V124 Z"
-      fill="url(#kjeldahl-distillation-head-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M34 122 V66 C34 52 22 48 22 58" fill="none" stroke="#334155" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M46 46 C46 33 57 33 64 39" fill="none" stroke="#334155" stroke-width="2.0" stroke-linecap="round"/>
-  <line x1="15" y1="48" x2="15" y2="78" stroke="#FFFFFF" stroke-width="2.6" stroke-opacity="0.78" stroke-linecap="round"/>
+      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M34 122 V66 C34 52 22 48 22 58" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+      <path d="M46 46 C46 33 57 33 64 39" fill="none" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
   
-  <polygon points="45.5,124 22.5,124 25.2,148 42.8,148" fill="url(#kjeldahl-distillation-head-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="43.875" y1="126" x2="24.744" y2="131.5"/><line x1="24.125" y1="126" x2="43.256" y2="131.5"/><line x1="43.403" y1="130.2" x2="25.216" y2="135.7"/><line x1="24.598" y1="130.2" x2="42.784" y2="135.7"/><line x1="42.93" y1="134.4" x2="25.689" y2="139.9"/><line x1="25.07" y1="134.4" x2="42.311" y2="139.9"/><line x1="42.457" y1="138.6" x2="26.161" y2="144.1"/><line x1="25.543" y1="138.6" x2="41.839" y2="144.1"/><line x1="41.985" y1="142.8" x2="26.465" y2="146.8"/><line x1="26.015" y1="142.8" x2="41.535" y2="146.8"/></g>
-  <line x1="21" y1="124" x2="47" y2="124" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
-  <polygon points="86.588,42.341 81.412,61.659 103.232,65.228 107.269,50.16" fill="url(#kjeldahl-distillation-head-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="88.106" y1="44.404" x2="89.213" y2="61.524"/><line x1="83.758" y1="60.631" x2="93.276" y2="46.359"/><line x1="92.054" y1="45.897" x2="93.378" y2="62.205"/><line x1="87.923" y1="61.313" x2="97.224" y2="47.851"/><line x1="96.002" y1="47.389" x2="97.544" y2="62.886"/><line x1="92.089" y1="61.994" x2="101.173" y2="49.344"/><line x1="99.95" y1="48.882" x2="101.709" y2="63.568"/><line x1="96.255" y1="62.675" x2="105.121" y2="50.837"/><line x1="103.899" y1="50.375" x2="102.404" y2="63.681"/><line x1="100.42" y1="63.357" x2="105.779" y2="51.086"/></g>
-  <line x1="86.976" y1="40.892" x2="81.024" y2="63.108" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
+  
+  <polygon points="45.5,124 22.5,124 25.2,148 42.8,148" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="21" y1="124" x2="47" y2="124" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="86.588,42.341 81.412,61.659 103.232,65.228 107.269,50.16" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="86.976" y1="40.892" x2="81.024" y2="63.108" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

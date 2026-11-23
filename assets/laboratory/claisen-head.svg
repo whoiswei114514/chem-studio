@@ -1,68 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="94" height="154" viewBox="0 0 94 154">
 <title>克氏双口蒸馏头</title>
-<defs>
-  <linearGradient id="claisen-head-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="claisen-head-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="claisen-head-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="claisen-head-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="claisen-head-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="claisen-head-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="claisen-head-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
 <path d="
       M12.5 44 V128 H31.5 V86
       C44 84 79.5 78 79.5 58
       V26 H60.5 V54
       C60.5 64 40 66 31.5 66
       V44 Z"
-      fill="url(#claisen-head-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <line x1="17" y1="48" x2="17" y2="122" stroke="#FFFFFF" stroke-width="2.4" stroke-opacity="0.78" stroke-linecap="round"/>
-  <line x1="65" y1="30" x2="65" y2="62" stroke="#FFFFFF" stroke-width="2.4" stroke-opacity="0.78" stroke-linecap="round"/>
-  <polygon points="34,25.7 10,25.7 12.5,44 31.5,44" fill="url(#claisen-head-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="32.327" y1="27.7" x2="12.425" y2="33.2"/><line x1="11.673" y1="27.7" x2="31.575" y2="33.2"/><line x1="31.753" y1="31.9" x2="12.998" y2="37.4"/><line x1="12.247" y1="31.9" x2="31.002" y2="37.4"/><line x1="31.179" y1="36.1" x2="13.572" y2="41.6"/><line x1="12.821" y1="36.1" x2="30.428" y2="41.6"/><line x1="30.605" y1="40.3" x2="13.736" y2="42.8"/><line x1="13.395" y1="40.3" x2="30.264" y2="42.8"/></g>
-  <rect x="6.8" y="22" width="30.4" height="4.2" rx="2.1" fill="url(#claisen-head-glass)" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="12.5" y1="44" x2="31.5" y2="44" stroke="#334155" stroke-width="1.3"/>
-  <polygon points="82,7.7 58,7.7 60.5,26 79.5,26" fill="url(#claisen-head-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="80.327" y1="9.7" x2="60.425" y2="15.2"/><line x1="59.673" y1="9.7" x2="79.575" y2="15.2"/><line x1="79.753" y1="13.9" x2="60.998" y2="19.4"/><line x1="60.247" y1="13.9" x2="79.002" y2="19.4"/><line x1="79.179" y1="18.1" x2="61.572" y2="23.6"/><line x1="60.821" y1="18.1" x2="78.428" y2="23.6"/><line x1="78.605" y1="22.3" x2="61.736" y2="24.8"/><line x1="61.395" y1="22.3" x2="78.264" y2="24.8"/></g>
-  <rect x="54.8" y="4" width="30.4" height="4.2" rx="2.1" fill="url(#claisen-head-glass)" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="60.5" y1="26" x2="79.5" y2="26" stroke="#334155" stroke-width="1.3"/>
+      fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
   
-  <polygon points="33.5,128 10.5,128 13.2,150 30.8,150" fill="url(#claisen-head-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="31.855" y1="130" x2="12.82" y2="135.5"/><line x1="12.145" y1="130" x2="31.18" y2="135.5"/><line x1="31.339" y1="134.2" x2="13.336" y2="139.7"/><line x1="12.661" y1="134.2" x2="30.664" y2="139.7"/><line x1="30.824" y1="138.4" x2="13.851" y2="143.9"/><line x1="13.176" y1="138.4" x2="30.149" y2="143.9"/><line x1="30.308" y1="142.6" x2="14.367" y2="148.1"/><line x1="13.692" y1="142.6" x2="29.633" y2="148.1"/><line x1="29.793" y1="146.8" x2="14.453" y2="148.8"/><line x1="14.207" y1="146.8" x2="29.547" y2="148.8"/></g>
-  <line x1="9" y1="128" x2="35" y2="128" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
+  
+  <polygon points="34,25.7 10,25.7 12.5,44 31.5,44" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="6.8" y="22" width="30.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
+  <line x1="12.5" y1="44" x2="31.5" y2="44" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
+  <polygon points="82,7.7 58,7.7 60.5,26 79.5,26" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="54.8" y="4" width="30.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
+  <line x1="60.5" y1="26" x2="79.5" y2="26" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
+  
+  <polygon points="33.5,128 10.5,128 13.2,150 30.8,150" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="9" y1="128" x2="35" y2="128" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

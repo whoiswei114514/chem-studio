@@ -1,8 +1,8 @@
 # Additional Laboratory Artwork
 
 All 55 vector illustrations in `assets/laboratory/` are generated deterministically by
-`scripts/generate-laboratory-art.cjs` in Chem Studio's unified publication-grade scientific illustration
-style (Qt `QSvgRenderer` / pure vector SVG 1.1 compatible, zero embedded rasters, zero CSS filters or clipPaths).
+`scripts/generate-laboratory-art.cjs` in Chem Studio's classic flat scientific line-art style
+(Qt `QSvgRenderer` / pure vector SVG 1.1 compatible, zero gradients, zero embedded rasters, zero filters or clipPaths).
 
 - **Author**: Chem Studio contributors
 - **License**: WTFPL-2.0

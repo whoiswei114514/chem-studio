@@ -1,56 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="52" height="228" viewBox="0 0 52 228">
 <title>具塞比色管</title>
-<defs>
-  <linearGradient id="nessler-tube-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="nessler-tube-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="nessler-tube-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="nessler-tube-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="nessler-tube-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="nessler-tube-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="nessler-tube-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M14 26 V218 Q14 224 20 224 H32 Q38 224 38 218 V26 Z" fill="url(#nessler-tube-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <line x1="14" y1="62" x2="38" y2="62" stroke="#0F766E" stroke-width="1.4"/>
-      <text x="26" y="58" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#0F766E" text-anchor="middle">50mL</text>
-  <g><line x1="30.475" y1="82" x2="37" y2="82" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="32.5" y1="96.75" x2="37" y2="96.75" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="111.5" x2="37" y2="111.5" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="126.25" x2="37" y2="126.25" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="30.475" y1="141" x2="37" y2="141" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="32.5" y1="155.75" x2="37" y2="155.75" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="170.5" x2="37" y2="170.5" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="185.25" x2="37" y2="185.25" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="30.475" y1="200" x2="37" y2="200" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/></g>
-  <line x1="19" y1="32" x2="19" y2="214" stroke="#FFFFFF" stroke-width="2.2" stroke-opacity="0.78" stroke-linecap="round"/>
-  <polygon points="38,7.7 14,7.7 16,26 36,26" fill="url(#nessler-tube-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="36.381" y1="9.7" x2="16.22" y2="15.2"/><line x1="15.619" y1="9.7" x2="35.78" y2="15.2"/><line x1="35.922" y1="13.9" x2="16.679" y2="19.4"/><line x1="16.078" y1="13.9" x2="35.321" y2="19.4"/><line x1="35.463" y1="18.1" x2="17.138" y2="23.6"/><line x1="16.537" y1="18.1" x2="34.862" y2="23.6"/><line x1="35.004" y1="22.3" x2="17.269" y2="24.8"/><line x1="16.996" y1="22.3" x2="34.731" y2="24.8"/></g>
-  <rect x="10.8" y="4" width="30.4" height="4.2" rx="2.1" fill="url(#nessler-tube-glass)" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="16" y1="26" x2="36" y2="26" stroke="#334155" stroke-width="1.3"/>
+<path d="M14 26 V218 Q14 224 20 224 H32 Q38 224 38 218 V26 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <line x1="14" y1="62" x2="38" y2="62" stroke="#1F6F6B" stroke-width="1.4"/>
+      <text x="26" y="58" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#1F6F6B" text-anchor="middle">50mL</text>
+  <g><line x1="30.475" y1="82" x2="37" y2="82" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/><line x1="32.5" y1="96.75" x2="37" y2="96.75" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="111.5" x2="37" y2="111.5" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="126.25" x2="37" y2="126.25" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="30.475" y1="141" x2="37" y2="141" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/><line x1="32.5" y1="155.75" x2="37" y2="155.75" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="170.5" x2="37" y2="170.5" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="32.5" y1="185.25" x2="37" y2="185.25" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="30.475" y1="200" x2="37" y2="200" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/></g>
+  
+  <polygon points="38,7.7 14,7.7 16,26 36,26" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="10.8" y="4" width="30.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
+  <line x1="16" y1="26" x2="36" y2="26" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
 </svg>

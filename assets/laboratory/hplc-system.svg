@@ -1,91 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="216" height="280" viewBox="0 0 216 280">
 <title>高效液相色谱仪</title>
-<defs>
-  <linearGradient id="hplc-system-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="hplc-system-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="hplc-system-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="hplc-system-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="hplc-system-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="hplc-system-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="hplc-system-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<rect x="36" y="14" width="24" height="36" rx="4" fill="url(#hplc-system-glass)" stroke="#1F2937" stroke-width="1.8"/>
-        <rect x="42" y="8" width="12" height="6" rx="1.5" fill="#0F766E" stroke="#1F2937" stroke-width="1.4"/>
-        <path d="M48 8 V3 H178 V48" fill="none" stroke="#334155" stroke-width="0.9" stroke-opacity="0.65"/>
-        <text x="48" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#1F2937" text-anchor="middle">A</text>
-  <rect x="70" y="14" width="24" height="36" rx="4" fill="url(#hplc-system-glass)" stroke="#1F2937" stroke-width="1.8"/>
-        <rect x="76" y="8" width="12" height="6" rx="1.5" fill="#0F766E" stroke="#1F2937" stroke-width="1.4"/>
-        <path d="M82 8 V3 H178 V48" fill="none" stroke="#334155" stroke-width="0.9" stroke-opacity="0.65"/>
-        <text x="82" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#1F2937" text-anchor="middle">B</text>
-  <rect x="104" y="14" width="24" height="36" rx="4" fill="url(#hplc-system-amber)" stroke="#1F2937" stroke-width="1.8"/>
-        <rect x="110" y="8" width="12" height="6" rx="1.5" fill="#0F766E" stroke="#1F2937" stroke-width="1.4"/>
-        <path d="M116 8 V3 H178 V48" fill="none" stroke="#334155" stroke-width="0.9" stroke-opacity="0.65"/>
-        <text x="116" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#FFFFFF" text-anchor="middle">C</text>
-  <rect x="138" y="14" width="24" height="36" rx="4" fill="url(#hplc-system-glass)" stroke="#1F2937" stroke-width="1.8"/>
-        <rect x="144" y="8" width="12" height="6" rx="1.5" fill="#0F766E" stroke="#1F2937" stroke-width="1.4"/>
-        <path d="M150 8 V3 H178 V48" fill="none" stroke="#334155" stroke-width="0.9" stroke-opacity="0.65"/>
-        <text x="150" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#1F2937" text-anchor="middle">D</text>
-  <rect x="22" y="48" width="172" height="10" rx="2" fill="#334155" stroke="#1F2937" stroke-width="2.0"/>
-  <rect x="20" y="58" width="176" height="46" rx="4" fill="url(#hplc-system-chassis)" stroke="#1F2937" stroke-width="2.2"/>
-        <rect x="20" y="62" width="5" height="38" fill="#0F766E"/>
-        <rect x="32" y="68" width="92" height="26" rx="3" fill="#0F172A"/>
-        <text x="78" y="80" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#94A3B8" text-anchor="middle">UV-VIS 254 nm</text>
-        <text x="78" y="92" font-size="7.8" font-family="Consolas, monospace" fill="#38BDF8" text-anchor="middle">0.00 AU</text>
-        <polyline points="128,96 136,96 142,74 148,96 156,96 162,66 168,96 182,96" fill="none" stroke="#34D399" stroke-width="1.6"/>
-  <rect x="20" y="106" width="176" height="48" rx="4" fill="url(#hplc-system-chassis)" stroke="#1F2937" stroke-width="2.2"/>
-        <rect x="20" y="110" width="5" height="40" fill="#0F766E"/>
-        <rect x="32" y="116" width="92" height="28" rx="3" fill="#0F172A"/>
-        <text x="78" y="128" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#94A3B8" text-anchor="middle">COLUMN 35.0°C</text>
-        <text x="78" y="140" font-size="7.8" font-family="Consolas, monospace" fill="#38BDF8" text-anchor="middle">C18 4.6x250</text>
+<rect x="36" y="14" width="24" height="36" rx="4" fill="none" stroke="#294454" stroke-width="1.8"/>
+        <rect x="42" y="8" width="12" height="6" rx="1.5" fill="#1F6F6B" stroke="#294454" stroke-width="1.4"/>
+        <path d="M48 8 V3 H178 V48" fill="none" stroke="#3D5968" stroke-width="0.9" stroke-opacity="0.65"/>
+        <text x="48" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#294454" text-anchor="middle">A</text>
+  <rect x="70" y="14" width="24" height="36" rx="4" fill="none" stroke="#294454" stroke-width="1.8"/>
+        <rect x="76" y="8" width="12" height="6" rx="1.5" fill="#1F6F6B" stroke="#294454" stroke-width="1.4"/>
+        <path d="M82 8 V3 H178 V48" fill="none" stroke="#3D5968" stroke-width="0.9" stroke-opacity="0.65"/>
+        <text x="82" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#294454" text-anchor="middle">B</text>
+  <rect x="104" y="14" width="24" height="36" rx="4" fill="#DFBE74" stroke="#294454" stroke-width="1.8"/>
+        <rect x="110" y="8" width="12" height="6" rx="1.5" fill="#1F6F6B" stroke="#294454" stroke-width="1.4"/>
+        <path d="M116 8 V3 H178 V48" fill="none" stroke="#3D5968" stroke-width="0.9" stroke-opacity="0.65"/>
+        <text x="116" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#294454" text-anchor="middle">C</text>
+  <rect x="138" y="14" width="24" height="36" rx="4" fill="none" stroke="#294454" stroke-width="1.8"/>
+        <rect x="144" y="8" width="12" height="6" rx="1.5" fill="#1F6F6B" stroke="#294454" stroke-width="1.4"/>
+        <path d="M150 8 V3 H178 V48" fill="none" stroke="#3D5968" stroke-width="0.9" stroke-opacity="0.65"/>
+        <text x="150" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#294454" text-anchor="middle">D</text>
+  <rect x="22" y="48" width="172" height="10" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
+  <rect x="20" y="58" width="176" height="46" rx="4" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
+        <rect x="20" y="62" width="5" height="38" fill="#258F89"/>
+        <rect x="32" y="68" width="92" height="26" rx="3" fill="#EEF6F1" stroke="#3D5968" stroke-width="1.2"/>
+        <text x="78" y="80" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#3D5968" text-anchor="middle">UV-VIS 254 nm</text>
+        <text x="78" y="92" font-size="7.8" font-family="Consolas, monospace" fill="#294454" text-anchor="middle">0.00 AU</text>
+        <polyline points="128,96 136,96 142,74 148,96 156,96 162,66 168,96 182,96" fill="none" stroke="#1F6F6B" stroke-width="1.6"/>
+  <rect x="20" y="106" width="176" height="48" rx="4" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
+        <rect x="20" y="110" width="5" height="40" fill="#258F89"/>
+        <rect x="32" y="116" width="92" height="28" rx="3" fill="#EEF6F1" stroke="#3D5968" stroke-width="1.2"/>
+        <text x="78" y="128" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#3D5968" text-anchor="middle">COLUMN 35.0°C</text>
+        <text x="78" y="140" font-size="7.8" font-family="Consolas, monospace" fill="#294454" text-anchor="middle">C18 4.6x250</text>
         
-  <rect x="20" y="156" width="176" height="56" rx="4" fill="url(#hplc-system-chassis)" stroke="#1F2937" stroke-width="2.2"/>
-        <rect x="20" y="160" width="5" height="48" fill="#0F766E"/>
-        <rect x="32" y="166" width="92" height="36" rx="3" fill="#0F172A"/>
-        <text x="78" y="178" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#94A3B8" text-anchor="middle">AUTOSAMPLER</text>
-        <text x="78" y="190" font-size="7.8" font-family="Consolas, monospace" fill="#38BDF8" text-anchor="middle">VIAL #12</text>
-        <rect x="134" y="166" width="44" height="36" rx="3" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
-           <circle cx="147" cy="184" r="5" fill="#14B8A6"/>
-           <circle cx="165" cy="184" r="5" fill="#38BDF8"/>
-  <rect x="20" y="214" width="176" height="52" rx="4" fill="url(#hplc-system-chassis)" stroke="#1F2937" stroke-width="2.2"/>
-        <rect x="20" y="218" width="5" height="44" fill="#0F766E"/>
-        <rect x="32" y="224" width="92" height="32" rx="3" fill="#0F172A"/>
-        <text x="78" y="236" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#94A3B8" text-anchor="middle">QUAT PUMP</text>
-        <text x="78" y="248" font-size="7.8" font-family="Consolas, monospace" fill="#38BDF8" text-anchor="middle">14.2 MPa</text>
+  <rect x="20" y="156" width="176" height="56" rx="4" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
+        <rect x="20" y="160" width="5" height="48" fill="#258F89"/>
+        <rect x="32" y="166" width="92" height="36" rx="3" fill="#EEF6F1" stroke="#3D5968" stroke-width="1.2"/>
+        <text x="78" y="178" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#3D5968" text-anchor="middle">AUTOSAMPLER</text>
+        <text x="78" y="190" font-size="7.8" font-family="Consolas, monospace" fill="#294454" text-anchor="middle">VIAL #12</text>
+        <rect x="134" y="166" width="44" height="36" rx="3" fill="#EEF6F1" stroke="#3D5968" stroke-width="1.4"/>
+           <circle cx="147" cy="184" r="5" fill="#258F89" stroke="#294454" stroke-width="1.2"/>
+           <circle cx="165" cy="184" r="5" fill="#C6D2D7" stroke="#294454" stroke-width="1.2"/>
+  <rect x="20" y="214" width="176" height="52" rx="4" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
+        <rect x="20" y="218" width="5" height="44" fill="#258F89"/>
+        <rect x="32" y="224" width="92" height="32" rx="3" fill="#EEF6F1" stroke="#3D5968" stroke-width="1.2"/>
+        <text x="78" y="236" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#3D5968" text-anchor="middle">QUAT PUMP</text>
+        <text x="78" y="248" font-size="7.8" font-family="Consolas, monospace" fill="#294454" text-anchor="middle">14.2 MPa</text>
         
-  <rect x="32" y="266" width="20" height="6" rx="2" fill="#334155"/><rect x="164" y="266" width="20" height="6" rx="2" fill="#334155"/>
+  <rect x="32" y="266" width="20" height="6" rx="2" fill="#3D5968"/><rect x="164" y="266" width="20" height="6" rx="2" fill="#3D5968"/>
 </svg>

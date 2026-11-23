@@ -1,66 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="82" height="264" viewBox="0 0 82 264">
 <title>磨口恒压滴液漏斗</title>
-<defs>
-  <linearGradient id="pressure-equalizing-funnel-glass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
-    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
-    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
-    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="pressure-equalizing-funnel-coolant" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
-    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
-    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
-  </linearGradient>
-  <linearGradient id="pressure-equalizing-funnel-frost" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
-    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
-  </linearGradient>
-  <linearGradient id="pressure-equalizing-funnel-amber" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
-    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
-    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
-    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
-  </linearGradient>
-  <linearGradient id="pressure-equalizing-funnel-chassis" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFFFFF"/>
-    <stop offset="55%" stop-color="#F1F5F9"/>
-    <stop offset="100%" stop-color="#E2E8F0"/>
-  </linearGradient>
-  <linearGradient id="pressure-equalizing-funnel-steel" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#CBD5E1"/>
-    <stop offset="28%" stop-color="#F8FAFC"/>
-    <stop offset="68%" stop-color="#E2E8F0"/>
-    <stop offset="100%" stop-color="#94A3B8"/>
-  </linearGradient>
-  <linearGradient id="pressure-equalizing-funnel-brass" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#B45309"/>
-    <stop offset="30%" stop-color="#FDE68A"/>
-    <stop offset="68%" stop-color="#D97706"/>
-    <stop offset="100%" stop-color="#92400E"/>
-  </linearGradient>
-</defs>
-<path d="M36 42 H14 Q8 42 8 48 V174 Q8 180 14 180 H36" fill="none" stroke="#1F2937" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M36 42 H14 Q8 42 8 48 V174 Q8 180 14 180 H36" fill="none" stroke="url(#pressure-equalizing-funnel-glass)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M36 28 V48 C24 54 24 60 24 70 V142 C24 158 38 168 38 174 V236 H54 V174 C54 168 68 158 68 142 V70 C68 60 68 54 56 48 V28 Z" fill="url(#pressure-equalizing-funnel-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
-  <g><line x1="57.3" y1="74" x2="66" y2="74" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="60" y1="87.2" x2="66" y2="87.2" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="60" y1="100.4" x2="66" y2="100.4" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="60" y1="113.6" x2="66" y2="113.6" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="60" y1="126.8" x2="66" y2="126.8" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="57.3" y1="140" x2="66" y2="140" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/></g>
-  <line x1="30" y1="68" x2="30" y2="142" stroke="#FFFFFF" stroke-width="2.8" stroke-opacity="0.78" stroke-linecap="round"/>
-  <g>
-    <path d="M35 193.5 L57 194.7 L57 201.3 L35 202.5 Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.8" stroke-linejoin="round"/>
-    <rect x="28" y="191.5" width="7" height="13" rx="2" fill="#0F766E" stroke="#1F2937" stroke-width="1.6"/>
-    <rect x="57" y="194.5" width="5" height="7" rx="1.5" fill="#334155" stroke="#1F2937" stroke-width="1.4"/>
-    <line x1="43.5" y1="195.5" x2="48.5" y2="200.5" stroke="#334155" stroke-width="1.2"/>
-  </g>
-  <polygon points="58.5,7.7 33.5,7.7 36,28 56,28" fill="url(#pressure-equalizing-funnel-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="56.854" y1="9.7" x2="35.824" y2="15.2"/><line x1="35.146" y1="9.7" x2="56.176" y2="15.2"/><line x1="56.336" y1="13.9" x2="36.341" y2="19.4"/><line x1="35.664" y1="13.9" x2="55.659" y2="19.4"/><line x1="55.819" y1="18.1" x2="36.858" y2="23.6"/><line x1="36.181" y1="18.1" x2="55.142" y2="23.6"/><line x1="55.302" y1="22.3" x2="37.252" y2="26.8"/><line x1="36.698" y1="22.3" x2="54.748" y2="26.8"/></g>
-  <rect x="30.3" y="4" width="31.4" height="4.2" rx="2.1" fill="url(#pressure-equalizing-funnel-glass)" stroke="#1F2937" stroke-width="2.0"/>
-  <line x1="36" y1="28" x2="56" y2="28" stroke="#334155" stroke-width="1.3"/>
+<path d="M36 42 H14 Q8 42 8 48 V174 Q8 180 14 180 H36" fill="none" stroke="#294454" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M36 42 H14 Q8 42 8 48 V174 Q8 180 14 180 H36" fill="none" stroke="none" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36 28 V48 C24 54 24 60 24 70 V142 C24 158 38 168 38 174 V236 H54 V174 C54 168 68 158 68 142 V70 C68 60 68 54 56 48 V28 Z" fill="none" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
+  <g><line x1="57.3" y1="74" x2="66" y2="74" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/><line x1="60" y1="87.2" x2="66" y2="87.2" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="60" y1="100.4" x2="66" y2="100.4" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="60" y1="113.6" x2="66" y2="113.6" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="60" y1="126.8" x2="66" y2="126.8" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="57.3" y1="140" x2="66" y2="140" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/></g>
   
-  <polygon points="57.5,236 34.5,236 37.2,260 54.8,260" fill="url(#pressure-equalizing-funnel-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
-  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="55.875" y1="238" x2="36.744" y2="243.5"/><line x1="36.125" y1="238" x2="55.256" y2="243.5"/><line x1="55.403" y1="242.2" x2="37.216" y2="247.7"/><line x1="36.597" y1="242.2" x2="54.784" y2="247.7"/><line x1="54.93" y1="246.4" x2="37.689" y2="251.9"/><line x1="37.07" y1="246.4" x2="54.311" y2="251.9"/><line x1="54.457" y1="250.6" x2="38.161" y2="256.1"/><line x1="37.543" y1="250.6" x2="53.839" y2="256.1"/><line x1="53.985" y1="254.8" x2="38.465" y2="258.8"/><line x1="38.015" y1="254.8" x2="53.535" y2="258.8"/></g>
-  <line x1="33" y1="236" x2="59" y2="236" stroke="#1F2937" stroke-width="2.0" stroke-linecap="round"/>
+  <g>
+    <path d="M35 193.5 L57 194.7 L57 201.3 L35 202.5 Z" fill="#F8FAF9" stroke="#294454" stroke-width="1.9" stroke-linejoin="round"/>
+    <rect x="28" y="191.5" width="7" height="13" rx="2" fill="#258F89" stroke="#294454" stroke-width="1.7"/>
+    <rect x="57" y="194.5" width="5" height="7" rx="1.5" fill="#C6D2D7" stroke="#294454" stroke-width="1.5"/>
+    <line x1="43.5" y1="195.5" x2="48.5" y2="200.5" stroke="#3D5968" stroke-width="1.2"/>
+  </g>
+  <polygon points="58.5,7.7 33.5,7.7 36,28 56,28" fill="none" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30.3" y="4" width="31.4" height="4.2" rx="2.1" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
+  <line x1="36" y1="28" x2="56" y2="28" stroke="#3D5968" stroke-width="1.3" stroke-linecap="round"/>
+  
+  <polygon points="57.5,236 34.5,236 37.2,260 54.8,260" fill="#FFFFFF" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="33" y1="236" x2="59" y2="236" stroke="#294454" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

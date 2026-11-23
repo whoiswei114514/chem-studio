@@ -60,7 +60,7 @@
       "merged": true,
       "notes": "双通道数字存储示波器：背光暗底网格波形屏、垂直/水平/触发旋钮及 CH1/CH2/EXT BNC 接口。",
       "origin": "authored",
-      "sha256": "85417c0b22f50c0de2a11d35af3702c96295268233ba0eae0635830aed3f5b93"
+      "sha256": "2b04d14c5db23cd246cd7fe1ae24f3007f3010900f22d9e2054cab20720262fc"
     },
     {
       "id": "physics:function-generator",
@@ -116,7 +116,7 @@
       "merged": true,
       "notes": "双通道 DDS 函数/信号发生器：高对比频率/幅值背光屏、波形切换键、大调谐编码器与 CH1/CH2/SYNC BNC 口。",
       "origin": "authored",
-      "sha256": "9e1c680f84af33c1bfba48419e9f2f0043524cb3ddb3d03685c85d9eb4aca8d9"
+      "sha256": "f52dbc2090d5bcddb80381f3660169668a097c89968ba272dea31b86900779f4"
     },
     {
       "id": "physics:oscilloscope-probe",
@@ -172,7 +172,7 @@
       "merged": true,
       "notes": "示波器 1X–1000X 高阻无源探头：兼容弹性端头坐标与画布可拖拽探针/地线夹/BNC 插头。",
       "origin": "authored",
-      "sha256": "9af04cbb3d7d25e7ae64062a91cb62a26d086fd88817e0a87e8c2f1433206467"
+      "sha256": "f7067f48e908f737e9ae34aefe4bb5529514d49f6f53e116d283181f3743f0f6"
     },
     {
       "id": "physics:dual-dc-supply",
@@ -246,7 +246,7 @@
       "merged": true,
       "notes": "双路独立/跟踪可调直流稳压电源：双通道数显表、恒压/恒流指示、独立电压/限流旋钮及保护接地端子。",
       "origin": "authored",
-      "sha256": "5ae335c20b28e5b896ea3bd4516fec615d9440ff470230b376d77354d2434f0c"
+      "sha256": "a99e1e697f669be220b2a16a308ea23064e75f5022d30951eca5f536958b9f3e"
     },
     {
       "id": "physics:frequency-counter",
@@ -293,7 +293,7 @@
       "merged": true,
       "notes": "高分辨率数字频率计：双通道 BNC 输入、闸门时间与衰减控制键。",
       "origin": "authored",
-      "sha256": "3391824e8cfbd4a843e1b679c85c192c5d4d8cc3a074bc36cf009f9733ee903f"
+      "sha256": "5f1ebb4457d03096e41e1389ca79b0b9336803e16c8c4262d5fd38536ebb712f"
     },
     {
       "id": "physics:lcr-meter",
@@ -358,7 +358,7 @@
       "merged": true,
       "notes": "四端开尔文测量台式 LCR 数字电桥：HCUR/HPOT/LPOT/LCUR BNC 端口及测试频率切换面板。",
       "origin": "authored",
-      "sha256": "010e75650efcd75076dcd091bbcc1804de8d21aa9371508a0bc0812e227fa568"
+      "sha256": "7d44f4d0e07ca4255738f1db94369c135405eeea69f6820ba8458633f6642abb"
     },
     {
       "id": "physics:ac-millivoltmeter",
@@ -396,7 +396,7 @@
       "merged": true,
       "notes": "指针式交流毫伏表：镜面反射标度盘、波段量程开关与高灵敏 BNC 输入端子。",
       "origin": "authored",
-      "sha256": "a70688289099b182e8f307ea051f380b0b6bdca3687ecedf3ac1ff9c0ea5ead8"
+      "sha256": "fe6cce97b7e45d29f1c7891871c36af7ac768581ef455770e2d0c2f5393202b8"
     },
     {
       "id": "physics:analog-galvanometer",
@@ -443,7 +443,7 @@
       "merged": true,
       "notes": "中央零位灵敏检流计：对称正负刻度标盘、零点机械微调螺钉与红黑接线柱。",
       "origin": "authored",
-      "sha256": "ccefb3df7f72f3cedfc93e21680c2d478153242ebbabb759a837505e9259b4c9"
+      "sha256": "8ab54c7da4defed1d99d76d45d491245355bec977b32539a2a0c88dd335a62e1"
     },
     {
       "id": "physics:decade-resistance-box",
@@ -490,7 +490,7 @@
       "merged": true,
       "notes": "五盘十进制精密电阻箱：面板旋钮阻值 ×1 至 ×10k，两侧内嵌安全接线柱与橡胶防滑脚垫。",
       "origin": "authored",
-      "sha256": "058d000b52d2c9bdf5a4eac8f44df0a3347e8803cd74a9e0847003086a90f4d6"
+      "sha256": "8c042b4d535fb5df7c2eb8e381df0f9d27f7a3731c2fe692d73b309be8b25ef6"
     },
     {
       "id": "physics:sliding-rheostat",
@@ -546,7 +546,7 @@
       "merged": true,
       "notes": "瓷管滑线变阻器：密绕电阻丝瓷筒、顶部金属导杆与可调电刷滑片（接线柱 A/B/C）。",
       "origin": "authored",
-      "sha256": "2a5e2a0c2c53b328a5ed8ebfbdb6a6741c500b350f8429c65d3f227c67349d43"
+      "sha256": "dc35f98b26f1297c160866bab1828953b06808eb3d90ceeee010f77882eea6bc"
     },
     {
       "id": "physics:breadboard",
@@ -2159,7 +2159,7 @@
       "merged": true,
       "notes": "400孔免焊面包板：双侧红蓝电源总线、中央 DIP 跨接隔离槽与完整对齐插孔矩阵。",
       "origin": "authored",
-      "sha256": "aba62dd1c59aeb2d168a0421538efe1f752d23899d51c16fec56cc8baf9bb93a"
+      "sha256": "76149117e8e4a705ca5062798085dbb214f2a8173d3425b1d593296e9c824ce2"
     },
     {
       "id": "physics:knife-switch",
@@ -2206,7 +2206,7 @@
       "merged": true,
       "notes": "单刀单掷闸刀开关：绝缘底座、紫铜闸刀片与绝缘胶木手柄。",
       "origin": "authored",
-      "sha256": "af25072440bba46459d9df1917e48bfc8919bea2733e2eb242a588c112d97da9"
+      "sha256": "b629c5f65db2e934ed434c97b8b8142fdfba644cfa48d3c81ea965682d7cd9cd"
     },
     {
       "id": "physics:isolation-transformer",
@@ -2271,7 +2271,7 @@
       "merged": true,
       "notes": "可拆式实验隔离变压器：硅钢叠片铁芯、双绕组线包及原/副边接线柱。",
       "origin": "authored",
-      "sha256": "873b3e312fbdc155dbf51ba9e11c5fdff3b8509d06c75869ecb99491ace0e359"
+      "sha256": "8d0ecae10a057a5f7d3f777f5a61ab83ff3de691e775754d71fdfca5f8844bb0"
     },
     {
       "id": "physics:dc-motor",
@@ -2318,7 +2318,7 @@
       "merged": true,
       "notes": "永磁直流电动机：带散热筋定子壳体、键槽输出轴、底座固定板及顶部正负接线盒。",
       "origin": "authored",
-      "sha256": "b80478ecb808085a6debef9d1f8ba9cc8b3f2d414dd32c44bb069724846ae5fc"
+      "sha256": "63a8daff6c2ffd726b76cda77b1edfed06bc0d91b67ecd0f4739c36a222af783"
     },
     {
       "id": "physics:clamp-meter",
@@ -2365,7 +2365,7 @@
       "merged": true,
       "notes": "真有效值钳形电流表：红色开口互感器钳口、单手扳机、档位旋钮、背光屏与 COM/VΩ 表笔插孔。",
       "origin": "authored",
-      "sha256": "e67ef0e52fb6a0b49400303b60054410a81cf48b5a5b97e6ef9fd9ef679feb25"
+      "sha256": "664699b9bdc77f6bcfb5c4f2c9639d46bfc337a8947ab11e7ab4c5d8c88ac934"
     },
     {
       "id": "physics:wheatstone-bridge",
@@ -2430,7 +2430,7 @@
       "merged": true,
       "notes": "惠斯通电桥实验板：标准四臂菱形电路面板、中央检流计图标与 A/B/C/D 四端接线柱。",
       "origin": "authored",
-      "sha256": "1c6370f42ef9938556c3ee0ab96daefa19ad2ca950d416cbff497c3ec52f6326"
+      "sha256": "9c9a9187c6db4a75099789d04264a2f0167af27d0b72e1371f5d0d2e5a975db0"
     },
     {
       "id": "physics:vernier-caliper",
@@ -2459,7 +2459,7 @@
       "merged": true,
       "notes": "不锈钢游标卡尺：外量爪、内量爪、主尺/游标尺刻线、锁紧螺钉、拇指滚轮与深度测杆。",
       "origin": "authored",
-      "sha256": "354b94732b5055d08885118a0ee93fd706ef9866aeec774264c62db72a5a057e"
+      "sha256": "e66aad8dcea91fa471e75c15e16fc6507e4aa79371746ea21a2fbeac05eeda63"
     },
     {
       "id": "physics:micrometer",
@@ -2488,7 +2488,7 @@
       "merged": true,
       "notes": "0–25 mm 外径螺旋测微器（千分尺）：隔热 C 形尺架、测砧测微螺杆、固定套筒与棘轮测力微分筒。",
       "origin": "authored",
-      "sha256": "d25bcf154c7eaa1f138a49f90b8de6b00717ec1d46c35b0637992c15d7171399"
+      "sha256": "899a4e060ec3b553fc72bb303efab03d202744be3a3ca89d6e72efb12c643337"
     },
     {
       "id": "physics:spring-dynamometer",
@@ -2526,7 +2526,7 @@
       "merged": true,
       "notes": "5 N 弹簧测力计：顶部悬挂圆环、内部螺旋弹簧、牛顿刻度尺、红色指针及底端挂钩。",
       "origin": "authored",
-      "sha256": "31b77d44aa3da3d6d3a22e010002bbf3fd01b33e857364e19b552c96b4675086"
+      "sha256": "32a08448682d3c366995846a85576116535fb11bf6eacca0a1e790512c969d5d"
     },
     {
       "id": "physics:force-sensor",
@@ -2573,7 +2573,7 @@
       "merged": true,
       "notes": "数字力学传感器：测力拉压挂钩、去皮归零键、实时示数屏及信号输出插头。",
       "origin": "authored",
-      "sha256": "eea1df93ed49740b6abf936c8fe20d54336c5d29a8e1a2c99b40ce409f675ec0"
+      "sha256": "174b5bc14493d36eb86039ffa5bd256554e445f7bf9f2e083a6bb29e9c701765"
     },
     {
       "id": "physics:air-track",
@@ -2626,7 +2626,7 @@
       "merged": true,
       "notes": "铝质三角气垫导轨：顶部喷气小孔、毫米刻度标尺、调平支座与右侧进气嘴。",
       "origin": "authored",
-      "sha256": "c3b586c162d13e40e523c8b00d4587d8506859142311faf3c05397cdb999470e"
+      "sha256": "169f51bb4b31f5e4d36888c3180b3c390f6519cc5ee470ee168dd6d77b9fc2a6"
     },
     {
       "id": "physics:air-track-glider",
@@ -2655,7 +2655,7 @@
       "merged": true,
       "notes": "倒 V 形气垫导轨滑块：底部通槽跨骑导轨、顶部挡光片与两侧弹性碰撞缓冲杆。",
       "origin": "authored",
-      "sha256": "8304639662c0765934412c1c170043abb3407a9ec67509af1de021fa9460ed8b"
+      "sha256": "bdd8193ebe37fab9a21223b7e4cef273348d643770a08e88b4285ecf82413a70"
     },
     {
       "id": "physics:air-track-pump",
@@ -2693,7 +2693,7 @@
       "merged": true,
       "notes": "低噪气垫导轨鼓风气源：圆形进风格栅、风压无级调节旋钮、手提把与侧出风嘴。",
       "origin": "authored",
-      "sha256": "5d48238a0670ddded34c8c81957c2eb98a2884f26a9d96d094da02940420e707"
+      "sha256": "8c09e3c7a8efe9dc764073a70b233f9fa071dbfbbf240d4aca7341687db0bf4e"
     },
     {
       "id": "physics:photogate-timer",
@@ -2749,7 +2749,7 @@
       "merged": true,
       "notes": "多功能数字毫秒计时器：双通道光电门输入及外触发端口。",
       "origin": "authored",
-      "sha256": "361ea14aa7d4b71728a113c8ae46067cf41342ee0b5a6f53de2321b14ffc0b24"
+      "sha256": "1e4d8ef53d644805b28b7badaeb31ddb54afa3fff0262e5a77d9d2e7299f8886"
     },
     {
       "id": "physics:single-pendulum",
@@ -2778,7 +2778,7 @@
       "merged": true,
       "notes": "单摆周期实验架：稳定立柱悬臂、固定悬点、摆线及黄铜摆球与摆动轨迹虚线。",
       "origin": "authored",
-      "sha256": "fb2b8e1e5d80fc585c597c06c79d6450d0140fd36a569609b7a76ef1a5fc9f8a"
+      "sha256": "5d0d469cfb6043b2005a8533e0a12dcda4e557308a6ddab4a3e0d4bc0bac832f"
     },
     {
       "id": "physics:lever-apparatus",
@@ -2807,7 +2807,7 @@
       "merged": true,
       "notes": "等分刻度杠杆力矩平衡架：中央刀口支点、对称刻度横梁与可挂钩码。",
       "origin": "authored",
-      "sha256": "2a3dd90024627c42fa33a7b84e70016fe2b4dd3ad279c90034ec26fd7b42e334"
+      "sha256": "5e027fded8c30fd1d564bdb46fecd7148e8c62a3e8be9c36a2b5089182b94580"
     },
     {
       "id": "physics:pulley-block",
@@ -2845,7 +2845,7 @@
       "merged": true,
       "notes": "二定一动省力滑轮组：金属护板槽轮、连续绕绳路径及上下吊钩。",
       "origin": "authored",
-      "sha256": "c689e84c24a20825f61ae67f905acb252f961db41b0c080c6ecc3e3010b90553"
+      "sha256": "b05591824f0e02f5bc594f898e63540a5ad6f1818e6cc5d5aa4d46025502a5d6"
     },
     {
       "id": "physics:rotational-inertia-apparatus",
@@ -2874,7 +2874,7 @@
       "merged": true,
       "notes": "定轴转动惯量实验仪：水平铝质转盘、阶梯绕线塔轮、定滑轮及悬重砝码。",
       "origin": "authored",
-      "sha256": "564873d2a3ac1d124415da201394b57727bd79b29aaadf042563ef3d1156cd12"
+      "sha256": "45be733e68e6aacae36979feebe0780054f0f78e84d3fd497161d7876b12146a"
     },
     {
       "id": "physics:free-fall-apparatus",
@@ -2903,7 +2903,7 @@
       "merged": true,
       "notes": "自由落体实验架：电磁释放线圈、落体钢球、标尺立柱、上下双光电门与缓冲垫。",
       "origin": "authored",
-      "sha256": "cfa71aacc5a1673b3618133c76f4aa8ccb06085389adb2c94c97f9d4c331a1c6"
+      "sha256": "a7e078e295d6a10457d7fdf9db8d6c8001a97facc9e2abdbae140fe5584e816a"
     },
     {
       "id": "physics:optical-bench",
@@ -2947,7 +2947,7 @@
       "merged": true,
       "notes": "精密刻度光学导轨光具座：带毫米分划尺、调平底脚与两端限位块。",
       "origin": "authored",
-      "sha256": "29b67f705a839748002c0288b43698579dc5b5767e0d31bb95e8efb5812ba797"
+      "sha256": "db9fff622ce61fc848f6c4f196cd89695ee26d2e2a3e229d3bc123f84a24ee6a"
     },
     {
       "id": "physics:laser-source",
@@ -2994,7 +2994,7 @@
       "merged": true,
       "notes": "氦氖/半导体教学激光光源：双环抱箍支架、升降微调支杆及准直出光孔。",
       "origin": "authored",
-      "sha256": "18f5775aabe3e0bb8c908605c381e1e2ab200774770c58a8265896b52531f0e6"
+      "sha256": "c4c28489e3ef4ffd1c23fd74d1cd33f5f96c28d7c6b603e8f5c919f4ac99ed6b"
     },
     {
       "id": "physics:optical-screen",
@@ -3041,7 +3041,7 @@
       "merged": true,
       "notes": "光学漫反射接收屏：洁白带中心准直十字靶面、升降支杆与导轨滑座。",
       "origin": "authored",
-      "sha256": "0efa712390c467f5ea0e584e6104ecc424ec1db96502ea7a2d5f07ea6f138b1b"
+      "sha256": "58a18438038bb237504f9cfb2313ac06622f7e123d8b3a4dab68173ec4857e39"
     },
     {
       "id": "physics:double-slit",
@@ -3088,7 +3088,7 @@
       "merged": true,
       "notes": "杨氏双缝干涉实验片：不透明遮光框内置两条精密竖直狭缝。",
       "origin": "authored",
-      "sha256": "e554c300db45a2e905409ff53ce33dcbf219541d4e86a41e7245841d1667181c"
+      "sha256": "54a921117454eb56bc9d6591f3e31334dbf8a2c4270f9b158484d77af8359294"
     },
     {
       "id": "physics:diffraction-grating",
@@ -3135,7 +3135,7 @@
       "merged": true,
       "notes": "透射衍射光栅片：精密刻线光学玻璃窗口与光学滑座支架。",
       "origin": "authored",
-      "sha256": "84224071b453c0dea11cf6797873e3b5524d9d44cd715c121d0612e0d3a0ba75"
+      "sha256": "a53fad61b941cc094bd02e4cd734fc983d7cba3a388a9b59b29b64f87f4b2502"
     },
     {
       "id": "physics:spectrometer",
@@ -3173,7 +3173,7 @@
       "merged": true,
       "notes": "光学测角分光计：三脚调平底座、刻度圆盘与游标、中央载物台三棱镜、平行光管与可转望远镜。",
       "origin": "authored",
-      "sha256": "b17aee54ff738fc7034038f408ba164d066e98602e4b9c2f16bee118eb034fa5"
+      "sha256": "b0bf0de0477349d30887cbc996446a08683da5a6891dd414e54593048929dce0"
     },
     {
       "id": "physics:michelson-interferometer",
@@ -3220,7 +3220,7 @@
       "merged": true,
       "notes": "迈克尔逊双光束干涉仪俯视光路：45°分束镜、固定反射镜 M2、微调移动镜 M1 与观察窗。",
       "origin": "authored",
-      "sha256": "30cdea297ff8815f2e628f36d1d50898bdc56ae8658bb110c1b115d98d13391c"
+      "sha256": "b9ce746814da1dda17832db0803eeb00546d8bcf86697779fcb477f3419df219"
     },
     {
       "id": "physics:tuning-fork",
@@ -3249,7 +3249,7 @@
       "merged": true,
       "notes": "标准 U 形钢制音叉与开口声学共鸣箱，带频率铭牌与驻波声腔。",
       "origin": "authored",
-      "sha256": "0d19664bb809da9f1f73e452b8ecd246fb356dd81298e3bcda68cc1c4f2997da"
+      "sha256": "d1e3ae83da809bf21a43fad0125e575c58c4eb520129f880f180302632fe5326"
     },
     {
       "id": "physics:resonance-tube",
@@ -3278,7 +3278,7 @@
       "merged": true,
       "notes": "声速测量共振空气柱：带刻度开口玻璃管、连通器软管及沿立柱升降的等液面储水杯。",
       "origin": "authored",
-      "sha256": "39837b64548181f47f18b3be417e05cb258838dbcae6c34c255f6baad7b70143"
+      "sha256": "6a87cfa1c9cb70cf6926c40d1cdcc1c66216cf885d3d4ed7b0adad6e8fe72370"
     },
     {
       "id": "physics:wave-driver",
@@ -3334,7 +3334,7 @@
       "merged": true,
       "notes": "电磁机械波振动源：同轴顶杆挂环、锁定开关与交流信号输入端子。",
       "origin": "authored",
-      "sha256": "8f6b0e82f8b9697114d263c4c90ac24fa1bbe4211983f607d86512a52efbb04b"
+      "sha256": "080b333f5cdca9bec647dbc6b207320fc15d9755435719b8f33ca5502ee35250"
     },
     {
       "id": "physics:ripple-tank",
@@ -3363,7 +3363,7 @@
       "merged": true,
       "notes": "正交剖视水波干涉演示槽：上方频闪振子臂、浅水透明玻璃槽及底部波纹投影屏。",
       "origin": "authored",
-      "sha256": "4490f5864f5b43ac2414493b1375c94214f04ca20cd9748374d18e790bc2c1db"
+      "sha256": "2cdad5528755f6f95059e9b70602b44dee82eb931dd21c66861c50d635d0f27b"
     },
     {
       "id": "physics:digital-multimeter",
@@ -3419,7 +3419,7 @@
       "merged": true,
       "notes": "真有效值数字万用表：高对比度 OLED 读数屏、多档位旋转波段开关与 10A/COM/VΩmA 安全插孔。",
       "origin": "authored",
-      "sha256": "52ecef581ae6301e187d9a709b41c073b6dbb156133c7cd888e67c4eba110c69"
+      "sha256": "356ec2aad15d236fe8050be80d6106560f76c836ff643b94f074be50ede0e127"
     },
     {
       "id": "physics:logic-analyzer",
@@ -3529,7 +3529,7 @@
       "merged": true,
       "notes": "8通道台式数字逻辑分析仪：实时协议时序波形屏与 D0-D7/GND 逻辑探针排座。",
       "origin": "authored",
-      "sha256": "37d5fda41fd76af8d8e1fb7311f1dd3d88d251f094c35c4145765612df9a8211"
+      "sha256": "9f4aec5ba36fc917aa999c53bc2a9a334956380814317a5f9949e950b97cdfdf"
     },
     {
       "id": "physics:spectrum-analyzer",
@@ -3576,7 +3576,7 @@
       "merged": true,
       "notes": "射频频谱分析仪：高精度频域峰谱与谐波显示屏、软按键菜单及 RF IN / TRIG 同轴输入接口。",
       "origin": "authored",
-      "sha256": "4baa7df11cb6654778d840b21db45301c42403c3786c01a805018ab577f64cec"
+      "sha256": "9b19fe7a6e4766e76a4d92fc6f2981ddafa95aae9aa325d07e4bff3085861c62"
     },
     {
       "id": "physics:dc-electronic-load",
@@ -3623,7 +3623,7 @@
       "merged": true,
       "notes": "可编程直流电子负载：CC/CV/CR 多模式工作、数字电流/功率屏及大电流输入接线柱。",
       "origin": "authored",
-      "sha256": "d5ea302fb5234f8dfea13ec0917baa0a3b8136bca9cb00d73ba79622d104d437"
+      "sha256": "f5f313431d333ac283e6db0d6fdb278de0bd03167dd74e11bdee7ebb63dc1c43"
     },
     {
       "id": "physics:megohmmeter",
@@ -3679,7 +3679,7 @@
       "merged": true,
       "notes": "数字高压绝缘电阻测试仪（兆欧表）：顶部 L/G/E 高压端子、电压档位盘与高压一键测试钮。",
       "origin": "authored",
-      "sha256": "7e1a6c3aeac5fcf60f322e281e7b5b33196f94561efcc0eedf6fc339797434f2"
+      "sha256": "f7589161a597e62cdb67b6f99412b98717459dbe50dc424d6a4ca72c0417d4d4"
     },
     {
       "id": "physics:variac-autotransformer",
@@ -3744,7 +3744,7 @@
       "merged": true,
       "notes": "接触式单相自耦调压器：散热冲孔环绕外壳、顶部调压手轮与底座 AC 输入/可调输出接线柱。",
       "origin": "authored",
-      "sha256": "0495fdc4ca2d8c4b01d18ce8dcd51ff293982567c3a67bdbfe08f0898ed36ca2"
+      "sha256": "b3e803203447b70be868137298f762228f0884d6d3b63b035a346acbbfbf4fb3"
     },
     {
       "id": "physics:analog-ammeter",
@@ -3800,7 +3800,7 @@
       "merged": true,
       "notes": "双量程磁电式指针直流电流表：防视差反光弧度盘、调零螺钉及 - / 0.6A / 3A 接线柱。",
       "origin": "authored",
-      "sha256": "a6d839e1ed3beed4fc18f801445c202fe361bc69904d1cac97b14696ce32f34e"
+      "sha256": "8318a97901a2b34c99862ca8f042190a681d34fd54997c374c2a4d97d60d0d3a"
     },
     {
       "id": "physics:analog-voltmeter",
@@ -3856,7 +3856,7 @@
       "merged": true,
       "notes": "双量程磁电式指针直流电压表：镜像消除视差刻度盘、调零钮及 - / 3V / 15V 接线柱。",
       "origin": "authored",
-      "sha256": "42ecbf07a6b1ae2cc7ccb248762bd2a4ba0bb1e3ccce3812b08ffe9668924e7e"
+      "sha256": "98bd69e36dd3552c72de5e4e31921488fa7fac5a7297a1dd8e0e36119caf88c1"
     },
     {
       "id": "physics:decade-capacitance-box",
@@ -3912,7 +3912,7 @@
       "merged": true,
       "notes": "四盘十进屏蔽标准电容箱：步进 1 nF 至 11.11 µF 精密电容盘及 A/GND/B 接线柱。",
       "origin": "authored",
-      "sha256": "515d2352b8c38046334e924adfc15c82daa6d9bc269110093cf535422f1ae0a8"
+      "sha256": "d92375393ec410c4b252eb4e7016df2e47fbe31d20e7589d9d23924d71e76ef8"
     },
     {
       "id": "physics:inductor-coil",
@@ -3959,7 +3959,7 @@
       "merged": true,
       "notes": "可插拔铁芯教学电感线圈模块：密绕漆包铜线包、亚克力骨架、叠片铁芯拉杆及两端接线柱。",
       "origin": "authored",
-      "sha256": "331752fd4f66c86629510c1b3a3b3fab04c5fe971112af8e119769e6fed5c9aa"
+      "sha256": "f90a44954dd2a4fc598e3987e93e40edbb563bd7b464cef8e0c4cf19532bbaf0"
     },
     {
       "id": "physics:potentiometer",
@@ -4015,7 +4015,7 @@
       "merged": true,
       "notes": "实验室线性旋转电位器模块：精密刻度旋钮、滑动抽头符号丝印与 1 / W / 3 接线柱。",
       "origin": "authored",
-      "sha256": "640ccf3523d832d7f4ae8db52aa72b773cb688b7a4fb5e46decca0d90b563bd0"
+      "sha256": "2c6f37e3a85be118aa6e17dee7a95d8b2fe43f2374c9e8cb2bc0f0fc39df5b09"
     },
     {
       "id": "physics:npn-transistor",
@@ -4071,7 +4071,7 @@
       "merged": true,
       "notes": "NPN 双极型晶体管教学模块：标准原理图丝印与 B/C/E 三端接线柱。",
       "origin": "authored",
-      "sha256": "6055c85f3627169613cbcdc9d22edc81294fc9d3e887d76a5bf5ae71bdeef4dd"
+      "sha256": "0341eb9fbf93e823d3e568d451a117cb236cec90159d70382c0ee751f9c1e59c"
     },
     {
       "id": "physics:mosfet-transistor",
@@ -4127,7 +4127,7 @@
       "merged": true,
       "notes": "N沟道增强型 MOSFET 场效应管模块：隔离栅极符号丝印与 G/D/S 接线柱。",
       "origin": "authored",
-      "sha256": "77f445e52ad08d0388bb2f673574a6ceb7491e0a9773c355d100aba5794d3393"
+      "sha256": "14eb0adfd8a399e78c85c07ae6a888a1fa7ad6f1a99c34a77036a0e5c1cf1f35"
     },
     {
       "id": "physics:op-amp-module",
@@ -4201,7 +4201,7 @@
       "merged": true,
       "notes": "集成运算放大器教学模块：标准运放原理框图、双电源 V+/V- 端口及反相/同相/输出接线柱。",
       "origin": "authored",
-      "sha256": "90e893801a5fc8663c279a5d6d0478734b2e11d97994395994cf9e7d2d2c8cb7"
+      "sha256": "e2ca4bb8ffd3bd4ea46236c29eec00507996e942f0e24b2b5336020e2ecf4804"
     },
     {
       "id": "physics:spdt-switch",
@@ -4257,7 +4257,7 @@
       "merged": true,
       "notes": "单刀双掷实验开关：瓷质绝缘底座、黄铜动触刀片与 COM / L1 / L2 接线柱。",
       "origin": "authored",
-      "sha256": "c21a2b0c7ce901a117bf9c67b7101a2dfb67661d24b464a9ead18ce193cc6a75"
+      "sha256": "c2ee95380dbf7ae861ab1062a8dae0f61c6f3c870da487a0efc1b24a9bab039e"
     },
     {
       "id": "physics:dpdt-switch",
@@ -4340,7 +4340,7 @@
       "merged": true,
       "notes": "双刀双掷联动倒顺开关：绝缘连杆双铜刀与六组接线端（A1/C1/B1, A2/C2/B2）。",
       "origin": "authored",
-      "sha256": "c608c6eecbc908262967ad03deff36ae321f3c66c6f1c3fbf2f076761de2393f"
+      "sha256": "981a8688a85bed129bb2550bc3f5b7fa00e055be18367ac4d98c1d79cb6139ca"
     },
     {
       "id": "physics:bridge-rectifier",
@@ -4405,7 +4405,7 @@
       "merged": true,
       "notes": "全波桥式整流教学模块：四二极管菱形整流桥丝印及 AC1/AC2 输入、+/- 直流输出端。",
       "origin": "authored",
-      "sha256": "a7dee8a0441f57b2cc0783cd14b4f0e97fc89a44dfd85273c63f172dca5b73c4"
+      "sha256": "85e1afae53d9bc617bf58b9ad2de775fa36da9f2375c57d02cd25711873bd5ea"
     },
     {
       "id": "physics:ground-terminal",
@@ -4443,7 +4443,7 @@
       "merged": true,
       "notes": "实验台接地基准端子柱：绿黄双色安全绝缘环、黄铜旋紧插孔与标准 IEC 接地标识。",
       "origin": "authored",
-      "sha256": "7008cf64cc37a0cda602aaec725ad12ae76ad89dd0469c98f1694884a80295b8"
+      "sha256": "a398c81411b2ce60252f07b8f3727c08c05e4bdce50223182a5e491874434db8"
     },
     {
       "id": "physics:hall-effect-apparatus",
@@ -4508,7 +4508,7 @@
       "merged": true,
       "notes": "集成一体式霍尔效应实验仪：C型励磁电磁铁、气隙砷化镓霍尔片与双电流/霍尔电压测试台。",
       "origin": "authored",
-      "sha256": "5c639c537b489c3f5b94514c7a8ac400a78ac805dc14fb6b7f0755fa62eecbf6"
+      "sha256": "d76cd5139a16dd6d82359cac7f5afa61cfb4cd0ea9f8c82bde036ad0b62922e1"
     },
     {
       "id": "physics:photoelectric-effect",
@@ -4564,7 +4564,7 @@
       "merged": true,
       "notes": "普朗克常量光电效应实验仪：遮光暗室光电管、单色滤光片窗口、微电流放大屏与遏止电压调节。",
       "origin": "authored",
-      "sha256": "6510bc57aea498e2a2591b1f4607b9af858a34bef522b1e5d9f81d1df2862c56"
+      "sha256": "c2aa6292ef3e738081922222806dcb986db8b379c31c661fd12b568ba8ac6bc0"
     },
     {
       "id": "physics:youngs-modulus",
@@ -4611,7 +4611,7 @@
       "merged": true,
       "notes": "拉伸法金属丝杨氏模量测定仪：双立柱张拉框架、挂砝码托盘、光杠杆反光镜及直立标尺望远镜。",
       "origin": "authored",
-      "sha256": "d2115f9cf4a43bf5a47c1ae7c2cabe526406dfda566b979be4346bb4731bd75d"
+      "sha256": "7c850e2c7907c5c36ea7b47ba4c280392aefb8a9ef710cf56fd7d0a0f36e3bd4"
     },
     {
       "id": "physics:newtons-rings",
@@ -4649,7 +4649,7 @@
       "merged": true,
       "notes": "牛顿环与读数显微镜装置：0.01 mm 微调测微鼓、45° 半反分束镜及牛顿环平凸透镜组。",
       "origin": "authored",
-      "sha256": "6857fa5f85032f20c314bddfee0c8a5326e3fe0d9f29915d76ccccd216a76913"
+      "sha256": "d7439d7d3dd3ed87ab67f66e2b09a205cf1fda6e6e6219646e002b4cc590a016"
     },
     {
       "id": "physics:polarizer-analyzer",
@@ -4696,7 +4696,7 @@
       "merged": true,
       "notes": "360° 刻度旋转偏振片与检偏器滑座：适配光学导轨滑块与偏振轴方向刻度盘。",
       "origin": "authored",
-      "sha256": "ce281cf502d8eddcf799628c2b5d59374618042d3d0c351e85bc1aea23b7b844"
+      "sha256": "a7282e8f31a3357eaa734fdb1e5ba5bbaca1fb06f1c1988d2a4791654f6e1e84"
     },
     {
       "id": "physics:sodium-lamp",
@@ -4734,7 +4734,7 @@
       "merged": true,
       "notes": "低压钠光单色实验光源：顶部散热百叶灯箱、589.3 nm 黄光出射筒及高度可调支座。",
       "origin": "authored",
-      "sha256": "5a29902d1077cc3afc9b29107b9512184fb2f01a130087329941404eb6a1e444"
+      "sha256": "9d26016b5b334e010262a422d016a8a0bcec10d8de22c11386b2e225daa24149"
     },
     {
       "id": "physics:helmholtz-coils",
@@ -4790,7 +4790,7 @@
       "merged": true,
       "notes": "同轴亥姆霍兹匀强磁场线圈组（d = R）：双铜线包绕线盘、轴线导轨及串并联接线柱。",
       "origin": "authored",
-      "sha256": "e7b59a15ae2b81df48cdc35f74243a3b09c38071bde466d178ca2a2a63b969ec"
+      "sha256": "a7896593d6bb2698aa2a2a7b3d4bb0b497dbd8e6fe4e74aeeaf77c1567b9d813"
     },
     {
       "id": "physics:millikan-oil-drop",
@@ -4837,7 +4837,7 @@
       "merged": true,
       "notes": "密立根油滴测元电荷实验仪：喷雾油滴室、平行铜极板电容器、测微显微镜及平衡高压电源台。",
       "origin": "authored",
-      "sha256": "d6d8b651ddce0307b703d544e1cdfd82f00d665c37ae094f341fc62fddd0c4a9"
+      "sha256": "10c8720fb3fa564652c32755177221710a82257a84928e8cdb96057bafb9eda7"
     },
     {
       "id": "physics:franck-hertz",
@@ -4884,7 +4884,7 @@
       "merged": true,
       "notes": "智能夫兰克-赫兹原子能级实验仪：充氩四极管观察窗、能级峰曲线屏及 X/Y 示波输出端子。",
       "origin": "authored",
-      "sha256": "83bea3c7cd27093d269a7fa0e1edb7caa251cfdc48bfc2aae5c26725aea7297c"
+      "sha256": "11144382fa7e43cce8406c50a77941971361696495f94cc9afa7b45d66e2b105"
     },
     {
       "id": "physics:trifilar-pendulum",
@@ -4922,7 +4922,7 @@
       "merged": true,
       "notes": "三线摆刚体转动惯量测量架：上下双悬挂圆盘、三等分细钢丝悬线与底部光电门周期计数传感器。",
       "origin": "authored",
-      "sha256": "2036c70f05ba25bf98f38179b4d8eafdd3c53098c820548b2e0c16ba72f33889"
+      "sha256": "c99986f12f2db956b95b7b2d0eafd346be67f51c545b23ae5fdcd55af6b62080"
     },
     {
       "id": "physics:ticker-timer",
@@ -4969,7 +4969,7 @@
       "merged": true,
       "notes": "50 Hz 电火花打点计时器：顶部走纸导向槽、碳纸压片夹及交流输入端（点距 0.02 s）。",
       "origin": "authored",
-      "sha256": "f886433d499a06462c26a63dcdc8dfe9ad63f555c2301abc935377518291887e"
+      "sha256": "c0140ef12e0a3090649bb0df13c10df5914af10d56e4e95042c26ea3fd8512ce"
     },
     {
       "id": "physics:calorimeter-electric",
@@ -5016,7 +5016,7 @@
       "merged": true,
       "notes": "双层绝热电热式量热器：内嵌紫铜杯与透视水位窗、插入式温度计、搅拌器及电热螺旋电阻。",
       "origin": "authored",
-      "sha256": "90238534a34edc53d689291b57e85b4d06f7c27a26aacc70d9ff868941c1c2f1"
+      "sha256": "6eef672a0be9d4ad57071e6512f5e2d04a5d2e26f36f6808234cc0f0656e07a7"
     },
     {
       "id": "physics:surface-tension-jolly",
@@ -5054,7 +5054,7 @@
       "merged": true,
       "notes": "焦利氏弹簧秤表面张力测量架：带反光毫米立柱标尺、青铜测力螺旋弹簧、铂丝拉脱环与升降液槽台。",
       "origin": "authored",
-      "sha256": "182d2f13565b32e44de42e2b4ed8f719bf2286bc2915d35ecdc0a44f4b5c8aca"
+      "sha256": "e1ef1da2d2fadba077d11a1b450fa38288f49d5d87713251aa763e55051c531d"
     }
   ]
 }
