@@ -20,6 +20,7 @@ class StructureEditor;
 class MainWindow : public QMainWindow {
     Q_OBJECT
     friend class WorkspaceTests;
+    friend class ButtonAuditTests;
 
   public:
     explicit MainWindow(bool automated = false);

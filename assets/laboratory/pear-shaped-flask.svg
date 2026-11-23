@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="160" viewBox="0 0 104 160">
+<title>梨形磨口烧瓶</title>
+<defs>
+  <linearGradient id="pear-shaped-flask-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
+    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
+    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="pear-shaped-flask-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="pear-shaped-flask-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="pear-shaped-flask-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="pear-shaped-flask-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="pear-shaped-flask-steel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="pear-shaped-flask-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+</defs>
+<path d="
+      M42 28 V42
+      C42 54 6 76 6 108
+      C6 138 34 156 52 156
+      C70 156 98 138 98 108
+      C98 76 62 54 62 42 V28 Z"
+      fill="url(#pear-shaped-flask-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M20 96 C18 118 28 134 40 142" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.78" stroke-linecap="round"/>
+  <polygon points="64.5,7.7 39.5,7.7 42,28 62,28" fill="url(#pear-shaped-flask-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="62.854" y1="9.7" x2="41.824" y2="15.2"/><line x1="41.146" y1="9.7" x2="62.176" y2="15.2"/><line x1="62.336" y1="13.9" x2="42.341" y2="19.4"/><line x1="41.664" y1="13.9" x2="61.659" y2="19.4"/><line x1="61.819" y1="18.1" x2="42.858" y2="23.6"/><line x1="42.181" y1="18.1" x2="61.142" y2="23.6"/><line x1="61.302" y1="22.3" x2="43.252" y2="26.8"/><line x1="42.698" y1="22.3" x2="60.748" y2="26.8"/></g>
+  <rect x="36.3" y="4" width="31.4" height="4.2" rx="2.1" fill="url(#pear-shaped-flask-glass)" stroke="#1F2937" stroke-width="2.0"/>
+  <line x1="42" y1="28" x2="62" y2="28" stroke="#334155" stroke-width="1.3"/>
+</svg>

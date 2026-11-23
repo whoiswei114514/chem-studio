@@ -19,7 +19,7 @@ class Art {
   text(x,y,text,size=12,fill=C.ink){return this.tag('text',{x,y,fill,stroke:'none','font-size':size,'font-family':'sans-serif','text-anchor':'middle'},esc(text));}
   port(id,x,y,dx,dy,type='mouth',diameter=16,extra={}){this.ports.push({id,x,y,dx,dy,type,diameter,...extra});return this;}
   ticks(x,y,n,spacing=12,len=14){for(let i=0;i<n;i++)this.line(x,y+i*spacing,x-(i%2?len*.6:len),y+i*spacing,{'stroke-width':1.3});return this;}
-  svg(){return `<svg xmlns="http://www.w3.org/2000/svg" width="${this.w}" height="${this.h}" viewBox="0 0 ${this.w} ${this.h}"><g stroke="${C.ink}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">${this.nodes.join('')}</g></svg>\n`;}
+  svg(){return this.customSvg||`<svg xmlns="http://www.w3.org/2000/svg" width="${this.w}" height="${this.h}" viewBox="0 0 ${this.w} ${this.h}"><g stroke="${C.ink}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">${this.nodes.join('')}</g></svg>\n`;}
 }
 const entries=[];
 function correctInterfaces(id, a) {
@@ -46,7 +46,6 @@ function correctInterfaces(id, a) {
   if (pipes[id]) pipe(...pipes[id]);
   if (id === 'test-tube-with-side-arm') update('outlet', {diameter:6});
   if (id === 'gas-cylinder') update('outlet', {x:80,y:18,diameter:10});
-  if (['graham','allihn','liebig-condenser'].includes(id)) pipe('M24 66 H7 M86 191 H103',12);
   if (id === 'cold-finger') {
     pipe('M62 28 V10 M78 28 V10',8);
     update('inlet', {diameter:8}); update('outlet', {diameter:8});
@@ -193,13 +192,84 @@ tube-adapter|变径接头
 cable|电缆
 salt-bridge|盐桥`,tube);
 
-function condenser(id){const a=new Art(110,260);a.p('M45 10 V38 H24 V224 H45 V248 M65 10 V38 H86 V224 H65 V248');
- a.port('inlet',55,10,0,-1,'glass-female',20,{depth:20});a.port('outlet',55,248,0,1,'glass-male',20,{depth:22});
- if(id==='graham'){let d='M55 10 V42';for(let y=44;y<216;y+=28)d+=` C20 ${y} 90 ${y+14} 55 ${y+28}`;a.p(d);}
- else if(id==='allihn'){a.line(55,10,55,40);for(let y=57;y<214;y+=34)a.ellipse(55,y,17,17);a.line(55,210,55,248);}
- else if(id==='fractionating-column'){a.line(45,10,45,248);a.line(65,10,65,248);for(let y=57;y<215;y+=23)a.p(`M45 ${y} l13 7 -13 7 M65 ${y+10} l-13 7 13 7`);}
- else {a.line(45,10,45,248);a.line(65,10,65,248);}
- if(id!=='fractionating-column'){a.p('M24 66 H7 M86 191 H103');a.port('water-out',7,66,-1,0,'coolant',12);a.port('water-in',103,191,1,0,'coolant',12);}return a;}
+function condenser(id){
+ if(id==='fractionating-column'){
+  const a=new Art(110,260);a.p('M45 10 V38 H24 V224 H45 V248 M65 10 V38 H86 V224 H65 V248');
+  a.port('inlet',55,10,0,-1,'glass-female',20,{depth:20});a.port('outlet',55,248,0,1,'glass-male',20,{depth:22});
+  a.line(45,10,45,248);a.line(65,10,65,248);
+  for(let y=57;y<215;y+=23)a.p(`M45 ${y} l13 7 -13 7 M65 ${y+10} l-13 7 13 7`);
+  return a;
+ }
+ const r=n=>Number(n.toFixed(3));
+ const W=92,H=354,cx=46,jTop=58,jBot=292,jHw=16;
+ const stroke='#1F2937',inner='#334155',frostStroke='#64748B';
+ const a=new Art(W,H);
+ const hatch=(sx,sy,ex,ey,hw0,hw1)=>{
+  const dx=ex-sx,dy=ey-sy,len=Math.hypot(dx,dy),ux=dx/len,uy=dy/len,tx=-uy,ty=ux;
+  const pt=(s,w)=>[r(sx+ux*s+tx*w),r(sy+uy*s+ty*w)];
+  const lines=[];
+  for(let s=2;s<len-1.5;s+=4.2){
+   const s2=Math.min(len-1.2,s+5.5),wA=hw0+(hw1-hw0)*(s/len)-1.4,wB=hw0+(hw1-hw0)*(s2/len)-1.4;
+   if(wA>1&&wB>1){
+    const a1=pt(s,-wA),b1=pt(s2,wB),a2=pt(s,wA),b2=pt(s2,-wB);
+    lines.push(`<line x1="${a1[0]}" y1="${a1[1]}" x2="${b1[0]}" y2="${b1[1]}"/>`);
+    lines.push(`<line x1="${a2[0]}" y1="${a2[1]}" x2="${b2[0]}" y2="${b2[1]}"/>`);
+   }
+  }
+  const p0L=pt(0,-hw0),p0R=pt(0,hw0),p1R=pt(len,hw1),p1L=pt(len,-hw1);
+  return `<polygon points="${p0L.join(',')} ${p0R.join(',')} ${p1R.join(',')} ${p1L.join(',')}" fill="url(#${id}-frost)" stroke="${stroke}" stroke-width="2" stroke-linejoin="round"/>`+
+   `<g stroke="${frostStroke}" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round">${lines.join('')}</g>`;
+ };
+ const barb=(wallX,cy,dirX)=>{
+  const barbLen=24,rBase=5.2,rTip=4.4,tipX=wallX+dirX*barbLen,midX=wallX+dirX*(barbLen*0.62);
+  const d=`M${r(wallX)} ${r(cy-rBase)} L${r(midX)} ${r(cy-rBase+0.6)} L${r(midX+dirX*2)} ${r(cy-rBase-1.3)} L${r(tipX)} ${r(cy-rTip)} L${r(tipX)} ${r(cy+rTip)} L${r(midX+dirX*2)} ${r(cy+rBase+1.3)} L${r(midX)} ${r(cy+rBase-0.6)} L${r(wallX)} ${r(cy+rBase)} Z`;
+  return `<path d="${d}" fill="url(#${id}-glass)" stroke="${stroke}" stroke-width="2.0" stroke-linejoin="round"/>`+
+   `<line x1="${r(wallX+dirX*1.5)}" y1="${r(cy-1.6)}" x2="${r(tipX-dirX*2)}" y2="${r(cy-1.6)}" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.72" stroke-linecap="round"/>`;
+ };
+ let innerBody='';
+ if(id==='liebig-condenser'){
+  innerBody=`<rect x="${cx-6.5}" y="28" width="13" height="298" fill="url(#${id}-glass)" stroke="${inner}" stroke-width="1.6"/>`+
+   `<line x1="${r(cx-2.8)}" y1="36" x2="${r(cx-2.8)}" y2="318" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.78" stroke-linecap="round"/>`;
+ }else if(id==='allihn'){
+  const bulbs=5,span=jBot-jTop-28,step=span/bulbs,yStart=jTop+14;
+  let d=`M${cx-6} 28 V${r(yStart)}`;
+  for(let i=0;i<bulbs;i++){
+   const y0=yStart+i*step,y1=y0+step,ym=(y0+y1)/2;
+   d+=` C${cx-6} ${r(y0+step*0.16)} ${cx-13} ${r(y0+step*0.22)} ${cx-13} ${r(ym)} C${cx-13} ${r(y1-step*0.22)} ${cx-6} ${r(y1-step*0.16)} ${cx-6} ${r(y1)}`;
+  }
+  d+=` V326 H${cx+6} V${r(yStart+bulbs*step)}`;
+  for(let i=bulbs-1;i>=0;i--){
+   const y0=yStart+i*step,y1=y0+step,ym=(y0+y1)/2;
+   d+=` C${cx+6} ${r(y1-step*0.16)} ${cx+13} ${r(y1-step*0.22)} ${cx+13} ${r(ym)} C${cx+13} ${r(y0+step*0.22)} ${cx+6} ${r(y0+step*0.16)} ${cx+6} ${r(y0)}`;
+  }
+  d+=' V28 Z';
+  innerBody=`<path d="${d}" fill="url(#${id}-glass)" stroke="${inner}" stroke-width="1.6" stroke-linejoin="round"/>`;
+ }else{
+  const turns=8,y0=jTop+18,y1=jBot-18,pitch=(y1-y0)/turns,amp=11.5;
+  let coil=`M${cx} 28 V${r(y0-4)} C${cx} ${r(y0)} ${cx+amp} ${r(y0+pitch*0.1)} ${cx+amp} ${r(y0+pitch*0.25)}`;
+  for(let i=0;i<turns;i++){
+   const yt=y0+i*pitch,ym=yt+pitch*0.5,yb=yt+pitch;
+   coil+=` C${cx+amp} ${r(yt+pitch*0.42)} ${cx-amp} ${r(yt+pitch*0.34)} ${cx-amp} ${r(ym+pitch*0.06)}`;
+   coil+=` C${cx-amp} ${r(ym+pitch*0.30)} ${cx+amp} ${r(yb-pitch*0.22)} ${cx+amp} ${r(yb+(i===turns-1?0:pitch*0.05))}`;
+  }
+  coil+=` C${cx+amp} ${r(y1+6)} ${cx} ${r(y1+6)} ${cx} ${r(y1+12)} V326`;
+  innerBody=`<path d="${coil}" fill="none" stroke="${inner}" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>`+
+   `<path d="${coil}" fill="none" stroke="#EFF8FC" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`;
+ }
+ const title=id==='graham'?'蛇形冷凝管':id==='allihn'?'球形冷凝管':'直形冷凝管';
+ const defs=`<defs><linearGradient id="${id}-glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/><stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/><stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/><stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/><stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/></linearGradient><linearGradient id="${id}-coolant" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/><stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/><stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/></linearGradient><linearGradient id="${id}-frost" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/><stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/><stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/><stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/></linearGradient></defs>`;
+ const outerWall=`<path d="M${cx-8} 28 V48 C${cx-8} 54 ${cx-jHw} 54 ${cx-jHw} ${jTop+10} V${jBot-10} C${cx-jHw} ${jBot} ${cx-8} ${jBot} ${cx-8} ${jBot+8} V326 H${cx+8} V${jBot+8} C${cx+8} ${jBot} ${cx+jHw} ${jBot} ${cx+jHw} ${jBot-10} V${jTop+10} C${cx+jHw} 54 ${cx+8} 54 ${cx+8} 48 V28 Z" fill="url(#${id}-coolant)" stroke="${stroke}" stroke-width="2.2" stroke-linejoin="round"/>`;
+ const fem=`${hatch(cx,7.7,cx,28,12,9.5)}<rect x="${r(cx-15.2)}" y="4" width="30.4" height="4.2" rx="2.1" fill="url(#${id}-glass)" stroke="${stroke}" stroke-width="2.0"/><line x1="${r(cx-9.5)}" y1="28" x2="${r(cx+9.5)}" y2="28" stroke="${inner}" stroke-width="1.3"/>`;
+ const male=`${hatch(cx,326,cx,350,11.5,8.8)}<line x1="${r(cx-13)}" y1="326" x2="${r(cx+13)}" y2="326" stroke="${stroke}" stroke-width="2.0" stroke-linecap="round"/>`;
+ const seals=`<path d="M${cx-10} ${jTop+4} Q${cx} ${jTop+9} ${cx+10} ${jTop+4}" fill="none" stroke="${inner}" stroke-width="1.3"/><path d="M${cx-10} ${jBot-4} Q${cx} ${jBot-9} ${cx+10} ${jBot-4}" fill="none" stroke="${inner}" stroke-width="1.3"/><line x1="${r(cx-jHw+4.5)}" y1="${jTop+16}" x2="${r(cx-jHw+4.5)}" y2="${jBot-16}" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.78" stroke-linecap="round"/>`;
+ a.customSvg=`<?xml version="1.0" encoding="utf-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><title>${title}</title>${defs}${barb(cx-jHw,266,-1)}${barb(cx+jHw,84,1)}${outerWall}${innerBody}${seals}${fem}${male}</svg>\n`;
+ a.port('inlet',cx,4,0,-1,'glass-joint',24,{depth:24,edge:[cx-12,4,cx+12,4]});
+ a.port('outlet',cx,350,0,1,'glass-joint',17.6,{depth:24,edge:[cx-8.8,350,cx+8.8,350]});
+ a.port('water-in',6,266,-1,0,'coolant',8.8,{depth:8,edge:[6,261.6,6,270.4]});
+ a.port('water-out',86,84,1,0,'coolant',8.8,{depth:8,edge:[86,79.6,86,88.4]});
+ a.port('grip-site',cx,175,1,0,'grip-site',0,{segment:[cx,108,cx,244]});
+ return a;
+}
 group('冷凝与蒸馏',`graham|蛇形冷凝管
 allihn|球形冷凝管
 liebig-condenser|直形冷凝管

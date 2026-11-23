@@ -1,0 +1,3319 @@
+{
+  "format": "chem-studio-art",
+  "version": 1,
+  "assets": [
+    {
+      "id": "lab:ground-glass-stopper",
+      "name": "玻璃磨口塞（圆头）",
+      "category": "瓶塞与磨口接头",
+      "search": "玻璃塞 磨口瓶塞 round head ground glass stopper 实心玻璃密封件，圆头便于抓取，下部磨砂锥面嵌入试剂瓶或容量瓶的磨口。",
+      "svg": "ground-glass-stopper.svg",
+      "width": 40,
+      "height": 68,
+      "ports": [
+        {
+          "id": "plug",
+          "x": 20,
+          "y": 33,
+          "dx": 0,
+          "dy": 1,
+          "type": "plug",
+          "diameter": 28,
+          "depth": 0,
+          "edge": [
+            6,
+            33,
+            34,
+            33
+          ]
+        }
+      ],
+      "sha256": "b29b9181964b5cbce24c91d2ab7bb575ca7f45db8cc4fbe57ca7bbe80079586b",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:clear-reagent-bottle",
+      "name": "透明磨口试剂瓶（开口）",
+      "category": "试剂储存",
+      "search": "无色试剂瓶 细口瓶 reagent bottle clear glass 储存试剂和溶液，瓶口可装可拆卸的玻璃磨口塞。",
+      "svg": "clear-reagent-bottle.svg",
+      "width": 94,
+      "height": 168,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 47,
+          "y": 3,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 30,
+          "depth": 24,
+          "edge": [
+            32,
+            3,
+            62,
+            3
+          ]
+        },
+        {
+          "id": "base",
+          "x": 47,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 47,
+          "y": 20,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            47,
+            8,
+            47,
+            32
+          ]
+        }
+      ],
+      "sha256": "9f28d5ebaa1f03e6a0656861166adf4854f2ff4319675cd23bfb9410fb96b25f",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:amber-reagent-bottle",
+      "name": "棕色磨口试剂瓶（开口）",
+      "category": "试剂储存",
+      "search": "棕色试剂瓶 棕瓶 避光瓶 amber reagent bottle 保护光敏试剂，带空白标签和可装玻璃塞的磨口。",
+      "svg": "amber-reagent-bottle.svg",
+      "width": 94,
+      "height": 168,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 47,
+          "y": 3,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 30,
+          "depth": 24,
+          "edge": [
+            32,
+            3,
+            62,
+            3
+          ]
+        },
+        {
+          "id": "base",
+          "x": 47,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 47,
+          "y": 20,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            47,
+            8,
+            47,
+            32
+          ]
+        }
+      ],
+      "sha256": "3dd41064cc678ee4f5ec142355f6f38ca3f058ce1eabb02bc6c91943c3132f53",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:ball-joint",
+      "name": "球形磨口接头（球头）",
+      "category": "瓶塞与磨口接头",
+      "search": "球磨口 公口 球头 ball ground glass joint 与球形磨口球窝配合，连接玻璃管路。",
+      "svg": "ball-joint.svg",
+      "width": 148,
+      "height": 48,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 2,
+          "y": 24,
+          "dx": -1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 26,
+          "depth": 5,
+          "edge": [
+            2,
+            11,
+            2,
+            37
+          ]
+        },
+        {
+          "id": "ball",
+          "x": 144,
+          "y": 24,
+          "dx": 1,
+          "dy": 0,
+          "type": "ball-male",
+          "diameter": 42,
+          "depth": 5
+        }
+      ],
+      "sha256": "53c46831da588ecd91bac329db49f1d6c5dca891bfd381a9803977b4a67ebd21",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:socket-joint",
+      "name": "球形磨口接头（球窝）",
+      "category": "瓶塞与磨口接头",
+      "search": "球磨口 母口 球窝 socket ground glass joint 与球形磨口球头配合，连接玻璃管路。",
+      "svg": "socket-joint.svg",
+      "width": 148,
+      "height": 52,
+      "ports": [
+        {
+          "id": "socket",
+          "x": 4,
+          "y": 26,
+          "dx": -1,
+          "dy": 0,
+          "type": "ball-female",
+          "diameter": 42,
+          "depth": 5
+        },
+        {
+          "id": "outlet",
+          "x": 146,
+          "y": 26,
+          "dx": 1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 26,
+          "depth": 5,
+          "edge": [
+            146,
+            13,
+            146,
+            39
+          ]
+        }
+      ],
+      "sha256": "1e4fc72e0f6d0c23ac44e4df7257bcc9f8356cbcae9edc1ef5a4e27098cd5247",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:friedrich-condenser",
+      "name": "弗里德里希回流冷凝管",
+      "category": "冷凝与回流",
+      "search": "螺旋冷指冷凝管 Friedrichs condenser 高效回流 蒸气冷却 换热 内部螺旋冷指，上部接冷却水，下部磨口与反应烧瓶连接。",
+      "svg": "friedrich-condenser.svg",
+      "width": 136,
+      "height": 304,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 58,
+          "y": 300,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            49.2,
+            300,
+            66.8,
+            300
+          ]
+        },
+        {
+          "id": "inlet",
+          "x": 130,
+          "y": 74,
+          "dx": 0.94,
+          "dy": -0.342,
+          "type": "vapor-female",
+          "diameter": 22,
+          "depth": 20,
+          "edge": [
+            133.762,
+            84.34,
+            126.238,
+            63.66
+          ]
+        },
+        {
+          "id": "water-in",
+          "x": 104,
+          "y": 38,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            104,
+            34,
+            104,
+            42
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "water-out",
+          "x": 12,
+          "y": 20,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            12,
+            16,
+            12,
+            24
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "grip-site",
+          "x": 58,
+          "y": 155,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            58,
+            108,
+            58,
+            226
+          ]
+        }
+      ],
+      "sha256": "b11dd8f6c9953c3bc543d2d15b7babdb36778fd070c48ab86eb3b56c438782c5",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:liebig-condenser",
+      "name": "直形冷凝管",
+      "category": "冷凝与回流",
+      "search": "直形冷凝管 Liebig condenser 蒸馏 冷凝 蒸气液化 外层水套下口进冷水上口出水，内管通过热蒸气。",
+      "svg": "liebig-condenser.svg",
+      "width": 92,
+      "height": 354,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 46,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "vapor-female",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            34,
+            4,
+            58,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 46,
+          "y": 350,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            37.2,
+            350,
+            54.8,
+            350
+          ]
+        },
+        {
+          "id": "water-in",
+          "x": 6,
+          "y": 266,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            6,
+            261.6,
+            6,
+            270.4
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "water-out",
+          "x": 86,
+          "y": 84,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            86,
+            79.6,
+            86,
+            88.4
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "grip-site",
+          "x": 46,
+          "y": 175,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            46,
+            108,
+            46,
+            244
+          ]
+        }
+      ],
+      "sha256": "a2d0684119fc31648016081cc437ca81bdd42b7fe08542461401fad8aa09d1ee",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:allihn-condenser",
+      "name": "球形冷凝管",
+      "category": "冷凝与回流",
+      "search": "球形冷凝管 Allihn condenser 冷凝 回流 球泡内管 增大换热面积 使热蒸气冷却回流至反应烧瓶。",
+      "svg": "allihn-condenser.svg",
+      "width": 92,
+      "height": 354,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 46,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "vapor-female",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            34,
+            4,
+            58,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 46,
+          "y": 350,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            37.2,
+            350,
+            54.8,
+            350
+          ]
+        },
+        {
+          "id": "water-in",
+          "x": 6,
+          "y": 266,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            6,
+            261.6,
+            6,
+            270.4
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "water-out",
+          "x": 86,
+          "y": 84,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            86,
+            79.6,
+            86,
+            88.4
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "grip-site",
+          "x": 46,
+          "y": 175,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            46,
+            108,
+            46,
+            244
+          ]
+        }
+      ],
+      "sha256": "4b48b7812bfd5f00de65c2f6ff27424986bf518cc95025f2da94725ef21888ea",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:graham-condenser",
+      "name": "蛇形冷凝管",
+      "category": "冷凝与回流",
+      "search": "蛇形冷凝管 Graham condenser 螺旋冷凝管 盘管冷凝 增大蒸气换热面积，用冷水将热蒸气冷凝为液体。",
+      "svg": "graham-condenser.svg",
+      "width": 92,
+      "height": 354,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 46,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "vapor-female",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            34,
+            4,
+            58,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 46,
+          "y": 350,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            37.2,
+            350,
+            54.8,
+            350
+          ]
+        },
+        {
+          "id": "water-in",
+          "x": 6,
+          "y": 266,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            6,
+            261.6,
+            6,
+            270.4
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "water-out",
+          "x": 86,
+          "y": 84,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            86,
+            79.6,
+            86,
+            88.4
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "grip-site",
+          "x": 46,
+          "y": 175,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            46,
+            108,
+            46,
+            244
+          ]
+        }
+      ],
+      "sha256": "c238d07ca885c8656e9c1241064c194938454c9048c66c6986d6cecfd2f77a92",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:air-condenser",
+      "name": "空气冷凝管",
+      "category": "冷凝与回流",
+      "search": "空气冷凝管 air condenser 无水套 高沸点蒸馏 空气冷却 直管冷凝 用于沸点高于140℃液体的蒸馏冷凝，无需通水。",
+      "svg": "air-condenser.svg",
+      "width": 44,
+      "height": 320,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 22,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "vapor-female",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            10,
+            4,
+            34,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 22,
+          "y": 316,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            13.2,
+            316,
+            30.8,
+            316
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 22,
+          "y": 160,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            22,
+            80,
+            22,
+            240
+          ]
+        }
+      ],
+      "sha256": "505f2f5e33d117839f83d0a1ccafa00ea1d1db52cf1b0bfe39fc4753935d653a",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:dimroth-condenser",
+      "name": "双层盘管冷凝管",
+      "category": "冷凝与回流",
+      "search": "双层盘管冷凝管 Dimroth condenser 迪姆罗特冷凝管 内螺旋冷管 高效回流 冷却水进出水口分别在顶部两侧。",
+      "svg": "dimroth-condenser.svg",
+      "width": 94,
+      "height": 354,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 47,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "vapor-female",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            35,
+            4,
+            59,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 47,
+          "y": 350,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            38.2,
+            350,
+            55.8,
+            350
+          ]
+        },
+        {
+          "id": "water-in",
+          "x": 5,
+          "y": 82,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8.4,
+          "depth": 8,
+          "edge": [
+            5,
+            77.8,
+            5,
+            86.2
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "water-out",
+          "x": 89,
+          "y": 62,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8.4,
+          "depth": 8,
+          "edge": [
+            89,
+            57.8,
+            89,
+            66.2
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "grip-site",
+          "x": 47,
+          "y": 175,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            47,
+            108,
+            47,
+            250
+          ]
+        }
+      ],
+      "sha256": "12b1dac57a884464ae1c0b55a4b823a52381a212f12c15cd0f5bb93972107e7f",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:plain-distillation-head",
+      "name": "无支管蒸馏头",
+      "category": "蒸馏与分馏",
+      "search": "无支管蒸馏头 75度弯头 蒸馏弯管 plain distillation head elbow 不带温度计口的75°蒸馏弯管，连接烧瓶与冷凝管。",
+      "svg": "plain-distillation-head.svg",
+      "width": 90,
+      "height": 104,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 22,
+          "y": 100,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 22,
+          "edge": [
+            13.2,
+            100,
+            30.8,
+            100
+          ]
+        },
+        {
+          "id": "side",
+          "x": 85.25,
+          "y": 49.694,
+          "dx": 0.966,
+          "dy": 0.259,
+          "type": "vapor-male",
+          "diameter": 17.2,
+          "depth": 22,
+          "edge": [
+            87.476,
+            41.387,
+            83.025,
+            58.001
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 22,
+          "y": 54,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            22,
+            32,
+            22,
+            74
+          ]
+        }
+      ],
+      "sha256": "71ab5a34a5934ccdaa43cb9c3855f7e3e345759cae341d78374f1fd67d82b83a",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:standard-distillation-head",
+      "name": "带支管蒸馏头",
+      "category": "蒸馏与分馏",
+      "search": "带支管蒸馏头 75度蒸馏头 克氏蒸馏头 standard distillation head 顶部接温度计套管，下口接烧瓶，75°侧支管接冷凝管。",
+      "svg": "standard-distillation-head.svg",
+      "width": 90,
+      "height": 132,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 22,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "sensor-socket",
+          "diameter": 25,
+          "depth": 75,
+          "edge": [
+            9.5,
+            4,
+            34.5,
+            4
+          ],
+          "target": [
+            22,
+            54
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 22,
+          "y": 128,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 22,
+          "edge": [
+            13.2,
+            128,
+            30.8,
+            128
+          ]
+        },
+        {
+          "id": "side",
+          "x": 85.25,
+          "y": 69.694,
+          "dx": 0.966,
+          "dy": 0.259,
+          "type": "vapor-male",
+          "diameter": 17.2,
+          "depth": 22,
+          "edge": [
+            87.476,
+            61.387,
+            83.025,
+            78.001
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 22,
+          "y": 66,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            22,
+            36,
+            22,
+            96
+          ]
+        }
+      ],
+      "sha256": "599d234400f7f84d7ab610d193b3f15b64e24d438365384eb51cce3b77e8345b",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:claisen-head",
+      "name": "克氏双口蒸馏头",
+      "category": "蒸馏与分馏",
+      "search": "克氏蒸馏头 克莱森头 双口蒸馏头 Claisen adapter head 减压蒸馏 加料与测温 双磨口上部接口，防止暴沸并同时插入温度计与滴液漏斗。",
+      "svg": "claisen-head.svg",
+      "width": 94,
+      "height": 154,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 22,
+          "y": 22,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 24,
+          "depth": 22,
+          "edge": [
+            10,
+            22,
+            34,
+            22
+          ]
+        },
+        {
+          "id": "inlet-2",
+          "x": 70,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 24,
+          "depth": 22,
+          "edge": [
+            58,
+            4,
+            82,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 22,
+          "y": 150,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 22,
+          "edge": [
+            13.2,
+            150,
+            30.8,
+            150
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 22,
+          "y": 92,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            22,
+            56,
+            22,
+            118
+          ]
+        }
+      ],
+      "sha256": "a643a91e292ae7db7eb6dc3847fe8283ae88b18dcb8295754543c501a0f90785",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:ground-conical-flask",
+      "name": "磨口锥形瓶",
+      "category": "反应容器",
+      "search": "磨口锥形瓶 具塞锥形瓶 ground neck conical flask Erlenmeyer 磨砂标准口锥形瓶，可与真空接收管、磨口塞或冷凝管密闭连接。",
+      "svg": "ground-conical-flask.svg",
+      "width": 114,
+      "height": 168,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 57,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 26,
+          "depth": 24,
+          "edge": [
+            44,
+            4,
+            70,
+            4
+          ],
+          "target": [
+            57,
+            145
+          ]
+        },
+        {
+          "id": "base",
+          "x": 57,
+          "y": 165,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 57,
+          "y": 24,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            57,
+            8,
+            57,
+            42
+          ]
+        }
+      ],
+      "sha256": "549ee4a345a2ff804e9cac7aac937e54e99f5ad435be22d8165364b4098f9c47",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:bent-receiver-adapter",
+      "name": "弯形接收管",
+      "category": "蒸馏与分馏",
+      "search": "弯形接收管 105度尾接管 牛角尾接管 bent receiver adapter 接在冷凝管末端，将馏分引入接收瓶。",
+      "svg": "bent-receiver-adapter.svg",
+      "width": 92,
+      "height": 104,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 6,
+          "y": 20,
+          "dx": -0.966,
+          "dy": -0.259,
+          "type": "vapor-female",
+          "diameter": 23,
+          "depth": 22,
+          "edge": [
+            8.976,
+            8.892,
+            3.024,
+            31.108
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 68,
+          "y": 100,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            64,
+            100,
+            72,
+            100
+          ],
+          "segment": [
+            68,
+            58,
+            68,
+            98
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 68,
+          "y": 66,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            68,
+            46,
+            68,
+            86
+          ]
+        }
+      ],
+      "sha256": "2ad551679c26dedfbc2855504cbe9679ff5ce482e9d4611aef08869f694bb6c6",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:straight-receiver-adapter",
+      "name": "直形接收管",
+      "category": "蒸馏与分馏",
+      "search": "直形接收管 直尾接管 straight receiver delivery adapter 接在冷凝管下端将液体直接导入接收容器。",
+      "svg": "straight-receiver-adapter.svg",
+      "width": 40,
+      "height": 112,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 20,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "vapor-female",
+          "diameter": 24,
+          "depth": 22,
+          "edge": [
+            8,
+            4,
+            32,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 20,
+          "y": 108,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 9,
+          "depth": 8,
+          "edge": [
+            15.5,
+            107,
+            24.5,
+            106
+          ],
+          "segment": [
+            20,
+            54,
+            20,
+            104
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 20,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            20,
+            34,
+            20,
+            84
+          ]
+        }
+      ],
+      "sha256": "771a4ab96084ece39ce0cc614fe5614c60e1e2ccc4ed5ac9c81c63bcb228f9d3",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:vacuum-receiver-adapter",
+      "name": "真空接收管",
+      "category": "蒸馏与分馏",
+      "search": "真空接收管 带抽气口尾接管 减压蒸馏接收管 vacuum receiver adapter 侧面带真空抽气支管，下端标准磨口密闭接磨口锥形瓶或圆底烧瓶。",
+      "svg": "vacuum-receiver-adapter.svg",
+      "width": 116,
+      "height": 128,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 6,
+          "y": 20,
+          "dx": -0.966,
+          "dy": -0.259,
+          "type": "vapor-female",
+          "diameter": 23,
+          "depth": 22,
+          "edge": [
+            8.976,
+            8.892,
+            3.024,
+            31.108
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 64,
+          "y": 124,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            55.2,
+            124,
+            72.8,
+            124
+          ]
+        },
+        {
+          "id": "vacuum",
+          "x": 110,
+          "y": 48,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            110,
+            44,
+            110,
+            52
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "grip-site",
+          "x": 64,
+          "y": 74,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            64,
+            52,
+            64,
+            96
+          ]
+        }
+      ],
+      "sha256": "1c3c8bcda4f69dc8bdb8111416731232602ab7698195712ce4a563d31507eb58",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:cow-receiver-adapter",
+      "name": "多头接收管（牛角管）",
+      "category": "蒸馏与分馏",
+      "search": "牛角管 多头接收管 三头分配管 cow receiver adapter 减压分馏收集不同沸点馏分，无需拆卸装置即可转动切换接收瓶。",
+      "svg": "cow-receiver-adapter.svg",
+      "width": 138,
+      "height": 148,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 6,
+          "y": 22,
+          "dx": -0.966,
+          "dy": -0.259,
+          "type": "vapor-female",
+          "diameter": 23,
+          "depth": 22,
+          "edge": [
+            8.976,
+            10.892,
+            3.024,
+            33.108
+          ]
+        },
+        {
+          "id": "outlet-1",
+          "x": 45,
+          "y": 131.053,
+          "dx": -0.5,
+          "dy": 0.866,
+          "type": "glass-male",
+          "diameter": 14.4,
+          "depth": 22,
+          "edge": [
+            51.235,
+            134.653,
+            38.765,
+            127.453
+          ]
+        },
+        {
+          "id": "outlet-2",
+          "x": 74,
+          "y": 144,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 14.4,
+          "depth": 22,
+          "edge": [
+            66.8,
+            144,
+            81.2,
+            144
+          ]
+        },
+        {
+          "id": "outlet-3",
+          "x": 103,
+          "y": 131.053,
+          "dx": 0.5,
+          "dy": 0.866,
+          "type": "glass-male",
+          "diameter": 14.4,
+          "depth": 22,
+          "edge": [
+            109.235,
+            127.453,
+            96.765,
+            134.653
+          ]
+        },
+        {
+          "id": "vacuum",
+          "x": 126,
+          "y": 44,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            126,
+            40,
+            126,
+            48
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "grip-site",
+          "x": 74,
+          "y": 74,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            74,
+            48,
+            74,
+            102
+          ]
+        }
+      ],
+      "sha256": "eaf1f83c285244221da42fe72d6bdeb77682e8d01c9f8ca87f7718eb41bd9467",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:thermometer-adapter",
+      "name": "磨口温度计套管接头",
+      "category": "瓶塞与磨口接头",
+      "search": "温度计套管 磨口温度计接头 thermometer adapter 带密封螺帽与O型圈的磨口玻璃接头，用于密封固定温度计或毛细管。",
+      "svg": "thermometer-adapter.svg",
+      "width": 44,
+      "height": 96,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 22,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "sensor-socket",
+          "diameter": 26,
+          "depth": 60,
+          "edge": [
+            9,
+            4,
+            35,
+            4
+          ],
+          "target": [
+            22,
+            66
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 22,
+          "y": 92,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            13.2,
+            92,
+            30.8,
+            92
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 22,
+          "y": 44,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            22,
+            26,
+            22,
+            62
+          ]
+        }
+      ],
+      "sha256": "d7675e5fb58493f0c1d13f05ca25f3fda351ba9e4ca65f057b5d1ac6b2ac30bb",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:reducing-adapter",
+      "name": "磨口变径接头",
+      "category": "瓶塞与磨口接头",
+      "search": "变径接头 大小头 磨口转换头 reducing adapter 连接不同标准磨口尺寸（如24/29转19/26）的玻璃仪器。",
+      "svg": "reducing-adapter.svg",
+      "width": 50,
+      "height": 98,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 25,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 29,
+          "depth": 24,
+          "edge": [
+            10.5,
+            4,
+            39.5,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 25,
+          "y": 94,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 16,
+          "depth": 24,
+          "edge": [
+            17,
+            94,
+            33,
+            94
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 25,
+          "y": 49,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            25,
+            32,
+            25,
+            66
+          ]
+        }
+      ],
+      "sha256": "b2209a9ddfefc307f726289004989c1e045d5f45a5de8d7d6e1e61f2d470654a",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:gas-inlet-adapter",
+      "name": "磨口气体导入接头",
+      "category": "瓶塞与磨口接头",
+      "search": "气体导入接头 抽气头 真空接头 gas inlet vacuum adapter 磨口反应瓶通入惰性气体保护或连接真空管路。",
+      "svg": "gas-inlet-adapter.svg",
+      "width": 82,
+      "height": 92,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 76.5,
+          "y": 32,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            76.5,
+            28,
+            76.5,
+            36
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "outlet",
+          "x": 24,
+          "y": 88,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            15.2,
+            88,
+            32.8,
+            88
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 24,
+          "y": 44,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            24,
+            24,
+            24,
+            60
+          ]
+        }
+      ],
+      "sha256": "88d08be2e10d79e4f5724bb5dc6eabc163472f64523852174748db19b7c3a07f",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:pear-shaped-flask",
+      "name": "梨形磨口烧瓶",
+      "category": "反应容器",
+      "search": "梨形烧瓶 茄形瓶 pear shaped flask 旋蒸接收瓶 微量蒸馏与浓缩，便于用移液管吸取底部少量残留液体。",
+      "svg": "pear-shaped-flask.svg",
+      "width": 104,
+      "height": 160,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 52,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 25,
+          "depth": 24,
+          "edge": [
+            39.5,
+            4,
+            64.5,
+            4
+          ],
+          "target": [
+            52,
+            134
+          ]
+        },
+        {
+          "id": "base",
+          "x": 52,
+          "y": 156,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 52,
+          "y": 24,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            52,
+            8,
+            52,
+            42
+          ]
+        }
+      ],
+      "sha256": "6b1fa41b26113d1650ae89905f900b570e81d3ea82bc73cad0f641a2b391dab4",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:vigreux-column",
+      "name": "刺形分馏柱",
+      "category": "蒸馏与分馏",
+      "search": "刺形分馏柱 韦氏分馏柱 Vigreux fractionating column 柱内壁带多组向内玻璃尖刺，增大气液接触面积，用于精密分馏。",
+      "svg": "vigreux-column.svg",
+      "width": 54,
+      "height": 330,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 27,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 25,
+          "depth": 24,
+          "edge": [
+            14.5,
+            4,
+            39.5,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 27,
+          "y": 326,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            18.2,
+            326,
+            35.8,
+            326
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 27,
+          "y": 165,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            27,
+            70,
+            27,
+            260
+          ]
+        }
+      ],
+      "sha256": "747e17479b053f44bfa28cb28724e8279d41d928a1f388df476c4111f5ba9ca8",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:pressure-equalizing-funnel",
+      "name": "磨口恒压滴液漏斗",
+      "category": "加料与滴液",
+      "search": "恒压滴液漏斗 磨口滴液漏斗 pressure equalizing addition funnel 旁通气压平衡管保证在密闭惰性气体或减压体系中匀速滴加液体。",
+      "svg": "pressure-equalizing-funnel.svg",
+      "width": 82,
+      "height": 264,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 46,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 25,
+          "depth": 24,
+          "edge": [
+            33.5,
+            4,
+            58.5,
+            4
+          ],
+          "target": [
+            46,
+            145
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 46,
+          "y": 260,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            37.2,
+            260,
+            54.8,
+            260
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 46,
+          "y": 106,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            46,
+            72,
+            46,
+            142
+          ]
+        }
+      ],
+      "sha256": "fdaf7eb6dbaa9a21d2515a9643b44ec6df7570aa97ae05e7e2d17adc11241725",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:soxhlet-extractor",
+      "name": "磨口索氏提取器",
+      "category": "提取与萃取",
+      "search": "索氏提取器 脂肪抽提器 Soxhlet extractor 固液连续萃取 虹吸管 蒸汽旁通管 回流提取。",
+      "svg": "soxhlet-extractor.svg",
+      "width": 108,
+      "height": 266,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 54,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 32,
+          "depth": 24,
+          "edge": [
+            38,
+            4,
+            70,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 54,
+          "y": 262,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            45.2,
+            262,
+            62.8,
+            262
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 54,
+          "y": 120,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            54,
+            66,
+            54,
+            176
+          ]
+        }
+      ],
+      "sha256": "a2412b7920d7f588a052908cb3a09cc721f44f197a4bddaf02d704140d8b388a",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:kjeldahl-flask",
+      "name": "凯氏定氮烧瓶",
+      "category": "反应容器",
+      "search": "凯氏定氮烧瓶 长颈消解瓶 Kjeldahl flask 食品蛋白质消化 定氮消解与蒸馏用长颈圆底梨形烧瓶。",
+      "svg": "kjeldahl-flask.svg",
+      "width": 104,
+      "height": 224,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 52,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 25,
+          "depth": 24,
+          "edge": [
+            39.5,
+            4,
+            64.5,
+            4
+          ],
+          "target": [
+            52,
+            198
+          ]
+        },
+        {
+          "id": "base",
+          "x": 52,
+          "y": 220,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 52,
+          "y": 74,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            52,
+            36,
+            52,
+            112
+          ]
+        }
+      ],
+      "sha256": "5fccfb4394d5fed374f51165b397916066139806fc7c25c0d5555dc1fdac9802",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:kjeldahl-distillation-head",
+      "name": "凯氏定氮防溅球",
+      "category": "蒸馏与分馏",
+      "search": "凯氏定氮防溅球 凯氏蒸馏头 氮球 Kjeldahl splash head bulb 防止碱液随蒸汽冲入冷凝管造成测定偏高。",
+      "svg": "kjeldahl-distillation-head.svg",
+      "width": 112,
+      "height": 152,
+      "ports": [
+        {
+          "id": "outlet",
+          "x": 34,
+          "y": 148,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            25.2,
+            148,
+            42.8,
+            148
+          ]
+        },
+        {
+          "id": "side",
+          "x": 105.25,
+          "y": 57.694,
+          "dx": 0.966,
+          "dy": 0.259,
+          "type": "vapor-male",
+          "diameter": 15.6,
+          "depth": 22,
+          "edge": [
+            107.269,
+            50.16,
+            103.232,
+            65.228
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 34,
+          "y": 106,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            34,
+            92,
+            34,
+            120
+          ]
+        }
+      ],
+      "sha256": "d4203dd8454d4cdd2534b43eb5bf06bbd8a897229ce5f500c668dd6e06175036",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:sintered-glass-funnel",
+      "name": "玻璃砂芯漏斗",
+      "category": "过滤与分离",
+      "search": "砂芯漏斗 垂熔玻璃漏斗 sintered fritted glass funnel G3 G4 耐酸碱腐蚀，无需滤纸直接减压抽滤沉淀或晶体的玻璃过滤器。",
+      "svg": "sintered-glass-funnel.svg",
+      "width": 104,
+      "height": 196,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 52,
+          "y": 14,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 80,
+          "depth": 56,
+          "edge": [
+            12,
+            14,
+            92,
+            14
+          ],
+          "target": [
+            52,
+            74
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 52,
+          "y": 190,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 16,
+          "depth": 8,
+          "edge": [
+            44,
+            184,
+            60,
+            184
+          ],
+          "segment": [
+            52,
+            126,
+            52,
+            186
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 52,
+          "y": 145,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            52,
+            126,
+            52,
+            168
+          ]
+        }
+      ],
+      "sha256": "ea04cbfb30dfe87e88b0093d502b6ea42316cb3513cf1ff34e09624ad1a3be1d",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:weighing-bottle",
+      "name": "磨口称量瓶",
+      "category": "称量与储存",
+      "search": "称量瓶 磨口称量瓶 weighing bottle 精密分析称量易吸潮或挥发样品的扁形/高形带磨口玻璃瓶。",
+      "svg": "weighing-bottle.svg",
+      "width": 74,
+      "height": 96,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 37,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 48,
+          "depth": 18,
+          "edge": [
+            13,
+            4,
+            61,
+            4
+          ],
+          "target": [
+            37,
+            78
+          ]
+        },
+        {
+          "id": "base",
+          "x": 37,
+          "y": 92,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "4b701aa29d2805bb7e6d46cc8c1d9c67702c4803532f9e9f8accb0132014dba3",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:iodine-flask",
+      "name": "碘量瓶（水封瓶）",
+      "category": "反应容器",
+      "search": "碘量瓶 水封瓶 iodine flask 磨口喇叭水封槽，加碘化钾溶液液封防止单质碘挥发逸出，用于碘量法滴定。",
+      "svg": "iodine-flask.svg",
+      "width": 114,
+      "height": 176,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 57,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 24,
+          "depth": 22,
+          "edge": [
+            45,
+            10,
+            69,
+            10
+          ],
+          "target": [
+            57,
+            150
+          ]
+        },
+        {
+          "id": "base",
+          "x": 57,
+          "y": 173,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 57,
+          "y": 42,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            57,
+            28,
+            57,
+            56
+          ]
+        }
+      ],
+      "sha256": "ac00ea1120e107732d1ac941542faea4e72ca916db38c4f31300fa1524d8fc63",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:nessler-tube",
+      "name": "具塞比色管",
+      "category": "计量与比色",
+      "search": "比色管 具塞比色管 纳氏比色管 Nessler tube colorimetric cylinder 目视比色分析标准管，带有精准定容刻度线和磨砂瓶口。",
+      "svg": "nessler-tube.svg",
+      "width": 52,
+      "height": 228,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 26,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 24,
+          "depth": 22,
+          "edge": [
+            14,
+            4,
+            38,
+            4
+          ],
+          "target": [
+            26,
+            198
+          ]
+        },
+        {
+          "id": "base",
+          "x": 26,
+          "y": 224,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 26,
+          "y": 120,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            26,
+            66,
+            26,
+            180
+          ]
+        }
+      ],
+      "sha256": "fb6934c90c3a22143dd39d123aabdb2c72bc10ee1d713ba1a8e70768b7ea5145",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:gas-washing-bottle",
+      "name": "磨口气体洗瓶",
+      "category": "气体处理与干燥",
+      "search": "气体洗瓶 德雷克塞尔洗瓶 gas washing bottle Drechsel 长管进气到底部砂芯气泡分散头，短管出气，用于吸收杂质或干燥气体。",
+      "svg": "gas-washing-bottle.svg",
+      "width": 108,
+      "height": 228,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 6,
+          "y": 24,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            6,
+            20,
+            6,
+            28
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "outlet",
+          "x": 102,
+          "y": 34,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            102,
+            30,
+            102,
+            38
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "base",
+          "x": 54,
+          "y": 224,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 54,
+          "y": 120,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            54,
+            88,
+            54,
+            180
+          ]
+        }
+      ],
+      "sha256": "033c4f3887cdb561b92bda290d644983826deb696be901683eb0b12a95fc9518",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:cold-trap",
+      "name": "真空冷阱",
+      "category": "真空与无水无氧",
+      "search": "真空冷阱 液氮冷阱 cold trap 捕集减压蒸馏或真空管路中的低沸点溶剂蒸气，保护油封真空泵。",
+      "svg": "cold-trap.svg",
+      "width": 104,
+      "height": 226,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 6,
+          "y": 24,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            6,
+            19.6,
+            6,
+            28.4
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "outlet",
+          "x": 98,
+          "y": 38,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            98,
+            33.6,
+            98,
+            42.4
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "grip-site",
+          "x": 52,
+          "y": 120,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            52,
+            72,
+            52,
+            180
+          ]
+        }
+      ],
+      "sha256": "f8790cf4fc0f6a08c18a96f667c452e3ae23a2a09aa9f65b98d12f13d313b345",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:schlenk-line",
+      "name": "施伦克双排管",
+      "category": "真空与无水无氧",
+      "search": "施伦克双排管 Schlenk line 真空惰性气体双排管 无水无氧操作 配备高真空管路、惰性气体管路与多个斜孔二通旋塞。",
+      "svg": "schlenk-line.svg",
+      "width": 310,
+      "height": 134,
+      "ports": [
+        {
+          "id": "gas-in",
+          "x": 4,
+          "y": 28,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 9,
+          "depth": 8,
+          "edge": [
+            4,
+            23.5,
+            4,
+            32.5
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "vac-in",
+          "x": 4,
+          "y": 54,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 9,
+          "depth": 8,
+          "edge": [
+            4,
+            49.5,
+            4,
+            58.5
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "tap-1",
+          "x": 72,
+          "y": 128,
+          "dx": 0,
+          "dy": 1,
+          "diameter": 7.6,
+          "depth": 8,
+          "edge": [
+            68.2,
+            128,
+            75.8,
+            128
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "tap-2",
+          "x": 130,
+          "y": 128,
+          "dx": 0,
+          "dy": 1,
+          "diameter": 7.6,
+          "depth": 8,
+          "edge": [
+            126.2,
+            128,
+            133.8,
+            128
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "tap-3",
+          "x": 188,
+          "y": 128,
+          "dx": 0,
+          "dy": 1,
+          "diameter": 7.6,
+          "depth": 8,
+          "edge": [
+            184.2,
+            128,
+            191.8,
+            128
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "tap-4",
+          "x": 246,
+          "y": 128,
+          "dx": 0,
+          "dy": 1,
+          "diameter": 7.6,
+          "depth": 8,
+          "edge": [
+            242.2,
+            128,
+            249.8,
+            128
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "grip-site",
+          "x": 160,
+          "y": 41,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            160,
+            22,
+            160,
+            62
+          ]
+        }
+      ],
+      "sha256": "3cca51e291ae548cf78853e7a33d269c98f55b8a99fed4ed2091648e3b710e9f",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:vacuum-safety-bottle",
+      "name": "真空安全缓冲瓶",
+      "category": "真空与无水无氧",
+      "search": "安全瓶 真空安全缓冲瓶 防倒吸瓶 vacuum safety buffer bottle 连接在水泵或真空泵与抽滤装置之间防止倒吸。",
+      "svg": "vacuum-safety-bottle.svg",
+      "width": 122,
+      "height": 200,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 9,
+          "y": 22,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            9,
+            18,
+            9,
+            26
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "outlet",
+          "x": 113,
+          "y": 22,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            113,
+            18,
+            113,
+            26
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "base",
+          "x": 61,
+          "y": 196,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "grip-site",
+          "x": 61,
+          "y": 58,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            61,
+            48,
+            61,
+            72
+          ]
+        }
+      ],
+      "sha256": "4cc0ec26ae9b8b46c69c140d13ce6848c9305dac601f6aded4942380b8776d4d",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:vacuum-capillary",
+      "name": "减压蒸馏毛细管",
+      "category": "蒸馏与分馏",
+      "search": "减压蒸馏毛细管 vacuum distillation capillary tube 插入克氏蒸馏头通向烧瓶底部引入极微弱气泡，防止减压蒸馏暴沸。",
+      "svg": "vacuum-capillary.svg",
+      "width": 28,
+      "height": 226,
+      "ports": [
+        {
+          "id": "probe",
+          "x": 14,
+          "y": 222,
+          "dx": 0,
+          "dy": 1,
+          "type": "probe",
+          "diameter": 5,
+          "depth": 10,
+          "edge": [
+            11.5,
+            222,
+            16.5,
+            222
+          ],
+          "segment": [
+            14,
+            24,
+            14,
+            218
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 14,
+          "y": 80,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            14,
+            32,
+            14,
+            130
+          ]
+        }
+      ],
+      "sha256": "c89bf31a9ef3a6c42c8a4ffa8d7f2d1383c3ac430e28022a849a7560df01d09c",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:three-way-stopcock",
+      "name": "T形三通玻璃活塞",
+      "category": "瓶塞与磨口接头",
+      "search": "三通活塞 T形三通阀 three way glass stopcock 用于切换气体或液体流向的T形三通玻璃/聚四氟乙烯旋塞阀。",
+      "svg": "three-way-stopcock.svg",
+      "width": 96,
+      "height": 76,
+      "ports": [
+        {
+          "id": "left",
+          "x": 4,
+          "y": 24,
+          "dx": -1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 12,
+          "depth": 8,
+          "edge": [
+            4,
+            18,
+            4,
+            30
+          ]
+        },
+        {
+          "id": "right",
+          "x": 92,
+          "y": 24,
+          "dx": 1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 12,
+          "depth": 8,
+          "edge": [
+            92,
+            18,
+            92,
+            30
+          ]
+        },
+        {
+          "id": "bottom",
+          "x": 48,
+          "y": 72,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 12,
+          "depth": 8,
+          "edge": [
+            42,
+            72,
+            54,
+            72
+          ]
+        }
+      ],
+      "sha256": "626dc73d3efaf80f1e1720b91b69c5bda4e5f112384e3c2c6153e2c3e786d281",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:drying-pistol",
+      "name": "真空干燥枪",
+      "category": "干燥与提纯",
+      "search": "真空干燥枪 Abderhalden drying pistol 阿布德哈尔登干燥枪 恒温溶剂回流夹套与五氧化二磷/干燥剂真空室，用于少量热敏样品的恒温真空干燥。",
+      "svg": "drying-pistol.svg",
+      "width": 250,
+      "height": 136,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 86,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 24,
+          "depth": 22,
+          "edge": [
+            74,
+            4,
+            98,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 86,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "glass-male",
+          "diameter": 17.6,
+          "depth": 22,
+          "edge": [
+            77.2,
+            132,
+            94.8,
+            132
+          ]
+        },
+        {
+          "id": "vacuum",
+          "x": 244,
+          "y": 70,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 7.6,
+          "depth": 8,
+          "edge": [
+            244,
+            66.2,
+            244,
+            73.8
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "grip-site",
+          "x": 86,
+          "y": 70,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            86,
+            48,
+            86,
+            92
+          ]
+        }
+      ],
+      "sha256": "eb5b7233668ab2ff67df91e0d6ea640122b88408702279e582c981ef71c6fb6a",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:kipp-generator",
+      "name": "启普发生器",
+      "category": "气体发生与反应",
+      "search": "启普发生器 Kipps generator 块状固体与液体不加热制取氢气二氧化碳硫化氢气体，随开随停。",
+      "svg": "kipp-generator.svg",
+      "width": 128,
+      "height": 264,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 56,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "glass-female",
+          "diameter": 26,
+          "depth": 22,
+          "edge": [
+            43,
+            4,
+            69,
+            4
+          ],
+          "target": [
+            56,
+            200
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 120,
+          "y": 126,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 8,
+          "depth": 8,
+          "edge": [
+            120,
+            122,
+            120,
+            130
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "base",
+          "x": 56,
+          "y": 260,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "66e237b642789b876a4f635ca584044a5057652bbec062d651cb486cd7944089",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:acid-burette",
+      "name": "酸式滴定管",
+      "category": "滴定与移液",
+      "search": "酸式滴定管 玻璃旋塞滴定管 acid burette 用于盛装酸性或强氧化性标准溶液（如高锰酸钾、盐酸），玻璃或聚四氟乙烯活塞控制滴速。",
+      "svg": "acid-burette.svg",
+      "width": 40,
+      "height": 340,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 20,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 16,
+          "depth": 10,
+          "edge": [
+            12,
+            4,
+            28,
+            4
+          ],
+          "target": [
+            20,
+            44
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 20,
+          "y": 336,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 5,
+          "depth": 8,
+          "edge": [
+            17.5,
+            336,
+            22.5,
+            336
+          ],
+          "segment": [
+            20,
+            300,
+            20,
+            332
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 20,
+          "y": 145,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            20,
+            40,
+            20,
+            245
+          ]
+        }
+      ],
+      "sha256": "fe1a7a070c9d77e221fde4ff5876fdb19de5acc07004df101f18778b794a34a3",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:alkaline-burette",
+      "name": "碱式滴定管",
+      "category": "滴定与移液",
+      "search": "碱式滴定管 胶管玻璃珠滴定管 alkaline burette 下端乳胶管内含玻璃珠，挤压放液，专用于盛装NaOH等碱性标准溶液。",
+      "svg": "alkaline-burette.svg",
+      "width": 40,
+      "height": 340,
+      "ports": [
+        {
+          "id": "mouth",
+          "x": 20,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 16,
+          "depth": 10,
+          "edge": [
+            12,
+            4,
+            28,
+            4
+          ],
+          "target": [
+            20,
+            44
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 20,
+          "y": 336,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 5,
+          "depth": 8,
+          "edge": [
+            17.5,
+            336,
+            22.5,
+            336
+          ],
+          "segment": [
+            20,
+            306,
+            20,
+            332
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 20,
+          "y": 145,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            20,
+            40,
+            20,
+            245
+          ]
+        }
+      ],
+      "sha256": "d723951d5192d95bd219cba999359f890e89eb0783caf229a162ad5db6f979fa",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:volumetric-pipette",
+      "name": "大肚移液管",
+      "category": "滴定与移液",
+      "search": "大肚移液管 单标线移液管 volumetric transfer pipette bulb 精密移取固定体积（如10mL、25mL）的液体溶液。",
+      "svg": "volumetric-pipette.svg",
+      "width": 32,
+      "height": 316,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 16,
+          "y": 4,
+          "dx": 0,
+          "dy": -1,
+          "type": "pipette-stem",
+          "diameter": 8,
+          "depth": 12,
+          "edge": [
+            12,
+            4,
+            20,
+            4
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 16,
+          "y": 312,
+          "dx": 0,
+          "dy": 1,
+          "type": "delivery",
+          "diameter": 5,
+          "depth": 8,
+          "edge": [
+            13.5,
+            312,
+            18.5,
+            312
+          ],
+          "segment": [
+            16,
+            224,
+            16,
+            308
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 16,
+          "y": 80,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "segment": [
+            16,
+            24,
+            16,
+            108
+          ]
+        }
+      ],
+      "sha256": "0ea6b62c2ab4f7c96fe93b22e39d7ddcc72532bed2576fcfc12720b01d02787c",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:titration-stand",
+      "name": "滴定台与蝴蝶夹",
+      "category": "支架与夹具",
+      "search": "滴定台 蝴蝶夹 双管滴定夹 titration stand butterfly burette clamp 白色瓷盘底座清晰衬托滴定终点颜色变化，两侧蝴蝶夹可同时夹持酸碱滴定管。",
+      "svg": "titration-stand.svg",
+      "width": 186,
+      "height": 408,
+      "ports": [
+        {
+          "id": "base",
+          "x": 93,
+          "y": 404,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "surface-1",
+          "x": 93,
+          "y": 380,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "segment": [
+            16,
+            380,
+            170,
+            380
+          ]
+        },
+        {
+          "id": "rail-1",
+          "x": 93,
+          "y": 200,
+          "dx": 1,
+          "dy": 0,
+          "type": "rail",
+          "segment": [
+            93,
+            18,
+            93,
+            366
+          ]
+        },
+        {
+          "id": "grip-left",
+          "x": 35,
+          "y": 148,
+          "dx": -1,
+          "dy": 0,
+          "type": "grip"
+        },
+        {
+          "id": "grip-right",
+          "x": 151,
+          "y": 148,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip"
+        }
+      ],
+      "sha256": "e7bba4c7b655ebe2ca18a01f51b59268bd1c037356158b727fab1d168900350d",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:alcohol-lamp",
+      "name": "酒精灯",
+      "category": "加热与温控",
+      "search": "酒精灯 alcohol lamp spirit burner 玻璃灯体与棉芯，常用于实验室温和加热试管、蒸发皿或烧瓶。",
+      "svg": "alcohol-lamp.svg",
+      "width": 94,
+      "height": 136,
+      "ports": [
+        {
+          "id": "base",
+          "x": 47,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "5eeb136c65b405a81b752df6fff991ab7f026453e3f079d07c7c9c4da39f1637",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:alcohol-blast-burner",
+      "name": "酒精喷灯",
+      "category": "加热与温控",
+      "search": "酒精喷灯 座式酒精喷灯 alcohol blast burner 铜质汽化管与预热盘，产生高温强热火焰（约1000°C），用于玻璃加工及高温灼烧。",
+      "svg": "alcohol-blast-burner.svg",
+      "width": 112,
+      "height": 196,
+      "ports": [
+        {
+          "id": "base",
+          "x": 56,
+          "y": 192,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "0e6cfbb2d72e199e51af581e1e03083c01420c1ed6b7f63abfcbb58b478c4cf0",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:rotary-evaporator",
+      "name": "旋转蒸发仪",
+      "category": "干燥与提纯",
+      "search": "旋转蒸发仪 旋蒸仪 rotary evaporator rotovap 减压蒸馏浓缩溶剂，包含恒温水浴锅、旋转马达、斜置蒸发瓶、盘管冷凝器及接收瓶。",
+      "svg": "rotary-evaporator.svg",
+      "width": 290,
+      "height": 264,
+      "ports": [
+        {
+          "id": "base",
+          "x": 145,
+          "y": 260,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "vacuum",
+          "x": 226,
+          "y": 6,
+          "dx": 0,
+          "dy": -1,
+          "diameter": 7.6,
+          "depth": 8,
+          "edge": [
+            222.2,
+            6,
+            229.8,
+            6
+          ],
+          "type": "tube"
+        },
+        {
+          "id": "water-in",
+          "x": 182,
+          "y": 128,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 7.2,
+          "depth": 8,
+          "edge": [
+            182,
+            124.4,
+            182,
+            131.6
+          ],
+          "type": "coolant"
+        },
+        {
+          "id": "water-out",
+          "x": 270,
+          "y": 48,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 7.2,
+          "depth": 8,
+          "edge": [
+            270,
+            44.4,
+            270,
+            51.6
+          ],
+          "type": "coolant"
+        }
+      ],
+      "sha256": "5fcf893977f5112422079e5d839e8c1e1e31a73a013e39efb2fe1a9b50aceb02",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:abbe-refractometer",
+      "name": "阿贝折光仪",
+      "category": "光学与物性分析",
+      "search": "阿贝折光仪 折射率仪 Abbe refractometer 测定液体折射率 nD 和糖度 Brix，食品与有机合成纯度鉴定仪器。",
+      "svg": "abbe-refractometer.svg",
+      "width": 186,
+      "height": 196,
+      "ports": [
+        {
+          "id": "base",
+          "x": 93,
+          "y": 190,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "3111de32267036b17a0c099b1aa0aa9c9be05781a219aacd68298543e5c0c090",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:polarimeter",
+      "name": "自动旋光仪",
+      "category": "光学与物性分析",
+      "search": "自动旋光仪 数字旋光仪 automatic polarimeter 589nm钠D线 测定手性化合物、糖类及氨基酸溶液的旋光度与比旋光度。",
+      "svg": "polarimeter.svg",
+      "width": 260,
+      "height": 128,
+      "ports": [
+        {
+          "id": "base",
+          "x": 130,
+          "y": 120,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "6c5ab426b26896f57ff9d16ec221b9a7900c7f4b637317e03fce2239445107ff",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:muffle-furnace",
+      "name": "高温马弗炉",
+      "category": "加热与温控",
+      "search": "马弗炉 箱式高温炉 灰化炉 muffle furnace 1200度高温灼烧、灰分测定、陶瓷烧结及热重灰化处理设备。",
+      "svg": "muffle-furnace.svg",
+      "width": 204,
+      "height": 228,
+      "ports": [
+        {
+          "id": "base",
+          "x": 102,
+          "y": 222,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "1c15e88be24a14a4792504506d9ca0343f53dff27738d8cdf5a9e6acbdc7b081",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:blast-drying-oven",
+      "name": "电热鼓风干燥箱",
+      "category": "加热与温控",
+      "search": "鼓风干燥箱 恒温烘箱 blast drying oven 强制热风循环均匀烘干玻璃仪器、样品水分测定及恒温烘焙。",
+      "svg": "blast-drying-oven.svg",
+      "width": 210,
+      "height": 252,
+      "ports": [
+        {
+          "id": "base",
+          "x": 105,
+          "y": 246,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "surface-1",
+          "x": 100,
+          "y": 126,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "segment": [
+            50,
+            126,
+            150,
+            126
+          ]
+        }
+      ],
+      "sha256": "6f17cf171b45efb36725df0fc1692363ff21fe31a66c93d656274b9a1416af1b",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:digital-water-bath",
+      "name": "数显恒温水浴锅",
+      "category": "加热与温控",
+      "search": "数显恒温水浴锅 水浴锅 digital water bath PID精确控温，多孔不锈钢上盖支持烧瓶与试管恒温加热反应。",
+      "svg": "digital-water-bath.svg",
+      "width": 228,
+      "height": 122,
+      "ports": [
+        {
+          "id": "base",
+          "x": 114,
+          "y": 116,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "surface-1",
+          "x": 114,
+          "y": 6,
+          "dx": 0,
+          "dy": -1,
+          "type": "surface",
+          "segment": [
+            36,
+            6,
+            192,
+            6
+          ]
+        }
+      ],
+      "sha256": "7166a06368cfcc4ad49745a29bab1525a72600ed3a2e8c0c0eeb9efcac32a13d",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:hplc-system",
+      "name": "高效液相色谱仪",
+      "category": "色谱与光谱分析",
+      "search": "高效液相色谱仪 HPLC 液相 流动相溶剂瓶 四元泵 自动进样器 柱温箱 紫外检测器 定量分析有机物及食品添加剂。",
+      "svg": "hplc-system.svg",
+      "width": 216,
+      "height": 280,
+      "ports": [
+        {
+          "id": "base",
+          "x": 108,
+          "y": 272,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "4c8a3408daf2093a1d2b1299620e87be2b056ff8d1ade81b4808b2696577a171",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:gc-system",
+      "name": "气相色谱仪",
+      "category": "色谱与光谱分析",
+      "search": "气相色谱仪 GC gas chromatograph 毛细管柱箱 FID检测器 分流进样口 载气接口 挥发性有机物与农残检测分析。",
+      "svg": "gc-system.svg",
+      "width": 248,
+      "height": 200,
+      "ports": [
+        {
+          "id": "base",
+          "x": 127,
+          "y": 192,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        },
+        {
+          "id": "gas-in",
+          "x": 4,
+          "y": 128,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 7.2,
+          "depth": 8,
+          "edge": [
+            4,
+            124.4,
+            4,
+            131.6
+          ],
+          "type": "tube"
+        }
+      ],
+      "sha256": "d96f77f4e4fe924a46a58e4d578b8a74270c37d8713838b0d726eb60d7bd24c2",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    },
+    {
+      "id": "lab:ftir-spectrometer",
+      "name": "傅里叶变换红外光谱仪",
+      "category": "色谱与光谱分析",
+      "search": "傅里叶变换红外光谱仪 FTIR ATR 红外光谱 分子官能团特征吸收峰鉴定与无损快速检测。",
+      "svg": "ftir-spectrometer.svg",
+      "width": 248,
+      "height": 160,
+      "ports": [
+        {
+          "id": "base",
+          "x": 124,
+          "y": 148,
+          "dx": 0,
+          "dy": 1,
+          "type": "base"
+        }
+      ],
+      "sha256": "a6abdb0b87fe5a868adbbabd9f0161cfe220356aeb19a3eb6a0d60720957f7f0",
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "origin": "authored"
+    }
+  ]
+}

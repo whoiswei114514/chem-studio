@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="340" viewBox="0 0 40 340">
+<title>酸式滴定管</title>
+<defs>
+  <linearGradient id="acid-burette-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
+    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
+    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="acid-burette-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="acid-burette-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="acid-burette-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="acid-burette-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="acid-burette-steel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="acid-burette-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+</defs>
+<path d="M12 4 L14 10 V274 L16 296 L17.5 336 H22.5 L24 296 L26 274 V10 L28 4 Z" fill="url(#acid-burette-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
+  <g><line x1="18.975" y1="24" x2="25.5" y2="24" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="21" y1="35.8" x2="25.5" y2="35.8" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="47.6" x2="25.5" y2="47.6" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="59.4" x2="25.5" y2="59.4" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="71.2" x2="25.5" y2="71.2" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="18.975" y1="83" x2="25.5" y2="83" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="21" y1="94.8" x2="25.5" y2="94.8" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="106.6" x2="25.5" y2="106.6" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="118.4" x2="25.5" y2="118.4" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="130.2" x2="25.5" y2="130.2" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="18.975" y1="142" x2="25.5" y2="142" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="21" y1="153.8" x2="25.5" y2="153.8" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="165.6" x2="25.5" y2="165.6" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="177.4" x2="25.5" y2="177.4" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="189.2" x2="25.5" y2="189.2" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="18.975" y1="201" x2="25.5" y2="201" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="21" y1="212.8" x2="25.5" y2="212.8" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="224.6" x2="25.5" y2="224.6" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="236.4" x2="25.5" y2="236.4" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="21" y1="248.2" x2="25.5" y2="248.2" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="18.975" y1="260" x2="25.5" y2="260" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/></g>
+  <text x="19" y="29" font-size="6.5" font-family="Segoe UI, sans-serif" fill="#475569" text-anchor="end">0</text>
+      <text x="19" y="262" font-size="6.5" font-family="Segoe UI, sans-serif" fill="#475569" text-anchor="end">50</text>
+  <line x1="17" y1="18" x2="17" y2="266" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.78" stroke-linecap="round"/>
+  <g>
+    <path d="M11 286 L29 287.2 L29 292.8 L11 294 Z" fill="url(#acid-burette-frost)" stroke="#1F2937" stroke-width="1.8" stroke-linejoin="round"/>
+    <rect x="4" y="283.5" width="7" height="13" rx="2" fill="#0F766E" stroke="#1F2937" stroke-width="1.6"/>
+    <rect x="29" y="286.5" width="5" height="7" rx="1.5" fill="#334155" stroke="#1F2937" stroke-width="1.4"/>
+    <line x1="17.5" y1="287.5" x2="22.5" y2="292.5" stroke="#334155" stroke-width="1.2"/>
+  </g>
+</svg>

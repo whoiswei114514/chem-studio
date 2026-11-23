@@ -1,1 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="240" viewBox="0 0 200 240"><title>音叉与共鸣箱</title><g stroke="#294454" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M45 165 L72 146 H174 L147 165Z" fill="#f8faf9"></path><rect x="45" y="165" width="102" height="43" fill="#e7dbbb" rx="2"></rect><path d="M147 165 L174 146 V188 L147 208Z" fill="#e7dbbb"></path><path d="M74 28 V103 Q74 129 98 129 Q122 129 122 103 V28 H112 V101 Q112 117 98 117 Q84 117 84 101 V28Z" fill="#c6d2d7"></path><rect x="93" y="128" width="10" height="37" fill="#c6d2d7" rx="2"></rect><rect x="56" y="176" width="70" height="18" fill="#294454" rx="1"></rect></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="240" viewBox="0 0 200 240"><title>音叉与共鸣箱</title><defs>
+    <linearGradient id="g-chassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="g-chassis-h" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="22%" stop-color="#F8FAFC"/>
+      <stop offset="80%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="g-bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="30%" stop-color="#F1F5F9"/>
+      <stop offset="65%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="g-metal-v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="45%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="g-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6F2F7" stop-opacity="0.82"/>
+      <stop offset="28%" stop-color="#F8FCFE" stop-opacity="0.65"/>
+      <stop offset="75%" stop-color="#E6F2F7" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="#CBE4EE" stop-opacity="0.80"/>
+    </linearGradient>
+    <linearGradient id="g-liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="g-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="35%" stop-color="#FDE68A"/>
+      <stop offset="75%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="g-copper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="35%" stop-color="#FDBA74"/>
+      <stop offset="70%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <linearGradient id="g-rubber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+  </defs><g stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="42" y="206" width="16" height="6" rx="2" fill="#334155" stroke="#1F2937" stroke-width="1.6"/><rect x="142" y="206" width="16" height="6" rx="2" fill="#334155" stroke="#1F2937" stroke-width="1.6"/><rect x="30" y="140" width="140" height="66" rx="4" fill="#F1F5F9" stroke="#1F2937" stroke-width="2.2"/><rect x="44" y="154" width="112" height="38" rx="3" fill="#0F172A" stroke="#1F2937" stroke-width="1.6"/><rect x="92" y="130" width="16" height="10" rx="1" fill="url(#g-metal)" stroke="#1F2937" stroke-width="1.6"/><path d="M80 26 V96 Q80 116 100 116 Q120 116 120 96 V26 H110 V94 Q110 106 100 106 Q90 106 90 94 V26 Z" fill="url(#g-metal-v)" stroke="#1F2937" stroke-width="2.0"/><rect x="96" y="116" width="8" height="14" fill="url(#g-metal)" stroke="#1F2937" stroke-width="1.6"/><path d="M66 42 Q60 54 66 66 M134 42 Q140 54 134 66" fill="none" stroke="#14B8A6" stroke-width="1.4" stroke-dasharray="3 2"/><text x="100" y="177" fill="#38BDF8" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle">440 Hz</text></g></svg>

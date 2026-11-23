@@ -22,6 +22,7 @@ static void initializeArtworkResource() {
     Q_INIT_RESOURCE(apparatus);
     Q_INIT_RESOURCE(biochemistry);
     Q_INIT_RESOURCE(physics);
+    Q_INIT_RESOURCE(laboratory);
 }
 
 namespace chem {
@@ -733,7 +734,9 @@ void extendCatalogGeometry(ApparatusGeometry& geometry, const QString& id, const
             geometry.targets[name] = {at.x() - normal.x() * geometry.size.height() * 0.35 / geometry.size.width(),
                                       at.y() - normal.y() * 0.35};
         }
-        if (role == "glass-male") {
+        // Keep the existing outlet clip anchor when a condenser's plain ends
+        // are reclassified as reversible glass joints.
+        if (role == "glass-male" || (role == "glass-joint" && name == "outlet")) {
             const auto at = geometry.ports[name], normal = geometry.directions[name];
             const double depth = geometry.depths.value(name) * 0.5;
             addPort(geometry, "clip-" + name, {at.x() - normal.x() * depth / geometry.size.width(),
@@ -811,13 +814,20 @@ void applyAssemblyGeometry(ApparatusGeometry& geometry, const QString& id, const
         geometry.depths["plug"] = 0;
         geometry.targets.clear();
     } else if (record["categoryId"] == "Condensers" || type == "liebig condenser" || type == "allihn") {
+        // These raster drawings have matching plain main openings at both ends.
+        // Their flow labels do not imply a male/female fitting; coolant branches
+        // keep their separate role. Tapered legacy and laboratory joints retain
+        // the gender described by their artwork.
+        const bool reversible = id.startsWith("chemix:") &&
+            geometry.ports.contains("inlet") && geometry.ports.contains("outlet") &&
+            std::abs(geometry.diameters.value("inlet") - geometry.diameters.value("outlet")) < units;
         if (geometry.ports.contains("inlet")) {
-            geometry.types["inlet"] = "vapor-female";
+            geometry.types["inlet"] = reversible ? "glass-joint" : "vapor-female";
             geometry.depths["inlet"] = 20 * units;
             geometry.targets.remove("inlet");
         }
         if (geometry.ports.contains("outlet")) {
-            geometry.types["outlet"] = "glass-male";
+            geometry.types["outlet"] = reversible ? "glass-joint" : "glass-male";
             geometry.depths["outlet"] = 20 * units;
         }
     } else if (type == "distillation head") {
@@ -928,10 +938,17 @@ ApparatusGeometry originalGeometry(const QDir& directory, const QJsonObject& ent
             geometry.edges[name] = {normalized(edge[0].toDouble(), edge[1].toDouble()), normalized(edge[2].toDouble(), edge[3].toDouble())};
         if (target.size() == 2)
             geometry.targets[name] = normalized(target[0].toDouble(), target[1].toDouble());
+        if (type == "glass-male") {
+            const double clipDepth = geometry.depths.value(name) * 0.5;
+            addPort(geometry, "clip-" + name,
+                    {at.x() - direction.x() * clipDepth / geometry.size.width(),
+                     at.y() - direction.y() * clipDepth / geometry.size.height()},
+                    direction, "clip-seat");
+        }
     }
     return geometry;
 }
-QVector<ApparatusArtwork> manifestLibrary(const QDir& directory) {
+QVector<ApparatusArtwork> embeddedLibrary(const QDir& directory) {
     const auto manifest = readJson(directory.filePath("manifest.json"));
     QVector<ApparatusArtwork> result;
     if (manifest["format"] != "chem-studio-art")
@@ -946,6 +963,9 @@ QVector<ApparatusArtwork> manifestLibrary(const QDir& directory) {
         art.name = entry["name"].toString();
         art.category = entry["category"].toString();
         art.search = entry["search"].toString();
+        art.domain = entry["domain"].toString();
+        if (entry.contains("visible"))
+            art.catalogVisible = entry["visible"].toBool(true);
         for (const auto& variant : entry["variants"].toArray()) {
             auto geometry = originalGeometry(directory, variant.toObject());
             if (!geometry.svg.isEmpty())
@@ -1148,13 +1168,136 @@ QVector<ApparatusArtwork> legacyLibrary() {
     }
     return result;
 }
+QString inferApparatusDomain(const ApparatusArtwork& art) {
+    const QString& id = art.id;
+    const QString& cat = art.category;
+    if (id.startsWith("bio:")) {
+        if (cat == QStringLiteral("分析与计量")) return QStringLiteral("measurement");
+        if (cat == QStringLiteral("分离与纯化")) return QStringLiteral("separation");
+        return QStringLiteral("biochemistry");
+    }
+    if (id.startsWith("physics:")) {
+        if (cat == QStringLiteral("电学与电子测量") || cat == QStringLiteral("电工设备"))
+            return QStringLiteral("electrical");
+        return QStringLiteral("physics");
+    }
+    if (cat == QStringLiteral("电与磁") || cat == QStringLiteral("电学仪器") ||
+        cat == QStringLiteral("电路元件") || cat == QStringLiteral("电工设备"))
+        return QStringLiteral("electrical");
+    if (cat == QStringLiteral("光学") || cat == QStringLiteral("动力学") ||
+        cat == QStringLiteral("力学与计量") || cat == QStringLiteral("力学实验") ||
+        cat == QStringLiteral("光学实验") || cat == QStringLiteral("波动与声学实验"))
+        return QStringLiteral("physics");
+    if (cat == QStringLiteral("基本形状") || cat == QStringLiteral("箭头") ||
+        cat == QStringLiteral("标签") || cat == QStringLiteral("3D") ||
+        cat == QStringLiteral("标注与基本图形") || cat == QStringLiteral("基本图形") ||
+        cat == QStringLiteral("箭头与指引") || cat == QStringLiteral("标注文本"))
+        return QStringLiteral("annotation");
+    if (cat == QStringLiteral("冷凝管") || cat == QStringLiteral("冷凝与回流") ||
+        cat == QStringLiteral("蒸馏") || cat == QStringLiteral("蒸馏与回流") ||
+        cat == QStringLiteral("过滤") || cat == QStringLiteral("过滤与萃取") ||
+        cat == QStringLiteral("萃取") || cat == QStringLiteral("色谱") ||
+        cat == QStringLiteral("色谱与干燥") || cat == QStringLiteral("分离与纯化"))
+        return QStringLiteral("separation");
+    if (cat == QStringLiteral("管材") || cat == QStringLiteral("导管与管件") ||
+        cat == QStringLiteral("瓶塞与磨口接头") || cat == QStringLiteral("磨口接头") ||
+        cat == QStringLiteral("塞子与夹具"))
+        return QStringLiteral("connectors");
+    if (cat == QStringLiteral("加热") || cat == QStringLiteral("加热设备") ||
+        cat == QStringLiteral("温控与浴槽") || cat == QStringLiteral("热源与燃烧"))
+        return QStringLiteral("thermal");
+    if (cat == QStringLiteral("测量") || cat == QStringLiteral("容量计量") ||
+        cat == QStringLiteral("测温与传感") || cat == QStringLiteral("电化学与试纸") ||
+        cat == QStringLiteral("称量与精密测量") || cat == QStringLiteral("分析与计量"))
+        return QStringLiteral("measurement");
+    if (cat == QStringLiteral("有机") || cat == QStringLiteral("医疗") ||
+        cat == QStringLiteral("生物标本") || cat == QStringLiteral("微生物与细胞") ||
+        cat == QStringLiteral("电泳与成像") || cat == QStringLiteral("生化设备") ||
+        cat == QStringLiteral("取样与离心"))
+        return QStringLiteral("biochemistry");
+    if (cat == QStringLiteral("金属") || cat == QStringLiteral("附件") ||
+        cat == QStringLiteral("铁架与夹具") || cat == QStringLiteral("安全与防护") ||
+        cat == QStringLiteral("实验台与通用工具"))
+        return QStringLiteral("support");
+    if (cat == QStringLiteral("容器") || cat == QStringLiteral("储存") ||
+        cat == QStringLiteral("试剂储存") || cat == QStringLiteral("陶瓷") ||
+        cat == QStringLiteral("物质") || cat == QStringLiteral("烧瓶与反应容器") ||
+        cat == QStringLiteral("烧杯与常规容器") || cat == QStringLiteral("坩埚与蒸发皿"))
+        return QStringLiteral("reaction");
+    if (cat == QStringLiteral("设备")) {
+        if (id.contains("microscope") || id.contains("petri") || id.contains("choice"))
+            return QStringLiteral("biochemistry");
+        if (id.contains("water-bath")) return QStringLiteral("thermal");
+        if (id.contains("vacuum-pump") || id.contains("syringe-pump") || id.contains("piston"))
+            return QStringLiteral("separation");
+        return QStringLiteral("support");
+    }
+    return QStringLiteral("reaction");
+}
 } // namespace
 const QVector<ApparatusArtwork>& apparatusArtwork() {
     static const auto library = [] {
         initializeArtworkResource();
-        return manifestLibrary(QDir(qEnvironmentVariable("CHEM_STUDIO_ART_DIR", ":/apparatus"))) +
-            manifestLibrary(QDir(":/biochemistry")) + manifestLibrary(QDir(":/physics")) +
-            chemixLibrary() + legacyLibrary();
+        auto result = embeddedLibrary(QDir(qEnvironmentVariable("CHEM_STUDIO_ART_DIR", ":/apparatus"))) +
+            embeddedLibrary(QDir(":/biochemistry")) + embeddedLibrary(QDir(":/physics")) +
+            embeddedLibrary(QDir(":/laboratory")) + chemixLibrary() + legacyLibrary();
+        const auto overrideCondenser = [&](const QString& targetId, const QString& sourceId) {
+            int targetIdx = -1, sourceIdx = -1;
+            for (int i = 0; i < result.size(); ++i) {
+                if (result[i].id == targetId) targetIdx = i;
+                if (result[i].id == sourceId) sourceIdx = i;
+            }
+            if (targetIdx >= 0 && sourceIdx >= 0) {
+                static_cast<ApparatusGeometry&>(result[targetIdx]) =
+                    static_cast<const ApparatusGeometry&>(result[sourceIdx]);
+                result[targetIdx].variants.clear();
+                result[targetIdx].types["inlet"] = QStringLiteral("glass-joint");
+                result[targetIdx].types["outlet"] = QStringLiteral("glass-joint");
+                result[sourceIdx].catalogVisible = false;
+            }
+        };
+        QSet<QString> chemixSuffixes;
+        for (const auto& art : result) {
+            if (art.id.startsWith("chemix:"))
+                chemixSuffixes.insert(art.id.mid(7));
+        }
+        for (auto& art : result) {
+            if (art.id.startsWith("studio:") && chemixSuffixes.contains(art.id.mid(7)))
+                art.catalogVisible = false;
+        }
+        overrideCondenser(QStringLiteral("chemix:liebig-condenser"), QStringLiteral("lab:liebig-condenser"));
+        overrideCondenser(QStringLiteral("chemix:allihn"), QStringLiteral("lab:allihn-condenser"));
+        overrideCondenser(QStringLiteral("chemix:graham"), QStringLiteral("lab:graham-condenser"));
+        // Keep studio:* condensers as the visible canonical entries in open-source builds and hide lab:* duplicates.
+        for (const auto& pair : QVector<QPair<QString, QString>>{
+                 {QStringLiteral("studio:liebig-condenser"), QStringLiteral("lab:liebig-condenser")},
+                 {QStringLiteral("studio:allihn"), QStringLiteral("lab:allihn-condenser")},
+                 {QStringLiteral("studio:graham"), QStringLiteral("lab:graham-condenser")}}) {
+            bool hasStudio = false;
+            for (const auto& art : result) {
+                if (art.id == pair.first) { hasStudio = true; break; }
+            }
+            if (hasStudio) {
+                for (auto& art : result) {
+                    if (art.id == pair.second)
+                        art.catalogVisible = false;
+                }
+            }
+        }
+
+        const auto metadata = readJson(":/laboratory/search.json");
+        for (auto& art : result) {
+            const auto entry = metadata[art.id].toObject();
+            if (entry.contains("name")) art.name = entry["name"].toString();
+            if (entry.contains("category")) art.category = entry["category"].toString();
+            if (entry.contains("domain")) art.domain = entry["domain"].toString();
+            if (entry.contains("visible") && art.catalogVisible)
+                art.catalogVisible = entry["visible"].toBool(true);
+            if (entry.contains("search")) art.search += " " + entry["search"].toString();
+            if (art.domain.isEmpty())
+                art.domain = inferApparatusDomain(art);
+        }
+        return result;
     }();
     return library;
 }

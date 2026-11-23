@@ -23,7 +23,8 @@ struct ApparatusGeometry {
     int boreCount = -1;
 };
 struct ApparatusArtwork : ApparatusGeometry {
-    QString id, name, category, search;
+    QString id, name, category, search, domain;
+    bool catalogVisible = true;
     QVector<ApparatusGeometry> variants;
 };
 const QVector<ApparatusArtwork>& apparatusArtwork();

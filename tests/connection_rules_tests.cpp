@@ -314,7 +314,7 @@ private slots:
                 QVERIFY(art.directions[p].manhattanLength() > 0);
             }
         }
-        QCOMPARE(count, 40);
+        QCOMPARE(count, 71);
     }
     void legacyBadBindingsAreDiscarded() {
         DrawingView view;
@@ -577,6 +577,149 @@ private slots:
         view.undoStack.undo(); QCOMPARE(view.state(), initial);
         view.undoStack.redo(); QCOMPARE(view.state(), saved);
         view.restore(saved); QCOMPARE(view.state(), saved);
+    }
+    void reversibleCondenserConnections_data() {
+        QTest::addColumn<QString>("kind"); QTest::addColumn<QString>("port");
+        QTest::addColumn<QString>("targetKind"); QTest::addColumn<QString>("targetPort");
+        QTest::addColumn<bool>("reverse"); QTest::addColumn<double>("zoom");
+        QStringList condensers{"studio:graham", "studio:liebig-condenser", "studio:allihn"};
+        for (const auto& opt : {"chemix:graham", "chemix:liebig-condenser", "chemix:allihn"})
+            if (findArtwork(opt)) condensers.append(opt);
+        const QString headKind = findArtwork("chemix:distillation-head")
+            ? QStringLiteral("chemix:distillation-head") : QStringLiteral("lab:standard-distillation-head");
+        const QString flaskKind = findArtwork("chemix:round-bottom-flask")
+            ? QStringLiteral("chemix:round-bottom-flask") : QStringLiteral("studio:round-bottom-flask");
+        const QString recvKind = findArtwork("legacy:asset-0707")
+            ? QStringLiteral("legacy:asset-0707") : QStringLiteral("lab:bent-receiver-adapter");
+        for (const auto& kind : condensers)
+            for (const auto& port : {"inlet", "outlet"})
+                for (const auto& pair : QVector<QStringList>{{headKind, "side"}, {flaskKind, "mouth"}, {recvKind, "inlet"}})
+                    for (bool reverse : {false, true})
+                        for (double zoom : {0.6, 1.2, 2.4})
+                            QTest::newRow(qPrintable(QString("%1/%2/%3/%4/%5").arg(kind, port, pair[0]).arg(reverse).arg(zoom)))
+                                << kind << QString(port) << pair[0] << pair[1] << reverse << zoom;
+    }
+    void reversibleCondenserConnections() {
+        QFETCH(QString, kind); QFETCH(QString, port);
+        QFETCH(QString, targetKind); QFETCH(QString, targetPort);
+        QFETCH(bool, reverse); QFETCH(double, zoom);
+        if (reverse) { qSwap(kind, targetKind); qSwap(port, targetPort); }
+        DrawingView view;
+        auto* target = add(view, targetKind, {300, 300}); target->setRotation(37);
+        auto* moving = add(view, kind, {600, 100}); moving->setRotation(110);
+        overlap(moving, port, target, targetPort);
+        moving->moveBy(2 / zoom, 2 / zoom);
+        const auto fixed = target->json();
+        QVERIFY2(view.canConnectItems(moving->id, port, target->id, targetPort),
+                 "Both indistinguishable main openings of a plain condenser must accept a glass joint");
+        QVERIFY(view.snapSelectionToPort(14 / zoom));
+        QCOMPARE(link(view)["fromPort"].toString(), port);
+        QCOMPARE(link(view)["toPort"].toString(), targetPort);
+        QCOMPARE(link(view)["mode"].toString(), QString("joint"));
+        QCOMPARE(target->json(), fixed);
+        QVERIFY(QPointF::dotProduct(moving->portDirection(port), target->portDirection(targetPort)) < -0.999999);
+        const auto assembled = view.state(); view.restore(assembled); QCOMPARE(view.state(), assembled);
+    }
+    void savedCondenserPortsMigrateWithoutChangingCustomPorts() {
+        for (const auto& kind : {"studio:graham", "studio:liebig-condenser", "studio:allihn"}) {
+            DrawingItem original(kind);
+            auto old = original.json(); old["portSchema"] = 6;
+            auto types = old["portTypes"].toObject();
+            types["inlet"] = "vapor-female"; types["outlet"] = "glass-male"; old["portTypes"] = types;
+            std::unique_ptr<DrawingItem> migrated(DrawingItem::fromJson(old));
+            QCOMPARE(migrated->portTypes["inlet"], QString("glass-joint"));
+            QCOMPARE(migrated->portTypes["outlet"], QString("glass-joint"));
+            QCOMPARE(migrated->ports, original.ports);
+            QCOMPARE(migrated->artwork, original.artwork);
+            old["customPorts"] = QJsonArray{"inlet"};
+            types["inlet"] = "socket"; old["portTypes"] = types;
+            auto ports = old["ports"].toObject(); ports["inlet"] = QJsonArray{.8, .1}; old["ports"] = ports;
+            std::unique_ptr<DrawingItem> customized(DrawingItem::fromJson(old));
+            QCOMPARE(customized->portTypes["inlet"], QString("socket"));
+            QCOMPARE(customized->ports["inlet"], QPointF(.8, .1));
+            QCOMPARE(customized->portTypes["outlet"], QString("glass-joint"));
+        }
+    }
+    void condensersHaveOppositeCounterCurrentWaterPorts() {
+        QStringList waterCondensers{
+            "studio:liebig-condenser", "studio:allihn", "studio:graham",
+            "lab:liebig-condenser", "lab:allihn-condenser", "lab:graham-condenser",
+            "lab:dimroth-condenser", "lab:friedrich-condenser", "lab:rotary-evaporator"};
+        for (const auto& opt : {"chemix:liebig-condenser", "chemix:allihn", "chemix:graham"})
+            if (findArtwork(opt)) waterCondensers.append(opt);
+        for (const auto& id : waterCondensers) {
+            const auto* art = findArtwork(id);
+            QVERIFY2(art, qPrintable(id));
+            QVERIFY2(art->ports.contains("water-in") && art->ports.contains("water-out"), qPrintable(id));
+            const double dxIn = art->directions["water-in"].x();
+            const double dxOut = art->directions["water-out"].x();
+            const double yIn = art->ports["water-in"].y();
+            const double yOut = art->ports["water-out"].y();
+            QVERIFY2(dxIn * dxOut < 0,
+                     qPrintable(QString("%1 coolant ports must be on opposite sides: dx_in=%2 dx_out=%3")
+                                    .arg(id).arg(dxIn).arg(dxOut)));
+            QVERIFY2(yIn > yOut,
+                     qPrintable(QString("%1 water-in must be lower than water-out: y_in=%2 y_out=%3")
+                                    .arg(id).arg(yIn).arg(yOut)));
+        }
+        const auto* air = findArtwork("lab:air-condenser");
+        QVERIFY(air);
+        QVERIFY(!air->ports.contains("water-in") && !air->ports.contains("water-out"));
+    }
+    void distillationChainWithNewGlassware() {
+        const QString rbfKind = findArtwork("chemix:round-bottom-flask")
+            ? QStringLiteral("chemix:round-bottom-flask") : QStringLiteral("studio:round-bottom-flask");
+        const QString liebigKind = findArtwork("chemix:liebig-condenser")
+            ? QStringLiteral("chemix:liebig-condenser") : QStringLiteral("studio:liebig-condenser");
+        const QString conicalKind = findArtwork("chemix:conical-flask")
+            ? QStringLiteral("chemix:conical-flask") : QStringLiteral("studio:conical-flask");
+        {
+            DrawingView view;
+            auto* flask = add(view, rbfKind, {200, 500});
+            auto* vigreux = add(view, "lab:vigreux-column", {200, 320});
+            QVERIFY(view.connectItems(flask->id, "mouth", vigreux->id, "outlet"));
+            auto* head = add(view, "lab:standard-distillation-head", {240, 150});
+            QVERIFY(view.connectItems(vigreux->id, "inlet", head->id, "outlet"));
+            auto* thermAdapter = add(view, "lab:thermometer-adapter", {240, 40});
+            QVERIFY(view.connectItems(head->id, "inlet", thermAdapter->id, "outlet"));
+            auto* condenser = add(view, liebigKind, {460, 200});
+            QVERIFY(view.connectItems(head->id, "side", condenser->id, "inlet"));
+            auto* receiver = add(view, "lab:vacuum-receiver-adapter", {660, 320});
+            QVERIFY(view.connectItems(condenser->id, "outlet", receiver->id, "inlet"));
+            auto* conical = add(view, "lab:ground-conical-flask", {680, 480});
+            QVERIFY(view.connectItems(receiver->id, "outlet", conical->id, "mouth"));
+            const auto saved = view.state();
+            QCOMPARE(saved.size(), 13);
+            view.restore(saved);
+            QCOMPARE(view.state(), saved);
+        }
+        {
+            DrawingView view;
+            auto* flask = add(view, rbfKind, {200, 420});
+            auto* plainHead = add(view, "lab:plain-distillation-head", {230, 220});
+            QVERIFY(!plainHead->ports.contains("inlet"));
+            QVERIFY(view.connectItems(flask->id, "mouth", plainHead->id, "outlet"));
+            auto* condenser = add(view, liebigKind, {430, 260});
+            QVERIFY(view.connectItems(plainHead->id, "side", condenser->id, "inlet"));
+            auto* bent = add(view, "lab:bent-receiver-adapter", {640, 360});
+            QVERIFY(view.connectItems(condenser->id, "outlet", bent->id, "inlet"));
+            auto* flaskOut = add(view, conicalKind, {660, 500});
+            QVERIFY(view.connectItems(bent->id, "outlet", flaskOut->id, "mouth"));
+            QCOMPARE(view.state().size(), 9);
+        }
+        {
+            DrawingView view;
+            auto* condenser = add(view, liebigKind, {300, 220});
+            auto* cow = add(view, "lab:cow-receiver-adapter", {520, 320});
+            QVERIFY(view.connectItems(condenser->id, "outlet", cow->id, "inlet"));
+            auto* f1 = add(view, "lab:ground-conical-flask", {420, 500});
+            auto* f2 = add(view, "lab:ground-conical-flask", {540, 520});
+            auto* f3 = add(view, "lab:ground-conical-flask", {660, 500});
+            QVERIFY(view.connectItems(cow->id, "outlet-1", f1->id, "mouth"));
+            QVERIFY(view.connectItems(cow->id, "outlet-2", f2->id, "mouth"));
+            QVERIFY(view.connectItems(cow->id, "outlet-3", f3->id, "mouth"));
+            QCOMPARE(view.state().size(), 9);
+        }
     }
 };
 QTEST_MAIN(ConnectionRulesTests)

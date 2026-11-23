@@ -12,6 +12,7 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QLineEdit>
+#include <QLabel>
 #include <QListWidget>
 #include <QScreen>
 #include <QPainter>
@@ -109,36 +110,39 @@ class WorkspaceTests : public QObject {
     }
     void biochemistryCatalog() {
         window->showPage(2);
-        auto* source = window->findChild<QComboBox*>("apparatusSource");
+        auto* domain = window->findChild<QComboBox*>("apparatusDomain");
         auto* category = window->findChild<QComboBox*>("apparatusCategory");
         auto* search = window->findChild<QLineEdit*>("apparatusSearch");
         auto* palette = window->findChild<QListWidget*>("apparatusPalette");
-        QVERIFY(source && category && search && palette);
-        QVERIFY(source->findData("bio") >= 0);
-        const auto previousSource = source->currentData();
+        QVERIFY(!window->findChild<QComboBox*>("apparatusSource"));
+        QVERIFY(domain && category && search && palette);
+        QCOMPARE(domain->count(), 11);
+        QCOMPARE(domain->itemText(domain->findData("all")), QStringLiteral("全部器材"));
+        for (const auto& key : {"all", "reaction", "separation", "connectors", "thermal", "measurement",
+                                "biochemistry", "electrical", "physics", "support", "annotation"})
+            QVERIFY2(domain->findData(key) >= 0, key);
+        const auto previousDomain = domain->currentData();
         const auto previousDrawing = window->drawing->state();
-        source->setCurrentIndex(source->findData("bio"));
+        domain->setCurrentIndex(domain->findData("biochemistry"));
         search->clear();
-        QCOMPARE(category->count(), 7);
+        QCOMPARE(category->count(), 6);
         const auto visible = [&] {
             int count = 0;
             for (int row = 0; row < palette->count(); ++row)
                 if (!palette->item(row)->isHidden()) ++count;
             return count;
         };
-        QCOMPARE(visible(), 34);
-        for (int row = 0; row < palette->count(); ++row)
-            if (!palette->item(row)->isHidden())
-                QVERIFY(palette->item(row)->data(Qt::UserRole).toString().startsWith("bio:"));
+        QCOMPARE(visible(), 59);
         category->setCurrentIndex(category->findData(QStringLiteral("电泳与成像")));
-        QCOMPARE(visible(), 8);
+        QCOMPARE(visible(), 10);
         search->setText(QStringLiteral("圆盘"));
         QCOMPARE(visible(), 1);
         category->setCurrentIndex(0);
         search->setText("pipette");
-        QCOMPARE(visible(), 2);
+        QCOMPARE(visible(), 3);
         search->setText(QStringLiteral("移液枪"));
         QCOMPARE(visible(), 1);
+        domain->setCurrentIndex(domain->findData("support"));
         search->setText(QStringLiteral("电吹风"));
         QCOMPARE(visible(), 1);
         window->drawing->restore({});
@@ -161,8 +165,8 @@ class WorkspaceTests : public QObject {
             window->resize(size);
             window->drawing->fitCanvas();
             QTest::qWait(180);
-            QVERIFY(window->rect().contains(QRect(source->mapTo(window.get(), QPoint()), source->size())));
-            QVERIFY(source->fontMetrics().horizontalAdvance(source->currentText()) < source->width() - 24);
+            QVERIFY(window->rect().contains(QRect(domain->mapTo(window.get(), QPoint()), domain->size())));
+            QVERIFY(domain->fontMetrics().horizontalAdvance(domain->currentText()) < domain->width() - 24);
             if (!directory.isEmpty()) {
                 QVERIFY(QDir().mkpath(directory));
                 QVERIFY(window->grab().save(QDir(directory).filePath(
@@ -172,7 +176,7 @@ class WorkspaceTests : public QObject {
         QVERIFY(QSvgRenderer(window->drawing->svgData()).isValid());
         window->drawing->restore(previousDrawing);
         window->drawing->undoStack.clear();
-        source->setCurrentIndex(source->findData(previousSource));
+        domain->setCurrentIndex(domain->findData(previousDomain));
     }
     void hiddenEditorSmilesExports() {
         MainWindow hidden(true);
@@ -329,33 +333,48 @@ class WorkspaceTests : public QObject {
     }
     void apparatusCatalog() {
         window->showPage(2);
-        auto* source = window->findChild<QComboBox*>("apparatusSource");
+        auto* domain = window->findChild<QComboBox*>("apparatusDomain");
         auto* search = window->findChild<QLineEdit*>("apparatusSearch");
         auto* palette = window->findChild<QListWidget*>("apparatusPalette");
-        QVERIFY(source && search && palette);
-        QCOMPARE(source->findData("builtin"), -1);
+        QVERIFY(!window->findChild<QComboBox*>("apparatusSource"));
+        QVERIFY(domain && search && palette);
+        QCOMPARE(domain->findData("builtin"), -1);
+        QCOMPARE(domain->findData("chemix"), -1);
+        QCOMPARE(domain->findData("legacy"), -1);
         const QStringList basics{"arrow", "line", "label", "rectangle", "ellipse"};
+        QSet<QString> seenNames;
+        QSet<QString> seenIds;
         for (int row = 0; row < palette->count(); ++row) {
             const auto id = palette->item(row)->data(Qt::UserRole).toString();
-            QVERIFY(id.startsWith("studio:") || id.startsWith("bio:") || id.startsWith("physics:") || id.startsWith("legacy:") || id.startsWith("chemix:") || basics.contains(id));
+            const auto name = palette->item(row)->text();
+            QVERIFY(id.startsWith("studio:") || id.startsWith("lab:") || id.startsWith("bio:") || id.startsWith("physics:") || id.startsWith("legacy:") || id.startsWith("chemix:") || basics.contains(id));
+            QVERIFY2(!seenNames.contains(name), qPrintable("Duplicate palette name: " + name));
+            seenNames.insert(name);
+            seenIds.insert(id);
         }
-        source->setCurrentIndex(source->findData("shapes"));
+        domain->setCurrentIndex(domain->findData("annotation"));
         int visible = 0;
+        QSet<QString> annotationIds;
         for (int row = 0; row < palette->count(); ++row)
-            if (!palette->item(row)->isHidden())
+            if (!palette->item(row)->isHidden()) {
                 ++visible;
-        QCOMPARE(visible, 5);
-        source->setCurrentIndex(source->findData("legacy"));
+                annotationIds.insert(palette->item(row)->data(Qt::UserRole).toString());
+            }
+        QVERIFY(visible >= 25);
+        for (const auto& basic : basics)
+            QVERIFY(annotationIds.contains(basic));
+        domain->setCurrentIndex(domain->findData("reaction"));
         search->setText(QStringLiteral("锥形瓶"));
         visible = 0;
         QListWidgetItem* match = nullptr;
         for (int row = 0; row < palette->count(); ++row)
             if (!palette->item(row)->isHidden()) {
                 ++visible;
-                match = palette->item(row);
+                const auto rowId = palette->item(row)->data(Qt::UserRole).toString();
+                if (rowId == "chemix:conical-flask" || rowId == "studio:conical-flask") match = palette->item(row);
             }
         if (visible) {
-            QCOMPARE(visible, 1);
+            QVERIFY(match);
             const auto before = window->drawing->state();
             palette->scrollToItem(match);
             QTest::qWait(80);
@@ -367,6 +386,7 @@ class WorkspaceTests : public QObject {
             window->drawing->undoStack.undo();
             QCOMPARE(window->drawing->state(), before);
         }
+        domain->setCurrentIndex(domain->findData("all"));
         search->clear();
     }
     void nativeMenuDrag() {
@@ -375,10 +395,10 @@ class WorkspaceTests : public QObject {
         window->raise();
         window->activateWindow();
         SetForegroundWindow(reinterpret_cast<HWND>(window->winId()));
-        auto* source=window->findChild<QComboBox*>("apparatusSource");
+        auto* domain=window->findChild<QComboBox*>("apparatusDomain");
         auto* search=window->findChild<QLineEdit*>("apparatusSearch");
         auto* palette=window->findChild<QListWidget*>("apparatusPalette");
-        source->setCurrentIndex(source->findData("chemix"));
+        domain->setCurrentIndex(domain->findData("measurement"));
         search->setText(QStringLiteral("容量瓶"));
         QListWidgetItem* match=nullptr;
         for(int i=0;i<palette->count();++i)
@@ -975,36 +995,78 @@ class WorkspaceTests : public QObject {
         view->scene()->setProperty("precise", false);
     }
     void publicSourcePreview() {
-        window->showPage(2);
-        window->resize(1440, 940);
         auto* view = window->drawing;
         const auto saved = view->state();
         view->restore({});
-        view->scene()->setProperty("precise", true);
-        QVERIFY(view->addText(QStringLiteral("Chem Studio\n实验报告里的图，试着少画一点"), {160, 80}));
         view->addApparatus("studio:beaker", {180, 210});
-        view->setSelectionLabel(QStringLiteral("样品"));
-        view->addApparatus("arrow", {360, 278});
+        auto* beaker = dynamic_cast<DrawingItem*>(view->scene()->selectedItems().front());
+        QVERIFY(beaker);
+        beaker->setTextContent(QStringLiteral("NaCl 溶液"));
         view->addApparatus("studio:microscope", {510, 210});
-        view->setSelectionLabel(QStringLiteral("检测模块"));
-        view->addApparatus("arrow", {730, 278});
         view->addApparatus("studio:computer", {880, 210});
-        view->setSelectionLabel(QStringLiteral("数据记录"));
-        QVERIFY(view->addText(QStringLiteral("221 项器材 · 图片与文字 · 拖动缩放旋转 · 导出到实验报告"), {180, 450}));
+        QVERIFY(view->addText(QStringLiteral("实验绘图 · 器材与连接"), {180, 450}));
         view->scene()->clearSelection();
         view->fitCanvas();
-        QTest::qWait(120);
-        const auto directory = qEnvironmentVariable("CHEM_PUBLIC_SCREENSHOTS");
-        if (!directory.isEmpty()) {
-            QDir().mkpath(directory);
-            QVERIFY(window->grab().save(QDir(directory).filePath("drawing.png")));
-            window->showPage(3);
-            QTest::qWait(200);
-            QVERIFY(window->grab().save(QDir(directory).filePath("molecule.png")));
-        }
+        QVERIFY(QSvgRenderer(view->svgData()).isValid());
         view->restore(saved);
         view->undoStack.clear();
         view->scene()->setProperty("precise", false);
+    }
+    void laboratoryAndSearch() {
+        window->showPage(2);
+        auto* domain = window->findChild<QComboBox*>("apparatusDomain");
+        auto* category = window->findChild<QComboBox*>("apparatusCategory");
+        auto* search = window->findChild<QLineEdit*>("apparatusSearch");
+        auto* palette = window->findChild<QListWidget*>("apparatusPalette");
+        auto* searchStatus = window->findChild<QLabel*>("apparatusSearchStatus");
+        auto* undo = window->findChild<QToolButton*>("drawingUndo");
+        auto* redo = window->findChild<QToolButton*>("drawingRedo");
+        auto* duplicate = window->findChild<QToolButton*>("drawingDuplicate");
+        auto* disconnect = window->findChild<QToolButton*>("drawingDisconnect");
+        QVERIFY(domain && category && search && palette && searchStatus && undo && redo && duplicate && disconnect);
+        domain->setCurrentIndex(domain->findData("all")); category->setCurrentIndex(0);
+        window->drawing->restore({}); window->drawing->undoStack.clear();
+        QVERIFY(!undo->isEnabled()); QVERIFY(!redo->isEnabled());
+        QVERIFY(!duplicate->isEnabled()); QVERIFY(!disconnect->isEnabled());
+        search->setText(QStringLiteral("磨口夹"));
+        QTRY_VERIFY_WITH_TIMEOUT(searchStatus->text() != QStringLiteral("正在搜索"), 60000);
+        QListWidgetItem* first = nullptr;
+        for (int row = 0; row < palette->count(); ++row)
+            if (!palette->item(row)->isHidden()) { first = palette->item(row); break; }
+        QVERIFY(first);
+        QVERIFY((QStringList{"chemix:plastic-joint-clip", "studio:plastic-joint-clip"}.contains(first->data(Qt::UserRole).toString())));
+        search->setFocus(); QTest::keyClick(search, Qt::Key_Down);
+        QVERIFY(palette->hasFocus()); QTest::keyClick(palette, Qt::Key_Return);
+        QCOMPARE(window->drawing->state().size(), 1);
+        QVERIFY(undo->isEnabled()); QVERIFY(duplicate->isEnabled());
+        undo->click(); QVERIFY(window->drawing->state().isEmpty()); QVERIFY(redo->isEnabled());
+        search->setText(QStringLiteral("温度计")); search->clear();
+        QTest::qWait(350);
+        int visible = 0;
+        for (int row = 0; row < palette->count(); ++row) if (!palette->item(row)->isHidden()) ++visible;
+        QCOMPARE(visible, palette->count());
+        window->drawing->scene()->setProperty("precise", true);
+        window->drawing->addApparatus("lab:clear-reagent-bottle", {300, 350});
+        auto* bottle = dynamic_cast<DrawingItem*>(window->drawing->scene()->selectedItems().value(0));
+        window->drawing->addApparatus("lab:ground-glass-stopper", {200, 150});
+        auto* stopper = dynamic_cast<DrawingItem*>(window->drawing->scene()->selectedItems().value(0));
+        QVERIFY(bottle && stopper);
+        QVERIFY(window->drawing->connectItems(stopper->id, "plug", bottle->id, "mouth"));
+        QVERIFY(disconnect->isEnabled());
+        const auto connected = window->drawing->state();
+        disconnect->click(); QCOMPARE(window->drawing->state().size(), 2);
+        QVERIFY(!disconnect->isEnabled()); undo->click(); QCOMPARE(window->drawing->state(), connected);
+        const auto output = qEnvironmentVariable("CHEM_WORKSPACE_RESULTS");
+        if (!output.isEmpty()) {
+            domain->setCurrentIndex(domain->findData("separation")); window->drawing->fitCanvas();
+            QVERIFY(window->grab().save(QDir(output).filePath("laboratory-and-search.png")));
+            domain->setCurrentIndex(domain->findData("all"));
+            search->setText(QStringLiteral("抽滤时接真空泵的瓶子"));
+            QTRY_VERIFY_WITH_TIMEOUT(searchStatus->text() != QStringLiteral("正在搜索"), 10000);
+            QVERIFY(window->grab().save(QDir(output).filePath("semantic-search.png")));
+        }
+        search->clear(); window->drawing->restore({}); window->drawing->undoStack.clear();
+        window->drawing->scene()->setProperty("precise", false);
     }
     void invalidInput() {
         window->showPage(1);

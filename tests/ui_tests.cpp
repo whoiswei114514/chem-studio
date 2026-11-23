@@ -11,6 +11,7 @@
 #include <QMimeData>
 #include <QDragEnterEvent>
 #include <QDropEvent>
+#include <QUrl>
 #include <QtTest>
 
 class DrawingTests : public QObject {
@@ -591,6 +592,62 @@ class DrawingTests : public QObject {
         const auto assembled = view.state();
         view.setSelectionInsertionDepth(10000);
         QCOMPARE(view.state(), assembled);
+    }
+    void duplicateShortcutAndPreciseMode() {
+        chem::DrawingView view;
+        view.scene()->setProperty("precise", true);
+        view.addApparatus("rectangle", {113.25, 214.75});
+        const auto before = view.state();
+        QTest::keyClick(&view, Qt::Key_D, Qt::ControlModifier);
+        QCOMPARE(view.state().size(), 2);
+        QCOMPARE(view.scene()->property("precise").toBool(), true);
+        view.undoStack.undo(); QCOMPARE(view.state(), before);
+        view.undoStack.redo();
+        QTest::keyClick(&view, Qt::Key_Right);
+        QCOMPARE(view.scene()->property("precise").toBool(), true);
+        for (auto* item : view.scene()->items()) item->setSelected(true);
+        view.alignItems(Qt::AlignLeft);
+        QCOMPARE(view.scene()->property("precise").toBool(), true);
+    }
+    void svgImageRemainsVector() {
+        QTemporaryDir directory;
+        QFile source(directory.filePath("reference.svg"));
+        QVERIFY(source.open(QIODevice::WriteOnly));
+        source.write("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"10 20 120 80\"><path d=\"M20 30L120 30L120 90Z\" fill=\"#24679a\"/></svg>");
+        source.close();
+        chem::DrawingView view;
+        QVERIFY(view.addImage(source.fileName(), {120, 150}));
+        auto* item = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().value(0));
+        QVERIFY(item);
+        QVERIFY(item->artwork.contains("<path"));
+        QVERIFY(!item->artwork.contains("data:image/png"));
+        QCOMPARE(item->size, QSizeF(120, 80));
+        const auto state = view.state();
+        const auto exported = view.svgData();
+        QVERIFY(QSvgRenderer(exported).isValid());
+        QVERIFY(!exported.contains("data:image/png"));
+        view.restore(state); QCOMPARE(view.state(), state);
+        view.undoStack.undo(); QVERIFY(view.state().isEmpty());
+        view.undoStack.redo(); QCOMPARE(view.state(), state);
+    }
+    void imageFileDrop() {
+        QTemporaryDir directory;
+        const auto path = directory.filePath("reference.png");
+        QImage image(100, 60, QImage::Format_ARGB32);
+        image.fill(QColor("#24679a")); QVERIFY(image.save(path));
+        chem::DrawingView view;
+        view.resize(900, 650); view.show();
+        QMimeData data; data.setUrls({QUrl::fromLocalFile(path)});
+        const QPoint position(350, 300);
+        QDragEnterEvent enter(position, Qt::CopyAction, &data, Qt::LeftButton, {});
+        QApplication::sendEvent(view.viewport(), &enter);
+        QVERIFY(enter.isAccepted());
+        QDropEvent drop(position, Qt::CopyAction, &data, Qt::LeftButton, {});
+        QApplication::sendEvent(view.viewport(), &drop);
+        QVERIFY(drop.isAccepted()); QCOMPARE(view.state().size(), 1);
+        const auto state = view.state();
+        view.undoStack.undo(); QVERIFY(view.state().isEmpty());
+        view.undoStack.redo(); QCOMPARE(view.state(), state);
     }
     void vectorExport() {
         QTemporaryDir dir;

@@ -1,1 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="110" height="285" viewBox="0 0 110 285"><title>弹簧测力计</title><g stroke="#294454" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="46" cy="16" rx="10" ry="10" fill="none"></ellipse><line x1="46" y1="26" x2="46" y2="36" stroke-width="2.6"></line><rect x="22" y="34" width="66" height="188" fill="#dcefeb" rx="5"></rect><rect x="22" y="34" width="66" height="12" fill="#c6d2d7" rx="4"></rect><line x1="46" y1="44" x2="46" y2="53" stroke-width="1.5"></line><path d="M46 53 L36 57 L56 62 L36 67 L56 72 L36 77 L56 82 L36 87 L56 92 L36 97 L56 102 L36 107 L56 112 L36 117 L56 122 L46 127 V246" fill="none" stroke-width="1.5"></path><rect x="61" y="129" width="24" height="79" fill="#f8faf9" rx="1" stroke="none"></rect><line x1="62" y1="134" x2="73" y2="134" stroke-width="0.8"></line><text x="79" y="136.5" font-size="7" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">0</text><line x1="67" y1="140.5" x2="73" y2="140.5" stroke-width="0.8"></line><line x1="62" y1="147" x2="73" y2="147" stroke-width="0.8"></line><text x="79" y="149.5" font-size="7" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">1</text><line x1="67" y1="153.5" x2="73" y2="153.5" stroke-width="0.8"></line><line x1="62" y1="160" x2="73" y2="160" stroke-width="0.8"></line><text x="79" y="162.5" font-size="7" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">2</text><line x1="67" y1="166.5" x2="73" y2="166.5" stroke-width="0.8"></line><line x1="62" y1="173" x2="73" y2="173" stroke-width="0.8"></line><text x="79" y="175.5" font-size="7" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">3</text><line x1="67" y1="179.5" x2="73" y2="179.5" stroke-width="0.8"></line><line x1="62" y1="186" x2="73" y2="186" stroke-width="0.8"></line><text x="79" y="188.5" font-size="7" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">4</text><line x1="67" y1="192.5" x2="73" y2="192.5" stroke-width="0.8"></line><line x1="62" y1="199" x2="73" y2="199" stroke-width="0.8"></line><text x="79" y="201.5" font-size="7" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">5</text><path d="M46 170 H57 L62 173 H46Z" fill="#c75b55" stroke-width="1"></path><ellipse cx="46" cy="172" rx="2" ry="2" fill="#c75b55"></ellipse><text x="73" y="120" font-size="10" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">N</text><rect x="22" y="212" width="66" height="10" fill="#c6d2d7" rx="3"></rect><rect x="42" y="220" width="8" height="5" fill="#c6d2d7" rx="1"></rect><path d="M46 246 C68 246 70 271 52 272 C43 273 38 268 39 261" fill="none" stroke-width="2.2"></path></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="285" viewBox="0 0 110 285"><title>弹簧测力计</title><defs>
+    <linearGradient id="g-chassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="g-chassis-h" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="22%" stop-color="#F8FAFC"/>
+      <stop offset="80%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="g-bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="30%" stop-color="#F1F5F9"/>
+      <stop offset="65%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="g-metal-v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="45%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="g-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6F2F7" stop-opacity="0.82"/>
+      <stop offset="28%" stop-color="#F8FCFE" stop-opacity="0.65"/>
+      <stop offset="75%" stop-color="#E6F2F7" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="#CBE4EE" stop-opacity="0.80"/>
+    </linearGradient>
+    <linearGradient id="g-liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="g-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="35%" stop-color="#FDE68A"/>
+      <stop offset="75%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="g-copper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="35%" stop-color="#FDBA74"/>
+      <stop offset="70%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <linearGradient id="g-rubber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+  </defs><g stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><!-- Top ring --><circle cx="51" cy="14" r="8" fill="none" stroke="#1F2937" stroke-width="2.2"/><rect x="28" y="24" width="46" height="208" rx="6" fill="url(#g-chassis)" stroke="#1F2937" stroke-width="2.2"/><rect x="33" y="28" width="12" height="200" rx="2" fill="url(#g-teal)" stroke="none"/><rect x="40" y="42" width="22" height="180" rx="3" fill="#FFFFFF" stroke="#334155" stroke-width="1.3"/><path d="M51 54 L61 58 L41 63.5 L61 69 L41 74.5 L61 80 L41 85.5 L61 91 L41 96.5 L61 102 L41 107.5 L61 113 L41 118.5 L61 124 L41 129.5 L61 135 L41 140.5 L51 148" fill="none" stroke="#1F2937" stroke-width="1.8"/><line x1="51" y1="148" x2="51" y2="254" stroke="#1F2937" stroke-width="2.2"/><polygon points="44,170 60,170 57,174 44,174" fill="#DC2626" stroke="#1F2937" stroke-width="1.0"/><line x1="60" y1="104" x2="72" y2="104" stroke="#1F2937" stroke-width="1.2"/><text x="76" y="106.5" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="start">0</text><line x1="60" y1="115" x2="66" y2="115" stroke="#1F2937" stroke-width="0.8"/><line x1="60" y1="126" x2="72" y2="126" stroke="#1F2937" stroke-width="1.2"/><text x="76" y="128.5" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="start">1</text><line x1="60" y1="137" x2="66" y2="137" stroke="#1F2937" stroke-width="0.8"/><line x1="60" y1="148" x2="72" y2="148" stroke="#1F2937" stroke-width="1.2"/><text x="76" y="150.5" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="start">2</text><line x1="60" y1="159" x2="66" y2="159" stroke="#1F2937" stroke-width="0.8"/><line x1="60" y1="170" x2="72" y2="170" stroke="#1F2937" stroke-width="1.2"/><text x="76" y="172.5" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="start">3</text><line x1="60" y1="181" x2="66" y2="181" stroke="#1F2937" stroke-width="0.8"/><line x1="60" y1="192" x2="72" y2="192" stroke="#1F2937" stroke-width="1.2"/><text x="76" y="194.5" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="start">4</text><line x1="60" y1="203" x2="66" y2="203" stroke="#1F2937" stroke-width="0.8"/><line x1="60" y1="214" x2="72" y2="214" stroke="#1F2937" stroke-width="1.2"/><text x="76" y="216.5" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="start">5</text><text x="78" y="92" fill="#0F766E" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="700" text-anchor="start">N</text><path d="M51 254 V260 C51 269 60 272 60 264 C60 258 55 258 52 260" fill="none" stroke="#1F2937" stroke-width="2.2"/></g></svg>

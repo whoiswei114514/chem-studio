@@ -4,6 +4,7 @@
   "license": "per-asset",
   "approved": true,
   "merged": true,
+  "approvedDate": "2026-11-23",
   "assets": [
     {
       "id": "physics:digital-oscilloscope",
@@ -13,12 +14,11 @@
       "svg": "digital-oscilloscope.svg",
       "width": 300,
       "height": 210,
-      "sha256": "4e792237400273b311811d0f401abf7d6721b67c628825835566e3d2c8c05c36",
       "ports": [
         {
           "id": "ch1",
-          "x": 199,
-          "y": 155,
+          "x": 196,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -27,7 +27,7 @@
         {
           "id": "ch2",
           "x": 228,
-          "y": 155,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -35,8 +35,8 @@
         },
         {
           "id": "trigger",
-          "x": 255,
-          "y": 155,
+          "x": 260,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -44,8 +44,8 @@
         },
         {
           "id": "base",
-          "x": 145,
-          "y": 186,
+          "x": 150,
+          "y": 193,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -58,8 +58,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "可辨认的网格显示、垂直/时基旋钮、双通道 BNC 与外触发端口；波形仅为面板示意，不模拟采样。",
-      "origin": "authored"
+      "notes": "双通道数字存储示波器：背光暗底网格波形屏、垂直/水平/触发旋钮及 CH1/CH2/EXT BNC 接口。",
+      "origin": "authored",
+      "sha256": "85417c0b22f50c0de2a11d35af3702c96295268233ba0eae0635830aed3f5b93"
     },
     {
       "id": "physics:function-generator",
@@ -69,12 +70,11 @@
       "svg": "function-generator.svg",
       "width": 300,
       "height": 210,
-      "sha256": "544e98847b5948c9c62087695b917a1b39bfcddaf5f9c2b5acf8468ad0d40628",
       "ports": [
         {
           "id": "ch1",
-          "x": 189,
-          "y": 157,
+          "x": 190,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -82,8 +82,8 @@
         },
         {
           "id": "ch2",
-          "x": 219,
-          "y": 157,
+          "x": 224,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -91,8 +91,8 @@
         },
         {
           "id": "sync",
-          "x": 250,
-          "y": 157,
+          "x": 258,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -100,8 +100,8 @@
         },
         {
           "id": "base",
-          "x": 145,
-          "y": 186,
+          "x": 150,
+          "y": 193,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -114,8 +114,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "独立频率/幅度显示、调节旋钮、两路输出和同步 BNC；不将其画成示波器。",
-      "origin": "authored"
+      "notes": "双通道 DDS 函数/信号发生器：高对比频率/幅值背光屏、波形切换键、大调谐编码器与 CH1/CH2/SYNC BNC 口。",
+      "origin": "authored",
+      "sha256": "9e1c680f84af33c1bfba48419e9f2f0043524cb3ddb3d03685c85d9eb4aca8d9"
     },
     {
       "id": "physics:oscilloscope-probe",
@@ -125,7 +126,6 @@
       "svg": "oscilloscope-probe.svg",
       "width": 290,
       "height": 130,
-      "sha256": "da21892e0ad9735c6b38e1f86dc1d61c19fa87ff82517f71a41014a8ee45e375",
       "ports": [
         {
           "id": "tip",
@@ -170,23 +170,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "探针、10X 探头本体、独立地线夹与 BNC 插头；接地端不是另一个测量通道。",
-      "origin": "authored"
+      "notes": "示波器 1X–1000X 高阻无源探头：兼容弹性端头坐标与画布可拖拽探针/地线夹/BNC 插头。",
+      "origin": "authored",
+      "sha256": "9af04cbb3d7d25e7ae64062a91cb62a26d086fd88817e0a87e8c2f1433206467"
     },
     {
       "id": "physics:dual-dc-supply",
       "name": "双路台式直流稳压电源",
       "category": "电工设备",
-      "search": "dual dc supply 电源 稳压 限流 DC supply",
+      "search": "dual dc supply 电源 稳压 限流 DC supply 直流稳压电源",
       "svg": "dual-dc-supply.svg",
       "width": 300,
       "height": 210,
-      "sha256": "b148d5e14e87df5eab099733e41e27623cc85ddc2bfd0fc6c17bce830bf27547",
       "ports": [
         {
           "id": "CH1-negative",
-          "x": 62,
-          "y": 157,
+          "x": 58,
+          "y": 158,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -194,8 +194,8 @@
         },
         {
           "id": "CH1-positive",
-          "x": 99,
-          "y": 157,
+          "x": 98,
+          "y": 158,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -203,8 +203,8 @@
         },
         {
           "id": "CH2-negative",
-          "x": 180,
-          "y": 157,
+          "x": 202,
+          "y": 158,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -212,8 +212,8 @@
         },
         {
           "id": "CH2-positive",
-          "x": 217,
-          "y": 157,
+          "x": 242,
+          "y": 158,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -221,8 +221,8 @@
         },
         {
           "id": "earth",
-          "x": 143,
-          "y": 157,
+          "x": 150,
+          "y": 158,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -230,8 +230,8 @@
         },
         {
           "id": "base",
-          "x": 145,
-          "y": 186,
+          "x": 150,
+          "y": 193,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -244,22 +244,22 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "两路可调输出及保护接地；接地端不算第三路输出。",
-      "origin": "authored"
+      "notes": "双路独立/跟踪可调直流稳压电源：双通道数显表、恒压/恒流指示、独立电压/限流旋钮及保护接地端子。",
+      "origin": "authored",
+      "sha256": "5ae335c20b28e5b896ea3bd4516fec615d9440ff470230b376d77354d2434f0c"
     },
     {
       "id": "physics:frequency-counter",
       "name": "频率计",
       "category": "电学与电子测量",
-      "search": "frequency counter 频率 计数 frequency counter",
+      "search": "frequency counter 频率 计数 测频仪 frequency counter",
       "svg": "frequency-counter.svg",
       "width": 280,
       "height": 190,
-      "sha256": "22062378844f753f03cb9ac33f0c0cdeb98faf0c62f2d3c5a813c826aeff94be",
       "ports": [
         {
           "id": "input-a",
-          "x": 154,
+          "x": 172,
           "y": 136,
           "dx": 0,
           "dy": 1,
@@ -268,7 +268,7 @@
         },
         {
           "id": "input-b",
-          "x": 203,
+          "x": 224,
           "y": 136,
           "dx": 0,
           "dy": 1,
@@ -277,8 +277,8 @@
         },
         {
           "id": "base",
-          "x": 137,
-          "y": 163,
+          "x": 140,
+          "y": 175,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -291,8 +291,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "输入连接器与门控/量程按钮；不是波形源。",
-      "origin": "authored"
+      "notes": "高分辨率数字频率计：双通道 BNC 输入、闸门时间与衰减控制键。",
+      "origin": "authored",
+      "sha256": "3391824e8cfbd4a843e1b679c85c192c5d4d8cc3a074bc36cf009f9733ee903f"
     },
     {
       "id": "physics:lcr-meter",
@@ -302,11 +303,10 @@
       "svg": "lcr-meter.svg",
       "width": 280,
       "height": 200,
-      "sha256": "a8f94a5c101097a897e57cd692224be308f871558861efba83117dba5f179680",
       "ports": [
         {
           "id": "hcur",
-          "x": 157,
+          "x": 164,
           "y": 148,
           "dx": 0,
           "dy": 1,
@@ -315,7 +315,7 @@
         },
         {
           "id": "hpot",
-          "x": 184,
+          "x": 194,
           "y": 148,
           "dx": 0,
           "dy": 1,
@@ -324,7 +324,7 @@
         },
         {
           "id": "lpot",
-          "x": 211,
+          "x": 224,
           "y": 148,
           "dx": 0,
           "dy": 1,
@@ -333,7 +333,7 @@
         },
         {
           "id": "lcur",
-          "x": 238,
+          "x": 252,
           "y": 148,
           "dx": 0,
           "dy": 1,
@@ -342,8 +342,8 @@
         },
         {
           "id": "base",
-          "x": 137,
-          "y": 172,
+          "x": 140,
+          "y": 185,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -356,8 +356,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "四端测量连接器（HCUR、HPOT、LPOT、LCUR），不简化为电源输出。",
-      "origin": "authored"
+      "notes": "四端开尔文测量台式 LCR 数字电桥：HCUR/HPOT/LPOT/LCUR BNC 端口及测试频率切换面板。",
+      "origin": "authored",
+      "sha256": "010e75650efcd75076dcd091bbcc1804de8d21aa9371508a0bc0812e227fa568"
     },
     {
       "id": "physics:ac-millivoltmeter",
@@ -367,12 +368,11 @@
       "svg": "ac-millivoltmeter.svg",
       "width": 245,
       "height": 220,
-      "sha256": "8786c38ab4225ac3db5fa1cd85313dcc905c656763dacab626ee13ac32a535bd",
       "ports": [
         {
           "id": "input",
-          "x": 156,
-          "y": 159,
+          "x": 168,
+          "y": 162,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -380,8 +380,8 @@
         },
         {
           "id": "base",
-          "x": 116,
-          "y": 192,
+          "x": 122,
+          "y": 205,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -394,23 +394,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "指针式交流低电压测量仪，输入 BNC 与量程旋钮。",
-      "origin": "authored"
+      "notes": "指针式交流毫伏表：镜面反射标度盘、波段量程开关与高灵敏 BNC 输入端子。",
+      "origin": "authored",
+      "sha256": "a70688289099b182e8f307ea051f380b0b6bdca3687ecedf3ac1ff9c0ea5ead8"
     },
     {
       "id": "physics:analog-galvanometer",
       "name": "灵敏检流计",
       "category": "电学与电子测量",
-      "search": "analog galvanometer 检流计 零点 电桥 galvanometer",
+      "search": "analog galvanometer 检流计 零点 电桥 galvanometer 微安表",
       "svg": "analog-galvanometer.svg",
       "width": 230,
       "height": 200,
-      "sha256": "9c960c04cfc8d2f43244489ccb5136e66b9d3f7e67f65ead7ed3c72141803706",
       "ports": [
         {
           "id": "negative",
-          "x": 70,
-          "y": 139,
+          "x": 64,
+          "y": 152,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -418,8 +418,8 @@
         },
         {
           "id": "positive",
-          "x": 161,
-          "y": 139,
+          "x": 166,
+          "y": 152,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -428,7 +428,7 @@
         {
           "id": "base",
           "x": 115,
-          "y": 165,
+          "y": 185,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -441,23 +441,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "中央零位指针表，可辨正负偏转。",
-      "origin": "authored"
+      "notes": "中央零位灵敏检流计：对称正负刻度标盘、零点机械微调螺钉与红黑接线柱。",
+      "origin": "authored",
+      "sha256": "ccefb3df7f72f3cedfc93e21680c2d478153242ebbabb759a837505e9259b4c9"
     },
     {
       "id": "physics:decade-resistance-box",
       "name": "十进电阻箱",
       "category": "电工设备",
-      "search": "decade resistance box 电阻箱 可调 电阻 decade resistor",
+      "search": "decade resistance box 电阻箱 可调 电阻 decade resistor 变阻箱",
       "svg": "decade-resistance-box.svg",
       "width": 280,
       "height": 165,
-      "sha256": "f16a1ef68e194f9e539c127c6fa23dfc32ca3ea07f8105cb89b48b4700995826",
       "ports": [
         {
           "id": "a",
-          "x": 34,
-          "y": 138,
+          "x": 46,
+          "y": 122,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -465,8 +465,8 @@
         },
         {
           "id": "b",
-          "x": 218,
-          "y": 138,
+          "x": 234,
+          "y": 122,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -474,8 +474,8 @@
         },
         {
           "id": "base",
-          "x": 125,
-          "y": 122,
+          "x": 140,
+          "y": 153,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -488,23 +488,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "多个十进旋钮和两个电路端子；不作为电源。",
-      "origin": "authored"
+      "notes": "五盘十进制精密电阻箱：面板旋钮阻值 ×1 至 ×10k，两侧内嵌安全接线柱与橡胶防滑脚垫。",
+      "origin": "authored",
+      "sha256": "058d000b52d2c9bdf5a4eac8f44df0a3347e8803cd74a9e0847003086a90f4d6"
     },
     {
       "id": "physics:sliding-rheostat",
       "name": "滑动变阻器",
       "category": "电工设备",
-      "search": "sliding rheostat 变阻器 滑片 电阻 rheostat",
+      "search": "sliding rheostat 变阻器 滑片 电阻 rheostat 瓷管滑线变阻器",
       "svg": "sliding-rheostat.svg",
       "width": 280,
       "height": 185,
-      "sha256": "d57b3469cf21468e4b319ee1ddcc8b40967f25e64e4d58531c37eebeacbf09bd",
       "ports": [
         {
           "id": "left-coil",
-          "x": 46,
-          "y": 121,
+          "x": 44,
+          "y": 126,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -512,8 +512,8 @@
         },
         {
           "id": "right-coil",
-          "x": 231,
-          "y": 121,
+          "x": 236,
+          "y": 126,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -521,17 +521,17 @@
         },
         {
           "id": "slider",
-          "x": 139,
-          "y": 36,
+          "x": 140,
+          "y": 26,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "base",
           "x": 140,
-          "y": 152,
+          "y": 164,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -544,23 +544,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "线绕电阻体、上方滑杆和独立滑片触点；仅保留真实三个节点。",
-      "origin": "authored"
+      "notes": "瓷管滑线变阻器：密绕电阻丝瓷筒、顶部金属导杆与可调电刷滑片（接线柱 A/B/C）。",
+      "origin": "authored",
+      "sha256": "2a5e2a0c2c53b328a5ed8ebfbdb6a6741c500b350f8429c65d3f227c67349d43"
     },
     {
       "id": "physics:breadboard",
       "name": "无焊面包板",
       "category": "电工设备",
-      "search": "breadboard 面包板 电子 实验 breadboard",
+      "search": "breadboard 面包板 电子 实验 breadboard 免焊实验板",
       "svg": "breadboard.svg",
       "width": 280,
       "height": 175,
-      "sha256": "e1db8b6a6e25ad3b0120a05700eeb7a10a0ab83c1232ad6f96e81f094d361c5e",
       "ports": [
         {
           "id": "base",
           "x": 140,
-          "y": 145,
+          "y": 150,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2157,23 +2157,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "双端电源母线与中间隔槽；孔很多，默认不添加会误导内部连通关系的统一端口。",
-      "origin": "authored"
+      "notes": "400孔免焊面包板：双侧红蓝电源总线、中央 DIP 跨接隔离槽与完整对齐插孔矩阵。",
+      "origin": "authored",
+      "sha256": "aba62dd1c59aeb2d168a0421538efe1f752d23899d51c16fec56cc8baf9bb93a"
     },
     {
       "id": "physics:knife-switch",
       "name": "单刀闸刀开关",
       "category": "电工设备",
-      "search": "knife switch 开关 单刀 单掷 knife switch",
+      "search": "knife switch 闸刀开关 单刀 单掷 switch SPST",
       "svg": "knife-switch.svg",
       "width": 250,
       "height": 150,
-      "sha256": "f3fc372c6998ed26cda9fa8e6ae8bf334cf97064c3004ac0d2b29449d3e6e546",
       "ports": [
         {
           "id": "a",
-          "x": 50,
-          "y": 97,
+          "x": 44,
+          "y": 114,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -2181,8 +2181,8 @@
         },
         {
           "id": "b",
-          "x": 178,
-          "y": 97,
+          "x": 206,
+          "y": 114,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -2190,8 +2190,8 @@
         },
         {
           "id": "base",
-          "x": 110,
-          "y": 108,
+          "x": 125,
+          "y": 132,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2204,59 +2204,59 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "明确画成断开状态，闸刀有绝缘手柄。",
-      "origin": "authored"
+      "notes": "单刀单掷闸刀开关：绝缘底座、紫铜闸刀片与绝缘胶木手柄。",
+      "origin": "authored",
+      "sha256": "af25072440bba46459d9df1917e48bfc8919bea2733e2eb242a588c112d97da9"
     },
     {
       "id": "physics:isolation-transformer",
       "name": "实验变压器",
       "category": "电工设备",
-      "search": "isolation transformer 变压器 初级 次级 电磁 transformer",
+      "search": "isolation transformer 变压器 原副线圈 互感 transformer",
       "svg": "isolation-transformer.svg",
       "width": 230,
       "height": 210,
-      "sha256": "892986c3ceb611fcb43420354cd752c681295aec21fa46426d96a0bf70376e55",
       "ports": [
         {
           "id": "primary-a",
-          "x": 30,
-          "y": 32,
+          "x": 40,
+          "y": 34,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "primary-b",
-          "x": 57,
-          "y": 32,
+          "x": 68,
+          "y": 34,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "secondary-a",
-          "x": 163,
-          "y": 32,
+          "x": 162,
+          "y": 34,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "secondary-b",
           "x": 190,
-          "y": 32,
+          "y": 34,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "base",
           "x": 115,
-          "y": 183,
+          "y": 193,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2269,41 +2269,41 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "铁芯和两个绕组明确分离，四个电气端子；无仿真变比。",
-      "origin": "authored"
+      "notes": "可拆式实验隔离变压器：硅钢叠片铁芯、双绕组线包及原/副边接线柱。",
+      "origin": "authored",
+      "sha256": "873b3e312fbdc155dbf51ba9e11c5fdff3b8509d06c75869ecb99491ace0e359"
     },
     {
       "id": "physics:dc-motor",
       "name": "直流电动机",
       "category": "电工设备",
-      "search": "dc motor 电机 马达 DC motor",
+      "search": "dc motor 电动机 马达 转子 motor",
       "svg": "dc-motor.svg",
       "width": 270,
       "height": 185,
-      "sha256": "6c4d7ddf7fe59edd9bf9a7993dd8cda74aadfaf38e0d77e650eab17970ac9a08",
       "ports": [
         {
           "id": "positive",
           "x": 166,
-          "y": 47,
+          "y": 46,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "negative",
-          "x": 195,
-          "y": 47,
+          "x": 196,
+          "y": 46,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "base",
-          "x": 140,
-          "y": 164,
+          "x": 150,
+          "y": 166,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2316,22 +2316,22 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "带散热筋的机壳、端盖轴承、同轴输出轴、固定底脚和独立直流接线盒。",
-      "origin": "authored"
+      "notes": "永磁直流电动机：带散热筋定子壳体、键槽输出轴、底座固定板及顶部正负接线盒。",
+      "origin": "authored",
+      "sha256": "b80478ecb808085a6debef9d1f8ba9cc8b3f2d414dd32c44bb069724846ae5fc"
     },
     {
       "id": "physics:clamp-meter",
       "name": "钳形电流表",
       "category": "电学与电子测量",
-      "search": "clamp meter 钳形表 电流 clamp meter",
+      "search": "clamp meter 钳形 电流表 万用表 clamp",
       "svg": "clamp-meter.svg",
       "width": 125,
       "height": 280,
-      "sha256": "b52f0ae9907f4315a1057343ea852c2fe54b26ac9e0197db183cec2c54fa4bb4",
       "ports": [
         {
           "id": "com",
-          "x": 47,
+          "x": 46,
           "y": 232,
           "dx": 0,
           "dy": 1,
@@ -2340,7 +2340,7 @@
         },
         {
           "id": "voltage",
-          "x": 78,
+          "x": 79,
           "y": 232,
           "dx": 0,
           "dy": 1,
@@ -2349,8 +2349,8 @@
         },
         {
           "id": "grip-site",
-          "x": 63,
-          "y": 156,
+          "x": 62.5,
+          "y": 146,
           "dx": 1,
           "dy": 0,
           "type": "grip-site",
@@ -2363,25 +2363,25 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "顶部钳口有分缝，底部 COM/V 插孔不作为被测电流钳口。",
-      "origin": "authored"
+      "notes": "真有效值钳形电流表：红色开口互感器钳口、单手扳机、档位旋钮、背光屏与 COM/VΩ 表笔插孔。",
+      "origin": "authored",
+      "sha256": "e67ef0e52fb6a0b49400303b60054410a81cf48b5a5b97e6ef9fd9ef679feb25"
     },
     {
       "id": "physics:wheatstone-bridge",
       "name": "惠斯通电桥实验板",
       "category": "电工设备",
-      "search": "wheatstone bridge 惠斯通 电阻桥 检流 电桥 wheatstone",
+      "search": "wheatstone bridge 电桥 测电阻 wheatstone bridge",
       "svg": "wheatstone-bridge.svg",
       "width": 280,
       "height": 220,
-      "sha256": "64205356502144da04485354e592249cd032d06b56755b70d4dc066f11dba0f7",
       "ports": [
         {
           "id": "a",
           "x": 140,
           "y": 48,
           "dx": 0,
-          "dy": 1,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
@@ -2389,8 +2389,8 @@
           "id": "b",
           "x": 62,
           "y": 108,
-          "dx": 0,
-          "dy": 1,
+          "dx": -1,
+          "dy": 0,
           "type": "wire",
           "diameter": 0
         },
@@ -2407,15 +2407,15 @@
           "id": "d",
           "x": 218,
           "y": 108,
-          "dx": 0,
-          "dy": 1,
+          "dx": 1,
+          "dy": 0,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "base",
           "x": 140,
-          "y": 197,
+          "y": 205,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2428,18 +2428,18 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "电桥菱形四臂与中央检流计；四个节点可接线，结构示意而非可调仿真。",
-      "origin": "authored"
+      "notes": "惠斯通电桥实验板：标准四臂菱形电路面板、中央检流计图标与 A/B/C/D 四端接线柱。",
+      "origin": "authored",
+      "sha256": "1c6370f42ef9938556c3ee0ab96daefa19ad2ca950d416cbff497c3ec52f6326"
     },
     {
       "id": "physics:vernier-caliper",
       "name": "游标卡尺",
       "category": "力学与计量",
-      "search": "vernier caliper 卡尺 游标 长度 vernier caliper",
+      "search": "vernier caliper 游标卡尺 卡尺 测量",
       "svg": "vernier-caliper.svg",
       "width": 310,
       "height": 160,
-      "sha256": "e70da1a20bcb0e11b5ef488206879badc6fd1b8bec742553e001d19e36a29ca9",
       "ports": [
         {
           "id": "grip-site",
@@ -2457,23 +2457,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "外测量爪、内测量爪、主尺、游标及深度杆。",
-      "origin": "authored"
+      "notes": "不锈钢游标卡尺：外量爪、内量爪、主尺/游标尺刻线、锁紧螺钉、拇指滚轮与深度测杆。",
+      "origin": "authored",
+      "sha256": "354b94732b5055d08885118a0ee93fd706ef9866aeec774264c62db72a5a057e"
     },
     {
       "id": "physics:micrometer",
       "name": "外径千分尺",
       "category": "力学与计量",
-      "search": "micrometer 千分尺 螺旋测微器 micrometer",
+      "search": "micrometer 螺旋测微器 千分尺 精密测量",
       "svg": "micrometer.svg",
       "width": 290,
       "height": 200,
-      "sha256": "e0b1cb1c520cfd5618dd2bf9650cfcc96462dccc87c65fe8319f116869d5f0cf",
       "ports": [
         {
           "id": "grip-site",
           "x": 91,
-          "y": 173,
+          "y": 150,
           "dx": 1,
           "dy": 0,
           "type": "grip-site",
@@ -2486,18 +2486,18 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "测砧与测微螺杆同轴、测量间隙留空；尺架、锁紧件、固定套筒、微分筒和棘轮各自连接。",
-      "origin": "authored"
+      "notes": "0–25 mm 外径螺旋测微器（千分尺）：隔热 C 形尺架、测砧测微螺杆、固定套筒与棘轮测力微分筒。",
+      "origin": "authored",
+      "sha256": "d25bcf154c7eaa1f138a49f90b8de6b00717ec1d46c35b0637992c15d7171399"
     },
     {
       "id": "physics:spring-dynamometer",
       "name": "弹簧测力计",
       "category": "力学与计量",
-      "search": "spring dynamometer 测力计 弹簧秤 牛顿 force spring dynamometer",
+      "search": "spring dynamometer 弹簧测力计 测力计 弹簧秤",
       "svg": "spring-dynamometer.svg",
       "width": 110,
       "height": 285,
-      "sha256": "91d6984edfe2e3b345f80c93b41bc3c65ee4c3e20febbf679f4e0272677bb601",
       "ports": [
         {
           "id": "hook",
@@ -2510,7 +2510,7 @@
         },
         {
           "id": "hanger",
-          "x": 46,
+          "x": 51,
           "y": 6,
           "dx": 0,
           "dy": -1,
@@ -2524,23 +2524,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "上吊环固定于外壳；弹簧下端连续连接指针拉杆和挂钩，右侧标尺由上向下递增。",
-      "origin": "authored"
+      "notes": "5 N 弹簧测力计：顶部悬挂圆环、内部螺旋弹簧、牛顿刻度尺、红色指针及底端挂钩。",
+      "origin": "authored",
+      "sha256": "31b77d44aa3da3d6d3a22e010002bbf3fd01b33e857364e19b552c96b4675086"
     },
     {
       "id": "physics:force-sensor",
       "name": "力传感器",
       "category": "力学与计量",
-      "search": "force sensor 力 传感器 force sensor",
+      "search": "force sensor 力 传感器 force sensor 拉压力传感器",
       "svg": "force-sensor.svg",
       "width": 270,
       "height": 125,
-      "sha256": "2f79f41c453279d69f9d9c6fd7fc88950f342f0fce89b5e1e514e9d93b6ef98b",
       "ports": [
         {
           "id": "hook",
-          "x": 28,
-          "y": 80,
+          "x": 24,
+          "y": 70,
           "dx": -1,
           "dy": 0,
           "type": "hook",
@@ -2548,8 +2548,8 @@
         },
         {
           "id": "signal",
-          "x": 248,
-          "y": 56,
+          "x": 254,
+          "y": 62,
           "dx": 1,
           "dy": 0,
           "type": "wire",
@@ -2557,8 +2557,8 @@
         },
         {
           "id": "grip-site",
-          "x": 116,
-          "y": 58,
+          "x": 134,
+          "y": 62,
           "dx": 1,
           "dy": 0,
           "type": "grip-site",
@@ -2571,8 +2571,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "测力挂钩与信号连接器分开；不虚构实时测力。",
-      "origin": "authored"
+      "notes": "数字力学传感器：测力拉压挂钩、去皮归零键、实时示数屏及信号输出插头。",
+      "origin": "authored",
+      "sha256": "eea1df93ed49740b6abf936c8fe20d54336c5d29a8e1a2c99b40ce409f675ec0"
     },
     {
       "id": "physics:air-track",
@@ -2582,12 +2583,11 @@
       "svg": "air-track.svg",
       "width": 320,
       "height": 160,
-      "sha256": "4b2ed5a3645cb716a2facbe91d43b9ed7d1a08e8b3f1f74dee73cc92a85c7eed",
       "ports": [
         {
           "id": "base",
-          "x": 152,
-          "y": 123,
+          "x": 160,
+          "y": 138,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2595,26 +2595,26 @@
         },
         {
           "id": "air-in",
-          "x": 311,
-          "y": 88,
-          "dx": 0,
-          "dy": 1,
+          "x": 314,
+          "y": 66,
+          "dx": 1,
+          "dy": 0,
           "type": "air-in",
           "diameter": 0
         },
         {
           "id": "track",
-          "x": 156,
-          "y": 47,
+          "x": 160,
+          "y": 48,
           "dx": 0,
           "dy": -1,
           "type": "air-rail",
           "diameter": 0,
           "segment": [
-            51,
-            47,
-            265,
-            47
+            40,
+            48,
+            280,
+            48
           ]
         }
       ],
@@ -2624,8 +2624,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "三棱/箱形导轨、顶部气孔、调平脚及末端进气口；默认独立导轨不带滑块。",
-      "origin": "authored"
+      "notes": "铝质三角气垫导轨：顶部喷气小孔、毫米刻度标尺、调平支座与右侧进气嘴。",
+      "origin": "authored",
+      "sha256": "c3b586c162d13e40e523c8b00d4587d8506859142311faf3c05397cdb999470e"
     },
     {
       "id": "physics:air-track-glider",
@@ -2635,12 +2636,11 @@
       "svg": "air-track-glider.svg",
       "width": 210,
       "height": 170,
-      "sha256": "9661843c89977552100473a2a8377727921e65f0679c1992c999a98951f4c3de",
       "ports": [
         {
           "id": "carriage",
-          "x": 115,
-          "y": 76,
+          "x": 105,
+          "y": 72,
           "dx": 0,
           "dy": 1,
           "type": "air-glider",
@@ -2653,8 +2653,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "倒 V 形滑块跨骑三棱导轨，下方通槽完整留空；挡光片固定在顶部，两端安装缓冲杆。",
-      "origin": "authored"
+      "notes": "倒 V 形气垫导轨滑块：底部通槽跨骑导轨、顶部挡光片与两侧弹性碰撞缓冲杆。",
+      "origin": "authored",
+      "sha256": "8304639662c0765934412c1c170043abb3407a9ec67509af1de021fa9460ed8b"
     },
     {
       "id": "physics:air-track-pump",
@@ -2664,12 +2665,11 @@
       "svg": "air-track-pump.svg",
       "width": 230,
       "height": 190,
-      "sha256": "a60aa0b0d526eae0ae206c6f8953abb919ef467941adbd0fe6e2bd3fe59f5b80",
       "ports": [
         {
           "id": "base",
           "x": 110,
-          "y": 167,
+          "y": 177,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2677,8 +2677,8 @@
         },
         {
           "id": "air-out",
-          "x": 219,
-          "y": 113,
+          "x": 218,
+          "y": 110,
           "dx": 1,
           "dy": 0,
           "type": "air-out",
@@ -2691,23 +2691,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "带进风格栅、风量旋钮、开关和提手的鼓风气源，侧面设粗软管接头。",
-      "origin": "authored"
+      "notes": "低噪气垫导轨鼓风气源：圆形进风格栅、风压无级调节旋钮、手提把与侧出风嘴。",
+      "origin": "authored",
+      "sha256": "5d48238a0670ddded34c8c81957c2eb98a2884f26a9d96d094da02940420e707"
     },
     {
       "id": "physics:photogate-timer",
       "name": "光电门计时器",
       "category": "力学与计量",
-      "search": "photogate timer 光电门 计时 计数 timer photogate",
+      "search": "photogate timer 光电门 计时 计数 timer photogate 数字毫秒计",
       "svg": "photogate-timer.svg",
       "width": 280,
       "height": 190,
-      "sha256": "30a54a05e9c371da1861247b5deebed834f14dfebd022ff4455c6069f262d42e",
       "ports": [
         {
           "id": "gate-a",
-          "x": 135,
-          "y": 140,
+          "x": 136,
+          "y": 138,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -2715,8 +2715,8 @@
         },
         {
           "id": "gate-b",
-          "x": 181,
-          "y": 140,
+          "x": 182,
+          "y": 138,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -2724,8 +2724,8 @@
         },
         {
           "id": "trigger",
-          "x": 226,
-          "y": 140,
+          "x": 228,
+          "y": 138,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -2733,8 +2733,8 @@
         },
         {
           "id": "base",
-          "x": 137,
-          "y": 163,
+          "x": 140,
+          "y": 175,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2747,8 +2747,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "独立计时主机，光电门传感器使用现有器材或其他部件。",
-      "origin": "authored"
+      "notes": "多功能数字毫秒计时器：双通道光电门输入及外触发端口。",
+      "origin": "authored",
+      "sha256": "361ea14aa7d4b71728a113c8ae46067cf41342ee0b5a6f53de2321b14ffc0b24"
     },
     {
       "id": "physics:single-pendulum",
@@ -2758,11 +2759,10 @@
       "svg": "single-pendulum.svg",
       "width": 220,
       "height": 300,
-      "sha256": "2ec73f861ddb5807e0f75e9202f02b412aeb33dfbd3e4e4e479f0b11b09bad41",
       "ports": [
         {
           "id": "base",
-          "x": 112,
+          "x": 110,
           "y": 288,
           "dx": 0,
           "dy": 1,
@@ -2776,8 +2776,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "固定悬点、细线与摆球，支架单独承重，不将摆线误画为连杆。",
-      "origin": "authored"
+      "notes": "单摆周期实验架：稳定立柱悬臂、固定悬点、摆线及黄铜摆球与摆动轨迹虚线。",
+      "origin": "authored",
+      "sha256": "fb2b8e1e5d80fc585c597c06c79d6450d0140fd36a569609b7a76ef1a5fc9f8a"
     },
     {
       "id": "physics:lever-apparatus",
@@ -2787,12 +2788,11 @@
       "svg": "lever-apparatus.svg",
       "width": 300,
       "height": 230,
-      "sha256": "144abb9174190bca5f7ba1c80e3a585548291bcce1003a8a0604426529e0da5e",
       "ports": [
         {
           "id": "base",
-          "x": 155,
-          "y": 212,
+          "x": 150,
+          "y": 214,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2805,8 +2805,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "中央支点、刻度杆、悬挂配重；配重不与杆融成一体。",
-      "origin": "authored"
+      "notes": "等分刻度杠杆力矩平衡架：中央刀口支点、对称刻度横梁与可挂钩码。",
+      "origin": "authored",
+      "sha256": "2a3dd90024627c42fa33a7b84e70016fe2b4dd3ad279c90034ec26fd7b42e334"
     },
     {
       "id": "physics:pulley-block",
@@ -2816,7 +2817,6 @@
       "svg": "pulley-block.svg",
       "width": 210,
       "height": 310,
-      "sha256": "ce1b0c35ade4773990fb6924a75ae179bb51774cda182132d6018d1d9a636b4a",
       "ports": [
         {
           "id": "hanger",
@@ -2843,8 +2843,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "两只上固定轮、一只下动轮；一根绳从动轮吊架固定端连续绕过三轮，自由端下垂。",
-      "origin": "authored"
+      "notes": "二定一动省力滑轮组：金属护板槽轮、连续绕绳路径及上下吊钩。",
+      "origin": "authored",
+      "sha256": "c689e84c24a20825f61ae67f905acb252f961db41b0c080c6ecc3e3010b90553"
     },
     {
       "id": "physics:rotational-inertia-apparatus",
@@ -2854,12 +2855,11 @@
       "svg": "rotational-inertia-apparatus.svg",
       "width": 280,
       "height": 245,
-      "sha256": "5dead5a91455a0336746482e8d06671ee45a011d015df23a1a2487167969d4c2",
       "ports": [
         {
           "id": "base",
-          "x": 139,
-          "y": 219,
+          "x": 140,
+          "y": 228,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2872,8 +2872,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "水平转盘、中央轴、绕线轴、固定转向滑轮及悬重；悬重与底座之间留有下落空间。",
-      "origin": "authored"
+      "notes": "定轴转动惯量实验仪：水平铝质转盘、阶梯绕线塔轮、定滑轮及悬重砝码。",
+      "origin": "authored",
+      "sha256": "564873d2a3ac1d124415da201394b57727bd79b29aaadf042563ef3d1156cd12"
     },
     {
       "id": "physics:free-fall-apparatus",
@@ -2883,12 +2884,11 @@
       "svg": "free-fall-apparatus.svg",
       "width": 190,
       "height": 300,
-      "sha256": "ae67ae602c7f06f6dbd7e011c34e1a6fb7d45be22151457c7ac59ee389966b38",
       "ports": [
         {
           "id": "base",
-          "x": 98,
-          "y": 285,
+          "x": 95,
+          "y": 288,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2901,8 +2901,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "电磁释放头、钢球、两只光电门与接球垫；虚线是运动路径不是绳。",
-      "origin": "authored"
+      "notes": "自由落体实验架：电磁释放线圈、落体钢球、标尺立柱、上下双光电门与缓冲垫。",
+      "origin": "authored",
+      "sha256": "cfa71aacc5a1673b3618133c76f4aa8ccb06085389adb2c94c97f9d4c331a1c6"
     },
     {
       "id": "physics:optical-bench",
@@ -2912,12 +2913,11 @@
       "svg": "optical-bench.svg",
       "width": 320,
       "height": 170,
-      "sha256": "388f42105f4a45847caf6ebf7e6d33225daa1e55ab6daea17005006eda06f792",
       "ports": [
         {
           "id": "base",
-          "x": 163,
-          "y": 148,
+          "x": 160,
+          "y": 149,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2925,7 +2925,7 @@
         },
         {
           "id": "track",
-          "x": 158,
+          "x": 160,
           "y": 121,
           "dx": 0,
           "dy": -1,
@@ -2945,23 +2945,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "光学导轨、滑座、两片透镜与屏，常见教学组合；不是电子电路。",
-      "origin": "authored"
+      "notes": "精密刻度光学导轨光具座：带毫米分划尺、调平底脚与两端限位块。",
+      "origin": "authored",
+      "sha256": "29b67f705a839748002c0288b43698579dc5b5767e0d31bb95e8efb5812ba797"
     },
     {
       "id": "physics:laser-source",
       "name": "实验激光光源",
       "category": "光学实验",
-      "search": "laser source 激光 光源 laser",
+      "search": "laser source 激光 光源 laser He-Ne 半导体激光器",
       "svg": "laser-source.svg",
       "width": 275,
       "height": 170,
-      "sha256": "3b393213b328ef0fa0540fb30d92d5b7a11ce922b6d274ead300523169a1341a",
       "ports": [
         {
           "id": "base",
           "x": 152,
-          "y": 153,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -2970,7 +2970,7 @@
         {
           "id": "carriage",
           "x": 152,
-          "y": 153,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "optical-carriage",
@@ -2978,8 +2978,8 @@
         },
         {
           "id": "beam-out",
-          "x": 73,
-          "y": 60,
+          "x": 65,
+          "y": 64,
           "dx": -1,
           "dy": 0,
           "type": "optical-out",
@@ -2992,23 +2992,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "圆柱激光头由两道抱箍固定，支杆可调高；红色光束从前端出光孔沿轴线引出。",
-      "origin": "authored"
+      "notes": "氦氖/半导体教学激光光源：双环抱箍支架、升降微调支杆及准直出光孔。",
+      "origin": "authored",
+      "sha256": "18f5775aabe3e0bb8c908605c381e1e2ab200774770c58a8265896b52531f0e6"
     },
     {
       "id": "physics:optical-screen",
       "name": "光学接收屏",
       "category": "光学实验",
-      "search": "optical screen 光屏 接收屏 screen",
+      "search": "optical screen 光屏 接收屏 screen 成像屏",
       "svg": "optical-screen.svg",
       "width": 190,
       "height": 230,
-      "sha256": "3347481000ab5c23604f1fa581861b5653e24a44a5324276ad6f8bfaf548a85b",
       "ports": [
         {
           "id": "base",
           "x": 95,
-          "y": 211,
+          "y": 212,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3017,7 +3017,7 @@
         {
           "id": "carriage",
           "x": 95,
-          "y": 211,
+          "y": 212,
           "dx": 0,
           "dy": 1,
           "type": "optical-carriage",
@@ -3039,23 +3039,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "白色屏面与中心十字线，屏面用于自由排版。",
-      "origin": "authored"
+      "notes": "光学漫反射接收屏：洁白带中心准直十字靶面、升降支杆与导轨滑座。",
+      "origin": "authored",
+      "sha256": "0efa712390c467f5ea0e584e6104ecc424ec1db96502ea7a2d5f07ea6f138b1b"
     },
     {
       "id": "physics:double-slit",
       "name": "双缝实验片",
       "category": "光学实验",
-      "search": "double slit 双缝 干涉 double slit",
+      "search": "double slit 双缝 干涉 double slit 杨氏双缝",
       "svg": "double-slit.svg",
       "width": 160,
       "height": 190,
-      "sha256": "baa4a56fc059768b33c5a9b4c62ef40de153dbe17fde0e2e40f579a8089aaf97",
       "ports": [
         {
           "id": "carriage",
           "x": 80,
-          "y": 170,
+          "y": 172,
           "dx": 0,
           "dy": 1,
           "type": "optical-carriage",
@@ -3063,8 +3063,8 @@
         },
         {
           "id": "beam-in",
-          "x": 76,
-          "y": 86,
+          "x": 75,
+          "y": 79,
           "dx": -1,
           "dy": 0,
           "type": "optical-in",
@@ -3073,7 +3073,7 @@
         {
           "id": "beam-out",
           "x": 85,
-          "y": 86,
+          "y": 79,
           "dx": 1,
           "dy": 0,
           "type": "optical-out",
@@ -3086,23 +3086,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "仅两个竖直狭缝，不使用多缝条纹冒充双缝。",
-      "origin": "authored"
+      "notes": "杨氏双缝干涉实验片：不透明遮光框内置两条精密竖直狭缝。",
+      "origin": "authored",
+      "sha256": "e554c300db45a2e905409ff53ce33dcbf219541d4e86a41e7245841d1667181c"
     },
     {
       "id": "physics:diffraction-grating",
       "name": "衍射光栅片",
       "category": "光学实验",
-      "search": "diffraction grating 光栅 衍射 diffraction grating",
+      "search": "diffraction grating 光栅 衍射 diffraction grating 透射光栅",
       "svg": "diffraction-grating.svg",
       "width": 160,
       "height": 190,
-      "sha256": "ccc9780a48f4987ce82319731f6f3bb2fec6e071e2f859d47cc7623ca5241988",
       "ports": [
         {
           "id": "carriage",
           "x": 80,
-          "y": 170,
+          "y": 172,
           "dx": 0,
           "dy": 1,
           "type": "optical-carriage",
@@ -3110,8 +3110,8 @@
         },
         {
           "id": "beam-in",
-          "x": 78,
-          "y": 86,
+          "x": 76,
+          "y": 79,
           "dx": -1,
           "dy": 0,
           "type": "optical-in",
@@ -3119,8 +3119,8 @@
         },
         {
           "id": "beam-out",
-          "x": 82,
-          "y": 86,
+          "x": 84,
+          "y": 79,
           "dx": 1,
           "dy": 0,
           "type": "optical-out",
@@ -3133,23 +3133,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "平行密栅线示意，不把数条实验条纹当成光栅材料。",
-      "origin": "authored"
+      "notes": "透射衍射光栅片：精密刻线光学玻璃窗口与光学滑座支架。",
+      "origin": "authored",
+      "sha256": "84224071b453c0dea11cf6797873e3b5524d9d44cd715c121d0612e0d3a0ba75"
     },
     {
       "id": "physics:spectrometer",
       "name": "分光计",
       "category": "光学实验",
-      "search": "spectrometer 分光计 三棱镜 测角 spectrometer",
+      "search": "spectrometer 分光计 三棱镜 测角 spectrometer 光学分光计",
       "svg": "spectrometer.svg",
       "width": 300,
       "height": 260,
-      "sha256": "8fa07799d58c8908b16c0ec40c69e07d56db64f14db3a29b6e9e0c82c15a0e04",
       "ports": [
         {
           "id": "base",
-          "x": 149,
-          "y": 250,
+          "x": 150,
+          "y": 246,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3157,8 +3157,8 @@
         },
         {
           "id": "beam-in",
-          "x": 18,
-          "y": 110,
+          "x": 14,
+          "y": 111,
           "dx": -1,
           "dy": 0,
           "type": "optical-in",
@@ -3171,8 +3171,9 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "平行光管与转动望远镜对准棱镜中心，各有承重支架；棱镜台、刻度盘、游标和三只调平脚清晰分开。",
-      "origin": "authored"
+      "notes": "光学测角分光计：三脚调平底座、刻度圆盘与游标、中央载物台三棱镜、平行光管与可转望远镜。",
+      "origin": "authored",
+      "sha256": "b17aee54ff738fc7034038f408ba164d066e98602e4b9c2f16bee118eb034fa5"
     },
     {
       "id": "physics:michelson-interferometer",
@@ -3182,12 +3183,11 @@
       "svg": "michelson-interferometer.svg",
       "width": 300,
       "height": 245,
-      "sha256": "6122923f572ed62210d5e682429d863b62af7d4be0fac59aeed4da377cf59826",
       "ports": [
         {
           "id": "base",
           "x": 150,
-          "y": 213,
+          "y": 223,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3195,8 +3195,8 @@
         },
         {
           "id": "beam-in",
-          "x": 31,
-          "y": 123,
+          "x": 24,
+          "y": 120,
           "dx": -1,
           "dy": 0,
           "type": "optical-in",
@@ -3204,8 +3204,8 @@
         },
         {
           "id": "beam-out",
-          "x": 149,
-          "y": 200,
+          "x": 150,
+          "y": 198,
           "dx": 0,
           "dy": 1,
           "type": "optical-out",
@@ -3218,23 +3218,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "俯视光路：左侧入射、上/右正交反射镜、45 度分束片及下方观察出口；红线为光路示意。",
-      "origin": "authored"
+      "notes": "迈克尔逊双光束干涉仪俯视光路：45°分束镜、固定反射镜 M2、微调移动镜 M1 与观察窗。",
+      "origin": "authored",
+      "sha256": "30cdea297ff8815f2e628f36d1d50898bdc56ae8658bb110c1b115d98d13391c"
     },
     {
       "id": "physics:tuning-fork",
       "name": "音叉与共鸣箱",
       "category": "波动与声学实验",
-      "search": "tuning fork 音叉 共鸣 声 tuning fork",
+      "search": "tuning fork 音叉 共鸣 声 tuning fork 440Hz",
       "svg": "tuning-fork.svg",
       "width": 200,
       "height": 240,
-      "sha256": "3b967929bb87b70b63e7fb364e07e69515c341016482cc735170a2cb1eb15968",
       "ports": [
         {
           "id": "base",
-          "x": 101,
-          "y": 208,
+          "x": 100,
+          "y": 212,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3247,23 +3247,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "U 形金属叉、叉柄和独立木共鸣箱。",
-      "origin": "authored"
+      "notes": "标准 U 形钢制音叉与开口声学共鸣箱，带频率铭牌与驻波声腔。",
+      "origin": "authored",
+      "sha256": "0d19664bb809da9f1f73e452b8ecd246fb356dd81298e3bcda68cc1c4f2997da"
     },
     {
       "id": "physics:resonance-tube",
       "name": "共振空气柱实验装置",
       "category": "波动与声学实验",
-      "search": "resonance tube 共振 空气柱 声速 resonance tube",
+      "search": "resonance tube 共振 空气柱 声速 resonance tube 驻波管",
       "svg": "resonance-tube.svg",
       "width": 210,
       "height": 300,
-      "sha256": "e4a28d03534c9350a880f930716a3d7df899e81f0187269d0be777a68c0764c4",
       "ports": [
         {
           "id": "base",
-          "x": 110,
-          "y": 292,
+          "x": 112,
+          "y": 288,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3276,23 +3276,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "开口共振管与储水杯由底部接嘴、软管连通，静止水面等高；夹具固定玻璃管，储水杯沿支杆升降。",
-      "origin": "authored"
+      "notes": "声速测量共振空气柱：带刻度开口玻璃管、连通器软管及沿立柱升降的等液面储水杯。",
+      "origin": "authored",
+      "sha256": "39837b64548181f47f18b3be417e05cb258838dbcae6c34c255f6baad7b70143"
     },
     {
       "id": "physics:wave-driver",
       "name": "机械波振动源",
       "category": "波动与声学实验",
-      "search": "wave driver 振动源 机械波 弦 驻波 wave driver",
+      "search": "wave driver 振动源 机械波 弦 驻波 wave driver 电磁振动台",
       "svg": "wave-driver.svg",
       "width": 250,
       "height": 205,
-      "sha256": "529aff405a4bc5a023f5dceec1990e15f39d493cf1f3d1e0bf23580210f87a2a",
       "ports": [
         {
           "id": "input-a",
           "x": 76,
-          "y": 157,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -3300,8 +3300,8 @@
         },
         {
           "id": "input-b",
-          "x": 109,
-          "y": 157,
+          "x": 114,
+          "y": 156,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -3309,8 +3309,8 @@
         },
         {
           "id": "base",
-          "x": 124,
-          "y": 187,
+          "x": 125,
+          "y": 189,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3318,8 +3318,8 @@
         },
         {
           "id": "hook",
-          "x": 131,
-          "y": 35,
+          "x": 125,
+          "y": 22,
           "dx": 0,
           "dy": -1,
           "type": "hook",
@@ -3332,23 +3332,23 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "振动杆与驱动膜片同轴，上端带连接环；正面为交流信号输入插孔和开关。",
-      "origin": "authored"
+      "notes": "电磁机械波振动源：同轴顶杆挂环、锁定开关与交流信号输入端子。",
+      "origin": "authored",
+      "sha256": "8f6b0e82f8b9697114d263c4c90ac24fa1bbe4211983f607d86512a52efbb04b"
     },
     {
       "id": "physics:ripple-tank",
       "name": "水波演示槽",
       "category": "波动与声学实验",
-      "search": "ripple tank 水波 波纹 ripple tank",
+      "search": "ripple tank 水波 波纹 ripple tank 水波干涉衍射",
       "svg": "ripple-tank.svg",
       "width": 300,
       "height": 245,
-      "sha256": "bda22ee74469fc268a243cd0cbd9fbd4e855fd9218db66a2aabd7b37180870be",
       "ports": [
         {
           "id": "base",
           "x": 150,
-          "y": 210,
+          "y": 216,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3361,8 +3361,1700 @@
       "license": "WTFPL-2.0",
       "approved": true,
       "merged": true,
-      "notes": "浅水槽、点波源、支腿及下方投影屏，波纹为教学示意。",
-      "origin": "authored"
+      "notes": "正交剖视水波干涉演示槽：上方频闪振子臂、浅水透明玻璃槽及底部波纹投影屏。",
+      "origin": "authored",
+      "sha256": "4490f5864f5b43ac2414493b1375c94214f04ca20cd9748374d18e790bc2c1db"
+    },
+    {
+      "id": "physics:digital-multimeter",
+      "name": "数字万用表",
+      "category": "基础测量仪器",
+      "search": "digital multimeter DMM 万用表 数字万用表 电压 电流 电阻 multimeter",
+      "svg": "digital-multimeter.svg",
+      "width": 156,
+      "height": 236,
+      "ports": [
+        {
+          "id": "10a",
+          "x": 42,
+          "y": 194,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "com",
+          "x": 78,
+          "y": 194,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "v-ohm-ma",
+          "x": 114,
+          "y": 194,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 78,
+          "y": 228,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "真有效值数字万用表：高对比度 OLED 读数屏、多档位旋转波段开关与 10A/COM/VΩmA 安全插孔。",
+      "origin": "authored",
+      "sha256": "52ecef581ae6301e187d9a709b41c073b6dbb156133c7cd888e67c4eba110c69"
+    },
+    {
+      "id": "physics:logic-analyzer",
+      "name": "多通道逻辑分析仪",
+      "category": "电学测量",
+      "search": "logic analyzer 逻辑分析仪 数字时序 SPI I2C UART 通道探头",
+      "svg": "logic-analyzer.svg",
+      "width": 264,
+      "height": 170,
+      "ports": [
+        {
+          "id": "d0",
+          "x": 42,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d1",
+          "x": 64,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d2",
+          "x": 86,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d3",
+          "x": 108,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d4",
+          "x": 130,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d5",
+          "x": 152,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d6",
+          "x": 174,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d7",
+          "x": 196,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "gnd",
+          "x": 218,
+          "y": 132,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 132,
+          "y": 161,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "8通道台式数字逻辑分析仪：实时协议时序波形屏与 D0-D7/GND 逻辑探针排座。",
+      "origin": "authored",
+      "sha256": "37d5fda41fd76af8d8e1fb7311f1dd3d88d251f094c35c4145765612df9a8211"
+    },
+    {
+      "id": "physics:spectrum-analyzer",
+      "name": "频谱分析仪",
+      "category": "电学测量",
+      "search": "spectrum analyzer RF FFT 频谱分析仪 射频 频域",
+      "svg": "spectrum-analyzer.svg",
+      "width": 300,
+      "height": 188,
+      "ports": [
+        {
+          "id": "rf-in",
+          "x": 212,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "trig-in",
+          "x": 256,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 150,
+          "y": 181,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "射频频谱分析仪：高精度频域峰谱与谐波显示屏、软按键菜单及 RF IN / TRIG 同轴输入接口。",
+      "origin": "authored",
+      "sha256": "4baa7df11cb6654778d840b21db45301c42403c3786c01a805018ab577f64cec"
+    },
+    {
+      "id": "physics:dc-electronic-load",
+      "name": "可编程直流电子负载",
+      "category": "信号与电源",
+      "search": "dc electronic load 直流电子负载 恒流 恒压 恒阻 CC CV load",
+      "svg": "dc-electronic-load.svg",
+      "width": 256,
+      "height": 168,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 184,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 218,
+          "y": 126,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 128,
+          "y": 159,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "可编程直流电子负载：CC/CV/CR 多模式工作、数字电流/功率屏及大电流输入接线柱。",
+      "origin": "authored",
+      "sha256": "d5ea302fb5234f8dfea13ec0917baa0a3b8136bca9cb00d73ba79622d104d437"
+    },
+    {
+      "id": "physics:megohmmeter",
+      "name": "绝缘电阻测试仪",
+      "category": "电学测量",
+      "search": "megohmmeter insulation tester 兆欧表 绝缘电阻 高压测试",
+      "svg": "megohmmeter.svg",
+      "width": 188,
+      "height": 212,
+      "ports": [
+        {
+          "id": "line",
+          "x": 50,
+          "y": 26,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "guard",
+          "x": 94,
+          "y": 26,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "earth",
+          "x": 138,
+          "y": 26,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 94,
+          "y": 204,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "数字高压绝缘电阻测试仪（兆欧表）：顶部 L/G/E 高压端子、电压档位盘与高压一键测试钮。",
+      "origin": "authored",
+      "sha256": "7e1a6c3aeac5fcf60f322e281e7b5b33196f94561efcc0eedf6fc339797434f2"
+    },
+    {
+      "id": "physics:variac-autotransformer",
+      "name": "接触式自耦调压器",
+      "category": "电工设备",
+      "search": "variac autotransformer 自耦调压器 调压变压器 AC 0-250V",
+      "svg": "variac-autotransformer.svg",
+      "width": 196,
+      "height": 210,
+      "ports": [
+        {
+          "id": "in-a",
+          "x": 44,
+          "y": 178,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "in-b",
+          "x": 72,
+          "y": 178,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "out-a",
+          "x": 124,
+          "y": 178,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "out-b",
+          "x": 152,
+          "y": 178,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 98,
+          "y": 202,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "接触式单相自耦调压器：散热冲孔环绕外壳、顶部调压手轮与底座 AC 输入/可调输出接线柱。",
+      "origin": "authored",
+      "sha256": "0495fdc4ca2d8c4b01d18ce8dcd51ff293982567c3a67bdbfe08f0898ed36ca2"
+    },
+    {
+      "id": "physics:analog-ammeter",
+      "name": "指针式电流表",
+      "category": "基础测量仪器",
+      "search": "analog ammeter 电流表 指针电流表 直流电流表 0.6A 3A",
+      "svg": "analog-ammeter.svg",
+      "width": 158,
+      "height": 168,
+      "ports": [
+        {
+          "id": "negative",
+          "x": 42,
+          "y": 134,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "range-06a",
+          "x": 79,
+          "y": 134,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive",
+          "x": 116,
+          "y": 134,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 79,
+          "y": 161,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "双量程磁电式指针直流电流表：防视差反光弧度盘、调零螺钉及 - / 0.6A / 3A 接线柱。",
+      "origin": "authored",
+      "sha256": "a6d839e1ed3beed4fc18f801445c202fe361bc69904d1cac97b14696ce32f34e"
+    },
+    {
+      "id": "physics:analog-voltmeter",
+      "name": "指针式电压表",
+      "category": "基础测量仪器",
+      "search": "analog voltmeter 电压表 指针电压表 直流电压表 3V 15V",
+      "svg": "analog-voltmeter.svg",
+      "width": 158,
+      "height": 168,
+      "ports": [
+        {
+          "id": "negative",
+          "x": 42,
+          "y": 134,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "range-3v",
+          "x": 79,
+          "y": 134,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive",
+          "x": 116,
+          "y": 134,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 79,
+          "y": 161,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "双量程磁电式指针直流电压表：镜像消除视差刻度盘、调零钮及 - / 3V / 15V 接线柱。",
+      "origin": "authored",
+      "sha256": "42ecbf07a6b1ae2cc7ccb248762bd2a4ba0bb1e3ccce3812b08ffe9668924e7e"
+    },
+    {
+      "id": "physics:decade-capacitance-box",
+      "name": "十进电容箱",
+      "category": "电路元件",
+      "search": "decade capacitance box 十进电容箱 标准电容 可变电容 box",
+      "svg": "decade-capacitance-box.svg",
+      "width": 244,
+      "height": 148,
+      "ports": [
+        {
+          "id": "a",
+          "x": 36,
+          "y": 114,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "gnd",
+          "x": 122,
+          "y": 114,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 208,
+          "y": 114,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 122,
+          "y": 141,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "四盘十进屏蔽标准电容箱：步进 1 nF 至 11.11 µF 精密电容盘及 A/GND/B 接线柱。",
+      "origin": "authored",
+      "sha256": "515d2352b8c38046334e924adfc15c82daa6d9bc269110093cf535422f1ae0a8"
+    },
+    {
+      "id": "physics:inductor-coil",
+      "name": "电感线圈模块",
+      "category": "电路元件",
+      "search": "inductor coil 电感器 螺线管 互感线圈 铁芯",
+      "svg": "inductor-coil.svg",
+      "width": 176,
+      "height": 148,
+      "ports": [
+        {
+          "id": "a",
+          "x": 36,
+          "y": 118,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b",
+          "x": 140,
+          "y": 118,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 88,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "可插拔铁芯教学电感线圈模块：密绕漆包铜线包、亚克力骨架、叠片铁芯拉杆及两端接线柱。",
+      "origin": "authored",
+      "sha256": "331752fd4f66c86629510c1b3a3b3fab04c5fe971112af8e119769e6fed5c9aa"
+    },
+    {
+      "id": "physics:potentiometer",
+      "name": "旋转电位器模块",
+      "category": "电路元件",
+      "search": "potentiometer 旋转电位器 分压器 可变电阻 knob",
+      "svg": "potentiometer.svg",
+      "width": 152,
+      "height": 148,
+      "ports": [
+        {
+          "id": "terminal-1",
+          "x": 36,
+          "y": 114,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "wiper",
+          "x": 76,
+          "y": 114,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "terminal-3",
+          "x": 116,
+          "y": 114,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 76,
+          "y": 141,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "实验室线性旋转电位器模块：精密刻度旋钮、滑动抽头符号丝印与 1 / W / 3 接线柱。",
+      "origin": "authored",
+      "sha256": "640ccf3523d832d7f4ae8db52aa72b773cb688b7a4fb5e46decca0d90b563bd0"
+    },
+    {
+      "id": "physics:npn-transistor",
+      "name": "NPN 三极管模块",
+      "category": "电路元件",
+      "search": "npn transistor BJT 三极管 晶体管 放大器 semiconductor",
+      "svg": "npn-transistor.svg",
+      "width": 150,
+      "height": 138,
+      "ports": [
+        {
+          "id": "b",
+          "x": 30,
+          "y": 70,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "c",
+          "x": 118,
+          "y": 46,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "e",
+          "x": 118,
+          "y": 94,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 75,
+          "y": 130,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "NPN 双极型晶体管教学模块：标准原理图丝印与 B/C/E 三端接线柱。",
+      "origin": "authored",
+      "sha256": "6055c85f3627169613cbcdc9d22edc81294fc9d3e887d76a5bf5ae71bdeef4dd"
+    },
+    {
+      "id": "physics:mosfet-transistor",
+      "name": "MOSFET 场效应管模块",
+      "category": "电路元件",
+      "search": "mosfet N-channel field effect transistor 场效应管 开关管",
+      "svg": "mosfet-transistor.svg",
+      "width": 150,
+      "height": 138,
+      "ports": [
+        {
+          "id": "g",
+          "x": 30,
+          "y": 70,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "d",
+          "x": 118,
+          "y": 46,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "s",
+          "x": 118,
+          "y": 94,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 75,
+          "y": 130,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "N沟道增强型 MOSFET 场效应管模块：隔离栅极符号丝印与 G/D/S 接线柱。",
+      "origin": "authored",
+      "sha256": "77f445e52ad08d0388bb2f673574a6ceb7491e0a9773c355d100aba5794d3393"
+    },
+    {
+      "id": "physics:op-amp-module",
+      "name": "集成运算放大器模块",
+      "category": "电路元件",
+      "search": "op amp operational amplifier LM741 运算放大器 运放 模拟电路",
+      "svg": "op-amp-module.svg",
+      "width": 184,
+      "height": 152,
+      "ports": [
+        {
+          "id": "in-pos",
+          "x": 30,
+          "y": 62,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "in-neg",
+          "x": 30,
+          "y": 88,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "v-pos",
+          "x": 92,
+          "y": 26,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "v-neg",
+          "x": 92,
+          "y": 118,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "out",
+          "x": 154,
+          "y": 75,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 92,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "集成运算放大器教学模块：标准运放原理框图、双电源 V+/V- 端口及反相/同相/输出接线柱。",
+      "origin": "authored",
+      "sha256": "90e893801a5fc8663c279a5d6d0478734b2e11d97994395994cf9e7d2d2c8cb7"
+    },
+    {
+      "id": "physics:spdt-switch",
+      "name": "单刀双掷开关",
+      "category": "电工设备",
+      "search": "spdt switch 单刀双掷 刀开关 换向 switch",
+      "svg": "spdt-switch.svg",
+      "width": 166,
+      "height": 124,
+      "ports": [
+        {
+          "id": "com",
+          "x": 30,
+          "y": 64,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "l1",
+          "x": 136,
+          "y": 42,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "l2",
+          "x": 136,
+          "y": 86,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 83,
+          "y": 114,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "单刀双掷实验开关：瓷质绝缘底座、黄铜动触刀片与 COM / L1 / L2 接线柱。",
+      "origin": "authored",
+      "sha256": "c21a2b0c7ce901a117bf9c67b7101a2dfb67661d24b464a9ead18ce193cc6a75"
+    },
+    {
+      "id": "physics:dpdt-switch",
+      "name": "双刀双掷开关",
+      "category": "电工设备",
+      "search": "dpdt switch 双刀双掷 倒顺开关 换向 switch",
+      "svg": "dpdt-switch.svg",
+      "width": 184,
+      "height": 152,
+      "ports": [
+        {
+          "id": "a1",
+          "x": 34,
+          "y": 46,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "com1",
+          "x": 92,
+          "y": 46,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b1",
+          "x": 150,
+          "y": 46,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "a2",
+          "x": 34,
+          "y": 104,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "com2",
+          "x": 92,
+          "y": 104,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "b2",
+          "x": 150,
+          "y": 104,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 92,
+          "y": 142,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "双刀双掷联动倒顺开关：绝缘连杆双铜刀与六组接线端（A1/C1/B1, A2/C2/B2）。",
+      "origin": "authored",
+      "sha256": "c608c6eecbc908262967ad03deff36ae321f3c66c6f1c3fbf2f076761de2393f"
+    },
+    {
+      "id": "physics:bridge-rectifier",
+      "name": "桥式整流模块",
+      "category": "电路元件",
+      "search": "bridge rectifier 桥式整流 二极管整流 全波整流 AC-DC",
+      "svg": "bridge-rectifier.svg",
+      "width": 170,
+      "height": 148,
+      "ports": [
+        {
+          "id": "ac1",
+          "x": 30,
+          "y": 50,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "ac2",
+          "x": 30,
+          "y": 100,
+          "dx": -1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "positive",
+          "x": 140,
+          "y": 50,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 140,
+          "y": 100,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 85,
+          "y": 140,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "全波桥式整流教学模块：四二极管菱形整流桥丝印及 AC1/AC2 输入、+/- 直流输出端。",
+      "origin": "authored",
+      "sha256": "a7dee8a0441f57b2cc0783cd14b4f0e97fc89a44dfd85273c63f172dca5b73c4"
+    },
+    {
+      "id": "physics:ground-terminal",
+      "name": "接地端子",
+      "category": "电工设备",
+      "search": "ground terminal earth 接地端子 公共端 GND PE",
+      "svg": "ground-terminal.svg",
+      "width": 100,
+      "height": 114,
+      "ports": [
+        {
+          "id": "gnd",
+          "x": 50,
+          "y": 30,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 50,
+          "y": 105,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "实验台接地基准端子柱：绿黄双色安全绝缘环、黄铜旋紧插孔与标准 IEC 接地标识。",
+      "origin": "authored",
+      "sha256": "7008cf64cc37a0cda602aaec725ad12ae76ad89dd0469c98f1694884a80295b8"
+    },
+    {
+      "id": "physics:hall-effect-apparatus",
+      "name": "霍尔效应实验仪",
+      "category": "光电与近代物理",
+      "search": "hall effect apparatus 霍尔效应 磁感应强度 电磁铁 霍尔电压",
+      "svg": "hall-effect-apparatus.svg",
+      "width": 284,
+      "height": 192,
+      "ports": [
+        {
+          "id": "im-in",
+          "x": 142,
+          "y": 152,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "is-in",
+          "x": 176,
+          "y": 152,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "vh-pos",
+          "x": 210,
+          "y": 152,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "vh-neg",
+          "x": 244,
+          "y": 152,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 142,
+          "y": 183,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "集成一体式霍尔效应实验仪：C型励磁电磁铁、气隙砷化镓霍尔片与双电流/霍尔电压测试台。",
+      "origin": "authored",
+      "sha256": "5c639c537b489c3f5b94514c7a8ac400a78ac805dc14fb6b7f0755fa62eecbf6"
+    },
+    {
+      "id": "physics:photoelectric-effect",
+      "name": "光电效应实验仪",
+      "category": "光电与近代物理",
+      "search": "photoelectric effect Planck constant 光电效应 普朗克常量 截止电压 光电管",
+      "svg": "photoelectric-effect.svg",
+      "width": 280,
+      "height": 188,
+      "ports": [
+        {
+          "id": "beam-in",
+          "x": 16,
+          "y": 72,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        },
+        {
+          "id": "anode",
+          "x": 198,
+          "y": 144,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "cathode",
+          "x": 234,
+          "y": 144,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 140,
+          "y": 177,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "普朗克常量光电效应实验仪：遮光暗室光电管、单色滤光片窗口、微电流放大屏与遏止电压调节。",
+      "origin": "authored",
+      "sha256": "6510bc57aea498e2a2591b1f4607b9af858a34bef522b1e5d9f81d1df2862c56"
+    },
+    {
+      "id": "physics:youngs-modulus",
+      "name": "杨氏模量实验仪与光杠杆",
+      "category": "力学实验",
+      "search": "youngs modulus optical lever 杨氏模量 金属丝 伸长 望远镜 标尺",
+      "svg": "youngs-modulus.svg",
+      "width": 224,
+      "height": 270,
+      "ports": [
+        {
+          "id": "mirror-in",
+          "x": 96,
+          "y": 154,
+          "dx": 1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        },
+        {
+          "id": "mirror-out",
+          "x": 148,
+          "y": 154,
+          "dx": 1,
+          "dy": 0,
+          "type": "optical-out",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 112,
+          "y": 260,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "拉伸法金属丝杨氏模量测定仪：双立柱张拉框架、挂砝码托盘、光杠杆反光镜及直立标尺望远镜。",
+      "origin": "authored",
+      "sha256": "d2115f9cf4a43bf5a47c1ae7c2cabe526406dfda566b979be4346bb4731bd75d"
+    },
+    {
+      "id": "physics:newtons-rings",
+      "name": "牛顿环与读数显微镜",
+      "category": "光学仪器",
+      "search": "newtons rings reading microscope 牛顿环 读数显微镜 干涉 等厚干涉",
+      "svg": "newtons-rings.svg",
+      "width": 218,
+      "height": 248,
+      "ports": [
+        {
+          "id": "beam-in",
+          "x": 22,
+          "y": 174,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 109,
+          "y": 236,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "牛顿环与读数显微镜装置：0.01 mm 微调测微鼓、45° 半反分束镜及牛顿环平凸透镜组。",
+      "origin": "authored",
+      "sha256": "6857fa5f85032f20c314bddfee0c8a5326e3fe0d9f29915d76ccccd216a76913"
+    },
+    {
+      "id": "physics:polarizer-analyzer",
+      "name": "偏振片与检偏器",
+      "category": "光学仪器",
+      "search": "polarizer analyzer 偏振片 检偏器 马吕斯定律 光学滑座",
+      "svg": "polarizer-analyzer.svg",
+      "width": 148,
+      "height": 188,
+      "ports": [
+        {
+          "id": "beam-in",
+          "x": 32,
+          "y": 78,
+          "dx": -1,
+          "dy": 0,
+          "type": "optical-in",
+          "diameter": 0
+        },
+        {
+          "id": "beam-out",
+          "x": 116,
+          "y": 78,
+          "dx": 1,
+          "dy": 0,
+          "type": "optical-out",
+          "diameter": 0
+        },
+        {
+          "id": "carriage",
+          "x": 74,
+          "y": 178,
+          "dx": 0,
+          "dy": 1,
+          "type": "optical-carriage",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "360° 刻度旋转偏振片与检偏器滑座：适配光学导轨滑块与偏振轴方向刻度盘。",
+      "origin": "authored",
+      "sha256": "ce281cf502d8eddcf799628c2b5d59374618042d3d0c351e85bc1aea23b7b844"
+    },
+    {
+      "id": "physics:sodium-lamp",
+      "name": "钠光灯单色光源",
+      "category": "光学仪器",
+      "search": "sodium lamp 钠光灯 589 nm 单色光源 D线 干涉光源",
+      "svg": "sodium-lamp.svg",
+      "width": 168,
+      "height": 204,
+      "ports": [
+        {
+          "id": "beam-out",
+          "x": 142,
+          "y": 73,
+          "dx": 1,
+          "dy": 0,
+          "type": "optical-out",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 84,
+          "y": 194,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "低压钠光单色实验光源：顶部散热百叶灯箱、589.3 nm 黄光出射筒及高度可调支座。",
+      "origin": "authored",
+      "sha256": "5a29902d1077cc3afc9b29107b9512184fb2f01a130087329941404eb6a1e444"
+    },
+    {
+      "id": "physics:helmholtz-coils",
+      "name": "亥姆霍兹线圈",
+      "category": "电磁学实验",
+      "search": "helmholtz coils 亥姆霍兹线圈 均匀磁场 磁感应强度",
+      "svg": "helmholtz-coils.svg",
+      "width": 230,
+      "height": 188,
+      "ports": [
+        {
+          "id": "positive",
+          "x": 46,
+          "y": 158,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "negative",
+          "x": 80,
+          "y": 158,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "tap",
+          "x": 184,
+          "y": 158,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 115,
+          "y": 180,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "同轴亥姆霍兹匀强磁场线圈组（d = R）：双铜线包绕线盘、轴线导轨及串并联接线柱。",
+      "origin": "authored",
+      "sha256": "e7b59a15ae2b81df48cdc35f74243a3b09c38071bde466d178ca2a2a63b969ec"
+    },
+    {
+      "id": "physics:millikan-oil-drop",
+      "name": "密立根油滴仪",
+      "category": "光电与近代物理",
+      "search": "millikan oil drop 密立根油滴仪 元电荷 基本电荷 平行板电容器",
+      "svg": "millikan-oil-drop.svg",
+      "width": 260,
+      "height": 208,
+      "ports": [
+        {
+          "id": "hv-pos",
+          "x": 196,
+          "y": 166,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "hv-neg",
+          "x": 226,
+          "y": 166,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 130,
+          "y": 199,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "密立根油滴测元电荷实验仪：喷雾油滴室、平行铜极板电容器、测微显微镜及平衡高压电源台。",
+      "origin": "authored",
+      "sha256": "d6d8b651ddce0307b703d544e1cdfd82f00d665c37ae094f341fc62fddd0c4a9"
+    },
+    {
+      "id": "physics:franck-hertz",
+      "name": "夫兰克-赫兹实验仪",
+      "category": "光电与近代物理",
+      "search": "franck hertz 夫兰克赫兹 量子化能级 氩管 汞管 碰撞实验",
+      "svg": "franck-hertz.svg",
+      "width": 280,
+      "height": 188,
+      "ports": [
+        {
+          "id": "y-out",
+          "x": 238,
+          "y": 60,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "x-out",
+          "x": 238,
+          "y": 114,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 140,
+          "y": 179,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "智能夫兰克-赫兹原子能级实验仪：充氩四极管观察窗、能级峰曲线屏及 X/Y 示波输出端子。",
+      "origin": "authored",
+      "sha256": "83bea3c7cd27093d269a7fa0e1edb7caa251cfdc48bfc2aae5c26725aea7297c"
+    },
+    {
+      "id": "physics:trifilar-pendulum",
+      "name": "三线摆转动惯量架",
+      "category": "力学实验",
+      "search": "trifilar pendulum 三线摆 转动惯量 圆盘 扭转周期",
+      "svg": "trifilar-pendulum.svg",
+      "width": 198,
+      "height": 258,
+      "ports": [
+        {
+          "id": "gate-out",
+          "x": 164,
+          "y": 220,
+          "dx": 1,
+          "dy": 0,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 99,
+          "y": 246,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "三线摆刚体转动惯量测量架：上下双悬挂圆盘、三等分细钢丝悬线与底部光电门周期计数传感器。",
+      "origin": "authored",
+      "sha256": "2036c70f05ba25bf98f38179b4d8eafdd3c53098c820548b2e0c16ba72f33889"
+    },
+    {
+      "id": "physics:ticker-timer",
+      "name": "电火花打点计时器",
+      "category": "力学实验",
+      "search": "ticker timer spark timer 打点计时器 纸带 匀变速运动 50Hz",
+      "svg": "ticker-timer.svg",
+      "width": 168,
+      "height": 128,
+      "ports": [
+        {
+          "id": "input-a",
+          "x": 104,
+          "y": 92,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "input-b",
+          "x": 132,
+          "y": 92,
+          "dx": 0,
+          "dy": 1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 84,
+          "y": 119,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "50 Hz 电火花打点计时器：顶部走纸导向槽、碳纸压片夹及交流输入端（点距 0.02 s）。",
+      "origin": "authored",
+      "sha256": "f886433d499a06462c26a63dcdc8dfe9ad63f555c2301abc935377518291887e"
+    },
+    {
+      "id": "physics:calorimeter-electric",
+      "name": "电热式量热器",
+      "category": "热学与分子物理",
+      "search": "electric calorimeter 电热量热器 比热容 热功当量 焦耳定律",
+      "svg": "calorimeter-electric.svg",
+      "width": 168,
+      "height": 204,
+      "ports": [
+        {
+          "id": "heater-pos",
+          "x": 98,
+          "y": 40,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "heater-neg",
+          "x": 118,
+          "y": 40,
+          "dx": 0,
+          "dy": -1,
+          "type": "wire",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 84,
+          "y": 188,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "双层绝热电热式量热器：内嵌紫铜杯与透视水位窗、插入式温度计、搅拌器及电热螺旋电阻。",
+      "origin": "authored",
+      "sha256": "90238534a34edc53d689291b57e85b4d06f7c27a26aacc70d9ff868941c1c2f1"
+    },
+    {
+      "id": "physics:surface-tension-jolly",
+      "name": "焦利氏秤与表面张力仪",
+      "category": "热学与分子物理",
+      "search": "jolly balance surface tension 焦利氏秤 表面张力 螺旋弹簧 铂金环",
+      "svg": "surface-tension-jolly.svg",
+      "width": 204,
+      "height": 268,
+      "ports": [
+        {
+          "id": "hook",
+          "x": 122,
+          "y": 146,
+          "dx": 0,
+          "dy": 1,
+          "type": "hook",
+          "diameter": 0
+        },
+        {
+          "id": "base",
+          "x": 102,
+          "y": 260,
+          "dx": 0,
+          "dy": 1,
+          "type": "base",
+          "diameter": 0
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0,
+      "author": "Chem Studio contributors",
+      "license": "WTFPL-2.0",
+      "approved": true,
+      "merged": true,
+      "notes": "焦利氏弹簧秤表面张力测量架：带反光毫米立柱标尺、青铜测力螺旋弹簧、铂丝拉脱环与升降液槽台。",
+      "origin": "authored",
+      "sha256": "182d2f13565b32e44de42e2b4ed8f719bf2286bc2915d35ecdc0a44f4b5c8aca"
     }
   ]
 }

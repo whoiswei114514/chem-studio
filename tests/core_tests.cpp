@@ -120,6 +120,55 @@ class ChemistryTests : public QObject {
         QVERIFY(chem::saveProject(file, {{"editor", "<p>H2O</p>"}}, &error));
         QCOMPARE(chem::loadProject(file)["editor"].toString(), QString("<p>H2O</p>"));
     }
+    void periodicElementInfoAll118() {
+        QSet<int> categories;
+        const QStringList blocks{"s", "p", "d", "f"};
+        const QStringList states{QStringLiteral("固态"), QStringLiteral("液态"), QStringLiteral("气态")};
+        for (int z = 1; z <= 118; ++z) {
+            const auto info = chem::elementInfo(z);
+            QCOMPARE(info.atomicNumber, z);
+            QVERIFY2(!info.symbol.isEmpty(), qPrintable(QString("Missing symbol for Z=%1").arg(z)));
+            QCOMPARE(info.symbol, chem::elementSymbol(z));
+            QVERIFY2(!info.chineseName.isEmpty(), qPrintable(info.symbol));
+            QVERIFY2(!info.englishName.isEmpty(), qPrintable(info.symbol));
+            QVERIFY2(!info.massDisplay.isEmpty(), qPrintable(info.symbol));
+            QVERIFY2(info.atomicMass > 0, qPrintable(info.symbol));
+            QVERIFY2(!info.categoryName.isEmpty(), qPrintable(info.symbol));
+            QCOMPARE(info.categoryName, chem::elementCategoryName(info.category));
+            QVERIFY2(info.group >= 1 && info.group <= 18, qPrintable(info.symbol));
+            QVERIFY2(info.period >= 1 && info.period <= 7, qPrintable(info.symbol));
+            QVERIFY2(blocks.contains(info.block), qPrintable(info.symbol));
+            QVERIFY2(states.contains(info.stateAtStp), qPrintable(info.symbol));
+            QVERIFY2(!info.electronConfig.isEmpty(), qPrintable(info.symbol));
+            QVERIFY2(!info.oxidationStates.isEmpty(), qPrintable(info.symbol));
+            QVERIFY2(!info.meltingPoint.isEmpty() && !info.boilingPoint.isEmpty() && !info.density.isEmpty(),
+                     qPrintable(info.symbol));
+            QVERIFY2(!info.shells.isEmpty(), qPrintable(info.symbol));
+            int electronSum = 0;
+            for (const int s : info.shells) {
+                QVERIFY2(s > 0, qPrintable(info.symbol));
+                electronSum += s;
+            }
+            QCOMPARE(electronSum, z);
+            categories.insert(static_cast<int>(info.category));
+        }
+        QCOMPARE(categories.size(), 10);
+        QCOMPARE(chem::elementInfo(1).category, chem::ElementCategory::ReactiveNonmetal);
+        QCOMPARE(chem::elementInfo(2).category, chem::ElementCategory::NobleGas);
+        QCOMPARE(chem::elementInfo(3).category, chem::ElementCategory::AlkaliMetal);
+        QCOMPARE(chem::elementInfo(4).category, chem::ElementCategory::AlkalineEarth);
+        QCOMPARE(chem::elementInfo(5).category, chem::ElementCategory::Metalloid);
+        QCOMPARE(chem::elementInfo(6).chineseName, QStringLiteral("碳"));
+        QCOMPARE(chem::elementInfo(9).category, chem::ElementCategory::Halogen);
+        QCOMPARE(chem::elementInfo(13).category, chem::ElementCategory::PostTransition);
+        QCOMPARE(chem::elementInfo(26).category, chem::ElementCategory::TransitionMetal);
+        QCOMPARE(chem::elementInfo(35).stateAtStp, QStringLiteral("液态"));
+        QCOMPARE(chem::elementInfo(57).category, chem::ElementCategory::Lanthanide);
+        QCOMPARE(chem::elementInfo(92).category, chem::ElementCategory::Actinide);
+        QCOMPARE(chem::elementInfo(118).category, chem::ElementCategory::NobleGas);
+        QCOMPARE(chem::elementInfo(0).atomicNumber, 0);
+        QCOMPARE(chem::elementInfo(119).atomicNumber, 0);
+    }
 };
 QTEST_MAIN(ChemistryTests)
 #include "core_tests.moc"

@@ -1814,47 +1814,88 @@
       "category": "冷凝与蒸馏",
       "search": "graham",
       "svg": "graham.svg",
-      "sha256": "fd3e20b25bbde0abb2d8ea355c6b0366dbcc4d6457d8c55d5943f1ef97cdd16a",
-      "width": 110,
-      "height": 260,
+      "sha256": "d097e684c708d1d44ca17271af25494f855a81567965bc6ba58501bd9c1fb983",
+      "width": 92,
+      "height": 354,
       "ports": [
         {
           "id": "inlet",
-          "x": 55,
-          "y": 10,
+          "x": 46,
+          "y": 4,
           "dx": 0,
           "dy": -1,
-          "type": "glass-female",
-          "diameter": 20,
-          "depth": 20
+          "type": "glass-joint",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            34,
+            4,
+            58,
+            4
+          ]
         },
         {
           "id": "outlet",
-          "x": 55,
-          "y": 248,
+          "x": 46,
+          "y": 350,
           "dx": 0,
           "dy": 1,
-          "type": "glass-male",
-          "diameter": 20,
-          "depth": 22
-        },
-        {
-          "id": "water-out",
-          "x": 7,
-          "y": 66,
-          "dx": -1,
-          "dy": 0,
-          "type": "coolant",
-          "diameter": 12
+          "type": "glass-joint",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            37.2,
+            350,
+            54.8,
+            350
+          ]
         },
         {
           "id": "water-in",
-          "x": 103,
-          "y": 191,
+          "x": 6,
+          "y": 266,
+          "dx": -1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            6,
+            261.6,
+            6,
+            270.4
+          ]
+        },
+        {
+          "id": "water-out",
+          "x": 86,
+          "y": 84,
           "dx": 1,
           "dy": 0,
           "type": "coolant",
-          "diameter": 12
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            86,
+            79.6,
+            86,
+            88.4
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 46,
+          "y": 175,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0,
+          "segment": [
+            46,
+            108,
+            46,
+            244
+          ]
         }
       ],
       "boreCount": -1,
@@ -1866,47 +1907,88 @@
       "category": "冷凝与蒸馏",
       "search": "allihn",
       "svg": "allihn.svg",
-      "sha256": "6401f3771f51792b4600551f1d5ecfe354c921dcdd42bde9990fedbd8596ca71",
-      "width": 110,
-      "height": 260,
+      "sha256": "7dd378d0691adf3a6fd2ca62fe99fe4d9bdf627fa1ff06ada04d45a5bbc72b18",
+      "width": 92,
+      "height": 354,
       "ports": [
         {
           "id": "inlet",
-          "x": 55,
-          "y": 10,
+          "x": 46,
+          "y": 4,
           "dx": 0,
           "dy": -1,
-          "type": "glass-female",
-          "diameter": 20,
-          "depth": 20
+          "type": "glass-joint",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            34,
+            4,
+            58,
+            4
+          ]
         },
         {
           "id": "outlet",
-          "x": 55,
-          "y": 248,
+          "x": 46,
+          "y": 350,
           "dx": 0,
           "dy": 1,
-          "type": "glass-male",
-          "diameter": 20,
-          "depth": 22
-        },
-        {
-          "id": "water-out",
-          "x": 7,
-          "y": 66,
-          "dx": -1,
-          "dy": 0,
-          "type": "coolant",
-          "diameter": 12
+          "type": "glass-joint",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            37.2,
+            350,
+            54.8,
+            350
+          ]
         },
         {
           "id": "water-in",
-          "x": 103,
-          "y": 191,
+          "x": 6,
+          "y": 266,
+          "dx": -1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            6,
+            261.6,
+            6,
+            270.4
+          ]
+        },
+        {
+          "id": "water-out",
+          "x": 86,
+          "y": 84,
           "dx": 1,
           "dy": 0,
           "type": "coolant",
-          "diameter": 12
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            86,
+            79.6,
+            86,
+            88.4
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 46,
+          "y": 175,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0,
+          "segment": [
+            46,
+            108,
+            46,
+            244
+          ]
         }
       ],
       "boreCount": -1,
@@ -1918,47 +2000,88 @@
       "category": "冷凝与蒸馏",
       "search": "liebig condenser",
       "svg": "liebig-condenser.svg",
-      "sha256": "fd1994121e7ed7671333ab2c414931ab1bed0064b614d42401c9874480dadf04",
-      "width": 110,
-      "height": 260,
+      "sha256": "2ab6905715dc4153b43825dd7db528a07fff9f64f9c756adf8973a370cd3a1b2",
+      "width": 92,
+      "height": 354,
       "ports": [
         {
           "id": "inlet",
-          "x": 55,
-          "y": 10,
+          "x": 46,
+          "y": 4,
           "dx": 0,
           "dy": -1,
-          "type": "glass-female",
-          "diameter": 20,
-          "depth": 20
+          "type": "glass-joint",
+          "diameter": 24,
+          "depth": 24,
+          "edge": [
+            34,
+            4,
+            58,
+            4
+          ]
         },
         {
           "id": "outlet",
-          "x": 55,
-          "y": 248,
+          "x": 46,
+          "y": 350,
           "dx": 0,
           "dy": 1,
-          "type": "glass-male",
-          "diameter": 20,
-          "depth": 22
-        },
-        {
-          "id": "water-out",
-          "x": 7,
-          "y": 66,
-          "dx": -1,
-          "dy": 0,
-          "type": "coolant",
-          "diameter": 12
+          "type": "glass-joint",
+          "diameter": 17.6,
+          "depth": 24,
+          "edge": [
+            37.2,
+            350,
+            54.8,
+            350
+          ]
         },
         {
           "id": "water-in",
-          "x": 103,
-          "y": 191,
+          "x": 6,
+          "y": 266,
+          "dx": -1,
+          "dy": 0,
+          "type": "coolant",
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            6,
+            261.6,
+            6,
+            270.4
+          ]
+        },
+        {
+          "id": "water-out",
+          "x": 86,
+          "y": 84,
           "dx": 1,
           "dy": 0,
           "type": "coolant",
-          "diameter": 12
+          "diameter": 8.8,
+          "depth": 8,
+          "edge": [
+            86,
+            79.6,
+            86,
+            88.4
+          ]
+        },
+        {
+          "id": "grip-site",
+          "x": 46,
+          "y": 175,
+          "dx": 1,
+          "dy": 0,
+          "type": "grip-site",
+          "diameter": 0,
+          "segment": [
+            46,
+            108,
+            46,
+            244
+          ]
         }
       ],
       "boreCount": -1,

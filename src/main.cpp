@@ -4,6 +4,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QFont>
+#include <QLineEdit>
 #include <QLocale>
 #include <QTimer>
 #include <QMessageBox>
@@ -38,12 +39,16 @@ int main(int argc, char** argv) {
     const int pageIndex = args.indexOf("--page");
     if (pageIndex >= 0 && pageIndex + 1 < args.size())
         window.showPage(qBound(0, args[pageIndex + 1].toInt(), 5));
-    const int sourceIndex = args.indexOf("--apparatus-source");
-    if (sourceIndex >= 0 && sourceIndex + 1 < args.size())
-        if (auto* source = window.findChild<QComboBox*>("apparatusSource")) {
-            const int index = source->findData(args[sourceIndex + 1]);
-            if (index >= 0) source->setCurrentIndex(index);
+    const int domainIndex = args.indexOf("--apparatus-domain");
+    if (domainIndex >= 0 && domainIndex + 1 < args.size())
+        if (auto* domain = window.findChild<QComboBox*>("apparatusDomain")) {
+            const int index = domain->findData(args[domainIndex + 1]);
+            if (index >= 0) domain->setCurrentIndex(index);
         }
+    const int queryIndex = args.indexOf("--apparatus-search");
+    if (queryIndex >= 0 && queryIndex + 1 < args.size())
+        if (auto* search = window.findChild<QLineEdit*>("apparatusSearch"))
+            search->setText(args[queryIndex + 1]);
     if (snapshot) {
         int i = args.indexOf("--screenshots");
         QString dir = i + 1 < args.size() ? args[i + 1] : "screenshots";

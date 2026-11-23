@@ -1,2 +1,63 @@
-<?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="104" height="294" viewBox="0 0 104 294"><g stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"><ellipse cx="51" cy="17" rx="22" ry="6" fill="#dcefeb" /><path d="M29 17 V226 L43 244 V273 H59 V244 L73 226 V17" fill="#dcefeb" fill-opacity="0.32" /><ellipse cx="51" cy="226" rx="21" ry="5" fill="#f8faf9" stroke-width="1.3" /><line x1="31" y1="224" x2="71" y2="224" stroke-dasharray="2 4" stroke-width="1.2" /><rect x="43" y="247" width="16" height="13" fill="#258f89" rx="2" /><line x1="25" y1="253" x2="80" y2="253" stroke-width="3" /><ellipse cx="80" cy="253" rx="4" ry="4" fill="#f8faf9" /><line x1="33" y1="29" x2="33" y2="211" stroke="white" stroke-width="3" /></g><title>葡聚糖 / CMC 层析柱</title></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="294" viewBox="0 0 104 294"><title>葡聚糖 / CMC 层析柱</title><defs>
+    <linearGradient id="g-chassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="g-chassis-h" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="22%" stop-color="#F8FAFC"/>
+      <stop offset="80%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="g-bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="30%" stop-color="#F1F5F9"/>
+      <stop offset="65%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="g-metal-v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="45%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="g-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6F2F7" stop-opacity="0.82"/>
+      <stop offset="28%" stop-color="#F8FCFE" stop-opacity="0.65"/>
+      <stop offset="75%" stop-color="#E6F2F7" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="#CBE4EE" stop-opacity="0.80"/>
+    </linearGradient>
+    <linearGradient id="g-liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="g-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="35%" stop-color="#FDE68A"/>
+      <stop offset="75%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="g-copper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="35%" stop-color="#FDBA74"/>
+      <stop offset="70%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <linearGradient id="g-rubber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+  </defs><g stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M29 17 V224 L43 242 V273 H59 V242 L73 224 V17" fill="url(#g-glass)" stroke="#1F2937" stroke-width="2.2"/><ellipse cx="51" cy="17" rx="22" ry="5.5" fill="#F8FAFC" stroke="#1F2937" stroke-width="2.0"/><ellipse cx="51" cy="17" rx="18" ry="3.5" fill="#E6F2F7" stroke="#334155" stroke-width="1.1"/><rect x="30" y="220" width="42" height="6" rx="2" fill="#E2E8F0" stroke="#334155" stroke-width="1.3"/><line x1="33" y1="223" x2="69" y2="223" stroke="#334155" stroke-width="1.0" stroke-dasharray="2 3"/><rect x="41" y="247" width="20" height="13" rx="2" fill="url(#g-teal)" stroke="#1F2937" stroke-width="1.8"/><line x1="26" y1="253.5" x2="78" y2="253.5" stroke="#1F2937" stroke-width="3.2"/><circle cx="78" cy="253.5" r="4.5" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.6"/><line x1="43" y1="273" x2="59" y2="273" stroke="#1F2937" stroke-width="2.0"/><line x1="34" y1="28" x2="34" y2="212" stroke="#FFFFFF" stroke-width="2.8" stroke-opacity="0.78"/></g></svg>

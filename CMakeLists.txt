@@ -63,6 +63,18 @@ string(APPEND CHEM_PHYSICS_QRC "</qresource></RCC>")
 file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/physics.qrc" "${CHEM_PHYSICS_QRC}")
 target_sources(chem_artwork PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/physics.qrc")
 
+file(GLOB CHEM_LAB_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/assets/laboratory/*.svg"
+  "${CMAKE_CURRENT_SOURCE_DIR}/assets/laboratory/manifest.json"
+  "${CMAKE_CURRENT_SOURCE_DIR}/assets/laboratory/search.json")
+set(CHEM_LAB_QRC "<RCC><qresource prefix=\"/laboratory\">\n")
+foreach(art IN LISTS CHEM_LAB_FILES)
+  get_filename_component(art_name "${art}" NAME)
+  string(APPEND CHEM_LAB_QRC "<file alias=\"${art_name}\">${art}</file>\n")
+endforeach()
+string(APPEND CHEM_LAB_QRC "</qresource></RCC>")
+file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/laboratory.qrc" "${CHEM_LAB_QRC}")
+target_sources(chem_artwork PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/laboratory.qrc")
+
 if(WIN32)
   file(COPY ${OPENBABEL_FORMAT_MODULES} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
 endif()
@@ -76,6 +88,22 @@ add_library(chem_core
 target_link_libraries(chem_core PUBLIC Qt6::Core Qt6::Gui Qt6::Xml openbabel chem_artwork)
 target_include_directories(chem_core PUBLIC src)
 
+find_path(CHEM_ONNX_INCLUDE onnxruntime_cxx_api.h
+  HINTS "${CHEM_DEPS_ROOT}/onnxruntime/1.20.1/include")
+add_library(chem_search src/ui/apparatus_search.cpp src/ui/apparatus_search.h)
+target_compile_definitions(chem_search PRIVATE CHEM_DEPS_ROOT="${CHEM_DEPS_ROOT}")
+target_link_libraries(chem_search PUBLIC chem_core Qt6::Concurrent)
+if(CHEM_ONNX_INCLUDE)
+  target_include_directories(chem_search SYSTEM PRIVATE "${CHEM_ONNX_INCLUDE}")
+  target_compile_definitions(chem_search PUBLIC CHEM_ENABLE_ONNX=1)
+  foreach(runtime onnxruntime.dll onnxruntime_providers_shared.dll)
+    if(EXISTS "${CHEM_DEPS_ROOT}/onnxruntime/1.20.1/lib/${runtime}")
+      configure_file("${CHEM_DEPS_ROOT}/onnxruntime/1.20.1/lib/${runtime}"
+        "${CMAKE_CURRENT_BINARY_DIR}/${runtime}" COPYONLY)
+    endif()
+  endforeach()
+endif()
+
 add_library(chem_office src/office/office_bridge.cpp src/office/office_bridge.h)
 target_link_libraries(chem_office PUBLIC chem_core Qt6::Widgets Qt6::Svg ole32 oleaut32 uuid)
 target_compile_definitions(chem_office PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
@@ -83,7 +111,7 @@ target_compile_definitions(chem_office PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
 set(CHEM_ICON_NAMES flask-conical atom notebook-pen scale shapes library search plus minus arrow-right undo-2 redo-2
   save folder-open file-plus-2 download copy trash-2 settings circle-help check x chevron-down chevron-right
   bold italic subscript superscript align-left align-center align-right zoom-in zoom-out maximize rotate-cw
-  mouse-pointer-2 move square circle type pencil eraser link-2 image file-text presentation table-2 printer
+  mouse-pointer-2 move square circle type pencil eraser link-2 unlink image file-text presentation table-2 printer
   refresh-cw check-check arrow-up-right panel-left grid-2x2 pipette beaker test-tube-2 hexagon grip-vertical
   external-link circle-dot rotate-3d hand sparkles sun moon menu layout-grid sliders-horizontal)
 set(CHEM_QRC "<RCC><qresource prefix=\"/icons\">\n")
@@ -121,18 +149,32 @@ add_dependencies(ChemStudio chem_viewer_assets chem_structure_assets)
 target_include_directories(ChemStudio SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
 target_compile_definitions(ChemStudio PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
 configure_file("${CHEM_WEBVIEW2_ROOT}/build/native/x64/WebView2Loader.dll" "${CMAKE_CURRENT_BINARY_DIR}/WebView2Loader.dll" COPYONLY)
-target_link_libraries(ChemStudio PRIVATE chem_office Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent)
+target_link_libraries(ChemStudio PRIVATE chem_office chem_search Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent)
 target_compile_definitions(ChemStudio PRIVATE CHEM_VERSION="${PROJECT_VERSION}" CHEM_DEPS_ROOT="${CHEM_DEPS_ROOT}")
 if(MSVC)
   target_compile_options(chem_core PRIVATE /utf-8)
+  target_compile_options(chem_search PRIVATE /utf-8)
   target_compile_options(chem_office PRIVATE /utf-8)
   target_compile_options(ChemStudio PRIVATE /utf-8)
 else()
   target_compile_options(chem_core PRIVATE -Wall -Wextra)
+  target_compile_options(chem_search PRIVATE -Wall -Wextra)
   target_compile_options(ChemStudio PRIVATE -Wall -Wextra)
 endif()
 
 enable_testing()
+add_executable(chem_search_index tests/search_index.cpp src/ui/apparatus_library.cpp)
+target_link_libraries(chem_search_index PRIVATE chem_search Qt6::Widgets Qt6::Svg)
+add_executable(chem_search_tests tests/apparatus_search_tests.cpp src/ui/apparatus_library.cpp)
+target_link_libraries(chem_search_tests PRIVATE chem_search Qt6::Widgets Qt6::Test Qt6::Svg)
+add_test(NAME apparatus_search COMMAND chem_search_tests -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/apparatus_search.txt,txt")
+if(CHEM_ENABLE_ASSET_TESTS)
+  set_tests_properties(apparatus_search PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen" TIMEOUT 180)
+else()
+  set_tests_properties(apparatus_search PROPERTIES
+    ENVIRONMENT "QT_QPA_PLATFORM=offscreen;CHEM_CHEMIX_ART_DIR=${CMAKE_CURRENT_BINARY_DIR}/missing-test-art;CHEM_ART_DIR=${CMAKE_CURRENT_BINARY_DIR}/missing-test-art"
+    TIMEOUT 180)
+endif()
 add_executable(chem_connection_tests tests/connection_rules_tests.cpp src/ui/drawing.cpp src/ui/drawing.h
   src/ui/apparatus_library.cpp src/ui/apparatus_library.h)
 target_link_libraries(chem_connection_tests PRIVATE chem_core Qt6::Widgets Qt6::Test Qt6::Svg)
@@ -144,7 +186,7 @@ add_executable(chem_physics_tests tests/physics_workspace_review.cpp
   src/ui/apparatus_library.cpp src/ui/apparatus_library.h src/ui/molecule_view.cpp src/ui/molecule_view.h
   src/ui/structure_editor.cpp src/ui/structure_editor.h "${CMAKE_CURRENT_BINARY_DIR}/icons.qrc")
 target_include_directories(chem_physics_tests SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
-target_link_libraries(chem_physics_tests PRIVATE chem_office Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent Qt6::Test)
+target_link_libraries(chem_physics_tests PRIVATE chem_office chem_search Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent Qt6::Test)
 target_compile_definitions(chem_physics_tests PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN
   CHEM_VERSION="${PROJECT_VERSION}" CHEM_DEPS_ROOT="${CHEM_DEPS_ROOT}" PHYSICS_REVIEW_VARIANT="public")
 add_dependencies(chem_physics_tests chem_viewer_assets chem_structure_assets)
@@ -165,7 +207,8 @@ if(CHEM_ENABLE_ASSET_TESTS)
 else()
   add_test(NAME drawing COMMAND chem_ui_tests undoRedo labelUndo transformedAlignment liveConnector
     portsSnapExactly selectedConnectorsNeverTransformTwice customPortsAndDuplicatePrecision
-    insertedImagesAndTextSurviveEdits originalCatalog originalStopperConnection
+    insertedImagesAndTextSurviveEdits duplicateShortcutAndPreciseMode svgImageRemainsVector imageFileDrop
+    originalCatalog originalStopperConnection
     -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/drawing.txt,txt")
 endif()
 set_tests_properties(drawing PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
@@ -185,6 +228,7 @@ if(CHEM_ENABLE_ASSET_TESTS)
 else()
   add_test(NAME drawing_geometry COMMAND chem_geometry_tests numericBoundsAndExport gridAndSelectedViewLifetime
     expandingWorkspaceAndPanning exportBoundsIgnoreWorkspace smoothWheelZoomAndZeroDelta
+    newCondensersAndDistillationGeometry
     -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/drawing_geometry.txt,txt")
 endif()
 set_tests_properties(drawing_geometry PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen" TIMEOUT 90)
@@ -192,6 +236,7 @@ add_executable(chem_assembly_tests tests/catalog_assembly_tests.cpp src/ui/drawi
   src/ui/apparatus_library.cpp src/ui/apparatus_library.h "${CMAKE_CURRENT_BINARY_DIR}/icons.qrc")
 target_link_libraries(chem_assembly_tests PRIVATE chem_core Qt6::Widgets Qt6::Test Qt6::Svg)
 add_test(NAME catalog_interfaces COMMAND chem_assembly_tests catalogInterfaceAudit everyInterface visibleApertures
+  laboratoryCondensersAndDistillationCatalogChain
   -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/catalog_interfaces.txt,txt")
 set_tests_properties(catalog_interfaces PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen" TIMEOUT 180 RESOURCE_LOCK desktop_input)
 if(CHEM_ENABLE_ASSET_TESTS)
@@ -223,7 +268,7 @@ add_executable(chem_workspace_tests tests/workspace_tests.cpp src/ui/main_window
   src/ui/drawing.cpp src/ui/drawing.h src/ui/apparatus_library.cpp src/ui/apparatus_library.h
   src/ui/molecule_view.cpp src/ui/molecule_view.h src/ui/structure_editor.cpp src/ui/structure_editor.h
   "${CMAKE_CURRENT_BINARY_DIR}/icons.qrc")
-target_link_libraries(chem_workspace_tests PRIVATE chem_office Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent Qt6::Test)
+target_link_libraries(chem_workspace_tests PRIVATE chem_office chem_search Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent Qt6::Test)
 target_include_directories(chem_workspace_tests SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
 target_compile_definitions(chem_workspace_tests PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN CHEM_VERSION="${PROJECT_VERSION}" CHEM_DEPS_ROOT="${CHEM_DEPS_ROOT}")
 add_dependencies(chem_workspace_tests chem_viewer_assets chem_structure_assets)
@@ -232,8 +277,20 @@ if(CHEM_ENABLE_DESKTOP_TESTS)
     add_test(NAME workspace COMMAND chem_workspace_tests -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
   else()
     add_test(NAME workspace COMMAND chem_workspace_tests hiddenEditorSmilesExports projectRoundtrip pageExports threeDimensionalUi
-      publicSourcePreview biochemistryCatalog structurePendingGuards structureDrawingWorkflow invalidInput -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
+      publicSourcePreview biochemistryCatalog structurePendingGuards structureDrawingWorkflow laboratoryAndSearch invalidInput -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/workspace.txt,txt")
   endif()
   set_tests_properties(workspace PROPERTIES TIMEOUT 120 ENVIRONMENT "QT_QPA_PLATFORM=windows" RESOURCE_LOCK desktop_input)
+endif()
+add_executable(chem_button_audit_tests tests/button_audit_tests.cpp src/ui/main_window.cpp src/ui/main_window.h
+  src/ui/drawing.cpp src/ui/drawing.h src/ui/apparatus_library.cpp src/ui/apparatus_library.h
+  src/ui/molecule_view.cpp src/ui/molecule_view.h src/ui/structure_editor.cpp src/ui/structure_editor.h
+  "${CMAKE_CURRENT_BINARY_DIR}/icons.qrc")
+target_link_libraries(chem_button_audit_tests PRIVATE chem_office chem_search Qt6::Widgets Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Concurrent Qt6::Test)
+target_include_directories(chem_button_audit_tests SYSTEM PRIVATE "${CHEM_WEBVIEW2_ROOT}/build/native/include")
+target_compile_definitions(chem_button_audit_tests PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN CHEM_VERSION="${PROJECT_VERSION}" CHEM_DEPS_ROOT="${CHEM_DEPS_ROOT}")
+add_dependencies(chem_button_audit_tests chem_viewer_assets chem_structure_assets)
+if(CHEM_ENABLE_DESKTOP_TESTS)
+  add_test(NAME button_audit COMMAND chem_button_audit_tests -o "${CMAKE_CURRENT_BINARY_DIR}/Testing/button_audit.txt,txt")
+  set_tests_properties(button_audit PROPERTIES TIMEOUT 180 ENVIRONMENT "QT_QPA_PLATFORM=windows" RESOURCE_LOCK desktop_input)
 endif()
 set_tests_properties(drawing drawing_geometry PROPERTIES RESOURCE_LOCK desktop_input)

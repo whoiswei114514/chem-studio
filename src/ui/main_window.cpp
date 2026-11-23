@@ -2,8 +2,10 @@
 #include "core/document.h"
 #include "core/runtime_paths.h"
 #include "drawing.h"
+#include "apparatus_search.h"
 #include "molecule_view.h"
 #include "structure_editor.h"
+#include <QAbstractButton>
 #include <QApplication>
 #include <QButtonGroup>
 #include <QBuffer>
@@ -27,6 +29,7 @@
 #include <QHeaderView>
 #include <QInputDialog>
 #include <QJsonDocument>
+#include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
@@ -56,20 +59,65 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QtConcurrent>
+#include <QtMath>
 #include <cmath>
 #include <limits>
 #include <memory>
 #include <algorithm>
 
 namespace chem {
+class ApparatusSearchField final : public QLineEdit {
+  public:
+    QListWidget* results = nullptr;
+  protected:
+    void keyPressEvent(QKeyEvent* event) override {
+        if (event->key() == Qt::Key_Down && results && results->currentItem() &&
+            !results->currentItem()->isHidden()) {
+            results->setFocus();
+            results->scrollToItem(results->currentItem());
+            event->accept();
+            return;
+        }
+        QLineEdit::keyPressEvent(event);
+    }
+};
+class ApparatusPaletteItem final : public QListWidgetItem {
+  public:
+    using QListWidgetItem::QListWidgetItem;
+    bool operator<(const QListWidgetItem& other) const override {
+        const auto rank = data(Qt::UserRole + 3).toInt(), otherRank = other.data(Qt::UserRole + 3).toInt();
+        return rank != otherRank ? rank < otherRank : data(Qt::UserRole + 4).toInt() < other.data(Qt::UserRole + 4).toInt();
+    }
+};
 class ApparatusPalette final : public QListWidget {
   public:
     explicit ApparatusPalette(QWidget* parent = nullptr) : QListWidget(parent) {
         setDragEnabled(true);
         setDragDropMode(QAbstractItemView::DragOnly);
         setDefaultDropAction(Qt::CopyAction);
+        setEditTriggers(QAbstractItemView::NoEditTriggers);
     }
   protected:
+    void mouseDoubleClickEvent(QMouseEvent* event) override {
+        if (event->button() == Qt::LeftButton) {
+            if (auto* hit = itemAt(event->position().toPoint()); hit && !hit->isHidden()) {
+                setCurrentItem(hit);
+                emit itemDoubleClicked(hit);
+                event->accept();
+                return;
+            }
+        }
+        QListWidget::mouseDoubleClickEvent(event);
+    }
+    void keyPressEvent(QKeyEvent* event) override {
+        if ((event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) && currentItem() &&
+            !currentItem()->isHidden()) {
+            emit itemDoubleClicked(currentItem());
+            event->accept();
+            return;
+        }
+        QListWidget::keyPressEvent(event);
+    }
     void startDrag(Qt::DropActions) override {
         const auto* item = currentItem();
         if (!item)
@@ -140,34 +188,37 @@ static QString themeStylesheet() {
 QMainWindow { background:#f5f7f9; }
 QWidget { color:#28323c; font-family:"Microsoft YaHei UI","Segoe UI"; font-size:13px; }
 QLabel { background:transparent; }
-QToolTip { background:#252c34; color:white; padding:5px; border:0; }
+QToolTip { background:#252c34; color:white; padding:5px 8px; border:0; border-radius:4px; }
 QPushButton,QToolButton { background:white; border:1px solid #dce1e6; border-radius:5px; padding:5px 10px; }
 QPushButton:hover,QToolButton:hover { background:#edf5f2; border-color:#94bbae; }
 QPushButton:pressed,QToolButton:pressed { background:#dceee7; }
 QPushButton:disabled,QToolButton:disabled { color:#9ba3ad; background:#eff2f4; border-color:#e5e8eb; }
 QPushButton[primary="true"] { background:#087f69; color:white; border:1px solid #087f69; font-weight:600; }
 QPushButton[primary="true"]:hover { background:#096b5b; }
+QPushButton[pill="true"] { background:white; border:1px solid #dce1e6; border-radius:13px; padding:3px 10px; font-size:12px; color:#334155; }
+QPushButton[pill="true"]:hover { background:#f1f5f9; border-color:#94a3b8; }
+QPushButton[pill="true"]:checked { background:#0f766e; border-color:#0f766e; color:white; font-weight:600; }
+QFrame[card="true"] { background:white; border:1px solid #dfe5ea; border-radius:8px; }
 QToolButton { padding:5px; }
 QToolButton[nav="true"] { text-align:left; border:0; background:transparent; padding:12px 14px; border-radius:5px; }
 QToolButton[nav="true"]:hover { background:#edf0f3; }
 QToolButton[nav="true"]:checked { background:#e0f0e9; color:#086a57; font-weight:600; }
-QLineEdit,QComboBox,QSpinBox,QDoubleSpinBox { background:white; border:1px solid #dce1e6; border-radius:4px; padding:7px 9px; min-height:19px; selection-background-color:#c7e5d9; }
-QLineEdit:focus,QComboBox:focus,QDoubleSpinBox:focus { border-color:#158b74; }
-QComboBox::drop-down { border:0; width:23px; }
-QTextEdit { background:white; border:1px solid #dce1e6; border-radius:4px; padding:14px; selection-background-color:#c7e5d9; }
-QTableWidget { background:white; alternate-background-color:#f7f9fa; border:1px solid #e1e6ea; gridline-color:#edf0f2; selection-background-color:#ddede6; selection-color:#26343b; }
-QHeaderView::section { background:#f3f5f7; border:0; border-bottom:1px solid #e1e6ea; padding:9px; font-weight:600; }
-QListWidget { background:white; border:1px solid #e1e6ea; border-radius:4px; padding:4px; outline:0; }
-QListWidget::item { padding:10px 9px; border-radius:4px; }
-QListWidget::item:selected { background:#e0f0e9; color:#086a57; }
+QLineEdit { background:white; border:1px solid #d7dee4; border-radius:5px; padding:6px 10px; min-height:20px; selection-background-color:#c7e5d9; }
+QLineEdit:focus { border-color:#158b74; }
+QTextEdit { background:white; border:1px solid #dfe5ea; border-radius:6px; padding:14px; selection-background-color:#c7e5d9; }
+QTableWidget { background:white; alternate-background-color:#f7f9fa; border:1px solid #dfe5ea; border-radius:6px; gridline-color:#edf0f2; selection-background-color:#ddede6; selection-color:#26343b; }
+QHeaderView::section { background:#f3f5f7; border:0; border-bottom:1px solid #dfe5ea; padding:9px; font-weight:600; }
+QListWidget { background:white; border:1px solid #dfe5ea; border-radius:6px; padding:5px; outline:0; }
+QListWidget::item { padding:10px 9px; border-radius:5px; border:1px solid transparent; margin:1px 0; }
+QListWidget::item:selected { background:#e0f0e9; border-color:#b6ddd0; color:#086a57; }
 QListWidget::item:hover { background:#f1f6f4; }
 QScrollBar:vertical { background:transparent; width:10px; margin:2px; }
 QScrollBar::handle:vertical { background:#cbd2d8; border-radius:4px; min-height:30px; }
 QScrollBar::add-line:vertical,QScrollBar::sub-line:vertical { height:0; }
 QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical { background:transparent; }
 QSplitter::handle { background:#e7ebee; }
-QMenu { background:white; border:1px solid #dce1e6; padding:5px; }
-QMenu::item { padding:8px 22px; }
+QMenu { background:white; border:1px solid #dce1e6; padding:5px; border-radius:6px; }
+QMenu::item { padding:8px 22px; border-radius:4px; }
 QMenu::item:selected { background:#e0f0e9; }
 QStatusBar { background:white; border-top:1px solid #e1e6ea; color:#64707b; }
 )");
@@ -203,6 +254,7 @@ MainWindow::MainWindow(bool automatic) : automated(automatic) {
                                QStringLiteral("元素周期表"), QStringLiteral("素材库")};
     const QStringList icons = {"notebook-pen", "scale", "flask-conical", "atom", "grid-2x2", "library"};
     auto* group = new QButtonGroup(this);
+    group->setObjectName("navGroup");
     group->setExclusive(true);
     for (int i = 0; i < names.size(); ++i) {
         auto* b = new QToolButton;
@@ -605,7 +657,7 @@ void MainWindow::balanceReaction() {
                 mass->setRange(0, 1000000);
                 mass->setDecimals(4);
                 mass->setValue(i == 0 ? 5.6 : 100);
-                mass->setFrame(false);
+                mass->setMinimumHeight(32);
                 reactionTable->setCellWidget(i, 3, mass);
                 connect(mass, qOverload<double>(&QDoubleSpinBox::valueChanged), this, [this] {
                     updateStoichiometry();
@@ -615,7 +667,7 @@ void MainWindow::balanceReaction() {
                 reactionTable->removeCellWidget(i, 3);
                 w->deleteLater();
             }
-            reactionTable->setRowHeight(i, 44);
+            reactionTable->setRowHeight(i, 50);
         }
         updateStoichiometry();
     } catch (const Error& e) {
@@ -675,27 +727,36 @@ QWidget* MainWindow::drawingPage() {
     head->addWidget(matchPorts);
     l->addLayout(head);
     auto* bar = new QHBoxLayout;
+    bar->setSpacing(4);
     drawing = new DrawingView;
     connect(drawing, &DrawingView::operationFailed, this,
             [this](const QString& message) { report(message, true); });
-    bar->addWidget(tool("undo-2", QStringLiteral("撤销"), [this] { drawing->undoStack.undo(); }));
-    bar->addWidget(tool("redo-2", QStringLiteral("重做"), [this] { drawing->undoStack.redo(); }));
-    bar->addWidget(tool("copy", QStringLiteral("复制图形"), [this] { drawing->duplicateSelection(); }));
-    bar->addWidget(tool("trash-2", QStringLiteral("删除选中图形"), [this] { drawing->deleteSelection(); }));
+    auto* undo = tool("undo-2", QStringLiteral("撤销"), [this] { drawing->undoStack.undo(); });
+    auto* redo = tool("redo-2", QStringLiteral("重做"), [this] { drawing->undoStack.redo(); });
+    undo->setObjectName("drawingUndo"); redo->setObjectName("drawingRedo");
+    undo->setEnabled(false); redo->setEnabled(false);
+    connect(&drawing->undoStack, &QUndoStack::canUndoChanged, undo, &QWidget::setEnabled);
+    connect(&drawing->undoStack, &QUndoStack::canRedoChanged, redo, &QWidget::setEnabled);
+    bar->addWidget(undo); bar->addWidget(redo);
+    auto* duplicate = tool("copy", QStringLiteral("复制图形"), [this] { drawing->duplicateSelection(); });
+    auto* remove = tool("trash-2", QStringLiteral("删除选中图形"), [this] { drawing->deleteSelection(); });
+    duplicate->setObjectName("drawingDuplicate"); remove->setObjectName("drawingDelete");
+    bar->addWidget(duplicate); bar->addWidget(remove);
     auto* imageInsert = tool("image", QStringLiteral("插入图片"), [this] { drawing->insertImage(); });
     imageInsert->setObjectName("drawingInsertImage");
     bar->addWidget(imageInsert);
     auto* textInsert = tool("type", QStringLiteral("插入文字"), [this] { drawing->insertText(); });
     textInsert->setObjectName("drawingInsertText");
     bar->addWidget(textInsert);
-    bar->addSpacing(8);
-    bar->addWidget(tool("rotate-cw", QStringLiteral("旋转 15°"), [this] { drawing->rotateSelection(15); }));
-    bar->addWidget(tool("plus", QStringLiteral("放大图形"), [this] { drawing->scaleSelection(1.1); }));
-    bar->addWidget(tool("minus", QStringLiteral("缩小图形"), [this] { drawing->scaleSelection(1 / 1.1); }));
+    bar->addSpacing(6);
+    auto* rotate = tool("rotate-cw", QStringLiteral("旋转 15°"), [this] { drawing->rotateSelection(15); });
+    auto* enlarge = tool("plus", QStringLiteral("放大图形"), [this] { drawing->scaleSelection(1.1); });
+    auto* shrink = tool("minus", QStringLiteral("缩小图形"), [this] { drawing->scaleSelection(1 / 1.1); });
+    bar->addWidget(rotate); bar->addWidget(enlarge); bar->addWidget(shrink);
     auto* alignment = new QToolButton;
     alignment->setIcon(icon("align-left"));
     alignment->setToolTip(QStringLiteral("对齐与分布"));
-    alignment->setFixedSize(38, 34);
+    alignment->setFixedSize(44, 34);
     alignment->setPopupMode(QToolButton::InstantPopup);
     auto* alignMenu = new QMenu(alignment);
     for (const auto& pair :
@@ -718,7 +779,7 @@ QWidget* MainWindow::drawingPage() {
     auto* connectPipe =
         tool("link-2", QStringLiteral("连接选中器材"), [this] { drawing->connectSelection(); });
     connectPipe->setObjectName("drawingConnect");
-    connectPipe->setFixedWidth(44);
+    connectPipe->setFixedSize(56, 34);
     connectPipe->setPopupMode(QToolButton::MenuButtonPopup);
     auto* connectionMenu = new QMenu(connectPipe);
     connectionMenu->setObjectName("drawingConnectionMenu");
@@ -740,6 +801,7 @@ QWidget* MainWindow::drawingPage() {
             {"inlet", QStringLiteral("入口")}, {"outlet", QStringLiteral("出口")},
             {"water-in", QStringLiteral("进水口")}, {"water-out", QStringLiteral("出水口")},
             {"plug", QStringLiteral("塞口")}, {"bore-1", QStringLiteral("塞孔 1")},
+            {"ball", QStringLiteral("球头磨口")}, {"socket", QStringLiteral("球窝磨口")},
             {"bore-2", QStringLiteral("塞孔 2")}, {"probe", QStringLiteral("杆身")},
             {"side", QStringLiteral("蒸气侧口")}, {"drain", QStringLiteral("排液口")},
             {"base", QStringLiteral("底部")}, {"surface", QStringLiteral("支承面")},
@@ -820,9 +882,25 @@ QWidget* MainWindow::drawingPage() {
                 connectPipe->setEnabled(shapes == 2);
             });
     bar->addWidget(connectPipe);
+    auto* disconnect = tool("unlink", QStringLiteral("断开所选器材"), [this] { drawing->disconnectSelection(); });
+    disconnect->setObjectName("drawingDisconnect");
+    bar->addWidget(disconnect);
+    const auto actionState = [this, duplicate, remove, rotate, enlarge, shrink, alignment, disconnect] {
+        int shapes = 0;
+        for (auto* object : drawing->scene()->selectedItems()) {
+            if (dynamic_cast<DrawingItem*>(object)) ++shapes;
+        }
+        for (auto* button : {duplicate, rotate, enlarge, shrink}) button->setEnabled(shapes > 0);
+        remove->setEnabled(!drawing->scene()->selectedItems().isEmpty());
+        alignment->setEnabled(shapes >= 2);
+        disconnect->setEnabled(drawing->selectionHasConnections());
+    };
+    connect(drawing, &DrawingView::selectionChanged, this, actionState);
+    connect(drawing, &DrawingView::changed, this, actionState);
+    actionState();
     for (const QColor color : {QColor("#334155"), QColor("#167d8d"), QColor("#b94b43"), QColor("#9b731e")}) {
         auto* b = new QToolButton;
-        b->setFixedSize(22, 22);
+        b->setFixedSize(20, 20);
         b->setStyleSheet("background:" + color.name() + ";border:2px solid white;border-radius:3px;");
         b->setToolTip(QStringLiteral("线条颜色 ") + color.name());
         connect(b, &QToolButton::clicked, this, [this, color] { drawing->setSelectionColor(color); });
@@ -842,45 +920,60 @@ QWidget* MainWindow::drawingPage() {
     l->addLayout(bar);
     auto* split = new QSplitter;
     auto* catalog = new QWidget;
-    catalog->setMinimumWidth(185);
-    catalog->setMaximumWidth(225);
+    catalog->setMinimumWidth(195);
+    catalog->setMaximumWidth(238);
     auto* catalogLayout = new QVBoxLayout(catalog);
     catalogLayout->setContentsMargins(0, 0, 0, 0);
     catalogLayout->setSpacing(8);
-    auto* catalogSource = new QComboBox;
-    catalogSource->setObjectName("apparatusSource");
-    catalogSource->addItem(QStringLiteral("实验器材"), "studio");
-    catalogSource->addItem(QStringLiteral("生化器材"), "bio");
-    catalogSource->addItem(QStringLiteral("物理与电工器材"), "physics");
-    const auto definitions = apparatusDefinitions();
-    for (const auto& source : QStringList{"chemix", "legacy"})
-        if (std::any_of(definitions.begin(), definitions.end(), [&source](const auto& d) {
-                return d.id.startsWith(source + ":");
-            }))
-            catalogSource->addItem(source == "chemix" ? QStringLiteral("Chemix 素材包") : QStringLiteral("外部素材包"), source);
-    catalogSource->addItem(QStringLiteral("基本图形"), "shapes");
+    auto* catalogDomain = new QComboBox;
+    catalogDomain->setObjectName("apparatusDomain");
+    catalogDomain->setMinimumHeight(32);
+    catalogDomain->addItem(QStringLiteral("全部器材"), "all");
+    catalogDomain->addItem(QStringLiteral("容器与反应"), "reaction");
+    catalogDomain->addItem(QStringLiteral("分离与纯化"), "separation");
+    catalogDomain->addItem(QStringLiteral("管路与接口"), "connectors");
+    catalogDomain->addItem(QStringLiteral("加热与温控"), "thermal");
+    catalogDomain->addItem(QStringLiteral("计量与分析"), "measurement");
+    catalogDomain->addItem(QStringLiteral("生物与生化"), "biochemistry");
+    catalogDomain->addItem(QStringLiteral("电学与电路"), "electrical");
+    catalogDomain->addItem(QStringLiteral("力学光学声学"), "physics");
+    catalogDomain->addItem(QStringLiteral("支架夹具与安全"), "support");
+    catalogDomain->addItem(QStringLiteral("标注与基本图形"), "annotation");
     auto* catalogCategory = new QComboBox;
     catalogCategory->setObjectName("apparatusCategory");
+    catalogCategory->setMinimumHeight(32);
     catalogCategory->addItem(QStringLiteral("全部分类"), "");
-    auto* catalogSearch = new QLineEdit;
+    auto* catalogSearch = new ApparatusSearchField;
     catalogSearch->setObjectName("apparatusSearch");
     catalogSearch->setPlaceholderText(QStringLiteral("搜索器材"));
     catalogSearch->setClearButtonEnabled(true);
-    catalogLayout->addWidget(catalogSource);
+    catalogSearch->setMaxLength(512);
+    catalogLayout->addWidget(catalogDomain);
     catalogLayout->addWidget(catalogCategory);
     catalogLayout->addWidget(catalogSearch);
     auto* palette = new ApparatusPalette;
+    catalogSearch->results = palette;
     palette->setObjectName("apparatusPalette");
     palette->setIconSize(QSize(60, 74));
     palette->setWordWrap(true);
+    auto* searchStatus = new QLabel;
+    searchStatus->setObjectName("apparatusSearchStatus");
+    searchStatus->setStyleSheet("color:#64707b;font-size:12px;");
     const QStringList basics{"arrow", "line", "label", "rectangle", "ellipse"};
-    for (const auto& d : definitions) {
-        if (!d.id.startsWith("studio:") && !d.id.startsWith("bio:") && !d.id.startsWith("physics:") && !d.id.startsWith("legacy:") && !d.id.startsWith("chemix:") && !basics.contains(d.id))
+    for (const auto& d : apparatusDefinitions()) {
+        if (!d.catalogVisible)
             continue;
-        auto* item = new QListWidgetItem(d.name, palette);
+        if (!d.id.startsWith("studio:") && !d.id.startsWith("lab:") && !d.id.startsWith("bio:") &&
+            !d.id.startsWith("physics:") && !d.id.startsWith("legacy:") && !d.id.startsWith("chemix:") &&
+            !basics.contains(d.id))
+            continue;
+        auto* item = new ApparatusPaletteItem(d.name, palette);
         item->setData(Qt::UserRole, d.id);
         item->setData(Qt::UserRole + 1, d.category);
         item->setData(Qt::UserRole + 2, d.search);
+        item->setData(Qt::UserRole + 3, 0);
+        item->setData(Qt::UserRole + 4, palette->count());
+        item->setData(Qt::UserRole + 5, d.domain);
         DrawingItem preview(d.id);
         QPixmap thumbnail(120, 148);
         thumbnail.fill(Qt::transparent);
@@ -892,54 +985,120 @@ QWidget* MainWindow::drawingPage() {
         preview.paint(&painter, nullptr, nullptr);
         painter.end();
         item->setIcon(QIcon(thumbnail));
-        item->setToolTip(d.name);
-        item->setSizeHint(QSize(180, 90));
+        item->setToolTip(d.category.isEmpty() ? d.name : d.name + QStringLiteral(" · ") + d.category);
+        item->setSizeHint(QSize(185, 88));
     }
     connect(palette, &QListWidget::itemDoubleClicked, this,
             [this](QListWidgetItem* i) { drawing->addApparatus(i->data(Qt::UserRole).toString()); });
     catalogLayout->addWidget(palette, 1);
-    const auto filter = [palette, catalogSearch, catalogSource, catalogCategory] {
-        const QStringList basics{"arrow", "line", "label", "rectangle", "ellipse"};
+    catalogLayout->addWidget(searchStatus);
+    struct SearchState { QString query; QHash<QString, int> ranks; bool busy = false; };
+    const auto searchState = std::make_shared<SearchState>();
+    const auto filter = [palette, catalogSearch, catalogDomain, catalogCategory, searchStatus, searchState] {
+        const auto query = catalogSearch->text().simplified();
+        const bool ranked = !query.isEmpty() && searchState->query == query;
+        const auto activeDomain = catalogDomain->currentData().toString();
+        const auto activeCategory = catalogCategory->currentData().toString();
+        int visible = 0;
+        palette->setUpdatesEnabled(false);
         for (int row = 0; row < palette->count(); ++row) {
             auto* item = palette->item(row);
             const auto id = item->data(Qt::UserRole).toString();
-            const auto category = id.startsWith("studio:") ? QString("studio")
-                                  : id.startsWith("bio:") ? QString("bio")
-                                  : id.startsWith("physics:") ? QString("physics")
-                                  : id.startsWith("legacy:") ? QString("legacy")
-                                  : id.startsWith("chemix:") ? QString("chemix")
-                                  : basics.contains(id)    ? QString("shapes")
-                                                           : QString("builtin");
-            item->setHidden(category != catalogSource->currentData().toString() ||
-                            (!catalogCategory->currentData().toString().isEmpty() &&
-                             item->data(Qt::UserRole + 1) != catalogCategory->currentData()) ||
-                            !(item->text() + " " + item->data(Qt::UserRole + 2).toString()).contains(catalogSearch->text(), Qt::CaseInsensitive));
+            const auto itemCategory = item->data(Qt::UserRole + 1).toString();
+            const auto itemDomain = item->data(Qt::UserRole + 5).toString();
+            const SearchEntry entry{id, item->text(), itemCategory, item->data(Qt::UserRole + 2).toString(),
+                                    itemDomain};
+            const bool matches = query.isEmpty() || (ranked ? searchState->ranks.contains(id) :
+                ApparatusSearchIndex::keywordScore(entry, query) > 0);
+            item->setData(Qt::UserRole + 3, ranked ? searchState->ranks.value(id, 100000) : 0);
+            item->setHidden((activeDomain != "all" && itemDomain != activeDomain) ||
+                            (!activeCategory.isEmpty() && itemCategory != activeCategory) ||
+                            !matches);
+            if (!item->isHidden()) ++visible;
         }
+        palette->sortItems();
+        palette->doItemsLayout();
+        if (!palette->currentItem() || palette->currentItem()->isHidden()) {
+            palette->setCurrentItem(nullptr);
+            for (int row = 0; row < palette->count(); ++row)
+                if (!palette->item(row)->isHidden()) { palette->setCurrentItem(palette->item(row)); break; }
+        }
+        palette->setUpdatesEnabled(true);
+        searchStatus->setText(searchState->busy && !query.isEmpty() ? QStringLiteral("正在搜索") :
+            visible ? QStringLiteral("%1 项").arg(visible) : QStringLiteral("没有匹配的器材"));
     };
-    connect(catalogSearch, &QLineEdit::textChanged, this, filter);
+    auto* semanticSearch = new ApparatusSearch(page);
+    auto* searchDelay = new QTimer(page);
+    searchDelay->setSingleShot(true); searchDelay->setInterval(180);
+    connect(searchDelay, &QTimer::timeout, this, [semanticSearch, catalogSearch] { semanticSearch->search(catalogSearch->text()); });
+    connect(catalogSearch, &QLineEdit::textChanged, this, [semanticSearch, searchDelay, searchState, catalogSearch, palette, filter] {
+        searchState->query.clear(); searchState->ranks.clear();
+        palette->setCurrentItem(nullptr);
+        searchState->busy = !catalogSearch->text().simplified().isEmpty();
+        if (searchState->busy) searchDelay->start();
+        else { searchDelay->stop(); semanticSearch->search({}); }
+        filter();
+    });
+    connect(semanticSearch, &ApparatusSearch::resultsReady, this,
+        [catalogSearch, searchState, palette, filter](const QString& query, const QStringList& ids, bool) {
+            if (query != catalogSearch->text().simplified()) return;
+            searchState->query = query; searchState->ranks.clear(); searchState->busy = false;
+            for (int i = 0; i < ids.size(); ++i) searchState->ranks.insert(ids[i], i);
+            if (catalogSearch->hasFocus()) palette->setCurrentItem(nullptr);
+            filter();
+        });
+    connect(catalogSearch, &QLineEdit::returnPressed, this, [this, palette, searchState] {
+        if (searchState->busy) return;
+        if (auto* item = palette->currentItem(); item && !item->isHidden()) {
+            drawing->addApparatus(item->data(Qt::UserRole).toString());
+            return;
+        }
+        for (int row = 0; row < palette->count(); ++row)
+            if (!palette->item(row)->isHidden()) {
+                drawing->addApparatus(palette->item(row)->data(Qt::UserRole).toString());
+                break;
+            }
+    });
     connect(catalogCategory, &QComboBox::currentIndexChanged, this, filter);
-    const auto categories = [palette, catalogSource, catalogCategory, filter] {
+    const auto categories = [palette, catalogDomain, catalogCategory, filter] {
+        static const QStringList curatedOrder{
+            QStringLiteral("烧瓶与反应容器"), QStringLiteral("烧杯与常规容器"), QStringLiteral("试剂储存"), QStringLiteral("坩埚与蒸发皿"),
+            QStringLiteral("冷凝与回流"), QStringLiteral("蒸馏与分馏"), QStringLiteral("过滤与萃取"), QStringLiteral("色谱与干燥"), QStringLiteral("真空与泵"),
+            QStringLiteral("磨口接头"), QStringLiteral("导管与管件"), QStringLiteral("塞子与夹具"),
+            QStringLiteral("热源与燃烧"), QStringLiteral("加热设备"), QStringLiteral("温控与浴槽"),
+            QStringLiteral("容量计量"), QStringLiteral("测温与传感"), QStringLiteral("称量与精密测量"), QStringLiteral("分析仪器"), QStringLiteral("电化学与试纸"),
+            QStringLiteral("取样与离心"), QStringLiteral("电泳与成像"), QStringLiteral("生化设备"), QStringLiteral("细胞与培养"), QStringLiteral("生物标本"),
+            QStringLiteral("电学与电子测量"), QStringLiteral("电工设备"), QStringLiteral("电路元件"),
+            QStringLiteral("力学与计量"), QStringLiteral("力学实验"), QStringLiteral("光学实验"), QStringLiteral("波动与声学实验"), QStringLiteral("近代与热学实验"),
+            QStringLiteral("铁架与夹具"), QStringLiteral("安全与防护"), QStringLiteral("实验台与通用工具"),
+            QStringLiteral("基本图形"), QStringLiteral("箭头与指引"), QStringLiteral("标注文本"), QStringLiteral("实验符号与物质"),
+            QStringLiteral("分析与计量"), QStringLiteral("分离与纯化"), QStringLiteral("实验小工具")
+        };
         QSignalBlocker blocker(catalogCategory);
         catalogCategory->clear();
         catalogCategory->addItem(QStringLiteral("全部分类"), "");
+        const auto activeDomain = catalogDomain->currentData().toString();
         QStringList names;
         for (int row = 0; row < palette->count(); ++row) {
             const auto* item = palette->item(row);
-            if (item->data(Qt::UserRole).toString().startsWith(catalogSource->currentData().toString()+":")) {
+            if (activeDomain == "all" || item->data(Qt::UserRole + 5).toString() == activeDomain) {
                 const auto name = item->data(Qt::UserRole + 1).toString();
                 if (!name.isEmpty() && !names.contains(name)) names.append(name);
             }
         }
-        names.sort();
+        std::sort(names.begin(), names.end(), [](const QString& a, const QString& b) {
+            const int ia = curatedOrder.indexOf(a), ib = curatedOrder.indexOf(b);
+            if (ia >= 0 && ib >= 0) return ia < ib;
+            if (ia >= 0) return true;
+            if (ib >= 0) return false;
+            return a < b;
+        });
         for (const auto& name : names) catalogCategory->addItem(name, name);
         catalogCategory->setVisible(!names.isEmpty());
         filter();
     };
-    connect(catalogSource, &QComboBox::currentIndexChanged, this, categories);
-    if (palette->count()) {
-        const auto first = palette->item(0)->data(Qt::UserRole).toString();
-        catalogSource->setCurrentIndex(catalogSource->findData(first.contains(':') ? first.section(':', 0, 0) : "shapes"));
-    }
+    connect(catalogDomain, &QComboBox::currentIndexChanged, this, categories);
+    catalogDomain->setCurrentIndex(catalogDomain->findData("all"));
     categories();
     filter();
     split->addWidget(catalog);
@@ -1438,17 +1597,438 @@ void MainWindow::generateMolecule(bool fromEditor) {
     }));
 }
 
+namespace {
+struct CategoryVisual {
+    ElementCategory category;
+    const char* key;
+    QString label;
+    QColor fill;
+    QColor accent;
+};
+
+const QVector<CategoryVisual>& categoryVisuals() {
+    static const QVector<CategoryVisual> visuals{
+        {ElementCategory::AlkaliMetal, "AlkaliMetal", QStringLiteral("碱金属"), QColor("#FEF2F2"), QColor("#DC2626")},
+        {ElementCategory::AlkalineEarth, "AlkalineEarth", QStringLiteral("碱土金属"), QColor("#FFF7ED"), QColor("#EA580C")},
+        {ElementCategory::TransitionMetal, "TransitionMetal", QStringLiteral("过渡金属"), QColor("#EFF6FF"), QColor("#2563EB")},
+        {ElementCategory::PostTransition, "PostTransition", QStringLiteral("后过渡金属"), QColor("#F0FDFA"), QColor("#0D9488")},
+        {ElementCategory::Metalloid, "Metalloid", QStringLiteral("类金属"), QColor("#ECFDF5"), QColor("#059669")},
+        {ElementCategory::ReactiveNonmetal, "ReactiveNonmetal", QStringLiteral("活泼非金属"), QColor("#EEF2FF"), QColor("#4F46E5")},
+        {ElementCategory::Halogen, "Halogen", QStringLiteral("卤素"), QColor("#FDF4FF"), QColor("#C026D3")},
+        {ElementCategory::NobleGas, "NobleGas", QStringLiteral("稀有气体"), QColor("#F5F3FF"), QColor("#7C3AED")},
+        {ElementCategory::Lanthanide, "Lanthanide", QStringLiteral("镧系元素"), QColor("#FFFBEB"), QColor("#D97706")},
+        {ElementCategory::Actinide, "Actinide", QStringLiteral("锕系元素"), QColor("#FDF2F8"), QColor("#DB2777")},
+    };
+    return visuals;
+}
+
+CategoryVisual visualForCategory(ElementCategory category) {
+    for (const auto& v : categoryVisuals())
+        if (v.category == category)
+            return v;
+    return categoryVisuals().front();
+}
+
+QIcon colorDotIcon(const QColor& color) {
+    QPixmap pix(20, 20);
+    pix.fill(Qt::transparent);
+    QPainter p(&pix);
+    p.setRenderHint(QPainter::Antialiasing);
+    p.setPen(Qt::NoPen);
+    p.setBrush(color);
+    p.drawEllipse(QRectF(3, 3, 14, 14));
+    p.end();
+    pix.setDevicePixelRatio(2);
+    return QIcon(pix);
+}
+
+class FlowLayout final : public QLayout {
+  public:
+    explicit FlowLayout(int hSpacing = 6, int vSpacing = 6, QWidget* parent = nullptr)
+        : QLayout(parent), m_hSpace(hSpacing), m_vSpace(vSpacing) {}
+    ~FlowLayout() override {
+        QLayoutItem* item = nullptr;
+        while ((item = takeAt(0)) != nullptr)
+            delete item;
+    }
+    void addItem(QLayoutItem* item) override { m_items.append(item); }
+    int count() const override { return m_items.size(); }
+    QLayoutItem* itemAt(int index) const override { return m_items.value(index); }
+    QLayoutItem* takeAt(int index) override {
+        return index >= 0 && index < m_items.size() ? m_items.takeAt(index) : nullptr;
+    }
+    Qt::Orientations expandingDirections() const override { return {}; }
+    bool hasHeightForWidth() const override { return true; }
+    int heightForWidth(int width) const override { return doLayout(QRect(0, 0, width, 0), true); }
+    void setGeometry(const QRect& rect) override {
+        QLayout::setGeometry(rect);
+        doLayout(rect, false);
+    }
+    QSize sizeHint() const override { return minimumSize(); }
+    QSize minimumSize() const override {
+        QSize size;
+        for (const auto* item : m_items)
+            size = size.expandedTo(item->minimumSize());
+        const auto m = contentsMargins();
+        return size + QSize(m.left() + m.right(), m.top() + m.bottom());
+    }
+
+  private:
+    int doLayout(const QRect& rect, bool testOnly) const {
+        int left = 0, top = 0, right = 0, bottom = 0;
+        getContentsMargins(&left, &top, &right, &bottom);
+        const QRect effective = rect.adjusted(+left, +top, -right, -bottom);
+        int x = effective.x();
+        int y = effective.y();
+        int lineHeight = 0;
+        for (auto* item : m_items) {
+            const QSize hint = item->sizeHint();
+            int nextX = x + hint.width() + m_hSpace;
+            if (nextX - m_hSpace > effective.right() && lineHeight > 0) {
+                x = effective.x();
+                y += lineHeight + m_vSpace;
+                nextX = x + hint.width() + m_hSpace;
+                lineHeight = 0;
+            }
+            if (!testOnly)
+                item->setGeometry(QRect(QPoint(x, y), hint));
+            x = nextX;
+            lineHeight = qMax(lineHeight, hint.height());
+        }
+        return y + lineHeight - rect.y() + bottom;
+    }
+    QList<QLayoutItem*> m_items;
+    int m_hSpace, m_vSpace;
+};
+} // namespace
+
+class ElementTile final : public QAbstractButton {
+  public:
+    ElementInfo info;
+    CategoryVisual visual;
+    explicit ElementTile(const ElementInfo& elem, QWidget* parent = nullptr)
+        : QAbstractButton(parent), info(elem), visual(visualForCategory(elem.category)) {
+        setObjectName(QString("elementTile_%1").arg(elem.atomicNumber));
+        setProperty("atomicNumber", elem.atomicNumber);
+        setCheckable(true);
+        setCursor(Qt::PointingHandCursor);
+        setMinimumSize(40, 52);
+        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        setToolTip(QStringLiteral("%1 %2 · %3 (%4)\n%5 · %6")
+                       .arg(elem.atomicNumber)
+                       .arg(elem.symbol, elem.chineseName, elem.englishName, elem.categoryName, elem.massDisplay));
+    }
+    QSize sizeHint() const override { return {58, 56}; }
+    QSize minimumSizeHint() const override { return {40, 52}; }
+
+  protected:
+    void paintEvent(QPaintEvent*) override {
+        QPainter p(this);
+        p.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+        if (!isEnabled())
+            p.setOpacity(0.26);
+
+        const QRectF r = QRectF(rect()).adjusted(0.75, 0.75, -0.75, -0.75);
+        const bool active = isChecked();
+        const bool hovered = underMouse() && isEnabled();
+
+        QColor bg = visual.fill;
+        if (active)
+            bg = bg.darker(105);
+        else if (hovered)
+            bg = bg.darker(102);
+
+        QPainterPath clipPath;
+        clipPath.addRoundedRect(r, 6.0, 6.0);
+        p.save();
+        p.setClipPath(clipPath);
+        p.fillRect(r, bg);
+        p.fillRect(QRectF(r.left(), r.top(), 3.4, r.height()), visual.accent);
+        p.restore();
+
+        QPen borderPen(active ? visual.accent : hovered ? visual.accent : QColor("#D5DEE5"));
+        borderPen.setWidthF(active ? 2.0 : hovered ? 1.4 : 1.0);
+        p.setPen(borderPen);
+        p.setBrush(Qt::NoBrush);
+        p.drawRoundedRect(r, 6.0, 6.0);
+
+        if (active) {
+            QColor ring = visual.accent;
+            ring.setAlpha(45);
+            p.setPen(QPen(ring, 3.0));
+            p.drawRoundedRect(r.adjusted(-0.5, -0.5, 0.5, 0.5), 6.5, 6.5);
+        }
+
+        const bool compact = r.width() < 48.0;
+        const qreal innerLeft = r.left() + 5.5;
+        const qreal innerRight = r.right() - 4.0;
+
+        // Top-left: atomic number
+        QFont zFont = font();
+        zFont.setPixelSize(compact ? 8 : 9);
+        zFont.setWeight(QFont::Medium);
+        p.setFont(zFont);
+        p.setPen(QColor("#475569"));
+        p.drawText(QRectF(innerLeft, r.top() + 2.0, innerRight - innerLeft - 8.0, 11.0),
+                   Qt::AlignLeft | Qt::AlignVCenter, QString::number(info.atomicNumber));
+
+        // Top-right: STP state dot
+        const QPointF dotCenter(r.right() - 6.0, r.top() + 7.0);
+        if (info.stateAtStp == QStringLiteral("固态")) {
+            p.setPen(Qt::NoPen);
+            p.setBrush(QColor("#334155"));
+            p.drawEllipse(dotCenter, 2.4, 2.4);
+        } else if (info.stateAtStp == QStringLiteral("液态")) {
+            p.setPen(Qt::NoPen);
+            p.setBrush(QColor("#0284C7"));
+            p.drawEllipse(dotCenter, 2.7, 2.7);
+        } else {
+            p.setPen(QPen(QColor("#0D9488"), 1.3));
+            p.setBrush(Qt::white);
+            p.drawEllipse(dotCenter, 2.4, 2.4);
+        }
+
+        // Center: bold element symbol
+        QFont symFont = font();
+        symFont.setPixelSize(compact ? 13 : 16);
+        symFont.setWeight(QFont::Bold);
+        p.setFont(symFont);
+        p.setPen(QColor("#0F172A"));
+        p.drawText(QRectF(innerLeft, r.top() + 12.0, innerRight - innerLeft, r.height() - 32.0),
+                   Qt::AlignCenter, info.symbol);
+
+        // Bottom line 1: Chinese name
+        QFont zhFont = font();
+        zhFont.setPixelSize(compact ? 9 : 10);
+        zhFont.setWeight(QFont::Medium);
+        p.setFont(zhFont);
+        p.setPen(QColor("#1E293B"));
+        p.drawText(QRectF(innerLeft - 1.0, r.bottom() - 21.0, innerRight - innerLeft + 1.0, 11.0),
+                   Qt::AlignCenter, info.chineseName);
+
+        // Bottom line 2: concise atomic mass
+        QFont massFont = font();
+        massFont.setPixelSize(compact ? 7 : 8);
+        p.setFont(massFont);
+        p.setPen(QColor("#64748B"));
+        p.drawText(QRectF(innerLeft - 1.5, r.bottom() - 10.5, innerRight - innerLeft + 2.0, 9.5),
+                   Qt::AlignCenter, info.massDisplay);
+    }
+};
+
+class BohrShellWidget final : public QWidget {
+  public:
+    ElementInfo info;
+    CategoryVisual visual;
+    explicit BohrShellWidget(QWidget* parent = nullptr) : QWidget(parent) {
+        setObjectName("bohrShellWidget");
+        setFixedSize(156, 156);
+    }
+    void setElement(const ElementInfo& elem) {
+        info = elem;
+        visual = visualForCategory(elem.category);
+        update();
+    }
+
+  protected:
+    void paintEvent(QPaintEvent*) override {
+        QPainter p(this);
+        p.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+        const QPointF c(width() / 2.0, height() / 2.0);
+
+        QColor bgTint = visual.fill;
+        bgTint.setAlpha(150);
+        p.setPen(QPen(QColor("#E2E8F0"), 1.0));
+        p.setBrush(bgTint);
+        p.drawEllipse(c, 73.0, 73.0);
+
+        const int shellCount = info.shells.size();
+        for (int i = 0; i < shellCount; ++i) {
+            const qreal radius = shellCount == 1 ? 42.0 : 25.0 + i * (44.0 / (shellCount - 1));
+            const bool valence = (i == shellCount - 1);
+            QColor ringColor = valence ? visual.accent : QColor("#94A3B8");
+            ringColor.setAlpha(valence ? 130 : 105);
+            p.setPen(QPen(ringColor, valence ? 1.3 : 1.0));
+            p.setBrush(Qt::NoBrush);
+            p.drawEllipse(c, radius, radius);
+
+            const int electrons = info.shells[i];
+            const qreal er = electrons >= 24 ? 1.8 : electrons >= 14 ? 2.1 : 2.5;
+            QColor halo = visual.accent;
+            halo.setAlpha(65);
+            for (int k = 0; k < electrons; ++k) {
+                const qreal angle = -M_PI / 2.0 + 2.0 * M_PI * k / electrons + i * 0.35;
+                const QPointF pos(c.x() + radius * std::cos(angle), c.y() + radius * std::sin(angle));
+                p.setPen(Qt::NoPen);
+                p.setBrush(halo);
+                p.drawEllipse(pos, er + 1.8, er + 1.8);
+                p.setBrush(visual.accent);
+                p.drawEllipse(pos, er, er);
+            }
+        }
+
+        // Nucleus
+        QRadialGradient nucGrad(c - QPointF(4, 4), 18);
+        nucGrad.setColorAt(0.0, visual.accent.lighter(125));
+        nucGrad.setColorAt(1.0, visual.accent);
+        p.setPen(QPen(Qt::white, 1.5));
+        p.setBrush(nucGrad);
+        p.drawEllipse(c, 15.0, 15.0);
+
+        QFont symFont = font();
+        symFont.setPixelSize(13);
+        symFont.setWeight(QFont::Bold);
+        p.setFont(symFont);
+        p.setPen(Qt::white);
+        p.drawText(QRectF(c.x() - 15.0, c.y() - 15.0, 30.0, 30.0), Qt::AlignCenter, info.symbol);
+    }
+};
+
+class HeroElementBadge final : public QWidget {
+  public:
+    ElementInfo info;
+    CategoryVisual visual;
+    explicit HeroElementBadge(QWidget* parent = nullptr) : QWidget(parent) {
+        setObjectName("periodicHeroBadge");
+        setFixedSize(172, 102);
+    }
+    void setElement(const ElementInfo& elem) {
+        info = elem;
+        visual = visualForCategory(elem.category);
+        update();
+    }
+
+  protected:
+    void paintEvent(QPaintEvent*) override {
+        QPainter p(this);
+        p.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+        const QRectF r = QRectF(rect()).adjusted(0.5, 0.5, -0.5, -0.5);
+
+        QPainterPath path;
+        path.addRoundedRect(r, 8.0, 8.0);
+        p.save();
+        p.setClipPath(path);
+        p.fillRect(r, visual.fill);
+        p.fillRect(QRectF(r.left(), r.top(), 5.0, r.height()), visual.accent);
+        p.restore();
+
+        p.setPen(QPen(visual.accent, 1.4));
+        p.setBrush(Qt::NoBrush);
+        p.drawRoundedRect(r, 8.0, 8.0);
+
+        // Atomic number top-left
+        QFont zFont = font();
+        zFont.setPixelSize(12);
+        zFont.setWeight(QFont::DemiBold);
+        p.setFont(zFont);
+        p.setPen(QColor("#334155"));
+        p.drawText(QRectF(r.left() + 12, r.top() + 8, 56, 18), Qt::AlignLeft | Qt::AlignVCenter,
+                   QStringLiteral("Z = %1").arg(info.atomicNumber));
+
+        // STP state badge top-right
+        QRectF stpRect(r.right() - 52, r.top() + 7, 44, 18);
+        p.setPen(QPen(QColor("#CBD5E1"), 1.0));
+        p.setBrush(Qt::white);
+        p.drawRoundedRect(stpRect, 9, 9);
+        QFont badgeFont = font();
+        badgeFont.setPixelSize(10);
+        badgeFont.setWeight(QFont::Medium);
+        p.setFont(badgeFont);
+        p.setPen(QColor("#334155"));
+        p.drawText(stpRect, Qt::AlignCenter, info.stateAtStp);
+
+        // Symbol + Chinese/English name
+        QFont symFont = font();
+        symFont.setPixelSize(30);
+        symFont.setWeight(QFont::Bold);
+        p.setFont(symFont);
+        p.setPen(QColor("#0F172A"));
+        p.drawText(QRectF(r.left() + 12, r.top() + 26, 62, 42), Qt::AlignLeft | Qt::AlignVCenter, info.symbol);
+
+        QFont zhFont = font();
+        zhFont.setPixelSize(16);
+        zhFont.setWeight(QFont::Bold);
+        p.setFont(zhFont);
+        p.drawText(QRectF(r.left() + 76, r.top() + 28, r.width() - 84, 22),
+                   Qt::AlignLeft | Qt::AlignVCenter, info.chineseName);
+
+        QFont enFont = font();
+        enFont.setPixelSize(11);
+        p.setFont(enFont);
+        p.setPen(QColor("#475569"));
+        p.drawText(QRectF(r.left() + 76, r.top() + 50, r.width() - 84, 16),
+                   Qt::AlignLeft | Qt::AlignVCenter, info.englishName);
+
+        // Bottom category pill
+        QRectF catRect(r.left() + 12, r.bottom() - 25, r.width() - 22, 18);
+        p.setPen(Qt::NoPen);
+        p.setBrush(visual.accent);
+        p.drawRoundedRect(catRect, 9, 9);
+        badgeFont.setWeight(QFont::DemiBold);
+        p.setFont(badgeFont);
+        p.setPen(Qt::white);
+        p.drawText(catRect, Qt::AlignCenter, info.categoryName);
+    }
+};
+
 QWidget* MainWindow::periodicPage() {
     auto* page = new QWidget;
-    auto* l = pageLayout(page);
+    auto* l = new QVBoxLayout(page);
+    l->setContentsMargins(24, 16, 24, 14);
+    l->setSpacing(8);
+
     auto* head = new QHBoxLayout;
+    head->setSpacing(10);
     head->addWidget(heading(QStringLiteral("元素周期表")));
+    auto* stpLegend = new QLabel(QStringLiteral(
+        "<span style='color:#64707b;font-size:12px;'>"
+        "<span style='color:#334155;'>●</span> 固态　"
+        "<span style='color:#0284C7;'>●</span> 液态　"
+        "<span style='color:#0D9488;'>○</span> 气态</span>"));
+    stpLegend->setTextFormat(Qt::RichText);
+    head->addSpacing(12);
+    head->addWidget(stpLegend);
     head->addStretch();
+
     auto* search = new QLineEdit;
-    search->setPlaceholderText(QStringLiteral("元素符号或原子序数"));
-    search->setMaximumWidth(240);
+    search->setObjectName("periodicSearch");
+    search->setPlaceholderText(QStringLiteral("搜索序数、符号、中英文名称或分类"));
+    search->setClearButtonEnabled(true);
+    search->setMinimumWidth(235);
+    search->setMaximumWidth(270);
     head->addWidget(search);
     l->addLayout(head);
+
+    // Interactive category filter legend bar
+    auto* legendHost = new QWidget;
+    legendHost->setObjectName("periodicLegendBar");
+    auto* legendLayout = new FlowLayout(6, 5, legendHost);
+    legendLayout->setContentsMargins(0, 0, 0, 0);
+    auto* catGroup = new QButtonGroup(page);
+    catGroup->setExclusive(true);
+
+    auto* allPill = new QPushButton(QStringLiteral("全部"));
+    allPill->setObjectName("periodicCategoryAll");
+    allPill->setProperty("pill", true);
+    allPill->setCheckable(true);
+    allPill->setChecked(true);
+    catGroup->addButton(allPill, -1);
+    legendLayout->addWidget(allPill);
+
+    QHash<int, QPushButton*> categoryPills;
+    for (int idx = 0; idx < categoryVisuals().size(); ++idx) {
+        const auto& v = categoryVisuals()[idx];
+        auto* pill = new QPushButton(colorDotIcon(v.accent), v.label);
+        pill->setObjectName(QString("periodicCategory_%1").arg(v.key));
+        pill->setProperty("pill", true);
+        pill->setCheckable(true);
+        catGroup->addButton(pill, static_cast<int>(v.category));
+        legendLayout->addWidget(pill);
+        categoryPills.insert(static_cast<int>(v.category), pill);
+    }
+    l->addWidget(legendHost);
+
+    // Periodic table grid
     auto* scroll = new QScrollArea;
     scroll->setWidgetResizable(true);
     scroll->setFrameShape(QFrame::NoFrame);
@@ -1456,43 +2036,160 @@ QWidget* MainWindow::periodicPage() {
     auto* grid = new QGridLayout(table);
     grid->setContentsMargins(0, 0, 0, 0);
     grid->setSpacing(3);
+    grid->setColumnMinimumWidth(0, 26);
+
+    static const char* casHints[18] = {
+        "IA", "IIA", "IIIB", "IVB", "VB", "VIB", "VIIB", "VIII", "VIII",
+        "VIII", "IB", "IIB", "IIIA", "IVA", "VA", "VIA", "VIIA", "VIIIA"
+    };
+    for (int group = 0; group < 18; ++group) {
+        auto* label = new QLabel(QStringLiteral("<b>%1</b><br/><span style='color:#94a3b8;font-size:9px;'>%2</span>")
+                                     .arg(group + 1)
+                                     .arg(casHints[group]));
+        label->setTextFormat(Qt::RichText);
+        label->setAlignment(Qt::AlignCenter);
+        label->setStyleSheet("color:#475569;font-size:10px;");
+        grid->addWidget(label, 0, group + 1);
+        grid->setColumnStretch(group + 1, 1);
+    }
+    for (int period = 1; period <= 7; ++period) {
+        auto* pLabel = new QLabel(QString::number(period));
+        pLabel->setAlignment(Qt::AlignCenter);
+        pLabel->setStyleSheet("color:#64748b;font-size:11px;font-weight:600;");
+        grid->addWidget(pLabel, period, 0);
+    }
+    auto* laRowLabel = new QLabel(QStringLiteral("镧系"));
+    laRowLabel->setAlignment(Qt::AlignCenter);
+    laRowLabel->setStyleSheet("color:#b45309;font-size:10px;font-weight:600;");
+    grid->addWidget(laRowLabel, 9, 0, 1, 3, Qt::AlignRight | Qt::AlignVCenter);
+
+    auto* acRowLabel = new QLabel(QStringLiteral("锕系"));
+    acRowLabel->setAlignment(Qt::AlignCenter);
+    acRowLabel->setStyleSheet("color:#be185d;font-size:10px;font-weight:600;");
+    grid->addWidget(acRowLabel, 10, 0, 1, 3, Qt::AlignRight | Qt::AlignVCenter);
+    grid->setRowMinimumHeight(8, 6);
+
+    // Detail card below table
+    auto* detailCard = new QFrame;
+    detailCard->setObjectName("periodicDetailCard");
+    detailCard->setProperty("card", true);
+    auto* detailLayout = new QHBoxLayout(detailCard);
+    detailLayout->setContentsMargins(14, 10, 14, 10);
+    detailLayout->setSpacing(14);
+
+    auto* heroCol = new QVBoxLayout;
+    heroCol->setSpacing(5);
+    auto* heroBadge = new HeroElementBadge;
+    heroCol->addWidget(heroBadge);
     auto* detail = new QLabel;
     detail->setWordWrap(true);
-    detail->setMinimumHeight(90);
-    detail->setStyleSheet("font-size:15px;border-top:1px solid #dfe5e8;padding:12px 0;");
-    QVector<QPushButton*> buttons;
-    for (int group = 0; group < 18; ++group) {
-        auto* label = new QLabel(QString::number(group + 1));
-        label->setAlignment(Qt::AlignCenter);
-        label->setStyleSheet("color:#8b949e;font-size:10px;");
-        grid->addWidget(label, 0, group);
-    }
-    auto add = [&](int z, int row, int col) {
-        auto* b = new QPushButton(QString::number(z) + "\n" + elementSymbol(z));
-        b->setFixedSize(49, 56);
-        b->setProperty("atomicNumber", z);
-        QString color = col == 17               ? "#f2e5f1"
-                        : col == 0              ? "#f7e6e2"
-                        : col == 1              ? "#f7efdb"
-                        : row >= 8              ? "#e8e4f3"
-                        : col >= 13             ? "#dcefe8"
-                        : col >= 3 && col <= 11 ? "#e3edf8"
-                                                : "#e5edf0";
-        b->setStyleSheet("QPushButton{background:" + color +
-                         ";border:1px solid transparent;padding:3px;font-family:Segoe "
-                         "UI;font-size:14px;border-radius:4px;}QPushButton:hover{border:1px solid #16866c;}");
-        b->setToolTip(elementName(z));
-        connect(b, &QPushButton::clicked, this, [detail, z] {
-            detail->setText(QStringLiteral("<span "
-                                           "style='font-size:22px;font-weight:600'>%1</span>　%2<br/"
-                                           ">原子序数　%3　　　　　标准原子量　%4")
-                                .arg(elementSymbol(z), elementName(z))
-                                .arg(z)
-                                .arg(atomicMass(z), 0, 'g', 8));
-        });
-        grid->addWidget(b, row, col);
-        buttons << b;
+    detail->setMaximumWidth(174);
+    detail->setStyleSheet("font-size:11px;color:#475569;");
+    heroCol->addWidget(detail);
+    heroCol->addStretch();
+    detailLayout->addLayout(heroCol);
+
+    auto* bohrCol = new QVBoxLayout;
+    bohrCol->setSpacing(2);
+    auto* bohr = new BohrShellWidget;
+    auto* shellsLabel = new QLabel;
+    shellsLabel->setObjectName("periodicShellsLabel");
+    shellsLabel->setAlignment(Qt::AlignCenter);
+    shellsLabel->setStyleSheet("font-size:11px;font-weight:600;color:#334155;");
+    bohrCol->addWidget(bohr, 0, Qt::AlignCenter);
+    bohrCol->addWidget(shellsLabel);
+    detailLayout->addLayout(bohrCol);
+
+    auto* propHost = new QWidget;
+    propHost->setObjectName("periodicPropertyGrid");
+    auto* propGrid = new QGridLayout(propHost);
+    propGrid->setContentsMargins(0, 2, 0, 2);
+    propGrid->setHorizontalSpacing(14);
+    propGrid->setVerticalSpacing(6);
+    auto makeProp = [&](int r, int c, const QString& keyText, const char* objName) {
+        auto* k = new QLabel(keyText);
+        k->setStyleSheet("font-size:11px;color:#64748b;");
+        auto* v = new QLabel;
+        v->setObjectName(objName);
+        v->setWordWrap(true);
+        v->setStyleSheet("font-size:12.5px;font-weight:600;color:#1e293b;");
+        propGrid->addWidget(k, r * 2, c);
+        propGrid->addWidget(v, r * 2 + 1, c);
+        return v;
     };
+    auto* propMass = makeProp(0, 0, QStringLiteral("标准原子量"), "periodicPropMass");
+    auto* propConfig = makeProp(0, 1, QStringLiteral("电子排布"), "periodicPropConfig");
+    auto* propPosition = makeProp(1, 0, QStringLiteral("周期 / 族 / 区"), "periodicPropPosition");
+    auto* propEneg = makeProp(1, 1, QStringLiteral("电负性 (Pauling)"), "periodicPropElectronegativity");
+    auto* propOx = makeProp(2, 0, QStringLiteral("常见化合价"), "periodicPropOxidation");
+    auto* propMp = makeProp(2, 1, QStringLiteral("熔点"), "periodicPropMelting");
+    auto* propBp = makeProp(3, 0, QStringLiteral("沸点"), "periodicPropBoiling");
+    auto* propDens = makeProp(3, 1, QStringLiteral("密度"), "periodicPropDensity");
+    propGrid->setColumnStretch(0, 1);
+    propGrid->setColumnStretch(1, 1);
+    detailLayout->addWidget(propHost, 1);
+
+    auto* actionCol = new QVBoxLayout;
+    actionCol->setSpacing(7);
+    auto* insertBtn = command(QStringLiteral("插入文稿"), "plus", true);
+    insertBtn->setObjectName("periodicInsertButton");
+    insertBtn->setMinimumWidth(122);
+    auto* copyBtn = command(QStringLiteral("复制信息"), "copy");
+    copyBtn->setObjectName("periodicCopyButton");
+    copyBtn->setMinimumWidth(122);
+    auto* calcBtn = command(QStringLiteral("计算摩尔质量"), "scale");
+    calcBtn->setObjectName("periodicCalcButton");
+    calcBtn->setMinimumWidth(122);
+    actionCol->addWidget(insertBtn);
+    actionCol->addWidget(copyBtn);
+    actionCol->addWidget(calcBtn);
+    actionCol->addStretch();
+    detailLayout->addLayout(actionCol);
+
+    auto activeElement = std::make_shared<ElementInfo>(elementInfo(6));
+    QVector<ElementTile*> tiles;
+    auto* tileGroup = new QButtonGroup(page);
+    tileGroup->setExclusive(true);
+
+    const auto selectElement = [activeElement, heroBadge, bohr, shellsLabel, detail, propMass, propConfig,
+                                propPosition, propEneg, propOx, propMp, propBp, propDens, tileGroup](int z) {
+        const auto info = elementInfo(z);
+        *activeElement = info;
+        heroBadge->setElement(info);
+        bohr->setElement(info);
+        QStringList shellTexts;
+        for (int s : info.shells)
+            shellTexts << QString::number(s);
+        shellsLabel->setText(QStringLiteral("电子层：%1").arg(shellTexts.join(" - ")));
+        propMass->setText(info.massDisplay);
+        propConfig->setText(info.electronConfig);
+        propPosition->setText(QStringLiteral("第 %1 周期 · 第 %2 族 · %3 区")
+                                  .arg(info.period)
+                                  .arg(info.group)
+                                  .arg(info.block));
+        propEneg->setText(info.electronegativity > 0 ? QString::number(info.electronegativity, 'f', 2)
+                                                     : QStringLiteral("—"));
+        propOx->setText(info.oxidationStates);
+        propMp->setText(info.meltingPoint);
+        propBp->setText(info.boilingPoint);
+        propDens->setText(info.density);
+        detail->setText(QStringLiteral("<b>%1 · %2</b> (%3)<br/>原子序数 %4 · 标准原子量 %5")
+                            .arg(info.symbol, info.chineseName, info.englishName)
+                            .arg(info.atomicNumber)
+                            .arg(info.massDisplay));
+        if (auto* tile = tileGroup->button(z))
+            tile->setChecked(true);
+    };
+
+    auto add = [&](int z, int row, int col) {
+        const auto info = elementInfo(z);
+        auto* b = new ElementTile(info);
+        tileGroup->addButton(b, z);
+        connect(b, &QAbstractButton::clicked, this, [selectElement, z] { selectElement(z); });
+        grid->addWidget(b, row, col + 1);
+        tiles << b;
+    };
+
     add(1, 1, 0);
     add(2, 1, 17);
     for (int z = 3; z <= 10; ++z)
@@ -1512,31 +2209,117 @@ QWidget* MainWindow::periodicPage() {
     for (int z = 104; z <= 118; ++z)
         add(z, 7, z - 101);
     for (int z = 57; z <= 71; ++z)
-        add(z, 8, z - 55);
+        add(z, 9, z - 55);
     for (int z = 89; z <= 103; ++z)
-        add(z, 9, z - 87);
-    auto* la = new QLabel("57–71");
-    la->setAlignment(Qt::AlignCenter);
-    grid->addWidget(la, 6, 2);
-    auto* ac = new QLabel("89–103");
-    ac->setAlignment(Qt::AlignCenter);
-    grid->addWidget(ac, 7, 2);
-    grid->setRowStretch(10, 1);
+        add(z, 10, z - 87);
+
+    auto makeSeriesLinker = [&](const QString& text, const QString& sub, ElementCategory cat,
+                                const QColor& fill, const QColor& accent, const char* objName) {
+        auto* b = new QPushButton(text + "\n" + sub);
+        b->setObjectName(objName);
+        b->setMinimumSize(40, 52);
+        b->setMaximumHeight(56);
+        b->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        b->setCursor(Qt::PointingHandCursor);
+        b->setStyleSheet(QStringLiteral(
+            "QPushButton{background:%1;border:1px dashed %2;border-radius:6px;padding:2px;"
+            "font-size:10px;font-weight:600;color:%2;}"
+            "QPushButton:hover{background:%1;border:1.5px solid %2;}")
+                             .arg(fill.name(), accent.name()));
+        connect(b, &QPushButton::clicked, this, [catGroup, allPill, categoryPills, cat] {
+            if (auto* target = categoryPills.value(static_cast<int>(cat))) {
+                if (target->isChecked())
+                    allPill->click();
+                else
+                    target->click();
+            }
+        });
+        return b;
+    };
+    grid->addWidget(makeSeriesLinker("57–71", "La–Lu", ElementCategory::Lanthanide,
+                                     QColor("#FFFBEB"), QColor("#D97706"), "periodicLinkerLa"),
+                    6, 3);
+    grid->addWidget(makeSeriesLinker("89–103", "Ac–Lr", ElementCategory::Actinide,
+                                     QColor("#FDF2F8"), QColor("#DB2777"), "periodicLinkerAc"),
+                    7, 3);
+    grid->setRowStretch(11, 1);
+
     scroll->setWidget(table);
     l->addWidget(scroll, 1);
-    l->addWidget(detail);
+    l->addWidget(detailCard);
+
     elementDetail = detail;
-    detail->setText(QStringLiteral("<span "
-                                   "style='font-size:22px;font-weight:600'>C</span>　Carbon<br/"
-                                   ">原子序数　6　　　　　标准原子量　12.0107"));
-    connect(search, &QLineEdit::textChanged, this, [buttons](const QString& t) {
-        for (auto* b : buttons) {
-            int z = b->property("atomicNumber").toInt();
-            bool match = t.isEmpty() || elementSymbol(z).compare(t, Qt::CaseInsensitive) == 0 ||
-                         QString::number(z) == t || elementName(z).contains(t, Qt::CaseInsensitive);
-            b->setEnabled(match);
+    selectElement(6);
+
+    const auto applyPeriodicFilter = [tiles, search, catGroup] {
+        const QString query = search->text().trimmed();
+        const int activeCategoryId = catGroup->checkedId();
+        bool numeric = false;
+        const int numericZ = query.toInt(&numeric);
+        for (auto* tile : tiles) {
+            const auto& info = tile->info;
+            const bool categoryMatch =
+                activeCategoryId < 0 || static_cast<int>(info.category) == activeCategoryId;
+            bool textMatch = query.isEmpty();
+            if (!textMatch) {
+                if (numeric)
+                    textMatch = (info.atomicNumber == numericZ);
+                else
+                    textMatch = info.symbol.startsWith(query, Qt::CaseInsensitive) ||
+                                info.chineseName.contains(query, Qt::CaseInsensitive) ||
+                                info.englishName.contains(query, Qt::CaseInsensitive) ||
+                                info.categoryName.contains(query, Qt::CaseInsensitive);
+            }
+            tile->setEnabled(categoryMatch && textMatch);
         }
+    };
+    connect(search, &QLineEdit::textChanged, this, applyPeriodicFilter);
+    connect(catGroup, &QButtonGroup::idClicked, this, applyPeriodicFilter);
+
+    connect(insertBtn, &QPushButton::clicked, this, [this, activeElement] {
+        editor->textCursor().insertText(activeElement->symbol);
+        markDirty();
+        report(QStringLiteral("已插入元素符号 %1（%2）")
+                   .arg(activeElement->symbol, activeElement->chineseName));
     });
+    connect(copyBtn, &QPushButton::clicked, this, [this, activeElement] {
+        QStringList shellTexts;
+        for (int s : activeElement->shells)
+            shellTexts << QString::number(s);
+        const QString text = QStringLiteral(
+            "%1 · %2 (%3)\n"
+            "原子序数: %4\n"
+            "标准原子量: %5\n"
+            "类别: %6 | 物态(STP): %7\n"
+            "周期/族/区: 第%8周期 / 第%9族 / %10区\n"
+            "电子排布: %11 (%12)\n"
+            "电负性: %13 | 化合价: %14\n"
+            "熔点: %15 | 沸点: %16 | 密度: %17")
+                                 .arg(activeElement->symbol, activeElement->chineseName,
+                                      activeElement->englishName)
+                                 .arg(activeElement->atomicNumber)
+                                 .arg(activeElement->massDisplay, activeElement->categoryName,
+                                      activeElement->stateAtStp)
+                                 .arg(activeElement->period)
+                                 .arg(activeElement->group)
+                                 .arg(activeElement->block, activeElement->electronConfig,
+                                      shellTexts.join("-"),
+                                      activeElement->electronegativity > 0
+                                          ? QString::number(activeElement->electronegativity, 'f', 2)
+                                          : QStringLiteral("—"),
+                                      activeElement->oxidationStates, activeElement->meltingPoint,
+                                      activeElement->boilingPoint, activeElement->density);
+        QApplication::clipboard()->setText(text);
+        report(QStringLiteral("已复制 %1（%2）元素信息")
+                   .arg(activeElement->symbol, activeElement->chineseName));
+    });
+    connect(calcBtn, &QPushButton::clicked, this, [this, activeElement] {
+        formulaInput->setText(activeElement->symbol);
+        updateFormula();
+        showPage(0);
+        report(QStringLiteral("已加载 %1 摩尔质量计算").arg(activeElement->symbol));
+    });
+
     return page;
 }
 
@@ -1619,7 +2402,6 @@ QWidget* MainWindow::libraryPage() {
                 snippets.append(entry);
             }
     }
-    refreshLibrary();
     connect(librarySearch, &QLineEdit::textChanged, this, &MainWindow::refreshLibrary);
     connect(librarySource, &QComboBox::currentIndexChanged, this, &MainWindow::refreshLibrary);
     connect(libraryList, &QListWidget::currentItemChanged, this, [this, use, edit](QListWidgetItem* i) {
@@ -1715,10 +2497,10 @@ void MainWindow::editSnippet(bool create) {
 
 void MainWindow::showPage(int index) {
     pages->setCurrentIndex(index);
-    const auto groups = findChildren<QButtonGroup*>();
-    for (auto* g : groups)
-        if (g->button(index))
-            g->button(index)->setChecked(true);
+    if (auto* nav = findChild<QButtonGroup*>("navGroup")) {
+        if (auto* btn = nav->button(index))
+            btn->setChecked(true);
+    }
     if (index == 2)
         QTimer::singleShot(0, drawing, &DrawingView::fitCanvas);
 }
@@ -1955,6 +2737,16 @@ void MainWindow::exportFile(const QString& format) {
     }
     if ((format == "MOL" || format == "SMILES" || format == "KET" || format == "RXN") && page != 3) {
         report(QStringLiteral("请先打开分子结构页面"), true);
+        return;
+    }
+    if (format == "RXN" && structureDocument["rxn"].toString().isEmpty()) {
+        report(QStringLiteral("当前内容不含化学反应，无法导出 RXN"), true);
+        return;
+    }
+    if (page == 3 && moleculeSourceIsDrawing &&
+        ((format == "MOL" && structureDocument["mol"].toString().isEmpty()) ||
+         (format == "SMILES" && structureDocument["smiles"].toString().isEmpty()))) {
+        report(QStringLiteral("当前画布为空，无法导出"), true);
         return;
     }
     if (format == "SVG" && ((page != 2 && page != 3) || view3D)) {

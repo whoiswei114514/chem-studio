@@ -1,4 +1,7 @@
-# Physics instruments
+# Physics & Electronics Apparatus Attribution
 
-40 original schematic illustrations by Chem Studio contributors, WTFPL v2.
-Approved and integrated on 2026-11-11. Ports describe drawing connections and physical mounting, not a numerical circuit or physics simulator.
+- **Assets**: 71 authored physics, electrical, optical, thermal, and mechanics SVG illustrations in `assets/physics/` (generated deterministically by `scripts/generate-biophys-art.cjs`)
+- **Author**: Chem Studio contributors
+- **License**: WTFPL-2.0 (`Do What The F*ck You Want To Public License`, v2)
+
+All apparatus vectors follow Chem Studio orthographic schematic conventions and Qt `QSvgRenderer`-safe SVG 1.1/1.2 Tiny syntax.

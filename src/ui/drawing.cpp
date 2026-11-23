@@ -78,10 +78,10 @@ bool insertingPort(const QString& type) {
            type == "luer-male" || type == "immersible";
 }
 bool malePort(const QString& type) {
-    return type == "glass-male" || type == "vapor-male";
+    return type == "glass-male" || type == "vapor-male" || type == "glass-joint";
 }
 bool femalePort(const QString& type) {
-    return type == "glass-female" || type == "vapor-female" || type == "sensor-socket";
+    return type == "glass-female" || type == "vapor-female" || type == "sensor-socket" || type == "glass-joint";
 }
 bool rigidMode(const QString& mode) {
     return mode == "joint" || mode == "insertion" || mode == "support" || mode == "contact";
@@ -90,6 +90,12 @@ bool slidingSupport(const QString& role) {
     return role == "base" || role == "clamp" || role == "grip-site" || role == "spot" ||
            role == "lining" || role == "lid" || role == "clip" ||
            role == "air-glider" || role == "optical-carriage";
+}
+bool supportPort(const QString& role) {
+    static const QSet<QString> roles{"base", "surface", "rail", "clamp", "grip", "grip-site", "rack",
+        "lining", "lining-seat", "lid", "clip", "clip-seat", "spot", "lane", "well", "contents",
+        "contents-seat", "hook", "hanger", "air-glider", "air-rail", "optical-carriage", "optical-rail"};
+    return roles.contains(role);
 }
 QString assemblyMode(const DrawingItem* source, const QString& from, const DrawingItem* target,
                      const QString& to) {
@@ -103,8 +109,8 @@ QString assemblyMode(const DrawingItem* source, const QString& from, const Drawi
         pair("contents", "contents-seat") || pair("spot", "well") ||
         pair("air-glider", "air-rail") || pair("optical-carriage", "optical-rail"))
         return "support";
-    if ((probePort(a) && (b == "bore" || b == "mouth" || b == "glass-female" || b == "sensor-socket")) ||
-        (probePort(b) && (a == "bore" || a == "mouth" || a == "glass-female" || a == "sensor-socket")) ||
+    if ((probePort(a) && (b == "bore" || b == "mouth" || b == "glass-female" || b == "sensor-socket" || b == "glass-joint")) ||
+        (probePort(b) && (a == "bore" || a == "mouth" || a == "glass-female" || a == "sensor-socket" || a == "glass-joint")) ||
         pair("tube", "bore") || pair("tube", "mouth") ||
         pair("delivery", "bore") || pair("delivery", "mouth") || pair("luer-male", "mouth") ||
         pair("immersible", "mouth"))
@@ -114,19 +120,44 @@ QString assemblyMode(const DrawingItem* source, const QString& from, const Drawi
     }
     if (pair("pipette-stem", "pipette-filler") || pair("luer-male", "luer-female"))
         return "joint";
+    if (pair("ball-male", "ball-female"))
+        return "joint";
     if ((a == "plug" && (femalePort(b) || b == "mouth")) ||
         (b == "plug" && (femalePort(a) || a == "mouth")))
         return "joint";
+    if ((source->kind == "lab:thermometer-adapter" && from == "outlet" && b == "sensor-socket") ||
+        (target->kind == "lab:thermometer-adapter" && to == "outlet" && a == "sensor-socket"))
+        return "joint";
     if ((malePort(a) && femalePort(b) && b != "sensor-socket" &&
-         (a != "vapor-male" || b == "vapor-female")) ||
+         (a != "vapor-male" || b == "vapor-female" || b == "glass-joint")) ||
         (malePort(b) && femalePort(a) && a != "sensor-socket" &&
-         (b != "vapor-male" || a == "vapor-female")))
+         (b != "vapor-male" || a == "vapor-female" || a == "glass-joint")))
         return "joint";
     if ((a == "hose" && (b == "tube" || b == "coolant" || b == "pipette-stem" || b == "luer-male" || malePort(b))) ||
         (b == "hose" && (a == "tube" || a == "coolant" || a == "pipette-stem" || a == "luer-male" || malePort(a))) ||
         pair("tube", "tube"))
         return "joint";
     return {};
+}
+bool insertionFits(const DrawingItem* source, const QString& from, const DrawingItem* target,
+                   const QString& to, bool fitBore) {
+    if (assemblyMode(source, from, target, to) != "insertion")
+        return true;
+    const bool sourceInserts = insertingPort(portType(source, from));
+    const auto* inserted = sourceInserts ? source : target;
+    const auto* receiver = sourceInserts ? target : source;
+    const auto insertedPort = sourceInserts ? from : to;
+    const auto receiverPort = sourceInserts ? to : from;
+    const double stem = inserted->portDiameter(insertedPort), opening = receiver->portDiameter(receiverPort);
+    if (stem <= 0 || opening <= 0)
+        return true;
+    if (portType(receiver, receiverPort) == "bore" && fitBore) {
+        const double local = receiver->portDiameters.value(receiverPort);
+        if (local <= 0) return true;
+        const double capacity = receiver->size.width() * (receiver->boreCount == 1 ? 0.84 : 0.36) * opening / local;
+        return stem <= capacity + 1e-8;
+    }
+    return stem <= opening + 0.5;
 }
 bool hosePorts(const DrawingItem* source, const QString& from, const DrawingItem* target, const QString& to) {
     const auto a = portType(source, from), b = portType(target, to);
@@ -144,20 +175,32 @@ bool portOccupied(const DrawingItem* item, const QString& port, const QString& o
                   const QString& otherPort = {});
 bool sameAssembly(QGraphicsScene* scene, const QString& from, const QString& to);
 bool compatiblePorts(const DrawingItem* source, const QString& from, const DrawingItem* target,
-                     const QString& to) {
+                     const QString& to, bool fitBore) {
     if ((source->isFlexiblePort(from) || target->isFlexiblePort(to)) &&
         portType(source, from) == "wire" && portType(target, to) == "wire")
         return true;
     const auto mode = assemblyMode(source, from, target, to);
     if (mode.isEmpty())
         return false;
-    return true;
+    return insertionFits(source, from, target, to, fitBore);
 }
 QPointF closestPoint(QPointF point, const QLineF& segment) {
     const auto vector = segment.p2() - segment.p1();
     const double square = QPointF::dotProduct(vector, vector);
     return square > 1e-12 ? segment.p1() + vector *
         qBound(0.0, QPointF::dotProduct(point - segment.p1(), vector) / square, 1.0) : segment.p1();
+}
+QPointF jointSnapPoint(const DrawingItem* moved, const QString& from, const DrawingItem* target,
+                       const QString& to, QPointF source) {
+    const auto face = target->portPosition(to);
+    const auto a = portType(moved, from), b = portType(target, to);
+    if (assemblyMode(moved, from, target, to) != "joint" ||
+        !((malePort(a) && femalePort(b)) || (femalePort(a) && malePort(b))))
+        return face;
+    // A glass joint can already overlap when released. Capture its full engagement
+    // interval, not just the two lips; matePorts will then seat and orient it.
+    const double depth = qMax(0.0, qMin(moved->portDepth(from), target->portDepth(to)));
+    return closestPoint(source, {face, face - target->portDirection(to) * depth});
 }
 struct PortMatch {
     DrawingItem* target = nullptr;
@@ -169,6 +212,8 @@ QVector<PortMatch> nearbyPorts(DrawingItem* moved, double distance, QPointF tran
     QVector<PortMatch> result;
     if (!moved->scene() || !std::isfinite(distance) || distance <= 0)
         return result;
+    const auto* view = qobject_cast<DrawingView*>(moved->scene()->views().value(0));
+    const bool fitBore = !view || view->matchPortSizes;
     for (auto* object : moved->scene()->items()) {
         auto* target = dynamic_cast<DrawingItem*>(object);
         if (!target || target == moved || target->isSelected())
@@ -177,33 +222,32 @@ QVector<PortMatch> nearbyPorts(DrawingItem* moved, double distance, QPointF tran
             continue;
         for (auto from = moved->ports.cbegin(); from != moved->ports.cend(); ++from) {
             for (auto to = target->ports.cbegin(); to != target->ports.cend(); ++to) {
-                if (!compatiblePorts(moved, from.key(), target, to.key()))
+                if (!compatiblePorts(moved, from.key(), target, to.key(), fitBore))
                     continue;
                 if (portOccupied(moved, from.key()) || portOccupied(target, to.key()))
                     continue;
-                const auto source = moved->portPosition(from.key()) + translation;
-                auto destination = target->portPosition(to.key());
+                auto source = moved->portPosition(from.key()) + translation;
+                auto destination = jointSnapPoint(moved, from.key(), target, to.key(), source);
                 const auto mode = assemblyMode(moved, from.key(), target, to.key());
                 if (target->portSegments.contains(to.key()) &&
-                    (mode == "support" || (mode == "insertion" && portType(moved, from.key()) == "bore"))) {
+                    (mode == "support" || mode == "insertion")) {
                     const auto segment = target->portSegments[to.key()];
                     const auto physical = [target](QPointF p) {
                         return target->mapToScene(p.x() * target->size.width(), p.y() * target->size.height());
                     };
-                    destination = closestPoint(source, {physical(segment.p1()), physical(segment.p2())});
+                    const auto projected = closestPoint(source, {physical(segment.p1()), physical(segment.p2())});
+                    if (mode == "support" || QLineF(source, projected).length() < QLineF(source, destination).length())
+                        destination = projected;
                 } else if (moved->portSegments.contains(from.key()) &&
-                           (mode == "support" || (mode == "insertion" && portType(target, to.key()) == "bore"))) {
+                           (mode == "support" || mode == "insertion")) {
                     const auto segment = moved->portSegments[from.key()];
                     const auto physical = [moved, translation](QPointF p) {
                         return moved->mapToScene(p.x() * moved->size.width(), p.y() * moved->size.height()) +
                                translation;
                     };
                     const auto projected = closestPoint(destination, {physical(segment.p1()), physical(segment.p2())});
-                    const auto offset = destination - projected;
-                    const double length = QLineF(QPointF(), offset).length();
-                    if (length < distance)
-                        result.append({target, from.key(), to.key(), destination, offset, length});
-                    continue;
+                    if (mode == "support" || QLineF(destination, projected).length() < QLineF(destination, source).length())
+                        source = projected;
                 }
                 const auto offset = destination - source;
                 const double length = QLineF(QPointF(), offset).length();
@@ -241,31 +285,38 @@ void selectIds(QGraphicsScene* scene, const QStringList& ids) {
 QVector<ApparatusDefinition> apparatusDefinitions() {
     QVector<ApparatusDefinition> result;
     for (const auto& art : apparatusArtwork())
-        result.append({art.id, art.name, art.size, art.category, art.search});
-    result += QVector<ApparatusDefinition>{{"beaker", QStringLiteral("烧杯"), {120, 145}},
-                                           {"flask", QStringLiteral("锥形瓶"), {120, 170}},
-                                           {"round-flask", QStringLiteral("圆底烧瓶"), {135, 175}},
-                                           {"test-tube", QStringLiteral("试管"), {48, 165}},
-                                           {"funnel", QStringLiteral("漏斗"), {100, 130}},
-                                           {"condenser", QStringLiteral("直形冷凝管"), {220, 66}},
-                                           {"burette", QStringLiteral("滴定管"), {42, 245}},
-                                           {"cylinder", QStringLiteral("量筒"), {66, 175}},
-                                           {"burner", QStringLiteral("酒精灯"), {90, 105}},
-                                           {"stand", QStringLiteral("铁架台"), {150, 285}},
-                                           {"clamp", QStringLiteral("铁夹"), {105, 32}},
-                                           {"tripod", QStringLiteral("三脚架"), {110, 115}},
-                                           {"thermometer", QStringLiteral("温度计"), {26, 175}},
-                                           {"u-tube", QStringLiteral("U 形管"), {100, 155}},
-                                           {"tube", QStringLiteral("导气管"), {180, 70}},
-                                           {"gas-jar", QStringLiteral("集气瓶"), {95, 150}},
-                                           {"volumetric", QStringLiteral("容量瓶"), {90, 190}},
-                                           {"electrode", QStringLiteral("电极"), {28, 130}},
-                                           {"battery", QStringLiteral("电源"), {90, 62}},
-                                           {"arrow", QStringLiteral("箭头"), {135, 30}},
-                                           {"line", QStringLiteral("连接线"), {140, 25}},
-                                           {"label", QStringLiteral("文字标注"), {150, 35}},
-                                           {"rectangle", QStringLiteral("矩形"), {140, 90}},
-                                           {"ellipse", QStringLiteral("椭圆"), {140, 90}}};
+        result.append({art.id, art.name, art.size, art.category, art.search, art.domain, art.catalogVisible});
+    const QString annotationDomain = QStringLiteral("annotation");
+    result += QVector<ApparatusDefinition>{
+        {"beaker", QStringLiteral("烧杯"), {120, 145}, {}, {}, {}, false},
+        {"flask", QStringLiteral("锥形瓶"), {120, 170}, {}, {}, {}, false},
+        {"round-flask", QStringLiteral("圆底烧瓶"), {135, 175}, {}, {}, {}, false},
+        {"test-tube", QStringLiteral("试管"), {48, 165}, {}, {}, {}, false},
+        {"funnel", QStringLiteral("漏斗"), {100, 130}, {}, {}, {}, false},
+        {"condenser", QStringLiteral("直形冷凝管"), {220, 66}, {}, {}, {}, false},
+        {"burette", QStringLiteral("滴定管"), {42, 245}, {}, {}, {}, false},
+        {"cylinder", QStringLiteral("量筒"), {66, 175}, {}, {}, {}, false},
+        {"burner", QStringLiteral("酒精灯"), {90, 105}, {}, {}, {}, false},
+        {"stand", QStringLiteral("铁架台"), {150, 285}, {}, {}, {}, false},
+        {"clamp", QStringLiteral("铁夹"), {105, 32}, {}, {}, {}, false},
+        {"tripod", QStringLiteral("三脚架"), {110, 115}, {}, {}, {}, false},
+        {"thermometer", QStringLiteral("温度计"), {26, 175}, {}, {}, {}, false},
+        {"u-tube", QStringLiteral("U 形管"), {100, 155}, {}, {}, {}, false},
+        {"tube", QStringLiteral("导气管"), {180, 70}, {}, {}, {}, false},
+        {"gas-jar", QStringLiteral("集气瓶"), {95, 150}, {}, {}, {}, false},
+        {"volumetric", QStringLiteral("容量瓶"), {90, 190}, {}, {}, {}, false},
+        {"electrode", QStringLiteral("电极"), {28, 130}, {}, {}, {}, false},
+        {"battery", QStringLiteral("电源"), {90, 62}, {}, {}, {}, false},
+        {"arrow", QStringLiteral("箭头"), {135, 30}, QStringLiteral("箭头与指引"),
+         QStringLiteral("方向 指示 流程 arrow"), annotationDomain, true},
+        {"line", QStringLiteral("连接线"), {140, 25}, QStringLiteral("基本图形"),
+         QStringLiteral("直线 线段 line"), annotationDomain, true},
+        {"label", QStringLiteral("文字标注"), {150, 35}, QStringLiteral("标注文本"),
+         QStringLiteral("标注 标签 文本 text label"), annotationDomain, true},
+        {"rectangle", QStringLiteral("矩形"), {140, 90}, QStringLiteral("基本图形"),
+         QStringLiteral("长方形 方框 rectangle"), annotationDomain, true},
+        {"ellipse", QStringLiteral("椭圆"), {140, 90}, QStringLiteral("基本图形"),
+         QStringLiteral("圆 圆形 circle ellipse"), annotationDomain, true}};
     return result;
 }
 DrawingItem::DrawingItem(QString type, QGraphicsItem* parent)
@@ -941,12 +992,12 @@ DrawingItem* DrawingItem::fromJson(const QJsonObject& o) {
     if (item->boreCount >= 0)
         item->setBoreCount(o["boreCount"].toInt(0));
     const bool migratePhysics = o["portSchema"].toInt() < 6 && item->kind.startsWith("physics:") && findArtwork(item->kind);
-    const bool migrateAuthored = o["portSchema"].toInt() < 7 && item->kind.startsWith("studio:") && findArtwork(item->kind);
-    const bool migratePorts = migratePhysics || migrateAuthored || (o["portSchema"].toInt() < 5 && findArtwork(item->kind));
+    const bool migratePorts = migratePhysics || (o["portSchema"].toInt() < 5 && findArtwork(item->kind));
+    const auto plainGlassPorts = o["portSchema"].toInt() < 7 ? item->portTypes.keys("glass-joint") : QStringList();
     QSet<QString> declaredCustom;
     for (const auto& value : o["customPorts"].toArray())
         declaredCustom.insert(value.toString());
-    if (o.contains("artwork") && !migratePhysics && !migrateAuthored) {
+    if (o.contains("artwork") && !migratePhysics) {
         item->artwork = o["artwork"].toString().toUtf8();
         item->renderer = item->artwork.isEmpty() ? nullptr : std::make_shared<QSvgRenderer>(item->artwork);
         item->rasterizeExport = needsClippedExport(item->artwork);
@@ -987,6 +1038,9 @@ DrawingItem* DrawingItem::fromJson(const QJsonObject& o) {
             if (!migratePorts || declaredCustom.contains(it.key()))
                 item->portTypes[it.key()] = it.value().toString();
     }
+    for (const auto& port : plainGlassPorts)
+        if (item->ports.contains(port) && !declaredCustom.contains(port))
+            item->portTypes[port] = "glass-joint";
     if (o["portSegments"].isObject()) {
         if (!migratePorts)
             item->portSegments.clear();
@@ -1425,12 +1479,13 @@ QJsonArray DrawingView::state() const {
     return a;
 }
 void DrawingView::restore(const QJsonArray& a) {
+    const auto precise = activeDrag == DragMode::None ? scene()->property("precise") : QVariant(previousPrecise);
     if (QWidget::mouseGrabber() == viewport())
         viewport()->releaseMouse();
     activeDrag = DragMode::None;
     dragItems.clear();
     beforeDrag = {};
-    scene()->setProperty("precise", false);
+    scene()->setProperty("precise", precise);
     scene()->clear();
     for (auto v : a)
         if (v.isObject() && v.toObject()["kind"] != "connection")
@@ -1506,9 +1561,12 @@ void DrawingView::addApparatus(const QString& kind, QPointF position) {
     auto before = state();
     auto* item = new DrawingItem(kind);
     scene()->clearSelection();
+    scene()->setProperty("portSnapDistance", 14 / transform().m11());
     scene()->addItem(item);
     item->setPos(position);
     item->setSelected(true);
+    if (snap && scene()->property("snap").toBool() && !scene()->property("precise").toBool())
+        snapSelectionToPort(14 / transform().m11());
     commit(before, QStringLiteral("添加图形"));
 }
 void DrawingItem::setTextContent(const QString& text) {
@@ -1548,6 +1606,52 @@ bool DrawingView::addText(const QString& text, QPointF position) {
 bool DrawingView::addImage(const QString& path, QPointF position) {
     if (!std::isfinite(position.x()) || !std::isfinite(position.y()))
         return false;
+    if (QFileInfo(path).suffix().compare("svg", Qt::CaseInsensitive) == 0) {
+        QFile file(path);
+        QDomDocument document;
+        if (!file.open(QIODevice::ReadOnly) || file.size() > 8 * 1024 * 1024 ||
+            !document.setContent(file.readAll()) || document.documentElement().tagName().section(':', -1) != "svg") {
+            emit operationFailed(QStringLiteral("SVG 图片无法读取或尺寸过大"));
+            return false;
+        }
+        QVector<QDomElement> elements{document.documentElement()};
+        for (int i = 0; i < elements.size(); ++i) {
+            const auto element = elements[i];
+            for (auto child = element.firstChildElement(); !child.isNull(); child = child.nextSiblingElement())
+                elements.append(child);
+            const auto tag = element.tagName().section(':', -1);
+            if (tag == "script" || tag == "foreignObject") {
+                emit operationFailed(QStringLiteral("SVG 包含不支持的交互内容"));
+                return false;
+            }
+            const auto attributes = element.attributes();
+            for (int j = 0; j < attributes.size(); ++j) {
+                const auto attribute = attributes.item(j).toAttr();
+                if (attribute.name().endsWith("href") && !attribute.value().startsWith('#') &&
+                    !attribute.value().startsWith("data:image/")) {
+                    emit operationFailed(QStringLiteral("SVG 引用了外部文件，请先嵌入图片资源"));
+                    return false;
+                }
+            }
+        }
+        const auto artwork = document.toByteArray();
+        QSvgRenderer renderer(artwork);
+        auto size = renderer.viewBoxF().size();
+        if (!renderer.isValid() || !std::isfinite(size.width()) || !std::isfinite(size.height()) ||
+            size.width() <= 0 || size.height() <= 0) {
+            emit operationFailed(QStringLiteral("SVG 图片没有有效的绘图范围"));
+            return false;
+        }
+        if (size.width() > 360 || size.height() > 280) size.scale(QSizeF(360, 280), Qt::KeepAspectRatio);
+        const auto before = state();
+        auto* item = DrawingItem::fromJson({{"kind", "image"}, {"artwork", QString::fromUtf8(artwork)},
+            {"w", size.width()}, {"h", size.height()}, {"scale", 1.0}});
+        item->setTransformOriginPoint(size.width() / 2, size.height() / 2);
+        scene()->clearSelection(); scene()->addItem(item);
+        item->setPos(position); item->setSelected(true);
+        commit(before, QStringLiteral("插入图片"));
+        return true;
+    }
     QImageReader reader(path);
     reader.setAutoTransform(true);
     const auto pixels = reader.size();
@@ -1629,10 +1733,12 @@ void DrawingView::deleteSelection() {
     commit(before, QStringLiteral("删除"), selection);
 }
 void DrawingView::duplicateSelection() {
+    if (activeDrag != DragMode::None) cancelDrag();
     auto before = state();
     auto selected = scene()->selectedItems();
     scene()->clearSelection();
     QMap<QString, QString> ids;
+    const auto precise = scene()->property("precise");
     scene()->setProperty("precise", true);
     for (auto* i : selected)
         if (auto* d = dynamic_cast<DrawingItem*>(i)) {
@@ -1644,7 +1750,7 @@ void DrawingView::duplicateSelection() {
             c->setSelected(true);
         }
     const auto items = scene()->items();
-    scene()->setProperty("precise", false);
+    scene()->setProperty("precise", precise);
     for (auto* item : items) {
         auto* link = dynamic_cast<DrawingConnection*>(item);
         if (link && ids.contains(link->from) && ids.contains(link->to)) {
@@ -1890,6 +1996,8 @@ bool DrawingView::matePorts(DrawingItem* moved, const QString& from, DrawingItem
                             const QString& mode, double depth, bool fit) {
     if (!moved || !target || !moved->ports.contains(from) || !target->ports.contains(to))
         return false;
+    if (mode == "insertion" && !insertionFits(moved, from, target, to, fit && matchPortSizes))
+        return false;
     const QScopedValueRollback guard(updatingConnections, true);
     const auto precise = scene()->property("precise");
     scene()->setProperty("precise", true);
@@ -1934,17 +2042,17 @@ bool DrawingView::matePorts(DrawingItem* moved, const QString& from, DrawingItem
     DrawingItem* inserted = nullptr;
     QString receiverPort, insertedPort;
     const auto receives = [](const QString& receiving, const QString& inserting) {
-        return receiving == "bore" || receiving == "mouth" || femalePort(receiving) ||
+        return receiving == "bore" || receiving == "mouth" || femalePort(receiving) || receiving == "ball-female" ||
                receiving == "pipette-filler" || receiving == "luer-female" ||
                (receiving == "hose" && inserting != "hose");
     };
     if (receives(targetType, type) && (probePort(type) || type == "tube" || type == "delivery" || type == "plug" ||
                                       malePort(type) || type == "coolant" || type == "pipette-stem" ||
-                                      type == "luer-male" || type == "immersible")) {
+                                      type == "luer-male" || type == "immersible" || type == "ball-male")) {
         receiver = target; receiverPort = to; inserted = moved; insertedPort = from;
     } else if (receives(type, targetType) && (probePort(targetType) || targetType == "tube" || targetType == "delivery" ||
                                             targetType == "plug" || malePort(targetType) || targetType == "coolant" ||
-                                            targetType == "pipette-stem" || targetType == "luer-male" || targetType == "immersible")) {
+                                            targetType == "pipette-stem" || targetType == "luer-male" || targetType == "immersible" || targetType == "ball-male")) {
         receiver = moved; receiverPort = from; inserted = target; insertedPort = to;
     }
     const double sourceDiameter = moved->portDiameter(from), targetDiameter = target->portDiameter(to);
@@ -2152,6 +2260,7 @@ void DrawingView::alignItems(Qt::Alignment alignment) {
     }
     if (selected.size() < 2)
         return;
+    const auto precise = scene()->property("precise");
     scene()->setProperty("precise", true);
     for (auto* i : selected) {
         const auto box = i->mapRectToScene(QRectF(QPointF(), i->size));
@@ -2170,7 +2279,7 @@ void DrawingView::alignItems(Qt::Alignment alignment) {
             delta.setY(total.center().y() - box.center().y());
         i->setPos(i->pos() + delta);
     }
-    scene()->setProperty("precise", false);
+    scene()->setProperty("precise", precise);
     commit(before, QStringLiteral("对齐"));
 }
 void DrawingView::distributeSelection(bool horizontal) {
@@ -2193,13 +2302,14 @@ void DrawingView::distributeSelection(bool horizontal) {
     for (auto* shape : shapes)
         used += horizontal ? bounds(shape).width() : bounds(shape).height();
     const double gap = (end - start - used) / (shapes.size() - 1);
+    const auto precise = scene()->property("precise");
     scene()->setProperty("precise", true);
     for (auto* shape : shapes) {
         const auto box = bounds(shape);
         shape->moveBy(horizontal ? start - box.left() : 0, horizontal ? 0 : start - box.top());
         start += (horizontal ? box.width() : box.height()) + gap;
     }
-    scene()->setProperty("precise", false);
+    scene()->setProperty("precise", precise);
     commit(before, QStringLiteral("等间距分布"));
 }
 bool DrawingView::canConnectItems(const QString& from, const QString& fromPort, const QString& to,
@@ -2211,7 +2321,8 @@ bool DrawingView::canConnectItems(const QString& from, const QString& fromPort, 
         portOccupied(destination, toPort))
         return false;
     const auto mode = connectionMode(source, fromPort, destination, toPort, requested);
-    return !mode.isEmpty() && (!rigidMode(mode) || !sameAssembly(scene(), from, to));
+    return !mode.isEmpty() && (!rigidMode(mode) || !sameAssembly(scene(), from, to)) &&
+           (mode != "insertion" || insertionFits(source, fromPort, destination, toPort, matchPortSizes));
 }
 bool DrawingView::connectItems(const QString& from, const QString& fromPort, const QString& to,
                                const QString& toPort, ConnectionMode requested) {
@@ -2246,6 +2357,10 @@ bool DrawingView::connectItems(const QString& from, const QString& fromPort, con
     const auto mode = connectionMode(source, fromPort, destination, toPort, requested);
     if (mode.isEmpty() || (rigidMode(mode) && sameAssembly(scene(), from, to))) {
         emit operationFailed(QStringLiteral("接口不兼容：请使用对应的玻璃接头、塞孔或橡胶管"));
+        return false;
+    }
+    if (mode == "insertion" && !insertionFits(source, fromPort, destination, toPort, matchPortSizes)) {
+        emit operationFailed(QStringLiteral("管径超出接口可容纳范围"));
         return false;
     }
     const auto before = state();
@@ -2303,6 +2418,13 @@ void DrawingView::connectSelection() {
         emit operationFailed(QStringLiteral("所选器材没有可用的兼容接口"));
     else
         connectItems(from->id, fp, to->id, tp);
+}
+bool DrawingView::selectionHasConnections() const {
+    const auto ids = selectedIds(scene());
+    for (auto* object : scene()->items())
+        if (auto* link = dynamic_cast<DrawingConnection*>(object))
+            if (link->isSelected() || ids.contains(link->from) || ids.contains(link->to)) return true;
+    return false;
 }
 void DrawingView::disconnectSelection() {
     const auto before = state();
@@ -2742,6 +2864,9 @@ QPair<DrawingItem*, QString> DrawingView::portAt(QPointF position, bool selected
         auto* item = dynamic_cast<DrawingItem*>(object);
         if (!item || (selectedOnly && !item->isSelected())) continue;
         for (const auto& port : item->ports.keys()) {
+            // Body attachment sites are drop targets. Grabbing them moves the
+            // apparatus rather than starting a dangling connector gesture.
+            if (supportPort(portType(item, port))) continue;
             const auto d = QLineF(position, viewportTransform().map(item->portPosition(port))).length();
             if (d < distance) { nearest = {item, port}; distance = d; }
         }
@@ -2782,7 +2907,8 @@ void DrawingView::updatePortDrag(QPointF position) {
         QLineF(viewportTransform().map(portSnapPointer), position).length() <= 10 &&
         canConnectItems(draggedPortItem->id, draggedPort, portCandidate->id, candidatePort);
     if (retained) {
-        const auto socket = viewportTransform().map(portCandidate->portPosition(candidatePort));
+        const auto socket = viewportTransform().map(jointSnapPoint(draggedPortItem, draggedPort,
+                                                                   portCandidate, candidatePort, portPointer));
         double distance = QLineF(viewportTransform().map(portPointer), socket).length();
         if (draggingTerminalBody) distance = qMin(distance, QLineF(position, socket).length());
         if (distance < portSnapDistance) {
@@ -2802,7 +2928,9 @@ void DrawingView::updatePortDrag(QPointF position) {
                 auto* item = dynamic_cast<DrawingItem*>(object);
                 if (!item || item == draggedPortItem) continue;
                 for (const auto& port : item->ports.keys()) {
-                    const auto d = QLineF(target, viewportTransform().map(item->portPosition(port))).length();
+                    const auto source = viewportTransform().inverted().map(target);
+                    const auto at = jointSnapPoint(draggedPortItem, draggedPort, item, port, source);
+                    const auto d = QLineF(target, viewportTransform().map(at)).length();
                     if (d < distance && canConnectItems(draggedPortItem->id, draggedPort, item->id, port)) {
                         distance = d; portCandidate = item; candidatePort = port;
                     }
@@ -3133,18 +3261,33 @@ void DrawingView::focusOutEvent(QFocusEvent* event) {
     QGraphicsView::focusOutEvent(event);
 }
 void DrawingView::dragEnterEvent(QDragEnterEvent* event) {
-    if (event->mimeData()->hasFormat("application/x-chem-apparatus"))
+    const auto urls = event->mimeData()->urls();
+    if (event->mimeData()->hasFormat("application/x-chem-apparatus") ||
+        (event->mimeData()->hasUrls() && std::any_of(urls.cbegin(), urls.cend(),
+            [](const auto& url) { return url.isLocalFile() && QImageReader(url.toLocalFile()).canRead(); })))
         event->acceptProposedAction();
     else
         QGraphicsView::dragEnterEvent(event);
 }
 void DrawingView::dragMoveEvent(QDragMoveEvent* event) {
-    if (event->mimeData()->hasFormat("application/x-chem-apparatus"))
+    if (event->mimeData()->hasFormat("application/x-chem-apparatus") || event->mimeData()->hasUrls())
         event->acceptProposedAction();
     else
         QGraphicsView::dragMoveEvent(event);
 }
 void DrawingView::dropEvent(QDropEvent* event) {
+    if (event->mimeData()->hasUrls()) {
+        bool added = false;
+        auto position = mapToScene(event->position().toPoint());
+        for (const auto& url : event->mimeData()->urls()) {
+            if (url.isLocalFile() && QImageReader(url.toLocalFile()).canRead() && addImage(url.toLocalFile(), position)) {
+                added = true;
+                position += QPointF(20, 20);
+            }
+        }
+        if (added) event->acceptProposedAction(); else event->ignore();
+        return;
+    }
     const auto kind = QString::fromUtf8(event->mimeData()->data("application/x-chem-apparatus"));
     for (const auto& definition : apparatusDefinitions())
         if (definition.id == kind) {
@@ -3187,6 +3330,11 @@ void DrawingView::keyPressEvent(QKeyEvent* e) {
             item->setSelected(true);
         return;
     }
+    if (e->key() == Qt::Key_D && e->modifiers() == Qt::ControlModifier) {
+        duplicateSelection();
+        e->accept();
+        return;
+    }
     QPointF delta;
     const double step = (e->modifiers() & Qt::ShiftModifier) ? 10.0 : 1.0;
     if (e->key() == Qt::Key_Left)
@@ -3199,11 +3347,12 @@ void DrawingView::keyPressEvent(QKeyEvent* e) {
         delta = {0, step};
     if (!delta.isNull() && !scene()->selectedItems().isEmpty()) {
         const auto before = state();
+        const auto precise = scene()->property("precise");
         scene()->setProperty("precise", true);
         for (auto* item : scene()->selectedItems())
             if (auto* shape = dynamic_cast<DrawingItem*>(item))
                 shape->moveBy(delta.x(), delta.y());
-        scene()->setProperty("precise", false);
+        scene()->setProperty("precise", precise);
         commit(before, QStringLiteral("微调位置"));
         return;
     }
@@ -3250,9 +3399,9 @@ void DrawingView::loadExample() {
     for (const auto& art : apparatusArtwork()) {
         if (!art.id.startsWith("legacy:"))
             continue;
-        if (art.name == QStringLiteral("固液加热造气"))
+        if (art.id == QStringLiteral("legacy:asset-0575") || art.name == QStringLiteral("固液加热造气"))
             generator = art.id;
-        if (art.name == QStringLiteral("集气瓶"))
+        if (art.id == QStringLiteral("legacy:asset-0812") || art.name == QStringLiteral("集气瓶"))
             jar = art.id;
     }
     if (!generator.isEmpty() && !jar.isEmpty()) {

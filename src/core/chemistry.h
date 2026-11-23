@@ -61,6 +61,44 @@ QString normalizeFormula(QString input);
 QString elementSymbol(int number);
 QString elementName(int number);
 double atomicMass(int number);
+
+enum class ElementCategory {
+    AlkaliMetal,
+    AlkalineEarth,
+    TransitionMetal,
+    PostTransition,
+    Metalloid,
+    ReactiveNonmetal,
+    Halogen,
+    NobleGas,
+    Lanthanide,
+    Actinide,
+};
+
+struct ElementInfo {
+    int atomicNumber = 0;
+    QString symbol;
+    QString chineseName;
+    QString englishName;
+    double atomicMass = 0;
+    QString massDisplay;
+    ElementCategory category = ElementCategory::ReactiveNonmetal;
+    QString categoryName;
+    int group = 0;
+    int period = 0;
+    QString block;
+    QString stateAtStp;
+    QString electronConfig;
+    QVector<int> shells;
+    double electronegativity = 0;
+    QString oxidationStates;
+    QString meltingPoint;
+    QString boilingPoint;
+    QString density;
+};
+
+QString elementCategoryName(ElementCategory category);
+ElementInfo elementInfo(int atomicNumber);
 Molecule moleculeFromSmiles(const QString& smiles, bool build3D = false);
 Molecule moleculeFromMolfile(const QString& content, bool build3D = false);
 Molecule moleculeFromGraph(const QVector<Atom>& atoms, const QVector<Bond>& bonds);

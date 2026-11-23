@@ -35,10 +35,28 @@ class WorkspaceTests : public QObject {
     std::unique_ptr<MainWindow> window;
     QTemporaryDir temporary;
     QString output;
-    QComboBox* source = nullptr;
+    QComboBox* domain = nullptr;
     QComboBox* category = nullptr;
     QLineEdit* search = nullptr;
     QListWidget* palette = nullptr;
+    bool activateTestWindow() {
+        const auto handle = reinterpret_cast<HWND>(window->winId());
+        const auto foreground = GetWindowThreadProcessId(GetForegroundWindow(), nullptr);
+        const auto current = GetCurrentThreadId();
+        const bool attached = foreground != current && AttachThreadInput(current, foreground, TRUE);
+        BringWindowToTop(handle); SetForegroundWindow(handle); SetActiveWindow(handle);
+        if (attached) AttachThreadInput(current, foreground, FALSE);
+        return GetForegroundWindow() == handle;
+    }
+    bool pressAt(QPoint start, double ratio) {
+        INPUT press{}; press.type = INPUT_MOUSE;
+        press.mi.dx = qRound((start.x() * ratio - GetSystemMetrics(SM_XVIRTUALSCREEN)) * 65535.0 /
+                            (GetSystemMetrics(SM_CXVIRTUALSCREEN) - 1));
+        press.mi.dy = qRound((start.y() * ratio - GetSystemMetrics(SM_YVIRTUALSCREEN)) * 65535.0 /
+                            (GetSystemMetrics(SM_CYVIRTUALSCREEN) - 1));
+        press.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_VIRTUALDESK | MOUSEEVENTF_LEFTDOWN;
+        return SendInput(1, &press, sizeof(INPUT)) == 1;
+    }
     QList<QListWidgetItem*> visible() const {
         QList<QListWidgetItem*> result;
         for (int row = 0; row < palette->count(); ++row)
@@ -59,7 +77,12 @@ class WorkspaceTests : public QObject {
         return selected();
     }
     void filterPhysics() {
-        source->setCurrentIndex(source->findData("physics"));
+        domain->setCurrentIndex(domain->findData("physics"));
+        category->setCurrentIndex(0);
+        search->clear();
+    }
+    void filterElectrical() {
+        domain->setCurrentIndex(domain->findData("electrical"));
         category->setCurrentIndex(0);
         search->clear();
     }
@@ -83,11 +106,12 @@ class WorkspaceTests : public QObject {
         window->resize(1440, 940);
         window->showPage(2);
         window->show();
-        source = window->findChild<QComboBox*>("apparatusSource");
+        domain = window->findChild<QComboBox*>("apparatusDomain");
         category = window->findChild<QComboBox*>("apparatusCategory");
         search = window->findChild<QLineEdit*>("apparatusSearch");
         palette = window->findChild<QListWidget*>("apparatusPalette");
-        QVERIFY(source && category && search && palette);
+        QVERIFY(!window->findChild<QComboBox*>("apparatusSource"));
+        QVERIFY(domain && category && search && palette);
         QTRY_VERIFY_WITH_TIMEOUT(!window->moleculeBusy && !window->currentMolecule.smiles.isEmpty(), 15000);
         QVERIFY(!window->structureEditor->isReady());
     }
@@ -101,7 +125,7 @@ class WorkspaceTests : public QObject {
     }
     void nativeProbeGeneratorConnection() {
         QFETCH(QSize, windowSize); QFETCH(bool, body);
-        clearDrawing(); window->resize(windowSize); window->showPage(2); filterPhysics();
+        clearDrawing(); window->resize(windowSize); window->showPage(2); filterElectrical();
         auto* generator = insert("physics:function-generator", {100, 70});
         auto* scope = insert("physics:digital-oscilloscope", {570, 220});
         auto* groundScope = insert("physics:digital-oscilloscope", {-210, 270});
@@ -116,13 +140,11 @@ class WorkspaceTests : public QObject {
         const auto startScene = body ? probe->portPosition("tip") + QPointF(0, 84) : probe->portPosition("tip");
         const auto start = window->drawing->viewport()->mapToGlobal(window->drawing->mapFromScene(startScene));
         const auto end = window->drawing->viewport()->mapToGlobal(window->drawing->mapFromScene(generator->portPosition("ch1")));
-        const auto handle = reinterpret_cast<HWND>(window->winId());
-        window->raise(); window->activateWindow(); SetForegroundWindow(handle);
-        QTRY_VERIFY_WITH_TIMEOUT(GetForegroundWindow() == handle, 3000);
+        window->raise(); window->activateWindow();
+        QTRY_VERIFY_WITH_TIMEOUT(activateTestWindow(), 3000);
         const double ratio = window->devicePixelRatioF();
         SetCursorPos(qRound(start.x() * ratio), qRound(start.y() * ratio)); QTest::qWait(80);
-        INPUT press{}; press.type = INPUT_MOUSE; press.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-        QCOMPARE(SendInput(1, &press, sizeof(INPUT)), UINT(1));
+        QVERIFY(pressAt(start, ratio));
         std::thread drag([start, end, ratio] {
             for (int i = 1; i <= 24; ++i) {
                 std::this_thread::sleep_for(std::chrono::milliseconds(25));
@@ -158,7 +180,7 @@ class WorkspaceTests : public QObject {
     }
     void nativeProbeBodyDrag() {
         QFETCH(QSize, windowSize);
-        clearDrawing(); window->resize(windowSize); window->showPage(2); filterPhysics();
+        clearDrawing(); window->resize(windowSize); window->showPage(2); filterElectrical();
         auto* scope = insert("physics:digital-oscilloscope", {100, 100});
         auto* probe = insert("physics:oscilloscope-probe", {530, 350});
         window->drawing->setSelectionProbeAttenuation(1);
@@ -175,13 +197,11 @@ class WorkspaceTests : public QObject {
         const auto start = window->drawing->viewport()->mapToGlobal(window->drawing->mapFromScene(bodyCenter()));
         const auto end = start + QPoint(-65, -85);
         QVERIFY(window->grab().save(QDir(output).filePath(QString("body-before-%1.png").arg(QTest::currentDataTag()))));
-        const auto handle = reinterpret_cast<HWND>(window->winId());
-        window->raise(); window->activateWindow(); SetForegroundWindow(handle);
-        QTRY_VERIFY_WITH_TIMEOUT(GetForegroundWindow() == handle, 3000);
+        window->raise(); window->activateWindow();
+        QTRY_VERIFY_WITH_TIMEOUT(activateTestWindow(), 3000);
         const double ratio = window->devicePixelRatioF();
         SetCursorPos(qRound(start.x() * ratio), qRound(start.y() * ratio)); QTest::qWait(80);
-        INPUT press{}; press.type = INPUT_MOUSE; press.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-        QCOMPARE(SendInput(1, &press, sizeof(INPUT)), UINT(1));
+        QVERIFY(pressAt(start, ratio));
         std::thread drag([start, end, ratio] {
             for (int i = 1; i <= 24; ++i) {
                 std::this_thread::sleep_for(std::chrono::milliseconds(25));
@@ -208,7 +228,7 @@ class WorkspaceTests : public QObject {
     }
     void probeAttenuationControl() {
         QFETCH(QSize, windowSize);
-        clearDrawing(); window->resize(windowSize); window->showPage(2); filterPhysics();
+        clearDrawing(); window->resize(windowSize); window->showPage(2); filterElectrical();
         auto* value = window->findChild<QDoubleSpinBox*>("drawingProbeAttenuation");
         auto* necks = window->findChild<QComboBox*>("drawingNecks");
         QVERIFY(value && necks);
@@ -249,7 +269,7 @@ class WorkspaceTests : public QObject {
         QFile manifest(":/physics/manifest.json");
         QVERIFY(manifest.open(QIODevice::ReadOnly));
         const auto entries = QJsonDocument::fromJson(manifest.readAll()).object()["assets"].toArray();
-        QCOMPARE(entries.size(), 40);
+        QCOMPARE(entries.size(), 71);
         QSet<QString> ids;
         int physics = 0, bio = 0, studio = 0, png = 0;
         for (const auto& art : apparatusArtwork()) {
@@ -260,8 +280,8 @@ class WorkspaceTests : public QObject {
             studio += art.id.startsWith("studio:");
             png += art.id.startsWith("chemix:");
         }
-        QCOMPARE(physics, 40);
-        QCOMPARE(bio, 34);
+        QCOMPARE(physics, 71);
+        QCOMPARE(bio, 50);
         if (QString(PHYSICS_REVIEW_VARIANT) == "public") QCOMPARE(studio, 221);
         else {
             const QDir installed(qEnvironmentVariable("CHEM_CHEMIX_ART_DIR"));
@@ -282,21 +302,39 @@ class WorkspaceTests : public QObject {
         }
     }
     void categoryAndSearch() {
-        filterPhysics();
-        QCOMPARE(visible().size(), 40);
-        QCOMPARE(category->count(), 7);
-        const QList<QPair<QString, int>> expected{
-            {QStringLiteral("电学与电子测量"), 8}, {QStringLiteral("电工设备"), 8},
-            {QStringLiteral("力学与计量"), 5}, {QStringLiteral("力学实验"), 8},
-            {QStringLiteral("光学实验"), 7}, {QStringLiteral("波动与声学实验"), 4}};
-        for (const auto& [name, count] : expected) {
-            category->setCurrentIndex(category->findData(name));
-            QCOMPARE(visible().size(), count);
+        QCOMPARE(domain->count(), 11);
+        for (const auto& key : {"all", "reaction", "separation", "connectors", "thermal", "measurement",
+                                "biochemistry", "electrical", "physics", "support", "annotation"})
+            QVERIFY2(domain->findData(key) >= 0, key);
+        QCOMPARE(domain->itemText(domain->findData("all")), QStringLiteral("全部器材"));
+
+        filterElectrical();
+        QCOMPARE(visible().size(), 47);
+        QCOMPARE(category->count(), 4);
+        for (int i = 1; i < category->count(); ++i) {
+            category->setCurrentIndex(i);
+            const auto name = category->currentData().toString();
+            QVERIFY(!visible().isEmpty());
             for (const auto* item : visible()) QCOMPARE(item->data(Qt::UserRole + 1).toString(), name);
         }
         category->setCurrentIndex(0);
-        for (const auto& term : QStringList{QStringLiteral("示波器"), "OSCILLOSCOPE", "signal generator",
-                                            QStringLiteral("迈克尔逊"), "micrometer", "ripple tank"}) {
+        for (const auto& term : QStringList{QStringLiteral("示波器"), "OSCILLOSCOPE", "signal generator"}) {
+            search->setText(term);
+            QVERIFY2(!visible().isEmpty(), qPrintable(term));
+            for (const auto* item : visible()) QVERIFY(item->data(Qt::UserRole).toString().startsWith("physics:"));
+        }
+
+        filterPhysics();
+        QCOMPARE(visible().size(), 50);
+        QCOMPARE(category->count(), 6);
+        for (int i = 1; i < category->count(); ++i) {
+            category->setCurrentIndex(i);
+            const auto name = category->currentData().toString();
+            QVERIFY(!visible().isEmpty());
+            for (const auto* item : visible()) QCOMPARE(item->data(Qt::UserRole + 1).toString(), name);
+        }
+        category->setCurrentIndex(0);
+        for (const auto& term : QStringList{QStringLiteral("迈克尔逊"), "micrometer", "ripple tank"}) {
             search->setText(term);
             QVERIFY2(!visible().isEmpty(), qPrintable(term));
             for (const auto* item : visible()) QVERIFY(item->data(Qt::UserRole).toString().startsWith("physics:"));
@@ -304,15 +342,15 @@ class WorkspaceTests : public QObject {
         search->setText("never-a-physics-instrument-938174");
         QVERIFY(visible().isEmpty());
         search->clear();
-        source->setCurrentIndex(source->findData("bio"));
-        QCOMPARE(visible().size(), 34);
-        source->setCurrentIndex(source->findData("shapes"));
-        QCOMPARE(visible().size(), 5);
-        filterPhysics();
+        domain->setCurrentIndex(domain->findData("biochemistry"));
+        QCOMPARE(visible().size(), 59);
+        domain->setCurrentIndex(domain->findData("annotation"));
+        QCOMPARE(visible().size(), 26);
+        filterElectrical();
     }
     void paletteDoubleClickAndDrop() {
         clearDrawing();
-        filterPhysics();
+        filterElectrical();
         search->setText("signal generator");
         QCOMPARE(visible().size(), 1);
         auto* row = visible().front();
@@ -341,7 +379,7 @@ class WorkspaceTests : public QObject {
         QVERIFY(window->drawing->state().isEmpty());
         window->drawing->undoStack.redo();
         QCOMPARE(window->drawing->state().size(), 1);
-        filterPhysics();
+        filterElectrical();
     }
     void connectionMenuAndUndo() {
         clearDrawing();
@@ -390,7 +428,7 @@ class WorkspaceTests : public QObject {
     }
     void nativePaletteDrag() {
         clearDrawing();
-        filterPhysics();
+        filterElectrical();
         search->setText("signal generator");
         QCOMPARE(visible().size(), 1);
         auto* row = visible().front();
@@ -440,7 +478,7 @@ class WorkspaceTests : public QObject {
         capture("native-palette-drag.png");
         window->drawing->undoStack.undo();
         QVERIFY(window->drawing->state().isEmpty());
-        filterPhysics();
+        filterElectrical();
     }
     void mixedDomainsAndPorts() {
         clearDrawing();
@@ -523,7 +561,7 @@ class WorkspaceTests : public QObject {
             window->drawing->setSelectionTransform(item->pos(), count % 2 ? 0.75 : 1, count % 3 ? 13 : -10);
             ++count;
         }
-        QCOMPARE(count, 40);
+        QCOMPARE(count, 71);
         const auto state = window->state();
         const auto file = QDir(output).filePath("all-physics.chem");
         QVERIFY(saveProject(file, state));
@@ -538,14 +576,14 @@ class WorkspaceTests : public QObject {
         clearDrawing();
         insert("physics:function-generator", {80, 160});
         insert("physics:digital-oscilloscope", {540, 160});
-        filterPhysics();
+        filterElectrical();
         search->setText("oscilloscope");
         for (const auto& size : {QSize(1440, 940), QSize(1050, 740)}) {
             window->resize(size);
             QTest::qWait(200);
             QVERIFY(window->width() >= size.width() && window->height() >= size.height());
             const QRect central = window->centralWidget()->rect();
-            for (const auto* widget : QList<QWidget*>{source, category, search, palette, window->drawing}) {
+            for (const auto* widget : QList<QWidget*>{domain, category, search, palette, window->drawing}) {
                 QVERIFY(widget->isVisible());
                 const QRect rect(widget->mapTo(window->centralWidget(), QPoint()), widget->size());
                 QVERIFY2(central.contains(rect), qPrintable(widget->objectName()));
@@ -574,11 +612,11 @@ class WorkspaceTests : public QObject {
         window->showPage(2);
         QCOMPARE(window->drawing->state(), before);
         filterPhysics();
-        QCOMPARE(visible().size(), 40);
+        QCOMPARE(visible().size(), 50);
     }
     void cleanupTestCase() {
         QJsonObject result{{"variant", PHYSICS_REVIEW_VARIANT}, {"reviewOnly", false},
-                           {"physicsAssets", 40}, {"installed", false}, {"published", false}};
+                           {"physicsAssets", 71}, {"installed", false}, {"published", false}};
         QFile record(QDir(output).filePath("runtime.json"));
         QVERIFY(record.open(QIODevice::WriteOnly));
         record.write(QJsonDocument(result).toJson());

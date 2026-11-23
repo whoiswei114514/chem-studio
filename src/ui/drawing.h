@@ -19,7 +19,8 @@ inline constexpr double maximumApparatusScale = 10.0;
 struct ApparatusDefinition {
     QString id, name;
     QSizeF size;
-    QString category{}, search{};
+    QString category{}, search{}, domain{};
+    bool catalogVisible = true;
 };
 QVector<ApparatusDefinition> apparatusDefinitions();
 class DrawingItem : public QGraphicsObject {
@@ -124,6 +125,7 @@ class DrawingView : public QGraphicsView {
     void distributeSelection(bool horizontal);
     void connectSelection();
     void disconnectSelection();
+    bool selectionHasConnections() const;
     bool canConnectItems(const QString& from, const QString& fromPort, const QString& to, const QString& toPort,
                          ConnectionMode mode = ConnectionMode::Automatic) const;
     bool connectItems(const QString& from, const QString& fromPort, const QString& to, const QString& toPort,

@@ -1,2 +1,63 @@
-<?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="114" height="231" viewBox="0 0 114 231"><g stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M26 84 V182 L44 213 Q57 229 70 213 L88 182 V84" fill="#dcefeb" fill-opacity="0.28" /><path d="M37 32 V102 L48 124 V145 H66 V124 L77 102 V32" fill="#dcefeb" fill-opacity="0.6" /><rect x="35" y="21" width="44" height="12" fill="#c6d2d7" rx="2" /><line x1="40" y1="92" x2="73" y2="92" stroke-width="5" stroke="#258f89" /><line x1="40" y1="92" x2="73" y2="92" stroke-width="1.1" stroke="#294454" /><ellipse cx="57" cy="84" rx="31" ry="7" fill="#dcefeb" stroke-width="1.6" /><line x1="31" y1="99" x2="31" y2="173" stroke="white" stroke-width="2" /><line x1="43" y1="146" x2="71" y2="146" stroke-width="1.1" stroke-dasharray="3 4" /></g><title>核酸吸附柱 / 收集管</title></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="231" viewBox="0 0 114 231"><title>核酸吸附柱 / 收集管</title><defs>
+    <linearGradient id="g-chassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="g-chassis-h" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="22%" stop-color="#F8FAFC"/>
+      <stop offset="80%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="g-bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="30%" stop-color="#F1F5F9"/>
+      <stop offset="65%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="g-metal-v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="45%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="g-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6F2F7" stop-opacity="0.82"/>
+      <stop offset="28%" stop-color="#F8FCFE" stop-opacity="0.65"/>
+      <stop offset="75%" stop-color="#E6F2F7" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="#CBE4EE" stop-opacity="0.80"/>
+    </linearGradient>
+    <linearGradient id="g-liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="g-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="35%" stop-color="#FDE68A"/>
+      <stop offset="75%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="g-copper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="35%" stop-color="#FDBA74"/>
+      <stop offset="70%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <linearGradient id="g-rubber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+  </defs><g stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><!-- Collection tube (2 mL) --><path d="M30 82 V176 L46 214 Q57 224 68 214 L84 176 V82 Z" fill="url(#g-glass)" stroke="#1F2937" stroke-width="2.2"/><ellipse cx="57" cy="82" rx="27" ry="6" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.8"/><rect x="37" y="24" width="40" height="8" rx="2" fill="url(#g-teal)" stroke="#1F2937" stroke-width="1.8"/><path d="M40 32 V124 L52 148 V158 H62 V148 L74 124 V32 Z" fill="#FFFFFF" fill-opacity="0.82" stroke="#1F2937" stroke-width="2.0"/><rect x="42" y="114" width="30" height="7" rx="1" fill="#CBD5E1" stroke="#334155" stroke-width="1.2"/><rect x="41" y="109" width="32" height="5" rx="1" fill="#14B8A6" stroke="#1F2937" stroke-width="1.1"/><line x1="44" y1="40" x2="44" y2="104" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.78"/><line x1="34" y1="96" x2="34" y2="174" stroke="#FFFFFF" stroke-width="2.4" stroke-opacity="0.78"/></g></svg>

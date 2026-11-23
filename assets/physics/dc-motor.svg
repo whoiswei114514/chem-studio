@@ -1,1 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="270" height="185" viewBox="0 0 270 185"><title>直流电动机</title><g stroke="#294454" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><rect x="54" y="149" width="173" height="15" fill="#c6d2d7" rx="3"></rect><path d="M88 125 V143 H112 V128 M174 128 V143 H199 V124" fill="#c6d2d7"></path><rect x="81" y="142" width="36" height="7" fill="#c6d2d7" rx="1"></rect><rect x="170" y="142" width="35" height="7" fill="#c6d2d7" rx="1"></rect><ellipse cx="92" cy="153" rx="2" ry="2" fill="#294454"></ellipse><ellipse cx="192" cy="153" rx="2" ry="2" fill="#294454"></ellipse><path d="M78 48 H194 C225 48 225 132 194 132 H78Z" fill="#258f89"></path><path d="M194 48 C179 57 179 123 194 132" fill="none" stroke-width="1.4"></path><line x1="100" y1="61" x2="184" y2="61" stroke="#a6d3cb" stroke-width="1.2"></line><line x1="100" y1="71" x2="184" y2="71" stroke="#a6d3cb" stroke-width="1.2"></line><line x1="100" y1="81" x2="184" y2="81" stroke="#a6d3cb" stroke-width="1.2"></line><line x1="100" y1="91" x2="184" y2="91" stroke="#a6d3cb" stroke-width="1.2"></line><line x1="100" y1="101" x2="184" y2="101" stroke="#a6d3cb" stroke-width="1.2"></line><line x1="100" y1="111" x2="184" y2="111" stroke="#a6d3cb" stroke-width="1.2"></line><line x1="100" y1="121" x2="184" y2="121" stroke="#a6d3cb" stroke-width="1.2"></line><ellipse cx="78" cy="90" rx="25" ry="42" fill="#c6d2d7"></ellipse><ellipse cx="78" cy="90" rx="17" ry="30" fill="#f8faf9"></ellipse><ellipse cx="69" cy="61" rx="2" ry="2" fill="#294454" stroke="none"></ellipse><ellipse cx="87" cy="65" rx="2" ry="2" fill="#294454" stroke="none"></ellipse><ellipse cx="69" cy="119" rx="2" ry="2" fill="#294454" stroke="none"></ellipse><ellipse cx="87" cy="115" rx="2" ry="2" fill="#294454" stroke="none"></ellipse><ellipse cx="78" cy="90" rx="9" ry="13" fill="#c6d2d7"></ellipse><rect x="26" y="85" width="52" height="10" fill="#c6d2d7" rx="0"></rect><ellipse cx="26" cy="90" rx="4" ry="5" fill="#f8faf9"></ellipse><line x1="36" y1="85" x2="57" y2="85" stroke-width="3"></line><rect x="153" y="34" width="57" height="26" fill="#c6d2d7" rx="3"></rect><rect x="150" y="29" width="63" height="8" fill="#f8faf9" rx="2"></rect><ellipse cx="166" cy="47" rx="6.5" ry="6.5" fill="#c75b55" stroke-width="1.5"></ellipse><ellipse cx="166" cy="47" rx="2.6" ry="2.6" fill="#294454" stroke="none"></ellipse><ellipse cx="195" cy="47" rx="6.5" ry="6.5" fill="#294454" stroke-width="1.5"></ellipse><ellipse cx="195" cy="47" rx="2.6" ry="2.6" fill="#294454" stroke="none"></ellipse><text x="166" y="60" font-size="8" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">+</text><text x="195" y="60" font-size="8" fill="#294454" stroke="none" font-family="Arial" text-anchor="middle">-</text></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="185" viewBox="0 0 270 185"><title>直流电动机</title><defs>
+    <linearGradient id="g-chassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="g-chassis-h" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="22%" stop-color="#F8FAFC"/>
+      <stop offset="80%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="g-bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="30%" stop-color="#F1F5F9"/>
+      <stop offset="65%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="g-metal-v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="45%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="g-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6F2F7" stop-opacity="0.82"/>
+      <stop offset="28%" stop-color="#F8FCFE" stop-opacity="0.65"/>
+      <stop offset="75%" stop-color="#E6F2F7" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="#CBE4EE" stop-opacity="0.80"/>
+    </linearGradient>
+    <linearGradient id="g-liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="g-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="g-brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="35%" stop-color="#FDE68A"/>
+      <stop offset="75%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="g-copper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="35%" stop-color="#FDBA74"/>
+      <stop offset="70%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <linearGradient id="g-rubber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+  </defs><g stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><!-- Base mounting plate --><rect x="64" y="152" width="174" height="14" rx="3" fill="url(#g-metal-v)" stroke="#1F2937" stroke-width="2.0"/><rect x="20" y="96" width="44" height="14" rx="2" fill="url(#g-metal)" stroke="#1F2937" stroke-width="2.0"/><rect x="24" y="99" width="26" height="4" fill="#334155" stroke="none"/><path d="M64 70 Q54 70 54 103 Q54 136 64 136 Z" fill="url(#g-metal)" stroke="#1F2937" stroke-width="2.0"/><path d="M234 70 Q246 70 246 103 Q246 136 234 136 Z" fill="url(#g-metal)" stroke="#1F2937" stroke-width="2.0"/><rect x="64" y="60" width="170" height="86" rx="5" fill="url(#g-teal)" stroke="#1F2937" stroke-width="2.2"/><line x1="76" y1="74" x2="222" y2="74" stroke="#0F766E" stroke-width="2.4"/><line x1="76" y1="88" x2="222" y2="88" stroke="#99F6E4" stroke-width="1.8" stroke-opacity="0.65"/><line x1="76" y1="103" x2="222" y2="103" stroke="#0F766E" stroke-width="2.4"/><line x1="76" y1="118" x2="222" y2="118" stroke="#0F766E" stroke-width="2.4"/><line x1="76" y1="132" x2="222" y2="132" stroke="#0F766E" stroke-width="2.4"/><path d="M84 146 L78 152 M214 146 L220 152" stroke="#1F2937" stroke-width="4"/><rect x="148" y="32" width="66" height="28" rx="4" fill="url(#g-chassis)" stroke="#1F2937" stroke-width="2.0"/><circle cx="166" cy="46" r="7" fill="#DC2626" stroke="#1F2937" stroke-width="1.5"/><circle cx="166" cy="46" r="3.64" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.0"/><circle cx="166" cy="46" r="2.1" fill="#0F172A" stroke="none"/><text x="166" y="30" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">+</text><circle cx="196" cy="46" r="7" fill="#1E293B" stroke="#1F2937" stroke-width="1.5"/><circle cx="196" cy="46" r="3.64" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.0"/><circle cx="196" cy="46" r="2.1" fill="#0F172A" stroke="none"/><text x="196" y="30" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">-</text></g></svg>

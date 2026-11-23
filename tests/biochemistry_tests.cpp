@@ -22,7 +22,7 @@ class BiochemistryTests : public QObject {
         QFile file(":/biochemistry/manifest.json");
         QVERIFY(file.open(QIODevice::ReadOnly));
         const auto entries = QJsonDocument::fromJson(file.readAll()).object()["assets"].toArray();
-        QCOMPARE(entries.size(), 34);
+        QCOMPARE(entries.size(), 50);
         int count = 0, authored = 0, adapted = 0;
         QSet<QString> ids;
         for (const auto& art : library) {
@@ -30,7 +30,7 @@ class BiochemistryTests : public QObject {
             ids.insert(art.id);
             if (art.id.startsWith("bio:")) ++count;
         }
-        QCOMPARE(count, 34);
+        QCOMPARE(count, 50);
         for (const auto& value : entries) {
             const auto entry = value.toObject();
             const auto id = entry["id"].toString();
@@ -75,11 +75,14 @@ class BiochemistryTests : public QObject {
                 QVERIFY(!entry["modifications"].toString().isEmpty());
             }
         }
-        QCOMPARE(authored, 25);
+        QCOMPARE(authored, 41);
         QCOMPARE(adapted, 9);
         QVERIFY(chem::findArtwork("bio:hair-dryer")->ports.isEmpty());
         QVERIFY(chem::findArtwork("bio:glass-atomizer")->ports.isEmpty());
         QVERIFY(chem::findArtwork("bio:online-spectrophotometer")->ports.isEmpty());
+        QVERIFY(chem::findArtwork("bio:pcr-thermal-cycler") && chem::findArtwork("bio:microplate-reader"));
+        QVERIFY(chem::findArtwork("bio:clean-bench") && chem::findArtwork("bio:compound-microscope"));
+        QVERIFY(chem::findArtwork("bio:vertical-electrophoresis-tank")->ports.contains("negative"));
     }
     void roundtripAndExports() {
         chem::DrawingView view;
@@ -92,7 +95,7 @@ class BiochemistryTests : public QObject {
             view.setSelectionTransform(item->pos(), 0.8, index % 2 ? 12 : 0);
             ++index;
         }
-        QCOMPARE(index, 34);
+        QCOMPARE(index, 50);
         const auto saved = view.state();
         chem::DrawingView restored;
         restored.restore(saved);
@@ -116,7 +119,7 @@ class BiochemistryTests : public QObject {
             authored.addApparatus(art.id, {double(authoredCount % 5 * 330), double(authoredCount / 5 * 340)});
             ++authoredCount;
         }
-        QCOMPARE(authoredCount, 25);
+        QCOMPARE(authoredCount, 41);
         QVERIFY(!authored.svgData().contains("<image"));
     }
     void dropAndElectricalConnections() {
@@ -147,6 +150,11 @@ class BiochemistryTests : public QObject {
         QCOMPARE(tank->ports.size(), 2);
         QVERIFY(view.connectItems(supply->id, "negative-1", tank->id, "negative"));
         QVERIFY(view.connectItems(supply->id, "positive-1", tank->id, "positive"));
+        view.addApparatus("bio:vertical-electrophoresis-tank", {440, 480});
+        auto* sds = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
+        QVERIFY(sds);
+        QVERIFY(view.connectItems(supply->id, "negative-2", sds->id, "negative"));
+        QVERIFY(view.connectItems(supply->id, "positive-2", sds->id, "positive"));
         const auto connected = view.state();
         chem::DrawingView restored;
         restored.restore(connected);

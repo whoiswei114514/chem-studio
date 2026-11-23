@@ -48,7 +48,9 @@ QJsonObject bodyState(const QJsonObject& state) {
 QString counterpart(const QString& role) {
     static const QMap<QString, QString> roles{
         {"mouth", "probe"}, {"glass-female", "glass-male"}, {"vapor-female", "vapor-male"},
+        {"glass-joint", "glass-male"},
         {"sensor-socket", "probe"}, {"glass-male", "glass-female"}, {"vapor-male", "vapor-female"},
+        {"ball-male", "ball-female"}, {"ball-female", "ball-male"},
         {"plug", "mouth"}, {"bore", "probe"}, {"probe", "mouth"}, {"stem", "mouth"},
         {"immersible", "mouth"}, {"tube", "hose"}, {"coolant", "hose"}, {"hose", "tube"},
         {"delivery", "mouth"}, {"base", "surface"}, {"surface", "base"}, {"rail", "clamp"},
@@ -88,6 +90,10 @@ QString manualReason(const chem::ApparatusArtwork& art) {
         "gel-casting-tray", "gel-loading-comb", "refrigerated-centrifuge", "online-spectrophotometer",
         "online-centrifuge", "online-cuvette", "online-micropipette", "online-microtube",
         "online-tip-box", "online-incubator-servier", "online-freezer", "online-autoclave",
+        "pcr-thermal-cycler", "microplate-reader", "microplate-96", "clean-bench",
+        "vortex-mixer", "dry-metal-bath", "orbital-shaker", "ultrasonic-homogenizer",
+        "freeze-dryer", "compound-microscope", "hemocytometer", "inoculating-loop",
+        "cell-spreader", "cell-culture-flask", "fermenter-bioreactor",
     };
     static const QSet<QString> physicsManual{
         "breadboard",
@@ -319,10 +325,113 @@ class CatalogAssemblyTests : public QObject {
         QCOMPARE(view.state(), assembled);
         view.disconnectSelection();
     }
+    void everyRealInterface_data() { everyInterface_data(); }
+    void everyRealInterface() {
+        QFETCH(QString, kind); QFETCH(QString, port); QFETCH(int, necks); QFETCH(int, bores);
+        DrawingView view; precise(view);
+        view.addApparatus(kind, {310.25, 260.75});
+        auto* target = selected(view);
+        if (necks) QVERIFY(target->setNeckCount(necks));
+        if (bores >= 0) QVERIFY(target->setBoreCount(bores));
+        target->setRotation(31);
+        const auto role = target->portTypes.value(port);
+        const auto partner = counterpart(role);
+        QString movingKind, movingPort;
+        if (role == "wire") {
+            movingKind = "physics:oscilloscope-probe"; movingPort = "tip";
+        } else if (partner == "probe") {
+            // Use the narrow reference thermometer for real small bores. Larger
+            // probes and rejected fits are covered by insertionCapacityMatchesPreview.
+            movingKind = chem::findArtwork("legacy:asset-0686") ? QStringLiteral("legacy:asset-0686")
+                                                                 : QStringLiteral("studio:thermometer");
+            movingPort = "probe";
+        } else {
+            for (const auto& art : chem::apparatusArtwork()) {
+                for (auto entry = art.types.cbegin(); entry != art.types.cend(); ++entry) {
+                    if (entry.value() == partner) {
+                        movingKind = art.id; movingPort = entry.key(); break;
+                    }
+                }
+                if (!movingKind.isEmpty()) break;
+            }
+        }
+        QVERIFY2(!movingKind.isEmpty(), qPrintable("No real reference apparatus for " + role));
+        view.addApparatus(movingKind, {710.5, 460.25});
+        auto* moving = selected(view); moving->setRotation(-73);
+        moving->setPos(moving->pos() + target->portPosition(port) - moving->portPosition(movingPort));
+        const auto position = target->pos();
+        const auto size = target->displayedSize();
+        const bool explicitConnection = role.startsWith("optical-in") || role.startsWith("optical-out") ||
+                                        role == "air-in" || role == "air-out";
+        const bool connected = explicitConnection ? view.connectItems(moving->id, movingPort, target->id, port) :
+                                                    view.snapSelectionToPort(12);
+        const auto description = kind + "/" + port + " <- " + movingKind + "/" + movingPort;
+        const auto output = qEnvironmentVariable("CHEM_ASSEMBLY_RESULTS");
+        if (!connected && !output.isEmpty()) {
+            auto name = description; name.replace(':', '-'); name.replace('/', '-'); name.replace(" <- ", "--");
+            view.exportPng(QDir(output).filePath("failed-real-" + name + ".png"), 2);
+        }
+        QVERIFY2(connected, qPrintable(description));
+        QCOMPARE(view.state().size(), 3);
+        QCOMPARE(linkState(view)["fromPort"].toString(), movingPort);
+        QCOMPARE(linkState(view)["toPort"].toString(), port);
+        QVERIFY(QLineF(target->pos(), position).length() < 0.001);
+        QVERIFY(std::abs(target->rotation() - 31) < 0.001);
+        QCOMPARE(target->displayedSize(), size);
+        const auto assembled = view.state();
+        view.restore(assembled); QCOMPARE(view.state(), assembled);
+    }
+    void allGlassPairs_data() {
+        QTest::addColumn<QString>("movingKind"); QTest::addColumn<QString>("movingPort");
+        QTest::addColumn<QString>("targetKind"); QTest::addColumn<QString>("targetPort");
+        QTest::addColumn<bool>("expected");
+        struct Port { QString kind, name, role; };
+        QVector<Port> ports;
+        const QSet<QString> glass{"glass-male", "glass-female", "vapor-male", "vapor-female", "glass-joint"};
+        for (const auto& art : chem::apparatusArtwork())
+            for (auto p = art.types.cbegin(); p != art.types.cend(); ++p)
+                if (glass.contains(p.value())) ports.append({art.id, p.key(), p.value()});
+        const QSet<QString> combinations{"glass-female/glass-male", "glass-male/vapor-female", "vapor-female/vapor-male"};
+        for (const auto& a : ports)
+            for (const auto& b : ports) {
+                QStringList roles{a.role, b.role}; roles.sort();
+                const bool expected = a.role == "glass-joint" || b.role == "glass-joint" || combinations.contains(roles.join('/'));
+                QTest::newRow(qPrintable(a.kind + "/" + a.name + "--" + b.kind + "/" + b.name))
+                    << a.kind << a.name << b.kind << b.name << expected;
+            }
+    }
+    void allGlassPairs() {
+        QFETCH(QString, movingKind); QFETCH(QString, movingPort);
+        QFETCH(QString, targetKind); QFETCH(QString, targetPort); QFETCH(bool, expected);
+        DrawingView view; precise(view);
+        view.addApparatus(targetKind, {300.25, 260.75});
+        auto* target = selected(view); target->setRotation(31);
+        const auto fixedPosition = target->pos();
+        view.addApparatus(movingKind, {720.5, 160.25});
+        auto* moving = selected(view); moving->setRotation(-73);
+        moving->setPos(moving->pos() + target->portPosition(targetPort) - moving->portPosition(movingPort));
+        const auto before = view.state();
+        QCOMPARE(view.canConnectItems(moving->id, movingPort, target->id, targetPort, DrawingView::ConnectionMode::Assembly), expected);
+        if (!expected) {
+            QVERIFY(!view.connectItems(moving->id, movingPort, target->id, targetPort, DrawingView::ConnectionMode::Assembly));
+            QCOMPARE(view.state(), before);
+            return;
+        }
+        QVERIFY(view.snapSelectionToPort(.01));
+        QCOMPARE(linkState(view)["fromPort"].toString(), movingPort);
+        QCOMPARE(linkState(view)["toPort"].toString(), targetPort);
+        QCOMPARE(linkState(view)["mode"].toString(), QString("joint"));
+        QVERIFY(QLineF(target->pos(), fixedPosition).length() < .001);
+        QVERIFY(std::abs(target->rotation() - 31) < .001);
+        const auto normal = target->portDirection(targetPort);
+        const QPointF tangent(-normal.y(), normal.x());
+        QVERIFY(QPointF::dotProduct(moving->portDirection(movingPort), normal) < -.999999);
+        QVERIFY(std::abs(QPointF::dotProduct(moving->portPosition(movingPort) - target->portPosition(targetPort), tangent)) < .001);
+    }
     void visibleApertures_data() {
         QTest::addColumn<QString>("kind");
         QTest::addColumn<QString>("port");
-        const QSet<QString> apertures{"mouth", "glass-female", "glass-male", "vapor-female", "vapor-male",
+        const QSet<QString> apertures{"mouth", "glass-female", "glass-male", "vapor-female", "vapor-male", "glass-joint",
                                      "sensor-socket", "tube", "coolant", "delivery", "pipette-stem",
                                      "pipette-filler", "luer-male", "luer-female", "plug"};
         for (const auto& art : chem::apparatusArtwork())
@@ -639,6 +748,39 @@ class CatalogAssemblyTests : public QObject {
         QVERIFY(std::abs(view.selectionInsertionDepth() - depth + 1) < 0.001);
         QCOMPARE(beaker->json(), fixed);
         view.undoStack.undo(); QCOMPARE(view.state(), before);
+    }
+    void laboratoryCondensersAndDistillationCatalogChain() {
+        QStringList waterCondensers{
+            "lab:liebig-condenser", "lab:allihn-condenser", "lab:graham-condenser",
+            "lab:dimroth-condenser", "lab:friedrich-condenser",
+            "studio:liebig-condenser", "studio:allihn", "studio:graham"};
+        for (const auto& opt : {"chemix:liebig-condenser", "chemix:allihn", "chemix:graham"})
+            if (chem::findArtwork(opt)) waterCondensers.append(opt);
+        for (const auto& id : waterCondensers) {
+            const auto* art = chem::findArtwork(id);
+            QVERIFY2(art, qPrintable(id));
+            QVERIFY2(art->ports.contains("water-in") && art->ports.contains("water-out"), qPrintable(id));
+            QVERIFY2(art->directions["water-in"].x() * art->directions["water-out"].x() < 0, qPrintable(id));
+            QVERIFY2(art->ports["water-in"].y() > art->ports["water-out"].y(), qPrintable(id));
+        }
+        const QString flaskKind = chem::findArtwork("chemix:round-bottom-flask")
+            ? QStringLiteral("chemix:round-bottom-flask") : QStringLiteral("studio:round-bottom-flask");
+        const QString condKind = chem::findArtwork("chemix:liebig-condenser")
+            ? QStringLiteral("chemix:liebig-condenser") : QStringLiteral("studio:liebig-condenser");
+        DrawingView view;
+        precise(view);
+        view.addApparatus(flaskKind, {240, 420});
+        auto* flask = selected(view);
+        view.addApparatus("lab:plain-distillation-head", {270, 240});
+        auto* plainHead = selected(view);
+        QVERIFY(view.connectItems(flask->id, "mouth", plainHead->id, "outlet"));
+        view.addApparatus(condKind, {470, 280});
+        auto* cond = selected(view);
+        QVERIFY(view.connectItems(plainHead->id, "side", cond->id, "inlet"));
+        view.addApparatus("lab:bent-receiver-adapter", {680, 390});
+        auto* bent = selected(view);
+        QVERIFY(view.connectItems(cond->id, "outlet", bent->id, "inlet"));
+        QCOMPARE(view.state().size(), 7);
     }
 };
 QTEST_MAIN(CatalogAssemblyTests)

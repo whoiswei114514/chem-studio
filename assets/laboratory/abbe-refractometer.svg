@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="186" height="196" viewBox="0 0 186 196">
+<title>阿贝折光仪</title>
+<defs>
+  <linearGradient id="abbe-refractometer-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#D7E9F3" stop-opacity="0.72"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#EEF7FB" stop-opacity="0.54"/>
+    <stop offset="88%" stop-color="#CFE4F0" stop-opacity="0.68"/>
+    <stop offset="100%" stop-color="#E4F1F8" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="abbe-refractometer-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="abbe-refractometer-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.72"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.82"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.72"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="abbe-refractometer-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="abbe-refractometer-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="abbe-refractometer-steel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="abbe-refractometer-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+</defs>
+<rect x="78" y="76" width="30" height="58" rx="3" fill="url(#abbe-refractometer-steel)" stroke="#1F2937" stroke-width="2.2"/>
+      <circle cx="93" cy="110" r="14" fill="url(#abbe-refractometer-chassis)" stroke="#1F2937" stroke-width="2.0"/>
+      <circle cx="93" cy="110" r="6" fill="#0F766E" stroke="#1F2937" stroke-width="1.5"/>
+  
+      <line x1="108" y1="98" x2="136" y2="98" stroke="#1F2937" stroke-width="2.4" stroke-linecap="round"/>
+      <ellipse cx="144" cy="98" rx="8" ry="13" fill="url(#abbe-refractometer-glass)" stroke="#1F2937" stroke-width="2.0"/>
+      <rect x="40" y="66" width="38" height="28" rx="4" fill="url(#abbe-refractometer-chassis)" stroke="#1F2937" stroke-width="2.2"/>
+      <rect x="44" y="54" width="30" height="12" rx="2" fill="url(#abbe-refractometer-steel)" stroke="#1F2937" stroke-width="1.8"/>
+      <path d="M104 78 L142 36 L152 46 L112 90 Z" fill="url(#abbe-refractometer-steel)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="142" y="28" width="16" height="22" rx="3" transform="rotate(42 150 39)" fill="#334155" stroke="#1F2937" stroke-width="2.0"/>
+      <circle cx="93" cy="64" r="9" fill="url(#abbe-refractometer-steel)" stroke="#1F2937" stroke-width="1.8"/>
+      <line x1="93" y1="64" x2="98" y2="58" stroke="#0F766E" stroke-width="1.8"/>
+  <path d="M24 186 L42 132 H144 L162 186 Z" fill="url(#abbe-refractometer-chassis)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="16" y="180" width="154" height="10" rx="3" fill="#334155" stroke="#1F2937" stroke-width="2.0"/>
+      <rect x="52" y="144" width="82" height="26" rx="3" fill="#0F172A" stroke="#334155" stroke-width="1.6"/>
+      <text x="93" y="156" font-size="8.5" font-family="Consolas, monospace" fill="#34D399" text-anchor="middle">nD 1.3330</text>
+      <text x="93" y="166" font-size="7.5" font-family="Consolas, monospace" fill="#38BDF8" text-anchor="middle">20.0°C  0.0% Brix</text>
+</svg>

@@ -1,3 +1,4 @@
+#include "ui/apparatus_library.h"
 #include "ui/drawing.h"
 #include <QApplication>
 #include <QDir>
@@ -1535,6 +1536,42 @@ class GeometryTests : public QObject {
             ++index;
         }
         if (index > 0) QVERIFY(savePage());
+    }
+    void newCondensersAndDistillationGeometry() {
+        QStringList waterCondensers{"studio:liebig-condenser", "studio:allihn", "studio:graham",
+                                    "lab:dimroth-condenser", "lab:friedrich-condenser"};
+        for (const auto& opt : {"chemix:liebig-condenser", "chemix:allihn", "chemix:graham"})
+            if (chem::findArtwork(opt)) waterCondensers.append(opt);
+        for (const auto& id : waterCondensers) {
+            DrawingItem item(id);
+            QVERIFY2(item.ports.contains("water-in") && item.ports.contains("water-out"), qPrintable(id));
+            QVERIFY2(item.portDirections["water-in"].x() * item.portDirections["water-out"].x() < 0, qPrintable(id));
+            QVERIFY2(item.ports["water-in"].y() > item.ports["water-out"].y(), qPrintable(id));
+        }
+        const QString flaskKind = chem::findArtwork("chemix:round-bottom-flask")
+            ? QStringLiteral("chemix:round-bottom-flask") : QStringLiteral("studio:round-bottom-flask");
+        const QString condKind = chem::findArtwork("chemix:liebig-condenser")
+            ? QStringLiteral("chemix:liebig-condenser") : QStringLiteral("studio:liebig-condenser");
+        DrawingView view;
+        view.scene()->setProperty("precise", true);
+        view.addApparatus(flaskKind, {240, 440});
+        auto* flask = selected(view);
+        view.addApparatus("lab:vigreux-column", {240, 260});
+        auto* vigreux = selected(view);
+        QVERIFY(view.connectItems(flask->id, "mouth", vigreux->id, "outlet"));
+        view.addApparatus("lab:standard-distillation-head", {280, 120});
+        auto* head = selected(view);
+        QVERIFY(view.connectItems(vigreux->id, "inlet", head->id, "outlet"));
+        view.addApparatus(condKind, {480, 180});
+        auto* condenser = selected(view);
+        QVERIFY(view.connectItems(head->id, "side", condenser->id, "inlet"));
+        view.addApparatus("lab:vacuum-receiver-adapter", {680, 300});
+        auto* receiver = selected(view);
+        QVERIFY(view.connectItems(condenser->id, "outlet", receiver->id, "inlet"));
+        view.addApparatus("lab:ground-conical-flask", {700, 450});
+        auto* conical = selected(view);
+        QVERIFY(view.connectItems(receiver->id, "outlet", conical->id, "mouth"));
+        QCOMPARE(view.state().size(), 11);
     }
 };
 QTEST_MAIN(GeometryTests)

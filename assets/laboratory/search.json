@@ -1,0 +1,4853 @@
+{
+  "chemix:round-bottom-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "圆底烧瓶",
+    "search": "圆底烧瓶 单颈烧瓶 多颈烧瓶 两口烧瓶 三口烧瓶 四口烧瓶 round bottom flask 加热反应 蒸馏烧瓶 回流反应容器"
+  },
+  "chemix:conical-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "锥形瓶",
+    "search": "锥形瓶 三角瓶 Erlenmeyer flask conical flask 滴定承接容器 振荡混匀 反应容器"
+  },
+  "chemix:boiling-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "平底烧瓶",
+    "search": "平底烧瓶 Florence flask boiling flask 反应容器 加热烧瓶 可平稳放置在实验台面"
+  },
+  "chemix:distillation-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "蒸馏烧瓶",
+    "search": "蒸馏烧瓶 支管烧瓶 distillation flask 带侧支管，常用于常规蒸馏和气体发生"
+  },
+  "chemix:schlenk-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "Schlenk烧瓶",
+    "search": "Schlenk 烧瓶 施伦克反应瓶 舒伦克瓶 无水无氧反应 带侧支活塞，接双排管通惰性气体"
+  },
+  "chemix:test-tube": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "试管",
+    "search": "试管 test tube 少量试剂反应 加热试管 离心 反应容器"
+  },
+  "chemix:test-tube-with-side-arm": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "具支试管",
+    "search": "具支试管 支管试管 side arm test tube 气体发生 抽滤 侧管导出气体"
+  },
+  "chemix:thiele-tube": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "熔点管 (Thiele管)",
+    "search": "熔点管 Thiele管 提勒管 b形管 熔点测定 循环对流加热油浴管"
+  },
+  "chemix:piston-chamber": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "带活塞的气室",
+    "search": "带活塞气室 气体压缩气缸 piston chamber 气体定律实验 体积压强测量"
+  },
+  "chemix:beaker": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "烧杯",
+    "search": "烧杯 beaker 溶解 稀释 加热液体 常规化学容器 配制溶液"
+  },
+  "chemix:displacement-beaker": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "溢流杯",
+    "search": "溢流杯 排水集气杯 displacement beaker 测量不规则固体体积 阿基米德浮力实验"
+  },
+  "chemix:eureka": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "溢水杯",
+    "search": "溢水杯 尤里卡杯 eureka can 排液测体积 物理浮力密度实验"
+  },
+  "chemix:gas-jar": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "集气瓶",
+    "search": "集气瓶 gas jar 收集和储存气体 排水法 向上向下排空气法 氧气二氧化碳性质实验"
+  },
+  "chemix:tank": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "水槽",
+    "search": "水槽 水浴槽 pneumatic trough water tank 排水法集气 盛装实验用水"
+  },
+  "chemix:watch-glass": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "表面皿",
+    "search": "表面皿 watch glass 盖住烧杯防溅 少量蒸发 称量固体 酸碱指示测试"
+  },
+  "chemix:wash-bottle": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "洗瓶",
+    "search": "洗瓶 塑料洗瓶 吹洗瓶 wash bottle 冲洗沉淀 定容补水 盛装蒸馏水或去离子水"
+  },
+  "chemix:pipette-bottle": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "滴瓶",
+    "search": "滴瓶 胶头滴管瓶 dropping bottle 盛装指示剂 酸碱滴定液 少量滴加试剂"
+  },
+  "chemix:stemmed-glass": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "高脚杯",
+    "search": "高脚杯 锥形高脚烧杯 stemmed glass 液体演示容器"
+  },
+  "chemix:thermos": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "真空保温瓶",
+    "search": "真空保温瓶 杜瓦瓶 Dewar thermos 绝热容器 低温液氮储存 量热保温"
+  },
+  "chemix:calorimetry-cup": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "量热杯",
+    "search": "量热杯 量热器内筒 calorimetry cup 测定反应热 中和热 比热容实验"
+  },
+  "chemix:weight-boat": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "称量舟",
+    "search": "称量舟 称量盘 weighing boat 称取粉末固体样品 转移药品"
+  },
+  "chemix:spotting-tile": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "点滴板",
+    "search": "点滴板 白瓷点滴板 孔板 spotting tile 微量定性反应 显色与沉淀测试"
+  },
+  "chemix:reagent-bottle": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "试剂瓶",
+    "search": "试剂瓶 广口瓶 细口瓶 reagent bottle 储存化学药品和标准溶液"
+  },
+  "chemix:bottle": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "塑料瓶",
+    "search": "塑料瓶 PE瓶 聚乙烯瓶 plastic bottle 储存酸碱废液或试剂"
+  },
+  "chemix:gas-cylinder": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "气瓶",
+    "search": "气瓶 高压钢瓶 气体钢瓶 gas cylinder 储存氧气 氮气 氢气 氩气 二氧化碳等气体"
+  },
+  "chemix:crucible": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "坩埚",
+    "search": "坩埚 瓷坩埚 氧化铝坩埚 crucible 高温灼烧 灰化 熔融固体 配合泥三角使用"
+  },
+  "chemix:crucible-cover": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "坩埚盖",
+    "search": "坩埚盖 crucible cover 盖住坩埚防止飞溅 隔绝空气高温加热"
+  },
+  "chemix:evaporating-dish": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "蒸发皿",
+    "search": "蒸发皿 瓷蒸发皿 evaporating dish 浓缩溶液 蒸发结晶 析出溶质晶体"
+  },
+  "chemix:mortar": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "研钵",
+    "search": "研钵 瓷研钵 玛瑙研钵 mortar 研磨粉碎固体样品 混匀粉末"
+  },
+  "chemix:pestle": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "研杵",
+    "search": "研杵 研棒 pestle 配合研钵研碎固体颗粒"
+  },
+  "chemix:liebig-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "直形冷凝管",
+    "search": "直形冷凝管 利氏冷凝管 Liebig condenser 蒸馏 冷凝 蒸气液化 外层水套下口进冷水上口出水"
+  },
+  "chemix:allihn": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "球形冷凝管",
+    "search": "球形冷凝管 Allihn condenser 球泡冷凝管 回流冷凝 使热蒸气冷凝液化返回反应烧瓶"
+  },
+  "chemix:graham": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "蛇形冷凝管",
+    "search": "蛇形冷凝管 Graham condenser 螺旋冷凝管 盘管冷凝 增大蒸气换热面积 高效冷凝"
+  },
+  "chemix:cold-finger": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "冷指",
+    "search": "冷指 冷凝指 cold finger 升华纯化 局部冷却冷凝 接循环冷却水"
+  },
+  "chemix:distillation-head": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": false,
+    "name": "蒸馏头",
+    "search": "蒸馏头 常规蒸馏头 distillation head"
+  },
+  "chemix:claisen": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": false,
+    "name": "克氏蒸馏头",
+    "search": "克氏蒸馏头 减压蒸馏头 Claisen head"
+  },
+  "chemix:fractionating-column": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "分馏柱",
+    "search": "分馏柱 精馏柱 fractionating column 沸点相近液体混合物的分馏分离"
+  },
+  "chemix:conical-flask-with-side-arm": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "抽滤瓶 / 具支锥形瓶",
+    "search": "抽滤瓶 吸滤瓶 布氏烧瓶 真空过滤瓶 具支锥形瓶 suction filter flask Buchner flask 接真空泵与布氏漏斗进行减压抽滤"
+  },
+  "chemix:filter-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "过滤漏斗",
+    "search": "过滤漏斗 三角漏斗 普通漏斗 filter funnel 配合滤纸进行常压固液过滤或向细口容器转移液体"
+  },
+  "chemix:thistle-tube": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "长颈漏斗",
+    "search": "长颈漏斗 安全漏斗 thistle tube 插入液面下液封加液 用于气体发生装置"
+  },
+  "chemix:separatory-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "分液漏斗",
+    "search": "分液漏斗 梨形分液漏斗 separatory funnel 液液萃取 分离互不相溶的两相液体 控制滴液速度"
+  },
+  "chemix:dropping-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "滴液漏斗",
+    "search": "滴液漏斗 圆柱形滴液漏斗 dropping funnel 缓慢定量滴加液体反应物"
+  },
+  "chemix:filter-paper": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "滤纸",
+    "search": "滤纸 定性滤纸 定量滤纸 filter paper 折成圆锥放在漏斗中过滤沉淀"
+  },
+  "chemix:sieve": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "筛子",
+    "search": "筛子 分样筛 试验筛 sieve 按颗粒粒径筛分固体粉末"
+  },
+  "chemix:dean-stark-trap": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "分水器 (Dean-Stark)",
+    "search": "分水器 油水分离器 Dean-Stark trap 共沸脱水回流分水"
+  },
+  "chemix:syringe-filter": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "注射器滤膜",
+    "search": "针头过滤器 针式滤器 微孔滤膜 syringe filter HPLC样品前处理过滤"
+  },
+  "chemix:spe-cartridge": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "固相萃取小柱 (SPE)",
+    "search": "固相萃取柱 SPE小柱 SPE cartridge 样品前处理富集与净化"
+  },
+  "chemix:tlc-plate": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "层析纸",
+    "search": "层析纸 薄层色谱板 TLC板 硅胶板 纸层析 tlc plate 展开分离组分"
+  },
+  "chemix:tlc-spot": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "层析斑点",
+    "search": "层析斑点 色谱点样点 tlc spot Rf值比移值标记"
+  },
+  "chemix:tlc-chamber": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "层析缸",
+    "search": "层析缸 展开缸 显色缸 tlc chamber 薄层色谱展开容器"
+  },
+  "chemix:desiccator": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "干燥器",
+    "search": "干燥器 玻璃干燥器 真空干燥器 desiccator 放置变色硅胶干燥剂，冷却并防潮保存坩埚与样品"
+  },
+  "chemix:drying-tube": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "干燥管",
+    "search": "干燥管 球形干燥管 直形干燥管 drying tube 装填无水氯化钙或碱石灰吸收水蒸气"
+  },
+  "chemix:vacuum-pump": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": true,
+    "name": "真空泵",
+    "search": "真空泵 旋片真空泵 隔膜泵 vacuum pump 提供负压抽气动力，连接抽滤瓶或减压蒸馏装置"
+  },
+  "chemix:syringe-pump": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": true,
+    "name": "注射泵",
+    "search": "注射泵 微量推注泵 syringe pump 精确控制微小流速连续滴加液体"
+  },
+  "chemix:rubber-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "橡胶管",
+    "search": "橡胶管 乳胶管 真空软管 硅胶管 rubber tube hose 连接冷凝管进出水口、吸滤瓶和真空泵"
+  },
+  "chemix:tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "直管",
+    "search": "直玻璃管 导气管 直管 glass tube 连接橡皮塞导气"
+  },
+  "chemix:tube-bend": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "弯管",
+    "search": "直角弯管 玻璃弯管 L型弯管 bent tube 导气管"
+  },
+  "chemix:s-bent-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "S型弯管",
+    "search": "S型弯管 S弯导气管 s-bent tube"
+  },
+  "chemix:u-bent-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "U型弯管",
+    "search": "U型弯管 U弯玻璃管 u-bent tube"
+  },
+  "chemix:tube-adapter": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "变径管",
+    "search": "变径导管 缩径接头 tube adapter"
+  },
+  "chemix:3-way-crossing": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "三通管",
+    "search": "T型三通管 Y型三通管 玻璃三通 3-way crossing 分流汇流管路"
+  },
+  "chemix:capillary-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "毛细管",
+    "search": "毛细管 熔点毛细管 点样毛细管 capillary tube 薄层点样 测定熔点 沸石替代"
+  },
+  "chemix:glass-stopper": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "玻璃磨口塞",
+    "search": "玻璃塞 磨口塞 空心玻璃塞 glass stopper 密封容量瓶、分液漏斗和试剂瓶磨口"
+  },
+  "chemix:bung": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "橡胶塞",
+    "search": "橡皮塞 胶塞 单孔橡皮塞 双孔橡皮塞 无孔塞 rubber bung stopper 可穿入玻璃导管和温度计"
+  },
+  "chemix:septum-seal": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "翻边橡胶塞",
+    "search": "反口橡胶塞 翻边胶塞 注射隔膜 septum seal 无水无氧反应瓶密封，针头穿刺取样"
+  },
+  "chemix:plastic-joint-clip": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "磨口夹",
+    "search": "磨口卡夹 接头夹 凯克夹 Keck clip plastic joint clip 固定两个标准磨口接头防止松动脱落"
+  },
+  "chemix:balloon": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "气球",
+    "search": "反应气球 氢气球 氮气球 氩气球 balloon 加氢反应供气或无水无氧惰性气体氛围保护"
+  },
+  "chemix:bunsen": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "本生灯",
+    "search": "本生灯 煤气灯 燃气喷灯 Bunsen burner 高温加热实验器材"
+  },
+  "chemix:flame": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "火焰",
+    "search": "火焰 加热火焰 焰心 内焰 外焰 flame 标识加热位置"
+  },
+  "chemix:wire-gauze": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "石棉网",
+    "search": "石棉网 陶土网 wire gauze 垫在烧杯、烧瓶底部使其受热均匀"
+  },
+  "chemix:clay-triangle": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "泥三角",
+    "search": "泥三角 瓷管三角架 clay triangle 放置在三脚架上支撑坩埚直接灼烧"
+  },
+  "chemix:tripod": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "三脚架",
+    "search": "三脚架 铁三脚架 tripod 支撑石棉网、泥三角和烧杯，下方放置酒精灯"
+  },
+  "chemix:hot-plate": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "加热板",
+    "search": "电热板 加热板 hot plate 平面恒温加热烧杯、锥形瓶"
+  },
+  "chemix:magnetic-stirrer-heater": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "磁力搅拌器",
+    "search": "加热磁力搅拌器 磁力加热搅拌台 magnetic stirrer heater 旋转磁场驱动搅拌子同时控温加热"
+  },
+  "chemix:heating-mantle": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "加热套",
+    "search": "电热套 调温电热套 heating mantle 包覆圆底烧瓶均匀加热回流或蒸馏"
+  },
+  "chemix:sand-bath": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "沙浴",
+    "search": "沙浴 砂浴盘 sand bath 高温均匀导热介质"
+  },
+  "chemix:oven": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": false,
+    "name": "烘箱",
+    "search": "烘箱 干燥箱 drying oven"
+  },
+  "chemix:kettle": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "水壶",
+    "search": "水壶 电热水壶 kettle 烧水辅助器材"
+  },
+  "chemix:water-bath": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": false,
+    "name": "水浴锅",
+    "search": "水浴锅 恒温水浴锅 water bath"
+  },
+  "chemix:ice-bath": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "冰浴",
+    "search": "冰浴 冰水浴 冰盐浴 cooling ice bath 低温冷却反应体系"
+  },
+  "chemix:magnetic-stir-bar": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "磁力搅拌子",
+    "search": "磁力搅拌子 聚四氟乙烯转子 magnetic stir bar 放入烧瓶或烧杯内搅拌溶液"
+  },
+  "chemix:stirbar2": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "椭圆形磁力搅拌子",
+    "search": "椭圆形搅拌子 橄榄形磁子 oval stir bar 适合圆底烧瓶底部的顺畅磁力搅拌"
+  },
+  "chemix:stirring-rod": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "玻璃棒",
+    "search": "玻璃棒 搅拌棒 引流棒 glass stirring rod 搅拌加速溶解 过滤时引流液体"
+  },
+  "chemix:volumetric-flask": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "容量瓶",
+    "search": "容量瓶 定容瓶 volumetric flask 精确配制一定物质的量浓度的标准溶液，带单一刻度线"
+  },
+  "chemix:cylinder": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "量筒",
+    "search": "量筒 刻度量筒 graduated cylinder 粗略量取一定体积的液体"
+  },
+  "chemix:pipette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "移液管",
+    "search": "移液管 单标线移液管 pipette 准确移取固定体积溶液"
+  },
+  "chemix:mohr": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "刻度吸管",
+    "search": "刻度吸管 分度吸量管 Mohr pipette 准确量取任意刻度的少量液体"
+  },
+  "chemix:burette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "滴定管",
+    "search": "滴定管 burette 酸碱滴定分析 定量释放并读取标准溶液体积"
+  },
+  "chemix:eudiometer": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "量气管",
+    "search": "量气管 气体体积测定管 eudiometer 测定反应产生气体的体积"
+  },
+  "chemix:pycnometer": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "比重瓶",
+    "search": "比重瓶 密度瓶 pycnometer 精确测定液体或粉末的密度"
+  },
+  "chemix:hydrometer": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "液体比重计",
+    "search": "液体比重计 密度计 浮计 hydrometer 漂浮法测定溶液密度与波美度"
+  },
+  "chemix:dropper-pipette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "滴管",
+    "search": "胶头滴管 玻璃滴管 dropper pipette 吸取和滴加少量液体"
+  },
+  "chemix:plastic-pipette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "塑料滴管",
+    "search": "一次性塑料巴氏滴管 塑料吸管 plastic Pasteur pipette"
+  },
+  "chemix:pump": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "洗耳球",
+    "search": "洗耳球 三球吸耳球 pipette filler pump 套在移液管顶部吸取液体"
+  },
+  "chemix:suction-pear": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "吸耳球",
+    "search": "吸耳球 橡胶吸球 suction bulb pear 配合移液管吸液"
+  },
+  "chemix:syringe": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "注射器",
+    "search": "注射器 玻璃注射器 针筒 syringe 注射取样 量取气体或无水无氧加料"
+  },
+  "chemix:needle": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "针头",
+    "search": "注射针头 不锈钢长针头 needle 穿刺翻边胶塞取样或加液"
+  },
+  "chemix:gas-syringe": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "气体注射器",
+    "search": "气体注射器 气密性玻璃注射器 gas syringe 定量收集和测定生成气体体积"
+  },
+  "chemix:thermometer": {
+    "domain": "measurement",
+    "category": "测温与传感",
+    "visible": true,
+    "name": "温度计",
+    "search": "温度计 酒精温度计 水银温度计 玻璃棒温度计 thermometer 测量液体或蒸气温度，插入橡皮塞孔或蒸馏头"
+  },
+  "chemix:digital-thermometer": {
+    "domain": "measurement",
+    "category": "测温与传感",
+    "visible": true,
+    "name": "数字温度计",
+    "search": "数显温度计 电子探针温度计 digital thermometer 实时数字显示测温"
+  },
+  "chemix:balance": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "电子天平",
+    "search": "电子天平 精密电子秤 electronic balance 称量药品质量"
+  },
+  "chemix:dynamometer": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": false,
+    "name": "测力计",
+    "search": "测力计 弹簧秤 dynamometer"
+  },
+  "chemix:ruler": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "直尺",
+    "search": "直尺 刻度尺 ruler 测量长度和高度"
+  },
+  "chemix:tape-measure": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "卷尺",
+    "search": "卷尺 皮尺 软尺 tape measure 测量较长距离"
+  },
+  "chemix:protractor": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "量角器",
+    "search": "量角器 角度尺 protractor 测量斜面或光线入射角反射角"
+  },
+  "chemix:timer": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "计时器 / 秒表",
+    "search": "秒表 电子计时器 timer stopwatch 测量反应时间 滴定或单摆周期计时"
+  },
+  "chemix:ph-probe": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "pH 探头",
+    "search": "pH 电极 复合玻璃电极 酸度计探头 酸碱度传感器 ph probe 插入溶液测量氢离子活度和酸碱性"
+  },
+  "chemix:ph-paper": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "pH 试纸",
+    "search": "广泛pH试纸 精密试纸 酸碱指示试纸 ph indicator paper 检测溶液酸碱度"
+  },
+  "chemix:litmus-paper": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "石蕊试纸",
+    "search": "蓝色石蕊试纸 红色石蕊试纸 litmus paper 检验酸性和碱性溶液或气体"
+  },
+  "chemix:electrode": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "电极",
+    "search": "石墨电极 铂电极 金属电极 电化学电极 electrode 电解池 原电池反应"
+  },
+  "chemix:salt-bridge": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "盐桥",
+    "search": "盐桥 U型琼脂盐桥 salt bridge 连接原电池两个半电池电解质溶液"
+  },
+  "chemix:microscope": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": false,
+    "name": "显微镜",
+    "search": "显微镜 光学显微镜 microscope"
+  },
+  "chemix:petri-dish": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "培养皿",
+    "search": "培养皿 琼脂培养皿 petri dish 微生物平板培养 菌落观察"
+  },
+  "chemix:petri-top": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "培养皿 (俯视图)",
+    "search": "培养皿俯视图 平板菌落示意图 petri dish top view"
+  },
+  "chemix:microscope-slide": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "载玻片",
+    "search": "载玻片 玻璃载片 microscope slide 放置显微观察标本"
+  },
+  "chemix:cover-slip": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "盖玻片",
+    "search": "盖玻片 显微盖片 cover slip 覆盖载玻片上的液体或切片标本"
+  },
+  "chemix:swab": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "拭子",
+    "search": "无菌棉拭子 采样棉签 swab 微生物涂布和表面采样"
+  },
+  "chemix:agar": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "琼脂块",
+    "search": "琼脂块 培养基凝胶块 agar block 扩散与渗透实验"
+  },
+  "chemix:bacteria": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "细菌培养",
+    "search": "细菌菌落 微生物菌株示意图 bacteria colony"
+  },
+  "chemix:choice-chamber": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "选择室",
+    "search": "生物行为选择室 choice chamber 探究小动物趋性实验"
+  },
+  "chemix:quadrat": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "样方框",
+    "search": "生态样方框 计数框 quadrat 种群密度调查实验"
+  },
+  "chemix:leaf": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "叶子",
+    "search": "植物叶片 绿叶 leaf 光合作用和蒸腾作用实验"
+  },
+  "chemix:plant-shoot": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "植物幼苗",
+    "search": "带根植物幼苗 嫩枝 plant shoot 蒸腾拉力实验"
+  },
+  "chemix:shoot": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "直苗",
+    "search": "植物茎段 直立幼苗 shoot 向光性实验"
+  },
+  "chemix:pond-weed": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "水草",
+    "search": "水生植物 金鱼藻 黑藻 pond weed 光合作用放氧实验"
+  },
+  "chemix:daisy": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "雏菊",
+    "search": "花卉植物 雏菊 daisy 植物解剖标本"
+  },
+  "chemix:tree": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "树",
+    "search": "树木 植物标本示意图 tree"
+  },
+  "chemix:seed": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "种子",
+    "search": "萌发种子 植物种子 seed 呼吸作用实验"
+  },
+  "chemix:potato": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "土豆",
+    "search": "马铃薯块茎 土豆 potato 过氧化氢酶催化和渗透压实验"
+  },
+  "chemix:pot": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "花盆",
+    "search": "盆栽容器 花盆 plant pot 植物培育实验"
+  },
+  "chemix:dirt": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "土壤",
+    "search": "土壤样本 泥土 dirt soil 土壤成分测定"
+  },
+  "chemix:capsule-pill": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "胶囊药丸",
+    "search": "药用胶囊 药片 capsule pill 制剂与溶出度测试"
+  },
+  "chemix:digital-ammeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "数字电流表",
+    "search": "数字安培计 数字电流表 digital ammeter 串联测量电路电流"
+  },
+  "chemix:digital-voltmeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "数字电压表",
+    "search": "数字伏特计 数字电压表 digital voltmeter 并联测量两点电势差与电压"
+  },
+  "chemix:multimeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": false,
+    "name": "万用表",
+    "search": "指针万用表 便携万用表 multimeter 电压电流电阻综合测量"
+  },
+  "chemix:powerpack": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "学生电源",
+    "search": "学生交直流稳压电源 低压电源 powerpack 物理电学实验供电"
+  },
+  "chemix:battery": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "电池",
+    "search": "干电池 电池组 直流电芯 battery 提供直流电势"
+  },
+  "chemix:cable": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "电缆",
+    "search": "导线 连接线 鳄鱼夹导线 cable wire 连接电路元件"
+  },
+  "chemix:resistor": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "电阻器",
+    "search": "定值电阻 色环电阻 resistor 限流分压"
+  },
+  "chemix:lamp": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "灯泡",
+    "search": "小灯泡 钨丝灯珠 indicator lamp 电路通断及功率观察"
+  },
+  "chemix:diode": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "二极管",
+    "search": "晶体二极管 整流二极管 diode 单向导电性实验"
+  },
+  "chemix:led": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "发光二极管 (LED)",
+    "search": "LED 发光二极管 light emitting diode 指示灯与伏安特性实验"
+  },
+  "chemix:capacitor": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "电容器",
+    "search": "电解电容 陶瓷电容 capacitor 充放电与储能实验"
+  },
+  "chemix:solenoid": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "螺线管",
+    "search": "通电螺线管 电磁线圈 solenoid 产生匀强磁场和电磁感应实验"
+  },
+  "chemix:magnet": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "磁铁",
+    "search": "条形磁铁 U形蹄形磁铁 永磁体 magnet 磁场与磁感线实验"
+  },
+  "chemix:compass": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "指南针",
+    "search": "小磁针 罗盘 compass 探测磁场方向和电流磁效应"
+  },
+  "chemix:light-gate": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "光电门",
+    "search": "红外光电门传感器 light gate 测量遮光片通过时间与瞬时速度"
+  },
+  "chemix:trolley": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "小车",
+    "search": "实验小车 力学轨道小车 dynamics trolley 牛顿第二定律与碰撞实验"
+  },
+  "chemix:ramp": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "斜面",
+    "search": "力学斜面 斜坡轨道 ramp 摩擦力、加速度与机械效率实验"
+  },
+  "chemix:pulley": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "滑轮",
+    "search": "定滑轮 动滑轮 pulley 改变施力方向和省力力学实验"
+  },
+  "chemix:spring": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "弹簧",
+    "search": "螺旋弹簧 拉伸弹簧 spring 胡克定律与简谐振动实验"
+  },
+  "chemix:slotted-weight": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "槽码",
+    "search": "槽码 钩码 砝码组 slotted weight 施加已知重力载荷"
+  },
+  "chemix:raybox": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "光具盒",
+    "search": "光具盒 平行光源箱 raybox 几何光学反射折射光源"
+  },
+  "chemix:ray": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "光线",
+    "search": "光束 光线传播路径示意箭头 light ray"
+  },
+  "chemix:lens": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "透镜",
+    "search": "凸透镜 凹透镜 光学玻璃透镜 lens 成像规律与焦点测量"
+  },
+  "chemix:glass-block": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "玻璃砖",
+    "search": "平行玻璃砖 半圆形玻璃砖 glass block 光的折射与全反射实验"
+  },
+  "chemix:mirror": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "镜子",
+    "search": "平面镜 反射镜 plane mirror 光的反射定律与平面镜成像"
+  },
+  "chemix:curved-mirror": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "曲面镜",
+    "search": "凹面镜 凸面镜 球面反射镜 curved mirror"
+  },
+  "chemix:prism": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "棱镜",
+    "search": "三棱镜 光学色散棱镜 prism 光的色散与偏折实验"
+  },
+  "chemix:retort-stand": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁架台",
+    "search": "铁架台 方座支架 retort stand 立杆上安装铁夹或铁圈固定烧瓶和冷凝管"
+  },
+  "chemix:clamp": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁夹",
+    "search": "铁夹 万能夹 三爪夹 十字夹 bosshead clamp 夹持烧瓶颈、试管或冷凝管"
+  },
+  "chemix:clamp-front": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁夹 (正视图)",
+    "search": "铁夹正视图 双爪夹 clamp front"
+  },
+  "chemix:retort-ring": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁圈",
+    "search": "铁圈 漏斗架铁圈 retort ring 固定在铁架台上支撑石棉网或分液漏斗"
+  },
+  "chemix:g-clamp": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "G型夹",
+    "search": "G型桌边夹 固定夹 G-clamp 将支架紧固在实验台边"
+  },
+  "chemix:test-tube-rack": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "试管架",
+    "search": "试管架 孔位架 test tube rack 竖直放置和晾干多支试管"
+  },
+  "chemix:test-tube-holder": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "试管夹 (金属)",
+    "search": "金属试管夹 弹簧试管夹 test tube holder 加热试管时夹持管口处"
+  },
+  "chemix:peg": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "木夹",
+    "search": "木制试管夹 木夹 wooden peg 夹持加热中的试管"
+  },
+  "chemix:tongs": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "烧杯夹/坩埚钳",
+    "search": "坩埚钳 烧杯夹 tongs 夹取高温坩埚、蒸发皿或灼热固体"
+  },
+  "chemix:tweezers": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "镊子",
+    "search": "不锈钢镊子 尖头镊子 tweezers 夹取金属钠、镁条、滤纸或生物组织"
+  },
+  "chemix:fume-hood": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "通风橱",
+    "search": "通风柜 通风橱 fume hood 排风安全柜 有毒挥发性试剂操作"
+  },
+  "chemix:glove": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "手套",
+    "search": "丁腈手套 乳胶防护手套 lab gloves 手部安全防护"
+  },
+  "chemix:goggles": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "护目镜",
+    "search": "化学防溅护目镜 安全眼镜 safety goggles 眼部安全防护"
+  },
+  "chemix:lab-coat": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "实验服",
+    "search": "白大褂 实验服 lab coat 个人安全防护服"
+  },
+  "chemix:ghs-hazard": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "GHS危险标志",
+    "search": "GHS 危险化学品象形图 警示标志 hazard pictogram"
+  },
+  "chemix:table": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "实验桌",
+    "search": "实验台 实验操作桌 lab bench table"
+  },
+  "chemix:bench-mat": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "实验台垫（瓷砖）",
+    "search": "隔热瓷砖台垫 耐高温石棉垫 bench mat"
+  },
+  "chemix:spatula": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "药匙",
+    "search": "药匙 取样勺 刮勺 spatula 挑取和转移固体粉末药品"
+  },
+  "chemix:corkborer": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "打孔器",
+    "search": "橡皮塞打孔器 软木钻孔器 cork borer 给橡胶塞钻孔穿管"
+  },
+  "chemix:scissors": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "剪刀",
+    "search": "实验剪刀 解剖剪 scissors 裁剪滤纸、透析袋和软管"
+  },
+  "chemix:magnifying-glass": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "放大镜",
+    "search": "手持放大镜 观察晶体或菌落 magnifying glass"
+  },
+  "chemix:desk-lamp": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "台灯",
+    "search": "实验台灯 照明光源 desk lamp 光合作用及照明"
+  },
+  "chemix:desk-fan": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "台式电风扇",
+    "search": "电风扇 风干与蒸腾气流实验 desk fan"
+  },
+  "chemix:computer": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "电脑",
+    "search": "工作站 电脑 数据采集终端 computer"
+  },
+  "chemix:camera": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "相机",
+    "search": "数码相机 显微拍照记录 camera"
+  },
+  "chemix:videocamera": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "摄像机",
+    "search": "实验录影摄像机 video camera"
+  },
+  "chemix:pencil": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "铅笔",
+    "search": "铅笔 滤纸层析起点划线 pencil"
+  },
+  "chemix:felt-tip-pen": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "马克笔",
+    "search": "记号笔 玻璃标注笔 marker pen"
+  },
+  "chemix:adhesive-tape": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "胶带",
+    "search": "透明胶带 固定胶带 adhesive tape"
+  },
+  "chemix:paperclip": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "回形针",
+    "search": "曲别针 铁丝回形针 paperclip"
+  },
+  "chemix:wooden-splint": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "木条",
+    "search": "小木条 带火星的木条 燃着的木条 wooden splint 检验氧气和二氧化碳"
+  },
+  "chemix:cotton-wool": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "脱脂棉",
+    "search": "脱脂棉 棉花团 cotton wool 制取氧气管口阻挡高锰酸钾粉末或培养瓶塞"
+  },
+  "chemix:steel-wool": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "钢丝棉",
+    "search": "钢丝绒 细铁丝团 steel wool 铁氧反应生锈与燃烧实验"
+  },
+  "chemix:glass-wool": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "玻璃棉",
+    "search": "玻璃纤维棉 耐高温填充隔离棉 glass wool"
+  },
+  "chemix:soda-can": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "易拉罐",
+    "search": "铝制易拉罐 热量或大气压演示道具 soda can"
+  },
+  "chemix:faucet": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "水龙头",
+    "search": "实验室自来水龙头 自来水冷却水源 faucet tap"
+  },
+  "chemix:rectangle": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": false,
+    "name": "长方形",
+    "search": "矩形 长方形"
+  },
+  "chemix:ellipse": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": false,
+    "name": "椭圆",
+    "search": "椭圆 圆形"
+  },
+  "chemix:line": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": false,
+    "name": "直线",
+    "search": "直线 连接线"
+  },
+  "chemix:arrow": {
+    "domain": "annotation",
+    "category": "箭头与指引",
+    "visible": false,
+    "name": "箭头",
+    "search": "箭头 方向"
+  },
+  "chemix:label": {
+    "domain": "annotation",
+    "category": "标注文本",
+    "visible": false,
+    "name": "标签",
+    "search": "标签 文字标注"
+  },
+  "chemix:curve": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "曲线",
+    "search": "光滑曲线 贝塞尔曲线 curve"
+  },
+  "chemix:triangle": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "三角形",
+    "search": "三角形 几何图形 triangle"
+  },
+  "chemix:cross": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "十字",
+    "search": "十字标记 加号 cross"
+  },
+  "chemix:cuboid": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "长方体",
+    "search": "长方体 三维方盒 cuboid"
+  },
+  "chemix:isocube": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "等距长方体",
+    "search": "正方体 等轴测立方体 isometric cube"
+  },
+  "chemix:3dcylinder": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "圆柱体",
+    "search": "圆柱体 3D柱体 cylinder"
+  },
+  "chemix:curved-arrow": {
+    "domain": "annotation",
+    "category": "箭头与指引",
+    "visible": true,
+    "name": "弯曲箭头",
+    "search": "弧形箭头 转化箭头 循环流向 curved arrow"
+  },
+  "chemix:stir-arrow": {
+    "domain": "annotation",
+    "category": "箭头与指引",
+    "visible": true,
+    "name": "搅拌箭头",
+    "search": "旋转搅拌箭头 摇匀示意 stir arrow"
+  },
+  "chemix:eye": {
+    "domain": "annotation",
+    "category": "标注文本",
+    "visible": true,
+    "name": "眼睛",
+    "search": "观察视角 平视读数示意 eye"
+  },
+  "chemix:hand": {
+    "domain": "annotation",
+    "category": "标注文本",
+    "visible": true,
+    "name": "手",
+    "search": "操作手势 持握示意 hand"
+  },
+  "chemix:bubbles": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "气泡",
+    "search": "反应气泡 气体逸出示意 bubbles"
+  },
+  "chemix:crystals": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "晶体",
+    "search": "结晶晶体颗粒 crystals"
+  },
+  "chemix:beads": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "微珠",
+    "search": "沸石 玻璃珠 填充微珠 boiling chips beads"
+  },
+  "chemix:drop": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "液滴",
+    "search": "水滴 液滴 drop"
+  },
+  "chemix:particles": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "颗粒",
+    "search": "分散微粒 悬浮颗粒 particles"
+  },
+  "chemix:ice-cube": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "冰块",
+    "search": "冰块 冷却物态变化 ice cube"
+  },
+  "chemix:metal-strip": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "金属条",
+    "search": "锌片 铜片 镁条 金属电极片 metal strip"
+  },
+  "chemix:nail": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "钉子",
+    "search": "铁钉 锈蚀和置换反应实验 iron nail"
+  },
+  "chemix:powder": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "粉末堆",
+    "search": "固体粉末 药品堆 powder"
+  },
+  "chemix:smoke": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "烟雾",
+    "search": "白烟 反应烟雾气体 smoke"
+  },
+  "chemix:sun": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "太阳",
+    "search": "日光 光照反应条件 光合作用光源 sun"
+  },
+  "legacy:asset-0806": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": false,
+    "name": "锥形瓶",
+    "search": "锥形瓶"
+  },
+  "legacy:asset-0812": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": false,
+    "name": "集气瓶",
+    "search": "集气瓶"
+  },
+  "legacy:asset-0803": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": false,
+    "name": "铁架台（侧放）",
+    "search": "铁架台（侧放）"
+  },
+  "legacy:asset-0802": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": false,
+    "name": "铁夹（烧瓶）",
+    "search": "铁夹（烧瓶）"
+  },
+  "legacy:asset-0701": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": false,
+    "name": "烧杯无液体",
+    "search": "烧杯无液体"
+  },
+  "legacy:asset-0535": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": false,
+    "name": "冷凝管",
+    "search": "冷凝管"
+  },
+  "legacy:asset-0600": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": false,
+    "name": "小试管",
+    "search": "小试管"
+  },
+  "legacy:asset-0794": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": false,
+    "name": "量筒",
+    "search": "量筒"
+  },
+  "legacy:asset-0365": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": false,
+    "name": "YQ酒精灯",
+    "search": "YQ酒精灯"
+  },
+  "legacy:asset-0811": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": false,
+    "name": "长颈漏斗",
+    "search": "长颈漏斗"
+  },
+  "legacy:asset-0665": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": false,
+    "name": "橡皮塞",
+    "search": "橡皮塞"
+  },
+  "legacy:asset-0743": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": false,
+    "name": "直玻璃管",
+    "search": "直玻璃管"
+  },
+  "legacy:asset-0678": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": false,
+    "name": "水槽",
+    "search": "水槽"
+  },
+  "legacy:asset-0576": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": false,
+    "name": "圆底烧瓶",
+    "search": "圆底烧瓶"
+  },
+  "legacy:asset-0607": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": false,
+    "name": "平底烧瓶",
+    "search": "平底烧瓶"
+  },
+  "legacy:asset-0537": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": false,
+    "name": "分液漏斗",
+    "search": "分液漏斗"
+  },
+  "legacy:asset-0626": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": false,
+    "name": "恒压滴液漏斗",
+    "search": "恒压滴液漏斗"
+  },
+  "legacy:asset-0793": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": false,
+    "name": "酸式滴定管",
+    "search": "酸式滴定管"
+  },
+  "legacy:asset-0750": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": false,
+    "name": "碱式滴定管",
+    "search": "碱式滴定管"
+  },
+  "legacy:asset-0686": {
+    "domain": "measurement",
+    "category": "测温与传感",
+    "visible": false,
+    "name": "温度计",
+    "search": "温度计"
+  },
+  "legacy:asset-0598": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": false,
+    "name": "容量瓶",
+    "search": "容量瓶"
+  },
+  "legacy:asset-0742": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": false,
+    "name": "直型冷凝管",
+    "search": "直型冷凝管"
+  },
+  "legacy:asset-0724": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": false,
+    "name": "球形冷凝管",
+    "search": "球形冷凝管"
+  },
+  "legacy:asset-0691": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": false,
+    "name": "漏斗",
+    "search": "漏斗"
+  },
+  "legacy:asset-0761": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": false,
+    "name": "胶头滴管",
+    "search": "胶头滴管"
+  },
+  "legacy:asset-0772": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": false,
+    "name": "蒸发皿",
+    "search": "蒸发皿"
+  },
+  "legacy:asset-0667": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": false,
+    "name": "橡胶管",
+    "search": "橡胶管"
+  },
+  "legacy:asset-0800": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": false,
+    "name": "铁圈（无石棉网）",
+    "search": "铁圈（无石棉网）"
+  },
+  "legacy:asset-0692": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": false,
+    "name": "火焰",
+    "search": "火焰"
+  },
+  "legacy:asset-0784": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": false,
+    "name": "试管架",
+    "search": "试管架"
+  },
+  "legacy:asset-0507": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": false,
+    "name": "三脚架",
+    "search": "三脚架"
+  },
+  "legacy:asset-0588": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": false,
+    "name": "坩埚",
+    "search": "坩埚"
+  },
+  "legacy:asset-0589": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": false,
+    "name": "坩埚钳",
+    "search": "坩埚钳"
+  },
+  "legacy:asset-0679": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": false,
+    "name": "泥三角",
+    "search": "泥三角"
+  },
+  "legacy:asset-0779": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": false,
+    "name": "表面皿",
+    "search": "表面皿"
+  },
+  "legacy:asset-0572": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": false,
+    "name": "吸滤瓶",
+    "search": "吸滤瓶"
+  },
+  "legacy:asset-0605": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": false,
+    "name": "干燥器2",
+    "search": "干燥器2"
+  },
+  "legacy:asset-0606": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": false,
+    "name": "干燥管",
+    "search": "干燥管"
+  },
+  "legacy:asset-0632": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": false,
+    "name": "支管试管",
+    "search": "支管试管"
+  },
+  "legacy:asset-0603": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": false,
+    "name": "布氏漏斗",
+    "search": "布氏漏斗"
+  },
+  "legacy:asset-0707": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": false,
+    "name": "牛角管",
+    "search": "牛角管"
+  },
+  "legacy:asset-0690": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": false,
+    "name": "滴瓶（空）",
+    "search": "滴瓶（空）"
+  },
+  "legacy:asset-0680": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": false,
+    "name": "注射器",
+    "search": "注射器"
+  },
+  "legacy:asset-0511": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": false,
+    "name": "三通",
+    "search": "三通"
+  },
+  "legacy:asset-0745": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": false,
+    "name": "直角弯玻璃管（短）",
+    "search": "直角弯玻璃管（短）"
+  },
+  "legacy:asset-0681": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": false,
+    "name": "洗气瓶2",
+    "search": "洗气瓶2"
+  },
+  "legacy:asset-0596": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": false,
+    "name": "安全瓶",
+    "search": "安全瓶"
+  },
+  "legacy:asset-0758": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": false,
+    "name": "索氏提取器",
+    "search": "索氏提取器"
+  },
+  "legacy:asset-0774": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": false,
+    "name": "蒸馏烧瓶（带塞液体）",
+    "search": "蒸馏烧瓶（带塞液体）"
+  },
+  "legacy:asset-0783": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": false,
+    "name": "试管夹",
+    "search": "试管夹"
+  },
+  "legacy:asset-0790": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": false,
+    "name": "酒精喷灯",
+    "search": "酒精喷灯"
+  },
+  "legacy:asset-0628": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": false,
+    "name": "托盘天平2",
+    "search": "托盘天平2"
+  },
+  "legacy:asset-0662": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": false,
+    "name": "检流计实物",
+    "search": "检流计实物"
+  },
+  "legacy:asset-0734": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": false,
+    "name": "电流表实物",
+    "search": "电流表实物"
+  },
+  "legacy:asset-0693": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": false,
+    "name": "灯泡",
+    "search": "灯泡"
+  },
+  "legacy:asset-0738": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": false,
+    "name": "电阻",
+    "search": "电阻"
+  },
+  "legacy:asset-0732": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": false,
+    "name": "电池组",
+    "search": "电池组"
+  },
+  "legacy:asset-0735": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": false,
+    "name": "电源",
+    "search": "电源"
+  },
+  "legacy:asset-0615": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": false,
+    "name": "开关实物闭合",
+    "search": "开关实物闭合"
+  },
+  "legacy:asset-0741": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": false,
+    "name": "盐桥",
+    "search": "盐桥"
+  },
+  "legacy:asset-0571": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": false,
+    "name": "启普发生器空",
+    "search": "启普发生器空"
+  },
+  "legacy:asset-0801": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": false,
+    "name": "铁夹",
+    "search": "铁夹"
+  },
+  "legacy:asset-0522": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "三颈烧瓶",
+    "search": "三颈烧瓶 三口烧瓶 three neck flask 多口反应烧瓶 同步安装搅拌、滴加与回流冷凝"
+  },
+  "legacy:asset-0575": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "固液加热造气装置",
+    "search": "固液加热造气 气体发生器 加热制气反应瓶 侧管导出气体"
+  },
+  "legacy:asset-0754": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "简易启普发生器",
+    "search": "简易启普发生器 随开随用气体发生装置 制取二氧化碳氢气"
+  },
+  "legacy:asset-0302": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "U型干燥管",
+    "search": "U形干燥管 U型干燥管 U-tube dryer 填装固体干燥剂除去气体水蒸气"
+  },
+  "legacy:asset-0631": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "支管U型管",
+    "search": "具支U形管 支管U型管 side-arm U-tube 冷凝收集或气体干燥吸收"
+  },
+  "legacy:asset-0645": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "曲颈甑",
+    "search": "曲颈甑 retort 经典蒸馏反应器 长弯颈蒸馏瓶"
+  },
+  "legacy:asset-0799": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "铁圈带石棉网",
+    "search": "铁圈带石棉网 retort ring with gauze 铁架台环上垫石棉网均匀加热"
+  },
+  "legacy:asset-0706": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "燃烧匙",
+    "search": "燃烧匙 combustion spoon 盛装硫粉红磷钠等在集气瓶中燃烧"
+  },
+  "legacy:asset-0737": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "电解装置",
+    "search": "电解水装置 霍夫曼电解器 电解池 electrolysis apparatus"
+  },
+  "legacy:asset-0688": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "滴定管夹",
+    "search": "蝴蝶夹 双联滴定管夹 burette clamp 夹持酸式与碱式滴定管"
+  },
+  "legacy:asset-0719": {
+    "domain": "connectors",
+    "category": "磨口接头",
+    "visible": true,
+    "name": "玻璃活塞",
+    "search": "磨砂玻璃旋塞 直通旋塞 stopcock plug 控制液体或气体通道开关"
+  },
+  "legacy:asset-0669": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "止水夹",
+    "search": "弹簧止水夹 螺旋夹 pinchcock Mohr clip 夹紧橡胶管截断气流或液流"
+  },
+  "legacy:asset-0747": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "砝码",
+    "search": "金属砝码 托盘天平砝码 calibration weight 称量配重"
+  },
+  "lab:ground-glass-stopper": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "玻璃磨口塞（圆头）",
+    "search": "圆头磨口塞 玻璃塞子 ground glass stopper 密封试剂瓶和容量瓶磨口"
+  },
+  "lab:clear-reagent-bottle": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "透明磨口试剂瓶（开口）",
+    "search": "无色透明试剂瓶 细口瓶 clear reagent bottle 储存溶液可插磨口塞"
+  },
+  "lab:amber-reagent-bottle": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "棕色磨口试剂瓶（开口）",
+    "search": "棕色避光试剂瓶 棕瓶 amber reagent bottle 避光保存光敏试剂如硝酸银氯水"
+  },
+  "lab:ball-joint": {
+    "domain": "connectors",
+    "category": "磨口接头",
+    "visible": true,
+    "name": "球形磨口接头（球头）",
+    "search": "球磨口公头 球形磨口球头 ball joint 配合球窝柔性连接玻璃管路"
+  },
+  "lab:socket-joint": {
+    "domain": "connectors",
+    "category": "磨口接头",
+    "visible": true,
+    "name": "球形磨口接头（球窝）",
+    "search": "球磨口母口 球形磨口球窝 socket joint 配合球头柔性连接玻璃管路"
+  },
+  "lab:friedrich-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "弗里德里希回流冷凝管",
+    "search": "Friedrichs condenser 螺旋冷指回流冷凝管 高效冷凝回流 进水与出水在两侧"
+  },
+  "lab:liebig-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "直形冷凝管",
+    "search": "直形冷凝管 Liebig condenser 常规蒸馏冷凝器 下口进冷水上口出水"
+  },
+  "lab:allihn-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "球形冷凝管",
+    "search": "球形冷凝管 Allihn condenser 回流反应冷凝器 球泡内管冷却回流"
+  },
+  "lab:graham-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "蛇形冷凝管",
+    "search": "蛇形冷凝管 Graham condenser 螺旋盘管冷凝器 增大冷凝换热面积"
+  },
+  "lab:air-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "空气冷凝管",
+    "search": "空气冷凝管 air condenser 无水套高沸点蒸馏冷凝器 沸点高于140℃使用"
+  },
+  "lab:dimroth-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "双层盘管冷凝管",
+    "search": "Dimroth 冷凝管 迪姆罗特双盘管回流冷凝管 顶部冷却水进出 内冷外热高效回流"
+  },
+  "lab:plain-distillation-head": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "无支管蒸馏头",
+    "search": "无支管蒸馏头 75度蒸馏弯头 plain distillation head 无温度计直通插口 连接烧瓶与冷凝管"
+  },
+  "lab:standard-distillation-head": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "带支管蒸馏头",
+    "search": "带支管蒸馏头 标准蒸馏头 克氏外直立测温蒸馏头 standard distillation head 顶部插温度计测馏分温度"
+  },
+  "lab:claisen-head": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "克氏双口蒸馏头",
+    "search": "克氏蒸馏头 双颈蒸馏头 Claisen distillation head 减压蒸馏防暴沸 兼插毛细管与温度计"
+  },
+  "lab:ground-conical-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "磨口锥形瓶",
+    "search": "磨口锥形瓶 磨砂三角烧瓶 磨口接收瓶 ground glass conical flask Erlenmeyer 用于减压蒸馏接收、回流反应或碘量滴定"
+  },
+  "lab:bent-receiver-adapter": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "弯形接收管",
+    "search": "弯形接收管 105度尾接管 弯型接液管 bent receiver adapter 连接冷凝管末端引流馏分进入接收瓶"
+  },
+  "lab:straight-receiver-adapter": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "直形接收管",
+    "search": "直形接收管 直尾接管 straight receiver adapter 引导冷凝液向下流入接收容器"
+  },
+  "lab:vacuum-receiver-adapter": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "真空接收管",
+    "search": "真空接收管 减压尾接管 带抽气支口接收管 vacuum receiver adapter 连接冷凝管、磨口接收瓶与真空泵"
+  },
+  "lab:cow-receiver-adapter": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "多头接收管（牛角管）",
+    "search": "牛角管 多头接收管 三头分配接收管 cow receiver adapter 减压分馏轮流收集不同沸点馏分"
+  },
+  "lab:thermometer-adapter": {
+    "domain": "connectors",
+    "category": "磨口接头",
+    "visible": true,
+    "name": "磨口温度计套管接头",
+    "search": "温度计套管 磨口测温接头 thermometer adapter 密封固定温度计插入蒸馏头或反应烧瓶"
+  },
+  "lab:reducing-adapter": {
+    "domain": "connectors",
+    "category": "磨口接头",
+    "visible": true,
+    "name": "磨口变径接头",
+    "search": "大小头 变径接头 异径转接头 reducing expansion adapter 连接不同标准磨口规格如24/29转14/20"
+  },
+  "lab:gas-inlet-adapter": {
+    "domain": "connectors",
+    "category": "磨口接头",
+    "visible": true,
+    "name": "磨口气体导入接头",
+    "search": "磨口抽气接头 导气接头 通气接头 gas inlet vacuum adapter 连接软管通惰性气体或抽真空"
+  },
+  "lab:pear-shaped-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "梨形磨口烧瓶",
+    "search": "梨形烧瓶 茄形烧瓶 旋蒸瓶 pear-shaped flask 减压蒸馏与旋转蒸发浓缩常用烧瓶"
+  },
+  "lab:vigreux-column": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "刺形分馏柱",
+    "search": "刺形分馏柱 维氏分馏柱 韦氏分馏柱 Vigreux fractionating column 精馏分离沸点接近的液体混合物"
+  },
+  "lab:pressure-equalizing-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "磨口恒压滴液漏斗",
+    "search": "恒压滴液漏斗 恒压漏斗 pressure equalizing addition funnel 侧管平衡气压，密闭体系顺畅滴加反应液"
+  },
+  "lab:soxhlet-extractor": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "磨口索氏提取器",
+    "search": "索氏提取器 脂肪抽出器 Soxhlet extractor 虹吸连续溶剂回流萃取固体中有效成分"
+  },
+  "lab:kjeldahl-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "凯氏定氮烧瓶",
+    "search": "凯氏烧瓶 消化瓶 Kjeldahl flask 长颈梨形耐热烧瓶，用于有机氮样品消解和定氮实验"
+  },
+  "lab:kjeldahl-distillation-head": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "凯氏定氮防溅球",
+    "search": "凯氏定氮蒸馏头 防溅球 氮球 Kjeldahl distillation splash head 防止碱液飞沫随水蒸气带入冷凝管"
+  },
+  "lab:sintered-glass-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "玻璃砂芯漏斗",
+    "search": "砂芯漏斗 垂熔玻璃漏斗 sintered glass Buchner funnel G3/G4微孔滤板直接减压抽滤强酸或有机溶剂"
+  },
+  "lab:weighing-bottle": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "磨口称量瓶",
+    "search": "称量瓶 磨口扁形称量瓶 weighing bottle 精准称取易吸潮或挥发样品，配合分析天平使用"
+  },
+  "lab:iodine-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "碘量瓶（水封瓶）",
+    "search": "碘量瓶 水封锥形瓶 iodine flask 带喇叭水封槽防碘挥发，用于碘量法滴定分析"
+  },
+  "lab:nessler-tube": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "具塞比色管",
+    "search": "比色管 纳氏比色管 具塞刻度比色管 Nessler tube 目视比色和光度分析定量管"
+  },
+  "lab:gas-washing-bottle": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "磨口气体洗瓶",
+    "search": "洗气瓶 气体洗涤瓶 吸收瓶 gas washing bottle 长管进气鼓泡洗气除去杂质或干燥气体"
+  },
+  "lab:cold-trap": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": true,
+    "name": "真空冷阱",
+    "search": "冷阱 液氮冷阱 低温捕集阱 vacuum cold trap 冷凝捕集有机溶剂蒸气保护真空泵"
+  },
+  "lab:schlenk-line": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": true,
+    "name": "施伦克双排管",
+    "search": "双排管 真空惰性气体分配管 Schlenk line 四口无水无氧合成真空氮气/氩气切换管路"
+  },
+  "lab:vacuum-safety-bottle": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": true,
+    "name": "真空安全缓冲瓶",
+    "search": "安全瓶 缓冲瓶 防倒吸安全瓶 vacuum safety trap bottle 保护真空泵防止抽滤液体倒吸"
+  },
+  "lab:vacuum-capillary": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "减压蒸馏毛细管",
+    "search": "真空毛细管 减压防暴沸毛细管 vacuum distillation capillary 引入微细气泡防止减压暴沸"
+  },
+  "lab:three-way-stopcock": {
+    "domain": "connectors",
+    "category": "磨口接头",
+    "visible": true,
+    "name": "T形三通玻璃活塞",
+    "search": "三通玻璃活塞 T型玻璃阀 three-way glass stopcock 切换三条玻璃管路气流方向"
+  },
+  "lab:drying-pistol": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "真空干燥枪",
+    "search": "阿布德哈尔登干燥枪 Abderhalden drying pistol 恒温蒸汽加热减压真空干燥微量固体样品"
+  },
+  "lab:kipp-generator": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "启普发生器",
+    "search": "启普发生器 气体发生器 Kipp apparatus 块状固体与液体随开随停制取氢气、二氧化碳、硫化氢"
+  },
+  "lab:acid-burette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "酸式滴定管",
+    "search": "酸式滴定管 具塞滴定管 acid burette 玻璃活塞控制滴速，盛装酸性及强氧化性标准溶液如高锰酸钾"
+  },
+  "lab:alkaline-burette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "碱式滴定管",
+    "search": "碱式滴定管 胶管玻璃珠滴定管 alkaline burette 盛装氢氧化钠等碱性标准溶液"
+  },
+  "lab:volumetric-pipette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "大肚移液管",
+    "search": "大肚移液管 单标移液管 胖肚移液管 bulb volumetric pipette 高精度移取固定体积溶液"
+  },
+  "lab:titration-stand": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "滴定台与蝴蝶夹",
+    "search": "滴定台 白瓷底滴定台 蝴蝶双联夹 titration stand 双滴定管固定支架"
+  },
+  "lab:alcohol-lamp": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "酒精灯",
+    "search": "酒精灯 alcohol lamp spirit burner 常规实验室明火低温加热热源"
+  },
+  "lab:alcohol-blast-burner": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "酒精喷灯",
+    "search": "酒精喷灯 座式喷灯 alcohol blast burner 产生高达800-1000℃高温火焰灼烧"
+  },
+  "lab:rotary-evaporator": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "旋转蒸发仪",
+    "search": "旋蒸仪 旋转蒸发器 rotary evaporator rotavap 减压加热旋转快速浓缩回收有机溶剂"
+  },
+  "lab:abbe-refractometer": {
+    "domain": "measurement",
+    "category": "分析仪器",
+    "visible": true,
+    "name": "阿贝折光仪",
+    "search": "阿贝折光仪 折射仪 Abbe refractometer 测定液体折光率 nD 与糖度、纯度分析"
+  },
+  "lab:polarimeter": {
+    "domain": "measurement",
+    "category": "分析仪器",
+    "visible": true,
+    "name": "自动旋光仪",
+    "search": "旋光仪 圆盘旋光仪 polarimeter 测定手性化合物和糖溶液比旋光度"
+  },
+  "lab:muffle-furnace": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "高温马弗炉",
+    "search": "马弗炉 箱式高温电阻炉 灰化炉 muffle furnace 高温灼烧、灰化、煅烧热处理"
+  },
+  "lab:blast-drying-oven": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "电热鼓风干燥箱",
+    "search": "烘箱 鼓风干燥箱 恒温干燥箱 blast drying oven 烘干玻璃器皿及固体样品"
+  },
+  "lab:digital-water-bath": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "数显恒温水浴锅",
+    "search": "恒温水浴锅 数显水浴锅 多孔水浴锅 digital thermostatic water bath 精密恒温加热"
+  },
+  "lab:hplc-system": {
+    "domain": "measurement",
+    "category": "分析仪器",
+    "visible": true,
+    "name": "高效液相色谱仪",
+    "search": "HPLC 液相色谱仪 high performance liquid chromatography 定性定量分离分析混合溶液组分"
+  },
+  "lab:gc-system": {
+    "domain": "measurement",
+    "category": "分析仪器",
+    "visible": true,
+    "name": "气相色谱仪",
+    "search": "GC 气相色谱仪 gas chromatograph 分析易挥发有机组分与纯度测定"
+  },
+  "lab:ftir-spectrometer": {
+    "domain": "measurement",
+    "category": "分析仪器",
+    "visible": true,
+    "name": "傅里叶变换红外光谱仪",
+    "search": "FTIR 红外光谱仪 infrared spectrometer 官能团结构鉴定与分子振动吸收光谱"
+  },
+  "bio:graduated-centrifuge-tube": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "刻度离心管",
+    "search": "离心管 尖底刻度管 15mL/50mL Falcon管 centrifuge tube 离心沉淀样品"
+  },
+  "bio:glass-pipette-rack": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "玻璃吸量管架",
+    "search": "移液管架 吸量管插架 pipette rack 竖立存放刻度吸管"
+  },
+  "bio:buchner-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "布氏漏斗",
+    "search": "布氏漏斗 瓷质抽滤漏斗 Buchner funnel 铺滤纸后放在吸滤瓶上进行真空减压抽滤"
+  },
+  "bio:analytical-balance": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "带防风罩分析天平",
+    "search": "万分之一分析天平 精密分析天平 analytical balance 防风玻璃罩精密称量毫克级试剂"
+  },
+  "bio:two-pan-balance": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "托盘天平",
+    "search": "架盘天平 双盘机械天平 two-pan balance 粗称药品质量，配砝码使用"
+  },
+  "bio:glass-atomizer": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "实验用玻璃喷雾器",
+    "search": "玻璃喷雾器 层析显色喷壶 glass atomizer 均匀喷洒显色剂"
+  },
+  "bio:hair-dryer": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "电吹风",
+    "search": "吹风机 热风干燥器 hair dryer 吹干薄层色谱板或玻璃器皿"
+  },
+  "bio:microliter-syringe": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "微量进样器",
+    "search": "微量进样针 气相进样针 10uL注射器 microliter syringe 色谱精确微量进样"
+  },
+  "bio:scalpel": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "解剖刀",
+    "search": "手术刀 解剖刀片 scalpel 切割凝胶条带或生物组织标本"
+  },
+  "bio:porcelain-staining-tray": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "白瓷盘 / 染色脱色槽",
+    "search": "染色槽 脱色盘 蛋白凝胶染色盒 staining tray 考马斯亮蓝染色脱色"
+  },
+  "bio:dialysis-bag": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "透析袋",
+    "search": "半透膜透析袋 蛋白质脱盐透析袋 dialysis bag tubing 按截留分子量去除小分子盐和杂质"
+  },
+  "bio:tissue-homogenizer": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "高速组织捣碎机",
+    "search": "组织匀浆机 捣碎机 tissue homogenizer 机械破碎动植物组织细胞"
+  },
+  "bio:gel-chromatography-column": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "葡聚糖 / CMC 层析柱",
+    "search": "凝胶过滤层析柱 离子交换柱 Sephadex层析柱 chromatography column 纯化蛋白质和多糖"
+  },
+  "bio:membrane-electrophoresis-tank": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "膜 / 干胶水平电泳槽",
+    "search": "醋酸纤维素薄膜电泳槽 水平电泳槽 membrane electrophoresis tank 血清蛋白电泳分离"
+  },
+  "bio:disc-electrophoresis-tank": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "圆盘 / 管式电泳槽",
+    "search": "圆盘电泳槽 柱状聚丙烯酰胺电泳槽 disc gel electrophoresis tank"
+  },
+  "bio:agarose-electrophoresis-tank": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "琼脂糖水平电泳槽",
+    "search": "核酸电泳槽 DNA琼脂糖水平电泳槽 agarose gel electrophoresis tank 分离DNA/RNA片段"
+  },
+  "bio:incubator-shaker": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "恒温摇床",
+    "search": "恒温振荡培养箱 摇床 incubator shaker 微生物菌株恒温振荡培养"
+  },
+  "bio:microwave-oven": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "微波炉",
+    "search": "微波炉 microwave oven 加热融化琼脂糖凝胶介质"
+  },
+  "bio:gel-documentation-system": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "凝胶成像仪",
+    "search": "凝胶成像分析系统 紫外切胶成像仪 gel doc system 拍摄核酸和蛋白电泳条带"
+  },
+  "bio:electrophoresis-power-supply": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "电泳专用稳压电源",
+    "search": "电泳仪电源 稳压稳流电源 electrophoresis power supply 为水平和垂直电泳槽提供直流电压"
+  },
+  "bio:benchtop-ph-meter": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "台式 pH 计",
+    "search": "酸度计 台式pH仪 pH meter 精确测量溶液酸碱度pH值与毫伏电位"
+  },
+  "bio:nucleic-acid-spin-column": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "核酸吸附柱 / 收集管",
+    "search": "质粒提取柱 硅胶膜离心柱 spin column DNA/RNA纯化提取"
+  },
+  "bio:gel-casting-tray": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "制胶托盘与梳子",
+    "search": "制胶模具 灌胶槽 gel casting tray 浇注琼脂糖凝胶"
+  },
+  "bio:gel-loading-comb": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "电泳制胶梳",
+    "search": "样品梳 点样梳 gel comb 在琼脂糖或聚丙烯酰胺凝胶上压出点样孔"
+  },
+  "bio:refrigerated-centrifuge": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "冷冻离心机",
+    "search": "高速冷冻离心机 低温离心机 refrigerated centrifuge 温控高速离心分离细胞器、核酸和蛋白"
+  },
+  "bio:pcr-thermal-cycler": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "PCR 热循环仪",
+    "search": "PCR仪 基因扩增仪 热循环仪 PCR thermal cycler DNA变性退火延伸扩增"
+  },
+  "bio:microplate-reader": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "酶标仪",
+    "search": "酶联免疫检测仪 微孔板分光光度计 microplate reader ELISA OD值与吸光度高通量检测"
+  },
+  "bio:microplate-96": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "96孔微孔板",
+    "search": "96孔酶标板 细胞培养板 96-well microplate 配套酶标仪与八道移液器高通量反应"
+  },
+  "bio:clean-bench": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "超净工作台 / 生物安全柜",
+    "search": "超净台 层流超净工作台 生物安全柜 clean bench biosafety cabinet 无菌接种与细胞传代操作"
+  },
+  "bio:vortex-mixer": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "涡旋混匀仪",
+    "search": "涡旋振荡器 旋涡混匀仪 vortex mixer 快速混匀离心管或试管中的微量液体"
+  },
+  "bio:dry-metal-bath": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "恒温金属浴",
+    "search": "干式恒温器 金属浴 干浴器 dry bath block heater 精确加热微量离心管样品"
+  },
+  "bio:vertical-electrophoresis-tank": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "垂直板电泳槽 / SDS-PAGE",
+    "search": "蛋白垂直电泳槽 SDS-PAGE 电泳槽 vertical electrophoresis tank 聚丙烯酰胺凝胶蛋白分离"
+  },
+  "bio:orbital-shaker": {
+    "domain": "biochemistry",
+    "category": "电泳与成像",
+    "visible": true,
+    "name": "脱色摇床 / 水平摇床",
+    "search": "脱色摇床 水平往复摇床 orbital shaker 蛋白胶染色脱色与免疫印迹孵育"
+  },
+  "bio:ultrasonic-homogenizer": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "超声细胞破碎仪",
+    "search": "超声波破碎仪 细胞裂解仪 ultrasonic homogenizer 空化效应裂解细菌和细胞提取蛋白"
+  },
+  "bio:freeze-dryer": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "冷冻干燥机",
+    "search": "冻干机 真空冷冻干燥机 freeze dryer lyophilizer 低温升华干燥热敏性生物制品"
+  },
+  "bio:compound-microscope": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "双目生物光学显微镜",
+    "search": "光学显微镜 双目显微镜 compound microscope 观察细胞结构、微生物形态及血球计数"
+  },
+  "bio:hemocytometer": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "血球计数板",
+    "search": "细胞计数板 血细胞计数板 hemocytometer 在显微镜下定量计数细胞或酵母浓度"
+  },
+  "bio:inoculating-loop": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "接种环",
+    "search": "微生物接种环 铂丝接种环 inoculating loop 挑取菌落进行平板划线分离"
+  },
+  "bio:cell-spreader": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "玻璃涂布棒",
+    "search": "涂布棒 三角玻璃涂布器 L型涂布棒 cell spreader 将菌液均匀涂布在固体琼脂平板表面"
+  },
+  "bio:cell-culture-flask": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "细胞培养瓶",
+    "search": "T25/T75 细胞培养瓶 斜颈透气盖培养瓶 cell culture flask 贴壁或悬浮细胞培养"
+  },
+  "bio:fermenter-bioreactor": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "小型台式发酵罐",
+    "search": "生物反应器 发酵罐 fermenter bioreactor 控温溶氧pH自动发酵培养微生物"
+  },
+  "bio:online-spectrophotometer": {
+    "domain": "measurement",
+    "category": "分析仪器",
+    "visible": true,
+    "name": "分光光度计（可见光 / 紫外）",
+    "search": "紫外可见分光光度计 UV-Vis spectrophotometer 测定吸光度、透光率与标准曲线定量"
+  },
+  "bio:online-centrifuge": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "台式离心机",
+    "search": "台式高速离心机 掌上离心机 centrifuge 分离微管沉淀与上清液"
+  },
+  "bio:online-cuvette": {
+    "domain": "measurement",
+    "category": "分析仪器",
+    "visible": true,
+    "name": "比色皿（玻璃 / 石英）",
+    "search": "石英比色皿 玻璃比色池 光度杯 cuvette 配套分光光度计测量吸光度"
+  },
+  "bio:online-micropipette": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "微量移液器",
+    "search": "移液枪 可调单道移液器 micropipette 精确移取微升级液体"
+  },
+  "bio:online-microtube": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "微量离心管",
+    "search": "EP管 1.5mL离心管 2mL微管 microcentrifuge tube Eppendorf 盛装微量生化反应液"
+  },
+  "bio:online-tip-box": {
+    "domain": "biochemistry",
+    "category": "取样与离心",
+    "visible": true,
+    "name": "移液器吸头盒",
+    "search": "枪头盒 吸头盒 灭菌吸头盒 pipette tip box 装放无菌枪头"
+  },
+  "bio:online-incubator-servier": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "恒温培养箱",
+    "search": "生化培养箱 细菌培养箱 incubator 恒温培养微生物平板"
+  },
+  "bio:online-freezer": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "实验室低温冰箱",
+    "search": "超低温冰箱 -20℃/-80℃冰箱 lab freezer 保存酶制剂、菌种、核酸样品"
+  },
+  "bio:online-autoclave": {
+    "domain": "biochemistry",
+    "category": "生化设备",
+    "visible": true,
+    "name": "高压灭菌锅",
+    "search": "高压蒸汽灭菌器 灭菌锅 autoclave 培养基与器皿高温高压湿热灭菌"
+  },
+  "physics:digital-oscilloscope": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "双通道数字示波器",
+    "search": "示波器 数字示波器 oscilloscope CH1 CH2 测量电信号幅度和周期，在屏幕上观察电压随时间变化的波形，探头接入BNC通道"
+  },
+  "physics:function-generator": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "函数 / 信号发生器",
+    "search": "信号发生器 波形发生器 函数发生器 function generator 输出正弦波、方波、三角波信号，可调频率幅度"
+  },
+  "physics:oscilloscope-probe": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "示波器探头",
+    "search": "示波器探头 探针 接地夹 BNC probe 连接示波器与待测电路，支持1X/10X/100X/1000X衰减倍率"
+  },
+  "physics:dual-dc-supply": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "双路台式直流稳压电源",
+    "search": "稳压电源 直流电源 可调电源 DC power supply 为电路提供双路恒压恒流直流电"
+  },
+  "physics:frequency-counter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "频率计",
+    "search": "数字频率计 周期计 frequency counter 精密测量信号频率与脉冲计数"
+  },
+  "physics:lcr-meter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "台式 LCR 电桥",
+    "search": "LCR 数字电桥 阻抗分析仪 LCR meter 测量电感L、电容C、电阻R及品质因数"
+  },
+  "physics:ac-millivoltmeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "交流毫伏表",
+    "search": "交流毫伏表 电子电压表 AC millivoltmeter 测量小幅度正弦交流电压有效值"
+  },
+  "physics:analog-galvanometer": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "灵敏检流计",
+    "search": "灵敏电流计 指针检流计 galvanometer 检测电路微弱电流方向与电桥平衡指零"
+  },
+  "physics:decade-resistance-box": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "十进电阻箱",
+    "search": "电阻箱 旋钮式标准电阻箱 decade resistance box 精确设定已知标准电阻值"
+  },
+  "physics:sliding-rheostat": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "滑动变阻器",
+    "search": "滑动变阻器 滑线变阻器 sliding rheostat 移动滑片调节串联或分压电路电阻电流"
+  },
+  "physics:breadboard": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "无焊面包板",
+    "search": "面包板 实验插接板 solderless breadboard 免焊接插接元器件与导线搭建电路"
+  },
+  "physics:knife-switch": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "单刀闸刀开关",
+    "search": "单刀开关 闸刀开关 SPST knife switch 通断控制实验电路电源"
+  },
+  "physics:isolation-transformer": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "实验变压器",
+    "search": "隔离变压器 可调匝数变压器 transformer 电磁感应与交流变压实验"
+  },
+  "physics:dc-motor": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "直流电动机",
+    "search": "直流电机 直流马达 DC motor 电能转化为机械能转矩实验"
+  },
+  "physics:clamp-meter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "钳形电流表",
+    "search": "钳形表 交流钳流表 clamp meter 非接触钳口测量导线电流"
+  },
+  "physics:wheatstone-bridge": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "惠斯通电桥实验板",
+    "search": "惠斯通电桥 滑线电桥 Wheatstone bridge 精确测量中值未知电阻"
+  },
+  "physics:vernier-caliper": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "游标卡尺",
+    "search": "游标卡尺 精密卡尺 vernier caliper 测量外径、内径和深度，读取主尺与游标刻度"
+  },
+  "physics:micrometer": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "外径千分尺",
+    "search": "螺旋测微器 千分尺 micrometer screw gauge 精密测量金属丝直径和薄片厚度"
+  },
+  "physics:spring-dynamometer": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "弹簧测力计",
+    "search": "弹簧测力计 测力计 弹簧秤 spring dynamometer 测量拉力、重力与摩擦力大小"
+  },
+  "physics:force-sensor": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "力传感器",
+    "search": "数字力传感器 拉压力传感器 force sensor 实时采集受力变化曲线"
+  },
+  "physics:air-track": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "气垫导轨",
+    "search": "气垫导轨 air track 无摩擦直线运动轨道，研究匀速、匀加速与弹性碰撞"
+  },
+  "physics:air-track-glider": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "气垫导轨滑块",
+    "search": "气垫滑块 导轨滑块 air track glider 配合遮光片与光电门测量运动速度"
+  },
+  "physics:air-track-pump": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "气垫导轨气源",
+    "search": "气垫气泵 气源风机 air track blower pump 为气垫导轨提供稳定压缩气流"
+  },
+  "physics:photogate-timer": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "光电门计时器",
+    "search": "光电门数字毫秒计 计时器 photogate timer 配合光电门精确测量挡光时间、加速度和重力加速度"
+  },
+  "physics:single-pendulum": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "单摆实验架",
+    "search": "单摆 摆球实验架 simple pendulum 测量重力加速度 g 与摆长周期关系"
+  },
+  "physics:lever-apparatus": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "杠杆平衡实验架",
+    "search": "杠杆平衡尺 杠杆实验架 lever apparatus 探究力矩与杠杆平衡条件"
+  },
+  "physics:pulley-block": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "动滑轮组",
+    "search": "滑轮组 定滑轮动滑轮组 pulley block 测定机械效率与省力比"
+  },
+  "physics:rotational-inertia-apparatus": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "转动惯量实验仪",
+    "search": "刚体转动惯量仪 扭摆实验仪 rotational inertia 测定圆盘圆环转动惯量"
+  },
+  "physics:free-fall-apparatus": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "自由落体实验架",
+    "search": "自由落体装置 重力加速度实验架 free fall apparatus"
+  },
+  "physics:optical-bench": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "光具座 / 光学导轨",
+    "search": "光具座 光学导轨 optical bench 安装激光源、透镜、双缝和接收屏进行几何/物理光学实验"
+  },
+  "physics:laser-source": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "实验激光光源",
+    "search": "氦氖激光器 半导体激光光源 laser source 单色相干平行光束，干涉衍射实验光源"
+  },
+  "physics:optical-screen": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "光学接收屏",
+    "search": "毛玻璃光屏 接收屏 标尺光屏 optical viewing screen 承接成像和干涉衍射条纹"
+  },
+  "physics:double-slit": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "双缝实验片",
+    "search": "杨氏双缝片 单缝双缝光阑 double slit 激光干涉条纹实验"
+  },
+  "physics:diffraction-grating": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "衍射光栅片",
+    "search": "透射光栅 衍射光栅 diffraction grating 测定光波波长与光栅常数"
+  },
+  "physics:spectrometer": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "分光计",
+    "search": "分光计 测角分光仪 spectrometer 测定三棱镜顶角、最小偏向角和光栅衍射角"
+  },
+  "physics:michelson-interferometer": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "迈克尔逊干涉仪",
+    "search": "迈克尔逊干涉仪 Michelson interferometer 精密测定单色光波长、折射率及微小位移"
+  },
+  "physics:tuning-fork": {
+    "domain": "physics",
+    "category": "波动与声学实验",
+    "visible": true,
+    "name": "音叉与共鸣箱",
+    "search": "音叉 共鸣音叉箱 tuning fork 声波频率、共鸣与拍频实验"
+  },
+  "physics:resonance-tube": {
+    "domain": "physics",
+    "category": "波动与声学实验",
+    "visible": true,
+    "name": "共振空气柱实验装置",
+    "search": "空气柱共鸣管 驻波管 resonance tube 测定空气中声速与声波波长"
+  },
+  "physics:wave-driver": {
+    "domain": "physics",
+    "category": "波动与声学实验",
+    "visible": true,
+    "name": "机械波振动源",
+    "search": "振动激励器 驻波振动源 wave driver 驱动弦线产生机械驻波"
+  },
+  "physics:ripple-tank": {
+    "domain": "physics",
+    "category": "波动与声学实验",
+    "visible": true,
+    "name": "水波演示槽",
+    "search": "水波槽 波动水槽 ripple tank 演示水波反射、折射、干涉和衍射现象"
+  },
+  "physics:digital-multimeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "数字万用表",
+    "search": "数字万用表 三用表 DMM digital multimeter 测量交直流电压、电流、电阻、通断和二极管压降"
+  },
+  "physics:logic-analyzer": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "多通道逻辑分析仪",
+    "search": "逻辑分析仪 数字波形采集仪 logic analyzer 多通道数字时序分析 I2C SPI UART 解码"
+  },
+  "physics:spectrum-analyzer": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "频谱分析仪",
+    "search": "射频频谱仪 频谱分析仪 spectrum analyzer 分析信号频域功率谱、谐波与带宽"
+  },
+  "physics:dc-electronic-load": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "可编程直流电子负载",
+    "search": "电子负载 直流负载仪 programmable DC electronic load 恒流恒压恒阻电池电源带载测试"
+  },
+  "physics:megohmmeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "绝缘电阻测试仪 / 兆欧表",
+    "search": "兆欧表 摇表 绝缘电阻表 megohmmeter 测量电气设备与线缆高绝缘电阻"
+  },
+  "physics:variac-autotransformer": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "接触式自耦调压器",
+    "search": "自耦调压器 调压器 Variac autotransformer 平滑连续调节交流输出电压"
+  },
+  "physics:analog-ammeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "指针式电流表",
+    "search": "指针电流表 直流安培表 analog ammeter 串联测量电路电流"
+  },
+  "physics:analog-voltmeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "指针式电压表",
+    "search": "指针电压表 直流伏特表 analog voltmeter 并联测量电路两端电压"
+  },
+  "physics:decade-capacitance-box": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "十进电容箱",
+    "search": "电容箱 标准可调电容箱 decade capacitance box 精确设定已知标准电容量"
+  },
+  "physics:inductor-coil": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "电感器 / 线圈",
+    "search": "电感线圈 空心电感 铁芯电感 inductor coil 交流感抗与LC谐振电路元件"
+  },
+  "physics:potentiometer": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "旋转电位器",
+    "search": "电位器 可调分压电阻旋钮 rotary potentiometer 三端可调电阻分压"
+  },
+  "physics:npn-transistor": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "NPN 三极管模块",
+    "search": "NPN 双极型晶体管 三极管模块 BJT NPN transistor B/C/E 引脚放大与开关电路"
+  },
+  "physics:mosfet-transistor": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "MOSFET 场效应管模块",
+    "search": "MOS管 场效应晶体管模块 MOSFET G/D/S 引脚功率开关与模拟放大"
+  },
+  "physics:op-amp-module": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "集成运算放大器模块",
+    "search": "运放模块 运算放大器 op-amp module 反相比例同相放大与积分比较电路"
+  },
+  "physics:spdt-switch": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "单刀双掷开关",
+    "search": "单刀双掷开关 切换开关 SPDT switch 选择两条支路之一导通"
+  },
+  "physics:dpdt-switch": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "双刀双掷开关",
+    "search": "双刀双掷开关 倒顺开关 DPDT switch 同步切换两组电路或正反转极性"
+  },
+  "physics:bridge-rectifier": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "桥式整流模块",
+    "search": "整流桥 全波整流模块 diode bridge rectifier 将交流电转换为脉动直流电"
+  },
+  "physics:ground-terminal": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "接地端子",
+    "search": "接地端 参考零电位地线端 ground terminal GND earth"
+  },
+  "physics:hall-effect-apparatus": {
+    "domain": "physics",
+    "category": "近代与热学实验",
+    "visible": true,
+    "name": "霍尔效应实验仪",
+    "search": "霍尔效应仪 霍尔传感器磁场测量仪 Hall effect apparatus 测定霍尔电压、载流子浓度与磁感应强度"
+  },
+  "physics:photoelectric-effect": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "光电效应实验仪",
+    "search": "光电效应仪 普朗克常数测定仪 photoelectric effect 光电管遏止电压测 h"
+  },
+  "physics:youngs-modulus": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "杨氏模量实验仪与光杠杆",
+    "search": "杨氏模量仪 光杠杆拉伸仪 Young's modulus 测定金属丝弹性模量"
+  },
+  "physics:newtons-rings": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "牛顿环与读数显微镜",
+    "search": "牛顿环仪 等厚干涉仪 Newton's rings 读数显微镜测量平凸透镜曲率半径"
+  },
+  "physics:polarizer-analyzer": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "偏振片与检偏器",
+    "search": "偏振片 检偏器 马吕斯定律 polarizer analyzer 光的偏振态分析"
+  },
+  "physics:sodium-lamp": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "钠光灯单色光源",
+    "search": "低压钠光灯 589nm单色光源 sodium lamp 为牛顿环、分光计和迈克尔逊干涉提供黄光光源"
+  },
+  "physics:helmholtz-coils": {
+    "domain": "physics",
+    "category": "近代与热学实验",
+    "visible": true,
+    "name": "亥姆霍兹线圈",
+    "search": "亥姆霍兹线圈 匀强磁场线圈 Helmholtz coils 产生中央区域均匀磁场"
+  },
+  "physics:millikan-oil-drop": {
+    "domain": "physics",
+    "category": "近代与热学实验",
+    "visible": true,
+    "name": "密立根油滴仪",
+    "search": "密立根油滴实验仪 电子电荷测定仪 Millikan oil drop 测定元电荷 e"
+  },
+  "physics:franck-hertz": {
+    "domain": "physics",
+    "category": "近代与热学实验",
+    "visible": true,
+    "name": "夫兰克-赫兹实验仪",
+    "search": "夫兰克赫兹实验仪 原子能级测定仪 Franck-Hertz 验证原子能级量子化"
+  },
+  "physics:trifilar-pendulum": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "三线摆转动惯量架",
+    "search": "三线摆 扭摆转动惯量测量架 trifilar pendulum 测定物体转动惯量"
+  },
+  "physics:ticker-timer": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "电火花打点计时器",
+    "search": "打点计时器 纸带计时器 spark ticker timer 在纸带上打点记录运动位移与时间间隔"
+  },
+  "physics:calorimeter-electric": {
+    "domain": "physics",
+    "category": "近代与热学实验",
+    "visible": true,
+    "name": "电热式量热器",
+    "search": "电热法量热器 焦耳热功当量仪 electric calorimeter 测定比热容与热功当量"
+  },
+  "physics:surface-tension-jolly": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "焦利氏秤 / 表面张力仪",
+    "search": "焦利氏秤 拉脱法表面张力仪 Jolly balance surface tension 测定液体表面张力系数"
+  },
+  "studio:beaker": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "烧杯",
+    "search": "烧杯 beaker 溶解 稀释 加热液体 常规化学容器 配制溶液"
+  },
+  "studio:conical-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "锥形瓶",
+    "search": "锥形瓶 三角瓶 Erlenmeyer flask conical flask 滴定承接容器 振荡混匀 反应容器"
+  },
+  "studio:test-tube": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "试管",
+    "search": "试管 test tube 少量试剂反应 加热试管 离心 反应容器"
+  },
+  "studio:round-bottom-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "圆底烧瓶",
+    "search": "圆底烧瓶 单颈烧瓶 多颈烧瓶 两口烧瓶 三口烧瓶 四口烧瓶 round bottom flask 加热反应 蒸馏烧瓶 回流反应容器"
+  },
+  "studio:volumetric-flask": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "容量瓶",
+    "search": "容量瓶 定容瓶 volumetric flask 精确配制一定物质的量浓度的标准溶液，带单一刻度线"
+  },
+  "studio:gas-jar": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "集气瓶",
+    "search": "集气瓶 gas jar 收集和储存气体 排水法 向上向下排空气法 氧气二氧化碳性质实验"
+  },
+  "studio:test-tube-with-side-arm": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "具支试管",
+    "search": "具支试管 支管试管 side arm test tube 气体发生 抽滤 侧管导出气体"
+  },
+  "studio:conical-flask-with-side-arm": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "抽滤瓶 / 具支锥形瓶",
+    "search": "抽滤瓶 抽滤瓶 吸滤瓶 布氏烧瓶 真空过滤瓶 具支锥形瓶 减压抽滤接真空泵的瓶 suction filter flask Buchner flask 接真空泵与布氏漏斗进行减压抽滤"
+  },
+  "studio:boiling-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "平底烧瓶",
+    "search": "平底烧瓶 Florence flask boiling flask 反应容器 加热烧瓶 可平稳放置在实验台面"
+  },
+  "studio:displacement-beaker": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "溢流杯",
+    "search": "溢流杯 排水集气杯 displacement beaker 测量不规则固体体积 阿基米德浮力实验"
+  },
+  "studio:eureka": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "溢水杯",
+    "search": "溢水杯 尤里卡杯 eureka can 排液测体积 物理浮力密度实验"
+  },
+  "studio:watch-glass": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "表面皿",
+    "search": "表面皿 watch glass 盖住烧杯防溅 少量蒸发 称量固体 酸碱指示测试"
+  },
+  "studio:tank": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "水槽",
+    "search": "水槽 水浴槽 pneumatic trough water tank 排水法集气 盛装实验用水"
+  },
+  "studio:ice-bath": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "冰浴",
+    "search": "冰浴 冰水浴 冰盐浴 cooling ice bath 低温冷却反应体系"
+  },
+  "studio:weight-boat": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "称量舟",
+    "search": "称量舟 称量盘 weighing boat 称取粉末固体样品 转移药品"
+  },
+  "studio:calorimetry-cup": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "量热杯",
+    "search": "量热杯 量热器内筒 calorimetry cup 测定反应热 中和热 比热容实验"
+  },
+  "studio:thermos": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "真空保温瓶",
+    "search": "真空保温瓶 杜瓦瓶 Dewar thermos 绝热容器 低温液氮储存 量热保温"
+  },
+  "studio:wash-bottle": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "洗瓶",
+    "search": "洗瓶 塑料洗瓶 吹洗瓶 wash bottle 冲洗沉淀 定容补水 盛装蒸馏水或去离子水"
+  },
+  "studio:stemmed-glass": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "高脚杯",
+    "search": "高脚杯 锥形高脚烧杯 stemmed glass 液体演示容器"
+  },
+  "studio:schlenk-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "Schlenk烧瓶",
+    "search": "Schlenk 烧瓶 施伦克反应瓶 舒伦克瓶 无水无氧反应 带侧支活塞，接双排管通惰性气体"
+  },
+  "studio:distillation-flask": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "蒸馏烧瓶",
+    "search": "蒸馏烧瓶 支管烧瓶 distillation flask 带侧支管，常用于常规蒸馏和气体发生"
+  },
+  "studio:pycnometer": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "比重瓶",
+    "search": "比重瓶 密度瓶 pycnometer 精确测定液体或粉末的密度"
+  },
+  "studio:reagent-bottle": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "试剂瓶",
+    "search": "试剂瓶 广口瓶 细口瓶 reagent bottle 储存化学药品和标准溶液"
+  },
+  "studio:bottle": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "塑料瓶",
+    "search": "塑料瓶 PE瓶 聚乙烯瓶 plastic bottle 储存酸碱废液或试剂"
+  },
+  "studio:tlc-chamber": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "层析缸",
+    "search": "层析缸 展开缸 显色缸 tlc chamber 薄层色谱展开容器"
+  },
+  "studio:water-bath": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": false,
+    "name": "水浴锅",
+    "search": "水浴锅 恒温水浴锅 water bath"
+  },
+  "studio:evaporating-dish": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "蒸发皿",
+    "search": "蒸发皿 瓷蒸发皿 evaporating dish 浓缩溶液 蒸发结晶 析出溶质晶体"
+  },
+  "studio:tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "直管",
+    "search": "直玻璃管 导气管 直管 glass tube 连接橡皮塞导气"
+  },
+  "studio:tube-bend": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "弯管",
+    "search": "直角弯管 玻璃弯管 L型弯管 bent tube 导气管"
+  },
+  "studio:s-bent-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "S型弯管",
+    "search": "S型弯管 S弯导气管 s-bent tube"
+  },
+  "studio:u-bent-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "U型弯管",
+    "search": "U型弯管 U弯玻璃管 u-bent tube"
+  },
+  "studio:rubber-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "橡胶管",
+    "search": "橡胶管 乳胶管 真空软管 硅胶管 rubber tube hose 连接冷凝管进出水口、吸滤瓶和真空泵"
+  },
+  "studio:capillary-tube": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "毛细管",
+    "search": "毛细管 熔点毛细管 点样毛细管 capillary tube 薄层点样 测定熔点 沸石替代"
+  },
+  "studio:tube-adapter": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "变径管",
+    "search": "变径导管 缩径接头 tube adapter"
+  },
+  "studio:3-way-crossing": {
+    "domain": "connectors",
+    "category": "导管与管件",
+    "visible": true,
+    "name": "三通管",
+    "search": "T型三通管 Y型三通管 玻璃三通 3-way crossing 分流汇流管路"
+  },
+  "studio:cable": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "电缆",
+    "search": "导线 连接线 鳄鱼夹导线 cable wire 连接电路元件"
+  },
+  "studio:salt-bridge": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "盐桥",
+    "search": "盐桥 U型琼脂盐桥 salt bridge 连接原电池两个半电池电解质溶液"
+  },
+  "studio:graham": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "蛇形冷凝管",
+    "search": "蛇形冷凝管 Graham condenser 螺旋冷凝管 盘管冷凝 增大蒸气换热面积 高效冷凝"
+  },
+  "studio:allihn": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "球形冷凝管",
+    "search": "球形冷凝管 Allihn condenser 球泡冷凝管 回流冷凝 使热蒸气冷凝液化返回反应烧瓶"
+  },
+  "studio:liebig-condenser": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "直形冷凝管",
+    "search": "直形冷凝管 利氏冷凝管 Liebig condenser 蒸馏 冷凝 蒸气液化 外层水套下口进冷水上口出水"
+  },
+  "studio:fractionating-column": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": true,
+    "name": "分馏柱",
+    "search": "分馏柱 精馏柱 fractionating column 沸点相近液体混合物的分馏分离"
+  },
+  "studio:thiele-tube": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "熔点管 (Thiele管)",
+    "search": "熔点管 Thiele管 提勒管 b形管 熔点测定 循环对流加热油浴管"
+  },
+  "studio:cold-finger": {
+    "domain": "separation",
+    "category": "冷凝与回流",
+    "visible": true,
+    "name": "冷指",
+    "search": "冷指 冷凝指 cold finger 升华纯化 局部冷却冷凝 接循环冷却水"
+  },
+  "studio:distillation-head": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": false,
+    "name": "蒸馏头",
+    "search": "蒸馏头 常规蒸馏头 distillation head"
+  },
+  "studio:claisen": {
+    "domain": "separation",
+    "category": "蒸馏与分馏",
+    "visible": false,
+    "name": "克氏蒸馏头",
+    "search": "克氏蒸馏头 减压蒸馏头 Claisen head"
+  },
+  "studio:dean-stark-trap": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "分水器 (Dean-Stark)",
+    "search": "分水器 油水分离器 Dean-Stark trap 共沸脱水回流分水"
+  },
+  "studio:drying-tube": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "干燥管",
+    "search": "干燥管 球形干燥管 直形干燥管 drying tube 装填无水氯化钙或碱石灰吸收水蒸气"
+  },
+  "studio:filter-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "过滤漏斗",
+    "search": "过滤漏斗 三角漏斗 普通漏斗 filter funnel 配合滤纸进行常压固液过滤或向细口容器转移液体"
+  },
+  "studio:thistle-tube": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "长颈漏斗",
+    "search": "长颈漏斗 安全漏斗 thistle tube 插入液面下液封加液 用于气体发生装置"
+  },
+  "studio:separatory-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "分液漏斗",
+    "search": "分液漏斗 梨形分液漏斗 separatory funnel 液液萃取 分离互不相溶的两相液体 控制滴液速度"
+  },
+  "studio:dropping-funnel": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "滴液漏斗",
+    "search": "滴液漏斗 圆柱形滴液漏斗 dropping funnel 缓慢定量滴加液体反应物"
+  },
+  "studio:cylinder": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "量筒",
+    "search": "量筒 刻度量筒 graduated cylinder 粗略量取一定体积的液体"
+  },
+  "studio:pipette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "移液管",
+    "search": "移液管 单标线移液管 pipette 准确移取固定体积溶液"
+  },
+  "studio:mohr": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "刻度吸管",
+    "search": "刻度吸管 分度吸量管 Mohr pipette 准确量取任意刻度的少量液体"
+  },
+  "studio:burette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "滴定管",
+    "search": "滴定管 burette 酸碱滴定分析 定量释放并读取标准溶液体积"
+  },
+  "studio:eudiometer": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "量气管",
+    "search": "量气管 气体体积测定管 eudiometer 测定反应产生气体的体积"
+  },
+  "studio:thermometer": {
+    "domain": "measurement",
+    "category": "测温与传感",
+    "visible": true,
+    "name": "温度计",
+    "search": "温度计 酒精温度计 水银温度计 玻璃棒温度计 thermometer 测量液体或蒸气温度，插入橡皮塞孔或蒸馏头"
+  },
+  "studio:hydrometer": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "液体比重计",
+    "search": "液体比重计 密度计 浮计 hydrometer 漂浮法测定溶液密度与波美度"
+  },
+  "studio:dynamometer": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": false,
+    "name": "测力计",
+    "search": "测力计 弹簧秤 dynamometer"
+  },
+  "studio:digital-thermometer": {
+    "domain": "measurement",
+    "category": "测温与传感",
+    "visible": true,
+    "name": "数字温度计",
+    "search": "数显温度计 电子探针温度计 digital thermometer 实时数字显示测温"
+  },
+  "studio:ph-probe": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "pH 探头",
+    "search": "pH 电极 复合玻璃电极 酸度计探头 酸碱度传感器 ph probe 插入溶液测量氢离子活度和酸碱性"
+  },
+  "studio:pump": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "洗耳球",
+    "search": "洗耳球 三球吸耳球 pipette filler pump 套在移液管顶部吸取液体"
+  },
+  "studio:suction-pear": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "吸耳球",
+    "search": "吸耳球 橡胶吸球 suction bulb pear 配合移液管吸液"
+  },
+  "studio:dropper-pipette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "滴管",
+    "search": "胶头滴管 玻璃滴管 dropper pipette 吸取和滴加少量液体"
+  },
+  "studio:plastic-pipette": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "塑料滴管",
+    "search": "一次性塑料巴氏滴管 塑料吸管 plastic Pasteur pipette"
+  },
+  "studio:pipette-bottle": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "滴瓶",
+    "search": "滴瓶 胶头滴管瓶 dropping bottle 盛装指示剂 酸碱滴定液 少量滴加试剂"
+  },
+  "studio:syringe": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "注射器",
+    "search": "注射器 玻璃注射器 针筒 syringe 注射取样 量取气体或无水无氧加料"
+  },
+  "studio:gas-syringe": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "气体注射器",
+    "search": "气体注射器 气密性玻璃注射器 gas syringe 定量收集和测定生成气体体积"
+  },
+  "studio:needle": {
+    "domain": "measurement",
+    "category": "容量计量",
+    "visible": true,
+    "name": "针头",
+    "search": "注射针头 不锈钢长针头 needle 穿刺翻边胶塞取样或加液"
+  },
+  "studio:bung": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "橡胶塞",
+    "search": "橡皮塞 胶塞 单孔橡皮塞 双孔橡皮塞 无孔塞 rubber bung stopper 可穿入玻璃导管和温度计"
+  },
+  "studio:glass-stopper": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "玻璃磨口塞",
+    "search": "玻璃塞 磨口塞 空心玻璃塞 glass stopper 密封容量瓶、分液漏斗和试剂瓶磨口"
+  },
+  "studio:septum-seal": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "翻边橡胶塞",
+    "search": "反口橡胶塞 翻边胶塞 注射隔膜 septum seal 无水无氧反应瓶密封，针头穿刺取样"
+  },
+  "studio:bunsen": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "本生灯",
+    "search": "本生灯 煤气灯 燃气喷灯 Bunsen burner 高温加热实验器材"
+  },
+  "studio:flame": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "火焰",
+    "search": "火焰 加热火焰 焰心 内焰 外焰 flame 标识加热位置"
+  },
+  "studio:hot-plate": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "加热板",
+    "search": "电热板 加热板 hot plate 平面恒温加热烧杯、锥形瓶"
+  },
+  "studio:magnetic-stirrer-heater": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "磁力搅拌器",
+    "search": "加热磁力搅拌器 磁力加热搅拌台 magnetic stirrer heater 旋转磁场驱动搅拌子同时控温加热"
+  },
+  "studio:sand-bath": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "沙浴",
+    "search": "沙浴 砂浴盘 sand bath 高温均匀导热介质"
+  },
+  "studio:heating-mantle": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "加热套",
+    "search": "电热套 调温电热套 heating mantle 包覆圆底烧瓶均匀加热回流或蒸馏"
+  },
+  "studio:oven": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": false,
+    "name": "烘箱",
+    "search": "烘箱 干燥箱 drying oven"
+  },
+  "studio:kettle": {
+    "domain": "thermal",
+    "category": "加热设备",
+    "visible": true,
+    "name": "水壶",
+    "search": "水壶 电热水壶 kettle 烧水辅助器材"
+  },
+  "studio:retort-stand": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁架台",
+    "search": "铁架台 方座支架 retort stand 立杆上安装铁夹或铁圈固定烧瓶和冷凝管"
+  },
+  "studio:tripod": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "三脚架",
+    "search": "三脚架 铁三脚架 tripod 支撑石棉网、泥三角和烧杯，下方放置酒精灯"
+  },
+  "studio:test-tube-rack": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "试管架",
+    "search": "试管架 孔位架 test tube rack 竖直放置和晾干多支试管"
+  },
+  "studio:retort-ring": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁圈",
+    "search": "铁圈 漏斗架铁圈 retort ring 固定在铁架台上支撑石棉网或分液漏斗"
+  },
+  "studio:clamp": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁夹",
+    "search": "铁夹 万能夹 三爪夹 十字夹 bosshead clamp 夹持烧瓶颈、试管或冷凝管"
+  },
+  "studio:clamp-front": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "铁夹 (正视图)",
+    "search": "铁夹正视图 双爪夹 clamp front"
+  },
+  "studio:g-clamp": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "G型夹",
+    "search": "G型桌边夹 固定夹 G-clamp 将支架紧固在实验台边"
+  },
+  "studio:plastic-joint-clip": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "磨口夹",
+    "search": "磨口卡夹 接头夹 凯克夹 Keck clip plastic joint clip 固定两个标准磨口接头防止松动脱落"
+  },
+  "studio:tongs": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "烧杯夹/坩埚钳",
+    "search": "坩埚钳 烧杯夹 tongs 夹取高温坩埚、蒸发皿或灼热固体"
+  },
+  "studio:test-tube-holder": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "试管夹 (金属)",
+    "search": "金属试管夹 弹簧试管夹 test tube holder 加热试管时夹持管口处"
+  },
+  "studio:tweezers": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "镊子",
+    "search": "不锈钢镊子 尖头镊子 tweezers 夹取金属钠、镁条、滤纸或生物组织"
+  },
+  "studio:peg": {
+    "domain": "support",
+    "category": "铁架与夹具",
+    "visible": true,
+    "name": "木夹",
+    "search": "木制试管夹 木夹 wooden peg 夹持加热中的试管"
+  },
+  "studio:stirring-rod": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "玻璃棒",
+    "search": "玻璃棒 搅拌棒 引流棒 glass stirring rod 搅拌加速溶解 过滤时引流液体"
+  },
+  "studio:wooden-splint": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "木条",
+    "search": "小木条 带火星的木条 燃着的木条 wooden splint 检验氧气和二氧化碳"
+  },
+  "studio:metal-strip": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "金属条",
+    "search": "锌片 铜片 镁条 金属电极片 metal strip"
+  },
+  "studio:spatula": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "药匙",
+    "search": "药匙 取样勺 刮勺 spatula 挑取和转移固体粉末药品"
+  },
+  "studio:pencil": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "铅笔",
+    "search": "铅笔 滤纸层析起点划线 pencil"
+  },
+  "studio:felt-tip-pen": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "马克笔",
+    "search": "记号笔 玻璃标注笔 marker pen"
+  },
+  "studio:swab": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "拭子",
+    "search": "无菌棉拭子 采样棉签 swab 微生物涂布和表面采样"
+  },
+  "studio:pestle": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "研杵",
+    "search": "研杵 研棒 pestle 配合研钵研碎固体颗粒"
+  },
+  "studio:nail": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "钉子",
+    "search": "铁钉 锈蚀和置换反应实验 iron nail"
+  },
+  "studio:electrode": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "电极",
+    "search": "石墨电极 铂电极 金属电极 电化学电极 electrode 电解池 原电池反应"
+  },
+  "studio:magnetic-stir-bar": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "磁力搅拌子",
+    "search": "磁力搅拌子 聚四氟乙烯转子 magnetic stir bar 放入烧瓶或烧杯内搅拌溶液"
+  },
+  "studio:stirbar2": {
+    "domain": "thermal",
+    "category": "温控与浴槽",
+    "visible": true,
+    "name": "椭圆形磁力搅拌子",
+    "search": "椭圆形搅拌子 橄榄形磁子 oval stir bar 适合圆底烧瓶底部的顺畅磁力搅拌"
+  },
+  "studio:wire-gauze": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "石棉网",
+    "search": "石棉网 陶土网 wire gauze 垫在烧杯、烧瓶底部使其受热均匀"
+  },
+  "studio:bench-mat": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "实验台垫（瓷砖）",
+    "search": "隔热瓷砖台垫 耐高温石棉垫 bench mat"
+  },
+  "studio:sieve": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "筛子",
+    "search": "筛子 分样筛 试验筛 sieve 按颗粒粒径筛分固体粉末"
+  },
+  "studio:filter-paper": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "滤纸",
+    "search": "滤纸 定性滤纸 定量滤纸 filter paper 折成圆锥放在漏斗中过滤沉淀"
+  },
+  "studio:clay-triangle": {
+    "domain": "thermal",
+    "category": "热源与燃烧",
+    "visible": true,
+    "name": "泥三角",
+    "search": "泥三角 瓷管三角架 clay triangle 放置在三脚架上支撑坩埚直接灼烧"
+  },
+  "studio:capsule-pill": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "胶囊药丸",
+    "search": "药用胶囊 药片 capsule pill 制剂与溶出度测试"
+  },
+  "studio:syringe-filter": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "注射器滤膜",
+    "search": "针头过滤器 针式滤器 微孔滤膜 syringe filter HPLC样品前处理过滤"
+  },
+  "studio:spe-cartridge": {
+    "domain": "separation",
+    "category": "过滤与萃取",
+    "visible": true,
+    "name": "固相萃取小柱 (SPE)",
+    "search": "固相萃取柱 SPE小柱 SPE cartridge 样品前处理富集与净化"
+  },
+  "studio:paperclip": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "回形针",
+    "search": "曲别针 铁丝回形针 paperclip"
+  },
+  "studio:adhesive-tape": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "胶带",
+    "search": "透明胶带 固定胶带 adhesive tape"
+  },
+  "studio:scissors": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "剪刀",
+    "search": "实验剪刀 解剖剪 scissors 裁剪滤纸、透析袋和软管"
+  },
+  "studio:corkborer": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "打孔器",
+    "search": "橡皮塞打孔器 软木钻孔器 cork borer 给橡胶塞钻孔穿管"
+  },
+  "studio:mortar": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "研钵",
+    "search": "研钵 瓷研钵 玛瑙研钵 mortar 研磨粉碎固体样品 混匀粉末"
+  },
+  "studio:crucible": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "坩埚",
+    "search": "坩埚 瓷坩埚 氧化铝坩埚 crucible 高温灼烧 灰化 熔融固体 配合泥三角使用"
+  },
+  "studio:crucible-cover": {
+    "domain": "reaction",
+    "category": "坩埚与蒸发皿",
+    "visible": true,
+    "name": "坩埚盖",
+    "search": "坩埚盖 crucible cover 盖住坩埚防止飞溅 隔绝空气高温加热"
+  },
+  "studio:spotting-tile": {
+    "domain": "reaction",
+    "category": "烧杯与常规容器",
+    "visible": true,
+    "name": "点滴板",
+    "search": "点滴板 白瓷点滴板 孔板 spotting tile 微量定性反应 显色与沉淀测试"
+  },
+  "studio:balance": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "电子天平",
+    "search": "电子天平 精密电子秤 electronic balance 称量药品质量"
+  },
+  "studio:fume-hood": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "通风橱",
+    "search": "通风柜 通风橱 fume hood 排风安全柜 有毒挥发性试剂操作"
+  },
+  "studio:microscope": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": false,
+    "name": "显微镜",
+    "search": "显微镜 光学显微镜 microscope"
+  },
+  "studio:vacuum-pump": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": true,
+    "name": "真空泵",
+    "search": "真空泵 旋片真空泵 隔膜泵 vacuum pump 提供负压抽气动力，连接抽滤瓶或减压蒸馏装置"
+  },
+  "studio:syringe-pump": {
+    "domain": "separation",
+    "category": "真空与泵",
+    "visible": true,
+    "name": "注射泵",
+    "search": "注射泵 微量推注泵 syringe pump 精确控制微小流速连续滴加液体"
+  },
+  "studio:piston-chamber": {
+    "domain": "reaction",
+    "category": "烧瓶与反应容器",
+    "visible": true,
+    "name": "带活塞的气室",
+    "search": "带活塞气室 气体压缩气缸 piston chamber 气体定律实验 体积压强测量"
+  },
+  "studio:gas-cylinder": {
+    "domain": "reaction",
+    "category": "试剂储存",
+    "visible": true,
+    "name": "气瓶",
+    "search": "气瓶 高压钢瓶 气体钢瓶 gas cylinder 储存氧气 氮气 氢气 氩气 二氧化碳等气体"
+  },
+  "studio:desiccator": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "干燥器",
+    "search": "干燥器 玻璃干燥器 真空干燥器 desiccator 放置变色硅胶干燥剂，冷却并防潮保存坩埚与样品"
+  },
+  "studio:table": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "实验桌",
+    "search": "实验台 实验操作桌 lab bench table"
+  },
+  "studio:desk-lamp": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "台灯",
+    "search": "实验台灯 照明光源 desk lamp 光合作用及照明"
+  },
+  "studio:desk-fan": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "台式电风扇",
+    "search": "电风扇 风干与蒸腾气流实验 desk fan"
+  },
+  "studio:computer": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "电脑",
+    "search": "工作站 电脑 数据采集终端 computer"
+  },
+  "studio:camera": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "相机",
+    "search": "数码相机 显微拍照记录 camera"
+  },
+  "studio:videocamera": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "摄像机",
+    "search": "实验录影摄像机 video camera"
+  },
+  "studio:timer": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "计时器 / 秒表",
+    "search": "秒表 电子计时器 timer stopwatch 测量反应时间 滴定或单摆周期计时"
+  },
+  "studio:powerpack": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "学生电源",
+    "search": "学生交直流稳压电源 低压电源 powerpack 物理电学实验供电"
+  },
+  "studio:battery": {
+    "domain": "electrical",
+    "category": "电工设备",
+    "visible": true,
+    "name": "电池",
+    "search": "干电池 电池组 直流电芯 battery 提供直流电势"
+  },
+  "studio:digital-ammeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "数字电流表",
+    "search": "数字安培计 数字电流表 digital ammeter 串联测量电路电流"
+  },
+  "studio:digital-voltmeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": true,
+    "name": "数字电压表",
+    "search": "数字伏特计 数字电压表 digital voltmeter 并联测量两点电势差与电压"
+  },
+  "studio:multimeter": {
+    "domain": "electrical",
+    "category": "电学与电子测量",
+    "visible": false,
+    "name": "万用表",
+    "search": "指针万用表 便携万用表 multimeter 电压电流电阻综合测量"
+  },
+  "studio:resistor": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "电阻器",
+    "search": "定值电阻 色环电阻 resistor 限流分压"
+  },
+  "studio:lamp": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "灯泡",
+    "search": "小灯泡 钨丝灯珠 indicator lamp 电路通断及功率观察"
+  },
+  "studio:diode": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "二极管",
+    "search": "晶体二极管 整流二极管 diode 单向导电性实验"
+  },
+  "studio:led": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "发光二极管 (LED)",
+    "search": "LED 发光二极管 light emitting diode 指示灯与伏安特性实验"
+  },
+  "studio:capacitor": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "电容器",
+    "search": "电解电容 陶瓷电容 capacitor 充放电与储能实验"
+  },
+  "studio:magnet": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "磁铁",
+    "search": "条形磁铁 U形蹄形磁铁 永磁体 magnet 磁场与磁感线实验"
+  },
+  "studio:compass": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "指南针",
+    "search": "小磁针 罗盘 compass 探测磁场方向和电流磁效应"
+  },
+  "studio:solenoid": {
+    "domain": "electrical",
+    "category": "电路元件",
+    "visible": true,
+    "name": "螺线管",
+    "search": "通电螺线管 电磁线圈 solenoid 产生匀强磁场和电磁感应实验"
+  },
+  "studio:petri-dish": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "培养皿",
+    "search": "培养皿 琼脂培养皿 petri dish 微生物平板培养 菌落观察"
+  },
+  "studio:petri-top": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "培养皿 (俯视图)",
+    "search": "培养皿俯视图 平板菌落示意图 petri dish top view"
+  },
+  "studio:choice-chamber": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "选择室",
+    "search": "生物行为选择室 choice chamber 探究小动物趋性实验"
+  },
+  "studio:microscope-slide": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "载玻片",
+    "search": "载玻片 玻璃载片 microscope slide 放置显微观察标本"
+  },
+  "studio:cover-slip": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "盖玻片",
+    "search": "盖玻片 显微盖片 cover slip 覆盖载玻片上的液体或切片标本"
+  },
+  "studio:quadrat": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "样方框",
+    "search": "生态样方框 计数框 quadrat 种群密度调查实验"
+  },
+  "studio:bacteria": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "细菌培养",
+    "search": "细菌菌落 微生物菌株示意图 bacteria colony"
+  },
+  "studio:seed": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "种子",
+    "search": "萌发种子 植物种子 seed 呼吸作用实验"
+  },
+  "studio:potato": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "土豆",
+    "search": "马铃薯块茎 土豆 potato 过氧化氢酶催化和渗透压实验"
+  },
+  "studio:agar": {
+    "domain": "biochemistry",
+    "category": "细胞与培养",
+    "visible": true,
+    "name": "琼脂块",
+    "search": "琼脂块 培养基凝胶块 agar block 扩散与渗透实验"
+  },
+  "studio:pot": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "花盆",
+    "search": "盆栽容器 花盆 plant pot 植物培育实验"
+  },
+  "studio:daisy": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "雏菊",
+    "search": "花卉植物 雏菊 daisy 植物解剖标本"
+  },
+  "studio:tree": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "树",
+    "search": "树木 植物标本示意图 tree"
+  },
+  "studio:leaf": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "叶子",
+    "search": "植物叶片 绿叶 leaf 光合作用和蒸腾作用实验"
+  },
+  "studio:plant-shoot": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "植物幼苗",
+    "search": "带根植物幼苗 嫩枝 plant shoot 蒸腾拉力实验"
+  },
+  "studio:shoot": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "直苗",
+    "search": "植物茎段 直立幼苗 shoot 向光性实验"
+  },
+  "studio:pond-weed": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "水草",
+    "search": "水生植物 金鱼藻 黑藻 pond weed 光合作用放氧实验"
+  },
+  "studio:bubbles": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "气泡",
+    "search": "反应气泡 气体逸出示意 bubbles"
+  },
+  "studio:beads": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "微珠",
+    "search": "沸石 玻璃珠 填充微珠 boiling chips beads"
+  },
+  "studio:particles": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "颗粒",
+    "search": "分散微粒 悬浮颗粒 particles"
+  },
+  "studio:crystals": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "晶体",
+    "search": "结晶晶体颗粒 crystals"
+  },
+  "studio:drop": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "液滴",
+    "search": "水滴 液滴 drop"
+  },
+  "studio:ice-cube": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "冰块",
+    "search": "冰块 冷却物态变化 ice cube"
+  },
+  "studio:powder": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "粉末堆",
+    "search": "固体粉末 药品堆 powder"
+  },
+  "studio:dirt": {
+    "domain": "biochemistry",
+    "category": "生物标本",
+    "visible": true,
+    "name": "土壤",
+    "search": "土壤样本 泥土 dirt soil 土壤成分测定"
+  },
+  "studio:smoke": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "烟雾",
+    "search": "白烟 反应烟雾气体 smoke"
+  },
+  "studio:glass-wool": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "玻璃棉",
+    "search": "玻璃纤维棉 耐高温填充隔离棉 glass wool"
+  },
+  "studio:steel-wool": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "钢丝棉",
+    "search": "钢丝绒 细铁丝团 steel wool 铁氧反应生锈与燃烧实验"
+  },
+  "studio:cotton-wool": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "脱脂棉",
+    "search": "脱脂棉 棉花团 cotton wool 制取氧气管口阻挡高锰酸钾粉末或培养瓶塞"
+  },
+  "studio:ph-paper": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "pH 试纸",
+    "search": "广泛pH试纸 精密试纸 酸碱指示试纸 ph indicator paper 检测溶液酸碱度"
+  },
+  "studio:litmus-paper": {
+    "domain": "measurement",
+    "category": "电化学与试纸",
+    "visible": true,
+    "name": "石蕊试纸",
+    "search": "蓝色石蕊试纸 红色石蕊试纸 litmus paper 检验酸性和碱性溶液或气体"
+  },
+  "studio:ruler": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "直尺",
+    "search": "直尺 刻度尺 ruler 测量长度和高度"
+  },
+  "studio:tape-measure": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "卷尺",
+    "search": "卷尺 皮尺 软尺 tape measure 测量较长距离"
+  },
+  "studio:protractor": {
+    "domain": "measurement",
+    "category": "称量与精密测量",
+    "visible": true,
+    "name": "量角器",
+    "search": "量角器 角度尺 protractor 测量斜面或光线入射角反射角"
+  },
+  "studio:tlc-plate": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "层析纸",
+    "search": "层析纸 薄层色谱板 TLC板 硅胶板 纸层析 tlc plate 展开分离组分"
+  },
+  "studio:tlc-spot": {
+    "domain": "separation",
+    "category": "色谱与干燥",
+    "visible": true,
+    "name": "层析斑点",
+    "search": "层析斑点 色谱点样点 tlc spot Rf值比移值标记"
+  },
+  "studio:faucet": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "水龙头",
+    "search": "实验室自来水龙头 自来水冷却水源 faucet tap"
+  },
+  "studio:balloon": {
+    "domain": "connectors",
+    "category": "塞子与夹具",
+    "visible": true,
+    "name": "气球",
+    "search": "反应气球 氢气球 氮气球 氩气球 balloon 加氢反应供气或无水无氧惰性气体氛围保护"
+  },
+  "studio:soda-can": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "易拉罐",
+    "search": "铝制易拉罐 热量或大气压演示道具 soda can"
+  },
+  "studio:goggles": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "护目镜",
+    "search": "化学防溅护目镜 安全眼镜 safety goggles 眼部安全防护"
+  },
+  "studio:lab-coat": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "实验服",
+    "search": "白大褂 实验服 lab coat 个人安全防护服"
+  },
+  "studio:glove": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "手套",
+    "search": "丁腈手套 乳胶防护手套 lab gloves 手部安全防护"
+  },
+  "studio:hand": {
+    "domain": "annotation",
+    "category": "标注文本",
+    "visible": true,
+    "name": "手",
+    "search": "操作手势 持握示意 hand"
+  },
+  "studio:magnifying-glass": {
+    "domain": "support",
+    "category": "实验台与通用工具",
+    "visible": true,
+    "name": "放大镜",
+    "search": "手持放大镜 观察晶体或菌落 magnifying glass"
+  },
+  "studio:prism": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "棱镜",
+    "search": "三棱镜 光学色散棱镜 prism 光的色散与偏折实验"
+  },
+  "studio:lens": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "透镜",
+    "search": "凸透镜 凹透镜 光学玻璃透镜 lens 成像规律与焦点测量"
+  },
+  "studio:glass-block": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "玻璃砖",
+    "search": "平行玻璃砖 半圆形玻璃砖 glass block 光的折射与全反射实验"
+  },
+  "studio:mirror": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "镜子",
+    "search": "平面镜 反射镜 plane mirror 光的反射定律与平面镜成像"
+  },
+  "studio:curved-mirror": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "曲面镜",
+    "search": "凹面镜 凸面镜 球面反射镜 curved mirror"
+  },
+  "studio:raybox": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "光具盒",
+    "search": "光具盒 平行光源箱 raybox 几何光学反射折射光源"
+  },
+  "studio:ray": {
+    "domain": "physics",
+    "category": "光学实验",
+    "visible": true,
+    "name": "光线",
+    "search": "光束 光线传播路径示意箭头 light ray"
+  },
+  "studio:sun": {
+    "domain": "annotation",
+    "category": "实验符号与物质",
+    "visible": true,
+    "name": "太阳",
+    "search": "日光 光照反应条件 光合作用光源 sun"
+  },
+  "studio:trolley": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "小车",
+    "search": "实验小车 力学轨道小车 dynamics trolley 牛顿第二定律与碰撞实验"
+  },
+  "studio:ramp": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "斜面",
+    "search": "力学斜面 斜坡轨道 ramp 摩擦力、加速度与机械效率实验"
+  },
+  "studio:light-gate": {
+    "domain": "physics",
+    "category": "力学与计量",
+    "visible": true,
+    "name": "光电门",
+    "search": "红外光电门传感器 light gate 测量遮光片通过时间与瞬时速度"
+  },
+  "studio:pulley": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "滑轮",
+    "search": "定滑轮 动滑轮 pulley 改变施力方向和省力力学实验"
+  },
+  "studio:spring": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "弹簧",
+    "search": "螺旋弹簧 拉伸弹簧 spring 胡克定律与简谐振动实验"
+  },
+  "studio:slotted-weight": {
+    "domain": "physics",
+    "category": "力学实验",
+    "visible": true,
+    "name": "槽码",
+    "search": "槽码 钩码 砝码组 slotted weight 施加已知重力载荷"
+  },
+  "studio:rectangle": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": false,
+    "name": "长方形",
+    "search": "矩形 长方形"
+  },
+  "studio:ellipse": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": false,
+    "name": "椭圆",
+    "search": "椭圆 圆形"
+  },
+  "studio:triangle": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "三角形",
+    "search": "三角形 几何图形 triangle"
+  },
+  "studio:line": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": false,
+    "name": "直线",
+    "search": "直线 连接线"
+  },
+  "studio:arrow": {
+    "domain": "annotation",
+    "category": "箭头与指引",
+    "visible": false,
+    "name": "箭头",
+    "search": "箭头 方向"
+  },
+  "studio:curve": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "曲线",
+    "search": "光滑曲线 贝塞尔曲线 curve"
+  },
+  "studio:curved-arrow": {
+    "domain": "annotation",
+    "category": "箭头与指引",
+    "visible": true,
+    "name": "弯曲箭头",
+    "search": "弧形箭头 转化箭头 循环流向 curved arrow"
+  },
+  "studio:stir-arrow": {
+    "domain": "annotation",
+    "category": "箭头与指引",
+    "visible": true,
+    "name": "搅拌箭头",
+    "search": "旋转搅拌箭头 摇匀示意 stir arrow"
+  },
+  "studio:cross": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "十字",
+    "search": "十字标记 加号 cross"
+  },
+  "studio:cuboid": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "长方体",
+    "search": "长方体 三维方盒 cuboid"
+  },
+  "studio:isocube": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "等距长方体",
+    "search": "正方体 等轴测立方体 isometric cube"
+  },
+  "studio:3dcylinder": {
+    "domain": "annotation",
+    "category": "基本图形",
+    "visible": true,
+    "name": "圆柱体",
+    "search": "圆柱体 3D柱体 cylinder"
+  },
+  "studio:label": {
+    "domain": "annotation",
+    "category": "标注文本",
+    "visible": false,
+    "name": "标签",
+    "search": "标签 文字标注"
+  },
+  "studio:eye": {
+    "domain": "annotation",
+    "category": "标注文本",
+    "visible": true,
+    "name": "眼睛",
+    "search": "观察视角 平视读数示意 eye"
+  },
+  "studio:ghs-hazard": {
+    "domain": "support",
+    "category": "安全与防护",
+    "visible": true,
+    "name": "GHS危险标志",
+    "search": "GHS 危险化学品象形图 警示标志 hazard pictogram"
+  }
+}
