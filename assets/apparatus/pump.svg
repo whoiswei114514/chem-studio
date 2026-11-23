@@ -1,1 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="230" viewBox="0 0 100 230"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M44 200 V151 C-13 137 1 46 50 46 C99 46 113 137 56 151 V200Z" fill="#c75b55"></path><rect x="44" y="17" width="12" height="30" rx="3" fill="#c6d2d7"></rect><ellipse cx="28" cy="84" rx="9" ry="9" fill="#d79b59"></ellipse><ellipse cx="74" cy="84" rx="9" ry="9" fill="#d79b59"></ellipse><ellipse cx="50" cy="121" rx="9" ry="9" fill="#d79b59"></ellipse></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="230" viewBox="0 0 100 230">
+<title>三阀吸球</title>
+<defs>
+  <linearGradient id="pump-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="pump-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="pump-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="pump-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="pump-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="pump-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="pump-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="pump-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="pump-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="pump-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="pump-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="pump-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="pump-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="pump-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="pump-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="pump-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+  <radialGradient id="pump-red" cx="38%" cy="32%" r="65%"><stop offset="0%" stop-color="#FCA5A5"/><stop offset="45%" stop-color="#DC2626"/><stop offset="100%" stop-color="#991B1B"/></radialGradient>
+</defs>
+<path d="M44 200 V152 C-4 138 6 48 50 48 C94 48 104 138 56 152 V200 Z" fill="url(#pump-red)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+  <rect x="44" y="18" width="12" height="31" rx="4" fill="url(#pump-red)" stroke="#1F2937" stroke-width="2.0"/>
+  <rect x="42" y="184" width="16" height="16" rx="2" fill="#334155" stroke="#1F2937" stroke-width="2.0"/>
+  <circle cx="50" cy="34" r="7" fill="#E7B98A" stroke="#1F2937" stroke-width="1.8"/><text x="50" y="36.8" fill="#1F2937" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">A</text><circle cx="30" cy="96" r="8" fill="#E7B98A" stroke="#1F2937" stroke-width="1.8"/><text x="30" y="98.8" fill="#1F2937" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">S</text><circle cx="70" cy="96" r="8" fill="#E7B98A" stroke="#1F2937" stroke-width="1.8"/><text x="70" y="98.8" fill="#1F2937" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">E</text>
+  <path d="M24 72 C18 92 20 116 28 132" fill="none" stroke="#FFFFFF" stroke-width="3.0" stroke-opacity="0.45" stroke-linecap="round"/>
+</svg>

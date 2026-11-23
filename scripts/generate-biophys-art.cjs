@@ -1349,6 +1349,269 @@ function buildBiochemistrySpecs() {
         softButton(172, 226, 56, 18, 'CONTROL', '#14B8A6', '#FFFFFF');
     }, { notes: '小型台式搅拌生物发酵罐：硼硅玻璃反应釜、不锈钢顶盖电机、涡轮搅拌桨、pH/溶氧电极、蠕动泵头与多参数监控屏。' });
 
+  // =====================================================================
+  // UNIFIED REPLACEMENT OF FORMERLY ADAPTED 9 BIO ITEMS (NOW 100% AUTHORED WTFPL-2.0)
+  // =====================================================================
+
+  // 42. online-spectrophotometer
+  add('online-spectrophotometer', '分光光度计（可见光 / 紫外）', '分析与计量',
+    'online spectrophotometer 分光光度计 可见光 紫外 UV 吸光度', 260, 154, () => {
+      return benchChassis(16, 22, 228, 114, { rx: 8, accentBar: true, footW: 18, footH: 7 }) +
+        // Left hinged cuvette sample compartment hood
+        `<rect x="26" y="38" width="84" height="84" rx="5" fill="url(#g-chassis-h)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<rect x="34" y="46" width="68" height="44" rx="4" fill="${P.panelAlt}" stroke="${P.slate}" stroke-width="1.3"/>` +
+        `<rect x="52" y="54" width="32" height="10" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.4"/>` +
+        `<rect x="61" y="70" width="14" height="14" rx="2" fill="url(#g-glass)" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        labelText(68, 108, '10 mm CELL', 6.8, P.muted) +
+        // Right OLED UV-Vis display + control keys
+        oledScreen(120, 36, 112, 54,
+          screenText(126, 50, 'UV-VIS  280 nm', 7.5, P.screenCyan, 'start') +
+          screenText(176, 68, 'A = 0.642', 12, P.screenGreen, 'middle') +
+          screenText(176, 82, 'T = 22.8 %', 7.8, P.screenAmber, 'middle')
+        ) +
+        softButton(120, 98, 24, 16, 'λ', '#E2E8F0', P.ink) +
+        softButton(148, 98, 28, 16, 'SCAN', '#E2E8F0', P.ink) +
+        softButton(180, 98, 24, 16, 'ZERO', '#E2E8F0', P.ink) +
+        softButton(208, 98, 24, 16, 'READ', '#14B8A6', '#FFFFFF');
+    }, {
+      notes: '紫外-可见分光光度计：翻盖比色皿样品暗室、高对比度波长/吸光度显示屏与校零扫谱功能键。',
+      lecturePrintedPages: [6, 9, 11, 25, 31, 35, 39, 61],
+      lecturePdfPages: [7, 10, 12, 26, 32, 36, 40, 62],
+    });
+
+  // 43. online-centrifuge
+  add('online-centrifuge', '台式离心机', '取样与离心',
+    'online centrifuge 台式离心机 离心', 210, 260, () => {
+      let tubes = '';
+      for (let i = 0; i < 6; i++) {
+        const x = 68 + i * 14;
+        tubes += `<rect x="${x - 3}" y="102" width="6" height="12" rx="1" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="1.2"/>` +
+          `<rect x="${x - 3.5}" y="99" width="7" height="3.5" rx="1" fill="${P.teal}" stroke="${P.ink}" stroke-width="1.0"/>`;
+      }
+      return benchChassis(20, 126, 170, 116, { rx: 9, accentBar: true, footW: 18, footH: 7 }) +
+        // Open arched safety lid revealing internal microtube rotor bowl
+        `<path d="M36 108 L44 30 Q46 18 62 18 H148 Q164 18 166 30 L174 108 Z" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<ellipse cx="105" cy="58" rx="46" ry="24" fill="#E2E8F0" stroke="${P.slate}" stroke-width="1.4"/>` +
+        `<rect x="88" y="96" width="34" height="8" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.4"/>` +
+        // Recessed rotor bowl & tube ring
+        `<rect x="48" y="108" width="114" height="18" rx="4" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.8"/>` +
+        tubes +
+        `<rect x="97" y="108" width="16" height="10" rx="2" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="1.2"/>` +
+        // Front OLED + rotary dial + buttons
+        oledScreen(34, 142, 98, 46,
+          screenText(83, 160, '14000 rpm', 10.5, P.screenGreen, 'middle') +
+          screenText(83, 177, '05:00  PULSE', 8, P.screenCyan, 'middle')
+        ) +
+        rotaryKnob(158, 165, 15, 25, { ticks: 7, teal: true }) +
+        softButton(36, 198, 42, 18, 'OPEN', '#E2E8F0', P.ink) +
+        softButton(84, 198, 44, 18, 'PULSE', '#E2E8F0', P.ink) +
+        softButton(134, 198, 44, 18, 'START', '#14B8A6', '#FFFFFF');
+    }, {
+      notes: '台式高速微量离心机：掀开透明安全保护盖可见水平排布转子与微量管孔位，配转速/定时 OLED 及旋钮。',
+      lecturePrintedPages: [9, 21, 24, 49, 54, 64, 68],
+      lecturePdfPages: [10, 22, 25, 50, 55, 65, 69],
+    });
+
+  // 44. online-cuvette
+  add('online-cuvette', '比色皿（玻璃 / 石英）', '分析与计量',
+    'online cuvette 比色皿 玻璃 石英 光度计 cuvette', 56, 146, () => {
+      return `<!-- 10 mm optical quartz/glass cuvette with frosted gripping edges -->` +
+        `<rect x="13" y="14" width="30" height="118" rx="2" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        // Frosted side holding walls
+        `<rect x="14" y="15" width="4.5" height="106" fill="#E2E8F0" stroke="none"/>` +
+        `<rect x="37.5" y="15" width="4.5" height="106" fill="#E2E8F0" stroke="none"/>` +
+        `<line x1="18.5" y1="15" x2="18.5" y2="122" stroke="${P.muted}" stroke-width="0.8"/>` +
+        `<line x1="37.5" y1="15" x2="37.5" y2="122" stroke="${P.muted}" stroke-width="0.8"/>` +
+        // Sample liquid & curved meniscus inside optical window
+        `<rect x="19" y="54" width="18" height="68" fill="url(#g-liquid)" stroke="none"/>` +
+        `<path d="M19 54 Q28 57 37 54" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        // Thick optical fused base
+        `<rect x="14" y="122" width="28" height="9" fill="#CBD5E1" fill-opacity="0.7" stroke="${P.slate}" stroke-width="1.0"/>` +
+        glassHighlight(22, 22, 22, 114, 2.2) +
+        labelText(28, 28, '10', 6.5, P.tealDark, 'middle', true);
+    }, {
+      notes: '10 mm 光程标准光学比色皿：双侧磨砂捏持壁、光学透光窗、液面弯月面与加厚熔融底座。',
+      lecturePrintedPages: [10, 11, 25],
+      lecturePdfPages: [11, 12, 26],
+    });
+
+  // 45. online-micropipette
+  add('online-micropipette', '微量移液器', '取样与离心',
+    'online micropipette 微量移液器 移液枪 加样枪 pipette', 72, 250, () => {
+      return `<!-- Precision single-channel manual micropipette + fitted disposable tip -->` +
+        // Top plunger cap + shaft
+        `<rect x="30" y="10" width="16" height="8" rx="3" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="1.8"/>` +
+        `<rect x="35" y="18" width="6" height="10" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.5"/>` +
+        // Ergonomic finger hook rest left
+        `<path d="M27 32 H18 Q11 32 12 42 Q13 52 24 52 H27" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="1.8"/>` +
+        // Main contoured grip body
+        `<path d="M26 28 H50 L46 112 H30 Z" fill="url(#g-chassis-h)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        // Tip ejector button + side rod
+        `<rect x="50" y="34" width="6" height="14" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.4"/>` +
+        `<line x1="48" y1="48" x2="46" y2="128" stroke="${P.slate}" stroke-width="1.8"/>` +
+        // Mechanical counter window
+        `<rect x="33" y="44" width="10" height="28" rx="2" fill="${P.screenBg}" stroke="${P.ink}" stroke-width="1.2"/>` +
+        screenText(38, 54, '1', 6.8, P.screenCyan, 'middle') +
+        screenText(38, 61, '0', 6.8, P.screenGreen, 'middle') +
+        screenText(38, 68, '0', 6.8, P.screenGreen, 'middle') +
+        // Stainless collar & tapered shaft
+        `<rect x="30" y="112" width="16" height="12" rx="1" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.6"/>` +
+        `<path d="M32 124 L34 176 H42 L44 124 Z" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="1.8"/>` +
+        // Fitted translucent tip + aspirated liquid column
+        `<path d="M33 176 L37 238 H39 L43 176 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="1.8"/>` +
+        `<path d="M35.5 212 L37.3 236 H38.7 L40.5 212 Z" fill="url(#g-liquid)" stroke="none"/>` +
+        glassHighlight(35, 180, 36.5, 224, 1.5);
+    }, {
+      notes: '精密单道可调微量移液器（100 µL）：拇指推杆、挂指弧形柄、三位数字读数窗、退枪头推杆及适配吸头。',
+      lecturePrintedPages: [64, 68, 71, 72],
+      lecturePdfPages: [65, 69, 72, 73],
+    });
+
+  // 46. online-microtube
+  add('online-microtube', '微量离心管', '取样与离心',
+    'online microtube 微量离心管 EP管 Eppendorf', 74, 124, () => {
+      return `<!-- 1.5 mL snap-cap microcentrifuge tube (EP tube) -->` +
+        // Left flexible hinge strap + top snap cap
+        `<path d="M22 25 Q13 25 14 19 Q15 14 23 14" fill="none" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<rect x="21" y="12" width="32" height="9" rx="2" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<rect x="19" y="21" width="36" height="6" rx="2" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="1.8"/>` +
+        // Cylindrical upper barrel tapering into sharp conical V-tip
+        `<path d="M23 27 V68 L32 108 Q37 116 42 108 L51 68 V27 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        // Liquid sample fill + meniscus
+        `<path d="M25 64 H49 L41 106 Q37 113 33 106 Z" fill="url(#g-liquid)" stroke="none"/>` +
+        `<path d="M25 64 Q37 67 49 64" stroke="${P.tealDark}" stroke-width="1.2"/>` +
+        // Graduations right
+        `<line x1="49" y1="40" x2="43" y2="40" stroke="${P.slate}" stroke-width="1.0"/>` +
+        `<line x1="49" y1="54" x2="43" y2="54" stroke="${P.slate}" stroke-width="1.0"/>` +
+        `<line x1="48" y1="70" x2="42" y2="70" stroke="${P.slate}" stroke-width="1.0"/>` +
+        `<line x1="45" y1="86" x2="40" y2="86" stroke="${P.slate}" stroke-width="1.0"/>` +
+        glassHighlight(27, 32, 27, 66, 2.2);
+    }, {
+      notes: '1.5 mL 连盖微量离心管（EP 管）：防误开压盖与侧铰链带、刻度线及尖底液体标本。',
+      lecturePrintedPages: [45, 47, 64, 69],
+      lecturePdfPages: [46, 48, 65, 70],
+    });
+
+  // 47. online-tip-box
+  add('online-tip-box', '移液器吸头盒', '取样与离心',
+    'online tip box 吸头盒 枪头盒 移液器', 220, 136, () => {
+      let tips = '';
+      for (let i = 0; i < 8; i++) {
+        const tx = 40 + i * 20;
+        tips += `<circle cx="${tx}" cy="58" r="5" fill="#CCFBF1" stroke="${P.ink}" stroke-width="1.4"/>` +
+          `<path d="M${tx - 4} 64 L${tx - 1} 102 H${tx + 1} L${tx + 4} 64 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="1.4"/>`;
+      }
+      return `<!-- Autoclavable 96-well pipette tip rack box with transparent viewing cutaway -->` +
+        // Transparent hinged upper cover dome
+        `<path d="M24 54 L30 22 Q32 16 40 16 H180 Q188 16 190 22 L196 54 Z" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        glassHighlight(36, 24, 34, 48, 2.2) +
+        // Lower teal/slate rack box body with recessed viewing window
+        `<rect x="20" y="54" width="180" height="68" rx="6" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<rect x="28" y="64" width="164" height="44" rx="4" fill="#F8FAFC" stroke="${P.ink}" stroke-width="1.6"/>` +
+        tips +
+        // Front latch clasp & deck strip
+        `<rect x="20" y="54" width="180" height="10" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.6"/>` +
+        `<rect x="96" y="52" width="28" height="14" rx="2" fill="#FFFFFF" stroke="${P.ink}" stroke-width="1.5"/>` +
+        labelText(110, 118, '1000 µL TIP RACK (96)', 7, '#FFFFFF', 'middle', true);
+    }, {
+      notes: '可高温高压灭菌 96 孔移液器吸头盒：透明翻盖、正前视窗可见排布整齐的吸头阵及锁扣开关。',
+      lecturePrintedPages: [71],
+      lecturePdfPages: [72],
+    });
+
+  // 48. online-incubator-servier
+  add('online-incubator-servier', '恒温培养箱', '生化设备',
+    'online incubator servier 恒温培养箱 培养', 210, 260, () => {
+      return benchChassis(22, 18, 166, 224, { rx: 8, accentBar: true, footW: 18, footH: 7 }) +
+        // Top controller strip
+        oledScreen(34, 32, 92, 32,
+          screenText(80, 46, '37.0 °C  HEAT', 8.5, P.screenGreen, 'middle') +
+          screenText(80, 58, 'RUN  48:00', 7, P.screenCyan, 'middle')
+        ) +
+        rotaryKnob(154, 48, 12, -20, { ticks: 5, teal: true }) +
+        // Outer insulated glass door frame
+        `<rect x="34" y="72" width="142" height="156" rx="5" fill="${P.panelAlt}" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<rect x="46" y="84" width="118" height="132" rx="3" fill="url(#g-glass)" stroke="${P.slate}" stroke-width="1.6"/>` +
+        // Interior stainless shelf 1 (Petri dish stack) & shelf 2 (culture flasks)
+        `<line x1="48" y1="146" x2="162" y2="146" stroke="${P.slate}" stroke-width="2.4"/>` +
+        `<rect x="64" y="132" width="32" height="6" rx="1" fill="url(#g-liquid)" stroke="${P.ink}" stroke-width="1.3"/>` +
+        `<rect x="64" y="138" width="32" height="6" rx="1" fill="url(#g-liquid)" stroke="${P.ink}" stroke-width="1.3"/>` +
+        `<rect x="112" y="138" width="32" height="6" rx="1" fill="url(#g-liquid)" stroke="${P.ink}" stroke-width="1.3"/>` +
+        `<line x1="48" y1="204" x2="162" y2="204" stroke="${P.slate}" stroke-width="2.4"/>` +
+        `<path d="M68 202 L74 176 V164 H82 V176 L88 202 Z" fill="url(#g-liquid)" stroke="${P.ink}" stroke-width="1.4"/>` +
+        `<path d="M116 202 L122 176 V164 H130 V176 L136 202 Z" fill="url(#g-liquid)" stroke="${P.ink}" stroke-width="1.4"/>` +
+        glassHighlight(56, 92, 56, 206, 2.8) +
+        // Vertical chrome latch handle
+        `<rect x="38" y="132" width="6" height="36" rx="2" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.5"/>`;
+    }, {
+      notes: '电热恒温微生物培养箱：数字温控仪表、双层玻璃观察内门、多孔层架及培养皿/摇瓶内部视图。',
+      lecturePrintedPages: [54, 68],
+      lecturePdfPages: [55, 69],
+    });
+
+  // 49. online-freezer
+  add('online-freezer', '实验室低温冰箱', '生化设备',
+    'online freezer 低温冰箱 冷藏 冷冻', 136, 280, () => {
+      return benchChassis(22, 14, 92, 250, { rx: 6, accentBar: true, footW: 16, footH: 7, footInset: 10 }) +
+        // Top ultra-low temperature header OLED
+        oledScreen(30, 28, 76, 32,
+          screenText(68, 43, '-80.0 °C', 10, P.screenCyan, 'middle') +
+          screenText(68, 54, 'LOCK  OK', 6.5, P.screenGreen, 'middle')
+        ) +
+        // Upper & lower insulated doors
+        `<rect x="28" y="66" width="80" height="78" rx="3" fill="#FFFFFF" stroke="${P.slate}" stroke-width="1.5"/>` +
+        `<rect x="28" y="148" width="80" height="72" rx="3" fill="#FFFFFF" stroke="${P.slate}" stroke-width="1.5"/>` +
+        // Chrome cam-action compression latch handles left
+        `<rect x="32" y="90" width="7" height="28" rx="2" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.4"/>` +
+        `<rect x="32" y="170" width="7" height="28" rx="2" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.4"/>` +
+        // Crisp snowflake icon
+        `<circle cx="72" cy="104" r="10" fill="#F0FDFA" stroke="${P.teal}" stroke-width="1.3"/>` +
+        `<line x1="72" y1="97" x2="72" y2="111" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        `<line x1="65" y1="104" x2="79" y2="104" stroke="${P.tealDark}" stroke-width="1.3"/>` +
+        ventSlots(30, 228, 5, 76, 5.2);
+    }, {
+      notes: '立式实验室超低温冷冻冰箱（-80 °C）：数显锁控温度面板、双层密封冷柜门、加压门锁把手与下散热格栅。',
+      lecturePrintedPages: [24, 49, 68],
+      lecturePdfPages: [25, 50, 69],
+    });
+
+  // 50. online-autoclave
+  add('online-autoclave', '高压灭菌锅', '生化设备',
+    'online autoclave 高压灭菌锅 灭菌 autoclave', 176, 280, () => {
+      return benchChassis(24, 52, 128, 210, { rx: 8, accentBar: true, footW: 18, footH: 7 }) +
+        // Top heavy stainless autoclave chamber lid + star handwheel lock
+        `<rect x="38" y="34" width="100" height="18" rx="4" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="2.0"/>` +
+        `<rect x="52" y="24" width="72" height="10" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.6"/>` +
+        `<rect x="83" y="14" width="10" height="10" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.4"/>` +
+        `<rect x="66" y="10" width="44" height="6" rx="2" fill="${P.tealDark}" stroke="${P.ink}" stroke-width="1.6"/>` +
+        // Upper OLED controller + round analog Bourdon pressure gauge
+        oledScreen(34, 68, 66, 44,
+          screenText(67, 84, '121.0 °C', 9.5, P.screenGreen, 'middle') +
+          screenText(67, 100, '15m  0.12MPa', 6.8, P.screenAmber, 'middle')
+        ) +
+        `<circle cx="124" cy="90" r="18" fill="#FFFFFF" stroke="${P.ink}" stroke-width="1.8"/>` +
+        `<circle cx="124" cy="90" r="14" fill="none" stroke="${P.slate}" stroke-width="1.0"/>` +
+        `<path d="M114 82 A14 14 0 0 1 134 82" fill="none" stroke="${P.red}" stroke-width="2.0"/>` +
+        `<line x1="124" y1="90" x2="132" y2="79" stroke="${P.red}" stroke-width="1.8"/>` +
+        `<circle cx="124" cy="90" r="2.5" fill="${P.ink}" stroke="none"/>` +
+        // Middle control panel & lower drain valve
+        `<rect x="36" y="122" width="104" height="72" rx="4" fill="${P.panelAlt}" stroke="${P.lightBorder}" stroke-width="1.2"/>` +
+        labelText(88, 136, 'AUTOCLAVE', 7.5, P.slate) +
+        softButton(46, 146, 26, 15, 'STER', '#14B8A6', '#FFFFFF') +
+        softButton(76, 146, 26, 15, 'EXH', '#E2E8F0', P.ink) +
+        softButton(106, 146, 26, 15, 'DRY', '#E2E8F0', P.ink) +
+        softButton(56, 170, 64, 16, 'START / LOCK', '#0F766E', '#FFFFFF') +
+        ventSlots(40, 206, 4, 64, 5.5) +
+        // Brass drain valve on bottom right
+        `<circle cx="124" cy="216" r="6" fill="url(#g-brass)" stroke="${P.ink}" stroke-width="1.5"/>` +
+        `<line x1="124" y1="222" x2="124" y2="234" stroke="${P.ink}" stroke-width="2.0"/>` +
+        labelText(124, 244, 'DRAIN', 6, P.muted);
+    }, {
+      notes: '立式自动高压蒸汽灭菌锅：顶盖旋锁星形手轮、灭菌温度与压力机械指针双表盘及下排水阀。',
+      lecturePrintedPages: [68],
+      lecturePdfPages: [69],
+    });
+
   return specs;
 }
 
@@ -3332,15 +3595,9 @@ function writeSuite(dir, items, meta) {
   return manifestAssets;
 }
 
-function updateBioAttribution(authoredCount, onlineCount) {
+function updateBioAttribution(authoredCount) {
   const attrPath = path.join(BIO_DIR, 'ATTRIBUTION.md');
-  let adaptedBlock = '';
-  if (fs.existsSync(attrPath)) {
-    const raw = fs.readFileSync(attrPath, 'utf8');
-    const idx = raw.search(/^##\s+Adapted/m);
-    if (idx >= 0) adaptedBlock = raw.slice(idx).trimEnd();
-  }
-  const header = [
+  const content = [
     '# Biochemistry & Biology Apparatus Attribution',
     '',
     '## Original Chem Studio Illustrations (WTFPL-2.0)',
@@ -3349,13 +3606,10 @@ function updateBioAttribution(authoredCount, onlineCount) {
     '- **Author**: Chem Studio contributors',
     '- **License**: WTFPL-2.0 (`Do What The F*ck You Want To Public License`, v2)',
     '',
-    'All newly created and overhauled vector apparatus (`bio:*`, excluding `bio:online-*`) use Qt `QSvgRenderer`-safe SVG 1.1/1.2 Tiny primitives.',
+    'All biochemistry and biology vector apparatus (`bio:*`, including unified replacements of all former `bio:online-*` entries) are original Chem Studio illustrations using Qt `QSvgRenderer`-safe SVG 1.1/1.2 Tiny primitives.',
     '',
   ].join('\n');
-  const full = adaptedBlock
-    ? `${header}\n${adaptedBlock}\n`
-    : `${header}\n(${onlineCount} adapted open-licensed SVG entries preserved in manifest.json.)\n`;
-  fs.writeFileSync(attrPath, full, 'utf8');
+  fs.writeFileSync(attrPath, content, 'utf8');
 }
 
 function updatePhysicsAttribution(physicsCount) {
@@ -3374,16 +3628,14 @@ function updatePhysicsAttribution(physicsCount) {
 }
 
 function run() {
-  const bioAuthored = buildBiochemistrySpecs();
-  const bioOnline = getOnlineBioEntries();
-  const bioAll = [...bioAuthored, ...bioOnline];
+  const bioAll = buildBiochemistrySpecs();
   writeSuite(BIO_DIR, bioAll, {
     format: 'chem-studio-art',
     version: 1,
     license: 'per-asset',
     approvedDate: '2026-11-23',
   });
-  updateBioAttribution(bioAuthored.length, bioOnline.length);
+  updateBioAttribution(bioAll.length);
 
   const physicsAll = buildPhysicsSpecs();
   writeSuite(PHYS_DIR, physicsAll, {
@@ -3396,7 +3648,7 @@ function run() {
   });
   updatePhysicsAttribution(physicsAll.length);
 
-  console.log(`Generated ${bioAuthored.length} authored + ${bioOnline.length} online = ${bioAll.length} biochemistry assets.`);
+  console.log(`Generated ${bioAll.length} authored biochemistry assets (0 adapted online remaining).`);
   console.log(`Generated ${physicsAll.length} authored physics assets.`);
 }
 

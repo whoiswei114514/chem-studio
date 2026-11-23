@@ -1,1 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M20 53 H180 L155 144 H45Z" fill="#dcefeb" fill-opacity="0.35"></path><path d="M20 52 Q100 -14 180 52" fill="none"></path><rect x="82" y="6" width="36" height="13" rx="4" fill="#c6d2d7"></rect><line x1="36" y1="105" x2="164" y2="105"></line><ellipse cx="50" cy="99" rx="2" ry="2" fill="#294454"></ellipse><ellipse cx="69" cy="99" rx="2" ry="2" fill="#294454"></ellipse><ellipse cx="88" cy="99" rx="2" ry="2" fill="#294454"></ellipse><ellipse cx="107" cy="99" rx="2" ry="2" fill="#294454"></ellipse><ellipse cx="126" cy="99" rx="2" ry="2" fill="#294454"></ellipse><ellipse cx="145" cy="99" rx="2" ry="2" fill="#294454"></ellipse></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170">
+<title>干燥器</title>
+<defs>
+  <linearGradient id="desiccator-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="desiccator-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="desiccator-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="desiccator-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="desiccator-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="desiccator-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="desiccator-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="desiccator-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="desiccator-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="desiccator-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="desiccator-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="desiccator-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="desiccator-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="desiccator-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="desiccator-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="desiccator-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<path d="M22 54 H178 L155 144 H45 Z" fill="url(#desiccator-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M48 122 L152 122 L147 140 H53 Z" fill="url(#desiccator-coolant)" stroke="none"/>
+  <circle cx="58" cy="133" r="4" fill="#3B82F6" fill-opacity="0.72" stroke="#334155" stroke-width="0.9"/><circle cx="72" cy="133" r="4" fill="#3B82F6" fill-opacity="0.72" stroke="#334155" stroke-width="0.9"/><circle cx="86" cy="133" r="4" fill="#3B82F6" fill-opacity="0.72" stroke="#334155" stroke-width="0.9"/><circle cx="100" cy="133" r="4" fill="#3B82F6" fill-opacity="0.72" stroke="#334155" stroke-width="0.9"/><circle cx="114" cy="133" r="4" fill="#3B82F6" fill-opacity="0.72" stroke="#334155" stroke-width="0.9"/><circle cx="128" cy="133" r="4" fill="#3B82F6" fill-opacity="0.72" stroke="#334155" stroke-width="0.9"/><circle cx="142" cy="133" r="4" fill="#3B82F6" fill-opacity="0.72" stroke="#334155" stroke-width="0.9"/>
+  <rect x="34" y="102" width="132" height="6" rx="2" fill="url(#desiccator-porcelain)" stroke="#1F2937" stroke-width="1.8"/>
+  <path d="M22 52 Q100 -10 178 52 Z" fill="url(#desiccator-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+  <rect x="18" y="49" width="164" height="7" rx="3" fill="url(#desiccator-frost)" stroke="#1F2937" stroke-width="2.0"/>
+  <path d="M84 18 L87 7 H113 L116 18 Q100 22 84 18 Z" fill="url(#desiccator-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
+  <path d="M42 42 Q64 20 90 16" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-opacity="0.78" stroke-linecap="round"/>
+</svg>

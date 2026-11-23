@@ -1,1 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="170" height="130" viewBox="0 0 170 130"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M20 36 C130 3 13 133 145 27" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M25 55 C127 10 20 130 141 40" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M30 74 C124 17 27 127 137 53" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M35 93 C121 24 34 124 133 66" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M40 49 C118 31 41 121 129 79" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M45 68 C115 38 48 118 125 92" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M50 87 C112 45 55 115 121 39" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M55 43 C109 52 62 112 117 52" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M60 62 C106 59 69 109 113 65" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M65 81 C103 66 76 106 109 78" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M70 37 C100 73 83 103 105 91" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M75 56 C97 80 90 100 101 38" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M80 75 C94 87 97 97 97 51" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M85 94 C91 94 104 94 93 64" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M90 50 C88 101 111 91 89 77" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M95 69 C85 108 118 88 85 90" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path><path d="M100 88 C82 115 125 85 81 37" fill="none" stroke="#b3c7c9" stroke-width="1.3"></path></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="130" viewBox="0 0 170 130">
+<title>玻璃棉</title>
+<defs>
+  <linearGradient id="glass-wool-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="glass-wool-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<ellipse cx="85" cy="65" rx="64" ry="44" fill="url(#glass-wool-glass)" stroke="#334155" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path d="M24 36 C130 14 28 116 144 24" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M28 53 C127 19 34 113 141 53" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M32 70 C124 24 40 110 138 82" fill="none" stroke="#14B8A6" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M36 87 C121 29 46 107 135 35" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M40 46 C118 34 52 104 132 64" fill="none" stroke="#14B8A6" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M44 63 C115 39 58 101 129 93" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M48 80 C112 44 64 98 126 46" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M52 39 C109 49 70 95 123 75" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M56 56 C106 54 76 92 120 28" fill="none" stroke="#14B8A6" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M60 73 C103 59 82 89 117 57" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M64 90 C100 64 88 86 114 86" fill="none" stroke="#14B8A6" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M68 49 C97 69 94 83 111 39" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M72 66 C94 74 100 80 108 68" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M76 83 C91 79 106 77 105 97" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M80 42 C88 84 112 74 102 50" fill="none" stroke="#14B8A6" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/><path d="M84 59 C85 89 118 71 99 79" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity="0.82" stroke-linecap="round"/>
+</svg>

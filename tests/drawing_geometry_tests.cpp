@@ -126,10 +126,12 @@ class GeometryTests : public QObject {
     Q_OBJECT
   private slots:
     void catalogGeometryAndRoundtrips() {
-        int originals = 0, chemix = 0;
+        int studio = 0, lab = 0, bio = 0, physics = 0;
         QJsonArray report;
         for (const auto& definition : chem::apparatusDefinitions()) {
-            if (!definition.id.startsWith("legacy:") && !definition.id.startsWith("chemix:"))
+            const bool isPack = definition.id.startsWith("studio:") || definition.id.startsWith("lab:") ||
+                                definition.id.startsWith("bio:") || definition.id.startsWith("physics:");
+            if (!isPack)
                 continue;
             DrawingItem item(definition.id);
             QVERIFY2(item.renderer && item.renderer->isValid(), qPrintable(definition.id));
@@ -158,14 +160,17 @@ class GeometryTests : public QObject {
                 QVERIFY(std::abs(std::hypot(direction.x(), direction.y()) - 1) < 1e-8);
                 QVERIFY(std::isfinite(item.portDiameter(it.key())));
             }
-            if (definition.id.startsWith("legacy:")) ++originals; else ++chemix;
+            if (definition.id.startsWith("studio:")) ++studio;
+            else if (definition.id.startsWith("lab:")) ++lab;
+            else if (definition.id.startsWith("bio:")) ++bio;
+            else if (definition.id.startsWith("physics:")) ++physics;
             report.append(QJsonObject{{"id", definition.id}, {"name", definition.name},
                                       {"width", item.size.width()}, {"height", item.size.height()},
                                       {"ports", item.ports.size()}, {"necks", item.neckCount},
                                       {"diameters", item.json()["portDiameters"]},
                                       {"types", item.json()["portTypes"]}});
         }
-        QVERIFY(originals > 0 && chemix > 0);
+        QVERIFY(studio > 0 && lab > 0 && bio > 0 && physics > 0);
         const auto output = qEnvironmentVariable("CHEM_GEOMETRY_RESULTS");
         if (!output.isEmpty()) {
             QDir().mkpath(output);
@@ -173,7 +178,7 @@ class GeometryTests : public QObject {
             QVERIFY(file.open(QIODevice::WriteOnly));
             file.write(QJsonDocument(report).toJson());
         }
-        qInfo() << "Audited" << originals << "original assets and" << chemix << "Chemix assets";
+        qInfo() << "Audited unified catalog:" << studio << "studio," << lab << "lab," << bio << "bio," << physics << "physics";
     }
     void sharedSizeCalibration() {
         if (!installed("chemix:liebig-condenser") || !installed("legacy:asset-0742"))
@@ -1538,23 +1543,18 @@ class GeometryTests : public QObject {
         if (index > 0) QVERIFY(savePage());
     }
     void newCondensersAndDistillationGeometry() {
-        QStringList waterCondensers{"studio:liebig-condenser", "studio:allihn", "studio:graham",
-                                    "lab:dimroth-condenser", "lab:friedrich-condenser"};
-        for (const auto& opt : {"chemix:liebig-condenser", "chemix:allihn", "chemix:graham"})
-            if (chem::findArtwork(opt)) waterCondensers.append(opt);
+        const QStringList waterCondensers{"studio:liebig-condenser", "studio:allihn", "studio:graham",
+                                          "lab:dimroth-condenser", "lab:friedrich-condenser",
+                                          "chemix:liebig-condenser", "chemix:allihn", "chemix:graham"};
         for (const auto& id : waterCondensers) {
             DrawingItem item(id);
             QVERIFY2(item.ports.contains("water-in") && item.ports.contains("water-out"), qPrintable(id));
             QVERIFY2(item.portDirections["water-in"].x() * item.portDirections["water-out"].x() < 0, qPrintable(id));
             QVERIFY2(item.ports["water-in"].y() > item.ports["water-out"].y(), qPrintable(id));
         }
-        const QString flaskKind = chem::findArtwork("chemix:round-bottom-flask")
-            ? QStringLiteral("chemix:round-bottom-flask") : QStringLiteral("studio:round-bottom-flask");
-        const QString condKind = chem::findArtwork("chemix:liebig-condenser")
-            ? QStringLiteral("chemix:liebig-condenser") : QStringLiteral("studio:liebig-condenser");
         DrawingView view;
         view.scene()->setProperty("precise", true);
-        view.addApparatus(flaskKind, {240, 440});
+        view.addApparatus("studio:round-bottom-flask", {240, 440});
         auto* flask = selected(view);
         view.addApparatus("lab:vigreux-column", {240, 260});
         auto* vigreux = selected(view);
@@ -1562,7 +1562,7 @@ class GeometryTests : public QObject {
         view.addApparatus("lab:standard-distillation-head", {280, 120});
         auto* head = selected(view);
         QVERIFY(view.connectItems(vigreux->id, "inlet", head->id, "outlet"));
-        view.addApparatus(condKind, {480, 180});
+        view.addApparatus("studio:liebig-condenser", {480, 180});
         auto* condenser = selected(view);
         QVERIFY(view.connectItems(head->id, "side", condenser->id, "inlet"));
         view.addApparatus("lab:vacuum-receiver-adapter", {680, 300});

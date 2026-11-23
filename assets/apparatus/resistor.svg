@@ -1,1 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><line x1="10" y1="75" x2="54" y2="75"></line><line x1="126" y1="75" x2="170" y2="75"></line><rect x="54" y="61" width="72" height="28" rx="2" fill="#f4eee1"></rect></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
+<title>电阻</title>
+<defs>
+  <linearGradient id="resistor-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="resistor-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="resistor-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="resistor-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="resistor-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="resistor-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="resistor-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="resistor-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="resistor-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="resistor-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="resistor-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="resistor-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="resistor-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="resistor-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="resistor-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="resistor-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Axial tinned copper leads + terminal rings -->
+      <rect x="12" y="72.5" width="38" height="5" fill="url(#resistor-metal-v)" stroke="#1F2937" stroke-width="1.6"/>
+      <rect x="130" y="72.5" width="38" height="5" fill="url(#resistor-metal-v)" stroke="#1F2937" stroke-width="1.6"/>
+      <circle cx="10" cy="75" r="4" fill="url(#resistor-metal)" stroke="#1F2937" stroke-width="1.6"/>
+      <circle cx="170" cy="75" r="4" fill="url(#resistor-metal)" stroke="#1F2937" stroke-width="1.6"/>
+      <!-- Precision ceramic axial resistor dog-bone body -->
+      <path d="M48 60 Q48 54 56 54 H64 Q68 58 72 58 H108 Q112 58 116 54 H124 Q132 54 132 60 V90 Q132 96 124 96 H116 Q112 92 108 92 H72 Q68 92 64 96 H56 Q48 96 48 90 Z" fill="url(#resistor-porcelain)" stroke="#1F2937" stroke-width="2.2"/>
+      <!-- EIA 4-band precision resistor color rings -->
+      <rect x="57" y="55" width="7" height="40" fill="#B45309" stroke="none"/>
+      <rect x="74" y="59" width="7" height="32" fill="#1E293B" stroke="none"/>
+      <rect x="90" y="59" width="7" height="32" fill="#0F766E" stroke="none"/>
+      <rect x="116" y="55" width="7" height="40" fill="#D97706" stroke="none"/>
+      <line x1="54" y1="62" x2="126" y2="62" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.58" stroke-linecap="round"/>
+      <text x="90" y="118" fill="#64748B" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">1.0 kΩ  ±5%</text>
+    </g>
+  
+</svg>

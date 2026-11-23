@@ -1102,6 +1102,49 @@ class ButtonAuditTests : public QObject {
             }
         }
         window->resize(1440, 940);
+
+        // Capture mixed-apparatus canvas verification screenshot showing unified visual style across domains
+        window->showPage(2);
+        window->drawing->restore({});
+        window->drawing->scene()->setProperty("precise", true);
+        window->drawing->addApparatus("studio:round-bottom-flask", {170, 340});
+        auto* flask3 = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(flask3 && flask3->setNeckCount(3));
+        window->drawing->addApparatus("lab:standard-distillation-head", {170, 165});
+        auto* head = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(flask3->id, "mouth-2", head->id, "outlet"));
+        window->drawing->addApparatus("studio:liebig-condenser", {370, 210});
+        auto* cond = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(head->id, "side", cond->id, "inlet"));
+        window->drawing->addApparatus("lab:vacuum-receiver-adapter", {590, 320});
+        auto* recv = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(cond->id, "outlet", recv->id, "inlet"));
+        window->drawing->addApparatus("lab:ground-conical-flask", {600, 460});
+        auto* recFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(recv->id, "outlet", recFlask->id, "mouth"));
+
+        for (const auto& spec : QList<QPair<QString, QPointF>>{
+                 {"studio:beaker", {100, 560}},
+                 {"studio:conical-flask", {290, 560}},
+                 {"studio:separatory-funnel", {480, 550}},
+                 {"studio:burette", {780, 220}},
+                 {"bio:online-spectrophotometer", {860, 480}},
+                 {"physics:digital-oscilloscope", {1120, 240}},
+             }) {
+            window->drawing->addApparatus(spec.first, spec.second);
+            auto* added = singleSelectedDrawingItem(window->drawing);
+            QVERIFY2(added && added->renderer && added->renderer->isValid(), qPrintable(spec.first));
+        }
+        window->drawing->scene()->clearSelection();
+        window->drawing->scene()->setProperty("precise", false);
+        window->drawing->fitCanvas();
+        QTest::qWait(220);
+        const auto mixedSvg = window->drawing->svgData();
+        QVERIFY(QSvgRenderer(mixedSvg).isValid());
+        QVERIFY(!mixedSvg.contains("<image"));
+        const QPixmap mixedShot = captureCurrentWindow(2);
+        QVERIFY(!mixedShot.isNull());
+        QVERIFY(mixedShot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas.png")));
     }
 
     void cleanupTestCase() {

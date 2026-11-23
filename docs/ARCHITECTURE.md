@@ -6,17 +6,18 @@
 | `src/ui` | Qt 界面、画布、器材连接、WebView2 容器 |
 | `src/office` | Windows Office COM 集成 |
 | `src/viewer` | Three.js 三维分子显示 |
-| `assets/apparatus` | 221 项器材的 SVG、变体与连接口清单 |
-| `assets/biochemistry` | 34 项经审阅的生化 SVG、分类、连接口与逐项许可来源 |
-| `assets/physics` | 40 项经审阅的原创物理与电工 SVG、283 个接口及署名说明 |
-| `scripts` | 构建、启动、SDK 准备和器材绘图脚本 |
-| `tests` | QtTest 回归与桌面集成检查 |
+| `assets/apparatus` | 233 项器材（236 个 SVG含多颈变体）的矢量图与连接口清单 |
+| `assets/laboratory` | 55 项有机蒸馏与分析仪器 SVG、分类、连接口与语义检索清单 |
+| `assets/biochemistry` | 50 项原创生化/生物 SVG、分类、连接口与署名清单 |
+| `assets/physics` | 71 项原创物理与电工 SVG、接口与署名说明 |
+| `scripts` | 构建、启动、SDK/模型准备和统一 SVG 生成脚本 |
+| `tests` | QtTest 回归、全界面按钮审计与桌面集成检查 |
 
-画布使用 `QGraphicsScene`；器材几何、连接口、变换和连接关系保存为项目数据。SVG 打包到 Qt 资源中。项目中的外部资源加载器用于兼容用户自己配置的素材包。
+画布使用 `QGraphicsScene`；器材几何、连接口、变换和连接关系保存为项目数据。全部 4 个内置器材库的 SVG 打包到 Qt 资源中；`findArtwork()` 同时维护历史 `chemix:*` 和 `legacy:asset-*` ID 兼容别名映射以正常加载旧 `.chem` 项目。
 
 ## 器材图
 
-基础器材由 `scripts/generate-apparatus.cjs` 定义，使用几何路径、圆、矩形和文字等 SVG 元素。基础绘图脚本没有图片输入，不运行位图描摹。`manifest.json` 保存名称、分类、尺寸、校验和以及连接口。生化素材以独立的可编辑 SVG 源文件保存在 `assets/biochemistry`，基础生成脚本不修改该目录。
+基础器材由 `scripts/generate-apparatus.cjs` 及 `scripts/apparatus/`（`svg-style.cjs`、`part-glassware.cjs`、`part-equipment.cjs`、`part-science-misc.cjs`）生成，实验室与生化/物理器材分别由 `scripts/generate-laboratory-art.cjs` 与 `scripts/generate-biophys-art.cjs` 生成，全部采用 Qt `QSvgRenderer` 兼容的纯矢量渐变与几何路径，不含位图或 `<script>`。`manifest.json` 保存名称、分类、尺寸、校验和以及连接口。
 
 ```powershell
 node scripts/generate-apparatus.cjs

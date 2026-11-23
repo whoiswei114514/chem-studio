@@ -1137,20 +1137,15 @@
       "category": "分析与计量",
       "search": "online spectrophotometer 分光光度计 可见光 紫外 UV 吸光度",
       "svg": "online-spectrophotometer.svg",
-      "sha256": "a5aebf469b3de8f610c4075a8f95c4594581bb1675e3a01d71a035becbe68593",
       "width": 260,
-      "height": 145.4237288135593,
+      "height": 154,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-3.0",
-      "author": "Servier",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/spectrophotometer.svg",
-      "sourceGitBlobSha": "880d295186b195ea28ede8cf7a5c9296675e2943",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
-      "limitations": "仅提供通用分光光度计外观，不冒充 721 具体型号；玻璃与石英材质不由外观证明。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "紫外-可见分光光度计：翻盖比色皿样品暗室、高对比度波长/吸光度显示屏与校零扫谱功能键。",
       "lecturePrintedPages": [
         6,
         9,
@@ -1170,7 +1165,8 @@
         36,
         40,
         62
-      ]
+      ],
+      "sha256": "1f4f1096d0538d26f2530c17b38dcaa1e52eea26bce0f192f0898b576a76f9ea"
     },
     {
       "id": "bio:online-centrifuge",
@@ -1178,20 +1174,15 @@
       "category": "取样与离心",
       "search": "online centrifuge 台式离心机 离心",
       "svg": "online-centrifuge.svg",
-      "sha256": "a91aaae7cea067869fe328ead9cd2769bc9f5a14817876a0702054d8cd072a32",
-      "width": 197.34939759036146,
+      "width": 210,
       "height": 260,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-3.0",
-      "author": "Servier",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/centrifuge.svg",
-      "sourceGitBlobSha": "d99a3468c95c552aa399e91af35f062c3c1e8690",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
-      "limitations": "通用台式外观，冷冻离心机型号尚需另行确认。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "台式高速微量离心机：掀开透明安全保护盖可见水平排布转子与微量管孔位，配转速/定时 OLED 及旋钮。",
       "lecturePrintedPages": [
         9,
         21,
@@ -1209,7 +1200,8 @@
         55,
         65,
         69
-      ]
+      ],
+      "sha256": "86806353131f4f548b166aa684ff77de04a6c9d739568be3a5a987a4d7e56587"
     },
     {
       "id": "bio:online-cuvette",
@@ -1217,20 +1209,15 @@
       "category": "分析与计量",
       "search": "online cuvette 比色皿 玻璃 石英 光度计 cuvette",
       "svg": "online-cuvette.svg",
-      "sha256": "cfa8f1c4fc62a3d00c71748cc1ead546f335569d84322b029b108a29956e143c",
-      "width": 47.36914129319193,
-      "height": 140,
+      "width": 56,
+      "height": 146,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-3.0",
-      "author": "Servier",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/cuvette.svg",
-      "sourceGitBlobSha": "8af932f73f75006871601be42240b4142f110a7d",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
-      "limitations": "仅提供通用分光光度计外观，不冒充 721 具体型号；玻璃与石英材质不由外观证明。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "10 mm 光程标准光学比色皿：双侧磨砂捏持壁、光学透光窗、液面弯月面与加厚熔融底座。",
       "lecturePrintedPages": [
         10,
         11,
@@ -1240,7 +1227,8 @@
         11,
         12,
         26
-      ]
+      ],
+      "sha256": "3ba4f73c4487676ea592b0de6c82b968b8d8bdd9252693ed10fdcda984bd6177"
     },
     {
       "id": "bio:online-micropipette",
@@ -1248,19 +1236,15 @@
       "category": "取样与离心",
       "search": "online micropipette 微量移液器 移液枪 加样枪 pipette",
       "svg": "online-micropipette.svg",
-      "sha256": "7545f53948330b0485a04b7151bb01b7ea488ae9062e491623387bf3c72ae86d",
-      "width": 58.04090169649081,
+      "width": 72,
       "height": 250,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-3.0",
-      "author": "Servier",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Chemistry/Servier/micropipette.svg",
-      "sourceGitBlobSha": "01ca60b3d5b1ac9403b3186caedc2fec57935c8a",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "精密单道可调微量移液器（100 µL）：拇指推杆、挂指弧形柄、三位数字读数窗、退枪头推杆及适配吸头。",
       "lecturePrintedPages": [
         64,
         68,
@@ -1272,7 +1256,8 @@
         69,
         72,
         73
-      ]
+      ],
+      "sha256": "d25df5b6374a9939ddaa0862d11c7a01d971b526b66e3e0412d83a70d3a22c95"
     },
     {
       "id": "bio:online-microtube",
@@ -1280,19 +1265,15 @@
       "category": "取样与离心",
       "search": "online microtube 微量离心管 EP管 Eppendorf",
       "svg": "online-microtube.svg",
-      "sha256": "80d84f827c18df4750fc1856f39beb39286cec3a76a20ff6cd62c92ab8f6c236",
-      "width": 66.66666666666667,
-      "height": 110,
+      "width": 74,
+      "height": 124,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-3.0",
-      "author": "Servier",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/General_items/Servier/microtube-closed-blue-empty.svg",
-      "sourceGitBlobSha": "248b1eb9a74ea04d04098bc7897e6cb8249abf0c",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "1.5 mL 连盖微量离心管（EP 管）：防误开压盖与侧铰链带、刻度线及尖底液体标本。",
       "lecturePrintedPages": [
         45,
         47,
@@ -1304,7 +1285,8 @@
         48,
         65,
         70
-      ]
+      ],
+      "sha256": "21bb02fe32cd5245d9027f8119730b98cb6f2b605c52ebf69bc34ee7e871a013"
     },
     {
       "id": "bio:online-tip-box",
@@ -1312,25 +1294,22 @@
       "category": "取样与离心",
       "search": "online tip box 吸头盒 枪头盒 移液器",
       "svg": "online-tip-box.svg",
-      "sha256": "fbe530dab31fa530527250ee99ca2d230278249f9eaf674e3389502f29cc39bd",
-      "width": 219.99999999999997,
-      "height": 126.48246546227415,
+      "width": 220,
+      "height": 136,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-4.0",
-      "author": "DBCLS",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-4.0/Lab_apparatus/DBCLS/pipette-tip-box.svg",
-      "sourceGitBlobSha": "3824e583e286c8afac4a1852e1edf324bcd46ed3",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "可高温高压灭菌 96 孔移液器吸头盒：透明翻盖、正前视窗可见排布整齐的吸头阵及锁扣开关。",
       "lecturePrintedPages": [
         71
       ],
       "lecturePdfPages": [
         72
-      ]
+      ],
+      "sha256": "c5a177cc6ada1ab71e248abbfdef4b63b66b5575c5183ba2cdf465754c16e967"
     },
     {
       "id": "bio:online-incubator-servier",
@@ -1338,19 +1317,15 @@
       "category": "生化设备",
       "search": "online incubator servier 恒温培养箱 培养",
       "svg": "online-incubator-servier.svg",
-      "sha256": "efa3101bf4fa8b619d0196861690ee1560f83d46d9508c079b73bf16aa65857e",
-      "width": 197.24812030075188,
+      "width": 210,
       "height": 260,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-3.0",
-      "author": "Servier",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-3.0/Lab_apparatus/Servier/incubator.svg",
-      "sourceGitBlobSha": "9cb5018322e6fffaf401b6dd324cf81418ea6f58",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "电热恒温微生物培养箱：数字温控仪表、双层玻璃观察内门、多孔层架及培养皿/摇瓶内部视图。",
       "lecturePrintedPages": [
         54,
         68
@@ -1358,7 +1333,8 @@
       "lecturePdfPages": [
         55,
         69
-      ]
+      ],
+      "sha256": "1d24278e0eb15140f6eaf9832cdedb6b274acc5278d40af2806584be1e1f4ad8"
     },
     {
       "id": "bio:online-freezer",
@@ -1366,19 +1342,15 @@
       "category": "生化设备",
       "search": "online freezer 低温冰箱 冷藏 冷冻",
       "svg": "online-freezer.svg",
-      "sha256": "d55714348b2e37fcf775514ab36f620eb084c17d5e8e6c66e10a76d80c3cace3",
-      "width": 120.88737201365187,
+      "width": 136,
       "height": 280,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-4.0",
-      "author": "DBCLS",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-4.0/Lab_apparatus/DBCLS/freezer.svg",
-      "sourceGitBlobSha": "63a8d6ff6a2f935706ee1209fc73a1c8a7ac814b",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "立式实验室超低温冷冻冰箱（-80 °C）：数显锁控温度面板、双层密封冷柜门、加压门锁把手与下散热格栅。",
       "lecturePrintedPages": [
         24,
         49,
@@ -1388,7 +1360,8 @@
         25,
         50,
         69
-      ]
+      ],
+      "sha256": "313d9fcf5955b54fedc818974b7ae4486150e084005ed1a812492b227ec8c47a"
     },
     {
       "id": "bio:online-autoclave",
@@ -1396,25 +1369,22 @@
       "category": "生化设备",
       "search": "online autoclave 高压灭菌锅 灭菌 autoclave",
       "svg": "online-autoclave.svg",
-      "sha256": "6e28cdaee735bb3eec1f6345ab416a1e8fe092956beec747667dc3a9cb2cc602",
-      "width": 149.6583375828659,
-      "height": 290,
+      "width": 176,
+      "height": 280,
       "ports": [],
       "boreCount": -1,
       "neckCount": 0,
-      "license": "CC-BY-4.0",
-      "author": "DBCLS",
-      "origin": "adapted-online",
-      "sourceUrl": "https://github.com/duerrsimon/bioicons/blob/main/static/icons/cc-by-4.0/Lab_apparatus/DBCLS/autoclave.svg",
-      "sourceGitBlobSha": "bff42f91157f95bf60d74c0692d66acee40fb009",
-      "modifications": "Whitespace cropped; viewBox and dimensions corrected; blue/purple recolored to the Chem Studio palette.",
-      "notes": "保留原作者 SVG 几何；裁去空白、校正尺寸并将蓝紫色调整为项目配色。",
+      "license": "WTFPL-2.0",
+      "author": "Chem Studio contributors",
+      "origin": "authored",
+      "notes": "立式自动高压蒸汽灭菌锅：顶盖旋锁星形手轮、灭菌温度与压力机械指针双表盘及下排水阀。",
       "lecturePrintedPages": [
         68
       ],
       "lecturePdfPages": [
         69
-      ]
+      ],
+      "sha256": "522f834ce1feb934667a607c2cc422fed901af0bf4a373fbb9736d5b65ff0995"
     }
   ]
 }

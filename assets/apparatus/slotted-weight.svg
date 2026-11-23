@@ -1,1 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="190" height="165" viewBox="0 0 190 165"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><rect x="52" y="88" width="87" height="26" rx="5" fill="#c6d2d7"></rect><rect x="52" y="114" width="87" height="26" rx="5" fill="#c6d2d7"></rect><line x1="96" y1="45" x2="96" y2="141" stroke-width="5"></line><path d="M96 46 V19 Q77 7 77 25" fill="none"></path><line x1="96" y1="101" x2="138" y2="101"></line></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="165" viewBox="0 0 190 165">
+<title>钩码</title>
+<defs>
+  <linearGradient id="slotted-weight-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="slotted-weight-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <path d="M77 25 C77 18 85 18 85 24" fill="none" stroke="#1F2937" stroke-width="2.2"/>
+      <line x1="77" y1="25" x2="77" y2="140" stroke="#1F2937" stroke-width="3.2"/>
+      <!-- Stacked brass cylindrical slotted weights -->
+      <rect x="46" y="78" width="62" height="18" rx="3" fill="url(#slotted-weight-brass)" stroke="#1F2937" stroke-width="2.0"/>
+      <rect x="46" y="98" width="62" height="18" rx="3" fill="url(#slotted-weight-brass)" stroke="#1F2937" stroke-width="2.0"/>
+      <rect x="46" y="118" width="62" height="18" rx="3" fill="url(#slotted-weight-brass)" stroke="#1F2937" stroke-width="2.0"/>
+      <rect x="42" y="136" width="70" height="7" rx="2" fill="url(#slotted-weight-metal)" stroke="#1F2937" stroke-width="1.8"/>
+      <text x="132" y="114" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">50 g ×3</text>
+      <line x1="52" y1="82" x2="52" y2="132" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.55" stroke-linecap="round"/>
+    </g>
+  
+</svg>

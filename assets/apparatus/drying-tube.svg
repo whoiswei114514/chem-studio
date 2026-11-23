@@ -1,1 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M57 10 V65 C13 85 13 129 57 147 V198 M77 10 V65 C121 85 121 129 77 147 V198" fill="none"></path><ellipse cx="50" cy="87" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="64" cy="87" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="78" cy="87" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="50" cy="101" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="64" cy="101" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="78" cy="101" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="50" cy="115" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="64" cy="115" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="78" cy="115" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="50" cy="129" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="64" cy="129" rx="3" ry="3" fill="#c6d2d7"></ellipse><ellipse cx="78" cy="129" rx="3" ry="3" fill="#c6d2d7"></ellipse></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
+<title>干燥管</title>
+<defs>
+  <linearGradient id="drying-tube-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="drying-tube-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<path d="M57 10 V64 C20 82 20 132 57 148 V198 H77 V148 C114 132 114 82 77 64 V10 Z" fill="url(#drying-tube-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+  <circle cx="52" cy="84" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="66" cy="80" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="80" cy="86" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="46" cy="100" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="61" cy="96" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="76" cy="101" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="88" cy="102" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="50" cy="117" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="65" cy="113" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="80" cy="118" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="56" cy="131" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+<circle cx="72" cy="129" r="5.2" fill="#F1F5F9" stroke="#334155" stroke-width="1.2"/>
+  <path d="M46 72 Q58 67 68 72 Q78 76 88 71" fill="none" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M46 140 Q58 136 68 140 Q78 144 88 139" fill="none" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="57" y1="10" x2="77" y2="10" stroke="#1F2937" stroke-width="2.0"/>
+  <line x1="57" y1="198" x2="77" y2="198" stroke="#1F2937" stroke-width="2.0"/>
+  <path d="M42 90 C32 104 34 120 44 132" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-opacity="0.78" stroke-linecap="round"/>
+</svg>

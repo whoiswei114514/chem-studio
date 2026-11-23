@@ -1,1 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="190" viewBox="0 0 180 190"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><rect x="17" y="94" width="146" height="68" rx="8" fill="#c6d2d7"></rect><rect x="12" y="76" width="156" height="21" rx="5" fill="#f1f0ea"></rect><ellipse cx="130" cy="133" rx="13" ry="13" fill="#258f89"></ellipse><rect x="31" y="116" width="53" height="26" rx="3" fill="#f5faf7"></rect><text x="57" y="135" fill="#294454" stroke="none" font-size="11" font-family="sans-serif" text-anchor="middle">80 C</text></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="190" viewBox="0 0 180 190">
+<title>加热板</title>
+<defs>
+  <linearGradient id="hot-plate-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="hot-plate-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<rect x="36" y="162" width="20" height="7" rx="2" fill="#334155" stroke="#1F2937" stroke-width="1.6"/><rect x="124" y="162" width="20" height="7" rx="2" fill="#334155" stroke="#1F2937" stroke-width="1.6"/><rect x="18" y="90" width="144" height="72" rx="8" fill="url(#hot-plate-chassis)" stroke="#1F2937" stroke-width="2.2"/><rect x="20" y="92" width="140" height="7" rx="3" fill="#0F766E" stroke="none"/><rect x="24" y="102" width="132" height="54" rx="5" fill="none" stroke="#CBD5E1" stroke-width="1.0"/>
+  <rect x="14" y="76" width="152" height="14" rx="4" fill="url(#hot-plate-porcelain)" stroke="#1F2937" stroke-width="2.2"/>
+      <rect x="20" y="86" width="140" height="4" rx="1.5" fill="#CBD5E1" stroke="none"/>
+      <line x1="28" y1="80" x2="152" y2="80" stroke="#FFFFFF" stroke-width="1.6" stroke-opacity="0.8"/>
+  <rect x="30" y="110" width="62" height="36" rx="6" fill="#334155" stroke="#1F2937" stroke-width="1.8"/><rect x="34" y="114" width="54" height="28" rx="4" fill="url(#hot-plate-screen)" stroke="#0F172A" stroke-width="1"/><rect x="35" y="115" width="52" height="9.1" rx="2" fill="#FFFFFF" fill-opacity="0.06" stroke="none"/><text x="61" y="127" fill="#FBBF24" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="11" font-weight="700" text-anchor="middle">180°C</text><text x="61" y="139" fill="#34D399" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="7" font-weight="700" text-anchor="middle">HEAT ON</text>
+  <line x1="117.04" y1="138.96" x2="114.919" y2="141.081" stroke="#64748B" stroke-width="1"/><line x1="112.5" y1="128" x2="111" y2="128" stroke="#64748B" stroke-width="1"/><line x1="117.04" y1="117.04" x2="114.919" y2="114.919" stroke="#64748B" stroke-width="1"/><line x1="128" y1="112.5" x2="128" y2="111" stroke="#64748B" stroke-width="1"/><line x1="138.96" y1="117.04" x2="141.081" y2="114.919" stroke="#64748B" stroke-width="1"/><line x1="143.5" y1="128" x2="145" y2="128" stroke="#64748B" stroke-width="1"/><line x1="138.96" y1="138.96" x2="141.081" y2="141.081" stroke="#64748B" stroke-width="1"/><circle cx="128" cy="128" r="13" fill="#E2E8F0" stroke="#1F2937" stroke-width="1.6"/><circle cx="128" cy="128" r="10.14" fill="url(#hot-plate-accent)" stroke="#334155" stroke-width="1.2"/><line x1="128" y1="128" x2="133.07" y2="120.759" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/><circle cx="128" cy="128" r="1.6" fill="#FFFFFF" stroke="none"/>
+  <circle cx="104" cy="116" r="3.5" fill="#DC2626" stroke="#1F2937" stroke-width="1.2"/>
+      <text x="104" y="142" fill="#DC2626" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="middle">HOT</text>
+</svg>

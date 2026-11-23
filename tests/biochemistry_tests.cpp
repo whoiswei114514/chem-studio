@@ -75,8 +75,8 @@ class BiochemistryTests : public QObject {
                 QVERIFY(!entry["modifications"].toString().isEmpty());
             }
         }
-        QCOMPARE(authored, 41);
-        QCOMPARE(adapted, 9);
+        QCOMPARE(authored, 50);
+        QCOMPARE(adapted, 0);
         QVERIFY(chem::findArtwork("bio:hair-dryer")->ports.isEmpty());
         QVERIFY(chem::findArtwork("bio:glass-atomizer")->ports.isEmpty());
         QVERIFY(chem::findArtwork("bio:online-spectrophotometer")->ports.isEmpty());
@@ -115,11 +115,11 @@ class BiochemistryTests : public QObject {
         chem::DrawingView authored;
         int authoredCount = 0;
         for (const auto& art : chem::apparatusArtwork()) {
-            if (!art.id.startsWith("bio:") || art.id.startsWith("bio:online-")) continue;
+            if (!art.id.startsWith("bio:")) continue;
             authored.addApparatus(art.id, {double(authoredCount % 5 * 330), double(authoredCount / 5 * 340)});
             ++authoredCount;
         }
-        QCOMPARE(authoredCount, 41);
+        QCOMPARE(authoredCount, 50);
         QVERIFY(!authored.svgData().contains("<image"));
     }
     void dropAndElectricalConnections() {

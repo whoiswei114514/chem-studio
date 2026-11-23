@@ -329,6 +329,8 @@ DrawingItem::DrawingItem(QString type, QGraphicsItem* parent)
         label = QStringLiteral("文字标注");
     if (const auto* art = findArtwork(kind))
         applyGeometry(*art, false);
+    if (kind == QStringLiteral("legacy:asset-0522") && availableNeckCounts().contains(3))
+        setNeckCount(3);
     if (artwork.isEmpty() && (kind == "flask" || kind == "round-flask" || kind == "gas-jar" ||
                               kind == "test-tube" || kind == "beaker")) {
         ports["mouth"] = {0.5, 0.1};
@@ -3390,29 +3392,6 @@ void DrawingView::loadExample() {
         auto* jar = dynamic_cast<DrawingItem*>(scene()->selectedItems().front());
         connectItems(flask->id, "mouth", jar->id, "mouth", ConnectionMode::Hose);
         addText(QStringLiteral("示例装置 · 双击文字可编辑"), {270, 90});
-        scene()->setProperty("precise", false);
-        scene()->clearSelection();
-        undoStack.clear();
-        return;
-    }
-    QString generator, jar;
-    for (const auto& art : apparatusArtwork()) {
-        if (!art.id.startsWith("legacy:"))
-            continue;
-        if (art.id == QStringLiteral("legacy:asset-0575") || art.name == QStringLiteral("固液加热造气"))
-            generator = art.id;
-        if (art.id == QStringLiteral("legacy:asset-0812") || art.name == QStringLiteral("集气瓶"))
-            jar = art.id;
-    }
-    if (!generator.isEmpty() && !jar.isEmpty()) {
-        scene()->setProperty("precise", true);
-        addApparatus(generator, {205, 112});
-        auto* source = dynamic_cast<DrawingItem*>(scene()->selectedItems().front());
-        const double baseline = source->pos().y() + source->size.height();
-        addApparatus(jar, {660, 480});
-        auto* target = dynamic_cast<DrawingItem*>(scene()->selectedItems().front());
-        target->setPos(660, baseline - target->size.height());
-        connectItems(source->id, "outlet", target->id, "mouth", ConnectionMode::Hose);
         scene()->setProperty("precise", false);
         scene()->clearSelection();
         undoStack.clear();

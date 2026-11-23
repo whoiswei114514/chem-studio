@@ -1,1 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><rect x="19" y="15" width="142" height="116" rx="8" fill="#c6d2d7"></rect><rect x="31" y="29" width="118" height="35" rx="3" fill="#ecf6eb"></rect><text x="90" y="53" fill="#294454" stroke="none" font-size="17" font-family="sans-serif" text-anchor="middle">0.000</text><ellipse cx="90" cy="91" rx="18" ry="18" fill="#258f89"></ellipse><ellipse cx="42" cy="116" rx="5" ry="5" fill="#c75b55"></ellipse><ellipse cx="138" cy="116" rx="5" ry="5" fill="#294454"></ellipse></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
+<title>万用表</title>
+<defs>
+  <linearGradient id="multimeter-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="multimeter-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="multimeter-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="multimeter-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="multimeter-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="multimeter-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="multimeter-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="multimeter-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="multimeter-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="multimeter-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="multimeter-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="multimeter-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="multimeter-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="multimeter-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="multimeter-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="multimeter-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<rect x="18" y="12" width="144" height="126" rx="9" fill="url(#multimeter-chassis)" stroke="#1F2937" stroke-width="2.2"/><rect x="20" y="14" width="140" height="7" rx="3" fill="#0F766E" stroke="none"/><rect x="24" y="24" width="132" height="108" rx="6" fill="none" stroke="#CBD5E1" stroke-width="1.0"/><rect x="30" y="25" width="120" height="38" rx="6" fill="#334155" stroke="#1F2937" stroke-width="1.8"/><rect x="34" y="29" width="112" height="30" rx="4" fill="url(#multimeter-screen)" stroke="#0F172A" stroke-width="1"/><rect x="35" y="30" width="110" height="9.8" rx="2" fill="#FFFFFF" fill-opacity="0.06" stroke="none"/><text x="90" y="48" fill="#34D399" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="15" font-weight="700" text-anchor="middle">0.000 V</text><text x="36" y="36" fill="#38BDF8" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="7.5" font-weight="700" text-anchor="start">DC</text><line x1="74.09" y1="111.91" x2="71.969" y2="114.031" stroke="#64748B" stroke-width="1"/><line x1="67.932" y1="100.39" x2="66.461" y2="100.682" stroke="#64748B" stroke-width="1"/><line x1="69.213" y1="87.39" x2="66.441" y2="86.242" stroke="#64748B" stroke-width="1"/><line x1="77.5" y1="77.292" x2="76.666" y2="76.045" stroke="#64748B" stroke-width="1"/><line x1="90" y1="73.5" x2="90" y2="70.5" stroke="#64748B" stroke-width="1"/><line x1="102.5" y1="77.292" x2="103.334" y2="76.045" stroke="#64748B" stroke-width="1"/><line x1="110.787" y1="87.39" x2="113.559" y2="86.242" stroke="#64748B" stroke-width="1"/><line x1="112.068" y1="100.39" x2="113.539" y2="100.682" stroke="#64748B" stroke-width="1"/><line x1="105.91" y1="111.91" x2="108.031" y2="114.031" stroke="#64748B" stroke-width="1"/><circle cx="90" cy="96" r="20" fill="#E2E8F0" stroke="#1F2937" stroke-width="1.6"/><circle cx="90" cy="96" r="15.6" fill="url(#multimeter-accent)" stroke="#334155" stroke-width="1.2"/><line x1="90" y1="96" x2="82.199" y2="84.86" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/><circle cx="90" cy="96" r="1.6" fill="#FFFFFF" stroke="none"/><circle cx="42" cy="116" r="7.5" fill="#DC2626" stroke="#1F2937" stroke-width="1.5"/><circle cx="42" cy="116" r="3.9" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.0"/><circle cx="42" cy="116" r="2.25" fill="#0F172A" stroke="none"/><text x="42" y="104" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">VΩ</text><circle cx="138" cy="116" r="7.5" fill="#1E293B" stroke="#1F2937" stroke-width="1.5"/><circle cx="138" cy="116" r="3.9" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.0"/><circle cx="138" cy="116" r="2.25" fill="#0F172A" stroke="none"/><text x="138" y="104" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">COM</text>
+</svg>

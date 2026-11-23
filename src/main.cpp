@@ -9,6 +9,7 @@
 #include <QTimer>
 #include <QMessageBox>
 #include <QScreen>
+#include <QStandardPaths>
 int main(int argc, char** argv) {
     QApplication app(argc, argv);
     app.setApplicationName("ChemStudio");
@@ -16,6 +17,14 @@ int main(int argc, char** argv) {
     app.setApplicationVersion(CHEM_VERSION);
     app.setStyle("Fusion");
     app.setFont(QFont("Microsoft YaHei UI", 10));
+    const QDir bundle(QCoreApplication::applicationDirPath());
+    if (bundle.exists("openbabel/data")) {
+        const auto data = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+        qputenv("CHEM_DATA_DIR", QDir(data).filePath("work").toUtf8());
+        qputenv("CHEM_WEBVIEW_PROFILE", QDir(data).filePath("webview2").toUtf8());
+        qputenv("BABEL_DATADIR", bundle.filePath("openbabel/data").toUtf8());
+        qputenv("BABEL_LIBDIR", bundle.filePath("openbabel/plugins").toUtf8());
+    }
     try {
         chem::initializeChemistry();
     } catch (const std::exception& error) {

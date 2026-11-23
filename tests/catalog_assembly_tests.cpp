@@ -450,51 +450,55 @@ class CatalogAssemblyTests : public QObject {
         QTest::addColumn<QString>("port");
         QTest::addColumn<QString>("role");
         const QMap<QString, QMap<QString, QString>> expected{
-            {"chemix:cylinder", {{"mouth", "mouth"}}},
-            {"chemix:thiele-tube", {{"mouth", "mouth"}, {"grip-site", "grip-site"}}},
-            {"chemix:schlenk-flask", {{"mouth", "glass-female"}, {"side", "tube"}}},
-            {"chemix:thermos", {{"mouth", "mouth"}}},
-            {"chemix:pipette", {{"inlet", "pipette-stem"}, {"outlet", "delivery"}}},
-            {"chemix:mohr", {{"inlet", "pipette-stem"}, {"outlet", "delivery"}}},
-            {"chemix:burette", {{"mouth", "mouth"}, {"outlet", "delivery"}, {"grip-site", "grip-site"}}},
-            {"chemix:eudiometer", {{"mouth", "mouth"}, {"grip-site", "grip-site"}}},
-            {"chemix:dropper-pipette", {{"outlet", "delivery"}}},
-            {"chemix:plastic-pipette", {{"outlet", "delivery"}}},
-            {"chemix:pump", {{"inlet", "pipette-filler"}}},
-            {"chemix:suction-pear", {{"inlet", "pipette-filler"}}},
-            {"chemix:filter-funnel", {{"mouth", "mouth"}, {"outlet", "delivery"}}},
-            {"chemix:thistle-tube", {{"mouth", "mouth"}, {"probe", "stem"}}},
-            {"chemix:separatory-funnel", {{"mouth", "glass-female"}, {"outlet", "delivery"}}},
-            {"chemix:dropping-funnel", {{"mouth", "glass-female"}, {"outlet", "delivery"}}},
-            {"chemix:dean-stark-trap", {{"inlet", "glass-female"}, {"outlet", "glass-male"},
-                                      {"drain", "delivery"}}},
-            {"chemix:glass-stopper", {{"plug", "plug"}}},
-            {"chemix:balloon", {{"inlet", "hose"}}},
-            {"chemix:salt-bridge", {{"inlet", "stem"}, {"outlet", "stem"}}},
-            {"chemix:battery", {{"wire-1", "wire"}, {"wire-2", "wire"}}},
-            {"chemix:lamp", {{"wire-1", "wire"}, {"wire-2", "wire"}}},
-            {"chemix:clamp", {{"grip", "grip"}}},
-            {"chemix:clamp-front", {{"grip", "grip"}}},
-            {"chemix:retort-ring", {{"surface-1", "surface"}, {"grip", "grip"}}},
-            {"chemix:tlc-plate", {{"lane-1", "lane"}}},
-            {"chemix:tlc-spot", {{"spot", "spot"}}},
-            {"legacy:asset-0603", {{"outlet", "delivery"}}},
-            {"legacy:asset-0626", {{"outlet", "delivery"}}},
-            {"legacy:asset-0758", {{"mouth", "glass-female"}, {"outlet", "glass-male"}}},
-            {"legacy:asset-0645", {{"outlet", "delivery"}}},
-            {"legacy:asset-0774", {{"side", "vapor-male"}}},
-            {"legacy:asset-0719", {{"plug", "plug"}}},
-            {"legacy:asset-0761", {{"outlet", "delivery"}}},
-            {"legacy:asset-0662", {{"wire-1", "wire"}, {"wire-2", "wire"}}},
-            {"legacy:asset-0734", {{"wire-1", "wire"}, {"wire-2", "wire"}}},
-            {"legacy:asset-0738", {{"wire-1", "wire"}, {"wire-2", "wire"}}},
-            {"legacy:asset-0732", {{"wire-1", "wire"}, {"wire-2", "wire"}}},
-            {"legacy:asset-0615", {{"wire-1", "wire"}, {"wire-2", "wire"}}},
-            {"legacy:asset-0802", {{"grip", "grip"}}},
-            {"legacy:asset-0688", {{"grip-left", "grip"}, {"grip-right", "grip"}}},
-            {"legacy:asset-0799", {{"surface", "surface"}}},
-            {"legacy:asset-0800", {{"surface", "surface"}}},
-            {"legacy:asset-0631", {{"mouth-left", "mouth"}, {"mouth-right", "mouth"}}},
+            {"studio:cylinder", {{"mouth", "mouth"}, {"base", "base"}}},
+            {"studio:thiele-tube", {{"mouth", "mouth"}}},
+            {"studio:schlenk-flask", {{"mouth", "glass-female"}, {"outlet", "tube"}, {"contents-seat", "contents-seat"}, {"base", "base"}}},
+            {"studio:distillation-flask", {{"mouth", "glass-female"}, {"outlet", "tube"}, {"contents-seat", "contents-seat"}, {"base", "base"}}},
+            {"studio:thermos", {{"mouth", "mouth"}, {"base", "base"}}},
+            {"studio:thermometer", {{"probe", "probe"}}},
+            {"studio:pipette", {{"mouth", "pipette-stem"}, {"stem", "probe"}}},
+            {"studio:mohr", {{"mouth", "pipette-stem"}, {"stem", "probe"}}},
+            {"studio:burette", {{"mouth", "mouth"}, {"stem", "probe"}}},
+            {"studio:eudiometer", {{"mouth", "mouth"}, {"base", "base"}}},
+            {"studio:dropper-pipette", {{"tip", "stem"}}},
+            {"studio:plastic-pipette", {{"tip", "stem"}}},
+            {"studio:pump", {{"mouth", "pipette-filler"}}},
+            {"studio:suction-pear", {{"mouth", "pipette-filler"}}},
+            {"studio:filter-funnel", {{"mouth", "mouth"}, {"stem", "stem"}}},
+            {"studio:thistle-tube", {{"mouth", "mouth"}, {"stem", "stem"}}},
+            {"studio:separatory-funnel", {{"mouth", "glass-female"}, {"stem", "stem"}}},
+            {"studio:dropping-funnel", {{"mouth", "glass-female"}, {"stem", "stem"}}},
+            {"studio:dean-stark-trap", {{"inlet", "glass-female"}, {"outlet", "glass-male"}, {"drain", "delivery"}}},
+            {"studio:glass-stopper", {{"plug", "plug"}}},
+            {"studio:glass-stopcock", {{"plug", "plug"}}},
+            {"studio:balloon", {{"inlet", "hose"}, {"hanger", "hanger"}}},
+            {"studio:salt-bridge", {{"inlet", "tube"}, {"outlet", "tube"}}},
+            {"studio:u-drying-tube", {{"inlet", "tube"}, {"outlet", "tube"}}},
+            {"studio:side-arm-u-tube", {{"mouth-left", "mouth"}, {"mouth-right", "mouth"}, {"inlet", "tube"}, {"outlet", "tube"}}},
+            {"studio:retort", {{"mouth", "glass-female"}, {"outlet", "delivery"}, {"base", "base"}}},
+            {"studio:simple-kipp-generator", {{"outlet", "tube"}, {"base", "base"}}},
+            {"studio:solid-liquid-gas-setup", {{"outlet", "tube"}, {"base", "base"}}},
+            {"studio:electrolysis-cell", {{"positive", "wire"}, {"negative", "wire"}, {"outlet-left", "tube"}, {"outlet-right", "tube"}, {"base", "base"}}},
+            {"studio:battery", {{"positive", "wire"}, {"negative", "wire"}}},
+            {"studio:lamp", {{"positive", "wire"}, {"negative", "wire"}}},
+            {"studio:resistor", {{"a", "wire"}, {"b", "wire"}}},
+            {"studio:clamp", {{"clamp", "clamp"}, {"grip", "grip"}}},
+            {"studio:clamp-front", {{"clamp", "clamp"}, {"grip", "grip"}}},
+            {"studio:burette-clamp", {{"clamp", "clamp"}, {"grip-left", "grip"}, {"grip-right", "grip"}}},
+            {"studio:pinch-clamp", {{"grip", "grip"}}},
+            {"studio:retort-ring", {{"surface", "surface"}, {"clamp", "clamp"}}},
+            {"studio:ring-with-gauze", {{"surface", "surface"}, {"clamp", "clamp"}}},
+            {"studio:combustion-spoon", {{"probe", "immersible"}, {"grip-site", "grip-site"}}},
+            {"studio:calibration-weights", {{"base", "base"}, {"hook", "hook"}}},
+            {"studio:tlc-plate", {{"lane", "lane"}}},
+            {"studio:tlc-spot", {{"spot", "spot"}}},
+            {"bio:buchner-funnel", {{"mouth", "mouth"}, {"outlet", "delivery"}}},
+            {"lab:pressure-equalizing-funnel", {{"mouth", "glass-female"}, {"outlet", "glass-male"}, {"grip-site", "grip-site"}}},
+            {"lab:soxhlet-extractor", {{"inlet", "glass-female"}, {"outlet", "glass-male"}, {"grip-site", "grip-site"}}},
+            {"lab:cow-receiver-adapter", {{"inlet", "vapor-female"}, {"outlet-1", "glass-male"}, {"vacuum", "tube"}}},
+            {"physics:analog-galvanometer", {{"positive", "wire"}, {"negative", "wire"}}},
+            {"physics:analog-ammeter", {{"positive", "wire"}, {"negative", "wire"}}},
+            {"physics:knife-switch", {{"a", "wire"}, {"b", "wire"}}},
         };
         for (auto item = expected.cbegin(); item != expected.cend(); ++item)
             for (auto port = item->cbegin(); port != item->cend(); ++port)
@@ -544,15 +548,15 @@ class CatalogAssemblyTests : public QObject {
     void supportAssemblyPersistsAndFollows() {
         DrawingView view;
         precise(view);
-        view.addApparatus("chemix:retort-stand", {250, 150});
+        view.addApparatus("studio:retort-stand", {250, 150});
         auto* stand = selected(view);
         const auto standId = stand->id;
         const auto fixed = stand->json();
-        view.addApparatus("chemix:clamp", {650, 350});
+        view.addApparatus("studio:clamp", {650, 350});
         auto* clamp = selected(view);
         const auto clampId = clamp->id;
-        QVERIFY(view.canConnectItems(clampId, "clamp", standId, "rail-1", DrawingView::ConnectionMode::Assembly));
-        QVERIFY(view.connectItems(clampId, "clamp", standId, "rail-1", DrawingView::ConnectionMode::Assembly));
+        QVERIFY(view.canConnectItems(clampId, "clamp", standId, "rail", DrawingView::ConnectionMode::Assembly));
+        QVERIFY(view.connectItems(clampId, "clamp", standId, "rail", DrawingView::ConnectionMode::Assembly));
         QCOMPARE(stand->json(), fixed);
         QCOMPARE(linkState(view)["mode"].toString(), QString("support"));
         const auto snapshot = view.state();
@@ -569,14 +573,14 @@ class CatalogAssemblyTests : public QObject {
     void shortDefaultInsertion() {
         DrawingView view;
         precise(view);
-        view.addApparatus("chemix:conical-flask", {300, 400});
+        view.addApparatus("studio:conical-flask", {300, 400});
         auto* flask = selected(view);
         const auto fixed = flask->json();
-        view.addApparatus("chemix:filter-funnel", {650, 200});
+        view.addApparatus("studio:filter-funnel", {650, 200});
         auto* funnel = selected(view);
         const auto dimensions = funnel->displayedSize();
-        QVERIFY(view.canConnectItems(funnel->id, "outlet", flask->id, "mouth", DrawingView::ConnectionMode::Assembly));
-        QVERIFY(view.connectItems(funnel->id, "outlet", flask->id, "mouth", DrawingView::ConnectionMode::Assembly));
+        QVERIFY(view.canConnectItems(funnel->id, "stem", flask->id, "mouth", DrawingView::ConnectionMode::Assembly));
+        QVERIFY(view.connectItems(funnel->id, "stem", flask->id, "mouth", DrawingView::ConnectionMode::Assembly));
         QCOMPARE(funnel->displayedSize(), dimensions);
         QCOMPARE(flask->json(), fixed);
         QVERIFY(view.selectionInsertionDepth() > 0);
@@ -588,46 +592,48 @@ class CatalogAssemblyTests : public QObject {
         QTest::addColumn<QStringList>("parts");
         QTest::addColumn<bool>("reverse");
         const QList<QStringList> pairs{
-            {"chemix:conical-flask", "mouth", "chemix:filter-funnel", "outlet"},
-            {"legacy:asset-0806", "mouth", "chemix:separatory-funnel", "outlet"},
-            {"chemix:beaker", "mouth", "legacy:asset-0645", "outlet"},
-            {"chemix:beaker", "mouth", "chemix:wash-bottle", "outlet"},
-            {"chemix:beaker", "mouth", "chemix:eureka", "outlet"},
-            {"chemix:conical-flask", "mouth", "chemix:pipette", "outlet"},
-            {"chemix:conical-flask", "mouth", "chemix:mohr", "outlet"},
-            {"chemix:beaker", "mouth", "chemix:burette", "outlet"},
-            {"chemix:beaker", "mouth", "chemix:dropper-pipette", "outlet"},
-            {"chemix:beaker", "mouth", "chemix:plastic-pipette", "outlet"},
-            {"chemix:pipette", "inlet", "chemix:pump", "inlet"},
-            {"chemix:mohr", "inlet", "chemix:suction-pear", "inlet"},
-            {"chemix:thermos", "mouth", "chemix:thermometer", "probe"},
-            {"chemix:petri-dish", "mouth", "chemix:stirring-rod", "probe"},
-            {"legacy:asset-0772", "mouth", "chemix:stirring-rod", "probe"},
-            {"legacy:asset-0678", "mouth", "chemix:thermometer", "probe"},
-            {"legacy:asset-0631", "mouth-left", "chemix:thermometer", "probe"},
-            {"chemix:round-bottom-flask", "mouth", "chemix:cold-finger", "plug"},
-            {"chemix:cold-finger", "water-in", "chemix:rubber-tube", "inlet"},
-            {"chemix:cold-finger", "water-out", "legacy:asset-0667", "inlet"},
-            {"legacy:asset-0742", "water-in", "chemix:rubber-tube", "inlet"},
-            {"legacy:asset-0724", "water-out", "chemix:rubber-tube", "inlet"},
-            {"legacy:asset-0571", "outlet", "chemix:rubber-tube", "inlet"},
-            {"legacy:asset-0754", "outlet", "chemix:rubber-tube", "inlet"},
-            {"legacy:asset-0575", "outlet", "chemix:rubber-tube", "inlet"},
-            {"legacy:asset-0606", "inlet", "chemix:rubber-tube", "outlet"},
-            {"chemix:schlenk-flask", "side", "chemix:rubber-tube", "inlet"},
-            {"chemix:needle", "inlet", "chemix:syringe-filter", "outlet"},
-            {"chemix:spe-cartridge", "outlet", "chemix:syringe-filter", "inlet"},
-            {"chemix:retort-stand", "rail-1", "legacy:asset-0802", "clamp"},
-            {"legacy:asset-0803", "rail", "chemix:clamp", "clamp"},
-            {"chemix:clamp", "grip", "chemix:graham", "grip-site"},
-            {"chemix:clamp", "grip", "legacy:asset-0680", "grip-site"},
-            {"chemix:retort-ring", "surface-1", "chemix:conical-flask", "base"},
-            {"chemix:test-tube-rack", "slot-1", "chemix:test-tube", "base"},
-            {"chemix:filter-funnel", "lining-seat", "chemix:filter-paper", "lining"},
-            {"chemix:tlc-plate", "lane-1", "chemix:tlc-spot", "spot"},
-            {"chemix:beaker", "contents-seat", "chemix:magnetic-stir-bar", "contents"},
-            {"chemix:round-bottom-flask", "mouth", "chemix:dean-stark-trap", "outlet"},
-            {"chemix:dean-stark-trap", "inlet", "chemix:liebig-condenser", "outlet"},
+            {"studio:conical-flask", "mouth", "studio:filter-funnel", "stem"},
+            {"studio:conical-flask", "mouth", "studio:separatory-funnel", "stem"},
+            {"studio:beaker", "mouth", "studio:retort", "outlet"},
+            {"studio:beaker", "mouth", "studio:wash-bottle", "outlet"},
+            {"studio:beaker", "mouth", "studio:eureka", "outlet"},
+            {"studio:conical-flask", "mouth", "studio:pipette", "stem"},
+            {"studio:conical-flask", "mouth", "studio:mohr", "stem"},
+            {"studio:beaker", "mouth", "studio:burette", "stem"},
+            {"studio:beaker", "mouth", "studio:dropper-pipette", "tip"},
+            {"studio:beaker", "mouth", "studio:plastic-pipette", "tip"},
+            {"studio:pipette", "mouth", "studio:pump", "mouth"},
+            {"studio:mohr", "mouth", "studio:suction-pear", "mouth"},
+            {"studio:thermos", "mouth", "studio:thermometer", "probe"},
+            {"studio:beaker", "mouth", "studio:stirring-rod", "probe"},
+            {"studio:tank", "mouth", "studio:stirring-rod", "probe"},
+            {"studio:side-arm-u-tube", "mouth-left", "studio:thermometer", "probe"},
+            {"studio:beaker", "mouth", "studio:combustion-spoon", "probe"},
+            {"studio:cold-finger", "inlet", "studio:rubber-tube", "inlet"},
+            {"studio:cold-finger", "outlet", "studio:rubber-tube", "outlet"},
+            {"studio:liebig-condenser", "water-in", "studio:rubber-tube", "inlet"},
+            {"studio:allihn", "water-out", "studio:rubber-tube", "inlet"},
+            {"lab:kipp-generator", "outlet", "studio:rubber-tube", "inlet"},
+            {"studio:simple-kipp-generator", "outlet", "studio:rubber-tube", "inlet"},
+            {"studio:solid-liquid-gas-setup", "outlet", "studio:rubber-tube", "inlet"},
+            {"studio:drying-tube", "inlet", "studio:rubber-tube", "outlet"},
+            {"studio:schlenk-flask", "outlet", "studio:rubber-tube", "inlet"},
+            {"studio:distillation-flask", "outlet", "studio:balloon", "inlet"},
+            {"studio:spe-cartridge", "outlet", "studio:syringe-filter", "inlet"},
+            {"studio:retort-stand", "rail", "studio:clamp", "clamp"},
+            {"studio:retort-stand", "rail", "studio:burette-clamp", "clamp"},
+            {"studio:clamp", "grip", "studio:graham", "grip-site"},
+            {"studio:clamp", "grip", "lab:pressure-equalizing-funnel", "grip-site"},
+            {"studio:retort-ring", "surface", "studio:conical-flask", "base"},
+            {"studio:ring-with-gauze", "surface", "studio:beaker", "base"},
+            {"studio:test-tube-rack", "rack-40", "studio:eudiometer", "base"},
+            {"studio:filter-paper", "surface", "studio:beaker", "base"},
+            {"studio:tlc-plate", "lane", "studio:tlc-spot", "spot"},
+            {"studio:beaker", "contents-seat", "studio:magnetic-stir-bar", "contents"},
+            {"studio:round-bottom-flask", "contents-seat", "studio:stirbar2", "contents"},
+            {"studio:round-bottom-flask", "mouth", "studio:dean-stark-trap", "outlet"},
+            {"studio:dean-stark-trap", "inlet", "studio:liebig-condenser", "outlet"},
+            {"studio:beaker", "mouth", "studio:dean-stark-trap", "drain"},
         };
         for (const auto& pair : pairs)
             for (bool reverse : {false, true})
@@ -690,12 +696,12 @@ class CatalogAssemblyTests : public QObject {
     void supportedAssemblyRotatesAsOne() {
         DrawingView view;
         precise(view);
-        view.addApparatus("chemix:retort-stand", {240, 180});
+        view.addApparatus("studio:retort-stand", {240, 180});
         auto* stand = selected(view);
-        view.addApparatus("chemix:clamp", {440, 250});
+        view.addApparatus("studio:clamp", {440, 250});
         auto* clamp = selected(view);
-        QVERIFY(view.connectItems(stand->id, "rail-1", clamp->id, "clamp", DrawingView::ConnectionMode::Assembly));
-        view.addApparatus("chemix:graham", {620, 300});
+        QVERIFY(view.connectItems(stand->id, "rail", clamp->id, "clamp", DrawingView::ConnectionMode::Assembly));
+        view.addApparatus("studio:graham", {620, 300});
         auto* condenser = selected(view);
         QVERIFY(view.connectItems(clamp->id, "grip", condenser->id, "grip-site", DrawingView::ConnectionMode::Assembly));
         const auto relative = stand->mapFromScene(condenser->portPosition("inlet"));
@@ -709,26 +715,28 @@ class CatalogAssemblyTests : public QObject {
         view.undoStack.undo(); QCOMPARE(view.state(), before);
     }
     void recalibratedPortsMigrate() {
-        DrawingItem item("chemix:separatory-funnel");
+        DrawingItem item("studio:separatory-funnel");
         auto old = item.json();
         old["portSchema"] = 4;
         auto ports = old["ports"].toObject();
-        ports["outlet"] = QJsonArray{0.1, 0.8};
+        ports["stem"] = QJsonArray{0.1, 0.8};
         old["ports"] = ports;
         std::unique_ptr<DrawingItem> restored(DrawingItem::fromJson(old));
         QVERIFY(restored);
         QCOMPARE(restored->ports, item.ports);
         QCOMPARE(restored->portEdges, item.portEdges);
-        DrawingItem capped("legacy:asset-0680");
-        QVERIFY(!capped.ports.contains("outlet"));
-        QVERIFY(capped.ports.contains("grip-site"));
+        DrawingItem syringe("legacy:asset-0680");
+        QVERIFY(syringe.renderer && syringe.renderer->isValid());
+        QVERIFY(syringe.ports.contains("outlet"));
+        QVERIFY(!syringe.ports.contains("grip-site"));
     }
     void immersionDepth_data() {
         QTest::addColumn<QString>("kind");
         QTest::addColumn<QString>("port");
-        for (const auto& kind : {"chemix:hydrometer", "chemix:metal-strip", "chemix:nail"})
+        QTest::newRow("hydrometer") << QString("studio:hydrometer") << QString("stem");
+        for (const auto& kind : {"studio:metal-strip", "studio:nail", "studio:thermometer", "studio:combustion-spoon"})
             QTest::newRow(kind) << QString(kind) << QString("probe");
-        QTest::newRow("luer outlet") << QString("chemix:syringe-filter") << QString("outlet");
+        QTest::newRow("luer outlet") << QString("studio:syringe-filter") << QString("outlet");
     }
     void immersionDepth() {
         QFETCH(QString, kind);
@@ -781,6 +789,113 @@ class CatalogAssemblyTests : public QObject {
         auto* bent = selected(view);
         QVERIFY(view.connectItems(cond->id, "outlet", bent->id, "inlet"));
         QCOMPARE(view.state().size(), 7);
+    }
+    void aliasBackwardCompatibility() {
+        const QList<QPair<QString, QString>> aliases{
+            {"chemix:round-bottom-flask", "studio:round-bottom-flask"},
+            {"chemix:liebig-condenser", "studio:liebig-condenser"},
+            {"chemix:allihn", "studio:allihn"},
+            {"chemix:graham", "studio:graham"},
+            {"chemix:distillation-head", "lab:standard-distillation-head"},
+            {"chemix:claisen", "lab:claisen-head"},
+            {"chemix:bung", "studio:bung"},
+            {"chemix:conical-flask", "studio:conical-flask"},
+            {"chemix:tube-bend", "studio:tube-bend"},
+            {"chemix:balloon", "studio:balloon"},
+            {"legacy:asset-0806", "studio:conical-flask"},
+            {"legacy:asset-0576", "studio:round-bottom-flask"},
+            {"legacy:asset-0686", "studio:thermometer"},
+            {"legacy:asset-0665", "studio:bung"},
+            {"legacy:asset-0535", "studio:liebig-condenser"},
+            {"legacy:asset-0742", "studio:liebig-condenser"},
+            {"legacy:asset-0724", "studio:allihn"},
+            {"legacy:asset-0707", "lab:cow-receiver-adapter"},
+            {"legacy:asset-0799", "studio:ring-with-gauze"},
+            {"legacy:asset-0706", "studio:combustion-spoon"},
+            {"legacy:asset-0688", "studio:burette-clamp"},
+            {"legacy:asset-0669", "studio:pinch-clamp"},
+            {"legacy:asset-0747", "studio:calibration-weights"},
+            {"legacy:asset-0302", "studio:u-drying-tube"},
+            {"legacy:asset-0631", "studio:side-arm-u-tube"},
+            {"legacy:asset-0645", "studio:retort"},
+            {"legacy:asset-0719", "studio:glass-stopcock"},
+            {"legacy:asset-0754", "studio:simple-kipp-generator"},
+            {"legacy:asset-0575", "studio:solid-liquid-gas-setup"},
+            {"legacy:asset-0737", "studio:electrolysis-cell"},
+        };
+        for (const auto& [aliasId, expectedCanonical] : aliases) {
+            const auto* art = chem::findArtwork(aliasId);
+            QVERIFY2(art, qPrintable("Missing alias: " + aliasId));
+            QCOMPARE(art->id, expectedCanonical);
+            DrawingItem item(aliasId);
+            QVERIFY2(item.renderer && item.renderer->isValid(), qPrintable(aliasId));
+            std::unique_ptr<DrawingItem> restored(DrawingItem::fromJson(item.json()));
+            QVERIFY(restored && restored->renderer && restored->renderer->isValid());
+            QCOMPARE(restored->ports, item.ports);
+        }
+        DrawingView view;
+        precise(view);
+        view.addApparatus("legacy:asset-0576", {200, 420});
+        auto* flask = selected(view);
+        view.addApparatus("chemix:distillation-head", {230, 250});
+        auto* head = selected(view);
+        QVERIFY(view.connectItems(flask->id, "mouth", head->id, "outlet"));
+        view.addApparatus("chemix:liebig-condenser", {440, 290});
+        auto* cond = selected(view);
+        QVERIFY(view.connectItems(head->id, "side", cond->id, "inlet"));
+        QCOMPARE(view.state().size(), 5);
+    }
+    void roundBottomFlaskMultiNeckSwitching() {
+        DrawingView view;
+        precise(view);
+        view.addApparatus("studio:round-bottom-flask", {300, 320});
+        auto* flask = selected(view);
+        QVERIFY(flask && flask->renderer && flask->renderer->isValid());
+        const auto flaskId = flask->id;
+        QCOMPARE(flask->availableNeckCounts(), QVector<int>({1, 2, 3, 4}));
+        QCOMPARE(flask->neckCount, 1);
+
+        for (int n : {2, 3, 4, 1}) {
+            selectOnly(view, flask);
+            view.setSelectionNeckCount(n);
+            QCOMPARE(flask->neckCount, n);
+            QVERIFY(flask->renderer && flask->renderer->isValid());
+            int mouthCount = 0;
+            for (const auto& p : flask->ports.keys())
+                if (p.startsWith("mouth")) ++mouthCount;
+            QCOMPARE(mouthCount, n);
+        }
+
+        // Switch to 3-neck and connect distillation head on central mouth-2 + condenser
+        selectOnly(view, flask);
+        view.setSelectionNeckCount(3);
+        QCOMPARE(flask->neckCount, 3);
+        QVERIFY(flask->ports.contains("mouth") && flask->ports.contains("mouth-2") && flask->ports.contains("mouth-3"));
+
+        view.addApparatus("lab:standard-distillation-head", {300, 140});
+        auto* head = selected(view);
+        QVERIFY(view.connectItems(flask->id, "mouth-2", head->id, "outlet"));
+        view.addApparatus("studio:liebig-condenser", {500, 180});
+        auto* cond = selected(view);
+        QVERIFY(view.connectItems(head->id, "side", cond->id, "inlet"));
+        QCOMPARE(view.state().size(), 5);
+
+        const auto saved = view.state();
+        DrawingView restored;
+        restored.restore(saved);
+        QCOMPARE(restored.state(), saved);
+        QVERIFY(QSvgRenderer(restored.svgData()).isValid());
+
+        // Reducing necks from 3 to 1 drops the mouth-2 link while preserving the remaining head-condenser link
+        selectOnly(view, flask);
+        view.setSelectionNeckCount(1);
+        QCOMPARE(flask->neckCount, 1);
+        QCOMPARE(view.state().size(), 4);
+        view.undoStack.undo();
+        flask = shape(view, flaskId);
+        QVERIFY(flask);
+        QCOMPARE(flask->neckCount, 3);
+        QCOMPARE(view.state(), saved);
     }
 };
 QTEST_MAIN(CatalogAssemblyTests)

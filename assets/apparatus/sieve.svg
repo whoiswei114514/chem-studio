@@ -1,1 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><rect x="19" y="16" width="142" height="87" rx="4" fill="none"></rect><line x1="28" y1="20" x2="28" y2="98" stroke-width="0.7"></line><line x1="40" y1="20" x2="40" y2="98" stroke-width="0.7"></line><line x1="52" y1="20" x2="52" y2="98" stroke-width="0.7"></line><line x1="64" y1="20" x2="64" y2="98" stroke-width="0.7"></line><line x1="76" y1="20" x2="76" y2="98" stroke-width="0.7"></line><line x1="88" y1="20" x2="88" y2="98" stroke-width="0.7"></line><line x1="100" y1="20" x2="100" y2="98" stroke-width="0.7"></line><line x1="112" y1="20" x2="112" y2="98" stroke-width="0.7"></line><line x1="124" y1="20" x2="124" y2="98" stroke-width="0.7"></line><line x1="136" y1="20" x2="136" y2="98" stroke-width="0.7"></line><line x1="148" y1="20" x2="148" y2="98" stroke-width="0.7"></line><line x1="23" y1="25" x2="157" y2="25" stroke-width="0.7"></line><line x1="23" y1="37" x2="157" y2="37" stroke-width="0.7"></line><line x1="23" y1="49" x2="157" y2="49" stroke-width="0.7"></line><line x1="23" y1="61" x2="157" y2="61" stroke-width="0.7"></line><line x1="23" y1="73" x2="157" y2="73" stroke-width="0.7"></line><line x1="23" y1="85" x2="157" y2="85" stroke-width="0.7"></line><line x1="23" y1="97" x2="157" y2="97" stroke-width="0.7"></line></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+<title>筛网</title>
+<defs>
+  <linearGradient id="sieve-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="sieve-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="sieve-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="sieve-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="sieve-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="sieve-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="sieve-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="sieve-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="sieve-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="sieve-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="sieve-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="sieve-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="sieve-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="sieve-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="sieve-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="sieve-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<rect x="26" y="16" width="128" height="86" rx="4" fill="url(#sieve-metal)" stroke="#1F2937" stroke-width="2.2"/>
+      <rect x="34" y="22" width="112" height="68" rx="3" fill="#F8FAFC" stroke="#334155" stroke-width="1.5"/>
+      <line x1="44" y1="22" x2="44" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="53" y1="22" x2="53" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="62" y1="22" x2="62" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="71" y1="22" x2="71" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="80" y1="22" x2="80" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="89" y1="22" x2="89" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="98" y1="22" x2="98" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="107" y1="22" x2="107" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="116" y1="22" x2="116" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="125" y1="22" x2="125" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="134" y1="22" x2="134" y2="90" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="34" y1="26" x2="146" y2="26" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="34" y1="35" x2="146" y2="35" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="34" y1="44" x2="146" y2="44" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="34" y1="53" x2="146" y2="53" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="34" y1="62" x2="146" y2="62" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="34" y1="71" x2="146" y2="71" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/><line x1="34" y1="80" x2="146" y2="80" stroke="#64748B" stroke-width="0.85" stroke-linecap="round"/>
+      <rect x="34" y="22" width="112" height="68" rx="3" fill="none" stroke="#334155" stroke-width="1.6"/>
+      <rect x="26" y="92" width="128" height="10" rx="2" fill="#334155" stroke="#1F2937" stroke-width="1.6"/>
+      <text x="90" y="99.5" fill="#F8FAFC" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.5" font-weight="700" text-anchor="middle">TEST SIEVE</text>
+</svg>

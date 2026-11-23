@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="240" viewBox="0 0 160 240">
+<title>简易启普发生器</title>
+<defs>
+  <linearGradient id="simple-kipp-generator-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="simple-kipp-generator-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<rect x="14" y="216" width="132" height="12" rx="4" fill="url(#simple-kipp-generator-chassis)" stroke="#1F2937" stroke-width="2.2"/>
+  <rect x="26" y="18" width="7" height="198" rx="2" fill="url(#simple-kipp-generator-metal)" stroke="#1F2937" stroke-width="2.0"/>
+  <rect x="23" y="88" width="41" height="8" rx="3" fill="url(#simple-kipp-generator-metal-v)" stroke="#1F2937" stroke-width="1.8"/>
+  <rect x="61" y="85" width="46" height="14" rx="4" fill="none" stroke="#1F2937" stroke-width="2.2"/>
+  <path d="M64 68 V182 A20 20 0 0 0 104 182 V68 Z" fill="url(#simple-kipp-generator-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M66 154 H102 V182 A18 18 0 0 1 66 182 Z" fill="url(#simple-kipp-generator-coolant)" stroke="none"/>
+  <line x1="66" y1="154" x2="102" y2="154" stroke="#14B8A6" stroke-width="1.2"/>
+  <rect x="66" y="139" width="36" height="4" fill="#334155" stroke="#1F2937" stroke-width="1.0"/>
+  <circle cx="72" cy="133" r="3.4" fill="#94A3B8" stroke="#1F2937" stroke-width="1.2"/><circle cx="82" cy="133" r="3.4" fill="#94A3B8" stroke="#1F2937" stroke-width="1.2"/><circle cx="92" cy="133" r="3.4" fill="#94A3B8" stroke="#1F2937" stroke-width="1.2"/>
+  <path d="M56 16 H94 L80 42 V184 H74 V42 Z" fill="url(#simple-kipp-generator-glass)" stroke="#1F2937" stroke-width="1.9" stroke-linejoin="round"/>
+  <path d="M92 66 V52 Q92 47 98 47 H144 V57 H100 V66 Z" fill="url(#simple-kipp-generator-glass)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
+  <g>
+    <path d="M111 48 L129 49.2 L129 54.8 L111 56 Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.8" stroke-linejoin="round"/>
+    <rect x="104" y="45.5" width="7" height="13" rx="2" fill="#0F766E" stroke="#1F2937" stroke-width="1.6"/>
+    <rect x="129" y="48.5" width="5" height="7" rx="1.5" fill="#334155" stroke="#1F2937" stroke-width="1.4"/>
+    <line x1="117.5" y1="49.5" x2="122.5" y2="54.5" stroke="#334155" stroke-width="1.2"/>
+  </g>
+  <path d="M62 56 H106 L102 72 H66 Z" fill="url(#simple-kipp-generator-rubber)" stroke="#1F2937" stroke-width="2.0" stroke-linejoin="round"/>
+  <line x1="70" y1="78" x2="70" y2="178" stroke="#FFFFFF" stroke-width="2.2" stroke-opacity="0.74" stroke-linecap="round"/>
+</svg>

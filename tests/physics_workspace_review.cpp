@@ -282,7 +282,10 @@ class WorkspaceTests : public QObject {
         }
         QCOMPARE(physics, 71);
         QCOMPARE(bio, 50);
-        if (QString(PHYSICS_REVIEW_VARIANT) == "public") QCOMPARE(studio, 221);
+        if (QString(PHYSICS_REVIEW_VARIANT) == "public") {
+            QCOMPARE(studio, 233);
+            QCOMPARE(png, 0);
+        }
         else {
             const QDir installed(qEnvironmentVariable("CHEM_CHEMIX_ART_DIR"));
             QFile existing(installed.filePath("manifest.json"));

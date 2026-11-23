@@ -1,1 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="80" height="260" viewBox="0 0 80 260"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M35 10 V96 C10 106 10 160 35 170 V244 M45 10 V96 C70 106 70 160 45 170 V244" fill="none"></path><line x1="32" y1="60" x2="48" y2="60"></line><line x1="35" y1="10" x2="45" y2="10"></line><line x1="35" y1="244" x2="45" y2="244"></line></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="260" viewBox="0 0 80 260">
+<title>液体比重计</title>
+<defs>
+  <linearGradient id="hydrometer-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="hydrometer-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<path d="M35 10 V96 Q18 108 18 142 Q18 176 32 192 Q29 218 35 238 Q40 246 45 238 Q51 218 48 192 Q62 176 62 142 Q62 108 45 96 V10 Z" fill="url(#hydrometer-glass)" stroke="#1F2937" stroke-width="2.1" stroke-linejoin="round"/>
+  <rect x="37" y="18" width="6" height="78" fill="#F8FAFC" stroke="#334155" stroke-width="0.9"/>
+  <g><line x1="43" y1="24" x2="35.75" y2="24" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="43" y1="31.333" x2="38" y2="31.333" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="43" y1="38.667" x2="38" y2="38.667" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="43" y1="46" x2="35.75" y2="46" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="43" y1="53.333" x2="38" y2="53.333" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="43" y1="60.667" x2="38" y2="60.667" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="43" y1="68" x2="35.75" y2="68" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/><line x1="43" y1="75.333" x2="38" y2="75.333" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="43" y1="82.667" x2="38" y2="82.667" stroke="#475569" stroke-width="0.9" stroke-linecap="round"/><line x1="43" y1="90" x2="35.75" y2="90" stroke="#475569" stroke-width="1.25" stroke-linecap="round"/></g>
+  <path d="M31 214 Q40 222 49 214 L45 238 Q40 245 35 238 Z" fill="url(#hydrometer-amber)" stroke="#334155" stroke-width="1.2"/>
+  <path d="M25 118 Q23 142 27 166" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-opacity="0.78" stroke-linecap="round"/>
+</svg>

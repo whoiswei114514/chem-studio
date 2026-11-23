@@ -1,1 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="190" height="160" viewBox="0 0 190 160"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="95" cy="80" rx="35" ry="35" fill="#edc781"></ellipse><line x1="140" y1="80" x2="160" y2="80" stroke="#d79b59" stroke-width="3"></line><line x1="133.97114317029974" y1="102.5" x2="151.29165124598853" y2="112.5" stroke="#d79b59" stroke-width="3"></line><line x1="117.5" y1="118.97114317029974" x2="127.5" y2="136.2916512459885" stroke="#d79b59" stroke-width="3"></line><line x1="95" y1="125" x2="95" y2="145" stroke="#d79b59" stroke-width="3"></line><line x1="72.50000000000001" y1="118.97114317029974" x2="62.500000000000014" y2="136.29165124598853" stroke="#d79b59" stroke-width="3"></line><line x1="56.02885682970026" y1="102.5" x2="38.70834875401148" y2="112.5" stroke="#d79b59" stroke-width="3"></line><line x1="50" y1="80" x2="30" y2="80.00000000000001" stroke="#d79b59" stroke-width="3"></line><line x1="56.02885682970025" y1="57.500000000000014" x2="38.708348754011475" y2="47.50000000000002" stroke="#d79b59" stroke-width="3"></line><line x1="72.49999999999997" y1="41.02885682970027" x2="62.49999999999997" y2="23.708348754011496" stroke="#d79b59" stroke-width="3"></line><line x1="94.99999999999999" y1="35" x2="94.99999999999999" y2="15" stroke="#d79b59" stroke-width="3"></line><line x1="117.5" y1="41.02885682970026" x2="127.5" y2="23.70834875401149" stroke="#d79b59" stroke-width="3"></line><line x1="133.97114317029974" y1="57.49999999999998" x2="151.2916512459885" y2="47.49999999999997" stroke="#d79b59" stroke-width="3"></line></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="160" viewBox="0 0 190 160">
+<title>太阳</title>
+<defs>
+  <linearGradient id="sun-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="sun-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="sun-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="sun-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="sun-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="sun-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="sun-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="sun-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="sun-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="sun-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="sun-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="sun-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="sun-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="sun-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="sun-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="sun-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<g stroke-linecap="round" stroke-linejoin="round">
+      <line x1="137" y1="80" x2="157" y2="80" stroke="#D97706" stroke-width="3.2"/><line x1="131.373" y1="101" x2="148.694" y2="111" stroke="#D97706" stroke-width="3.2"/><line x1="116" y1="116.373" x2="126" y2="133.694" stroke="#D97706" stroke-width="3.2"/><line x1="95" y1="122" x2="95" y2="142" stroke="#D97706" stroke-width="3.2"/><line x1="74" y1="116.373" x2="64" y2="133.694" stroke="#D97706" stroke-width="3.2"/><line x1="58.627" y1="101" x2="41.306" y2="111" stroke="#D97706" stroke-width="3.2"/><line x1="53" y1="80" x2="33" y2="80" stroke="#D97706" stroke-width="3.2"/><line x1="58.627" y1="59" x2="41.306" y2="49" stroke="#D97706" stroke-width="3.2"/><line x1="74" y1="43.627" x2="64" y2="26.306" stroke="#D97706" stroke-width="3.2"/><line x1="95" y1="38" x2="95" y2="18" stroke="#D97706" stroke-width="3.2"/><line x1="116" y1="43.627" x2="126" y2="26.306" stroke="#D97706" stroke-width="3.2"/><line x1="131.373" y1="59" x2="148.694" y2="49" stroke="#D97706" stroke-width="3.2"/>
+      <circle cx="95" cy="80" r="34" fill="url(#sun-brass)" stroke="#1F2937" stroke-width="2.2"/>
+      <circle cx="85" cy="70" r="10" fill="#FEF3C7" fill-opacity="0.65" stroke="none"/>
+    </g>
+</svg>

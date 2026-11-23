@@ -4,6 +4,70 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+
+// Unified style module delegation:
+// - `--module=glassware|equipment|science-misc [--out=<dir>]`: run a single artist module cleanly.
+// - Full run (no `--module`): once all 3 modules exist under scripts/apparatus/, generates the entire unified suite.
+(() => {
+  const args = process.argv.slice(2);
+  const modArg = args.find((a) => a.startsWith('--module='));
+  const outArg = args.find((a) => a.startsWith('--out='));
+  const moduleMap = {
+    glassware: path.join(__dirname, 'apparatus', 'part-glassware.cjs'),
+    equipment: path.join(__dirname, 'apparatus', 'part-equipment.cjs'),
+    'science-misc': path.join(__dirname, 'apparatus', 'part-science-misc.cjs'),
+  };
+  const allModulesExist = Object.values(moduleMap).every((p) => fs.existsSync(p));
+  if (!modArg && !allModulesExist) return;
+
+  const style = require('./apparatus/svg-style.cjs');
+  const outDir = outArg
+    ? path.resolve(outArg.slice('--out='.length))
+    : path.resolve(__dirname, '../assets/apparatus');
+  fs.mkdirSync(outDir, { recursive: true });
+  const { register, entries } = style.makeRegistrar({ targetDir: outDir });
+
+  if (modArg) {
+    const key = modArg.slice('--module='.length);
+    const modPath = moduleMap[key];
+    if (!modPath || !fs.existsSync(modPath)) {
+      throw new Error(`Module not found for --module=${key}: ${modPath || 'unknown'}`);
+    }
+    require(modPath)(register);
+  } else {
+    for (const modPath of Object.values(moduleMap)) {
+      require(modPath)(register);
+    }
+  }
+
+  const expectedFiles = new Set(['manifest.json']);
+  for (const e of entries) {
+    expectedFiles.add(e.svg);
+    if (Array.isArray(e.variants)) {
+      for (const v of e.variants) expectedFiles.add(v.svg);
+    }
+  }
+  if (!modArg) {
+    for (const file of fs.readdirSync(outDir)) {
+      if (file.endsWith('.svg') && !expectedFiles.has(file)) {
+        fs.unlinkSync(path.join(outDir, file));
+      }
+    }
+  }
+
+  const manifest = {
+    format: 'chem-studio-art',
+    version: 1,
+    license: 'WTFPL-2.0',
+    author: 'Chem Studio contributors',
+    method: 'Programmatic schematic drawing from authored geometric primitives; no raster tracing.',
+    assets: entries,
+  };
+  fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n', 'utf8');
+  console.log(`Generated ${entries.length} unified SVG assets in ${outDir}`);
+  process.exit(0);
+})();
+
 const target = path.resolve(__dirname, '../assets/apparatus');
 fs.mkdirSync(target, {recursive:true});
 const C={ink:'#294454', glass:'#dcefeb', teal:'#258f89', metal:'#c6d2d7', warm:'#d79b59', red:'#c75b55', leaf:'#6da37c'};

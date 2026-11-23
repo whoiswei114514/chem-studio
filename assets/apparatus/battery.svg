@@ -1,1 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="90" height="170" viewBox="0 0 90 170"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><rect x="22" y="24" width="46" height="129" rx="6" fill="#c6d2d7"></rect><rect x="35" y="15" width="20" height="9" rx="2" fill="#294454"></rect><rect x="24" y="28" width="42" height="35" rx="3" fill="#d79b59"></rect><text x="45" y="52" fill="#294454" stroke="none" font-size="22" font-family="sans-serif" text-anchor="middle">+</text><line x1="37" y1="131" x2="53" y2="131"></line></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="170" viewBox="0 0 90 170">
+<title>电池</title>
+<defs>
+  <linearGradient id="battery-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="battery-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="battery-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="battery-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="battery-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="battery-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="battery-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="battery-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="battery-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="battery-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="battery-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="battery-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="battery-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="battery-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="battery-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="battery-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Positive brass nub -->
+      <rect x="35" y="13" width="20" height="11" rx="3" fill="url(#battery-brass)" stroke="#1F2937" stroke-width="2.0"/>
+      <!-- Negative base cap -->
+      <rect x="26" y="148" width="38" height="8" rx="2" fill="url(#battery-metal)" stroke="#1F2937" stroke-width="1.8"/>
+      <!-- Main cylindrical D-cell casing -->
+      <rect x="22" y="24" width="46" height="124" rx="5" fill="url(#battery-chassis)" stroke="#1F2937" stroke-width="2.2"/>
+      <!-- Teal positive shoulder band -->
+      <path d="M23 28 Q23 25 27 25 H63 Q67 25 67 28 V62 H23 Z" fill="url(#battery-accent)" stroke="none"/>
+      <line x1="22" y1="62" x2="68" y2="62" stroke="#1F2937" stroke-width="1.6"/>
+      <text x="45" y="48" fill="#FFFFFF" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">+</text>
+      <text x="45" y="92" fill="#1F2937" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">1.5 V</text>
+      <text x="45" y="108" fill="#64748B" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.2" font-weight="700" text-anchor="middle">DRY CELL</text>
+      <text x="45" y="137" fill="#334155" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">−</text>
+      <line x1="28" y1="30" x2="28" y2="142" stroke="#FFFFFF" stroke-width="2.4" stroke-opacity="0.55" stroke-linecap="round"/>
+    </g>
+  
+</svg>

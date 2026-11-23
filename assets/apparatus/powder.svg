@@ -1,1 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="170" height="130" viewBox="0 0 170 130"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M14 111 Q39 102 59 68 Q84 30 107 72 Q133 98 158 111Z" fill="#d9d5c7"></path><ellipse cx="45" cy="77" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="82" cy="96" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="119" cy="83" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="71" cy="102" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="108" cy="89" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="60" cy="108" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="97" cy="95" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="49" cy="82" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="86" cy="101" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="123" cy="88" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="75" cy="107" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="112" cy="94" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="64" cy="81" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="101" cy="100" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="53" cy="87" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="90" cy="106" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="127" cy="93" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="79" cy="80" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="116" cy="99" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="68" cy="86" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="105" cy="105" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="57" cy="92" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="94" cy="79" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="46" cy="98" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="83" cy="85" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="120" cy="104" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="72" cy="91" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="109" cy="78" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="61" cy="97" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse><ellipse cx="98" cy="84" rx="1.3" ry="1.3" fill="#294454" stroke="none"></ellipse></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="130" viewBox="0 0 170 130">
+<title>粉末</title>
+<defs>
+  <linearGradient id="powder-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="powder-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="powder-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="powder-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="powder-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="powder-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="powder-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="powder-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="powder-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="powder-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="powder-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="powder-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="powder-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="powder-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="powder-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="powder-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<g stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 112 Q46 102 68 62 Q85 34 102 62 Q124 102 154 112 Z" fill="url(#powder-porcelain)" stroke="#1F2937" stroke-width="2.2"/>
+      <circle cx="85" cy="62" r="1.4" fill="#334155" stroke="none"/><circle cx="75" cy="76" r="1.4" fill="#334155" stroke="none"/><circle cx="95" cy="76" r="1.4" fill="#334155" stroke="none"/><circle cx="66" cy="90" r="1.4" fill="#334155" stroke="none"/><circle cx="85" cy="88" r="1.4" fill="#334155" stroke="none"/><circle cx="104" cy="90" r="1.4" fill="#334155" stroke="none"/><circle cx="54" cy="102" r="1.4" fill="#334155" stroke="none"/><circle cx="74" cy="101" r="1.4" fill="#334155" stroke="none"/><circle cx="94" cy="102" r="1.4" fill="#334155" stroke="none"/><circle cx="116" cy="102" r="1.4" fill="#334155" stroke="none"/>
+      <path d="M68 66 Q85 42 100 66" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.65" stroke-linecap="round"/>
+    </g>
+</svg>

@@ -1,6 +1,6 @@
 # 第三方依赖与许可
 
-WTFPL v2 适用于本项目编写的代码、中文文档、`assets/apparatus`、`assets/laboratory`、`assets/physics` 器材图以及生化素材中的 41 项原创图。依赖项与第三方素材仍由各自作者持有权利，并按其许可提供。
+WTFPL v2 适用于本项目编写的代码、中文文档，以及内置的 `assets/apparatus`（233 项）、`assets/laboratory`（55 项）、`assets/biochemistry`（50 项）和 `assets/physics`（71 项）全部纯矢量器材图。依赖库及下载的模型/运行时仍由各自作者持有权利，并按其许可提供。
 
 | 依赖 | 用途 | 许可 / 条款 |
 | --- | --- | --- |
@@ -11,8 +11,6 @@ WTFPL v2 适用于本项目编写的代码、中文文档、`assets/apparatus`�
 | esbuild | 构建浏览器端代码 | MIT |
 | Microsoft WebView2 | Windows 内嵌浏览器 | Microsoft SDK / Runtime 条款 |
 | Boost | 编译时工具库 | Boost Software License 1.0 |
-| Servier / Bioicons | 6 项生化器材 SVG，裁边与调色 | CC BY 3.0 |
-| DBCLS / Bioicons | 3 项生化器材 SVG，裁边与调色 | CC BY 4.0 |
 | Ketcher 3.18.0 / Indigo WASM 1.46.0 | 离线结构绘制、键与环、MOL/KET/SMILES 转换及 SVG | Apache 2.0，保留 NOTICE |
 | React 18.3.1 / React DOM | 结构编辑器界面 | MIT |
 | events 3.3.0 | 浏览器事件接口 | MIT |
@@ -29,9 +27,7 @@ WTFPL v2 适用于本项目编写的代码、中文文档、`assets/apparatus`�
 
 用户自行导入的图片或外部素材包不自动获得本项目的 WTFPL 授权。请保留其自身许可信息。
 
-内置生化素材的逐项作者、上游链接、修改说明和哈希见 [署名清单](../assets/biochemistry/ATTRIBUTION.md) 与 `manifest.json`。许可正文保存在 `licenses/CC-BY-3.0.txt` 和 `licenses/CC-BY-4.0.txt`。再分发相应图或含这些图的导出报告时，须保留对应署名和许可说明；不表示原作者认可本项目或实验结论。
-
-全部 50 个生化源素材及 55 个实验室、71 个物理源素材都是可编辑矢量 SVG。部分第三方图含复杂裁剪定义，导出 SVG 时沿用现有兼容路径，嵌入该图的栅格渲染；所有原创新增图保持矢量路径。这不改变原素材的许可要求。
+全部 233 项基础/通用器材（236 个 SVG）、55 项实验室仪器、50 项生化器材及 71 项物理仪器均为本项目原创可编辑纯矢量 SVG，详见 `assets/biochemistry/ATTRIBUTION.md`、`assets/laboratory/ATTRIBUTION.md` 和 `assets/physics/ATTRIBUTION.md`（`licenses/` 保留历史第三方许可参考文本）。所有内置器材图均无嵌入位图或脚本，导出 SVG 保持完整矢量路径。
 
 结构绘图参考 KingDraw 的常见原子、键、环、框选和校验操作，但不复制 KingDraw 程序、图标或品牌。实际绘图引擎来自 [Ketcher](https://github.com/epam/ketcher)，化学服务来自 [Indigo](https://github.com/epam/Indigo)。构建时从实际 JS 输入记录传递依赖及许可，放入 `structure-editor/licenses` 和 `dependencies.json`；WASM 按 Indigo 上游许可提供。Ketcher 的 Apache 2.0 与 NOTICE 原文另存于仓库 `licenses`。
 

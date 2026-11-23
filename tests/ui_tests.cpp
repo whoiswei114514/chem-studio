@@ -41,7 +41,7 @@ class DrawingTests : public QObject {
                 QVERIFY(item.portDirections.value(port).manhattanLength() > 0);
             }
         }
-        QCOMPARE(count, 221);
+        QCOMPARE(count, 233);
         chem::DrawingItem flask("studio:round-bottom-flask");
         QCOMPARE(flask.availableNeckCounts(), QVector<int>({1, 2, 3, 4}));
         QVERIFY(flask.setNeckCount(4));
@@ -513,8 +513,9 @@ class DrawingTests : public QObject {
     }
     void stoppersOnlyOpenConnectedHoles_data() {
         QTest::addColumn<QString>("kind");
-        QTest::newRow("orange stopper") << QString("chemix:bung");
-        QTest::newRow("original stopper") << QString("legacy:asset-0665");
+        QTest::newRow("studio stopper") << QString("studio:bung");
+        QTest::newRow("orange stopper alias") << QString("chemix:bung");
+        QTest::newRow("original stopper alias") << QString("legacy:asset-0665");
     }
     void stoppersOnlyOpenConnectedHoles() {
         QFETCH(QString, kind);
@@ -568,7 +569,7 @@ class DrawingTests : public QObject {
     void rightAngleElbowStopsBeforeItsBend_data() {
         QTest::addColumn<QString>("stopperKind");
         QTest::addColumn<QString>("port");
-        for (const auto& kind : {"chemix:bung", "legacy:asset-0665"})
+        for (const auto& kind : {"studio:bung", "chemix:bung", "legacy:asset-0665"})
             for (const auto& port : {"inlet", "outlet"})
                 QTest::newRow(qPrintable(QString(kind) + port)) << QString(kind) << QString(port);
     }
@@ -579,7 +580,8 @@ class DrawingTests : public QObject {
         view.scene()->setProperty("precise", true);
         view.addApparatus(stopperKind, {300, 300});
         auto* stopper = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
-        view.addApparatus("chemix:tube-bend", {550, 150});
+        QVERIFY(stopper && stopper->setBoreCount(1));
+        view.addApparatus("studio:tube-bend", {550, 150});
         auto* elbow = dynamic_cast<chem::DrawingItem*>(view.scene()->selectedItems().front());
         QVERIFY(std::abs(QPointF::dotProduct(elbow->portDirection("inlet"), elbow->portDirection("outlet"))) < 1e-8);
         QVERIFY(view.connectItems(stopper->id, "bore-1", elbow->id, port));

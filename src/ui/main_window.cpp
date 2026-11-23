@@ -964,8 +964,7 @@ QWidget* MainWindow::drawingPage() {
         if (!d.catalogVisible)
             continue;
         if (!d.id.startsWith("studio:") && !d.id.startsWith("lab:") && !d.id.startsWith("bio:") &&
-            !d.id.startsWith("physics:") && !d.id.startsWith("legacy:") && !d.id.startsWith("chemix:") &&
-            !basics.contains(d.id))
+            !d.id.startsWith("physics:") && !basics.contains(d.id))
             continue;
         auto* item = new ApparatusPaletteItem(d.name, palette);
         item->setData(Qt::UserRole, d.id);
@@ -2390,37 +2389,15 @@ QWidget* MainWindow::libraryPage() {
     for (auto p : defaults)
         snippets.append(
             QJsonObject{{"name", p.first}, {"category", QStringLiteral("化学")}, {"text", p.second}});
-    QFile originals(QDir(resourceDirectory("CHEM_ART_DIR", "hxjp")).filePath("catalog.json"));
-    if (originals.open(QIODevice::ReadOnly) && originals.size() < 8*1024*1024) {
-        const auto catalog = QJsonDocument::fromJson(originals.readAll()).object();
-        if (catalog["format"] == "chem-original-resources")
-            for (const auto& value : catalog["entries"].toArray()) {
-                auto entry = value.toObject();
-                entry["original"] = true;
-                entry["template"] = catalog["template"];
-                entry["category"] = entry["drawing"].toBool() ? QStringLiteral("原版图形") : QStringLiteral("原版文字");
-                snippets.append(entry);
-            }
-    }
+    librarySource->setVisible(false);
     connect(librarySearch, &QLineEdit::textChanged, this, &MainWindow::refreshLibrary);
     connect(librarySource, &QComboBox::currentIndexChanged, this, &MainWindow::refreshLibrary);
     connect(libraryList, &QListWidget::currentItemChanged, this, [this, use, edit](QListWidgetItem* i) {
         if (!i) return;
         const auto entry = snippets[i->data(Qt::UserRole).toInt()].toObject();
-        const bool original = entry["original"].toBool();
-        use->setText(original ? QStringLiteral("插入原版素材到 Word") : QStringLiteral("加入文稿"));
-        edit->setEnabled(!original);
-        QString html = smartChemistryHtml(entry["text"].toString());
-        if (original) {
-            html = "<h3>" + entry["name"].toString().toHtmlEscaped() + "</h3>" + html;
-            for (const auto& definition : apparatusDefinitions())
-                if (definition.id.startsWith("legacy:") && definition.name == entry["name"].toString()) {
-                    DrawingItem item(definition.id);
-                    html += "<p><img width='220' src='data:image/svg+xml;base64," + QString::fromLatin1(item.artwork.toBase64()) + "'></p>";
-                    break;
-                }
-        }
-        snippetPreview->setHtml(html);
+        use->setText(QStringLiteral("加入文稿"));
+        edit->setEnabled(true);
+        snippetPreview->setHtml(smartChemistryHtml(entry["text"].toString()));
     });
     connect(use, &QPushButton::clicked, this, [this] {
         const auto* item = libraryList->currentItem();

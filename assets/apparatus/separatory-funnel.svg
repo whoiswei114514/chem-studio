@@ -1,1 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210"><g stroke="#294454" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><rect x="57" y="5" width="26" height="10" rx="0" fill="#c6d2d7"></rect><path d="M57 16 V36 C-2 58 30 129 62 137 V198 M83 16 V36 C142 58 110 129 78 137 V198" fill="none"></path><line x1="46" y1="156" x2="94" y2="156"></line><rect x="64" y="150" width="12" height="12" rx="2" fill="#258f89"></rect></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
+<title>分液漏斗</title>
+<defs>
+  <linearGradient id="separatory-funnel-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E2F1F7" stop-opacity="0.74"/>
+    <stop offset="22%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+    <stop offset="55%" stop-color="#F7FBFD" stop-opacity="0.56"/>
+    <stop offset="88%" stop-color="#CFE4EE" stop-opacity="0.70"/>
+    <stop offset="100%" stop-color="#DCECF4" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-glass-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#F7FBFD" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#E2F1F7" stop-opacity="0.64"/>
+    <stop offset="100%" stop-color="#CFE4EE" stop-opacity="0.78"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-coolant" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.40"/>
+    <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.46"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-frost" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="32%" stop-color="#F1F5F9" stop-opacity="0.84"/>
+    <stop offset="72%" stop-color="#CBD5E1" stop-opacity="0.74"/>
+    <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.80"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-metal" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#94A3B8"/>
+    <stop offset="28%" stop-color="#F8FAFC"/>
+    <stop offset="68%" stop-color="#E2E8F0"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-metal-v" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E2E8F0"/>
+    <stop offset="45%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-chassis" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#F1F5F9"/>
+    <stop offset="100%" stop-color="#E2E8F0"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-porcelain" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ECEBE4"/>
+    <stop offset="28%" stop-color="#FFFFFF"/>
+    <stop offset="68%" stop-color="#F4F3EE"/>
+    <stop offset="100%" stop-color="#DFDDD4"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-rubber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="28%" stop-color="#64748B"/>
+    <stop offset="72%" stop-color="#334155"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-cork" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C98A4B"/>
+    <stop offset="30%" stop-color="#E7B98A"/>
+    <stop offset="72%" stop-color="#B9783A"/>
+    <stop offset="100%" stop-color="#9A5E26"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-accent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#14B8A6"/>
+    <stop offset="100%" stop-color="#0F766E"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+    <stop offset="24%" stop-color="#D97706" stop-opacity="0.80"/>
+    <stop offset="58%" stop-color="#B45309" stop-opacity="0.86"/>
+    <stop offset="100%" stop-color="#78350F" stop-opacity="0.92"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-brass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B45309"/>
+    <stop offset="30%" stop-color="#FDE68A"/>
+    <stop offset="68%" stop-color="#D97706"/>
+    <stop offset="100%" stop-color="#92400E"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-copper" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9A3412"/>
+    <stop offset="35%" stop-color="#FDBA74"/>
+    <stop offset="70%" stop-color="#EA580C"/>
+    <stop offset="100%" stop-color="#7C2D12"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0F172A"/>
+    <stop offset="100%" stop-color="#1E293B"/>
+  </linearGradient>
+  <linearGradient id="separatory-funnel-liquid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.56"/>
+    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.40"/>
+  </linearGradient>
+</defs>
+<path d="M57 16 V36 C8 58 28 126 62 138 V198 H78 V138 C112 126 132 58 83 36 V16 Z" fill="url(#separatory-funnel-glass)" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round"/>
+  <polygon points="80.5,19.7 59.5,19.7 61.5,36 78.5,36" fill="url(#separatory-funnel-frost)" stroke="#1F2937" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#64748B" stroke-width="0.9" stroke-opacity="0.62" stroke-linecap="round"><line x1="78.855" y1="21.7" x2="61.82" y2="27.2"/><line x1="61.145" y1="21.7" x2="78.18" y2="27.2"/><line x1="78.339" y1="25.9" x2="62.336" y2="31.4"/><line x1="61.661" y1="25.9" x2="77.664" y2="31.4"/><line x1="77.824" y1="30.1" x2="62.753" y2="34.8"/><line x1="62.176" y1="30.1" x2="77.247" y2="34.8"/><line x1="77.309" y1="34.3" x2="62.753" y2="34.8"/><line x1="62.691" y1="34.3" x2="77.247" y2="34.8"/></g>
+  <rect x="57" y="16" width="26" height="4.2" rx="2.1" fill="url(#separatory-funnel-glass)" stroke="#1F2937" stroke-width="2"/>
+  <line x1="61.5" y1="36" x2="78.5" y2="36" stroke="#334155" stroke-width="1.3"/>
+  
+  
+  <g>
+    <path d="M59 151.5 L81 152.7 L81 159.3 L59 160.5 Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="1.8" stroke-linejoin="round"/>
+    <rect x="52" y="149.5" width="7" height="13" rx="2" fill="#0F766E" stroke="#1F2937" stroke-width="1.6"/>
+    <rect x="81" y="152.5" width="5" height="7" rx="1.5" fill="#334155" stroke="#1F2937" stroke-width="1.4"/>
+    <line x1="67.5" y1="153.5" x2="72.5" y2="158.5" stroke="#334155" stroke-width="1.2"/>
+  </g>
+  <path d="M38 70 C36 96 48 118 62 130" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.78" stroke-linecap="round"/>
+</svg>
