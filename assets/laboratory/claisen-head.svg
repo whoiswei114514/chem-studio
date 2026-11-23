@@ -7,15 +7,14 @@
       C44 84 79.5 78 79.5 58 V26
       M60.5 26 V54
       C60.5 64 40 66 31.5 66 V44"
-      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10 22 Q12 23 12 26.5 L12.5 44" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M34 22 Q32 23 32 26.5 L31.5 44" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 44 Q22 46.2 30 44" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
-  <path d="M58 4 Q60 5 60 8.5 L60.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M82 4 Q80 5 80 8.5 L79.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M62 26 Q70 28.2 78 26" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
-  <line x1="8.5" y1="128" x2="35.5" y2="128" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
-  <path d="M10.5 128 L13.2 150" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M33.5 128 L30.8 150" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M11.5 130.2 Q22 132.4 32.5 130.2" fill="none" stroke="#DCE8EC" stroke-width="1.3" stroke-linecap="round"/>
+      fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 22 L10.7 44 H12.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 22 L33.3 44 H31.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14.7 45.4 Q22 48 29.3 45.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M58 4 L58.7 26 H60.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M82 4 L81.3 26 H79.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62.7 27.4 Q70 30 77.3 27.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M12.7 128 H10.5 L13.2 150" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31.3 128 H33.5 L30.8 150" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13.7 130.8 Q22 133.4 30.3 130.8" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

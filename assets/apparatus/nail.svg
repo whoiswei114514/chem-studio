@@ -3,8 +3,8 @@
 <title>铁钉</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="14" y="42" width="8" height="32" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
-      <path d="M22 52 H146 L170 58 L146 64 H22 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
+      <rect x="14" y="42" width="8" height="32" rx="2" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
+      <path d="M22 52 H146 L170 58 L146 64 H22 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
     </g>
   
 </svg>

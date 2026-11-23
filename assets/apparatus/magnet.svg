@@ -3,11 +3,11 @@
 <title>磁铁</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="18" y="52" width="72" height="46" rx="3" fill="#C84B31" stroke="none"/>
-      <rect x="90" y="52" width="72" height="46" rx="3" fill="#3A7CA5" stroke="none"/>
-      <line x1="22" y1="58" x2="158" y2="58" stroke="#FFFFFF" stroke-opacity="0.32" stroke-width="2.6"/>
-      <line x1="90" y1="52" x2="90" y2="98" stroke="#294454" stroke-width="2.4"/>
-      <rect x="18" y="52" width="144" height="46" rx="3.5" fill="none" stroke="#294454" stroke-width="2.4"/>
+      <rect x="18" y="52" width="72" height="46" rx="3" fill="#D13834" stroke="none"/>
+      <rect x="90" y="52" width="72" height="46" rx="3" fill="#3E74B4" stroke="none"/>
+      <line x1="22" y1="58" x2="158" y2="58" stroke="#FFFFFF" stroke-opacity="0.30" stroke-width="2.4"/>
+      <line x1="90" y1="52" x2="90" y2="98" stroke="#333333" stroke-width="2.8"/>
+      <rect x="18" y="52" width="144" height="46" rx="3.5" fill="none" stroke="#333333" stroke-width="2.8"/>
       <text x="54" y="81" fill="#FFFFFF" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">N</text>
       <text x="126" y="81" fill="#FFFFFF" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">S</text>
     </g>

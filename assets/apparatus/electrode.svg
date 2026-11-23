@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="176" viewBox="0 0 54 176">
 <title>电极</title>
-<rect x="12" y="48" width="12" height="20" rx="4" fill="#F2F2EE" stroke="#294454" stroke-width="2.0"/>
-      <rect x="22" y="46" width="114" height="24" rx="2" fill="#E6F4F3" stroke="#294454" stroke-width="2.2"/>
-      <line x1="28" y1="58" x2="132" y2="58" stroke="#258F89" stroke-width="2.2" stroke-linecap="round"/>
-      <rect x="136" y="42" width="20" height="32" rx="3" fill="#258F89" stroke="#294454" stroke-width="2.1"/>
-      <rect x="156" y="51" width="14" height="14" rx="3" fill="#C9A048" stroke="#294454" stroke-width="2.0"/>
+<rect x="21" y="12" width="12" height="12" rx="2.5" fill="#E4A838" stroke="#333333" stroke-width="2.0"/>
+      <rect x="15" y="24" width="24" height="18" rx="3" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/>
+      <rect x="17" y="42" width="20" height="114" rx="2" fill="#E6F4F9" stroke="#333333" stroke-width="2.2"/>
+      <line x1="27" y1="44" x2="27" y2="148" stroke="#4A4F55" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="19" y="156" width="16" height="10" rx="3" fill="#EFEFEF" stroke="#333333" stroke-width="2.0"/>
 </svg>

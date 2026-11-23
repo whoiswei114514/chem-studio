@@ -3,10 +3,10 @@
 <title>凸透镜</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <line x1="14" y1="80" x2="176" y2="80" stroke="#7E939E" stroke-width="1.5" stroke-dasharray="6 5"/>
-      <path d="M95 16 Q50 80 95 144 Q140 80 95 16 Z" fill="#DCEFEB" fill-opacity="0.82" stroke="#294454" stroke-width="2.8"/>
+      <line x1="14" y1="80" x2="176" y2="80" stroke="#B8BCC2" stroke-width="1.5" stroke-dasharray="6 5"/>
+      <path d="M95 16 Q50 80 95 144 Q140 80 95 16 Z" fill="#EEF4F7" fill-opacity="0.82" stroke="#333333" stroke-width="4"/>
       <path d="M88 30 Q68 62 74 96" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
-      <line x1="95" y1="74" x2="95" y2="86" stroke="#3D5968" stroke-width="1.4"/>
+      <line x1="95" y1="74" x2="95" y2="86" stroke="#4A4F55" stroke-width="1.4"/>
     </g>
   
 </svg>

@@ -3,16 +3,16 @@
 <title>选择室</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="90" cy="90" r="65" fill="#F4F9F8" stroke="#294454" stroke-width="2.8"/>
-      <path d="M90 90 V32 A58 58 0 0 1 148 90 Z" fill="#E6F4F3" stroke="none"/>
-      <path d="M90 90 H148 A58 58 0 0 1 90 148 Z" fill="#F4F9F8" stroke="none"/>
-      <path d="M90 90 V148 A58 58 0 0 1 32 90 Z" fill="#DCE5E8" stroke="none"/>
-      <path d="M90 90 H32 A58 58 0 0 1 90 32 Z" fill="#D9ECF2" stroke="none"/>
-      <circle cx="90" cy="90" r="58" fill="none" stroke="#3D5968" stroke-width="1.6"/>
-      <line x1="32" y1="90" x2="148" y2="90" stroke="#294454" stroke-width="1.8"/>
-      <line x1="90" y1="32" x2="90" y2="148" stroke="#294454" stroke-width="1.8"/>
-      <circle cx="90" cy="90" r="14" fill="#F4F9F8" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="90" cy="90" r="4" fill="#258F89" stroke="none"/>
+      <circle cx="90" cy="90" r="65" fill="#FFFFFF" stroke="#333333" stroke-width="4"/>
+      <path d="M90 90 V32 A58 58 0 0 1 148 90 Z" fill="#E6F4F9" stroke="none"/>
+      <path d="M90 90 H148 A58 58 0 0 1 90 148 Z" fill="#FFFFFF" stroke="none"/>
+      <path d="M90 90 V148 A58 58 0 0 1 32 90 Z" fill="#E3E6EB" stroke="none"/>
+      <path d="M90 90 H32 A58 58 0 0 1 90 32 Z" fill="#D8EDF5" stroke="none"/>
+      <circle cx="90" cy="90" r="58" fill="none" stroke="#4A4F55" stroke-width="1.6"/>
+      <line x1="32" y1="90" x2="148" y2="90" stroke="#333333" stroke-width="1.8"/>
+      <line x1="90" y1="32" x2="90" y2="148" stroke="#333333" stroke-width="1.8"/>
+      <circle cx="90" cy="90" r="14" fill="#FFFFFF" stroke="#333333" stroke-width="2.0"/>
+      <circle cx="90" cy="90" r="4" fill="#3E74B4" stroke="none"/>
     </g>
   
 </svg>

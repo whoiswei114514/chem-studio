@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180">
+<svg xmlns="http://www.w3.org/2000/svg" width="136" height="168" viewBox="0 0 136 168">
 <title>橡胶软管</title>
-<path d="M16 32 C118 4 20 145 122 152" fill="none" stroke="#294454" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M16 32 C118 4 20 145 122 152" fill="none" stroke="#586F7C" stroke-width="14.8" stroke-linecap="butt" stroke-linejoin="round"/>
-  <rect x="14" y="21" width="7" height="22" rx="2" fill="#7E939E" stroke="#294454" stroke-width="2.2"/>
-  <rect x="117" y="141" width="7" height="22" rx="2" fill="#7E939E" stroke="#294454" stroke-width="2.2"/>
+<path d="M14 26 C112 2 20 138 120 144" fill="none" stroke="#333333" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M14 26 C112 2 20 138 120 144" fill="none" stroke="#595E66" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+  <rect x="12" y="15" width="7" height="22" rx="2" fill="#7C828A" stroke="#333333" stroke-width="2.4"/>
+  <rect x="115" y="133" width="7" height="22" rx="2" fill="#7C828A" stroke="#333333" stroke-width="2.4"/>
 </svg>

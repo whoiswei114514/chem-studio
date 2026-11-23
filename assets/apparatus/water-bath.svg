@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="88" viewBox="0 0 210 88">
 <title>水浴锅</title>
-<path d="M22 66 H14 Q10 66 10 72 V86 Q10 92 14 92 H22" fill="none" stroke="#294454" stroke-width="2.3" stroke-linecap="round"/>
-      <path d="M131 66 H139 Q143 66 143 72 V86 Q143 92 139 92 H131" fill="none" stroke="#294454" stroke-width="2.3" stroke-linecap="round"/>
-  <rect x="22" y="46" width="109" height="130" rx="5" fill="#DCE5E8" stroke="#294454" stroke-width="2.3"/>
-      <rect x="22" y="46" width="109" height="6" fill="#258F89" stroke="none"/>
-      <rect x="28" y="57" width="97" height="64" rx="3" fill="#F8FAF9" stroke="#9AB0B8" stroke-width="1.3"/>
-      <rect x="38" y="72" width="77" height="34" rx="3" fill="#E6F4F3" stroke="#3D5968" stroke-width="1.4"/>
-      <path d="M46 96 C54 88 64 102 74 94 C84 86 94 102 104 94" fill="none" stroke="#258F89" stroke-width="2.0" stroke-linecap="round"/>
-      <rect x="34" y="176" width="16" height="6" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="1.8"/><rect x="103" y="176" width="16" height="6" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="1.8"/>
-  <rect x="30" y="34" width="93" height="10" fill="#D9ECF2" stroke="none"/>
-      <path d="M16 34 V46 H137 V34 H123 V40 H30 V34 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M32 39 Q76.5 42 121 39" fill="none" stroke="#258F89" stroke-width="1.5" stroke-linecap="round"/>
-  <rect x="30" y="128" width="58" height="36" rx="6" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/><rect x="34" y="132" width="50" height="28" rx="4" fill="#EEF6F1" stroke="#294454" stroke-width="1.4"/><text x="59" y="145" fill="#294454" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="9.5" font-weight="700" text-anchor="middle">37.0°C</text><text x="59" y="156" fill="#258F89" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="6.8" font-weight="700" text-anchor="middle">SET 37.0</text><line x1="98.808" y1="155.192" x2="96.686" y2="157.314" stroke="#7E939E" stroke-width="1.1" stroke-linecap="round"/><line x1="95.99" y1="141.025" x2="94.604" y2="140.451" stroke="#7E939E" stroke-width="1.1" stroke-linecap="round"/><line x1="108" y1="133" x2="108" y2="130" stroke="#7E939E" stroke-width="1.1" stroke-linecap="round"/><line x1="120.01" y1="141.025" x2="121.396" y2="140.451" stroke="#7E939E" stroke-width="1.1" stroke-linecap="round"/><line x1="117.192" y1="155.192" x2="119.314" y2="157.314" stroke="#7E939E" stroke-width="1.1" stroke-linecap="round"/><circle cx="108" cy="146" r="10.5" fill="#F8FAF9" stroke="#294454" stroke-width="1.8"/><circle cx="108" cy="146" r="8.19" fill="#258F89" stroke="#3D5968" stroke-width="1.3"/><line x1="108" y1="146" x2="105.558" y2="139.291" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/><circle cx="108" cy="146" r="1.6" fill="#FFFFFF" stroke="none"/>
+<rect x="20" y="28" width="126" height="48" fill="#D8EDF5" stroke="none"/>
+      <path d="M21 28 Q52 31 83 28 Q114 25 145 28" fill="none" stroke="#72C2DD" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M12 14 H20 V74 H146 V14 H154 V80 H12 Z" fill="#E3E6EB" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+  <rect x="154" y="28" width="50" height="52" rx="4" fill="#E3E6EB" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/><line x1="160" y1="31" x2="198" y2="31" stroke="#F5F6F8" stroke-width="1.6" stroke-linecap="round"/><rect x="160" y="35" width="38" height="39" rx="2" fill="none" stroke="#C4C9D0" stroke-width="1.1"/><rect x="158" y="34" width="42" height="24" rx="5" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/><rect x="161.5" y="37.5" width="35" height="17" rx="3.5" fill="#E6EEF2" stroke="#333333" stroke-width="1.2"/><text x="179" y="49" fill="#22252A" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="7.8" font-weight="700" text-anchor="middle">37°C</text><circle cx="171" cy="68" r="3.2" fill="#3E74B4" stroke="#333333" stroke-width="1.2"/><circle cx="187" cy="68" r="3.2" fill="#B8292F" stroke="#333333" stroke-width="1.2"/>
 </svg>

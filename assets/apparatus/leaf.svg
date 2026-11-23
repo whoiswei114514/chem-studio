@@ -3,9 +3,9 @@
 <title>叶片</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M30 144 C-2 54 96 14 152 22 C158 102 92 166 30 144 Z" fill="#6DA37C" stroke="#294454" stroke-width="2.4"/>
-      <path d="M22 156 Q80 88 144 30" fill="none" stroke="#294454" stroke-width="2.4"/>
-      <path d="M58 116 L46 80 M84 90 L114 98 M104 68 L94 42 M74 100 L66 64" fill="none" stroke="#294454" stroke-width="1.8"/>
+      <path d="M30 144 C-2 54 96 14 152 22 C158 102 92 166 30 144 Z" fill="#5F9A6E" stroke="#333333" stroke-width="2.8"/>
+      <path d="M22 156 Q80 88 144 30" fill="none" stroke="#333333" stroke-width="2.4"/>
+      <path d="M58 116 L46 80 M84 90 L114 98 M104 68 L94 42 M74 100 L66 64" fill="none" stroke="#333333" stroke-width="1.8"/>
     </g>
   
 </svg>

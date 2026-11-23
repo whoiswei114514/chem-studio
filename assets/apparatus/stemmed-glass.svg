@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="190" viewBox="0 0 130 190">
 <title>高脚杯</title>
-<path d="M24 18 Q80 12 136 18" fill="none" stroke="#9AB0B8" stroke-width="1.4" stroke-linecap="round"/>
-  <path d="M24 18 C25 96 55 112 80 112 C105 112 135 96 136 18" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M24 18 Q80 24 136 18" fill="none" stroke="#3D5968" stroke-width="1.4" stroke-linecap="round"/>
-  <line x1="80" y1="112" x2="80" y2="177" stroke="#294454" stroke-width="2.8" stroke-linecap="round"/>
-  <ellipse cx="80" cy="182" rx="43" ry="6" fill="none" stroke="#294454" stroke-width="2.5"/>
+<path d="M14 14 Q65 8 116 14" fill="none" stroke="#8C929A" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M14 14 C15 90 42 106 65 106 C88 106 115 90 116 14" fill="none" stroke="#333333" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14 14 Q65 20 116 14" fill="none" stroke="#4A4F55" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="65" y1="106" x2="65" y2="174" stroke="#333333" stroke-width="3.6" stroke-linecap="round"/>
+  <ellipse cx="65" cy="178" rx="40" ry="6" fill="none" stroke="#333333" stroke-width="3.0"/>
 </svg>

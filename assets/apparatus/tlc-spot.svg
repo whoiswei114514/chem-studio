@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
 <title>色谱斑点</title>
-<ellipse cx="90" cy="74" rx="24" ry="16" fill="#D4EAE8" stroke="#258F89" stroke-width="1.5" stroke-dasharray="3 2"/>
-      <ellipse cx="90" cy="74" rx="15" ry="10" fill="#258F89" stroke="#294454" stroke-width="2.1"/>
+<circle cx="40" cy="40" r="22" fill="#D8EDF5" stroke="#3E74B4" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <circle cx="40" cy="40" r="14" fill="#3E74B4" stroke="#333333" stroke-width="2.2"/>
 </svg>

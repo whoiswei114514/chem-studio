@@ -1244,6 +1244,78 @@ class ButtonAuditTests : public QObject {
         const QPixmap v4Shot = captureCurrentWindow(2);
         QVERIFY(!v4Shot.isNull());
         QVERIFY(v4Shot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas-v4.png")));
+
+        // Capture Round 5 v5 Chemix Neutral Charcoal (#333333) showcase canvas (clean enough for docs/images/drawing.png)
+        window->drawing->restore({});
+        window->drawing->scene()->setProperty("precise", true);
+        for (int n = 1; n <= 4; ++n) {
+            window->drawing->addApparatus("studio:round-bottom-flask", {30.0 + (n - 1) * 170.0, 35.0});
+            auto* f = singleSelectedDrawingItem(window->drawing);
+            QVERIFY(f && f->setNeckCount(n));
+        }
+
+        for (const auto& spec : QList<QPair<QString, QPointF>>{
+                 {"studio:hot-plate", {45, 332}},
+                 {"studio:balance", {275, 326}},
+                 {"studio:powerpack", {505, 282}},
+                 {"bio:online-spectrophotometer", {800, 540}},
+                 {"physics:digital-oscilloscope", {1110, 510}},
+             }) {
+            window->drawing->addApparatus(spec.first, spec.second);
+            auto* added = singleSelectedDrawingItem(window->drawing);
+            QVERIFY2(added && added->renderer && added->renderer->isValid(), qPrintable(spec.first));
+        }
+
+        // Stacked tripod + Bunsen burner + wire-gauze + beaker
+        window->drawing->addApparatus("studio:tripod", {786, 190});
+        window->drawing->addApparatus("studio:bunsen", {808, 170});
+        window->drawing->addApparatus("studio:wire-gauze", {770, 181});
+        auto* v5Gauze = singleSelectedDrawingItem(window->drawing);
+        window->drawing->addApparatus("studio:beaker", {775, 25});
+        auto* v5Beaker = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v5Gauze && v5Beaker && window->drawing->connectItems(v5Gauze->id, "surface", v5Beaker->id, "base"));
+
+        // Flasks seated inside 2D sand-bath & water-bath
+        window->drawing->addApparatus("studio:sand-bath", {980, 300});
+        auto* v5SandBath = singleSelectedDrawingItem(window->drawing);
+        window->drawing->addApparatus("studio:round-bottom-flask", {1000, 146});
+        auto* v5SandFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v5SandBath && v5SandFlask && window->drawing->connectItems(v5SandBath->id, "surface", v5SandFlask->id, "base"));
+
+        window->drawing->addApparatus("studio:water-bath", {1215, 298});
+        window->drawing->addApparatus("studio:round-bottom-flask", {1218, 184});
+        auto* v5WaterFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v5WaterFlask && v5WaterFlask->renderer && v5WaterFlask->renderer->isValid());
+
+        // Snapped multi-piece distillation rig with opposite-side coolant ports
+        window->drawing->addApparatus("studio:round-bottom-flask", {95, 595});
+        auto* v5Flask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v5Flask && v5Flask->setNeckCount(3));
+        window->drawing->addApparatus("lab:plain-distillation-head", {95, 445});
+        auto* v5Head = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v5Flask->id, "mouth-2", v5Head->id, "outlet"));
+        window->drawing->addApparatus("studio:liebig-condenser", {295, 490});
+        auto* v5Cond = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v5Head->id, "side", v5Cond->id, "inlet"));
+        window->drawing->addApparatus("lab:vacuum-receiver-adapter", {515, 595});
+        auto* v5Recv = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v5Cond->id, "outlet", v5Recv->id, "inlet"));
+        window->drawing->addApparatus("lab:ground-conical-flask", {525, 725});
+        auto* v5RecFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v5Recv->id, "outlet", v5RecFlask->id, "mouth"));
+
+        window->drawing->scene()->clearSelection();
+        window->drawing->scene()->setProperty("precise", false);
+        window->drawing->fitCanvas();
+        QTest::qWait(220);
+        const auto v5Svg = window->drawing->svgData();
+        QVERIFY(QSvgRenderer(v5Svg).isValid());
+        QVERIFY(!v5Svg.contains("<image") && !v5Svg.contains("<linearGradient") && !v5Svg.contains("<radialGradient"));
+        const auto v5Upper = v5Svg.toUpper();
+        QVERIFY(!v5Upper.contains("#294454") && !v5Upper.contains("#258F89") && !v5Upper.contains("#0F172A"));
+        const QPixmap v5Shot = captureCurrentWindow(2);
+        QVERIFY(!v5Shot.isNull());
+        QVERIFY(v5Shot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas-v5.png")));
     }
 
     void cleanupTestCase() {

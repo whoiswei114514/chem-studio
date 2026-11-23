@@ -3,9 +3,9 @@
 <title>烟雾</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M56 114 C40 90 74 78 58 52 C48 34 62 20 72 14 C68 28 62 40 70 54 C84 78 54 92 64 114 Z" fill="#C6D2D7" stroke="#7E939E" stroke-width="1.4"/>
-      <path d="M84 118 C64 88 104 72 86 40 C76 24 92 14 102 10 C96 24 92 38 100 54 C114 80 80 94 94 118 Z" fill="#9AB0B8" fill-opacity="0.72" stroke="#3D5968" stroke-width="1.5"/>
-      <path d="M112 114 C100 92 128 80 116 54 C108 38 120 26 128 20 C124 32 120 42 126 56 C136 78 110 94 120 114 Z" fill="#C6D2D7" stroke="#7E939E" stroke-width="1.4"/>
+      <path d="M56 114 C40 90 74 78 58 52 C48 34 62 20 72 14 C68 28 62 40 70 54 C84 78 54 92 64 114 Z" fill="#C4C9D0" stroke="#B8BCC2" stroke-width="1.4"/>
+      <path d="M84 118 C64 88 104 72 86 40 C76 24 92 14 102 10 C96 24 92 38 100 54 C114 80 80 94 94 118 Z" fill="#8C929A" fill-opacity="0.72" stroke="#4A4F55" stroke-width="1.5"/>
+      <path d="M112 114 C100 92 128 80 116 54 C108 38 120 26 128 20 C124 32 120 42 126 56 C136 78 110 94 120 114 Z" fill="#C4C9D0" stroke="#B8BCC2" stroke-width="1.4"/>
     </g>
   
 </svg>

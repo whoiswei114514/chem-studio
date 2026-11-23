@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="216" viewBox="0 0 100 216">
 <title>集气瓶</title>
-<path d="M38 14 Q42 15 43 21 V174 L35 181 H125 L117 174 V21 Q118 15 122 14" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
-  <line x1="44" y1="173" x2="116" y2="173" stroke="#3D5968" stroke-width="1.4"/>
+<path d="M16 12 Q21 14 22 20 V194 L12 204 H88 L78 194 V20 Q79 14 84 12" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="22" y1="194" x2="78" y2="194" stroke="#4A4F55" stroke-width="1.6"/>
 </svg>

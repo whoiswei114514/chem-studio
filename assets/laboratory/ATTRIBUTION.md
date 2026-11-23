@@ -1,7 +1,7 @@
 # Additional Laboratory Artwork
 
 All 55 vector illustrations in `assets/laboratory/` are generated deterministically by
-`scripts/generate-laboratory-art.cjs` in Chem Studio's classic flat scientific line-art style
+`scripts/generate-laboratory-art.cjs` in Chem Studio's neutral charcoal (`#333333`) & stepped-collar flat orthographic style
 (Qt `QSvgRenderer` / pure vector SVG 1.1 compatible, zero gradients, zero embedded rasters, zero filters or clipPaths).
 
 - **Author**: Chem Studio contributors

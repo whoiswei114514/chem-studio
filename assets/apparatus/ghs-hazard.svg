@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="140" viewBox="0 0 180 140">
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
 <title>危险提示菱形</title>
-<path d="M90 10 L150 70 L90 130 L30 70 Z" fill="#F8FAF9" stroke="#C84B31" stroke-width="7.5" stroke-linejoin="round"/>
-      <rect x="86" y="38" width="8" height="42" rx="4" fill="#294454" stroke="none"/>
-      <circle cx="90" cy="96" r="5" fill="#294454" stroke="none"/>
+<path d="M70 10 L130 70 L70 130 L10 70 Z" fill="#FFFFFF" stroke="#B8292F" stroke-width="8" stroke-linejoin="round"/>
+      <rect x="65.5" y="38" width="9" height="42" rx="4.5" fill="#333333" stroke="none"/>
+      <circle cx="70" cy="96" r="5" fill="#333333" stroke="none"/>
 </svg>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
+<svg xmlns="http://www.w3.org/2000/svg" width="76" height="160" viewBox="0 0 76 160">
 <title>石蕊试纸</title>
-<rect x="40" y="22" width="38" height="104" rx="2" fill="#C84B31" stroke="#294454" stroke-width="2.2"/>
-      <rect x="102" y="22" width="38" height="104" rx="2" fill="#3A7CA5" stroke="#294454" stroke-width="2.2"/>
+<rect x="12" y="12" width="22" height="136" rx="2" fill="#B8292F" stroke="#333333" stroke-width="2.2"/>
+      <rect x="42" y="12" width="22" height="136" rx="2" fill="#3E74B4" stroke="#333333" stroke-width="2.2"/>
 </svg>

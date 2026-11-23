@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="180" viewBox="0 0 32 180">
 <title>毛细管</title>
-<path d="M64 10 V165 M76 10 V165" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round"/>
-  <line x1="70" y1="12" x2="70" y2="163" stroke="#3D5968" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M10 10 V170 M22 10 V170" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="16" y1="12" x2="16" y2="168" stroke="#4A4F55" stroke-width="2.0" stroke-linecap="round"/>
 </svg>

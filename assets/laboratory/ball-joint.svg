@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="148" height="48" viewBox="0 0 148 48">
 <title>球形磨口接头（球头）</title>
-<path d="M2 11 H114 M2 37 H114" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M114 11 L123 4 A21 21 0 0 1 144 24 A21 21 0 0 1 123 44 L114 37" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M122 8 A18 18 0 0 1 139 24 A18 18 0 0 1 122 40" fill="none" stroke="#3D5968" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>
+<path d="M2 11 H114 M2 37 H114" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M114 11 L123 4 A21 21 0 0 1 144 24 A21 21 0 0 1 123 44 L114 37" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M122 8 A18 18 0 0 1 139 24 A18 18 0 0 1 122 40" fill="none" stroke="#4A4F55" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>
   
 </svg>

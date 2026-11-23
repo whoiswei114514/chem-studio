@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170">
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="176" viewBox="0 0 144 176">
 <title>台灯</title>
-<ellipse cx="88" cy="156" rx="56" ry="9.5" fill="#DCE5E8" stroke="#294454" stroke-width="2.3"/>
-      <rect x="80" y="141" width="16" height="13" rx="3" fill="#3D5968" stroke="#294454" stroke-width="2.0"/>
-      <path d="M88 141 L58 92 L120 38" fill="none" stroke="#294454" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M88 141 L58 92 L120 38" fill="none" stroke="#C6D2D7" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="58" cy="92" r="7.5" fill="#258F89" stroke="#294454" stroke-width="2.0"/>
-      <path d="M104 20 C122 6 148 12 158 30 L176 68 L112 80 Z" fill="#DCE5E8" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <ellipse cx="144" cy="74" rx="24" ry="6.5" transform="rotate(-10 144 74)" fill="#EAD79B" stroke="#294454" stroke-width="1.8"/>
+<ellipse cx="46" cy="161" rx="34" ry="7" fill="#C4C9D0" stroke="#333333" stroke-width="2.4"/>
+      <rect x="40" y="148" width="12" height="10" rx="2" fill="#3A3E44" stroke="#333333" stroke-width="1.8"/>
+      <path d="M46 148 L24 90 L86 38" fill="none" stroke="#333333" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M46 148 L24 90 L86 38" fill="none" stroke="#E3E6EB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="24" cy="90" r="6" fill="#7C828A" stroke="#333333" stroke-width="1.8"/>
+      <path d="M72 22 C88 8 112 12 122 30 L136 66 L78 76 Z" fill="#E3E6EB" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+      <ellipse cx="108" cy="72" rx="22" ry="5.5" transform="rotate(-10 108 72)" fill="#F0C76B" stroke="#333333" stroke-width="1.8"/>
 </svg>

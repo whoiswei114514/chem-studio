@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="184" height="28" viewBox="0 0 184 28">
 <title>铁圈</title>
-<ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="#294454" stroke-width="7.2"/>
-      <ellipse cx="119" cy="72" rx="44" ry="17" fill="none" stroke="#C6D2D7" stroke-width="2.8"/>
-      <rect x="16" y="62" width="15" height="20" rx="3" fill="#3D5968" stroke="#294454" stroke-width="2.2"/>
-      <rect x="4" y="69" width="12" height="6" rx="2" fill="#C9A048" stroke="#294454" stroke-width="1.7"/>
-      <line x1="6" y1="64" x2="6" y2="80" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-      <rect x="31" y="69" width="44" height="6" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
+<rect x="10" y="5" width="15" height="18" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/><rect x="3" y="11.5" width="7" height="5" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/><line x1="4" y1="8" x2="4" y2="20" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
+      <rect x="25" y="11" width="54" height="6" rx="1.5" fill="#E3E6EB" stroke="#333333" stroke-width="2.0"/>
+      <rect x="78" y="10" width="96" height="8" rx="3" fill="#7C828A" stroke="#333333" stroke-width="2.4"/>
 </svg>

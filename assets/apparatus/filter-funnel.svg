@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="150" viewBox="0 0 140 150">
 <title>过滤漏斗</title>
-<path d="M12 22 L62 106 V198 L78 186 V106 L128 22" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M10 12 L62 78 V144 L78 134 V78 L130 12" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

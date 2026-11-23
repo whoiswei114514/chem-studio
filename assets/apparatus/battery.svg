@@ -3,16 +3,16 @@
 <title>电池</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="34" y="13" width="22" height="11" rx="3" fill="#C9A048" stroke="#294454" stroke-width="2.4"/>
-      <rect x="26" y="148" width="38" height="8" rx="2.5" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
-      <rect x="21" y="24" width="48" height="124" rx="5.5" fill="#F8FAF9" stroke="#294454" stroke-width="2.4"/>
-      <path d="M22.2 29.5 Q22.2 25.2 26.5 25.2 H63.5 Q67.8 25.2 67.8 29.5 V62 H22.2 Z" fill="#D79B59" stroke="none"/>
-      <line x1="21" y1="62" x2="69" y2="62" stroke="#294454" stroke-width="2.0"/>
-      <rect x="26" y="30" width="5" height="112" rx="2" fill="#FFFFFF" fill-opacity="0.45" stroke="none"/>
+      <rect x="34" y="13" width="22" height="11" rx="3" fill="#E4A838" stroke="#333333" stroke-width="2.8"/>
+      <rect x="26" y="148" width="38" height="8" rx="2.5" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
+      <rect x="21" y="24" width="48" height="124" rx="5.5" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
+      <path d="M22.2 29.5 Q22.2 25.2 26.5 25.2 H63.5 Q67.8 25.2 67.8 29.5 V62 H22.2 Z" fill="#D48242" stroke="none"/>
+      <line x1="21" y1="62" x2="69" y2="62" stroke="#333333" stroke-width="2.0"/>
+      <rect x="26" y="30" width="5" height="112" rx="2" fill="#FFFFFF" fill-opacity="0.28" stroke="none"/>
       <text x="45" y="48" fill="#FFFFFF" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">+</text>
-      <text x="45" y="93" fill="#294454" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">1.5 V</text>
-      <text x="45" y="108" fill="#3D5968" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.2" font-weight="700" text-anchor="middle">DRY CELL</text>
-      <text x="45" y="136" fill="#294454" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">−</text>
+      <text x="45" y="93" fill="#FFFFFF" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">1.5 V</text>
+      <text x="45" y="108" fill="#C4C9D0" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="6.2" font-weight="700" text-anchor="middle">DRY CELL</text>
+      <text x="45" y="136" fill="#FFFFFF" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">−</text>
     </g>
   
 </svg>

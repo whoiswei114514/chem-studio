@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="170" height="135" viewBox="0 0 170 135">
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="118" viewBox="0 0 148 118">
 <title>点滴板</title>
-<rect x="13" y="15" width="144" height="106" rx="8" fill="#F2F2EE" stroke="#294454" stroke-width="2.3"/>
-      <rect x="17" y="19" width="136" height="98" rx="5" fill="none" stroke="#9AB0B8" stroke-width="1.1"/>
-  <ellipse cx="39" cy="37" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="39" cy="38" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="84" cy="37" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="84" cy="38" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="129" cy="37" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="129" cy="38" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="39" cy="71" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="39" cy="72" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="84" cy="71" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="84" cy="72" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="129" cy="71" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="129" cy="72" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="39" cy="105" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="39" cy="106" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="84" cy="105" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="84" cy="106" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
-  <ellipse cx="129" cy="105" rx="14.5" ry="10.5" fill="#DCE5E8" stroke="#294454" stroke-width="1.6"/><ellipse cx="129" cy="106" rx="10" ry="6.5" fill="#F8FAF9" stroke="none"/>
+<rect x="10" y="10" width="128" height="98" rx="6" fill="#EFEFEF" stroke="#333333" stroke-width="2.8"/>
+  <circle cx="34" cy="30" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="34" cy="31" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="74" cy="30" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="74" cy="31" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="114" cy="30" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="114" cy="31" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="34" cy="59" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="34" cy="60" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="74" cy="59" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="74" cy="60" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="114" cy="59" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="114" cy="60" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="34" cy="88" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="34" cy="89" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="74" cy="88" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="74" cy="89" r="7.5" fill="#F5F6F8" stroke="none"/>
+  <circle cx="114" cy="88" r="11" fill="#E3E6EB" stroke="#333333" stroke-width="1.6"/><circle cx="114" cy="89" r="7.5" fill="#F5F6F8" stroke="none"/>
 </svg>

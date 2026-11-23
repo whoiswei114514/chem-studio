@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170">
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="90" viewBox="0 0 176 90">
 <title>摄像机</title>
-<path d="M46 46 V26 H122 V46" fill="none" stroke="#294454" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="18" y="46" width="132" height="84" rx="8" fill="#DCE5E8" stroke="#294454" stroke-width="2.3"/>
-      <rect x="28" y="62" width="66" height="50" rx="4" fill="#3D5968" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="116" cy="88" r="22" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
-      <circle cx="116" cy="88" r="13" fill="#DCEFEB" stroke="#258F89" stroke-width="1.6"/>
-      <path d="M150 64 L184 52 V124 L150 112 Z" fill="#3D5968" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <circle cx="136" cy="58" r="4" fill="#C84B31" stroke="none"/>
+<path d="M36 22 V10 H102 V22" fill="none" stroke="#333333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="12" y="22" width="114" height="58" rx="6" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
+      <rect x="22" y="32" width="52" height="36" rx="3" fill="#E3E6EB" stroke="#333333" stroke-width="1.8"/>
+      <circle cx="98" cy="50" r="16" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
+      <circle cx="98" cy="50" r="9.5" fill="#EEF4F7" stroke="#3E74B4" stroke-width="1.5"/>
+      <path d="M126 32 L164 20 V80 L126 68 Z" fill="#3A3E44" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="114" cy="30" r="3.5" fill="#B8292F"/>
 </svg>

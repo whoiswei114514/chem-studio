@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="32" viewBox="0 0 160 32">
 <title>记号笔</title>
-<rect x="16" y="48" width="24" height="20" rx="4" fill="#258F89" stroke="#294454" stroke-width="2.2"/>
-      <rect x="38" y="48" width="94" height="20" rx="2" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
-      <rect x="64" y="51" width="44" height="14" rx="2" fill="#E6F4F3" stroke="#258F89" stroke-width="1.2"/>
-      <path d="M132 49 L158 54 V62 L132 67 Z" fill="#3D5968" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M158 55 L170 57 V59 L158 61 Z" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
+<rect x="8" y="8" width="22" height="16" rx="3.5" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
+      <rect x="29" y="8" width="90" height="16" rx="2" fill="#F5F6F8" stroke="#333333" stroke-width="2.2"/>
+      <path d="M119 9 L142 13 V19 L119 23 Z" fill="#3A3E44" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M142 13.5 L152 15 V17 L142 18.5 Z" fill="#B8292F" stroke="#333333" stroke-width="1.6"/>
 </svg>

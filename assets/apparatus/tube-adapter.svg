@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180">
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="170" viewBox="0 0 70 170">
 <title>变径接头</title>
-<path d="M51 12 Q53 13 53 19 V70 L62 105 V165 M78 165 V105 L87 70 V19 Q87 13 89 12" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M16 10 Q18 12 18 18 V66 L27 100 V158 M43 158 V100 L52 66 V18 Q52 12 54 10" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -3,9 +3,9 @@
 <title>立方体</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="90,16 140,44 90,72 40,44" fill="#F4F9F8" stroke="#294454" stroke-width="2.8"/>
-      <polygon points="40,44 90,72 90,124 40,96" fill="#D9ECF2" stroke="#294454" stroke-width="2.8"/>
-      <polygon points="90,72 140,44 140,96 90,124" fill="#DCEFEB" stroke="#294454" stroke-width="2.8"/>
+      <polygon points="90,16 140,44 90,72 40,44" fill="#F5F6F8" stroke="#333333" stroke-width="2.8"/>
+      <polygon points="40,44 90,72 90,124 40,96" fill="#E3E6EB" stroke="#333333" stroke-width="2.8"/>
+      <polygon points="90,72 140,44 140,96 90,124" fill="#D5DAE0" stroke="#333333" stroke-width="2.8"/>
     </g>
   
 </svg>

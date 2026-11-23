@@ -3,11 +3,11 @@
 <title>琼脂块</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="38" y="40" width="104" height="100" rx="8" fill="#E6F4F3" stroke="#294454" stroke-width="2.8"/>
-      <rect x="46" y="48" width="88" height="84" rx="4" fill="none" stroke="#258F89" stroke-width="1.4"/>
+      <rect x="38" y="40" width="104" height="100" rx="8" fill="#E7F0EA" stroke="#333333" stroke-width="4"/>
+      <rect x="46" y="48" width="88" height="84" rx="4" fill="none" stroke="#8C929A" stroke-width="1.4"/>
       <line x1="48" y1="62" x2="62" y2="48" stroke="#FFFFFF" stroke-width="2.4"/>
-      <circle cx="90" cy="90" r="15" fill="#D4EAE8" stroke="#258F89" stroke-width="1.6" stroke-dasharray="3 2"/>
-      <circle cx="90" cy="90" r="4.5" fill="#258F89" stroke="none"/>
+      <circle cx="90" cy="90" r="15" fill="#D8EDF5" stroke="#3E74B4" stroke-width="1.6" stroke-dasharray="3 2"/>
+      <circle cx="90" cy="90" r="4.5" fill="#3E74B4" stroke="none"/>
     </g>
   
 </svg>

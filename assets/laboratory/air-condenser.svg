@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="320" viewBox="0 0 44 320">
 <title>空气冷凝管</title>
-<path d="M12.5 28 V292 M31.5 28 V292" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <line x1="16.5" y1="32" x2="16.5" y2="288" stroke="#3D5968" stroke-width="1.0"/>
-      <line x1="27.5" y1="32" x2="27.5" y2="288" stroke="#3D5968" stroke-width="1.0"/>
-  <path d="M10 4 Q12 5 12 8.5 L12.5 28" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M34 4 Q32 5 32 8.5 L31.5 28" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 28 Q22 30.2 30 28" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
-  <line x1="8.5" y1="292" x2="35.5" y2="292" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
-  <path d="M10.5 292 L13.2 316" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M33.5 292 L30.8 316" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M11.5 294.2 Q22 296.4 32.5 294.2" fill="none" stroke="#DCE8EC" stroke-width="1.3" stroke-linecap="round"/>
+<path d="M12.5 28 V292 M31.5 28 V292" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round"/>
+  <line x1="16.5" y1="32" x2="16.5" y2="288" stroke="#4A4F55" stroke-width="1.0"/>
+      <line x1="27.5" y1="32" x2="27.5" y2="288" stroke="#4A4F55" stroke-width="1.0"/>
+  <path d="M10 4 L10.7 28 H12.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 4 L33.3 28 H31.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14.7 29.4 Q22 32 29.3 29.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M12.7 292 H10.5 L13.2 316" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31.3 292 H33.5 L30.8 316" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13.7 294.8 Q22 297.4 30.3 294.8" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

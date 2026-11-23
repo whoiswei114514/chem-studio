@@ -3,9 +3,9 @@
 <title>眼睛</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 70 Q90 20 160 70 Q90 120 20 70 Z" fill="#FFFFFF" stroke="#294454" stroke-width="2.4"/>
-      <circle cx="90" cy="70" r="22" fill="#258F89" stroke="#294454" stroke-width="2.4"/>
-      <circle cx="90" cy="70" r="9.5" fill="#294454" stroke="none"/>
+      <path d="M20 70 Q90 20 160 70 Q90 120 20 70 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.8"/>
+      <circle cx="90" cy="70" r="22" fill="#3E74B4" stroke="#333333" stroke-width="2.8"/>
+      <circle cx="90" cy="70" r="9.5" fill="#333333" stroke="none"/>
       <circle cx="83" cy="63" r="3.8" fill="#FFFFFF" stroke="none"/>
     </g>
   

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="114" height="176" viewBox="0 0 114 176">
 <title>碘量瓶（水封瓶）</title>
-<path d="M46 36 V52 L8 150 Q4 162 9 168 Q14 173 23 173 H91 Q100 173 105 168 Q110 162 106 150 L68 52 V36" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M34 6 L46 38 H68 L80 6" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M45 10 Q47 11 47 14.5 L47.5 32" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M69 10 Q67 11 67 14.5 L66.5 32" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M49 32 Q57 34.2 65 32" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M46 36 V52 L8 150 Q4 162 9 168 Q14 173 23 173 H91 Q100 173 105 168 Q110 162 106 150 L68 52 V36" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 6 L46 38 H68 L80 6" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M45 10 L45.7 32 H47.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M69 10 L68.3 32 H66.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M49.7 33.4 Q57 36 64.3 33.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
 </svg>

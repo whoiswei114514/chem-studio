@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160">
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="150" viewBox="0 0 190 150">
 <title>曲颈甑</title>
-<path d="M39 48 V54 C10 68 12 138 56 138 C86 138 100 114 96 86 C116 90 144 114 181.764 136.472 M186.236 127.528 C142 102 106 60 66 54 V48" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M37 28 Q38.5 29 38.5 32.5 L40 48" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M59 28 Q57.5 29 57.5 32.5 L56 48" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M41.5 48 Q48 50.2 54.5 48" fill="none" stroke="#DCE8EC" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M35.5 32 V48 C8 62 10 134 54 134 C84 134 98 110 94 82 C114 86 142 108 173.764 130.472 M178.236 121.528 C140 96 104 54 64 48 H56.5 V32" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35 12 L37.5 32 H35.5 M57 12 L54.5 32 H56.5" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40.5 33.5 Q46 36.3 51.5 33.5" fill="none" stroke="#DCE8EC" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

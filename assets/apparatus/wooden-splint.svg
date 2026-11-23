@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="168" viewBox="0 0 44 168">
 <title>木条</title>
-<rect x="14" y="52" width="156" height="12" rx="3" fill="#D79B59" stroke="#294454" stroke-width="2.2"/>
-      <line x1="26" y1="56" x2="148" y2="56" stroke="#B57B42" stroke-width="1.0"/>
-      <line x1="42" y1="60" x2="156" y2="60" stroke="#DFBE8F" stroke-width="1.0"/>
+<rect x="16" y="10" width="12" height="148" rx="4" fill="#E4B879" stroke="#333333" stroke-width="2.2"/>
+      <line x1="20" y1="22" x2="20" y2="146" stroke="#9E6A2E" stroke-width="1.1"/>
 </svg>

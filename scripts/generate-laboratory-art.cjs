@@ -6,44 +6,46 @@ const crypto = require('node:crypto');
 
 const LAB_DIR = path.resolve(__dirname, '../assets/laboratory');
 
-// Classic Flat Scientific Line-Art Design Tokens (#294454 house palette, Qt QSvgRenderer safe).
-// Zero <linearGradient>/<radialGradient>, zero url(#...), zero cross-hatched XXX joints.
+// Chemix Neutral Charcoal (#333333) & Stepped-Collar Flat Line-Art Design Tokens (Qt QSvgRenderer safe).
+// Zero <linearGradient>/<radialGradient>, zero url(#...), zero cross-hatched XXX joints, zero teal roof bars.
 const C = {
-  stroke: '#294454',       // Primary outer walls (2.2-2.6)
-  glassSw: 2.6,            // Bold uniform glassware contour weight
-  hintArc: '#DCE8EC',      // Subtle inner joint hint curve
-  inner: '#3D5968',        // Internal tubes / coils / hardware (1.5-1.8)
-  tick: '#7E939E',         // Graduations & subtle markings (1.0)
-  muted: '#9AB0B8',        // Subtle back coil / light strokes
-  frostStroke: '#7E939E',  // Legacy alias
-  frostFill: '#F8FAF9',    // Flat stopper/socket interior
-  glassEdge: '#F4F9F8',
+  stroke: '#333333',       // Neutral charcoal outer walls (3.2-3.6 glassware, 2.6 benchtop hardware)
+  glassSw: 3.4,            // Bold uniform glassware contour weight
+  hintArc: '#DCE8EC',      // Pale-ice curved joint collar accent arc
+  inner: '#4A4F55',        // Internal tubes / coils / hardware
+  tick: '#8C929A',         // Crisp graduation ticks & fine markings
+  muted: '#B8BCC2',        // Subtle label lines & light back coils
+  frostStroke: '#8C929A',
+  frostFill: '#FFFFFF',
+  glassEdge: '#FFFFFF',
   glassMid: 'none',
-  glassDeep: '#DCEFEB',
-  coolFill: '#E6F4F3',
-  tealDark: '#1F6F6B',
-  teal: '#258F89',
-  tealLight: '#D4EAE8',
-  chassisTop: '#F8FAF9',
-  chassisMid: '#DCE5E8',
-  chassisBot: '#C6D2D7',
-  bezel: '#3D5968',
-  bezelDark: '#294454',
-  lcdBg: '#EEF6F1',
-  lcdGreen: '#1F6F6B',
-  lcdCyan: '#294454',
-  lcdAmber: '#A88234',
-  ptfe: '#F8FAF9',
-  redAccent: '#C84B31',
-  amberDark: '#A88234',
-  amberMid: '#C9A048',
-  amberLight: '#DFBE74',
-  brassDark: '#A88234',
-  brassMid: '#C9A048',
-  brassLight: '#EAD79B',
-  flameBlue: '#5BB5D5',
-  flameCore: '#D9ECF2',
-  flameTip: '#D79B59',
+  glassDeep: '#D8EDF5',
+  coolFill: '#D8EDF5',
+  liquidLine: '#72C2DD',
+  tealDark: '#2E5A8F',     // Muted steel-blue accent (never #1F6F6B)
+  teal: '#3E74B4',         // Steel-blue accent (never #258F89)
+  tealLight: '#D8EDF5',
+  metalDark: '#7C828A',
+  chassisTop: '#F5F6F8',   // Brushed light aluminum panel
+  chassisMid: '#E3E6EB',   // Mid neutral chassis
+  chassisBot: '#C4C9D0',   // Brushed steel trim
+  bezel: '#3A3E44',        // Dark slate bezel & rubber feet
+  bezelDark: '#333333',
+  lcdBg: '#E6EEF2',        // Crisp backlit pale LCD
+  lcdGreen: '#22252A',     // Dark sharp LCD primary text
+  lcdCyan: '#2D6DA3',      // Technical blue readout trace
+  lcdAmber: '#C88A1E',
+  ptfe: '#F5F6F8',
+  redAccent: '#B8292F',    // Chemix crimson PTFE stopcock / high-temp indicator
+  amberDark: '#9A6B1C',
+  amberMid: '#E4A838',
+  amberLight: '#F0C76B',
+  brassDark: '#9A6B1C',
+  brassMid: '#E4A838',
+  brassLight: '#F3D693',
+  flameBlue: '#72C2DD',
+  flameCore: '#D8EDF5',
+  flameTip: '#E4A838',
 };
 
 const r = n => Number(n.toFixed(3));
@@ -89,82 +91,110 @@ function hatchedTrapezoid(idPrefix, sx, sy, ex, ey, hw0, hw1, opts = {}) {
 
   const fill = opts.amber ? C.amberLight : opts.fill || 'none';
   const stroke = opts.stroke || C.stroke;
-  const sw = opts.sw || 2.2;
+  const sw = opts.sw || C.glassSw;
   return `<polygon points="${p0L.join(',')} ${p0R.join(',')} ${p1R.join(',')} ${p1L.join(',')}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
 }
 
-// Vertical female joint: open outward-flared rim at (cx, yTop), smooth open socket walls (NO horizontal top/bottom bars)
+// Stepped-collar Chemix female joint: open rim (cx +/- hwTop), smooth socket wall stepping IN at yBot to meet body (cx +/- hwBot)
 function verticalFemaleJoint(idPrefix, cx, yTop, len = 22, hwTop = 12, hwBot = 9.5, opts = {}) {
   const sw = opts.sw || C.glassSw;
-  const hwWaist = Math.max(hwBot + 0.5, hwTop - 2.3);
-  const yWaist = yTop + 4.5;
   const yBot = yTop + len;
-  const lWall = `M${r(cx - hwTop)} ${r(yTop)} Q${r(cx - hwWaist)} ${r(yTop + 1)} ${r(cx - hwWaist)} ${r(yWaist)} L${r(cx - hwBot)} ${r(yBot)}`;
-  const rWall = `M${r(cx + hwTop)} ${r(yTop)} Q${r(cx + hwWaist)} ${r(yTop + 1)} ${r(cx + hwWaist)} ${r(yWaist)} L${r(cx + hwBot)} ${r(yBot)}`;
+  const stepOut = opts.step === false ? 0 : (opts.stepOut ?? 1.8);
+  const hwSocketBot = hwBot + stepOut;
+  const lWall = stepOut > 0
+    ? `M${r(cx - hwTop)} ${r(yTop)} L${r(cx - hwSocketBot)} ${r(yBot)} H${r(cx - hwBot)}`
+    : `M${r(cx - hwTop)} ${r(yTop)} L${r(cx - hwBot)} ${r(yBot)}`;
+  const rWall = stepOut > 0
+    ? `M${r(cx + hwTop)} ${r(yTop)} L${r(cx + hwSocketBot)} ${r(yBot)} H${r(cx + hwBot)}`
+    : `M${r(cx + hwTop)} ${r(yTop)} L${r(cx + hwBot)} ${r(yBot)}`;
   const bg = opts.amber
-    ? `<polygon points="${r(cx - hwWaist)},${r(yWaist)} ${r(cx + hwWaist)},${r(yWaist)} ${r(cx + hwBot)},${r(yBot)} ${r(cx - hwBot)},${r(yBot)}" fill="${C.amberLight}" stroke="none"/>\n  `
+    ? `<polygon points="${r(cx - hwTop)},${r(yTop)} ${r(cx + hwTop)},${r(yTop)} ${r(cx + hwSocketBot)},${r(yBot)} ${r(cx - hwSocketBot)},${r(yBot)}" fill="${C.amberLight}" stroke="none"/>\n  `
     : '';
+  const span = Math.max(3, hwBot - 2.2);
   const ring = (opts.noBaseRing || opts.amber)
     ? ''
-    : `\n  <path d="M${r(cx - hwBot + 1.5)} ${r(yBot)} Q${r(cx)} ${r(yBot + 2.2)} ${r(cx + hwBot - 1.5)} ${r(yBot)}" fill="none" stroke="${C.hintArc}" stroke-width="1.4" stroke-linecap="round"/>`;
+    : `\n  <path d="M${r(cx - span)} ${r(yBot + 1.4)} Q${r(cx)} ${r(yBot + 4.0)} ${r(cx + span)} ${r(yBot + 1.4)}" fill="none" stroke="${C.hintArc}" stroke-width="1.9" stroke-linecap="round"/>`;
   return `${bg}<path d="${lWall}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n  <path d="${rWall}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>${ring}`;
 }
 
-// Vertical male joint cone: shoulder collar at yTop, open tapered glass walls ending at yTop + len
+// Stepped-collar Chemix male joint: horizontal shoulder step at yTop stepping OUT to cone wall ending open at yBot
 function verticalMaleJoint(idPrefix, cx, yTop, len = 22, hwTop = 12, hwBot = 9, opts = {}) {
   const sw = opts.sw || C.glassSw;
   const yBot = yTop + len;
-  const collar = opts.collar === false ? '' : `<line x1="${r(cx - hwTop - 2.0)}" y1="${r(yTop)}" x2="${r(cx + hwTop + 2.0)}" y2="${r(yTop)}" stroke="${C.stroke}" stroke-width="${r(sw - 0.2)}" stroke-linecap="round"/>\n  `;
-  const innerLine = `<path d="M${r(cx - hwTop + 1)} ${r(yTop + 2.2)} Q${r(cx)} ${r(yTop + 4.4)} ${r(cx + hwTop - 1)} ${r(yTop + 2.2)}" fill="none" stroke="${C.hintArc}" stroke-width="1.3" stroke-linecap="round"/>`;
+  const stepIn = opts.collar === false ? 0 : (opts.stepIn ?? 2.2);
+  const hwShoulder = opts.hwShoulder ?? Math.max(4, hwTop - stepIn);
+  const lWall = stepIn > 0
+    ? `M${r(cx - hwShoulder)} ${r(yTop)} H${r(cx - hwTop)} L${r(cx - hwBot)} ${r(yBot)}`
+    : `M${r(cx - hwTop)} ${r(yTop)} L${r(cx - hwBot)} ${r(yBot)}`;
+  const rWall = stepIn > 0
+    ? `M${r(cx + hwShoulder)} ${r(yTop)} H${r(cx + hwTop)} L${r(cx + hwBot)} ${r(yBot)}`
+    : `M${r(cx + hwTop)} ${r(yTop)} L${r(cx + hwBot)} ${r(yBot)}`;
+  const span = Math.max(3, hwTop - 3.2);
+  const innerLine = `<path d="M${r(cx - span)} ${r(yTop + 2.8)} Q${r(cx)} ${r(yTop + 5.4)} ${r(cx + span)} ${r(yTop + 2.8)}" fill="none" stroke="${C.hintArc}" stroke-width="1.8" stroke-linecap="round"/>`;
   let drip = '';
   if (opts.dripTip) {
-    drip = `\n  <path d="M${r(cx - 4.5)} ${r(yBot)} L${r(cx - 3.5)} ${r(yBot + 7)} L${r(cx + 3.5)} ${r(yBot + 4)} L${r(cx + 4.5)} ${r(yBot)}" fill="none" stroke="${C.stroke}" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>`;
+    drip = `\n  <path d="M${r(cx - 4.5)} ${r(yBot)} L${r(cx - 3.5)} ${r(yBot + 7)} L${r(cx + 3.5)} ${r(yBot + 4)} L${r(cx + 4.5)} ${r(yBot)}" fill="none" stroke="${C.stroke}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
   }
-  return `${collar}<path d="M${r(cx - hwTop)} ${r(yTop)} L${r(cx - hwBot)} ${r(yBot)}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>\n  <path d="M${r(cx + hwTop)} ${r(yTop)} L${r(cx + hwBot)} ${r(yBot)}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>\n  ${innerLine}${drip}`;
+  return `<path d="${lWall}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n  <path d="${rWall}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n  ${innerLine}${drip}`;
 }
 
-// Angled male joint cone from shoulder (sx, sy) along unit dir (ux, uy) for length len (open tip)
-function angledMaleJoint(idPrefix, sx, sy, ux, uy, len = 22, hwTop = 12, hwBot = 9) {
-  const sw = C.glassSw;
+// Angled stepped-collar male cone along unit dir (ux, uy); l0/r0 return neck attachment points (hwShoulder) for flush tube join
+function angledMaleJoint(idPrefix, sx, sy, ux, uy, len = 22, hwTop = 12, hwBot = 9, opts = {}) {
+  const sw = opts.sw || C.glassSw;
   const ex = sx + ux * len;
   const ey = sy + uy * len;
   const tx = -uy;
   const ty = ux;
+  const stepIn = opts.collar === false ? 0 : (opts.stepIn ?? 2.2);
+  const hwShoulder = opts.hwShoulder ?? Math.max(4, hwTop - stepIn);
   const p = (s, w) => [r(sx + ux * s + tx * w), r(sy + uy * s + ty * w)];
+  const nL = p(0, -hwShoulder);
+  const nR = p(0, hwShoulder);
   const l0 = p(0, -hwTop);
   const r0 = p(0, hwTop);
   const l1 = p(len, -hwBot);
   const r1 = p(len, hwBot);
-  const c0 = p(0, -(hwTop + 2.0));
-  const c1 = p(0, hwTop + 2.0);
+  const span = Math.max(3, hwTop - 3.2);
+  const aL = p(2.8, -span);
+  const aR = p(2.8, span);
+  const mx = (aL[0] + aR[0]) / 2 + ux * 2.4;
+  const my = (aL[1] + aR[1]) / 2 + uy * 2.4;
+  const pathStr = stepIn > 0
+    ? `M${nL[0]} ${nL[1]} L${l0[0]} ${l0[1]} L${l1[0]} ${l1[1]} M${nR[0]} ${nR[1]} L${r0[0]} ${r0[1]} L${r1[0]} ${r1[1]}`
+    : `M${l0[0]} ${l0[1]} L${l1[0]} ${l1[1]} M${r0[0]} ${r0[1]} L${r1[0]} ${r1[1]}`;
   return {
-    svg: `<line x1="${c0[0]}" y1="${c0[1]}" x2="${c1[0]}" y2="${c1[1]}" stroke="${C.stroke}" stroke-width="${r(sw - 0.2)}" stroke-linecap="round"/>\n  <line x1="${l0[0]}" y1="${l0[1]}" x2="${l1[0]}" y2="${l1[1]}" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>\n  <line x1="${r0[0]}" y1="${r0[1]}" x2="${r1[0]}" y2="${r1[1]}" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round"/>`,
+    svg: `<path d="${pathStr}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n  <path d="M${aL[0]} ${aL[1]} Q${r(mx)} ${r(my)} ${aR[0]} ${aR[1]}" fill="none" stroke="${C.hintArc}" stroke-width="1.8" stroke-linecap="round"/>`,
     tip: [r(ex), r(ey)],
     edge: [l1[0], l1[1], r1[0], r1[1]],
-    l0,
-    r0,
+    l0: stepIn > 0 ? nL : l0,
+    r0: stepIn > 0 ? nR : r0,
     diameter: r(hwBot * 2),
   };
 }
 
-// Angled female joint socket with open flared lip at (lx, ly) going inward along (-ox, -oy)
-function angledFemaleJoint(idPrefix, lx, ly, ox, oy, len = 22, hwTop = 12, hwBot = 9.5) {
-  const sw = C.glassSw;
+// Angled stepped-collar female socket: open flared lip at (lx, ly) stepping IN cleanly at len to lb/rb (hwBot)
+function angledFemaleJoint(idPrefix, lx, ly, ox, oy, len = 22, hwTop = 12, hwBot = 9.5, opts = {}) {
+  const sw = opts.sw || C.glassSw;
   const ux = -ox;
   const uy = -oy;
   const tx = -uy;
   const ty = ux;
-  const hwWaist = Math.max(hwBot + 0.5, hwTop - 2.3);
+  const stepOut = opts.step === false ? 0 : (opts.stepOut ?? 1.8);
+  const hwSocketBot = hwBot + stepOut;
   const p = (along, w) => [r(lx + ux * along + tx * w), r(ly + uy * along + ty * w)];
   const lt = p(0, -hwTop), rt = p(0, hwTop);
-  const lc = p(1.0, -hwWaist), rc = p(1.0, hwWaist);
-  const lw = p(4.5, -hwWaist), rw = p(4.5, hwWaist);
+  const ls = p(len, -hwSocketBot), rs = p(len, hwSocketBot);
   const lb = p(len, -hwBot), rb = p(len, hwBot);
+  const span = Math.max(3, hwBot - 2.2);
+  const aL = p(len + 1.4, -span);
+  const aR = p(len + 1.4, span);
+  const mx = (aL[0] + aR[0]) / 2 + ux * 2.4;
+  const my = (aL[1] + aR[1]) / 2 + uy * 2.4;
   const ex = lx + ux * len;
   const ey = ly + uy * len;
-  const svg =
-    `<path d="M${lt[0]} ${lt[1]} Q${lc[0]} ${lc[1]} ${lw[0]} ${lw[1]} L${lb[0]} ${lb[1]}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-    `  <path d="M${rt[0]} ${rt[1]} Q${rc[0]} ${rc[1]} ${rw[0]} ${rw[1]} L${rb[0]} ${rb[1]}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const svg = stepOut > 0
+    ? `<path d="M${lt[0]} ${lt[1]} L${ls[0]} ${ls[1]} L${lb[0]} ${lb[1]} M${rt[0]} ${rt[1]} L${rs[0]} ${rs[1]} L${rb[0]} ${rb[1]}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>\n  <path d="M${aL[0]} ${aL[1]} Q${r(mx)} ${r(my)} ${aR[0]} ${aR[1]}" fill="none" stroke="${C.hintArc}" stroke-width="1.8" stroke-linecap="round"/>`
+    : `<path d="M${lt[0]} ${lt[1]} L${lb[0]} ${lb[1]} M${rt[0]} ${rt[1]} L${rb[0]} ${rb[1]}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
   return {
     svg,
     lip: [r(lx), r(ly)],
@@ -190,7 +220,7 @@ function oliveBarb(idPrefix, wallX, cy, dirX, barbLen = 16, rBase = 5, rTip = 4.
     `L${r(wallX)} ${r(cy + rBase)} Z`,
   ].join(' ');
   return {
-    svg: `<path d="${d}" fill="${C.glassEdge}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>`,
+    svg: `<path d="${d}" fill="${C.glassEdge}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>`,
     port: { x: r(tipX), y: r(cy), dx: dirX, dy: 0, diameter: r(rTip * 2), depth: 8, edge: [r(tipX), r(cy - rTip), r(tipX), r(cy + rTip)] },
   };
 }
@@ -209,7 +239,7 @@ function verticalOliveBarb(idPrefix, cx, wallY, dirY, barbLen = 16, rBase = 5, r
     `L${r(cx + rBase)} ${r(wallY)} Z`,
   ].join(' ');
   return {
-    svg: `<path d="${d}" fill="${C.glassEdge}" stroke="${C.stroke}" stroke-width="2.1" stroke-linejoin="round"/>`,
+    svg: `<path d="${d}" fill="${C.glassEdge}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>`,
     port: { x: r(cx), y: r(tipY), dx: 0, dy: dirY, diameter: r(rTip * 2), depth: 8, edge: [r(cx - rTip), r(tipY), r(cx + rTip), r(tipY)] },
   };
 }
@@ -220,10 +250,10 @@ function drawStopcock(idPrefix, cx, cy, opts = {}) {
   const handleColor = opts.teal ? C.teal : C.redAccent;
   const plugColor = opts.glass ? C.glassEdge : C.ptfe;
   return `<g>
-    <path d="M${r(cx - w / 2)} ${r(cy - h / 2)} L${r(cx + w / 2)} ${r(cy - h / 2 + 1.2)} L${r(cx + w / 2)} ${r(cy + h / 2 - 1.2)} L${r(cx - w / 2)} ${r(cy + h / 2)} Z" fill="${plugColor}" stroke="${C.stroke}" stroke-width="1.9" stroke-linejoin="round"/>
-    <rect x="${r(cx - w / 2 - 7)}" y="${r(cy - 6.5)}" width="7" height="13" rx="2" fill="${handleColor}" stroke="${C.stroke}" stroke-width="1.7"/>
-    <rect x="${r(cx + w / 2)}" y="${r(cy - 3.5)}" width="5" height="7" rx="1.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.5"/>
-    <line x1="${r(cx - 2.5)}" y1="${r(cy - 2.5)}" x2="${r(cx + 2.5)}" y2="${r(cy + 2.5)}" stroke="${C.inner}" stroke-width="1.2"/>
+    <path d="M${r(cx - w / 2)} ${r(cy - h / 2)} L${r(cx + w / 2)} ${r(cy - h / 2 + 1.2)} L${r(cx + w / 2)} ${r(cy + h / 2 - 1.2)} L${r(cx - w / 2)} ${r(cy + h / 2)} Z" fill="${plugColor}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
+    <rect x="${r(cx - w / 2 - 7)}" y="${r(cy - 6.5)}" width="7" height="13" rx="2" fill="${handleColor}" stroke="${C.stroke}" stroke-width="2.0"/>
+    <rect x="${r(cx + w / 2)}" y="${r(cy - 3.5)}" width="5" height="7" rx="1.5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8"/>
+    <line x1="${r(cx - 2.5)}" y1="${r(cy - 2.5)}" x2="${r(cx + 2.5)}" y2="${r(cy + 2.5)}" stroke="${C.inner}" stroke-width="1.4"/>
   </g>`;
 }
 
@@ -237,7 +267,7 @@ function graduationMarks(xRight, yTop, yBot, count, majorEvery = 5, tickLen = 7)
     const y = yTop + ((yBot - yTop) * i) / count;
     const major = i % majorEvery === 0;
     const len = major ? tickLen * 1.45 : tickLen;
-    lines.push(`<line x1="${r(xRight - len)}" y1="${r(y)}" x2="${r(xRight)}" y2="${r(y)}" stroke="${C.tick}" stroke-width="${major ? 1.25 : 0.9}" stroke-linecap="round"/>`);
+    lines.push(`<line x1="${r(xRight - len)}" y1="${r(y)}" x2="${r(xRight)}" y2="${r(y)}" stroke="${C.tick}" stroke-width="${major ? 1.4 : 1.0}" stroke-linecap="round"/>`);
   }
   return `<g>${lines.join('')}</g>`;
 }
@@ -315,10 +345,10 @@ function buildAssets() {
   {
     const id = 'ground-glass-stopper';
     const W = 40, H = 68, cx = 20;
-    const cone = verticalMaleJoint(id, cx, 33, 31, 14, 10.5, { collar: false, sw: 2.5 });
-    const tipClose = `<line x1="${cx - 10.5}" y1="64" x2="${cx + 10.5}" y2="64" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round"/>`;
-    const head = `<path d="M${cx - 16} 19 C${cx - 16} 8 ${cx - 9} 3 ${cx} 3 C${cx + 9} 3 ${cx + 16} 8 ${cx + 16} 19 C${cx + 16} 26 ${cx + 11} 30 ${cx + 14} 33 H${cx - 14} C${cx - 11} 30 ${cx - 16} 26 ${cx - 16} 19 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.5" stroke-linejoin="round"/>
-      <rect x="${cx - 15}" y="30" width="30" height="3.2" rx="1.6" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="1.6"/>`;
+    const cone = verticalMaleJoint(id, cx, 33, 31, 14, 10.5, { collar: false, sw: 3.0 });
+    const tipClose = `<line x1="${cx - 10.5}" y1="64" x2="${cx + 10.5}" y2="64" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round"/>`;
+    const head = `<path d="M${cx - 16} 19 C${cx - 16} 8 ${cx - 9} 3 ${cx} 3 C${cx + 9} 3 ${cx + 16} 8 ${cx + 16} 19 C${cx + 16} 26 ${cx + 11} 30 ${cx + 14} 33 H${cx - 14} C${cx - 11} 30 ${cx - 16} 26 ${cx - 16} 19 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="3.0" stroke-linejoin="round"/>
+      <rect x="${cx - 15}" y="30" width="30" height="3.2" rx="1.6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.0"/>`;
     const body = `${cone}\n  ${tipClose}\n  ${head}`;
     assets.push({
       id, name: '玻璃磨口塞（圆头）', category: '瓶塞与磨口接头',
@@ -335,7 +365,7 @@ function buildAssets() {
     const id = 'clear-reagent-bottle';
     const W = 94, H = 168, cx = 47;
     const bottle = `<path d="M${cx - 12.5} 27 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 12.5} 36 V27" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const baseThick = `<path d="M${cx - 39} 157 Q${cx} 160 ${cx + 39} 157" fill="none" stroke="${C.inner}" stroke-width="1.2"/>`;
+    const baseThick = `<path d="M${cx - 39} 157 Q${cx} 160 ${cx + 39} 157" fill="none" stroke="${C.muted}" stroke-width="1.4" stroke-linecap="round"/>`;
     const fem = verticalFemaleJoint(id, cx, 3, 24, 15, 12.5);
     const body = `${bottle}\n  ${baseThick}\n  ${fem}`;
     assets.push({
@@ -357,10 +387,10 @@ function buildAssets() {
     const amberFill = `<path d="M${cx - 12.5} 27 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 12.5} 36 V27 Z" fill="${C.amberLight}" stroke="none"/>`;
     const bottle = `<path d="M${cx - 12.5} 27 V36 L${cx - 42} 66 Q${cx - 44} 69 ${cx - 44} 74 V156 Q${cx - 44} 165 ${cx - 35} 165 H${cx + 35} Q${cx + 44} 165 ${cx + 44} 156 V74 Q${cx + 44} 69 ${cx + 42} 66 L${cx + 12.5} 36 V27" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const fem = verticalFemaleJoint(id, cx, 3, 24, 15, 12.5, { amber: true });
-    const label = `<rect x="${cx - 32}" y="86" width="64" height="50" rx="3" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="1.6"/>
-      <line x1="${cx - 24}" y1="102" x2="${cx + 24}" y2="102" stroke="#CBD5E1" stroke-width="1.2"/>
-      <line x1="${cx - 24}" y1="114" x2="${cx + 18}" y2="114" stroke="#CBD5E1" stroke-width="1.2"/>
-      <line x1="${cx - 24}" y1="126" x2="${cx + 12}" y2="126" stroke="#CBD5E1" stroke-width="1.2"/>`;
+    const label = `<rect x="${cx - 32}" y="86" width="64" height="50" rx="3" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="1.8"/>
+      <line x1="${cx - 24}" y1="102" x2="${cx + 24}" y2="102" stroke="${C.muted}" stroke-width="1.4"/>
+      <line x1="${cx - 24}" y1="114" x2="${cx + 18}" y2="114" stroke="${C.muted}" stroke-width="1.4"/>
+      <line x1="${cx - 24}" y1="126" x2="${cx + 12}" y2="126" stroke="${C.muted}" stroke-width="1.4"/>`;
     const body = `${amberFill}\n  ${fem}\n  ${bottle}\n  ${label}`;
     assets.push({
       id, name: '棕色磨口试剂瓶（开口）', category: '试剂储存',
@@ -442,9 +472,9 @@ function buildAssets() {
       M${cx - 18} 12 H${cx + 18} V52
       C${cx + 26} 58 ${cx + 26} 68 ${cx + 26} 78
       M${cx + 26} 102 V246
-      C${cx + 26} 262 ${cx + 11.5} 264 ${cx + 11.5} 276
-      M${cx - 11.5} 276
-      C${cx - 11.5} 264 ${cx - 26} 262 ${cx - 26} 246
+      C${cx + 26} 262 ${cx + 9.3} 264 ${cx + 9.3} 276
+      M${cx - 9.3} 276
+      C${cx - 9.3} 264 ${cx - 26} 262 ${cx - 26} 246
       V66 C${cx - 26} 56 ${cx - 18} 52 ${cx - 18} 48 V12"
       fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Clean cap seam
@@ -546,8 +576,8 @@ function buildAssets() {
       }
       coilPath += ` C${cx + amp} ${r(y1 + 6)} ${cx} ${r(y1 + 6)} ${cx} ${r(y1 + 12)} V326`;
       return `
-        <path d="${coilPath}" fill="none" stroke="${C.inner}" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="${coilPath}" fill="none" stroke="#EFF8FC" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`;
+        <path d="${coilPath}" fill="none" stroke="${C.inner}" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="${coilPath}" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
     },
   }));
 
@@ -585,7 +615,7 @@ function buildAssets() {
     const male = verticalMaleJoint(id, cx, 326, 24, 11.5, 8.8);
 
     // Outer open vapor jacket cylinder
-    const outer = `<path d="M${cx - 9.5} 28 V38 Q${cx - hw} 42 ${cx - hw} ${jTop + 10} V${jBot - 10} Q${cx - hw} ${jBot} ${cx - 11.5} 308 V326 M${cx + 11.5} 326 V308 Q${cx + hw} ${jBot} ${cx + hw} ${jBot - 10} V${jTop + 10} Q${cx + hw} 42 ${cx + 9.5} 38 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const outer = `<path d="M${cx - 9.5} 28 V38 Q${cx - hw} 42 ${cx - hw} ${jTop + 10} V${jBot - 10} Q${cx - hw} ${jBot} ${cx - 9.3} 308 V326 M${cx + 9.3} 326 V308 Q${cx + hw} ${jBot} ${cx + hw} ${jBot - 10} V${jTop + 10} Q${cx + hw} 42 ${cx + 9.5} 38 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Helical double-pass coil inside vapor jacket (central return stem + outer helix)
     const turns = 10;
     const y0 = 96, y1 = 282, pitch = (y1 - y0) / turns, amp = 11.5;
@@ -601,8 +631,8 @@ function buildAssets() {
       ${waterOut.svg}
       ${waterIn.svg}
       ${outer}
-      <path d="${coil}" fill="none" stroke="${C.inner}" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="${coil}" fill="none" stroke="#CFFAFE" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${coil}" fill="none" stroke="${C.inner}" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${coil}" fill="none" stroke="${C.coolFill}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
       ${specularHighlight(cx - hw + 4.5, 58, 294, 3.0, 0.75)}
       ${fem}
       ${male}`;
@@ -625,7 +655,7 @@ function buildAssets() {
   {
     const id = 'plain-distillation-head';
     const W = 90, H = 104, cx = 22;
-    const male = verticalMaleJoint(id, cx, 78, 22, 11.5, 8.8);
+    const male = verticalMaleJoint(id, cx, 78, 22, 11.5, 8.8, { hwShoulder: 10 });
     // 75-deg sidearm direction from upward vertical = 105 deg => ux = sin(105) = 0.9659, uy = -cos(105) = 0.2588
     const ux = 0.965926, uy = 0.258819;
     const sx = 64, sy = 44; // shoulder start of sidearm male cone
@@ -657,15 +687,15 @@ function buildAssets() {
   {
     const id = 'standard-distillation-head';
     const W = 90, H = 132, cx = 22;
-    const fem = verticalFemaleJoint(id, cx, 4, 22, 12.5, 10.5);
-    const male = verticalMaleJoint(id, cx, 106, 22, 11.5, 8.8);
+    const fem = verticalFemaleJoint(id, cx, 4, 22, 12.5, 9.5);
+    const male = verticalMaleJoint(id, cx, 106, 22, 11.5, 8.8, { hwShoulder: 9.5 });
     const ux = 0.965926, uy = 0.258819;
     const sx = 64, sy = 64;
     const sideCone = angledMaleJoint(id, sx, sy, ux, uy, 22, 11, 8.6);
     const tube = `<path d="
-      M${cx - 10.5} 26 V106
-      M${cx + 10.5} 26 V44 L${sideCone.l0[0]} ${sideCone.l0[1]}
-      M${sideCone.r0[0]} ${sideCone.r0[1]} L${cx + 10.5} 65 V106"
+      M${cx - 9.5} 26 V106
+      M${cx + 9.5} 26 V44 L${sideCone.l0[0]} ${sideCone.l0[1]}
+      M${sideCone.r0[0]} ${sideCone.r0[1]} L${cx + 9.5} 65 V106"
       fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '带支管蒸馏头', category: '蒸馏与分馏',
@@ -797,12 +827,12 @@ function buildAssets() {
     const vac = oliveBarb(id, outX + 11.5, 48, 1, 34.5, 4.8, 4.0);
     const bodyTube = `<path d="
       M${fem.lb[0]} ${fem.lb[1]}
-      L54 24 Q${outX + 11.5} 28 ${outX + 11.5} 43 M${outX + 11.5} 53 V100 M${outX - 11.5} 100 V50
+      L54 24 Q${outX + 11.5} 28 ${outX + 11.5} 43 M${outX + 11.5} 53 V88 L${outX + 9.3} 100 M${outX - 9.3} 100 L${outX - 11.5} 88 V50
       Q${outX - 11.5} 40 46 39
       L${fem.rb[0]} ${fem.rb[1]}"
       fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Internal glass drip guide stem ending cleanly inside cone
-    const dripInner = `<path d="M${outX} 46 V100 L${outX + 2.5} 108" fill="none" stroke="${C.inner}" stroke-width="1.5" stroke-linecap="round"/>`;
+    const dripInner = `<path d="M${outX} 46 V100 L${outX + 2.5} 108" fill="none" stroke="${C.inner}" stroke-width="1.6" stroke-linecap="round"/>`;
     assets.push({
       id, name: '真空接收管', category: '蒸馏与分馏',
       search: '真空接收管 带抽气口尾接管 减压蒸馏接收管 vacuum receiver adapter 侧面带真空抽气支管，下端标准磨口密闭接磨口锥形瓶或圆底烧瓶。',
@@ -827,9 +857,9 @@ function buildAssets() {
     const aL = rad(-34), aR = rad(34);
     const uL = [Math.sin(aL), Math.cos(aL)];
     const uR = [Math.sin(aR), Math.cos(aR)];
-    const mL = angledMaleJoint(id, cx - 23, 112, uL[0], uL[1], 22, 8.8, 6.8);
-    const mC = verticalMaleJoint(id, cx, 122, 22, 9.0, 6.8);
-    const mR = angledMaleJoint(id, cx + 23, 112, uR[0], uR[1], 22, 8.8, 6.8);
+    const mL = angledMaleJoint(id, cx - 23, 112, uL[0], uL[1], 22, 8.8, 6.8, { stepIn: 1.8 });
+    const mC = verticalMaleJoint(id, cx, 122, 22, 10.5, 6.8, { hwShoulder: 9.0 });
+    const mR = angledMaleJoint(id, cx + 23, 112, uR[0], uR[1], 22, 8.8, 6.8, { stepIn: 1.8 });
     const bulb = `<path d="
       M${fem.lb[0]} ${fem.lb[1]}
       L62 24 Q92 26 92 40 M92 49 V76
@@ -858,16 +888,16 @@ function buildAssets() {
   {
     const id = 'thermometer-adapter';
     const W = 44, H = 96, cx = 22;
-    const screwCap = `<rect x="${cx - 13}" y="4" width="26" height="16" rx="3" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <line x1="${cx - 8}" y1="4" x2="${cx - 8}" y2="20" stroke="${C.teal}" stroke-width="1.4"/>
-      <line x1="${cx}" y1="4" x2="${cx}" y2="20" stroke="${C.teal}" stroke-width="1.4"/>
-      <line x1="${cx + 8}" y1="4" x2="${cx + 8}" y2="20" stroke="${C.teal}" stroke-width="1.4"/>`;
-    const bodyTube = `<rect x="${cx - 10}" y="20" width="20" height="48" rx="3" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2"/>`;
-    const male = verticalMaleJoint(id, cx, 68, 24, 11.5, 8.8);
+    const screwCap = `<rect x="${cx - 13}" y="4" width="26" height="16" rx="3" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <line x1="${cx - 8}" y1="6" x2="${cx - 8}" y2="18" stroke="${C.metalDark}" stroke-width="1.4"/>
+      <line x1="${cx}" y1="6" x2="${cx}" y2="18" stroke="${C.metalDark}" stroke-width="1.4"/>
+      <line x1="${cx + 8}" y1="6" x2="${cx + 8}" y2="18" stroke="${C.metalDark}" stroke-width="1.4"/>`;
+    const bodyTube = `<rect x="${cx - 10}" y="20" width="20" height="48" rx="3" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="${C.glassSw}"/>`;
+    const male = verticalMaleJoint(id, cx, 68, 24, 11.5, 8.8, { hwShoulder: 10 });
     assets.push({
       id, name: '磨口温度计套管接头', category: '瓶塞与磨口接头',
       search: '温度计套管 磨口温度计接头 thermometer adapter 带密封螺帽与O型圈的磨口玻璃接头，用于密封固定温度计或毛细管。',
-      width: W, height: H, svg: wrapSvg(id, '磨口温度计套管接头', W, H, `${bodyTube}\n  ${specularHighlight(cx - 5, 24, 62, 2.4, 0.78)}\n  ${screwCap}\n  ${male}`),
+      width: W, height: H, svg: wrapSvg(id, '磨口温度计套管接头', W, H, `${bodyTube}\n  ${screwCap}\n  ${male}`),
       ports: [
         { id: 'inlet', x: cx, y: 4, dx: 0, dy: -1, type: 'sensor-socket', diameter: 26, depth: 60, edge: [cx - 13, 4, cx + 13, 4], target: [cx, 66] },
         { id: 'outlet', x: cx, y: 92, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 24, edge: [cx - 8.8, 92, cx + 8.8, 92] },
@@ -881,8 +911,8 @@ function buildAssets() {
     const id = 'reducing-adapter';
     const W = 50, H = 98, cx = 25;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 14.5, 12);
-    const male = verticalMaleJoint(id, cx, 70, 24, 10.5, 8.0);
-    const bodyTube = `<path d="M${cx - 12} 28 V42 L${cx - 10.5} 56 V70 M${cx + 10.5} 70 V56 L${cx + 12} 42 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const male = verticalMaleJoint(id, cx, 70, 24, 10.5, 8.0, { hwShoulder: 9.0 });
+    const bodyTube = `<path d="M${cx - 12} 28 V42 L${cx - 9.0} 56 V70 M${cx + 9.0} 70 V56 L${cx + 12} 42 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     assets.push({
       id, name: '磨口变径接头', category: '瓶塞与磨口接头',
       search: '变径接头 大小头 磨口转换头 reducing adapter 连接不同标准磨口尺寸（如24/29转19/26）的玻璃仪器。',
@@ -900,9 +930,9 @@ function buildAssets() {
     const id = 'gas-inlet-adapter';
     const W = 82, H = 92, cx = 24;
     const male = verticalMaleJoint(id, cx, 64, 24, 11.5, 8.8);
-    const dome = `<path d="M${cx - 11.5} 64 V24 C${cx - 11.5} 12 ${cx + 11.5} 12 ${cx + 11.5} 24 V27 M${cx + 11.5} 37 V64" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const dome = `<path d="M${cx - 9.3} 64 L${cx - 11.5} 52 V24 C${cx - 11.5} 12 ${cx + 11.5} 12 ${cx + 11.5} 24 V27 M${cx + 11.5} 37 V52 L${cx + 9.3} 64" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const barb = oliveBarb(id, cx + 11.5, 32, 1, 41, 4.8, 4.0);
-    const valve = drawStopcock(id, cx + 32, 32, { w: 14, h: 8, teal: true });
+    const valve = drawStopcock(id, cx + 32, 32, { w: 14, h: 8 });
     assets.push({
       id, name: '磨口气体导入接头', category: '瓶塞与磨口接头',
       search: '气体导入接头 抽气头 真空接头 gas inlet vacuum adapter 磨口反应瓶通入惰性气体保护或连接真空管路。',
@@ -945,13 +975,13 @@ function buildAssets() {
     const id = 'vigreux-column';
     const W = 54, H = 330, cx = 27;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 12.5, 10);
-    const male = verticalMaleJoint(id, cx, 302, 24, 11.5, 8.8);
-    const col = `<path d="M${cx - 10} 28 V42 Q${cx - 16} 46 ${cx - 16} 56 V274 Q${cx - 16} 284 ${cx - 11.5} 290 V302 M${cx + 11.5} 302 V290 Q${cx + 16} 284 ${cx + 16} 274 V56 Q${cx + 16} 46 ${cx + 10} 42 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const male = verticalMaleJoint(id, cx, 302, 24, 11.5, 8.8, { hwShoulder: 9.3 });
+    const col = `<path d="M${cx - 10} 28 V42 Q${cx - 16} 46 ${cx - 16} 56 V274 Q${cx - 16} 284 ${cx - 9.3} 290 V302 M${cx + 9.3} 302 V290 Q${cx + 16} 284 ${cx + 16} 274 V56 Q${cx + 16} 46 ${cx + 10} 42 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Staggered horizontal & upward/downward pointed glass Vigreux indentations
     const spikes = [];
     for (let y = 66; y <= 268; y += 18) {
-      spikes.push(`<path d="M${cx - 16} ${y - 4} Q${cx - 3} ${y - 1} ${cx - 3} ${y} Q${cx - 3} ${y + 1} ${cx - 16} ${y + 4}" fill="none" stroke="${C.inner}" stroke-width="1.5"/>`);
-      spikes.push(`<path d="M${cx + 16} ${y + 5} Q${cx + 3} ${y + 8} ${cx + 3} ${y + 9} Q${cx + 3} ${y + 10} ${cx + 16} ${y + 13}" fill="none" stroke="${C.inner}" stroke-width="1.5"/>`);
+      spikes.push(`<path d="M${cx - 16} ${y - 4} Q${cx - 3} ${y - 1} ${cx - 3} ${y} Q${cx - 3} ${y + 1} ${cx - 16} ${y + 4}" fill="none" stroke="${C.inner}" stroke-width="1.6"/>`);
+      spikes.push(`<path d="M${cx + 16} ${y + 5} Q${cx + 3} ${y + 8} ${cx + 3} ${y + 9} Q${cx + 3} ${y + 10} ${cx + 16} ${y + 13}" fill="none" stroke="${C.inner}" stroke-width="1.6"/>`);
     }
     assets.push({
       id, name: '刺形分馏柱', category: '蒸馏与分馏',
@@ -970,11 +1000,11 @@ function buildAssets() {
     const id = 'pressure-equalizing-funnel';
     const W = 82, H = 264, cx = 46;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 12.5, 10);
-    const male = verticalMaleJoint(id, cx, 236, 24, 11.5, 8.8, { dripTip: false });
-    const bypass = `<path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 8}" fill="none" stroke="${C.stroke}" stroke-width="7.0" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 8}" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const male = verticalMaleJoint(id, cx, 236, 24, 11.5, 8.8, { dripTip: false, hwShoulder: 8 });
+    const bypass = `<path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 8}" fill="none" stroke="${C.stroke}" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M${cx - 10} 42 H${cx - 32} Q${cx - 38} 42 ${cx - 38} 48 V174 Q${cx - 38} 180 ${cx - 32} 180 H${cx - 8}" fill="none" stroke="#FFFFFF" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>`;
     const body = `<path d="M${cx - 10} 28 V48 C${cx - 22} 54 ${cx - 22} 60 ${cx - 22} 70 V142 C${cx - 22} 158 ${cx - 8} 168 ${cx - 8} 174 V236 M${cx + 8} 236 V174 C${cx + 8} 168 ${cx + 22} 158 ${cx + 22} 142 V70 C${cx + 22} 60 ${cx + 22} 54 ${cx + 10} 48 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const valve = drawStopcock(id, cx, 198, { w: 22, h: 9, teal: true });
+    const valve = drawStopcock(id, cx, 198, { w: 22, h: 9 });
     const grads = graduationMarks(cx + 20, 74, 140, 5, 5, 6);
     assets.push({
       id, name: '磨口恒压滴液漏斗', category: '加料与滴液',
@@ -993,13 +1023,13 @@ function buildAssets() {
     const id = 'soxhlet-extractor';
     const W = 108, H = 266, cx = 54;
     const fem = verticalFemaleJoint(id, cx, 4, 24, 16, 13.5);
-    const male = verticalMaleJoint(id, cx, 238, 24, 11.5, 8.8);
+    const male = verticalMaleJoint(id, cx, 238, 24, 11.5, 8.8, { hwShoulder: 8 });
     // Left vapor bypass tube
-    const vaporBypass = `<path d="M${cx - 8} 214 H${cx - 32} Q${cx - 42} 214 ${cx - 42} 204 V56 Q${cx - 42} 46 ${cx - 32} 46 H${cx - 16}" fill="none" stroke="${C.stroke}" stroke-width="7.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M${cx - 8} 214 H${cx - 32} Q${cx - 42} 214 ${cx - 42} 204 V56 Q${cx - 42} 46 ${cx - 32} 46 H${cx - 16}" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const vaporBypass = `<path d="M${cx - 8} 214 H${cx - 32} Q${cx - 42} 214 ${cx - 42} 204 V56 Q${cx - 42} 46 ${cx - 32} 46 H${cx - 16}" fill="none" stroke="${C.stroke}" stroke-width="7.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M${cx - 8} 214 H${cx - 32} Q${cx - 42} 214 ${cx - 42} 204 V56 Q${cx - 42} 46 ${cx - 32} 46 H${cx - 16}" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`;
     // Right siphon return tube (arches UP to near chamber top and returns DOWN into lower stem)
-    const siphon = `<path d="M${cx + 22} 178 H${cx + 34} Q${cx + 42} 178 ${cx + 42} 170 V86 C${cx + 42} 72 ${cx + 30} 72 ${cx + 30} 86 V196 Q${cx + 30} 204 ${cx + 22} 204 H${cx + 8}" fill="none" stroke="${C.stroke}" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M${cx + 22} 178 H${cx + 34} Q${cx + 42} 178 ${cx + 42} 170 V86 C${cx + 42} 72 ${cx + 30} 72 ${cx + 30} 86 V196 Q${cx + 30} 204 ${cx + 22} 204 H${cx + 8}" fill="none" stroke="#E6F4F3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const siphon = `<path d="M${cx + 22} 178 H${cx + 34} Q${cx + 42} 178 ${cx + 42} 170 V86 C${cx + 42} 72 ${cx + 30} 72 ${cx + 30} 86 V196 Q${cx + 30} 204 ${cx + 22} 204 H${cx + 8}" fill="none" stroke="${C.stroke}" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M${cx + 22} 178 H${cx + 34} Q${cx + 42} 178 ${cx + 42} 170 V86 C${cx + 42} 72 ${cx + 30} 72 ${cx + 30} 86 V196 Q${cx + 30} 204 ${cx + 22} 204 H${cx + 8}" fill="none" stroke="${C.coolFill}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
     const chamber = `<path d="M${cx - 13.5} 28 V48 Q${cx - 22} 54 ${cx - 22} 64 V172 Q${cx - 22} 186 ${cx - 8} 192 V238 M${cx + 8} 238 V192 Q${cx + 22} 186 ${cx + 22} 172 V64 Q${cx + 22} 54 ${cx + 13.5} 48 V28" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
     const thimble = `<rect x="${cx - 14}" y="90" width="28" height="86" rx="6" fill="${C.chassisTop}" stroke="${C.tick}" stroke-width="1.2" stroke-dasharray="4 3"/>`;
     assets.push({
@@ -1043,9 +1073,9 @@ function buildAssets() {
   {
     const id = 'kjeldahl-distillation-head';
     const W = 112, H = 152, cx = 34;
-    const male = verticalMaleJoint(id, cx, 124, 24, 11.5, 8.8);
+    const male = verticalMaleJoint(id, cx, 124, 24, 11.5, 8.8, { hwShoulder: 9 });
     const ux = 0.965926, uy = 0.258819;
-    const sideCone = angledMaleJoint(id, 84, 52, ux, uy, 22, 10, 7.8);
+    const sideCone = angledMaleJoint(id, 84, 52, ux, uy, 22, 10, 7.8, { stepIn: 1.8 });
     // Smooth spherical anti-splash Kjeldahl bulb + curved swan neck into 75° vapor delivery cone
     const bulb = `<path d="
       M${cx - 9} 124 V92
@@ -1063,7 +1093,7 @@ function buildAssets() {
     assets.push({
       id, name: '凯氏定氮防溅球', category: '蒸馏与分馏',
       search: '凯氏定氮防溅球 凯氏蒸馏头 氮球 Kjeldahl splash head bulb 防止碱液随蒸汽冲入冷凝管造成测定偏高。',
-      width: W, height: H, svg: wrapSvg(id, '凯氏定氮防溅球', W, H, `${bulb}\n  ${baffle}\n  ${specularHighlight(cx - 19, 48, 78, 2.6, 0.78)}\n  ${male}\n  ${sideCone.svg}`),
+      width: W, height: H, svg: wrapSvg(id, '凯氏定氮防溅球', W, H, `${bulb}\n  ${baffle}\n  ${male}\n  ${sideCone.svg}`),
       ports: [
         { id: 'outlet', x: cx, y: 148, dx: 0, dy: 1, type: 'glass-male', diameter: 17.6, depth: 24, edge: [cx - 8.8, 148, cx + 8.8, 148] },
         { id: 'side', x: sideCone.tip[0], y: sideCone.tip[1], dx: r(ux), dy: r(uy), type: 'vapor-male', diameter: sideCone.diameter, depth: 22, edge: sideCone.edge },
@@ -1077,9 +1107,9 @@ function buildAssets() {
     const id = 'sintered-glass-funnel';
     const W = 104, H = 196, cx = 52;
     const cup = `<path d="M12 14 V82 C12 104 42 114 44 124 V190 L60 184 V124 C62 114 92 104 92 82 V14" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const rim = `<path d="M12 14 Q52 9 92 14" fill="none" stroke="${C.muted}" stroke-width="1.2" stroke-linecap="round"/>`;
+    const rim = `<path d="M12 14 Q52 9 92 14" fill="none" stroke="${C.muted}" stroke-width="1.4" stroke-linecap="round"/>`;
     // Porous sintered glass fritted plate (G3/G4)
-    const frit = `<rect x="15" y="76" width="74" height="10" rx="2" fill="#E2E8F0" stroke="${C.inner}" stroke-width="1.6"/>
+    const frit = `<rect x="15" y="76" width="74" height="10" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.6"/>
       <line x1="18" y1="81" x2="86" y2="81" stroke="${C.frostStroke}" stroke-width="2.0" stroke-dasharray="2 3"/>`;
     assets.push({
       id, name: '玻璃砂芯漏斗', category: '过滤与分离',
@@ -1159,10 +1189,10 @@ function buildAssets() {
     const inBarb = oliveBarb(id, cx - 12, 24, -1, 36, 4.8, 4.0);
     const outBarb = oliveBarb(id, cx + 12, 34, 1, 36, 4.8, 4.0);
     const jar = `<path d="M${cx - 18} 58 V70 L${cx - 32} 84 V212 Q${cx - 32} 224 ${cx - 20} 224 H${cx + 20} Q${cx + 32} 224 ${cx + 32} 212 V84 L${cx + 18} 70 V58" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const joint = verticalMaleJoint(id, cx, 50, 20, 17, 14.5);
-    const head = `<path d="M${cx - 17} 50 V18 C${cx - 17} 8 ${cx + 17} 8 ${cx + 17} 18 V50" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
+    const joint = verticalMaleJoint(id, cx, 50, 20, 17, 14.5, { hwShoulder: 15 });
+    const head = `<path d="M${cx - 15} 50 V18 C${cx - 15} 8 ${cx + 15} 8 ${cx + 15} 18 V50" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
     const dipTube = `<path d="M${cx - 12} 24 H${cx - 4} Q${cx} 24 ${cx} 29 V196" fill="none" stroke="${C.inner}" stroke-width="3.2" stroke-linecap="round"/>
-      <rect x="${cx - 6}" y="196" width="12" height="15" rx="3" fill="#E2E8F0" stroke="${C.inner}" stroke-width="1.6"/>`;
+      <rect x="${cx - 6}" y="196" width="12" height="15" rx="3" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.6"/>`;
     assets.push({
       id, name: '磨口气体洗瓶', category: '气体处理与干燥',
       search: '气体洗瓶 德雷克塞尔洗瓶 gas washing bottle Drechsel 长管进气到底部砂芯气泡分散头，短管出气，用于吸收杂质或干燥气体。',
@@ -1183,7 +1213,7 @@ function buildAssets() {
     const inBarb = oliveBarb(id, cx - 14, 24, -1, 32, 5.2, 4.4);
     const outBarb = oliveBarb(id, cx + 14, 38, 1, 32, 5.2, 4.4);
     const trap = `<path d="M${cx - 22} 58 V192 C${cx - 22} 214 ${cx + 22} 214 ${cx + 22} 192 V58" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const flange = `<rect x="${cx - 26}" y="52" width="52" height="10" rx="3" fill="url(#${id}-frost)" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const flange = `<rect x="${cx - 26}" y="52" width="52" height="10" rx="3" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>`;
     const head = `<path d="M${cx - 16} 52 V18 C${cx - 16} 8 ${cx + 16} 8 ${cx + 16} 18 V52" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round"/>`;
     const dip = `<path d="M${cx - 14} 24 H${cx - 4} Q${cx} 24 ${cx} 29 V178" fill="none" stroke="${C.inner}" stroke-width="4.4" stroke-linecap="round"/>
       <path d="M${cx - 14} 24 H${cx - 4} Q${cx} 24 ${cx} 29 V178" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>`;
@@ -1207,9 +1237,9 @@ function buildAssets() {
     const gasIn = oliveBarb(id, 22, yGas, -1, 18, 5.5, 4.5);
     const vacIn = oliveBarb(id, 22, yVac, -1, 18, 5.5, 4.5);
     const manifolds = `
-      <rect x="22" y="${yGas - 6.5}" width="268" height="13" rx="6.5" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="22" y="${yVac - 6.5}" width="268" height="13" rx="6.5" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <path d="M290 ${yGas - 4} Q304 ${yGas - 4} 304 ${yGas + 13} Q304 ${yVac + 4} 290 ${yVac + 4}" fill="none" stroke="${C.stroke}" stroke-width="2.0"/>`;
+      <rect x="22" y="${yGas - 6.5}" width="268" height="13" rx="6.5" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.8"/>
+      <rect x="22" y="${yVac - 6.5}" width="268" height="13" rx="6.5" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.8"/>
+      <path d="M290 ${yGas - 4} Q304 ${yGas - 4} 304 ${yGas + 13} Q304 ${yVac + 4} 290 ${yVac + 4}" fill="none" stroke="${C.stroke}" stroke-width="2.4"/>`;
     const taps = [];
     const ports = [
       { id: 'gas-in', ...gasIn.port, type: 'tube' },
@@ -1222,19 +1252,19 @@ function buildAssets() {
       // Dual-branch feed lines from both upper Gas and lower Vacuum manifolds into oblique stopcock
       taps.push(`
         ${barb.svg}
-        <path d="M${tx - 6} ${yGas + 6} V75 M${tx + 6} ${yVac + 6} V75" fill="none" stroke="${C.stroke}" stroke-width="4.2" stroke-linecap="round"/>
-        <path d="M${tx - 6} ${yGas + 6} V75 M${tx + 6} ${yVac + 6} V75" fill="none" stroke="url(#${id}-glass)" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M${tx - 8} 74 L${tx - 10} 80 V98 L${tx - 4.6} 108 H${tx + 4.6} L${tx + 10} 98 V80 L${tx + 8} 74 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>
-        <rect x="${tx - 9}" y="76" width="18" height="22" rx="4" fill="url(#${id}-frost)" stroke="${C.stroke}" stroke-width="1.8"/>
-        <line x1="${tx - 6}" y1="81" x2="${tx + 6}" y2="91" stroke="${C.tealDark}" stroke-width="2.0"/>
+        <path d="M${tx - 6} ${yGas + 6} V75 M${tx + 6} ${yVac + 6} V75" fill="none" stroke="${C.stroke}" stroke-width="5.0" stroke-linecap="round"/>
+        <path d="M${tx - 6} ${yGas + 6} V75 M${tx + 6} ${yVac + 6} V75" fill="none" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round"/>
+        <path d="M${tx - 8} 74 L${tx - 10} 80 V98 L${tx - 4.6} 108 H${tx + 4.6} L${tx + 10} 98 V80 L${tx + 8} 74 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+        <rect x="${tx - 9}" y="76" width="18" height="22" rx="4" fill="${C.ptfe}" stroke="${C.stroke}" stroke-width="2.0"/>
+        <line x1="${tx - 6}" y1="81" x2="${tx + 6}" y2="91" stroke="${C.redAccent}" stroke-width="2.0"/>
         <line x1="${tx - 6}" y1="87" x2="${tx + 6}" y2="97" stroke="${C.inner}" stroke-width="1.4"/>
-        <rect x="${tx - 15}" y="84" width="6" height="7" rx="1.5" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="1.4"/>`);
+        <rect x="${tx - 15}" y="84" width="6" height="7" rx="1.5" fill="${C.redAccent}" stroke="${C.stroke}" stroke-width="1.6"/>`);
     }
     ports.push({ id: 'grip-site', x: 160, y: 41, dx: 1, dy: 0, type: 'grip-site', segment: [160, 22, 160, 62] });
     assets.push({
       id, name: '施伦克双排管', category: '真空与无水无氧',
       search: '施伦克双排管 Schlenk line 真空惰性气体双排管 无水无氧操作 配备高真空管路、惰性气体管路与多个斜孔二通旋塞。',
-      width: W, height: H, svg: wrapSvg(id, '施伦克双排管', W, H, `${gasIn.svg}\n  ${vacIn.svg}\n  ${manifolds}\n  ${specularHighlight(150, yGas - 2, yGas - 2, 1.5, 0.7)}\n  ${taps.join('\n  ')}`),
+      width: W, height: H, svg: wrapSvg(id, '施伦克双排管', W, H, `${gasIn.svg}\n  ${vacIn.svg}\n  ${manifolds}\n  ${taps.join('\n  ')}`),
       ports,
     });
   }
@@ -1245,14 +1275,14 @@ function buildAssets() {
     const W = 122, H = 200, cx = 61;
     const leftB = oliveBarb(id, cx - 18, 22, -1, 34, 4.8, 4.0);
     const rightB = oliveBarb(id, cx + 18, 22, 1, 34, 4.8, 4.0);
-    const bottle = `<path d="M${cx - 22} 50 V66 L${cx - 46} 90 V184 Q${cx - 46} 196 ${cx - 34} 196 H${cx + 34} Q${cx + 46} 196 ${cx + 46} 184 V90 L${cx + 22} 66 V50 Z" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>`;
-    const stopper = `<path d="M${cx - 20} 26 H${cx + 20} L${cx + 16} 52 H${cx - 16} Z" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const bottle = `<path d="M${cx - 22} 50 V66 L${cx - 46} 90 V184 Q${cx - 46} 196 ${cx - 34} 196 H${cx + 34} Q${cx + 46} 196 ${cx + 46} 184 V90 L${cx + 22} 66 V50 Z" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linejoin="round"/>`;
+    const stopper = `<path d="M${cx - 20} 26 H${cx + 20} L${cx + 16} 52 H${cx - 16} Z" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.4"/>`;
     const tubes = `<path d="M${cx - 18} 22 H${cx - 8} V96" fill="none" stroke="${C.inner}" stroke-width="3.2" stroke-linecap="round"/>
       <path d="M${cx + 18} 22 H${cx + 8} V74" fill="none" stroke="${C.inner}" stroke-width="3.2" stroke-linecap="round"/>`;
     assets.push({
       id, name: '真空安全缓冲瓶', category: '真空与无水无氧',
       search: '安全瓶 真空安全缓冲瓶 防倒吸瓶 vacuum safety buffer bottle 连接在水泵或真空泵与抽滤装置之间防止倒吸。',
-      width: W, height: H, svg: wrapSvg(id, '真空安全缓冲瓶', W, H, `${leftB.svg}\n  ${rightB.svg}\n  ${bottle}\n  ${tubes}\n  ${stopper}\n  ${specularHighlight(cx - 36, 94, 180, 3.2, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '真空安全缓冲瓶', W, H, `${leftB.svg}\n  ${rightB.svg}\n  ${bottle}\n  ${tubes}\n  ${stopper}`),
       ports: [
         { id: 'inlet', ...leftB.port, type: 'tube' },
         { id: 'outlet', ...rightB.port, type: 'tube' },
@@ -1266,8 +1296,8 @@ function buildAssets() {
   {
     const id = 'vacuum-capillary';
     const W = 28, H = 226, cx = 14;
-    const cap = `<path d="M${cx - 5.5} 6 L${cx - 4} 14 V152 L${cx - 2.5} 222 M${cx + 2.5} 222 L${cx + 4} 152 V14 L${cx + 5.5} 6" fill="none" stroke="${C.stroke}" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
-      <line x1="${cx}" y1="12" x2="${cx}" y2="218" stroke="${C.teal}" stroke-width="1.0"/>`;
+    const cap = `<path d="M${cx - 5.5} 6 L${cx - 4} 14 V152 L${cx - 2.5} 222 M${cx + 2.5} 222 L${cx + 4} 152 V14 L${cx + 5.5} 6" fill="none" stroke="${C.stroke}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="${cx}" y1="12" x2="${cx}" y2="218" stroke="${C.liquidLine}" stroke-width="1.2"/>`;
     assets.push({
       id, name: '减压蒸馏毛细管', category: '蒸馏与分馏',
       search: '减压蒸馏毛细管 vacuum distillation capillary tube 插入克氏蒸馏头通向烧瓶底部引入极微弱气泡，防止减压蒸馏暴沸。',
@@ -1284,9 +1314,9 @@ function buildAssets() {
     const id = 'three-way-stopcock';
     const W = 96, H = 76, cx = 48, cy = 24;
     const tee = `<path d="M4 ${cy - 6} H${cx - 12} Q${cx} ${cy - 14} ${cx + 12} ${cy - 6} H92 M92 ${cy + 6} H${cx + 12} L${cx + 6} ${cy + 14} V72 M${cx - 6} 72 V${cy + 14} L${cx - 12} ${cy + 6} H4" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const barrel = `<circle cx="${cx}" cy="${cy}" r="11.5" fill="url(#${id}-frost)" stroke="${C.stroke}" stroke-width="2.0"/>
-      <path d="M${cx - 7} ${cy} H${cx + 7} M${cx} ${cy} V${cy + 7}" fill="none" stroke="${C.tealDark}" stroke-width="2.4" stroke-linecap="round"/>
-      <rect x="${cx - 13}" y="${cy - 3}" width="26" height="6" rx="3" fill="${C.ptfe}" stroke="${C.inner}" stroke-width="1.2"/>`;
+    const barrel = `<circle cx="${cx}" cy="${cy}" r="11.5" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.4"/>
+      <path d="M${cx - 7} ${cy} H${cx + 7} M${cx} ${cy} V${cy + 7}" fill="none" stroke="${C.redAccent}" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="${cx - 13}" y="${cy - 3}" width="26" height="6" rx="3" fill="${C.ptfe}" stroke="${C.inner}" stroke-width="1.4"/>`;
     assets.push({
       id, name: 'T形三通玻璃活塞', category: '瓶塞与磨口接头',
       search: '三通活塞 T形三通阀 three way glass stopcock 用于切换气体或液体流向的T形三通玻璃/聚四氟乙烯旋塞阀。',
@@ -1310,14 +1340,14 @@ function buildAssets() {
     // Horizontal double-walled heating jacket + inner sample boat tube + right desiccant bulb (open top/bottom joints)
     const outerJacket = `<path d="
       M20 50 H${jx - 9.5} V26
-      M${jx + 9.5} 26 V50 H148 Q158 50 158 60 V80 Q158 90 148 90 H${jx + 11.5} V110
-      M${jx - 11.5} 110 V90 H20 Q10 90 10 80 V60 Q10 50 20 50"
+      M${jx + 9.5} 26 V50 H148 Q158 50 158 60 V80 Q158 90 148 90 H${jx + 9.3} V110
+      M${jx - 9.3} 110 V90 H20 Q10 90 10 80 V60 Q10 50 20 50"
       fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const innerChamber = `<rect x="14" y="59" width="150" height="22" rx="4" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.5"/>
-      <rect x="44" y="70" width="52" height="7" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.1"/>`;
-    const desiccantBulb = `<path d="M166 60 H178 C184 44 214 44 214 70 C214 96 184 96 178 80 H166 Z" fill="none" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <circle cx="192" cy="70" r="9" fill="${C.coolFill}" stroke="${C.inner}" stroke-width="1.1" stroke-dasharray="2 2"/>`;
-    const stopcock = drawStopcock(id, 172, 70, { w: 12, h: 7, teal: true });
+    const innerChamber = `<rect x="14" y="59" width="150" height="22" rx="4" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.6"/>
+      <rect x="44" y="70" width="52" height="7" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.2"/>`;
+    const desiccantBulb = `<path d="M166 60 H178 C184 44 214 44 214 70 C214 96 184 96 178 80 H166 Z" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>
+      <circle cx="192" cy="70" r="9" fill="${C.coolFill}" stroke="${C.inner}" stroke-width="1.2" stroke-dasharray="2 2"/>`;
+    const stopcock = drawStopcock(id, 172, 70, { w: 12, h: 7 });
     assets.push({
       id, name: '真空干燥枪', category: '干燥与提纯',
       search: '真空干燥枪 Abderhalden drying pistol 阿布德哈尔登干燥枪 恒温溶剂回流夹套与五氧化二磷/干燥剂真空室，用于少量热敏样品的恒温真空干燥。',
@@ -1337,7 +1367,7 @@ function buildAssets() {
     const W = 128, H = 264, cx = 56;
     const femTop = verticalFemaleJoint(id, cx, 4, 22, 13, 10.5);
     const outBarb = oliveBarb(id, cx + 38, 126, 1, 26, 4.8, 4.0);
-    const stopcock = drawStopcock(id, cx + 49, 126, { w: 14, h: 8, teal: true });
+    const stopcock = drawStopcock(id, cx + 49, 126, { w: 14, h: 8 });
     const glassBody = `<path d="
       M${cx - 10.5} 26 V40
       C${cx - 40} 48 ${cx - 42} 84 ${cx - 22} 98
@@ -1353,13 +1383,13 @@ function buildAssets() {
     const innerFunnel = `<path d="M${cx - 6} 98 V216 M${cx + 6} 98 V216" fill="none" stroke="${C.inner}" stroke-width="1.6"/>
       <line x1="${cx - 23}" y1="162" x2="${cx - 6}" y2="162" stroke="${C.inner}" stroke-width="2.0" stroke-dasharray="3 2"/>
       <line x1="${cx + 6}" y1="162" x2="${cx + 23}" y2="162" stroke="${C.inner}" stroke-width="2.0" stroke-dasharray="3 2"/>
-      <circle cx="${cx - 15}" cy="150" r="3.2" fill="#CBD5E1" stroke="${C.inner}" stroke-width="1"/>
-      <circle cx="${cx + 15}" cy="150" r="3.2" fill="#CBD5E1" stroke="${C.inner}" stroke-width="1"/>
-      <circle cx="${cx - 19}" cy="143" r="3.0" fill="#CBD5E1" stroke="${C.inner}" stroke-width="1"/>`;
+      <circle cx="${cx - 15}" cy="150" r="3.2" fill="${C.chassisBot}" stroke="${C.inner}" stroke-width="1"/>
+      <circle cx="${cx + 15}" cy="150" r="3.2" fill="${C.chassisBot}" stroke="${C.inner}" stroke-width="1"/>
+      <circle cx="${cx - 19}" cy="143" r="3.0" fill="${C.chassisBot}" stroke="${C.inner}" stroke-width="1"/>`;
     assets.push({
       id, name: '启普发生器', category: '气体发生与反应',
       search: '启普发生器 Kipps generator 块状固体与液体不加热制取氢气二氧化碳硫化氢气体，随开随停。',
-      width: W, height: H, svg: wrapSvg(id, '启普发生器', W, H, `${outBarb.svg}\n  ${glassBody}\n  ${innerFunnel}\n  ${stopcock}\n  ${specularHighlight(cx - 27, 56, 86, 2.8, 0.78)}\n  ${specularHighlight(cx - 28, 118, 148, 2.8, 0.78)}\n  ${specularHighlight(cx - 29, 182, 214, 2.8, 0.78)}\n  ${femTop}`),
+      width: W, height: H, svg: wrapSvg(id, '启普发生器', W, H, `${outBarb.svg}\n  ${glassBody}\n  ${innerFunnel}\n  ${stopcock}\n  ${femTop}`),
       ports: [
         { id: 'mouth', x: cx, y: 4, dx: 0, dy: -1, type: 'glass-female', diameter: 26, depth: 22, edge: [cx - 13, 4, cx + 13, 4], target: [cx, 200] },
         { id: 'outlet', ...outBarb.port, type: 'tube' },
@@ -1368,12 +1398,12 @@ function buildAssets() {
     });
   }
 
-  // 41. lab:acid-burette (酸式滴定管 — open flared top, bold glass walls, PTFE stopcock, open tip)
+  // 41. lab:acid-burette (酸式滴定管 — open flared top, bold glass walls, crimson PTFE stopcock, open tip)
   {
     const id = 'acid-burette';
     const W = 40, H = 340, cx = 20;
-    const tube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V274 L${cx - 4} 296 L${cx - 2.5} 336 M${cx + 2.5} 336 L${cx + 4} 296 L${cx + 6} 274 V10 L${cx + 8} 4" fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const valve = drawStopcock(id, cx, 290, { w: 18, h: 8, glass: true, teal: true });
+    const tube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V274 L${cx - 4} 296 L${cx - 2.5} 336 M${cx + 2.5} 336 L${cx + 4} 296 L${cx + 6} 274 V10 L${cx + 8} 4" fill="none" stroke="${C.stroke}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const valve = drawStopcock(id, cx, 290, { w: 18, h: 8, glass: true });
     const grads = graduationMarks(cx + 5.5, 24, 260, 20, 5, 4.5);
     const labels = `<text x="${cx - 1}" y="29" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="end">0</text>
       <text x="${cx - 1}" y="262" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="end">50</text>`;
@@ -1393,10 +1423,10 @@ function buildAssets() {
   {
     const id = 'alkaline-burette';
     const W = 40, H = 340, cx = 20;
-    const upperTube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V272 M${cx + 6} 272 V10 L${cx + 8} 4" fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const rubber = `<rect x="${cx - 5.5}" y="272" width="11" height="32" rx="2" fill="${C.amberMid}" stroke="${C.stroke}" stroke-width="1.9"/>
-      <circle cx="${cx}" cy="288" r="3.8" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="1.4"/>`;
-    const tip = `<path d="M${cx - 4.5} 304 L${cx - 2.5} 336 M${cx + 2.5} 336 L${cx + 4.5} 304" fill="none" stroke="${C.stroke}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const upperTube = `<path d="M${cx - 8} 4 L${cx - 6} 10 V272 M${cx + 6} 272 V10 L${cx + 8} 4" fill="none" stroke="${C.stroke}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const rubber = `<rect x="${cx - 5.5}" y="272" width="11" height="32" rx="2" fill="${C.amberMid}" stroke="${C.stroke}" stroke-width="2.1"/>
+      <circle cx="${cx}" cy="288" r="3.8" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="1.5"/>`;
+    const tip = `<path d="M${cx - 4.5} 304 L${cx - 2.5} 336 M${cx + 2.5} 336 L${cx + 4.5} 304" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`;
     const grads = graduationMarks(cx + 5.5, 24, 260, 20, 5, 4.5);
     const labels = `<text x="${cx - 1}" y="29" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="end">0</text>
       <text x="${cx - 1}" y="262" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="end">50</text>`;
@@ -1426,13 +1456,13 @@ function buildAssets() {
       C${cx + 4} 200 ${cx + 12} 194 ${cx + 12} 176
       V146
       C${cx + 12} 128 ${cx + 4} 122 ${cx + 4} 110 V4"
-      fill="none" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const mark = `<line x1="${cx - 4.5}" y1="68" x2="${cx + 4.5}" y2="68" stroke="${C.tealDark}" stroke-width="1.5"/>
+      fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const mark = `<line x1="${cx - 4.5}" y1="68" x2="${cx + 4.5}" y2="68" stroke="${C.redAccent}" stroke-width="1.6"/>
       <text x="${cx}" y="164" font-size="7" font-family="Segoe UI, sans-serif" fill="${C.tick}" text-anchor="middle">25</text>`;
     assets.push({
       id, name: '大肚移液管', category: '滴定与移液',
       search: '大肚移液管 单标线移液管 volumetric transfer pipette bulb 精密移取固定体积（如10mL、25mL）的液体溶液。',
-      width: W, height: H, svg: wrapSvg(id, '大肚移液管', W, H, `${body}\n  ${mark}\n  ${specularHighlight(cx - 7.5, 136, 186, 2.2, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '大肚移液管', W, H, `${body}\n  ${mark}`),
       ports: [
         { id: 'inlet', x: cx, y: 4, dx: 0, dy: -1, type: 'pipette-stem', diameter: 8, depth: 12, edge: [cx - 4, 4, cx + 4, 4] },
         { id: 'outlet', x: cx, y: 312, dx: 0, dy: 1, type: 'delivery', diameter: 5, depth: 8, edge: [cx - 2.5, 312, cx + 2.5, 312], segment: [cx, 224, cx, 308] },
@@ -1441,25 +1471,25 @@ function buildAssets() {
     });
   }
 
-  // 44. lab:titration-stand (滴定台与蝴蝶夹 — white porcelain base + stainless vertical rod + dual butterfly burette clamp)
+  // 44. lab:titration-stand (滴定台与蝴蝶夹 — porcelain base + brushed rod + neutral butterfly burette clamp)
   {
     const id = 'titration-stand';
     const W = 186, H = 408, rodX = 93;
-    const base = `<rect x="8" y="380" width="170" height="22" rx="4" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="8" y="396" width="170" height="6" rx="2" fill="#E2E8F0" stroke="${C.stroke}" stroke-width="1.6"/>
+    const base = `<rect x="8" y="380" width="170" height="22" rx="4" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.6"/>
+      <rect x="8" y="396" width="170" height="6" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.8"/>
       <rect x="20" y="402" width="14" height="4" rx="1" fill="${C.bezel}"/>
       <rect x="152" y="402" width="14" height="4" rx="1" fill="${C.bezel}"/>`;
-    const rod = `<rect x="${rodX - 4.5}" y="8" width="9" height="372" rx="3" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="2.0"/>
+    const rod = `<rect x="${rodX - 4.5}" y="8" width="9" height="372" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
       <rect x="${rodX - 9}" y="370" width="18" height="10" rx="2" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.8"/>`;
     // Butterfly double burette clamp mounted cleanly at y = 148
     const clampY = 148;
     const butterfly = `<g>
       <rect x="${rodX - 11}" y="${clampY - 12}" width="22" height="24" rx="3" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="${rodX}" cy="${clampY}" r="4.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.5"/>
+      <circle cx="${rodX}" cy="${clampY}" r="4.5" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.6"/>
       <path d="M${rodX - 11} ${clampY - 4} H44 C32 ${clampY - 4} 28 ${clampY - 14} 38 ${clampY - 14} M${rodX - 11} ${clampY + 4} H44 C32 ${clampY + 4} 28 ${clampY + 14} 38 ${clampY + 14}" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>
       <path d="M${rodX + 11} ${clampY - 4} H142 C154 ${clampY - 4} 158 ${clampY - 14} 148 ${clampY - 14} M${rodX + 11} ${clampY + 4} H142 C154 ${clampY + 4} 158 ${clampY + 14} 148 ${clampY + 14}" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>
-      <rect x="46" y="${clampY - 9}" width="12" height="18" rx="3" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="128" y="${clampY - 9}" width="12" height="18" rx="3" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="46" y="${clampY - 9}" width="12" height="18" rx="3" fill="${C.metalDark}" stroke="${C.stroke}" stroke-width="1.6"/>
+      <rect x="128" y="${clampY - 9}" width="12" height="18" rx="3" fill="${C.metalDark}" stroke="${C.stroke}" stroke-width="1.6"/>
     </g>`;
     assets.push({
       id, name: '滴定台与蝴蝶夹', category: '支架与夹具',
@@ -1479,17 +1509,17 @@ function buildAssets() {
   {
     const id = 'alcohol-lamp';
     const W = 94, H = 136, cx = 47;
-    const flame = `<path d="M${cx} 4 C${cx + 12} 22 ${cx + 11} 36 ${cx} 39 C${cx - 11} 36 ${cx - 12} 22 ${cx} 4 Z" fill="${C.brassLight}" stroke="${C.brassDark}" stroke-width="1.3"/>
-      <path d="M${cx} 15 C${cx + 6} 26 ${cx + 6} 36 ${cx} 39 C${cx - 6} 36 ${cx - 6} 26 ${cx} 15 Z" fill="${C.teal}"/>`;
-    const wickCollar = `<rect x="${cx - 4}" y="38" width="8" height="10" rx="1.5" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="${cx - 12}" y="48" width="24" height="9" rx="3" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const flame = `<path d="M${cx} 4 C${cx + 12} 22 ${cx + 11} 36 ${cx} 39 C${cx - 11} 36 ${cx - 12} 22 ${cx} 4 Z" fill="${C.brassLight}" stroke="${C.brassDark}" stroke-width="1.4"/>
+      <path d="M${cx} 15 C${cx + 6} 26 ${cx + 6} 36 ${cx} 39 C${cx - 6} 36 ${cx - 6} 26 ${cx} 15 Z" fill="${C.flameBlue}"/>`;
+    const wickCollar = `<rect x="${cx - 4}" y="38" width="8" height="10" rx="1.5" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="${cx - 12}" y="48" width="24" height="9" rx="3" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="2.2"/>`;
     const body = `<path d="M${cx - 14} 57 H${cx + 14} V66 C${cx + 32} 76 ${cx + 42} 96 ${cx + 40} 118 Q${cx + 39} 132 ${cx + 24} 132 H${cx - 24} Q${cx - 39} 132 ${cx - 40} 118 C${cx - 42} 96 ${cx - 32} 76 ${cx - 14} 66 Z" fill="none" stroke="${C.stroke}" stroke-width="${C.glassSw}" stroke-linejoin="round"/>
-      <path d="M${cx - 36} 104 Q${cx} 107 ${cx + 36} 104 L${cx + 34} 121 Q${cx} 126 ${cx - 34} 121 Z" fill="${C.coolFill}" stroke="${C.teal}" stroke-width="1.2"/>
-      <path d="M${cx} 48 V122" fill="none" stroke="${C.inner}" stroke-width="1.4" stroke-dasharray="3 2"/>`;
+      <path d="M${cx - 36} 104 Q${cx} 107 ${cx + 36} 104 L${cx + 34} 121 Q${cx} 126 ${cx - 34} 121 Z" fill="${C.coolFill}" stroke="${C.liquidLine}" stroke-width="1.4"/>
+      <path d="M${cx} 48 V122" fill="none" stroke="${C.inner}" stroke-width="1.6" stroke-dasharray="3 2"/>`;
     assets.push({
       id, name: '酒精灯', category: '加热与温控',
       search: '酒精灯 alcohol lamp spirit burner 玻璃灯体与棉芯，常用于实验室温和加热试管、蒸发皿或烧瓶。',
-      width: W, height: H, svg: wrapSvg(id, '酒精灯', W, H, `${flame}\n  ${body}\n  ${wickCollar}\n  ${specularHighlight(cx - 24, 82, 120, 3.0, 0.78)}`),
+      width: W, height: H, svg: wrapSvg(id, '酒精灯', W, H, `${flame}\n  ${body}\n  ${wickCollar}`),
       ports: [
         { id: 'base', x: cx, y: 132, dx: 0, dy: 1, type: 'base' },
       ],
@@ -1500,19 +1530,19 @@ function buildAssets() {
   {
     const id = 'alcohol-blast-burner';
     const W = 112, H = 196, cx = 56;
-    const jetFlame = `<path d="M${cx} 4 C${cx + 14} 28 ${cx + 10} 52 ${cx} 58 C${cx - 10} 52 ${cx - 14} 28 ${cx} 4 Z" fill="${C.brassLight}" stroke="${C.brassDark}" stroke-width="1.3"/>
-      <path d="M${cx} 16 C${cx + 6} 34 ${cx + 5} 52 ${cx} 58 C${cx - 5} 52 ${cx - 6} 34 ${cx} 16 Z" fill="${C.flameCore}" stroke="${C.teal}" stroke-width="1.1"/>`;
-    const chimney = `<rect x="${cx - 9}" y="58" width="18" height="62" rx="2" fill="url(#${id}-brass)" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="${cx - 11}" y="72" width="22" height="10" rx="2" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="${cx - 15}" y="114" width="30" height="8" rx="3" fill="url(#${id}-brass)" stroke="${C.stroke}" stroke-width="1.8"/>`;
-    const reservoir = `<rect x="${cx - 34}" y="128" width="68" height="54" rx="10" fill="url(#${id}-brass)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="${cx - 28}" y="118" width="12" height="10" rx="2" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="${cx + 16}" y="122" width="10" height="6" rx="1.5" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="${cx - 46}" y="182" width="92" height="10" rx="4" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.2"/>`;
+    const jetFlame = `<path d="M${cx} 4 C${cx + 14} 28 ${cx + 10} 52 ${cx} 58 C${cx - 10} 52 ${cx - 14} 28 ${cx} 4 Z" fill="${C.brassLight}" stroke="${C.brassDark}" stroke-width="1.4"/>
+      <path d="M${cx} 16 C${cx + 6} 34 ${cx + 5} 52 ${cx} 58 C${cx - 5} 52 ${cx - 6} 34 ${cx} 16 Z" fill="${C.flameCore}" stroke="${C.flameBlue}" stroke-width="1.3"/>`;
+    const chimney = `<rect x="${cx - 9}" y="58" width="18" height="62" rx="2" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <rect x="${cx - 11}" y="72" width="22" height="10" rx="2" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <rect x="${cx - 15}" y="114" width="30" height="8" rx="3" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const reservoir = `<rect x="${cx - 34}" y="128" width="68" height="54" rx="10" fill="${C.brassMid}" stroke="${C.stroke}" stroke-width="2.6"/>
+      <rect x="${cx - 28}" y="118" width="12" height="10" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="${cx + 16}" y="122" width="10" height="6" rx="1.5" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <rect x="${cx - 46}" y="182" width="92" height="10" rx="4" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.4"/>`;
     assets.push({
       id, name: '酒精喷灯', category: '加热与温控',
       search: '酒精喷灯 座式酒精喷灯 alcohol blast burner 铜质汽化管与预热盘，产生高温强热火焰（约1000°C），用于玻璃加工及高温灼烧。',
-      width: W, height: H, svg: wrapSvg(id, '酒精喷灯', W, H, `${jetFlame}\n  ${chimney}\n  ${reservoir}\n  ${specularHighlight(cx - 24, 134, 174, 2.8, 0.52)}`),
+      width: W, height: H, svg: wrapSvg(id, '酒精喷灯', W, H, `${jetFlame}\n  ${chimney}\n  ${reservoir}`),
       ports: [
         { id: 'base', x: cx, y: 192, dx: 0, dy: 1, type: 'base' },
       ],
@@ -1532,40 +1562,40 @@ function buildAssets() {
     const waterOut = oliveBarb(id, 248, 48, 1, 22, 4.4, 3.6);
     const waterIn = oliveBarb(id, 204, 128, -1, 22, 4.4, 3.6);
 
-    const standBase = `<rect x="14" y="242" width="262" height="16" rx="4" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
+    const standBase = `<rect x="14" y="242" width="262" height="16" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
       <rect x="26" y="258" width="16" height="4" rx="1" fill="${C.bezel}"/>
       <rect x="248" y="258" width="16" height="4" rx="1" fill="${C.bezel}"/>`;
-    const bath = `<rect x="22" y="182" width="106" height="60" rx="6" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="28" y="176" width="94" height="8" rx="2" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="36" y="194" width="50" height="24" rx="3" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="1.6"/>
+    const bath = `<rect x="22" y="182" width="106" height="60" rx="6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
+      <rect x="28" y="176" width="94" height="8" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="36" y="194" width="50" height="24" rx="3" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="1.8"/>
       <text x="61" y="209" font-size="9.5" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">45.0 °C</text>
-      <circle cx="104" cy="206" r="8" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.6"/>
-      <line x1="104" y1="206" x2="108" y2="201" stroke="${C.tealDark}" stroke-width="1.8"/>
-      <rect x="22" y="226" width="106" height="5" fill="${C.tealDark}"/>`;
-    const liftColumn = `<rect x="142" y="42" width="28" height="200" rx="3" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="148" y="54" width="16" height="172" rx="2" fill="#E2E8F0" stroke="${C.inner}" stroke-width="1.2"/>`;
+      <circle cx="104" cy="206" r="8" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <line x1="104" y1="206" x2="108" y2="201" stroke="${C.bezel}" stroke-width="2.0" stroke-linecap="round"/>
+      <rect x="22" y="226" width="106" height="5" fill="${C.chassisBot}"/>`;
+    const liftColumn = `<rect x="142" y="42" width="28" height="200" rx="3" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
+      <rect x="148" y="54" width="16" height="172" rx="2" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.4"/>`;
     // Coaxial tilted vapor duct & rotary motor drive housing connecting flask cleanly to condenser
     const vaporDuctAndDrive = `
-      <path d="M98 134 L182 75 L204 75" fill="none" stroke="${C.stroke}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M98 134 L182 75 L204 75" fill="none" stroke="url(#${id}-glass)" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M98 134 L182 75 L204 75" fill="none" stroke="${C.stroke}" stroke-width="9.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M98 134 L182 75 L204 75" fill="none" stroke="#FFFFFF" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
       <g transform="translate(148, 99) rotate(-35)">
-        <rect x="-24" y="-17" width="48" height="34" rx="5" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
+        <rect x="-24" y="-17" width="48" height="34" rx="5" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>
         <rect x="-18" y="-11" width="36" height="14" rx="2" fill="${C.lcdBg}"/>
         <text x="0" y="-1.5" font-size="7.5" font-family="Consolas, monospace" fill="${C.lcdCyan}" text-anchor="middle">120 rpm</text>
         <circle cx="-12" cy="9" r="3.5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.2"/>
         <rect x="0" y="6" width="14" height="6" rx="1.5" fill="${C.bezel}"/>
       </g>`;
     const evapFlask = `<g transform="translate(80, 148) rotate(55)">
-      <path d="M-7 -36 V-18 C-22 -8 -28 10 -22 24 C-16 36 16 36 22 24 C28 10 22 -8 7 -18 V-36 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M-19 10 Q0 16 19 10 C16 26 -16 26 -19 10 Z" fill="${C.coolFill}" stroke="${C.teal}" stroke-width="1.1"/>
+      <path d="M-7 -36 V-18 C-22 -8 -28 10 -22 24 C-16 36 16 36 22 24 C28 10 22 -8 7 -18 V-36 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M-19 10 Q0 16 19 10 C16 26 -16 26 -19 10 Z" fill="${C.coolFill}" stroke="${C.liquidLine}" stroke-width="1.3"/>
     </g>`;
     // Vertical coil condenser + receiving flask on right
-    const condenser = `<rect x="204" y="22" width="44" height="128" rx="12" fill="none" stroke="${C.stroke}" stroke-width="2.2"/>
+    const condenser = `<rect x="204" y="22" width="44" height="128" rx="12" fill="none" stroke="${C.stroke}" stroke-width="2.8"/>
       <path d="M226 32 C238 38 214 46 226 52 C238 58 214 66 226 72 C238 78 214 86 226 92 C238 98 214 106 226 112 C238 118 214 126 226 134" fill="none" stroke="${C.inner}" stroke-width="2.2" stroke-linecap="round"/>
-      <rect x="218" y="150" width="16" height="18" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="1.9"/>
-      <circle cx="226" cy="196" r="28" fill="none" stroke="${C.stroke}" stroke-width="2.2"/>
-      <path d="M203 206 Q226 210 249 206 A26 26 0 0 1 203 206 Z" fill="${C.coolFill}" stroke="${C.teal}" stroke-width="1.1"/>
-      <rect x="214" y="160" width="24" height="6" rx="2" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.4"/>`;
+      <rect x="218" y="150" width="16" height="18" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.2"/>
+      <circle cx="226" cy="196" r="28" fill="none" stroke="${C.stroke}" stroke-width="2.8"/>
+      <path d="M203 206 Q226 210 249 206 A26 26 0 0 1 203 206 Z" fill="${C.coolFill}" stroke="${C.liquidLine}" stroke-width="1.3"/>
+      <rect x="214" y="160" width="24" height="6" rx="2" fill="${C.redAccent}" stroke="${C.stroke}" stroke-width="1.6"/>`;
     const body = `${standBase}\n  ${vacTop.svg}\n  ${waterOut.svg}\n  ${waterIn.svg}\n  ${bath}\n  ${liftColumn}\n  ${evapFlask}\n  ${vaporDuctAndDrive}\n  ${condenser}`;
     assets.push({
       id, name: '旋转蒸发仪', category: '干燥与提纯',
@@ -1584,24 +1614,24 @@ function buildAssets() {
   {
     const id = 'abbe-refractometer';
     const W = 186, H = 196;
-    const base = `<path d="M24 186 L42 132 H144 L162 186 Z" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <rect x="16" y="180" width="154" height="10" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="52" y="144" width="82" height="26" rx="3" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="1.6"/>
+    const base = `<path d="M24 186 L42 132 H144 L162 186 Z" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>
+      <rect x="16" y="180" width="154" height="10" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="52" y="144" width="82" height="26" rx="3" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="1.8"/>
       <text x="93" y="156" font-size="8.5" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">nD 1.3330</text>
       <text x="93" y="166" font-size="7.5" font-family="Consolas, monospace" fill="${C.lcdCyan}" text-anchor="middle">20.0°C  0.0% Brix</text>`;
-    const column = `<rect x="78" y="76" width="30" height="58" rx="3" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <circle cx="93" cy="110" r="14" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="93" cy="110" r="6" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="1.5"/>`;
+    const column = `<rect x="78" y="76" width="30" height="58" rx="3" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <circle cx="93" cy="110" r="14" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <circle cx="93" cy="110" r="6" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.6"/>`;
     // Hinged double-prism housing, eyepiece telescope, and connected illumination mirror arm
     const prismAndScope = `
-      <line x1="108" y1="98" x2="136" y2="98" stroke="${C.stroke}" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse cx="144" cy="98" rx="8" ry="13" fill="url(#${id}-glass)" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="40" y="66" width="38" height="28" rx="4" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="44" y="54" width="30" height="12" rx="2" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.8"/>
-      <path d="M104 78 L142 36 L152 46 L112 90 Z" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
-      <rect x="142" y="28" width="16" height="22" rx="3" transform="rotate(42 150 39)" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="93" cy="64" r="9" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.8"/>
-      <line x1="93" y1="64" x2="98" y2="58" stroke="${C.tealDark}" stroke-width="1.8"/>`;
+      <line x1="108" y1="98" x2="136" y2="98" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>
+      <ellipse cx="144" cy="98" rx="8" ry="13" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.2"/>
+      <rect x="40" y="66" width="38" height="28" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <rect x="44" y="54" width="30" height="12" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <path d="M104 78 L142 36 L152 46 L112 90 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>
+      <rect x="142" y="28" width="16" height="22" rx="3" transform="rotate(42 150 39)" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <circle cx="93" cy="64" r="9" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <line x1="93" y1="64" x2="98" y2="58" stroke="${C.bezel}" stroke-width="2.0" stroke-linecap="round"/>`;
     assets.push({
       id, name: '阿贝折光仪', category: '光学与物性分析',
       search: '阿贝折光仪 折射率仪 Abbe refractometer 测定液体折射率 nD 和糖度 Brix，食品与有机合成纯度鉴定仪器。',
@@ -1616,27 +1646,27 @@ function buildAssets() {
   {
     const id = 'polarimeter';
     const W = 260, H = 128;
-    const chassis = `<rect x="10" y="34" width="240" height="80" rx="8" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
+    const chassis = `<rect x="10" y="34" width="240" height="80" rx="8" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
       <rect x="24" y="114" width="20" height="6" rx="2" fill="${C.bezel}"/>
       <rect x="216" y="114" width="20" height="6" rx="2" fill="${C.bezel}"/>
-      <rect x="10" y="98" width="240" height="5" fill="${C.tealDark}"/>`;
+      <line x1="14" y1="101" x2="246" y2="101" stroke="${C.chassisBot}" stroke-width="3"/>`;
     // Center sample trough cover with transparent polarimeter tube window
-    const trough = `<rect x="92" y="20" width="90" height="30" rx="5" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="2.0"/>
-      <rect x="102" y="28" width="70" height="14" rx="3" fill="${C.lcdBg}" stroke="${C.inner}" stroke-width="1.4"/>
-      <rect x="108" y="32" width="58" height="6" rx="3" fill="url(#${id}-glass)" stroke="${C.teal}" stroke-width="1.0"/>`;
+    const trough = `<rect x="92" y="20" width="90" height="30" rx="5" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <rect x="102" y="28" width="70" height="14" rx="3" fill="${C.lcdBg}" stroke="${C.inner}" stroke-width="1.6"/>
+      <rect x="108" y="32" width="58" height="6" rx="3" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.2"/>`;
     // Left LCD control panel + right optical head housing
-    const display = `<rect x="22" y="46" width="62" height="44" rx="4" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="1.8"/>
+    const display = `<rect x="22" y="46" width="62" height="44" rx="4" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="2.0"/>
       <text x="53" y="61" font-size="10" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">+12.45°</text>
       <text x="53" y="73" font-size="7" font-family="Consolas, monospace" fill="${C.lcdCyan}" text-anchor="middle">589nm  20.0°C</text>
       <text x="53" y="84" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.inner}" text-anchor="middle">AUTO POLARIMETER</text>`;
-    const keypad = `<g fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.3">
+    const keypad = `<g fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.4">
       <rect x="190" y="54" width="16" height="12" rx="2"/>
       <rect x="210" y="54" width="16" height="12" rx="2"/>
       <rect x="190" y="70" width="16" height="12" rx="2"/>
       <rect x="210" y="70" width="16" height="12" rx="2" fill="${C.teal}"/>
     </g>
-    <circle cx="137" cy="72" r="14" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.8"/>
-    <circle cx="137" cy="72" r="6" fill="${C.tealLight}" stroke="${C.stroke}" stroke-width="1.2"/>`;
+    <circle cx="137" cy="72" r="14" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+    <circle cx="137" cy="72" r="6" fill="${C.coolFill}" stroke="${C.stroke}" stroke-width="1.4"/>`;
     assets.push({
       id, name: '自动旋光仪', category: '光学与物性分析',
       search: '自动旋光仪 数字旋光仪 automatic polarimeter 589nm钠D线 测定手性化合物、糖类及氨基酸溶液的旋光度与比旋光度。',
@@ -1651,23 +1681,23 @@ function buildAssets() {
   {
     const id = 'muffle-furnace';
     const W = 204, H = 228;
-    const cabinet = `<rect x="14" y="14" width="176" height="202" rx="6" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.4"/>
+    const cabinet = `<rect x="14" y="14" width="176" height="202" rx="6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
       <rect x="28" y="216" width="18" height="6" rx="2" fill="${C.bezel}"/>
       <rect x="158" y="216" width="18" height="6" rx="2" fill="${C.bezel}"/>
-      <rect x="78" y="6" width="48" height="8" rx="2" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.8"/>`;
-    // Insulated furnace chamber door + ceramic handle + amber sight hole
+      <rect x="78" y="6" width="48" height="8" rx="2" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    // Insulated furnace chamber door + neutral slate handle + amber sight hole
     const door = `<rect x="28" y="28" width="148" height="114" rx="4" fill="${C.chassisMid}" stroke="${C.bezel}" stroke-width="2.2"/>
       <rect x="38" y="38" width="128" height="94" rx="3" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.6"/>
       <circle cx="102" cy="80" r="10" fill="${C.inner}" stroke="${C.stroke}" stroke-width="2.0"/>
       <circle cx="102" cy="80" r="5" fill="${C.amberMid}"/>
-      <rect x="152" y="68" width="10" height="36" rx="3" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.8"/>`;
+      <rect x="152" y="68" width="10" height="36" rx="3" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.8"/>`;
     // Bottom recessed PID controller strip (light matte LCD)
-    const pid = `<rect x="26" y="154" width="152" height="50" rx="4" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.9"/>
-      <rect x="36" y="162" width="76" height="34" rx="3" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.5"/>
+    const pid = `<rect x="26" y="154" width="152" height="50" rx="4" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="36" y="162" width="76" height="34" rx="3" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.6"/>
       <text x="74" y="176" font-size="10" font-family="Consolas, monospace" fill="${C.redAccent}" text-anchor="middle">PV 950°C</text>
       <text x="74" y="190" font-size="8.5" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">SV 950°C</text>
-      <circle cx="132" cy="179" r="5" fill="${C.redAccent}" stroke="${C.stroke}" stroke-width="1.2"/>
-      <rect x="148" y="168" width="20" height="22" rx="2" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.5"/>`;
+      <circle cx="132" cy="179" r="5" fill="${C.redAccent}" stroke="${C.stroke}" stroke-width="1.4"/>
+      <rect x="148" y="168" width="20" height="22" rx="2" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.6"/>`;
     assets.push({
       id, name: '高温马弗炉', category: '加热与温控',
       search: '马弗炉 箱式高温炉 灰化炉 muffle furnace 1200度高温灼烧、灰分测定、陶瓷烧结及热重灰化处理设备。',
@@ -1682,20 +1712,20 @@ function buildAssets() {
   {
     const id = 'blast-drying-oven';
     const W = 210, H = 252;
-    const cabinet = `<rect x="14" y="12" width="182" height="228" rx="6" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.4"/>
+    const cabinet = `<rect x="14" y="12" width="182" height="228" rx="6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
       <rect x="28" y="240" width="18" height="6" rx="2" fill="${C.bezel}"/>
       <rect x="164" y="240" width="18" height="6" rx="2" fill="${C.bezel}"/>`;
     const door = `<rect x="26" y="24" width="158" height="148" rx="4" fill="${C.chassisTop}" stroke="${C.bezel}" stroke-width="2.0"/>
       <rect x="44" y="40" width="112" height="114" rx="4" fill="${C.coolFill}" stroke="${C.bezel}" stroke-width="2.2"/>
       <line x1="48" y1="86" x2="152" y2="86" stroke="${C.inner}" stroke-width="2.2"/>
       <line x1="48" y1="126" x2="152" y2="126" stroke="${C.inner}" stroke-width="2.2"/>
-      <rect x="165" y="76" width="9" height="44" rx="3" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.6"/>`;
-    const panel = `<rect x="26" y="182" width="158" height="46" rx="4" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.9"/>
-      <rect x="36" y="190" width="84" height="30" rx="3" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.4"/>
+      <rect x="165" y="76" width="9" height="44" rx="3" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.6"/>`;
+    const panel = `<rect x="26" y="182" width="158" height="46" rx="4" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="36" y="190" width="84" height="30" rx="3" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.6"/>
       <text x="78" y="203" font-size="9.5" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">105.0 °C</text>
       <text x="78" y="215" font-size="7.5" font-family="Consolas, monospace" fill="${C.lcdCyan}" text-anchor="middle">FAN ON · TIMING</text>
-      <circle cx="138" cy="205" r="5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.2"/>
-      <rect x="154" y="195" width="18" height="20" rx="2" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.4"/>`;
+      <circle cx="138" cy="205" r="5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.4"/>
+      <rect x="154" y="195" width="18" height="20" rx="2" fill="${C.metalDark}" stroke="${C.stroke}" stroke-width="1.6"/>`;
     assets.push({
       id, name: '电热鼓风干燥箱', category: '加热与温控',
       search: '鼓风干燥箱 恒温烘箱 blast drying oven 强制热风循环均匀烘干玻璃仪器、样品水分测定及恒温烘焙。',
@@ -1711,20 +1741,20 @@ function buildAssets() {
   {
     const id = 'digital-water-bath';
     const W = 228, H = 122;
-    const deck = `<rect x="18" y="12" width="192" height="18" rx="3" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="44" y="6" width="54" height="6" rx="2" fill="#CBD5E1" stroke="${C.stroke}" stroke-width="1.6"/>
-      <rect x="130" y="6" width="54" height="6" rx="2" fill="#CBD5E1" stroke="${C.stroke}" stroke-width="1.6"/>`;
-    const body = `<rect x="12" y="30" width="204" height="80" rx="6" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
-      <rect x="12" y="30" width="204" height="7" fill="${C.tealDark}"/>
+    const deck = `<rect x="18" y="12" width="192" height="18" rx="3" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.4"/>
+      <rect x="44" y="6" width="54" height="6" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8"/>
+      <rect x="130" y="6" width="54" height="6" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.8"/>`;
+    const body = `<rect x="12" y="30" width="204" height="80" rx="6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
+      <line x1="16" y1="36" x2="212" y2="36" stroke="${C.chassisBot}" stroke-width="3"/>
       <rect x="24" y="110" width="18" height="6" rx="2" fill="${C.bezel}"/>
       <rect x="186" y="110" width="18" height="6" rx="2" fill="${C.bezel}"/>`;
-    const ctrl = `<rect x="34" y="48" width="96" height="46" rx="4" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.9"/>
-      <rect x="42" y="55" width="80" height="32" rx="2" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.4"/>
+    const ctrl = `<rect x="34" y="48" width="96" height="46" rx="4" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="42" y="55" width="80" height="32" rx="2" fill="${C.lcdBg}" stroke="${C.stroke}" stroke-width="1.6"/>
       <text x="82" y="69" font-size="10.5" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">37.0 °C</text>
       <text x="82" y="81" font-size="7.5" font-family="Consolas, monospace" fill="${C.lcdCyan}" text-anchor="middle">SET 37.0 °C</text>
-      <circle cx="154" cy="71" r="10" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <line x1="154" y1="71" x2="159" y2="65" stroke="${C.tealDark}" stroke-width="2.0"/>
-      <rect x="180" y="61" width="18" height="20" rx="2" fill="${C.redAccent}" stroke="${C.stroke}" stroke-width="1.6"/>`;
+      <circle cx="154" cy="71" r="10" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <line x1="154" y1="71" x2="159" y2="65" stroke="${C.bezel}" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="180" y="61" width="18" height="20" rx="2" fill="${C.redAccent}" stroke="${C.stroke}" stroke-width="1.8"/>`;
     assets.push({
       id, name: '数显恒温水浴锅', category: '加热与温控',
       search: '数显恒温水浴锅 水浴锅 digital water bath PID精确控温，多孔不锈钢上盖支持烧瓶与试管恒温加热反应。',
@@ -1744,12 +1774,12 @@ function buildAssets() {
     const bottles = ['A', 'B', 'C', 'D'].map((lbl, idx) => {
       const bx = 36 + idx * 34;
       const amber = idx === 2;
-      return `<rect x="${bx}" y="14" width="24" height="36" rx="4" fill="url(#${id}-${amber ? 'amber' : 'glass'})" stroke="${C.stroke}" stroke-width="1.8"/>
-        <rect x="${bx + 6}" y="8" width="12" height="6" rx="1.5" fill="${C.tealDark}" stroke="${C.stroke}" stroke-width="1.4"/>
-        <path d="M${bx + 12} 8 V3 H178 V48" fill="none" stroke="${C.inner}" stroke-width="0.9" stroke-opacity="0.65"/>
+      return `<rect x="${bx}" y="14" width="24" height="36" rx="4" fill="${amber ? C.amberLight : '#FFFFFF'}" stroke="${C.stroke}" stroke-width="2.0"/>
+        <rect x="${bx + 6}" y="8" width="12" height="6" rx="1.5" fill="${idx === 0 ? C.teal : C.bezel}" stroke="${C.stroke}" stroke-width="1.5"/>
+        <path d="M${bx + 12} 8 V3 H178 V48" fill="none" stroke="${C.inner}" stroke-width="1.0"/>
         <text x="${bx + 12}" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="${C.stroke}" text-anchor="middle">${lbl}</text>`;
     }).join('\n  ');
-    const tray = `<rect x="22" y="48" width="172" height="10" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.0"/>`;
+    const tray = `<rect x="22" y="48" width="172" height="10" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.2"/>`;
     // Stacked modules (Detector / Column / Autosampler / Pump)
     const mods = [
       { y: 58, h: 46, label: 'UV-VIS 254 nm', readout: '0.00 AU' },
@@ -1759,17 +1789,17 @@ function buildAssets() {
     ];
     const modSvg = mods.map((m, idx) => {
       const extra = idx === 0
-        ? `<polyline points="128,96 136,96 142,74 148,96 156,96 162,66 168,96 182,96" fill="none" stroke="${C.lcdGreen}" stroke-width="1.6"/>`
+        ? `<polyline points="128,96 136,96 142,74 148,96 156,96 162,66 168,96 182,96" fill="none" stroke="${C.lcdCyan}" stroke-width="1.8"/>`
         : idx === 2
         ? `<rect x="134" y="166" width="44" height="36" rx="3" fill="${C.lcdBg}" stroke="${C.inner}" stroke-width="1.4"/>
-           <circle cx="147" cy="184" r="5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.2"/>
-           <circle cx="165" cy="184" r="5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.2"/>`
+           <circle cx="147" cy="184" r="5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.4"/>
+           <circle cx="165" cy="184" r="5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.4"/>`
         : '';
-      return `<rect x="20" y="${m.y}" width="176" height="${m.h}" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.2"/>
-        <rect x="20" y="${m.y + 4}" width="5" height="${m.h - 8}" fill="${C.teal}"/>
-        <rect x="32" y="${m.y + 10}" width="92" height="${m.h - 20}" rx="3" fill="${C.lcdBg}" stroke="${C.inner}" stroke-width="1.2"/>
+      return `<rect x="20" y="${m.y}" width="176" height="${m.h}" rx="4" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>
+        <rect x="22" y="${m.y + 4}" width="4" height="${m.h - 8}" rx="1" fill="${C.metalDark}"/>
+        <rect x="32" y="${m.y + 10}" width="92" height="${m.h - 20}" rx="3" fill="${C.lcdBg}" stroke="${C.inner}" stroke-width="1.4"/>
         <text x="78" y="${m.y + 22}" font-size="6.8" font-family="Segoe UI, sans-serif" fill="${C.inner}" text-anchor="middle">${m.label}</text>
-        <text x="78" y="${m.y + 34}" font-size="7.8" font-family="Consolas, monospace" fill="${C.lcdCyan}" text-anchor="middle">${m.readout}</text>
+        <text x="78" y="${m.y + 34}" font-size="7.8" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">${m.readout}</text>
         ${extra}`;
     }).join('\n  ');
     const feet = `<rect x="32" y="266" width="20" height="6" rx="2" fill="${C.bezel}"/><rect x="164" y="266" width="20" height="6" rx="2" fill="${C.bezel}"/>`;
@@ -1788,25 +1818,25 @@ function buildAssets() {
     const id = 'gc-system';
     const W = 248, H = 200;
     const carrier = oliveBarb(id, 18, 128, -1, 14, 4.4, 3.6);
-    const body = `<rect x="18" y="28" width="218" height="158" rx="6" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2"/>
+    const body = `<rect x="18" y="28" width="218" height="158" rx="6" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>
       <rect x="32" y="186" width="20" height="6" rx="2" fill="${C.bezel}"/>
       <rect x="200" y="186" width="20" height="6" rx="2" fill="${C.bezel}"/>
-      <rect x="18" y="28" width="218" height="6" rx="2" fill="${C.tealDark}"/>`;
+      <line x1="22" y1="34" x2="232" y2="34" stroke="${C.chassisBot}" stroke-width="3"/>`;
     // Top-right injector / detector towers
-    const towers = `<rect x="148" y="12" width="24" height="16" rx="2" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="184" y="12" width="24" height="16" rx="2" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.8"/>
+    const towers = `<rect x="148" y="12" width="24" height="16" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="184" y="12" width="24" height="16" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
       <text x="160" y="23" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.stroke}" text-anchor="middle">SSL</text>
       <text x="196" y="23" font-size="6.5" font-family="Segoe UI, sans-serif" fill="${C.stroke}" text-anchor="middle">FID</text>`;
     // Left GC oven door + right touchscreen OLED + louvered vents
-    const oven = `<rect x="30" y="48" width="106" height="122" rx="4" fill="#E2E8F0" stroke="${C.bezel}" stroke-width="2.0"/>
+    const oven = `<rect x="30" y="48" width="106" height="122" rx="4" fill="${C.chassisMid}" stroke="${C.bezel}" stroke-width="2.2"/>
       <circle cx="83" cy="108" r="30" fill="none" stroke="${C.inner}" stroke-width="1.8"/>
-      <circle cx="83" cy="108" r="24" fill="none" stroke="${C.tealDark}" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <circle cx="83" cy="108" r="24" fill="none" stroke="${C.inner}" stroke-width="1.4" stroke-dasharray="4 3"/>
       <rect x="122" y="92" width="8" height="32" rx="2" fill="${C.bezel}"/>`;
     const screen = `<rect x="148" y="48" width="76" height="62" rx="4" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="1.8"/>
       <polyline points="154,96 164,96 174,80 194,80 204,64 218,64" fill="none" stroke="${C.lcdCyan}" stroke-width="1.8"/>
       <text x="186" y="60" font-size="8" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">OVEN 240°C</text>
       <text x="186" y="104" font-size="7" font-family="Consolas, monospace" fill="${C.inner}" text-anchor="middle">He 1.2 mL/min</text>
-      <circle cx="164" cy="130" r="5" fill="${C.teal}"/>
+      <circle cx="164" cy="130" r="5" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.2"/>
       <circle cx="186" cy="130" r="5" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="1.2"/>
       <circle cx="208" cy="130" r="5" fill="${C.bezel}"/>
       <g stroke="${C.tick}" stroke-width="1.6" stroke-linecap="round">
@@ -1829,21 +1859,21 @@ function buildAssets() {
   {
     const id = 'ftir-spectrometer';
     const W = 248, H = 160;
-    const chassis = `<path d="M16 74 L32 42 H216 L232 74 V142 H16 Z" fill="url(#${id}-chassis)" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>
+    const chassis = `<path d="M16 74 L32 42 H216 L232 74 V142 H16 Z" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>
       <rect x="26" y="142" width="18" height="6" rx="2" fill="${C.bezel}"/>
       <rect x="204" y="142" width="18" height="6" rx="2" fill="${C.bezel}"/>
-      <rect x="16" y="132" width="216" height="5" fill="${C.tealDark}"/>`;
+      <line x1="20" y1="134" x2="228" y2="134" stroke="${C.chassisBot}" stroke-width="3"/>`;
     // Central ATR diamond crystal press tower & sample stage
-    const atr = `<rect x="86" y="42" width="76" height="32" fill="#E2E8F0" stroke="${C.inner}" stroke-width="1.6"/>
-      <rect x="114" y="10" width="20" height="44" rx="3" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="2.0"/>
-      <circle cx="124" cy="16" r="10" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="1.8"/>
-      <rect x="120" y="54" width="8" height="10" fill="${C.teal}" stroke="${C.stroke}" stroke-width="1.2"/>
-      <line x1="94" y1="68" x2="154" y2="68" stroke="${C.tealDark}" stroke-width="1.4" stroke-dasharray="3 2"/>`;
+    const atr = `<rect x="86" y="42" width="76" height="32" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.6"/>
+      <rect x="114" y="10" width="20" height="44" rx="3" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.2"/>
+      <circle cx="124" cy="16" r="10" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.0"/>
+      <rect x="120" y="54" width="8" height="10" fill="${C.metalDark}" stroke="${C.stroke}" stroke-width="1.4"/>
+      <line x1="94" y1="68" x2="154" y2="68" stroke="${C.inner}" stroke-width="1.4" stroke-dasharray="3 2"/>`;
     // Front IR transmittance spectrum OLED
     const oled = `<rect x="34" y="84" width="132" height="40" rx="4" fill="${C.lcdBg}" stroke="${C.bezel}" stroke-width="1.8"/>
-      <polyline points="40,98 58,98 64,114 70,98 92,98 98,119 104,99 122,99 127,115 132,100 140,116 146,98 160,98" fill="none" stroke="${C.lcdCyan}" stroke-width="1.6"/>
+      <polyline points="40,98 58,98 64,114 70,98 92,98 98,119 104,99 122,99 127,115 132,100 140,116 146,98 160,98" fill="none" stroke="${C.lcdCyan}" stroke-width="1.8"/>
       <text x="100" y="92" font-size="6.5" font-family="Consolas, monospace" fill="${C.lcdGreen}" text-anchor="middle">FTIR · 4000-400 cm-1</text>
-      <circle cx="196" cy="104" r="10" fill="url(#${id}-steel)" stroke="${C.stroke}" stroke-width="1.8"/>
+      <circle cx="196" cy="104" r="10" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.0"/>
       <circle cx="196" cy="104" r="3.5" fill="${C.redAccent}"/>`;
     assets.push({
       id, name: '傅里叶变换红外光谱仪', category: '色谱与光谱分析',
@@ -1878,10 +1908,11 @@ function validateAndWrite() {
     if (seenIds.has(asset.id)) throw new Error('Duplicate ID: ' + asset.id);
     seenIds.add(asset.id);
 
-    // SVG Tiny / QSvgRenderer safety assertions + Classic Flat verification (0 gradients, 0 url refs, 0 dark screens)
+    // SVG Tiny / QSvgRenderer safety assertions + Chemix Neutral Flat verification
     for (const forbidden of [
       '<filter', '<clipPath', '<mask', '<pattern', '<script', '<image',
-      '<linearGradient', '<radialGradient', 'url(#', '#0F172A', 'mix-blend-mode', 'rgba(',
+      '<linearGradient', '<radialGradient', 'url(#', '#0F172A', '#294454', '#258F89', '#1F6F6B',
+      'mix-blend-mode', 'rgba(',
     ]) {
       if (asset.svg.includes(forbidden)) {
         throw new Error(`${asset.id}: forbidden SVG construct '${forbidden}'`);
@@ -1943,7 +1974,7 @@ function validateAndWrite() {
   const attribution = `# Additional Laboratory Artwork
 
 All ${manifestAssets.length} vector illustrations in \`assets/laboratory/\` are generated deterministically by
-\`scripts/generate-laboratory-art.cjs\` in Chem Studio's classic flat scientific line-art style
+\`scripts/generate-laboratory-art.cjs\` in Chem Studio's neutral charcoal (\`#333333\`) & stepped-collar flat orthographic style
 (Qt \`QSvgRenderer\` / pure vector SVG 1.1 compatible, zero gradients, zero embedded rasters, zero filters or clipPaths).
 
 - **Author**: Chem Studio contributors

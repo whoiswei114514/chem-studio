@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="186" viewBox="0 0 130 186">
 <title>支管U型管</title>
-<path d="M38 65.2 L24.36 64.6 L22.36 66.5 L16 64.4 L16 55.6 L22.36 53.5 L24.36 55.4 L38 54.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M122 54.8 L135.64 55.4 L137.64 53.5 L144 55.6 L144 64.4 L137.64 66.5 L135.64 64.6 L122 65.2 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M35 20 Q38 21 38 27 V132 A42 42 0 0 0 122 132 V27 Q122 21 125 20" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M65 20 Q62 21 62 27 V132 A18 18 0 0 0 98 132 V27 Q98 21 95 20" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 59.2 L15.6 58.6 L13.6 60.5 L8 58.4 L8 49.6 L13.6 47.5 L15.6 49.4 L28 48.8 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M102 48.8 L114.4 49.4 L116.4 47.5 L122 49.6 L122 58.4 L116.4 60.5 L114.4 58.6 L102 59.2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 14 Q28 16 28 22 V126 A37 37 0 0 0 102 126 V22 Q102 16 105 14" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M53 14 Q50 16 50 22 V126 A15 15 0 0 0 80 126 V22 Q80 16 77 14" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

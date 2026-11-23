@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="112" viewBox="0 0 180 112">
 <title>冰浴</title>
-<path d="M16 34 L27 42 V167 Q27 180 40 180 H124 Q137 180 137 167 V34 Z" fill="#F4F9F8" stroke="none"/>
-  <path d="M27 72 Q82 78 137 72 V167 Q137 179 124 179 H40 Q27 179 27 167 Z" fill="#E6F4F3" stroke="none"/>
-      <path d="M28 72 Q82 77 136 72" fill="none" stroke="#258F89" stroke-width="1.5" stroke-linecap="round"/>
-  <g transform="translate(48,98) rotate(-14)"><rect x="-12.5" y="-12.5" width="25" height="25" rx="4" fill="#DCEFEB" stroke="#294454" stroke-width="1.8"/><line x1="-6.25" y1="-8.333333333333334" x2="6.25" y2="-8.333333333333334" stroke="#F8FAF9" stroke-width="1.6" stroke-linecap="round"/></g>
-  <g transform="translate(82,86) rotate(14)"><rect x="-13" y="-13" width="26" height="26" rx="4" fill="#DCEFEB" stroke="#294454" stroke-width="1.8"/><line x1="-6.5" y1="-8.666666666666666" x2="6.5" y2="-8.666666666666666" stroke="#F8FAF9" stroke-width="1.6" stroke-linecap="round"/></g>
-  <g transform="translate(112,102) rotate(-8)"><rect x="-12" y="-12" width="24" height="24" rx="4" fill="#DCEFEB" stroke="#294454" stroke-width="1.8"/><line x1="-6" y1="-8" x2="6" y2="-8" stroke="#F8FAF9" stroke-width="1.6" stroke-linecap="round"/></g>
-  <g transform="translate(62,132) rotate(9)"><rect x="-12" y="-12" width="24" height="24" rx="4" fill="#DCEFEB" stroke="#294454" stroke-width="1.8"/><line x1="-6" y1="-8" x2="6" y2="-8" stroke="#F8FAF9" stroke-width="1.6" stroke-linecap="round"/></g>
-  <g transform="translate(98,128) rotate(-18)"><rect x="-12.5" y="-12.5" width="25" height="25" rx="4" fill="#DCEFEB" stroke="#294454" stroke-width="1.8"/><line x1="-6.25" y1="-8.333333333333334" x2="6.25" y2="-8.333333333333334" stroke="#F8FAF9" stroke-width="1.6" stroke-linecap="round"/></g>
-  <g transform="translate(78,156) rotate(6)"><rect x="-11" y="-11" width="22" height="22" rx="4" fill="#DCEFEB" stroke="#294454" stroke-width="1.8"/><line x1="-5.5" y1="-7.333333333333333" x2="5.5" y2="-7.333333333333333" stroke="#F8FAF9" stroke-width="1.6" stroke-linecap="round"/></g>
-  <path d="M16 34 L27 42 V167 Q27 180 40 180 H124 Q137 180 137 167 V34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <line x1="137" y1="34" x2="142" y2="30" stroke="#294454" stroke-width="2.8" stroke-linecap="round"/>
-      <path d="M33 48 V162" fill="none" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M12 14 L22 22 V98 Q22 106 30 106 H150 Q158 106 158 98 V22 L168 14 Z" fill="#FFFFFF" stroke="none"/>
+  <path d="M22 44 H158 V98 Q158 105 150 105 H30 Q22 105 22 98 Z" fill="#E6F4F9" stroke="none"/>
+      <line x1="23" y1="44" x2="157" y2="44" stroke="#72C2DD" stroke-width="1.8" stroke-linecap="round"/>
+  <g transform="translate(42,62) rotate(-12)"><rect x="-11" y="-11" width="22" height="22" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.5" y1="-7.333333333333333" x2="5.5" y2="-7.333333333333333" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(68,56) rotate(14)"><rect x="-11" y="-11" width="22" height="22" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.5" y1="-7.333333333333333" x2="5.5" y2="-7.333333333333333" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(96,62) rotate(-8)"><rect x="-11.5" y="-11.5" width="23" height="23" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.75" y1="-7.666666666666667" x2="5.75" y2="-7.666666666666667" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(124,58) rotate(12)"><rect x="-11" y="-11" width="22" height="22" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.5" y1="-7.333333333333333" x2="5.5" y2="-7.333333333333333" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(142,66) rotate(-16)"><rect x="-10" y="-10" width="20" height="20" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5" y1="-6.666666666666667" x2="5" y2="-6.666666666666667" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(48,86) rotate(8)"><rect x="-11" y="-11" width="22" height="22" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.5" y1="-7.333333333333333" x2="5.5" y2="-7.333333333333333" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(78,84) rotate(-15)"><rect x="-11.5" y="-11.5" width="23" height="23" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.75" y1="-7.666666666666667" x2="5.75" y2="-7.666666666666667" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(108,86) rotate(10)"><rect x="-11" y="-11" width="22" height="22" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.5" y1="-7.333333333333333" x2="5.5" y2="-7.333333333333333" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <g transform="translate(136,86) rotate(-7)"><rect x="-10.5" y="-10.5" width="21" height="21" rx="4" fill="#EEF4F7" stroke="#333333" stroke-width="1.8"/><line x1="-5.25" y1="-7" x2="5.25" y2="-7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></g>
+  <path d="M12 14 L22 22 V98 Q22 106 30 106 H150 Q158 106 158 98 V22 L168 14" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

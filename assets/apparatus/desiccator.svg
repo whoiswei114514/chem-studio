@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170">
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="154" viewBox="0 0 180 154">
 <title>干燥器</title>
-<path d="M22 54 H178 L155 144 H45 Z" fill="none" stroke="#294454" stroke-width="2.6" stroke-linejoin="round"/>
-  <path d="M48 122 L152 122 L147 140 H53 Z" fill="#E6F4F3" stroke="none"/>
-  <circle cx="58" cy="133" r="4" fill="#3A7CA5" stroke="#3D5968" stroke-width="1.0"/><circle cx="72" cy="133" r="4" fill="#3A7CA5" stroke="#3D5968" stroke-width="1.0"/><circle cx="86" cy="133" r="4" fill="#3A7CA5" stroke="#3D5968" stroke-width="1.0"/><circle cx="100" cy="133" r="4" fill="#3A7CA5" stroke="#3D5968" stroke-width="1.0"/><circle cx="114" cy="133" r="4" fill="#3A7CA5" stroke="#3D5968" stroke-width="1.0"/><circle cx="128" cy="133" r="4" fill="#3A7CA5" stroke="#3D5968" stroke-width="1.0"/><circle cx="142" cy="133" r="4" fill="#3A7CA5" stroke="#3D5968" stroke-width="1.0"/>
-  <rect x="34" y="102" width="132" height="6" rx="2" fill="#F2F2EE" stroke="#294454" stroke-width="2.0"/>
-  <path d="M22 52 Q100 -10 178 52 Z" fill="none" stroke="#294454" stroke-width="2.6" stroke-linejoin="round"/>
-  <rect x="18" y="49" width="164" height="7" rx="3" fill="#F8FAF9" stroke="#294454" stroke-width="2.3"/>
-  <path d="M84 18 L87 7 H113 L116 18 Q100 22 84 18 Z" fill="#FFFFFF" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
+<path d="M12 52 H168 L145 142 H35 Z" fill="none" stroke="#333333" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M38 120 L142 120 L137 138 H43 Z" fill="#D8EDF5" stroke="none"/>
+  <circle cx="48" cy="131" r="4" fill="#3E74B4" stroke="#4A4F55" stroke-width="1.0"/><circle cx="62" cy="131" r="4" fill="#3E74B4" stroke="#4A4F55" stroke-width="1.0"/><circle cx="76" cy="131" r="4" fill="#3E74B4" stroke="#4A4F55" stroke-width="1.0"/><circle cx="90" cy="131" r="4" fill="#3E74B4" stroke="#4A4F55" stroke-width="1.0"/><circle cx="104" cy="131" r="4" fill="#3E74B4" stroke="#4A4F55" stroke-width="1.0"/><circle cx="118" cy="131" r="4" fill="#3E74B4" stroke="#4A4F55" stroke-width="1.0"/><circle cx="132" cy="131" r="4" fill="#3E74B4" stroke="#4A4F55" stroke-width="1.0"/>
+  <rect x="24" y="100" width="132" height="6" rx="2" fill="#EFEFEF" stroke="#333333" stroke-width="2.2"/>
+  <path d="M12 50 Q90 -8 168 50 Z" fill="none" stroke="#333333" stroke-width="3.2" stroke-linejoin="round"/>
+  <rect x="8" y="47" width="164" height="7" rx="3" fill="#F5F6F8" stroke="#333333" stroke-width="2.6"/>
+  <path d="M74 18 L77 7 H103 L106 18 Q90 22 74 18 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
 </svg>

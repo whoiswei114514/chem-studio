@@ -10,16 +10,16 @@
       Q100 165 105 160
       Q110 154 106 142
       L67.5 44 V28"
-      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   
   
-  <g stroke="#7E939E" stroke-width="1.1" stroke-linecap="round">
+  <g stroke="#8C929A" stroke-width="1.1" stroke-linecap="round">
       <line x1="69" y1="84" x2="79" y2="84"/>
       <line x1="73" y1="102" x2="85" y2="102"/>
       <line x1="77" y1="120" x2="91" y2="120"/>
       <line x1="81" y1="138" x2="97" y2="138"/>
     </g>
-  <path d="M44 4 Q46 5 46 8.5 L46.5 28" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M70 4 Q68 5 68 8.5 L67.5 28" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48 28 Q57 30.2 66 28" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M44 4 L44.7 28 H46.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 4 L69.3 28 H67.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48.7 29.4 Q57 32 65.3 29.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
 </svg>

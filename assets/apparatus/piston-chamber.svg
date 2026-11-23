@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170">
+<svg xmlns="http://www.w3.org/2000/svg" width="184" height="136" viewBox="0 0 184 136">
 <title>活塞气室</title>
-<path d="M10 47 H25 M25 59 H10" fill="none" stroke="#294454" stroke-width="2.5" stroke-linecap="round"/>
-  <rect x="25" y="36" width="150" height="92" rx="4" fill="none" stroke="#294454" stroke-width="2.5"/>
-  <rect x="106" y="78" width="82" height="8" rx="2" fill="#DCE5E8" stroke="#294454" stroke-width="2.1"/>
-  <rect x="184" y="64" width="8" height="36" rx="3" fill="#258F89" stroke="#294454" stroke-width="2.2"/>
-  <rect x="88" y="38" width="18" height="88" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
-  <rect x="88" y="42" width="4" height="80" fill="#586F7C"/>
-  <line x1="45" y1="114" x2="45" y2="127" stroke="#7E939E" stroke-width="1.2"/><line x1="65" y1="118" x2="65" y2="127" stroke="#7E939E" stroke-width="1.2"/><line x1="85" y1="114" x2="85" y2="127" stroke="#7E939E" stroke-width="1.2"/><line x1="105" y1="118" x2="105" y2="127" stroke="#7E939E" stroke-width="1.2"/><line x1="125" y1="114" x2="125" y2="127" stroke="#7E939E" stroke-width="1.2"/><line x1="145" y1="118" x2="145" y2="127" stroke="#7E939E" stroke-width="1.2"/>
+<path d="M8 38 H22 M22 50 H8" fill="none" stroke="#333333" stroke-width="3.0" stroke-linecap="round"/>
+  <rect x="22" y="22" width="144" height="90" rx="4" fill="none" stroke="#333333" stroke-width="3.0"/>
+  <rect x="100" y="63" width="76" height="8" rx="2" fill="#E3E6EB" stroke="#333333" stroke-width="2.2"/>
+  <rect x="170" y="49" width="8" height="36" rx="3" fill="#3E74B4" stroke="#333333" stroke-width="2.4"/>
+  <rect x="82" y="24" width="18" height="86" rx="2" fill="#C4C9D0" stroke="#333333" stroke-width="2.4"/>
+  <rect x="82" y="28" width="4" height="78" fill="#595E66"/>
+  <line x1="40" y1="98" x2="40" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="60" y1="102" x2="60" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="80" y1="98" x2="80" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="100" y1="102" x2="100" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="120" y1="98" x2="120" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="140" y1="102" x2="140" y2="111" stroke="#B8BCC2" stroke-width="1.3"/>
 </svg>

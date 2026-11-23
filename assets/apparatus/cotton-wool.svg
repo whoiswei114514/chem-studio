@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="170" height="130" viewBox="0 0 170 130">
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
 <title>脱脂棉</title>
-<path d="M28 90 C10 68 24 38 48 44 C56 20 96 14 110 38 C138 24 162 56 144 84 C156 104 128 116 106 108 C86 120 44 116 28 90 Z" fill="#F2F2EE" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M46 68 C58 58 76 62 84 74 M94 56 C108 50 122 58 124 72 M54 90 C68 96 86 92 94 84" fill="none" stroke="#7E939E" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M20 76 C8 56 18 32 38 36 C46 16 78 12 90 32 C112 22 118 54 104 76 C112 94 92 104 74 96 C58 106 30 100 20 76 Z" fill="#EFEFEF" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M36 58 C46 50 60 54 66 64 M76 48 C88 44 96 52 96 64" fill="none" stroke="#8C929A" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

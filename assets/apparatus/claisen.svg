@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="196" viewBox="0 0 130 196">
 <title>克莱森接头</title>
-<path d="M57 34 V174 M75 34 V110 M75 128 V174" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M75 110 C94 110 105 96 105 74 V34 M75 128 C102 128 119 108 119 82 L116.751 80.93 M123.249 63.07 L119 61 V34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M123.933 61.19 L116.067 82.81" fill="none" stroke="#294454" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M123.249 63.07 L140.425 71.448" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M116.751 80.93 L135.295 85.548" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M56 12 Q57.8 13 57.8 16.5 L57 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M76 12 Q74.2 13 74.2 16.5 L75 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M58.5 34 Q66 36.2 73.5 34" fill="none" stroke="#DCE8EC" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M103 12 Q104.8 13 104.8 16.5 L105 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M121 12 Q119.2 13 119.2 16.5 L119 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M106.5 34 Q112 36.2 117.5 34" fill="none" stroke="#DCE8EC" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M51.8 174 H80.2" fill="none" stroke="#294454" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M54 174 L56.2 196" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M78 174 L75.8 196" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M55 176.2 Q66 178.5 77 176.2" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M13 38 V162 M35 38 V106 C52 106 65 92 65 70 V32 M87 32 V58 Q87 65 96 67 L105.42 66.6 M98.58 85.4 L90 84 C90 108 54 124 35 126 V162" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 106 Q32 116 28 126" fill="none" stroke="#DCE8EC" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M12.5 16 L15.5 38 H13 M35.5 16 L32.5 38 H35" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.5 39.5 Q24 42.3 29.5 39.5" fill="none" stroke="#DCE8EC" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M64.5 10 L67.5 32 H65 M87.5 10 L84.5 32 H87" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70.5 33.5 Q76 36.3 81.5 33.5" fill="none" stroke="#DCE8EC" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M13 162 H11.5 L14.2 184 M35 162 H36.5 L33.8 184" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 165 Q24 167.8 33 165" fill="none" stroke="#DCE8EC" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M105.42 66.6 L123.468 75.508 M98.58 85.4 L118.132 90.172" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M107.043 70.916 Q107.451 77.983 102.597 83.136" fill="none" stroke="#DCE8EC" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

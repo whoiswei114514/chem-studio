@@ -8,7 +8,7 @@
       V94 L71.5 100 M63.5 98 V54
       Q62 40 46 39
       L24.921 34.387"
-      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8.976 8.892 Q9.425 11.083 12.805 11.988 L29.58 17.001" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M3.024 31.108 Q4.507 29.435 7.888 30.341 L24.921 34.387" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.976 8.892 L30.046 15.262 L29.58 17.001 M3.024 31.108 L24.455 36.126 L24.921 34.387" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30.363 19.488 Q30.921 26.678 26.843 32.625" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

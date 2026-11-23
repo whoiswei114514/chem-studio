@@ -3,18 +3,18 @@
 <title>二极管</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="12" y="72.5" width="40" height="5" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <rect x="128" y="72.5" width="40" height="5" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="10" cy="75" r="4.2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <circle cx="170" cy="75" r="4.2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <rect x="52" y="54" width="76" height="42" rx="5" fill="#3D5968" stroke="#294454" stroke-width="2.4"/>
-      <rect x="108" y="55.2" width="12" height="39.6" fill="#DCE5E8" stroke="none"/>
-      <line x1="108" y1="54" x2="108" y2="96" stroke="#294454" stroke-width="1.5"/>
-      <line x1="120" y1="54" x2="120" y2="96" stroke="#294454" stroke-width="1.5"/>
-      <line x1="56" y1="60" x2="124" y2="60" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2.4"/>
+      <rect x="12" y="72.5" width="40" height="5" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
+      <rect x="128" y="72.5" width="40" height="5" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
+      <circle cx="10" cy="75" r="4.2" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
+      <circle cx="170" cy="75" r="4.2" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
+      <rect x="52" y="54" width="76" height="42" rx="5" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
+      <rect x="108" y="55.2" width="12" height="39.6" fill="#E3E6EB" stroke="none"/>
+      <line x1="108" y1="54" x2="108" y2="96" stroke="#333333" stroke-width="1.5"/>
+      <line x1="120" y1="54" x2="120" y2="96" stroke="#333333" stroke-width="1.5"/>
+      <line x1="56" y1="60" x2="124" y2="60" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="2.2"/>
       <polygon points="71,66 71,84 88,75" fill="#FFFFFF" stroke="none"/>
       <line x1="88" y1="66" x2="88" y2="84" stroke="#FFFFFF" stroke-width="2.2"/>
-      <rect x="52" y="54" width="76" height="42" rx="5" fill="none" stroke="#294454" stroke-width="2.4"/>
+      <rect x="52" y="54" width="76" height="42" rx="5" fill="none" stroke="#333333" stroke-width="2.8"/>
     </g>
   
 </svg>

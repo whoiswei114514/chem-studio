@@ -31,7 +31,7 @@
         60,
         62
       ],
-      "sha256": "f8dd706daeca65ed031ab8d727de3d6b42f90c104416d008f7cab2946b5cdaa5"
+      "sha256": "f871407e70d87ca1c98a488cf2365cc0d5346382ad56e997fb94ba3d3fec8a79"
     },
     {
       "id": "bio:glass-pipette-rack",
@@ -56,7 +56,7 @@
         7,
         12
       ],
-      "sha256": "203e6808564685bc436266ba092ae5b24a8f89c7685a1bd04351fe422c642d92"
+      "sha256": "5f11eef70c0540a4307246e367613b65c484c82427cad980fedcbc1b6517d247"
     },
     {
       "id": "bio:buchner-funnel",
@@ -112,7 +112,7 @@
         22,
         52
       ],
-      "sha256": "eee98daaa97197287a87efcbb925dbdccb5062978807c6bdf874c78d5ed82fc9"
+      "sha256": "303a4248ab768f87a7cdc5f38be0581590d6dc886c67a424fe6431b2d101eec5"
     },
     {
       "id": "bio:analytical-balance",
@@ -137,7 +137,7 @@
         60,
         62
       ],
-      "sha256": "1b5bb995624e06f44b2c053b3c8278ca9a7d673441cf05c5db42dc110e19d05c"
+      "sha256": "6c1caa957809455b33e171bb215ee26a762b822e4b3031130efd8019c29d84b7"
     },
     {
       "id": "bio:two-pan-balance",
@@ -162,7 +162,7 @@
         50,
         60
       ],
-      "sha256": "f015f402c5000b7aa6c20137d79124c7b4acad20fea061b2e7a07a92abc8f4ee"
+      "sha256": "2e7d2cecb858b48079e4d77fc9308d4862bad2465889102207c2c66aef1db364"
     },
     {
       "id": "bio:glass-atomizer",
@@ -187,7 +187,7 @@
         14,
         15
       ],
-      "sha256": "1446bc6e363e106e1f2b37c2f758b65697ba2909ffba2eb8213c77f8d05c3da3"
+      "sha256": "20561b031ff4e34386dcd684f7bf3f10ca808820ab425a3a05ad1da01934eea1"
     },
     {
       "id": "bio:hair-dryer",
@@ -212,7 +212,7 @@
         14,
         15
       ],
-      "sha256": "3e73af4cd117ec7f15c566058e9b4354a263b7725424eb87da0282dc58d7e983"
+      "sha256": "d0a6014879633f2115da6de1b250f083417969d32936ea5be4bedd9528e498ad"
     },
     {
       "id": "bio:microliter-syringe",
@@ -237,7 +237,7 @@
         46,
         48
       ],
-      "sha256": "ca65835d669eb29b39e49384c9509b219e5db94e572d73e058e968c623457c50"
+      "sha256": "a314ceb711cdf230b9dfa31314b928ad9b25bbc4f9c0b7e2b86953cd9468e09c"
     },
     {
       "id": "bio:scalpel",
@@ -260,7 +260,7 @@
       "lecturePdfPages": [
         50
       ],
-      "sha256": "7a3365ec0ff798dbdb887260d6933f9b233ac3bd1e10e1827c17bdc8fb986fa7"
+      "sha256": "cda2bfd98799257756c0d0c09ee2320053b544019442fbc945e342d775f88ea3"
     },
     {
       "id": "bio:porcelain-staining-tray",
@@ -285,7 +285,7 @@
         46,
         48
       ],
-      "sha256": "63fe7388f1df9aef92b5d1ff28bed46c1c264d7f842ebbdb8a8006480bc5df6f"
+      "sha256": "b0b21c697826b4b20a04d2540ec158122c8e597643891bd91b41f4f142b7ac9e"
     },
     {
       "id": "bio:dialysis-bag",
@@ -310,7 +310,7 @@
         50,
         52
       ],
-      "sha256": "ee501bdf99cc0db6687058d31289c2dbd52c618121208590b858010acfecaa31"
+      "sha256": "dfaae0ce9fe65b81812d834cbe0cf146048c6eedc02e82be5b4a93462bf34688"
     },
     {
       "id": "bio:tissue-homogenizer",
@@ -335,7 +335,7 @@
         25,
         50
       ],
-      "sha256": "d8c6d828285bda40ed31416df7f0ed32417b6a575fe02f917d61ef1bc6b66fba"
+      "sha256": "42835361152c6bfaff2f5c8868087adf61fc4d4b57032c7e3246ea6c821ffe98"
     },
     {
       "id": "bio:gel-chromatography-column",
@@ -410,7 +410,7 @@
         60,
         61
       ],
-      "sha256": "d5419826d77d8e4666b05ae45653cd9812c820f89ab2c0bc55604353a5236a81"
+      "sha256": "3f75905b0cc86f93e0d0630a90251a49323863104c736b46ba2b93d456c1cda1"
     },
     {
       "id": "bio:membrane-electrophoresis-tank",
@@ -458,7 +458,7 @@
         46,
         48
       ],
-      "sha256": "250accf17f250bcff4793b52bbb9b2113faf499c9fbf5cbd4784d3580f00d2cc"
+      "sha256": "fe8a2f7e136a9a235954258d9255e77036cccb3bb4fd1a0faf46c49b0dfb59fe"
     },
     {
       "id": "bio:disc-electrophoresis-tank",
@@ -502,7 +502,7 @@
         55,
         56
       ],
-      "sha256": "96f1cfd7eeac41fb621f0329eba2c49939730a07ce9d4a5331d5ab850b0f7bda"
+      "sha256": "a7f37fd50600598cf98f4d6f99f470a71ca4e05122866524068d030a285d6e25"
     },
     {
       "id": "bio:agarose-electrophoresis-tank",
@@ -548,7 +548,7 @@
         66,
         69
       ],
-      "sha256": "a9032868d8df1ee00c3ed64c5fefecf976c68a99fadac1472355a5105aa06aaa"
+      "sha256": "b3d0bfa74fc5d698959fcb1c17ba688134dc737a41f350d937021c0afc831af3"
     },
     {
       "id": "bio:incubator-shaker",
@@ -571,7 +571,7 @@
       "lecturePdfPages": [
         69
       ],
-      "sha256": "4a0d80349704dcd02fe3d8a15f3bf6a6d8364d36741316448e60706d34f21ab4"
+      "sha256": "6df8555a95c8091b65316b70b0631f0e3b9e0e317b29bb32a33bb6f3f7a6d0ce"
     },
     {
       "id": "bio:microwave-oven",
@@ -598,7 +598,7 @@
         66,
         69
       ],
-      "sha256": "c630eb8fc571972ac29413801dfa180bfd86814491163a1082acf88715590adf"
+      "sha256": "ef162aaeb016c35672d0f52038b088d773a7eb3bfa5afec7bd65e1ef9e600be9"
     },
     {
       "id": "bio:gel-documentation-system",
@@ -625,7 +625,7 @@
         66,
         69
       ],
-      "sha256": "b40c44746ad7d5cbd90a632f85be50df928ad70e2108ca8af2f8b081eb2e2baa"
+      "sha256": "b62aad799b56efa6cd81ad9ddd2b0322a643cdb7477e14dc1bc90d881fa979b4"
     },
     {
       "id": "bio:electrophoresis-power-supply",
@@ -713,7 +713,7 @@
         66,
         69
       ],
-      "sha256": "2cbb18e85ad031b771424a05ad1ca8dd2448a4a28120e1691197f6f7e13ce868"
+      "sha256": "a1b74b42fd9b5a6676cb4cce8f72e7012ccf27af7a968f2310bd06ae7181a79e"
     },
     {
       "id": "bio:benchtop-ph-meter",
@@ -736,7 +736,7 @@
       "lecturePdfPages": [
         55
       ],
-      "sha256": "0d487787903df3e42812527e17d59c97c444c6d75ae2eaaeb78571bd10c1db6a"
+      "sha256": "3eab0df5a929acd7c064e563aa918d323173c4c76d79dafd62c5e9c0c6964058"
     },
     {
       "id": "bio:nucleic-acid-spin-column",
@@ -765,7 +765,7 @@
         69,
         70
       ],
-      "sha256": "e1deb629affff46d35ca712453a35612d35ce89de9dafc938668df26c26f55c8"
+      "sha256": "2451eee862b273c67bec66226a445b298b8104bdf471103e94f2e22a3049373f"
     },
     {
       "id": "bio:gel-casting-tray",
@@ -788,7 +788,7 @@
       "lecturePdfPages": [
         66
       ],
-      "sha256": "589af3f07dc30386fe4d9f5f1cadba4958c4f0f80bc2f128c3485e23012a23c8"
+      "sha256": "d7c30e91a2ace661cda65484fc5f6dfa71422fb4db00c44d0ce1797d96d1d6bb"
     },
     {
       "id": "bio:gel-loading-comb",
@@ -811,7 +811,7 @@
       "lecturePdfPages": [
         66
       ],
-      "sha256": "c4695e303afe5b92b9baac0f257b9fc09deb3872aec464cacf588cdd72f3304b"
+      "sha256": "08753233d456e1104700b645aba5fdb2e4f5045212aeb496c200b2274673ea1c"
     },
     {
       "id": "bio:refrigerated-centrifuge",
@@ -838,7 +838,7 @@
         25,
         51
       ],
-      "sha256": "c8904fe78a6c8420d7080d3171bb3137c913214b422bf24b0aa9d2441860f055"
+      "sha256": "d2e1beb949e6db742612ffd42122381414c93a18481f2715cbbf26bbf0afb86d"
     },
     {
       "id": "bio:pcr-thermal-cycler",
@@ -855,7 +855,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "PCR 基因扩增热循环仪：带压紧旋钮的热盖、实时温度循环曲线触控屏与通风散热槽。",
-      "sha256": "3d2d4303d4ad4abc6dd169ddcb893ea41c4facb8a94495d26928e58cf9805082"
+      "sha256": "5d934d5adcd5ecf093926f5582c22d45c0c3213cf02d1c9da61dfe04ab38406e"
     },
     {
       "id": "bio:microplate-reader",
@@ -872,7 +872,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "微孔板酶标仪：带读数光路窗口、伸出式 96 孔板载物托盘及吸光度液晶屏幕。",
-      "sha256": "cffd0ab171e8f709b6e1ce434c2f84be84cb51cfdde26ce7c729884582bbf2cd"
+      "sha256": "58cbdaad7416ba77464d87b52d811995aa2b6a6ecc42923ecf6a68eab42eb4c0"
     },
     {
       "id": "bio:microplate-96",
@@ -889,7 +889,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "标准 SBS 96 孔酶标微孔板俯视图：A1 斜角定位切口、A–H 与 1–12 坐标编号。",
-      "sha256": "cfd786edb8f4af8a858deb85f8cde863102cd64b68e79fb5ee522d46427c8d9d"
+      "sha256": "9ebd3b5ce12cde74b7b0062a76ef7fcfe3e3043505c554674f23545760009c3b"
     },
     {
       "id": "bio:clean-bench",
@@ -906,7 +906,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "垂直层流超净工作台/生物安全柜：顶部风机/UV 控制屏、透明升降玻璃移门、不锈钢操作台面及支架底座。",
-      "sha256": "b975a317508f91c43e62bb1d10a60f4e1e1522df1a7aa76101dcea2ee3eefd51"
+      "sha256": "5ffe19de5d3596593e990f96dc2987709d0bff6463a20c7166343bb33b153ff9"
     },
     {
       "id": "bio:vortex-mixer",
@@ -923,7 +923,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "台式涡旋混匀仪：重型防滑底座、橡胶杯状振荡头、无级调速旋钮与点动/连续切换键。",
-      "sha256": "7e3388de3afff5add4f07ac2a3bc1bbc2691640ecd137d45d5dfd67094f43018"
+      "sha256": "50679d0fac6f2a49c2040ae66c38d959b8e07351eead6d1047c85b2634cd12fd"
     },
     {
       "id": "bio:dry-metal-bath",
@@ -940,7 +940,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "干式恒温金属浴：铝制多管加热模块、透明防尘保温盖与温度/定时数字显示屏。",
-      "sha256": "7b2cc134f87e3501694a63cfc0f8e0893f1d160841e00e44546ae2733e36de55"
+      "sha256": "7b76c9886e7b117da940a503f98acd55aebe380928f00b3a5a045b850d5d3315"
     },
     {
       "id": "bio:vertical-electrophoresis-tank",
@@ -976,7 +976,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "垂直板蛋白电泳槽（SDS-PAGE）：透明槽体、双侧绿/青夹紧电极芯、玻璃制胶夹板、梳孔与安全顶盖正负插孔。",
-      "sha256": "e7594d29c246079c440fbf1861a5dda4bfdab85dcb7918ef22a43f567f80d90d"
+      "sha256": "2c5973c4191abc2e13d685226bffe1f2a12b9abee5f5dbd21a9bcf84fdc062eb"
     },
     {
       "id": "bio:orbital-shaker",
@@ -993,7 +993,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "水平脱色摇床：防滑承载平台、偏心驱动柱、低重心主机及转速/定时数显面板。",
-      "sha256": "ae5dabe5b1ff7e4c63d88d251c80a61a216f1d901c64d8d62e669e97c3eb913f"
+      "sha256": "69973ccccf26ab308c8a10be604db5766f3d03880a8f14f856318f84042bb520"
     },
     {
       "id": "bio:ultrasonic-homogenizer",
@@ -1010,7 +1010,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "超声波细胞破碎仪：脉冲发生主机、立式支架、压电换能器手柄与浸入样品杯的钛合金变幅杆探头。",
-      "sha256": "94e669c995b1a602d986341c8b6e745e95fb4260bb11cb2d17b2bab824ac3dbb"
+      "sha256": "14cb63f14ee3b514fec2b525dc0a895f0cd3060e195ecf50031d00187b30977f"
     },
     {
       "id": "bio:freeze-dryer",
@@ -1027,7 +1027,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "台式钟罩型冷冻干燥机：透明有机玻璃干燥室、多层样品搁架、冷阱主机及温度/真空度双显示。",
-      "sha256": "45a0dcacb322712bf573f0f0e45524722285b0f5a1f92b65b547f6f8f06575e6"
+      "sha256": "0c3f625b8d25cf8ce199932facc866aa0cb5ae4bc671dd750eb36d143cc2c920"
     },
     {
       "id": "bio:compound-microscope",
@@ -1044,7 +1044,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "双目生物光学显微镜：双目镜筒、四孔物镜转换器、机械载物台、聚光镜、柯勒底座光源与同轴粗细准焦螺旋。",
-      "sha256": "ed5cf1c5763290899c75fd8fd4db938d679b600d740ff643ba2d30a292f8673d"
+      "sha256": "56f6fd5d4b2c86c3e84bd0089c0481190f107cf993aa760d0c1ab3fcab66693e"
     },
     {
       "id": "bio:hemocytometer",
@@ -1061,7 +1061,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "Neubauer 血球计数板俯视图：磨砂标注区、H 形导流槽、上下双计数池网格与 0.1 mm 深度刻字。",
-      "sha256": "8cca5b8eb2bfc4e14e3de7b26c7f5e2ac477979f11a87359f225edcbdc7f62f2"
+      "sha256": "0680284fafe321d16dbd63f77cb3078460e039eb23f98102d7480ce04716a12c"
     },
     {
       "id": "bio:inoculating-loop",
@@ -1078,7 +1078,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "微生物平板划线用镍铬丝接种环：隔热防滑手柄、滚花锁头与闭合圆形丝环。",
-      "sha256": "ad392fffd85fc01b1221757e5b81d72a60008c3a626d5e7e79e308820b080051"
+      "sha256": "e40e3fabd8b1477e376ac36c08b491dd1bf3c768754a77e4df9e3d61645fc1ef"
     },
     {
       "id": "bio:cell-spreader",
@@ -1095,7 +1095,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "火焰烧制圆滑玻璃涂布棒（L/三角刮布器），用于琼脂平板均匀涂布菌液。",
-      "sha256": "090b79e8ee068430fc7a9865d6eed8bd6c061daebac2899e3d772d486953be00"
+      "sha256": "3ecb52d02c4706c56d88c71a7c8739e5e6856cb5d43eeeba0aa7f45bd8dd96ca"
     },
     {
       "id": "bio:cell-culture-flask",
@@ -1112,7 +1112,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "斜颈 T-75 细胞培养瓶：带透气滤膜螺旋盖、透明聚苯乙烯扁平瓶身、体积刻度线与培养基液面。",
-      "sha256": "2f76c416ee929a4371e17d5c9988ef26ea2dd6f23dcec655b2af7d78d52a9836"
+      "sha256": "ddb749f1c6428db627f0b9a736e05de51631da89dfefc9af37a84c1fadcc1e8b"
     },
     {
       "id": "bio:fermenter-bioreactor",
@@ -1129,7 +1129,7 @@
       "author": "Chem Studio contributors",
       "origin": "authored",
       "notes": "小型台式搅拌生物发酵罐：硼硅玻璃反应釜、不锈钢顶盖电机、涡轮搅拌桨、pH/溶氧电极、蠕动泵头与多参数监控屏。",
-      "sha256": "6b952b2a79a9a6c3bb399796d5b3753a3407b07ccdb46c828476444569c0e948"
+      "sha256": "eec02437827446cba847d64e61996cf45a29a42387c36865199021354441b6df"
     },
     {
       "id": "bio:online-spectrophotometer",
@@ -1166,7 +1166,7 @@
         40,
         62
       ],
-      "sha256": "21d819e55d9a0e5945023e7fe80e2661f6afe8a280ce531779857783950b4fc6"
+      "sha256": "813eaad49cda567e7e6c0920fae9cac06d9a5685c206ed27e2d6d23ea86b034e"
     },
     {
       "id": "bio:online-centrifuge",
@@ -1201,7 +1201,7 @@
         65,
         69
       ],
-      "sha256": "391cd9a7b8d888b15f81952b1ae19f7baf54fa2f47ac16f4798b06da2bee3b6e"
+      "sha256": "f3fe06654de2ab5c2e18d85b18c304ac8eeea8f34d5352d9fae8dccbcd141b5c"
     },
     {
       "id": "bio:online-cuvette",
@@ -1228,7 +1228,7 @@
         12,
         26
       ],
-      "sha256": "c472da46e792a6d8fea2caf8a624effcd911de0a9bc097b83473c6c5368f48e7"
+      "sha256": "e21c3a69e279507149635fec6b2c15b62ced5df6d67ea2406450dde0cfacf2cd"
     },
     {
       "id": "bio:online-micropipette",
@@ -1257,7 +1257,7 @@
         72,
         73
       ],
-      "sha256": "7ffd861b3ba50a8cb3c9aa2391039c6db5c98d44762aae943c80b415cd75fdb4"
+      "sha256": "818f67cb09df6b9da66851139ad39c8170246d779c725c7f8f7bd70667c1aeaa"
     },
     {
       "id": "bio:online-microtube",
@@ -1286,7 +1286,7 @@
         65,
         70
       ],
-      "sha256": "c5fa4a306e29e7e73945698acf4db69f715b6df57165482897dffcaba1d18eb0"
+      "sha256": "c45f9ef5738ea91d63645b3c5d004b0235be090b52e165b7baf0201d52f3b756"
     },
     {
       "id": "bio:online-tip-box",
@@ -1309,7 +1309,7 @@
       "lecturePdfPages": [
         72
       ],
-      "sha256": "f353d5451e10fe38eea513bdff92615ba41723bfcc358f8d12e6970ada1e27b2"
+      "sha256": "a4eb31e46c6c1ea66a3de2a6d2a311dccf5d55a595a6c8e092129351ced8ecce"
     },
     {
       "id": "bio:online-incubator-servier",
@@ -1334,7 +1334,7 @@
         55,
         69
       ],
-      "sha256": "7a3e541f59da017ecf2861f4fffa043056cd1c6d72aee3c5cdcf21183b569c09"
+      "sha256": "1f1d515d577bc3bd8175e2cf96e5e0968a355e0df3e7246203430fdd53700fd8"
     },
     {
       "id": "bio:online-freezer",
@@ -1361,7 +1361,7 @@
         50,
         69
       ],
-      "sha256": "3c1cd4443d23f51b5f3de38dfeccb2e58b985d60d7d91bbcd1098be16ade516e"
+      "sha256": "89e506458346238c7c2eeeee3c945ffee16257fe15f8a7f7119fbc3377ec67d4"
     },
     {
       "id": "bio:online-autoclave",
@@ -1384,7 +1384,7 @@
       "lecturePdfPages": [
         69
       ],
-      "sha256": "3203c7f08479c757a77e786c1dfd9a64b2d0d8fab0ba3902ba1073046ba0a7a8"
+      "sha256": "75a48575ef65e90f9b3b8a2e31830f174ab95e18b5bed580a2bcb4b34824c08f"
     }
   ]
 }

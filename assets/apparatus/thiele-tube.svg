@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" viewBox="0 0 140 210">
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="200" viewBox="0 0 116 200">
 <title>提勒熔点管</title>
-<path d="M34 12 Q37 13 37 19 V162 Q37 188 57 188 Q75 188 84 176 L124 126 Q131 118 124 110 L76 68 V19 Q76 13 79 12" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M76 92 L106 118 L76 144 Z" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M16 10 Q19 12 19 18 V154 Q19 182 39 182 Q57 182 66 170 L104 120 Q111 112 104 104 L58 64 V18 Q58 12 61 10" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 88 L88 112 L58 136 Z" fill="none" stroke="#333333" stroke-width="4" stroke-linejoin="round"/>
 </svg>

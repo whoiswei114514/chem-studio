@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="138" height="148" viewBox="0 0 138 148">
 <title>多头接收管（牛角管）</title>
-<path d="M92 39.2 L113.08 39.8 L115.08 37.9 L126 40 L126 48 L115.08 50.1 L113.08 48.2 L92 48.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+<path d="M92 39.2 L113.08 39.8 L115.08 37.9 L126 40 L126 48 L115.08 50.1 L113.08 48.2 L92 48.8 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
   <path d="
       M29.58 19.001
       L62 24 Q92 26 92 40 M92 49 V76
-      C98 86 105 98 89.704 116.921
-      M104.296 107.079 L83 122
-      M65 122 L43.704 107.079
-      M58.296 116.921 C46 98 52 86 56 76 V42
+      C98 86 105 98 91.197 115.914
+      M102.803 108.086 L83 122
+      M65 122 L45.197 108.086
+      M56.803 115.914 C46 98 52 86 56 76 V42
       L24.921 36.387"
-      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8.976 10.892 Q9.425 13.083 12.805 13.988 L29.58 19.001" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M3.024 33.108 Q4.507 31.435 7.888 32.341 L24.921 36.387" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="59.954" y1="118.039" x2="42.046" y2="105.961" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
-  <line x1="58.296" y1="116.921" x2="44.335" y2="134.041" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <line x1="43.704" y1="107.079" x2="33.06" y2="126.436" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <line x1="63" y1="122" x2="85" y2="122" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
-  <path d="M65 122 L67.2 144" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M83 122 L80.8 144" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M66 124.2 Q74 126.4 82 124.2" fill="none" stroke="#DCE8EC" stroke-width="1.3" stroke-linecap="round"/>
-  <line x1="105.954" y1="105.961" x2="88.046" y2="118.039" stroke="#294454" stroke-width="2.4" stroke-linecap="round"/>
-  <line x1="104.296" y1="107.079" x2="114.94" y2="126.436" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-  <line x1="89.704" y1="116.921" x2="103.665" y2="134.041" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
+      fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.976 10.892 L30.046 17.262 L29.58 19.001 M3.024 33.108 L24.455 38.126 L24.921 36.387" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30.363 21.488 Q30.921 28.678 26.843 34.625" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M56.803 115.914 L58.296 116.921 L44.335 134.041 M45.197 108.086 L43.704 107.079 L33.06 126.436" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54.077 117.453 Q48.092 116.311 44.792 111.19" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M65 122 H63.5 L67.2 144" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M83 122 H84.5 L80.8 144" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M66.7 124.8 Q74 127.4 81.3 124.8" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M102.803 108.086 L104.296 107.079 L114.94 126.436 M91.197 115.914 L89.704 116.921 L103.665 134.041" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M103.208 111.19 Q99.908 116.311 93.923 117.453" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

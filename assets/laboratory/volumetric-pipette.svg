@@ -11,8 +11,7 @@
       C20 200 28 194 28 176
       V146
       C28 128 20 122 20 110 V4"
-      fill="none" stroke="#294454" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="11.5" y1="68" x2="20.5" y2="68" stroke="#1F6F6B" stroke-width="1.5"/>
-      <text x="16" y="164" font-size="7" font-family="Segoe UI, sans-serif" fill="#7E939E" text-anchor="middle">25</text>
-  
+      fill="none" stroke="#333333" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="11.5" y1="68" x2="20.5" y2="68" stroke="#B8292F" stroke-width="1.6"/>
+      <text x="16" y="164" font-size="7" font-family="Segoe UI, sans-serif" fill="#8C929A" text-anchor="middle">25</text>
 </svg>

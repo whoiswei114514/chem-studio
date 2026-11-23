@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="172" viewBox="0 0 160 172">
 <title>溢流杯</title>
-<path d="M16 34 L27 42 V167 Q27 179 40 179 H122 Q134 179 134 167 V72 L152 83 M158 75 L134 61 V38 Q134 35 137 34" fill="none" stroke="#294454" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M28 66 H134" fill="none" stroke="#258F89" stroke-width="1.4" stroke-dasharray="4 3"/>
-  <g><line x1="123" y1="76" x2="107.05" y2="76" stroke="#7E939E" stroke-width="1.3" stroke-linecap="round"/><line x1="123" y1="89" x2="112" y2="89" stroke="#7E939E" stroke-width="1" stroke-linecap="round"/><line x1="123" y1="102" x2="107.05" y2="102" stroke="#7E939E" stroke-width="1.3" stroke-linecap="round"/><line x1="123" y1="115" x2="112" y2="115" stroke="#7E939E" stroke-width="1" stroke-linecap="round"/><line x1="123" y1="128" x2="107.05" y2="128" stroke="#7E939E" stroke-width="1.3" stroke-linecap="round"/><line x1="123" y1="141" x2="112" y2="141" stroke="#7E939E" stroke-width="1" stroke-linecap="round"/><line x1="123" y1="154" x2="107.05" y2="154" stroke="#7E939E" stroke-width="1.3" stroke-linecap="round"/></g>
+<path d="M12 14 L23 24 V152 Q23 164 36 164 H120 Q132 164 132 152 V60 L150 71 M156 63 L132 48 V21 Q132 16 136 14" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 53 H132" fill="none" stroke="#72C2DD" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <g><line x1="122" y1="62" x2="107.5" y2="62" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="122" y1="75" x2="112" y2="75" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="122" y1="88" x2="107.5" y2="88" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="122" y1="101" x2="112" y2="101" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="122" y1="114" x2="107.5" y2="114" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="122" y1="127" x2="112" y2="127" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="122" y1="140" x2="107.5" y2="140" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
 </svg>

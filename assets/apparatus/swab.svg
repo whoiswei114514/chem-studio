@@ -3,8 +3,8 @@
 <title>棉签</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="14" y="55" width="132" height="6" rx="2" fill="#DFBE8F" stroke="#294454" stroke-width="2.0"/>
-      <ellipse cx="155" cy="58" rx="15" ry="7.5" fill="#F8FAF9" stroke="#294454" stroke-width="2.2"/>
+      <rect x="14" y="55" width="132" height="6" rx="2" fill="#E4B879" stroke="#333333" stroke-width="2.0"/>
+      <ellipse cx="155" cy="58" rx="15" ry="7.5" fill="#F7F8FA" stroke="#333333" stroke-width="2.2"/>
     </g>
   
 </svg>

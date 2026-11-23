@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="188" viewBox="0 0 124 188">
 <title>G 形夹</title>
-<path d="M142 28 H54 Q24 28 24 58 V130 Q24 160 54 160 H142 V136 H58 Q48 136 48 126 V62 Q48 52 58 52 H142 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
-      <path d="M134 36 H56 Q34 36 34 58 V130 Q34 152 56 152 H134" fill="none" stroke="#3D5968" stroke-width="1.6"/>
-      <rect x="120" y="64" width="10" height="106" rx="2" fill="#DCE5E8" stroke="#294454" stroke-width="2.1"/>
-      <path d="M120 74 H130 M120 82 H130 M120 90 H130 M120 98 H130 M120 106 H130 M120 114 H130 M120 122 H130" stroke="#7E939E" stroke-width="1.2"/>
-      <rect x="108" y="56" width="34" height="10" rx="3" fill="#C9A048" stroke="#294454" stroke-width="2.0"/>
-      <rect x="98" y="168" width="54" height="8" rx="4" fill="#258F89" stroke="#294454" stroke-width="2.1"/>
+<path d="M98 16 H38 Q14 16 14 40 V120 Q14 144 38 144 H98 V124 H42 Q34 124 34 116 V44 Q34 36 42 36 H98 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M92 23 H40 Q23 23 23 40 V120 Q23 137 40 137 H92" fill="none" stroke="#3E74B4" stroke-width="1.5"/>
+      <rect x="80" y="48" width="9" height="126" rx="2" fill="#E3E6EB" stroke="#333333" stroke-width="2.2"/>
+      <g><line x1="80" y1="62" x2="93.05" y2="62" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="71.333" x2="93.05" y2="71.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="80.667" x2="93.05" y2="80.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="90" x2="93.05" y2="90" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="99.333" x2="93.05" y2="99.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="108.667" x2="93.05" y2="108.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="118" x2="93.05" y2="118" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
+      <rect x="68" y="42" width="32" height="8" rx="2.5" fill="#E4A838" stroke="#333333" stroke-width="1.8"/>
+      <rect x="54" y="170" width="60" height="7" rx="3" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/>
 </svg>

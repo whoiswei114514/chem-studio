@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="112" viewBox="0 0 40 112">
 <title>直形接收管</title>
-<path d="M10.5 26 V64 L15.5 84 V108 L24.5 105 V84 L29.5 64 V26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 4 Q10 5 10 8.5 L10.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M32 4 Q30 5 30 8.5 L29.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 26 Q20 28.2 28 26" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M10.5 26 V64 L15.5 84 V108 L24.5 105 V84 L29.5 64 V26" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 4 L8.7 26 H10.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 4 L31.3 26 H29.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12.7 27.4 Q20 30 27.3 27.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
 </svg>

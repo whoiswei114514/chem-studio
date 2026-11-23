@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="264" viewBox="0 0 128 264">
 <title>启普发生器</title>
-<path d="M94 121.2 L110.12 121.8 L112.12 119.9 L120 122 L120 130 L112.12 132.1 L110.12 130.2 L94 130.8 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.1" stroke-linejoin="round"/>
+<path d="M94 121.2 L110.12 121.8 L112.12 119.9 L120 122 L120 130 L112.12 132.1 L110.12 130.2 L94 130.8 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
   <path d="
       M45.5 26 V40
       C16 48 14 84 34 98
@@ -12,23 +12,20 @@
       C100 214 98 176 80 162
       C98 148 98 112 78 98
       C98 84 96 48 66.5 40 V26"
-      fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M50 98 V216 M62 98 V216" fill="none" stroke="#3D5968" stroke-width="1.6"/>
-      <line x1="33" y1="162" x2="50" y2="162" stroke="#3D5968" stroke-width="2.0" stroke-dasharray="3 2"/>
-      <line x1="62" y1="162" x2="79" y2="162" stroke="#3D5968" stroke-width="2.0" stroke-dasharray="3 2"/>
-      <circle cx="41" cy="150" r="3.2" fill="#CBD5E1" stroke="#3D5968" stroke-width="1"/>
-      <circle cx="71" cy="150" r="3.2" fill="#CBD5E1" stroke="#3D5968" stroke-width="1"/>
-      <circle cx="37" cy="143" r="3.0" fill="#CBD5E1" stroke="#3D5968" stroke-width="1"/>
+      fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 98 V216 M62 98 V216" fill="none" stroke="#4A4F55" stroke-width="1.6"/>
+      <line x1="33" y1="162" x2="50" y2="162" stroke="#4A4F55" stroke-width="2.0" stroke-dasharray="3 2"/>
+      <line x1="62" y1="162" x2="79" y2="162" stroke="#4A4F55" stroke-width="2.0" stroke-dasharray="3 2"/>
+      <circle cx="41" cy="150" r="3.2" fill="#C4C9D0" stroke="#4A4F55" stroke-width="1"/>
+      <circle cx="71" cy="150" r="3.2" fill="#C4C9D0" stroke="#4A4F55" stroke-width="1"/>
+      <circle cx="37" cy="143" r="3.0" fill="#C4C9D0" stroke="#4A4F55" stroke-width="1"/>
   <g>
-    <path d="M98 122 L112 123.2 L112 128.8 L98 130 Z" fill="#F8FAF9" stroke="#294454" stroke-width="1.9" stroke-linejoin="round"/>
-    <rect x="91" y="119.5" width="7" height="13" rx="2" fill="#258F89" stroke="#294454" stroke-width="1.7"/>
-    <rect x="112" y="122.5" width="5" height="7" rx="1.5" fill="#C6D2D7" stroke="#294454" stroke-width="1.5"/>
-    <line x1="102.5" y1="123.5" x2="107.5" y2="128.5" stroke="#3D5968" stroke-width="1.2"/>
+    <path d="M98 122 L112 123.2 L112 128.8 L98 130 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
+    <rect x="91" y="119.5" width="7" height="13" rx="2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
+    <rect x="112" y="122.5" width="5" height="7" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+    <line x1="102.5" y1="123.5" x2="107.5" y2="128.5" stroke="#4A4F55" stroke-width="1.4"/>
   </g>
-  
-  
-  
-  <path d="M43 4 Q45 5 45 8.5 L45.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M69 4 Q67 5 67 8.5 L66.5 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M47 26 Q56 28.2 65 26" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M43 4 L43.7 26 H45.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M69 4 L68.3 26 H66.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47.7 27.4 Q56 30 64.3 27.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
 </svg>

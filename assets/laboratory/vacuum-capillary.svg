@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="226" viewBox="0 0 28 226">
 <title>减压蒸馏毛细管</title>
-<path d="M8.5 6 L10 14 V152 L11.5 222 M16.5 222 L18 152 V14 L19.5 6" fill="none" stroke="#294454" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
-      <line x1="14" y1="12" x2="14" y2="218" stroke="#258F89" stroke-width="1.0"/>
+<path d="M8.5 6 L10 14 V152 L11.5 222 M16.5 222 L18 152 V14 L19.5 6" fill="none" stroke="#333333" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="14" y1="12" x2="14" y2="218" stroke="#72C2DD" stroke-width="1.2"/>
 </svg>

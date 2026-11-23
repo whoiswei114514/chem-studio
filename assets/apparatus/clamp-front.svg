@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="44" viewBox="0 0 110 44">
 <title>夹具正视图</title>
-<rect x="12" y="88" width="16" height="24" rx="3" fill="#3D5968" stroke="#294454" stroke-width="2.2"/>
-      <rect x="4" y="97" width="8" height="6" rx="1.5" fill="#C9A048" stroke="#294454" stroke-width="1.6"/>
-      <line x1="5" y1="93" x2="5" y2="107" stroke="#294454" stroke-width="2.6" stroke-linecap="round"/>
-      <rect x="28" y="96.5" width="90" height="7" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.0"/>
-      <path d="M116 96 L128 74 M116 104 L128 126" fill="none" stroke="#294454" stroke-width="4.2" stroke-linecap="round"/>
-      <path d="M116 96 L128 74 M116 104 L128 126" fill="none" stroke="#C6D2D7" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M130 68 C116 84 116 116 130 132 C134 136 139 131 135 125 C124 112 124 88 135 75 C139 69 134 64 130 68 Z" fill="#258F89" stroke="#294454" stroke-width="2.1"/>
-      <path d="M162 68 C176 84 176 116 162 132 C158 136 153 131 157 125 C168 112 168 88 157 75 C153 69 158 64 162 68 Z" fill="#258F89" stroke="#294454" stroke-width="2.1"/>
-      <rect x="110" y="90" width="12" height="20" rx="3" fill="#C9A048" stroke="#294454" stroke-width="1.9"/>
+<rect x="10" y="13" width="15" height="18" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/><rect x="3" y="19.5" width="7" height="5" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/><line x1="4" y1="16" x2="4" y2="28" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
+      <rect x="25" y="19" width="44" height="6" rx="1.5" fill="#E3E6EB" stroke="#333333" stroke-width="2.0"/>
+      <path d="M68 19 L98 10 M68 25 L98 34" fill="none" stroke="#333333" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M68 19 L98 10 M68 25 L98 34" fill="none" stroke="#E3E6EB" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M74 6 C60 14 60 30 74 38 C77 40 81 37 78 33 C69 27 69 17 78 11 C81 7 77 4 74 6 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.0"/>
+      <path d="M98 6 C112 14 112 30 98 38 C95 40 91 37 94 33 C103 27 103 17 94 11 C91 7 95 4 98 6 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.0"/>
+      <rect x="59" y="16" width="10" height="12" rx="2.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/>
 </svg>

@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="136" height="200" viewBox="0 0 136 200">
 <title>三脚架</title>
-
-      <path d="M35 42 L17 183 H25 L43 44 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M145 42 L163 183 H155 L137 44 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.2" stroke-linejoin="round"/>
-      <rect x="86.5" y="45" width="7" height="145" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
-      <rect x="33" y="41" width="12" height="9" rx="2" fill="#3D5968" stroke="#294454" stroke-width="1.6"/>
-      <rect x="135" y="41" width="12" height="9" rx="2" fill="#3D5968" stroke="#294454" stroke-width="1.6"/>
-      <rect x="15" y="181" width="12" height="6" rx="2" fill="#3D5968" stroke="#294454" stroke-width="1.6"/>
-      <rect x="153" y="181" width="12" height="6" rx="2" fill="#3D5968" stroke="#294454" stroke-width="1.6"/>
-      <rect x="84" y="187" width="12" height="6" rx="2" fill="#3D5968" stroke="#294454" stroke-width="1.6"/>
-  <path d="M30 34 A60 13 0 1 0 150 34 V40 A60 13 0 1 1 30 40 Z" fill="#3D5968" stroke="#294454" stroke-width="2.0"/>
-      <ellipse cx="90" cy="34" rx="60" ry="13" fill="#C6D2D7" stroke="#294454" stroke-width="2.3"/>
-      <ellipse cx="90" cy="34" rx="45" ry="7.8" fill="#FFFFFF" stroke="#294454" stroke-width="2.1"/>
+<path d="M22 19 L14 192 H21 L29 19 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M114 19 L122 192 H115 L107 19 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <rect x="65" y="19" width="6" height="173" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
+      <rect x="10" y="12" width="116" height="8" rx="3" fill="#7C828A" stroke="#333333" stroke-width="2.8"/>
+      <rect x="12" y="189" width="11" height="5" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.5"/>
+      <rect x="62.5" y="189" width="11" height="5" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.5"/>
+      <rect x="113" y="189" width="11" height="5" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.5"/>
 </svg>

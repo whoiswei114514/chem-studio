@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="70" height="200" viewBox="0 0 70 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="200" viewBox="0 0 48 200">
 <title>试管</title>
-<path d="M20 12 Q22 13 22 19 V160 A13 13 0 0 0 48 160 V19 Q48 13 50 12" fill="none" stroke="#294454" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M8 10 Q11 12 11 18 V168 A13 13 0 0 0 37 168 V18 Q37 12 40 10" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

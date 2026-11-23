@@ -8,30 +8,30 @@ const BIO_DIR = path.join(ROOT, 'assets', 'biochemistry');
 const PHYS_DIR = path.join(ROOT, 'assets', 'physics');
 
 const P = {
-  ink: '#294454',
-  slate: '#3D5968',
-  muted: '#7E939E',
-  lightBorder: '#9AB0B8',
-  panelBg: '#F8FAF9',
-  panelAlt: '#DCE5E8',
-  chassisDark: '#294454',
-  tealDark: '#1F6F6B',
-  teal: '#258F89',
-  tealLight: '#E6F4F3',
-  glassFill: '#DCEFEB',
+  ink: '#333333',
+  slate: '#4A4F55',
+  muted: '#8C929A',
+  lightBorder: '#B8BCC2',
+  panelBg: '#F5F6F8',
+  panelAlt: '#E3E6EB',
+  chassisDark: '#3A3E44',
+  tealDark: '#3A3E44',
+  teal: '#3E74B4',
+  tealLight: '#D8EDF5',
+  glassFill: '#EEF4F7',
   glassHighlight: '#FFFFFF',
-  screenBg: '#EEF6F1',
-  screenBezel: '#C6D2D7',
-  screenGreen: '#258F89',
-  screenCyan: '#294454',
-  screenAmber: '#A88234',
-  red: '#C84B31',
-  black: '#294454',
-  blue: '#3A7CA5',
-  brass: '#C9A048',
-  brassLight: '#EAD79B',
-  copper: '#D79B59',
-  amber: '#D79B59',
+  screenBg: '#E6EEF2',
+  screenBezel: '#3A3E44',
+  screenGreen: '#22252A',
+  screenCyan: '#2D6DA3',
+  screenAmber: '#C88A1E',
+  red: '#B8292F',
+  black: '#333333',
+  blue: '#3E74B4',
+  brass: '#E4A838',
+  brassLight: '#F3D693',
+  copper: '#D48242',
+  amber: '#E4A838',
 };
 
 const FONT = 'Segoe UI, Arial, sans-serif';
@@ -40,58 +40,75 @@ const MONO = 'Consolas, Segoe UI, monospace';
 const fmt = (n) => Number(n.toFixed(2));
 
 const FLAT_URL_FILLS = {
-  'g-chassis': '#DCE5E8',
-  'g-chassis-h': '#DCE5E8',
-  'g-bezel': '#3D5968',
-  'g-metal': '#C6D2D7',
-  'g-metal-v': '#C6D2D7',
-  'g-teal': '#258F89',
-  'g-glass': '#F4F9F8',
-  'g-liquid': '#D9ECF2',
-  'g-screen': '#EEF6F1',
-  'g-brass': '#C9A048',
-  'g-copper': '#D79B59',
-  'g-rubber': '#586F7C',
+  'g-chassis': '#E3E6EB',
+  'g-chassis-h': '#E3E6EB',
+  'g-bezel': '#3A3E44',
+  'g-metal': '#C4C9D0',
+  'g-metal-v': '#C4C9D0',
+  'g-teal': '#3E74B4',
+  'g-glass': '#FFFFFF',
+  'g-liquid': '#D8EDF5',
+  'g-screen': '#E6EEF2',
+  'g-brass': '#E4A838',
+  'g-copper': '#D48242',
+  'g-rubber': '#595E66',
 };
 
 const FLAT_HEX_MAP = {
-  '#1F2937': '#294454',
-  '#0F172A': '#EEF6F1',
-  '#1E293B': '#294454',
-  '#334155': '#3D5968',
-  '#475569': '#3D5968',
-  '#64748B': '#7E939E',
-  '#94A3B8': '#C6D2D7',
-  '#CBD5E1': '#C6D2D7',
-  '#E2E8F0': '#DCE5E8',
-  '#E8EEF2': '#DCE5E8',
-  '#F1F5F9': '#F8FAF9',
-  '#F8FAFC': '#F8FAF9',
-  '#F8FCFE': '#F4F9F8',
-  '#E6F2F7': '#DCEFEB',
-  '#CBE4EE': '#DCEFEB',
-  '#14B8A6': '#258F89',
-  '#0F766E': '#1F6F6B',
-  '#115E59': '#1F6F6B',
-  '#CCFBF1': '#E6F4F3',
-  '#99F6E4': '#D9ECF2',
-  '#F0FDFA': '#F4F9F8',
-  '#E0F2FE': '#DCEFEB',
-  '#34D399': '#258F89',
-  '#38BDF8': '#294454',
-  '#FBBF24': '#C9A048',
-  '#DC2626': '#C84B31',
-  '#FEE2E2': '#F4E4E0',
-  '#2563EB': '#3A7CA5',
-  '#D97706': '#C9A048',
-  '#F59E0B': '#D79B59',
-  '#FDE68A': '#EAD79B',
-  '#FEF3C7': '#EAD79B',
-  '#C2410C': '#D79B59',
-  '#9A3412': '#B57B42',
+  '#1F2937': '#333333',
+  '#294454': '#333333',
+  '#0F172A': '#E6EEF2',
+  '#1E293B': '#333333',
+  '#334155': '#3A3E44',
+  '#475569': '#4A4F55',
+  '#3D5968': '#4A4F55',
+  '#64748B': '#8C929A',
+  '#7E939E': '#8C929A',
+  '#94A3B8': '#C4C9D0',
+  '#CBD5E1': '#C4C9D0',
+  '#C6D2D7': '#C4C9D0',
+  '#E2E8F0': '#E3E6EB',
+  '#E8EEF2': '#E3E6EB',
+  '#DCE5E8': '#E3E6EB',
+  '#F1F5F9': '#F5F6F8',
+  '#F8FAFC': '#F5F6F8',
+  '#F8FAF9': '#F5F6F8',
+  '#F8FCFE': '#EEF4F7',
+  '#F4F9F8': '#EEF4F7',
+  '#E6F2F7': '#EEF4F7',
+  '#CBE4EE': '#EEF4F7',
+  '#DCEFEB': '#EEF4F7',
+  '#14B8A6': '#3E74B4',
+  '#258F89': '#3E74B4',
+  '#0F766E': '#3A3E44',
+  '#115E59': '#3A3E44',
+  '#1F6F6B': '#3A3E44',
+  '#CCFBF1': '#D8EDF5',
+  '#99F6E4': '#D8EDF5',
+  '#F0FDFA': '#EEF4F7',
+  '#E6F4F3': '#E6EEF2',
+  '#E0F2FE': '#D8EDF5',
+  '#D9ECF2': '#D8EDF5',
+  '#EEF6F1': '#E6EEF2',
+  '#34D399': '#22252A',
+  '#38BDF8': '#2D6DA3',
+  '#FBBF24': '#E4A838',
+  '#DC2626': '#B8292F',
+  '#C84B31': '#B8292F',
+  '#FEE2E2': '#F2DCDC',
+  '#2563EB': '#3E74B4',
+  '#3A7CA5': '#3E74B4',
+  '#D97706': '#E4A838',
+  '#C9A048': '#E4A838',
+  '#F59E0B': '#D48242',
+  '#D79B59': '#D48242',
+  '#FDE68A': '#F3D693',
+  '#FEF3C7': '#F3D693',
+  '#C2410C': '#D48242',
+  '#9A3412': '#9E6A2E',
   '#7C2D12': '#8E5A2B',
-  '#16A34A': '#258F89',
-  '#EAB308': '#C9A048',
+  '#16A34A': '#5F9A6E',
+  '#EAB308': '#E4A838',
 };
 
 function flattenSvgPaints(svg) {
@@ -110,32 +127,30 @@ function wrapSvg(w, h, title, body) {
   const raw = `<?xml version="1.0" encoding="utf-8"?>\n` +
     `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">` +
     `<title>${title}</title>` +
-    `<g stroke="${P.ink}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">${body}</g></svg>\n`;
+    `<g stroke="${P.ink}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">${body}</g></svg>\n`;
   return flattenSvgPaints(raw);
 }
 
 // ---------- Reusable Precision Hardware Primitives ----------
 function labFeet(x, y, w, footW = 18, footH = 7, inset = 14) {
-  return `<rect x="${fmt(x + inset)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#C6D2D7" stroke="${P.ink}" stroke-width="1.8"/>` +
-    `<rect x="${fmt(x + w - inset - footW)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#C6D2D7" stroke="${P.ink}" stroke-width="1.8"/>`;
+  return `<rect x="${fmt(x + inset)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#7C828A" stroke="${P.ink}" stroke-width="1.9"/>` +
+    `<rect x="${fmt(x + w - inset - footW)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#7C828A" stroke="${P.ink}" stroke-width="1.9"/>`;
 }
 
 function benchChassis(x, y, w, h, opts = {}) {
   const rx = opts.rx ?? 8;
   const feet = opts.feet !== false ? labFeet(x, y + h, w, opts.footW ?? 20, opts.footH ?? 7, opts.footInset ?? 18) : '';
-  const accent = opts.accentBar !== false
-    ? `<rect x="${fmt(x + 2)}" y="${fmt(y + 2)}" width="${fmt(w - 4)}" height="6" rx="3" fill="${opts.accentColor || P.teal}" stroke="none"/>`
-    : '';
-  const innerLine = `<rect x="${fmt(x + 6)}" y="${fmt(y + 11)}" width="${fmt(w - 12)}" height="${fmt(h - 17)}" rx="${Math.max(2, rx - 3)}" fill="none" stroke="${P.muted}" stroke-width="1.0"/>`;
+  const topHighlight = `<line x1="${fmt(x + rx + 2)}" y1="${fmt(y + 3)}" x2="${fmt(x + w - rx - 2)}" y2="${fmt(y + 3)}" stroke="${P.panelBg}" stroke-width="1.6"/>`;
+  const innerLine = `<rect x="${fmt(x + 6)}" y="${fmt(y + 8)}" width="${fmt(w - 12)}" height="${fmt(h - 14)}" rx="${Math.max(2, rx - 3)}" fill="none" stroke="#C4C9D0" stroke-width="1.1"/>`;
   return feet +
-    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${opts.fill || P.panelAlt}" stroke="${P.ink}" stroke-width="2.3"/>` +
-    accent + innerLine;
+    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${opts.fill || P.panelAlt}" stroke="${P.ink}" stroke-width="2.8"/>` +
+    topHighlight + innerLine;
 }
 
 function oledScreen(x, y, w, h, innerSvg, opts = {}) {
   const rx = opts.rx ?? 4;
   return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx + 2}" fill="${P.screenBezel}" stroke="${P.ink}" stroke-width="2.0"/>` +
-    `<rect x="${x + 4}" y="${y + 4}" width="${w - 8}" height="${h - 8}" rx="${rx}" fill="${P.screenBg}" stroke="${P.ink}" stroke-width="1.4"/>` +
+    `<rect x="${x + 4}" y="${y + 4}" width="${w - 8}" height="${h - 8}" rx="${rx}" fill="${opts.green ? '#E7F0EA' : P.screenBg}" stroke="${P.ink}" stroke-width="1.3"/>` +
     innerSvg;
 }
 
@@ -157,20 +172,20 @@ function rotaryKnob(cx, cy, r, angleDeg = -40, opts = {}) {
     for (let i = 0; i < n; i++) {
       const a = (-135 + (270 * i) / (n - 1) - 90) * Math.PI / 180;
       const r1 = r + 2.5, r2 = r + (i % 2 === 0 ? 5.5 : 4);
-      ticks += `<line x1="${fmt(cx + Math.cos(a) * r1)}" y1="${fmt(cy + Math.sin(a) * r1)}" x2="${fmt(cx + Math.cos(a) * r2)}" y2="${fmt(cy + Math.sin(a) * r2)}" stroke="${P.muted}" stroke-width="1.1"/>`;
+      ticks += `<line x1="${fmt(cx + Math.cos(a) * r1)}" y1="${fmt(cy + Math.sin(a) * r1)}" x2="${fmt(cx + Math.cos(a) * r2)}" y2="${fmt(cy + Math.sin(a) * r2)}" stroke="${P.muted}" stroke-width="1.2"/>`;
     }
   }
-  const innerFill = opts.teal ? P.teal : '#C6D2D7';
+  const innerFill = opts.teal ? P.chassisDark : '#C4C9D0';
   const tickColor = opts.teal ? '#FFFFFF' : P.ink;
   return ticks +
-    `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${P.panelBg}" stroke="${P.ink}" stroke-width="1.8"/>` +
+    `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${P.panelBg}" stroke="${P.ink}" stroke-width="1.9"/>` +
     `<circle cx="${cx}" cy="${cy}" r="${fmt(r * 0.78)}" fill="${innerFill}" stroke="${P.slate}" stroke-width="1.3"/>` +
-    `<line x1="${cx}" y1="${cy}" x2="${fmt(px)}" y2="${fmt(py)}" stroke="${tickColor}" stroke-width="1.8"/>` +
+    `<line x1="${cx}" y1="${cy}" x2="${fmt(px)}" y2="${fmt(py)}" stroke="${tickColor}" stroke-width="1.9"/>` +
     `<circle cx="${cx}" cy="${cy}" r="1.6" fill="${tickColor}" stroke="none"/>`;
 }
 
-function bncJack(cx, cy, label, ringColor = '#C6D2D7', labelDy = -13) {
-  return `<circle cx="${cx}" cy="${cy}" r="8.5" fill="${ringColor}" stroke="${P.ink}" stroke-width="1.8"/>` +
+function bncJack(cx, cy, label, ringColor = '#C4C9D0', labelDy = -13) {
+  return `<circle cx="${cx}" cy="${cy}" r="8.5" fill="${ringColor}" stroke="${P.ink}" stroke-width="1.9"/>` +
     `<circle cx="${cx}" cy="${cy}" r="5.6" fill="${P.panelAlt}" stroke="${P.slate}" stroke-width="1.1"/>` +
     `<circle cx="${cx}" cy="${cy}" r="3.4" fill="${P.panelBg}" stroke="${P.slate}" stroke-width="1.0"/>` +
     `<circle cx="${cx}" cy="${cy}" r="1.6" fill="${P.brass}" stroke="none"/>` +
@@ -178,14 +193,14 @@ function bncJack(cx, cy, label, ringColor = '#C6D2D7', labelDy = -13) {
 }
 
 function bindingPost(cx, cy, color = P.red, label = '', labelDy = -13, r = 7.5) {
-  return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${color}" stroke="${P.ink}" stroke-width="1.8"/>` +
+  return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${color}" stroke="${P.ink}" stroke-width="1.9"/>` +
     `<circle cx="${cx}" cy="${cy}" r="${fmt(r * 0.52)}" fill="${P.panelBg}" stroke="${P.ink}" stroke-width="1.1"/>` +
     `<circle cx="${cx}" cy="${cy}" r="${fmt(r * 0.28)}" fill="${P.ink}" stroke="none"/>` +
     (label ? labelText(cx, cy + labelDy, label, 8, P.slate, 'middle', true) : '');
 }
 
-function softButton(x, y, w, h, label = '', fill = '#F8FAF9', textColor = P.ink) {
-  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2.5" fill="${fill}" stroke="${P.ink}" stroke-width="1.5"/>` +
+function softButton(x, y, w, h, label = '', fill = '#F5F6F8', textColor = P.ink) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2.5" fill="${fill}" stroke="${P.ink}" stroke-width="1.6"/>` +
     (label ? labelText(x + w / 2, y + h / 2 + 2.6, label, 6.8, textColor, 'middle', true) : '');
 }
 
@@ -209,7 +224,7 @@ function analogMeter(x, y, w, h, opts = {}) {
     const major = i % 2 === 0;
     const [tx1, ty1] = toXY(d, r);
     const [tx2, ty2] = toXY(d, r - (major ? 6.5 : 3.8));
-    ticks += `<line x1="${fmt(tx1)}" y1="${fmt(ty1)}" x2="${fmt(tx2)}" y2="${fmt(ty2)}" stroke="${P.ink}" stroke-width="${major ? 1.4 : 0.95}"/>`;
+    ticks += `<line x1="${fmt(tx1)}" y1="${fmt(ty1)}" x2="${fmt(tx2)}" y2="${fmt(ty2)}" stroke="${P.ink}" stroke-width="${major ? 1.5 : 1.0}"/>`;
   }
   const needleDeg = opts.needleDeg ?? -14;
   const [nx, ny] = toXY(needleDeg, r * 0.94);
@@ -222,21 +237,21 @@ function analogMeter(x, y, w, h, opts = {}) {
       labels += labelText(lx, ly + 2.2, arr[i], 6.2, P.slate, 'middle', true);
     }
   }
-  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="5" fill="${P.screenBezel}" stroke="${P.ink}" stroke-width="2.0"/>` +
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="5" fill="${P.screenBezel}" stroke="${P.ink}" stroke-width="2.1"/>` +
     `<rect x="${x + 4}" y="${y + 4}" width="${w - 8}" height="${h - 8}" rx="3" fill="${P.panelBg}" stroke="${P.slate}" stroke-width="1.2"/>` +
-    `<path d="M${fmt(mx1)} ${fmt(my1)} A${fmt(r * 0.84)} ${fmt(r * 0.84)} 0 0 1 ${fmt(mx2)} ${fmt(my2)}" fill="none" stroke="#C0D4CF" stroke-width="2.2"/>` +
-    `<path d="M${fmt(ax1)} ${fmt(ay1)} A${fmt(r)} ${fmt(r)} 0 0 1 ${fmt(ax2)} ${fmt(ay2)}" fill="none" stroke="${P.ink}" stroke-width="1.5"/>` +
+    `<path d="M${fmt(mx1)} ${fmt(my1)} A${fmt(r * 0.84)} ${fmt(r * 0.84)} 0 0 1 ${fmt(mx2)} ${fmt(my2)}" fill="none" stroke="#D2D6DC" stroke-width="2.2"/>` +
+    `<path d="M${fmt(ax1)} ${fmt(ay1)} A${fmt(r)} ${fmt(r)} 0 0 1 ${fmt(ax2)} ${fmt(ay2)}" fill="none" stroke="${P.ink}" stroke-width="1.6"/>` +
     ticks + labels +
     (opts.symbol ? labelText(cx, y + h * 0.69, opts.symbol, opts.symbolSize || 10.5, P.ink, 'middle', true) : '') +
     `<line x1="${cx}" y1="${fmt(cy)}" x2="${fmt(nx)}" y2="${fmt(ny)}" stroke="${P.red}" stroke-width="2.0"/>` +
-    `<circle cx="${cx}" cy="${fmt(cy)}" r="4.5" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.3"/>` +
-    `<circle cx="${cx}" cy="${fmt(y + h - 3)}" r="3.2" fill="#C6D2D7" stroke="${P.ink}" stroke-width="1.1"/>`;
+    `<circle cx="${cx}" cy="${fmt(cy)}" r="4.5" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.4"/>` +
+    `<circle cx="${cx}" cy="${fmt(y + h - 3)}" r="3.2" fill="#C4C9D0" stroke="${P.ink}" stroke-width="1.2"/>`;
 }
 
 function ventSlots(x, y, count, w = 24, dy = 5) {
   let out = '';
   for (let i = 0; i < count; i++) {
-    out += `<line x1="${x}" y1="${y + i * dy}" x2="${x + w}" y2="${y + i * dy}" stroke="${P.muted}" stroke-width="1.4"/>`;
+    out += `<line x1="${x}" y1="${y + i * dy}" x2="${x + w}" y2="${y + i * dy}" stroke="${P.muted}" stroke-width="1.5"/>`;
   }
   return out;
 }
@@ -348,8 +363,8 @@ function buildBiochemistrySpecs() {
         `<line x1="28" y1="98" x2="94" y2="98" stroke="${P.slate}" stroke-width="1.3" stroke-dasharray="3 3"/>` +
         holes +
         `<line x1="36" y1="112" x2="86" y2="112" stroke="${P.slate}" stroke-width="1.2"/>` +
-        `<path d="M20 44 Q20 38 26 42 V98 Q26 122 47 136 V196" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
-        `<path d="M75 196 V136 Q96 122 96 98 V42 Q102 38 102 44" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<path d="M20 44 Q20 38 26 42 V98 Q26 122 47 136 V196" fill="none" stroke="${P.ink}" stroke-width="3.4"/>` +
+        `<path d="M75 196 V136 Q96 122 96 98 V42 Q102 38 102 44" fill="none" stroke="${P.ink}" stroke-width="3.4"/>` +
         `<line x1="47" y1="196" x2="75" y2="196" stroke="${P.ink}" stroke-width="2.2"/>`;
     }, {
       ports: [
@@ -365,8 +380,8 @@ function buildBiochemistrySpecs() {
     'analytical balance 分析天平 防风罩 称量 0.1mg 电子天平', 224, 230, () => {
       return labFeet(22, 212, 180, 16, 7, 12) +
         // Draft shield glass chamber (orthographic!)
-        `<rect x="36" y="16" width="152" height="156" rx="3" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="2.2"/>` +
-        `<rect x="36" y="16" width="152" height="10" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="1.8"/>` +
+        `<rect x="36" y="16" width="152" height="156" rx="3" fill="url(#g-glass)" stroke="${P.ink}" stroke-width="3.2"/>` +
+        `<rect x="36" y="16" width="152" height="10" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="2.0"/>` +
         // Side glass door tracks & handles
         `<line x1="46" y1="26" x2="46" y2="172" stroke="${P.slate}" stroke-width="1.2"/>` +
         `<line x1="178" y1="26" x2="178" y2="172" stroke="${P.slate}" stroke-width="1.2"/>` +
@@ -378,12 +393,12 @@ function buildBiochemistrySpecs() {
         `<ellipse cx="112" cy="152" rx="44" ry="7" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="1.8"/>` +
         `<rect x="104" y="159" width="16" height="13" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.5"/>` +
         `<rect x="78" y="166" width="68" height="6" rx="2" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.3"/>` +
-        // Lower chassis
-        `<rect x="20" y="172" width="184" height="40" rx="6" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.2"/>` +
-        `<rect x="22" y="172" width="180" height="5" rx="2" fill="${P.tealDark}" stroke="none"/>` +
+        // Lower chassis (clean brushed aluminum without roof bar)
+        `<rect x="20" y="172" width="184" height="40" rx="6" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.8"/>` +
+        `<line x1="28" y1="175" x2="196" y2="175" stroke="${P.panelBg}" stroke-width="1.4"/>` +
         oledScreen(34, 181, 102, 25, screenText(85, 198, '0.0000 g', 11, P.screenGreen, 'middle')) +
-        softButton(144, 184, 24, 18, 'TARE', '#14B8A6', '#FFFFFF') +
-        softButton(173, 184, 20, 18, 'CAL', '#E2E8F0', P.ink);
+        softButton(144, 184, 24, 18, 'TARE', '#3E74B4', '#FFFFFF') +
+        softButton(173, 184, 20, 18, 'CAL', '#E3E6EB', P.ink);
     }, {
       notes: '正视图透明玻璃防风罩、两侧滑门把手、不锈钢称量盘、去皮/校准按键与高对比背光读数屏。',
       lecturePrintedPages: [59, 61], lecturePdfPages: [60, 62],
@@ -615,8 +630,8 @@ function buildBiochemistrySpecs() {
         `<rect x="30" y="220" width="42" height="6" rx="2" fill="#E2E8F0" stroke="${P.slate}" stroke-width="1.3"/>` +
         `<line x1="33" y1="223" x2="69" y2="223" stroke="${P.slate}" stroke-width="1.0" stroke-dasharray="2 3"/>` +
         // Open unsealed flared glass walls hitting exact mouth (29,17)-(73,17) and outlet (43,273)-(59,273)
-        `<path d="M23 14 Q29 14 29 17 V224 L43 242 V273" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
-        `<path d="M59 273 V242 L73 224 V17 Q73 14 79 14" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<path d="M23 14 Q29 14 29 17 V224 L43 242 V273" fill="none" stroke="${P.ink}" stroke-width="3.4"/>` +
+        `<path d="M59 273 V242 L73 224 V17 Q73 14 79 14" fill="none" stroke="${P.ink}" stroke-width="3.4"/>` +
         // PTFE stopcock valve
         `<rect x="41" y="247" width="20" height="13" rx="2" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="1.8"/>` +
         `<line x1="26" y1="253.5" x2="78" y2="253.5" stroke="${P.ink}" stroke-width="3.2"/>` +
@@ -1307,9 +1322,9 @@ function buildBiochemistrySpecs() {
         `<path d="M72 42 L84 68 L40 94 V168 Q40 176 50 176 H122 Q132 176 132 168 V88 L108 62 L94 34 Z" fill="url(#g-glass)" stroke="none"/>` +
         `<path d="M43 136 H129 V168 Q129 173 121 173 H51 Q43 173 43 168 Z" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M43 136 Q86 139 129 136" stroke="${P.tealDark}" stroke-width="1.3"/>` +
-        `<path d="M72 42 L84 68 L40 94 V168 Q40 176 50 176 H122 Q132 176 132 168 V88 L108 62 L94 34" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
-        // Angled blue/teal vented screw cap
-        `<rect x="65" y="16" width="32" height="22" rx="3" transform="rotate(-22 81 27)" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.2"/>` +
+        `<path d="M72 42 L84 68 L40 94 V168 Q40 176 50 176 H122 Q132 176 132 168 V88 L108 62 L94 34" fill="none" stroke="${P.ink}" stroke-width="3.2"/>` +
+        // Angled vented screw cap
+        `<rect x="65" y="16" width="32" height="22" rx="3" transform="rotate(-22 81 27)" fill="url(#g-teal)" stroke="${P.ink}" stroke-width="2.4"/>` +
         glassHighlight(50, 98, 50, 166, 2.8) +
         ticks;
     }, { notes: '斜颈 T-75 细胞培养瓶：带透气滤膜螺旋盖、透明聚苯乙烯扁平瓶身、体积刻度线与培养基液面。' });
@@ -1318,14 +1333,14 @@ function buildBiochemistrySpecs() {
   add('fermenter-bioreactor', '小型台式发酵罐', '生化设备',
     'fermenter bioreactor 台式发酵罐 生物反应器 搅拌 发酵', 260, 280, () => {
       return labFeet(24, 260, 212, 18, 7, 10) +
-        // Control tower right/bottom L-console
-        `<rect x="20" y="170" width="220" height="90" rx="8" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.4"/>` +
-        `<rect x="22" y="172" width="216" height="6" rx="2" fill="${P.tealDark}" stroke="none"/>` +
+        // Control tower right/bottom L-console (clean brushed aluminum)
+        `<rect x="20" y="170" width="220" height="90" rx="8" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.8"/>` +
+        `<line x1="28" y1="173" x2="232" y2="173" stroke="${P.panelBg}" stroke-width="1.6"/>` +
         // Borosilicate bioreactor vessel on left-center deck
         `<path d="M52 46 V154 Q52 170 98 170 Q144 170 144 154 V46 Z" fill="url(#g-glass)" stroke="none"/>` +
         `<path d="M55 86 H141 V154 Q141 167 98 167 Q55 167 55 154 Z" fill="url(#g-liquid)" stroke="none"/>` +
-        `<path d="M55 86 Q98 90 141 86" stroke="${P.tealDark}" stroke-width="1.3"/>` +
-        `<path d="M52 46 V154 Q52 170 98 170 Q144 170 144 154 V46" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<path d="M55 86 Q98 90 141 86" stroke="#72C2DD" stroke-width="1.4"/>` +
+        `<path d="M52 46 V154 Q52 170 98 170 Q144 170 144 154 V46" fill="none" stroke="${P.ink}" stroke-width="3.4"/>` +
         // Headplate & motor
         `<rect x="46" y="38" width="104" height="10" rx="3" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="2.2"/>` +
         `<rect x="84" y="14" width="28" height="24" rx="3" fill="${P.slate}" stroke="${P.ink}" stroke-width="1.8"/>` +
@@ -2200,14 +2215,14 @@ function buildPhysicsSpecs() {
       return `<!-- Left hook & load cell shaft -->` +
         `<path d="M40 62 H28 C20 62 18 72 26 74 C31 75 34 70 30 68" fill="none" stroke="${P.ink}" stroke-width="2.4"/>` +
         `<rect x="40" y="56" width="22" height="12" rx="1" fill="url(#g-metal)" stroke="${P.ink}" stroke-width="1.8"/>` +
-        // Sensor housing
-        `<rect x="62" y="28" width="144" height="68" rx="9" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.2"/>` +
-        `<rect x="64" y="30" width="140" height="8" rx="3" fill="${P.tealDark}" stroke="none"/>` +
+        // Sensor housing (clean brushed aluminum)
+        `<rect x="62" y="28" width="144" height="68" rx="9" fill="url(#g-chassis)" stroke="${P.ink}" stroke-width="2.8"/>` +
+        `<line x1="72" y1="31" x2="196" y2="31" stroke="${P.panelBg}" stroke-width="1.5"/>` +
         oledScreen(82, 46, 74, 34,
           screenText(119, 62, '+4.90 N', 10, P.screenGreen, 'middle') +
           screenText(119, 73, '100 Hz  ZERO', 6.2, P.screenCyan, 'middle')
         ) +
-        softButton(164, 52, 28, 22, 'TARE', '#14B8A6', '#FFFFFF') +
+        softButton(164, 52, 28, 22, 'TARE', '#3E74B4', '#FFFFFF') +
         // Signal cable + DIN connector right
         `<line x1="206" y1="62" x2="232" y2="62" stroke="${P.ink}" stroke-width="2.8"/>` +
         `<rect x="232" y="48" width="22" height="28" rx="3" fill="url(#g-metal-v)" stroke="${P.ink}" stroke-width="1.8"/>` +
@@ -2633,7 +2648,7 @@ function buildPhysicsSpecs() {
         `<rect x="48" y="24" width="32" height="210" rx="2" fill="url(#g-glass)" stroke="none"/>` +
         `<rect x="50" y="156" width="28" height="76" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M50 156 Q64 159 78 156" stroke="${P.tealDark}" stroke-width="1.4"/>` +
-        `<path d="M44 22 Q48 22 48 26 V232 Q48 234 50 234 H78 Q80 234 80 232 V26 Q80 22 84 22" fill="none" stroke="${P.ink}" stroke-width="2.6"/>` +
+        `<path d="M44 22 Q48 22 48 26 V232 Q48 234 50 234 H78 Q80 234 80 232 V26 Q80 22 84 22" fill="none" stroke="${P.ink}" stroke-width="3.2"/>` +
         ticks +
         glassHighlight(53, 32, 53, 224, 2.2) +
         // Clamp to tube & clamp to leveling reservoir
@@ -2643,7 +2658,7 @@ function buildPhysicsSpecs() {
         `<rect x="108" y="114" width="36" height="76" rx="4" fill="url(#g-glass)" stroke="none"/>` +
         `<rect x="110" y="156" width="32" height="32" fill="url(#g-liquid)" stroke="none"/>` +
         `<path d="M110 156 Q126 159 142 156" stroke="${P.tealDark}" stroke-width="1.3"/>` +
-        `<path d="M104 112 Q108 112 108 116 V186 Q108 190 112 190 H140 Q144 190 144 186 V116 Q144 112 148 112" fill="none" stroke="${P.ink}" stroke-width="2.5"/>`;
+        `<path d="M104 112 Q108 112 108 116 V186 Q108 190 112 190 H140 Q144 190 144 186 V116 Q144 112 148 112" fill="none" stroke="${P.ink}" stroke-width="3.2"/>`;
     }, [
       { id: 'base', x: 112, y: 288, dx: 0, dy: 1, type: 'base', diameter: 0 },
     ], '声速测量共振空气柱：带刻度开口玻璃管、连通器软管及沿立柱升降的等液面储水杯。');

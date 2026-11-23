@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="52" height="228" viewBox="0 0 52 228">
 <title>具塞比色管</title>
-<path d="M16 26 V218 Q16 224 22 224 H30 Q36 224 36 218 V26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="16" y1="62" x2="36" y2="62" stroke="#1F6F6B" stroke-width="1.5"/>
-      <text x="26" y="58" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#1F6F6B" text-anchor="middle">50mL</text>
-  <g><line x1="28.475" y1="82" x2="35" y2="82" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/><line x1="30.5" y1="96.75" x2="35" y2="96.75" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="30.5" y1="111.5" x2="35" y2="111.5" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="30.5" y1="126.25" x2="35" y2="126.25" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="28.475" y1="141" x2="35" y2="141" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/><line x1="30.5" y1="155.75" x2="35" y2="155.75" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="30.5" y1="170.5" x2="35" y2="170.5" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="30.5" y1="185.25" x2="35" y2="185.25" stroke="#7E939E" stroke-width="0.9" stroke-linecap="round"/><line x1="28.475" y1="200" x2="35" y2="200" stroke="#7E939E" stroke-width="1.25" stroke-linecap="round"/></g>
-  <path d="M14 4 Q15.5 5 15.5 8.5 L16 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M38 4 Q36.5 5 36.5 8.5 L36 26" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M17.5 26 Q26 28.2 34.5 26" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M16 26 V218 Q16 224 22 224 H30 Q36 224 36 218 V26" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="16" y1="62" x2="36" y2="62" stroke="#2E5A8F" stroke-width="1.5"/>
+      <text x="26" y="58" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#2E5A8F" text-anchor="middle">50mL</text>
+  <g><line x1="28.475" y1="82" x2="35" y2="82" stroke="#8C929A" stroke-width="1.4" stroke-linecap="round"/><line x1="30.5" y1="96.75" x2="35" y2="96.75" stroke="#8C929A" stroke-width="1" stroke-linecap="round"/><line x1="30.5" y1="111.5" x2="35" y2="111.5" stroke="#8C929A" stroke-width="1" stroke-linecap="round"/><line x1="30.5" y1="126.25" x2="35" y2="126.25" stroke="#8C929A" stroke-width="1" stroke-linecap="round"/><line x1="28.475" y1="141" x2="35" y2="141" stroke="#8C929A" stroke-width="1.4" stroke-linecap="round"/><line x1="30.5" y1="155.75" x2="35" y2="155.75" stroke="#8C929A" stroke-width="1" stroke-linecap="round"/><line x1="30.5" y1="170.5" x2="35" y2="170.5" stroke="#8C929A" stroke-width="1" stroke-linecap="round"/><line x1="30.5" y1="185.25" x2="35" y2="185.25" stroke="#8C929A" stroke-width="1" stroke-linecap="round"/><line x1="28.475" y1="200" x2="35" y2="200" stroke="#8C929A" stroke-width="1.4" stroke-linecap="round"/></g>
+  <path d="M14 4 L14.2 26 H16" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38 4 L37.8 26 H36" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.2 27.4 Q26 30 33.8 27.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
 </svg>

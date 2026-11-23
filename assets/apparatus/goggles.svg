@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
+<svg xmlns="http://www.w3.org/2000/svg" width="164" height="76" viewBox="0 0 164 76">
 <title>护目镜</title>
-<path d="M18 52 Q90 41 162 52 L152 106 Q130 112 104 104 L90 88 L76 104 Q50 112 28 106 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <path d="M26 56 Q90 48 154 56 L146 98 Q126 103 106 96 L90 80 L74 96 Q54 103 34 98 Z" fill="#F4F9F8" stroke="#294454" stroke-width="2.0" stroke-linejoin="round"/>
-      <path d="M40 66 L54 90 M116 64 L130 88" fill="none" stroke="#FFFFFF" stroke-width="3.0" stroke-linecap="round"/>
-      <path d="M18 58 L8 68 M162 58 L172 68" fill="none" stroke="#258F89" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M16 14 Q82 4 148 14 L140 62 Q120 68 96 60 L82 46 L68 60 Q44 68 24 62 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M24 18 Q82 10 140 18 L133 55 Q114 60 96 53 L82 39 L68 53 Q50 60 31 55 Z" fill="#EEF4F7" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M38 26 L50 48 M112 24 L124 46" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M16 20 L6 28 M148 20 L158 28" fill="none" stroke="#3A3E44" stroke-width="4.2" stroke-linecap="round"/>
 </svg>

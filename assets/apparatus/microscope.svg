@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 200 170">
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="196" viewBox="0 0 140 196">
 <title>显微镜</title>
-<path d="M26 159 H174 L170 144 H30 Z" fill="#C6D2D7" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
-      <ellipse cx="82" cy="130" rx="22" ry="7.5" fill="#D9ECF2" stroke="#294454" stroke-width="2.0"/>
-      <path d="M60 130 Q82 140 104 130" fill="none" stroke="#3D5968" stroke-width="1.8"/>
-  <path d="M148 144 V72 C148 34 122 18 88 20 L80 38 C108 36 128 50 128 80 V144 Z" fill="#DCE5E8" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <circle cx="138" cy="116" r="12" fill="#F8FAF9" stroke="#294454" stroke-width="1.8"/><circle cx="138" cy="116" r="9.36" fill="#258F89" stroke="#3D5968" stroke-width="1.3"/><line x1="138" y1="116" x2="140.522" y2="108.239" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/><circle cx="138" cy="116" r="1.6" fill="#FFFFFF" stroke="none"/>
-  <rect x="28" y="101" width="109" height="7" rx="2" fill="#3D5968" stroke="#294454" stroke-width="2.1"/>
-      <rect x="64" y="108" width="36" height="6" rx="2" fill="#C6D2D7" stroke="#294454" stroke-width="1.6"/>
-      <line x1="60" y1="98" x2="105" y2="98" stroke="#C6D2D7" stroke-width="2.2" stroke-linecap="round"/>
-  <g transform="translate(80, 44) rotate(24)">
-        <rect x="-10" y="-36" width="20" height="58" rx="3" fill="#C6D2D7" stroke="#294454" stroke-width="2.2"/>
-        <rect x="-8" y="-44" width="16" height="8" rx="2" fill="#3D5968" stroke="#294454" stroke-width="1.8"/>
-        <ellipse cx="0" cy="22" rx="14" ry="5" fill="#3D5968" stroke="#294454" stroke-width="1.8"/>
-        <rect x="-11" y="25" width="9" height="16" rx="2" fill="#258F89" stroke="#294454" stroke-width="1.8"/>
-        <rect x="2" y="25" width="9" height="13" rx="2" transform="rotate(-18 6 25)" fill="#DCE5E8" stroke="#294454" stroke-width="1.7"/>
+<path d="M16 186 H124 L120 171 H20 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+      <ellipse cx="56" cy="158" rx="18" ry="6.5" fill="#D8EDF5" stroke="#333333" stroke-width="1.9"/>
+      <path d="M38 158 Q56 167 74 158" fill="none" stroke="#4A4F55" stroke-width="1.6"/>
+  <path d="M112 171 V78 C112 40 94 26 68 28 L60 44 C82 42 94 56 94 84 V171 Z" fill="#E3E6EB" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+      <circle cx="102" cy="138" r="11" fill="#F5F6F8" stroke="#333333" stroke-width="2.0"/><circle cx="102" cy="138" r="8.36" fill="#3A3E44" stroke="#4A4F55" stroke-width="1.3"/><line x1="102" y1="138" x2="104.558" y2="130.971" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round"/><circle cx="102" cy="138" r="1.6" fill="#FFFFFF" stroke="none"/>
+  <rect x="16" y="128" width="80" height="6.5" rx="2" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/>
+      <rect x="40" y="134.5" width="32" height="6" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.5"/>
+      <line x1="38" y1="125" x2="74" y2="125" stroke="#E3E6EB" stroke-width="2.0" stroke-linecap="round"/>
+  <g transform="translate(56, 56) rotate(22)">
+        <rect x="-9" y="-42" width="18" height="68" rx="2.5" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
+        <rect x="-7" y="-50" width="14" height="8" rx="2" fill="#3A3E44" stroke="#333333" stroke-width="1.8"/>
+        <ellipse cx="0" cy="26" rx="12" ry="4.5" fill="#3A3E44" stroke="#333333" stroke-width="1.8"/>
+        <rect x="-9.5" y="29" width="8" height="16" rx="1.5" fill="#E3E6EB" stroke="#333333" stroke-width="1.8"/>
+        <rect x="2" y="29" width="8" height="13" rx="1.5" transform="rotate(-18 6 29)" fill="#7C828A" stroke="#333333" stroke-width="1.6"/>
       </g>
 </svg>

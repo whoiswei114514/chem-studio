@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="54" viewBox="0 0 110 54">
 <title>椭圆搅拌子</title>
-<ellipse cx="90" cy="58" rx="60" ry="21" fill="#F8FAF9" stroke="#294454" stroke-width="2.4"/>
-      <path d="M46 47 Q90 42 134 47" fill="none" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M90 37 C95 47 95 69 90 79" fill="none" stroke="#7E939E" stroke-width="1.6"/>
+<ellipse cx="55" cy="27" rx="46" ry="18" fill="#F5F6F8" stroke="#333333" stroke-width="2.6"/>
+      <path d="M24 18 Q55 13 86 18" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M55 9 C59 18 59 36 55 45" fill="none" stroke="#8C929A" stroke-width="1.5"/>
 </svg>

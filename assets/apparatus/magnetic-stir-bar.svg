@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="38" viewBox="0 0 130 38">
 <title>磁力搅拌子</title>
-<rect x="24" y="40" width="132" height="36" rx="14" fill="#F8FAF9" stroke="#294454" stroke-width="2.4"/>
-      <line x1="40" y1="47" x2="140" y2="47" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
-      <rect x="84" y="37" width="12" height="42" rx="3.5" fill="#DCE5E8" stroke="#3D5968" stroke-width="1.8"/>
+<rect x="10" y="7" width="110" height="24" rx="11" fill="#F5F6F8" stroke="#333333" stroke-width="2.6"/>
+      <line x1="22" y1="12" x2="108" y2="12" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <rect x="60" y="5" width="10" height="28" rx="3" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
 </svg>

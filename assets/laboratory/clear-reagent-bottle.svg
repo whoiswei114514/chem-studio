@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="94" height="168" viewBox="0 0 94 168">
 <title>透明磨口试剂瓶（开口）</title>
-<path d="M34.5 27 V36 L5 66 Q3 69 3 74 V156 Q3 165 12 165 H82 Q91 165 91 156 V74 Q91 69 89 66 L59.5 36 V27" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 157 Q47 160 86 157" fill="none" stroke="#3D5968" stroke-width="1.2"/>
-  <path d="M32 3 Q34 4 34 7.5 L34.5 27" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M62 3 Q60 4 60 7.5 L59.5 27" fill="none" stroke="#294454" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M36 27 Q47 29.2 58 27" fill="none" stroke="#DCE8EC" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M34.5 27 V36 L5 66 Q3 69 3 74 V156 Q3 165 12 165 H82 Q91 165 91 156 V74 Q91 69 89 66 L59.5 36 V27" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 157 Q47 160 86 157" fill="none" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M32 3 L32.7 27 H34.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62 3 L61.3 27 H59.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36.7 28.4 Q47 31 57.3 28.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>
 </svg>

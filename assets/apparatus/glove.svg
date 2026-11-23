@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="140" viewBox="0 0 130 140">
 <title>手套</title>
-<path d="M54 134 L34 86 C26 70 38 62 48 74 L56 86 V32 C56 20 68 20 68 32 V64 V18 C68 6 82 6 82 18 V62 V22 C82 10 96 10 96 22 V66 V36 C96 24 110 24 110 36 V88 L128 70 C138 62 148 72 138 86 L116 134 Z" fill="#258F89" stroke="#294454" stroke-width="2.3" stroke-linejoin="round"/>
-      <rect x="52" y="128" width="66" height="9" rx="4" fill="#D4EAE8" stroke="#294454" stroke-width="2.0"/>
+<path d="M40 124 L20 78 C13 62 24 54 34 66 L42 78 V28 C42 16 54 16 54 28 V58 V14 C54 4 68 4 68 14 V56 V18 C68 8 82 8 82 18 V60 V32 C82 20 96 20 96 32 V82 L112 64 C121 56 130 66 121 78 L100 124 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+      <rect x="38" y="118" width="64" height="9" rx="4" fill="#D8EDF5" stroke="#333333" stroke-width="2.0"/>
 </svg>

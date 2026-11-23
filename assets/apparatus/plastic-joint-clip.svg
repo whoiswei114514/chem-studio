@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="136" height="146" viewBox="0 0 136 146">
 <title>磨口夹</title>
-<path d="M40 72 C40 40 140 40 140 72 L154 78 V98 L138 102 C136 124 126 140 112 146 V122 C120 116 122 80 114 70 C102 58 78 58 66 70 C58 80 60 116 68 122 V146 C54 140 44 124 42 102 L26 98 V78 Z" fill="#258F89" stroke="#294454" stroke-width="2.5" stroke-linejoin="round"/>
-  <path d="M52 68 C68 50 112 50 128 68" fill="none" stroke="#D4EAE8" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M22 48 C22 16 114 16 114 48 L128 54 V74 L112 78 C110 100 100 116 86 122 V98 C94 92 96 56 88 46 C76 34 60 34 48 46 C40 56 42 92 50 98 V122 C36 116 26 100 24 78 L8 74 V54 Z" fill="#B8292F" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="M34 44 C50 26 86 26 102 44" fill="none" stroke="#F5F6F8" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

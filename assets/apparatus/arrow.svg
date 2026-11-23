@@ -2,6 +2,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="140" viewBox="0 0 180 140">
 <title>箭头</title>
 
-    <path d="M22 60 H116 V42 L158 70 L116 98 V80 H22 Z" fill="#258F89" stroke="#294454" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M22 60 H116 V42 L158 70 L116 98 V80 H22 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
   
 </svg>

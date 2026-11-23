@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180">
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="160" viewBox="0 0 108 160">
 <title>盐桥</title>
-<path d="M35 12 V130 A35 35 0 0 0 105 130 V12" fill="none" stroke="#294454" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M35 12 V130 A35 35 0 0 0 105 130 V12" fill="none" stroke="#E6F4F3" stroke-width="14.8" stroke-linecap="butt" stroke-linejoin="round"/>
-  <rect x="29" y="14" width="12" height="7" rx="1.5" fill="#FFFFFF" stroke="#3D5968" stroke-width="1.2"/>
-  <rect x="99" y="14" width="12" height="7" rx="1.5" fill="#FFFFFF" stroke="#3D5968" stroke-width="1.2"/>
+<path d="M20 12 V112 A34 34 0 0 0 88 112 V12" fill="none" stroke="#333333" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M20 12 V112 A34 34 0 0 0 88 112 V12" fill="none" stroke="#D8EDF5" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+  <rect x="14" y="14" width="12" height="7" rx="1.5" fill="#FFFFFF" stroke="#4A4F55" stroke-width="1.2"/>
+  <rect x="82" y="14" width="12" height="7" rx="1.5" fill="#FFFFFF" stroke="#4A4F55" stroke-width="1.2"/>
 </svg>

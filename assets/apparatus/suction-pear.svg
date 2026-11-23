@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="230" viewBox="0 0 100 230">
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="190" viewBox="0 0 80 190">
 <title>吸耳球</title>
-<path d="M44 200 V168 C28 134 10 92 12 62 C14 34 30 22 50 22 C70 22 86 34 88 62 C90 92 72 134 56 168 V200" fill="#C84B31" stroke="#294454" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
-  <rect x="42" y="182" width="16" height="18" rx="2" fill="#586F7C" stroke="#294454" stroke-width="2.2"/>
+<path d="M34 170 V142 C20 112 4 74 6 48 C8 22 22 10 40 10 C58 10 72 22 74 48 C76 74 60 112 46 142 V170" fill="#3E74B4" stroke="#333333" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="32" y="154" width="16" height="16" rx="2" fill="#595E66" stroke="#333333" stroke-width="2.4"/>
   
 </svg>
