@@ -16,13 +16,13 @@
   <path d="M50 98 V216 M62 98 V216" fill="none" stroke="#4A4F55" stroke-width="1.6"/>
       <line x1="33" y1="162" x2="50" y2="162" stroke="#4A4F55" stroke-width="2.0" stroke-dasharray="3 2"/>
       <line x1="62" y1="162" x2="79" y2="162" stroke="#4A4F55" stroke-width="2.0" stroke-dasharray="3 2"/>
-      <circle cx="41" cy="150" r="3.2" fill="#C4C9D0" stroke="#4A4F55" stroke-width="1"/>
-      <circle cx="71" cy="150" r="3.2" fill="#C4C9D0" stroke="#4A4F55" stroke-width="1"/>
-      <circle cx="37" cy="143" r="3.0" fill="#C4C9D0" stroke="#4A4F55" stroke-width="1"/>
+      <circle cx="41" cy="150" r="3.2" fill="#C8CDD3" stroke="#4A4F55" stroke-width="1"/>
+      <circle cx="71" cy="150" r="3.2" fill="#C8CDD3" stroke="#4A4F55" stroke-width="1"/>
+      <circle cx="37" cy="143" r="3.0" fill="#C8CDD3" stroke="#4A4F55" stroke-width="1"/>
   <g>
     <path d="M98 122 L112 123.2 L112 128.8 L98 130 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
     <rect x="91" y="119.5" width="7" height="13" rx="2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
-    <rect x="112" y="122.5" width="5" height="7" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+    <rect x="112" y="122.5" width="5" height="7" rx="1.5" fill="#C8CDD3" stroke="#333333" stroke-width="1.8"/>
     <line x1="102.5" y1="123.5" x2="107.5" y2="128.5" stroke="#4A4F55" stroke-width="1.4"/>
   </g>
   <path d="M43 4 L43.7 26 H45.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>

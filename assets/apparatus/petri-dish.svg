@@ -4,8 +4,8 @@
 
     <g stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 4 V31 Q12 34 15 34 H145 Q148 34 148 31 V4 Z" fill="#EEF4F7" stroke="none"/>
-      <path d="M15 24 H145 V31 Q145 32 143 32 H17 Q15 32 15 31 Z" fill="#D8EDF5" stroke="#72C2DD" stroke-width="1.2"/>
-      <path d="M6 4 Q12 4 12 10 V31 Q12 34 15 34 H145 Q148 34 148 31 V10 Q148 4 154 4" fill="none" stroke="#333333" stroke-width="4"/>
+      <path d="M15 24 H145 V31 Q145 32 143 32 H17 Q15 32 15 31 Z" fill="#DCF0F7" stroke="#7ECAE6" stroke-width="1.2"/>
+      <path d="M8 4 Q12 4 12 10 V31 Q12 34 15 34 H145 Q148 34 148 31 V10 Q148 4 152 4" fill="none" stroke="#333333" stroke-width="3.2"/>
     </g>
   
 </svg>

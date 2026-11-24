@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="170" height="130" viewBox="0 0 170 130">
 <title>土壤</title>
 <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M16 112 Q44 98 64 66 Q86 38 108 66 Q128 98 154 112 Z" fill="#E4B879" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="86" cy="62" r="2.2" fill="#9E6A2E" stroke="none"/><circle cx="74" cy="78" r="1.8" fill="#9E6A2E" stroke="none"/><circle cx="98" cy="80" r="2.5" fill="#9E6A2E" stroke="none"/><circle cx="62" cy="94" r="2" fill="#9E6A2E" stroke="none"/><circle cx="84" cy="94" r="2.8" fill="#9E6A2E" stroke="none"/><circle cx="108" cy="94" r="1.9" fill="#9E6A2E" stroke="none"/><circle cx="48" cy="104" r="1.8" fill="#9E6A2E" stroke="none"/><circle cx="72" cy="105" r="2.2" fill="#9E6A2E" stroke="none"/><circle cx="100" cy="105" r="2.4" fill="#9E6A2E" stroke="none"/><circle cx="122" cy="104" r="1.8" fill="#9E6A2E" stroke="none"/>
+      <path d="M16 112 Q44 98 64 66 Q86 38 108 66 Q128 98 154 112 Z" fill="#8C5B3D" stroke="#5E3C26" stroke-width="2.2"/>
+      <circle cx="86" cy="62" r="2.2" fill="#5E3C26" stroke="none"/><circle cx="74" cy="78" r="1.8" fill="#5E3C26" stroke="none"/><circle cx="98" cy="80" r="2.5" fill="#5E3C26" stroke="none"/><circle cx="62" cy="94" r="2" fill="#5E3C26" stroke="none"/><circle cx="84" cy="94" r="2.8" fill="#5E3C26" stroke="none"/><circle cx="108" cy="94" r="1.9" fill="#5E3C26" stroke="none"/><circle cx="48" cy="104" r="1.8" fill="#5E3C26" stroke="none"/><circle cx="72" cy="105" r="2.2" fill="#5E3C26" stroke="none"/><circle cx="100" cy="105" r="2.4" fill="#5E3C26" stroke="none"/><circle cx="122" cy="104" r="1.8" fill="#5E3C26" stroke="none"/>
     </g>
 </svg>

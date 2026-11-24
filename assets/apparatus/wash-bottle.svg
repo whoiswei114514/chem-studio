@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="200" viewBox="0 0 140 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="204" viewBox="0 0 120 204">
 <title>洗瓶</title>
-<path d="M58 172 V11 Q58 6 64 6 H104 L118 20" fill="none" stroke="#333333" stroke-width="7.4" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M58 172 V11 Q58 6 64 6 H104 L119 21" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M120 17.5 L133.5 27.5 M126.5 34.5 L115 23" fill="none" stroke="#333333" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M38 28 V48 Q10 60 10 84 V175 Q10 186 22 186 H94 Q106 186 106 175 V84 Q106 60 78 48 V28" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="58" y1="45" x2="58" y2="170" stroke="#4A4F55" stroke-width="2.2" stroke-linecap="round"/>
-  <rect x="35" y="14" width="46" height="14" rx="2.5" fill="#3E74B4" stroke="#333333" stroke-width="2.6"/>
+<path d="M38 122 H106 V182 Q106 192 96 192 H48 Q38 192 38 182 Z" fill="#DCF0F7" stroke="none"/>
+  <line x1="38" y1="122" x2="106" y2="122" stroke="#7ECAE6" stroke-width="2.0"/>
+  <path d="M72 178 V14 Q72 8 64 14 L8 53" fill="none" stroke="#333333" stroke-width="9.0" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M72 178 V14 Q72 8 64 14 L8 53" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M56 58 V66 Q36 74 36 92 V182 Q36 194 48 194 H96 Q108 194 108 182 V92 Q108 74 88 66 V58" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="52" y="44" width="40" height="14" rx="2" fill="#FFFFFF" stroke="#333333" stroke-width="3.0"/>
 </svg>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="112" height="160" viewBox="0 0 112 160">
 <title>气球</title>
-<path d="M56 130 C44 138 64 144 56 154" fill="none" stroke="#333333" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M51 120 L49 130 H63 L61 120 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M56 8 C86 8 102 34 98 66 C94 98 76 120 56 120 C36 120 18 98 14 66 C10 34 26 8 56 8 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
-      <path d="M28 38 C31 27 38 20 46 18" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" opacity="0.65"/>
+<path d="M56 130 C44 138 64 144 56 154" fill="none" stroke="#333333" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M51 120 L49 130 H63 L61 120 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M56 8 C86 8 102 34 98 66 C94 98 76 120 56 120 C36 120 18 98 14 66 C10 34 26 8 56 8 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
 </svg>

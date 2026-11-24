@@ -3,8 +3,8 @@
 <title>手部示意</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M52 134 L34 88 Q24 68 38 66 L54 84 V32 Q54 18 65 26 V64 V18 Q70 8 79 18 V62 V22 Q89 10 94 24 V66 V36 Q104 26 108 42 V88 L130 72 Q146 68 136 90 L114 134 Z" fill="#EFEFEF" stroke="#333333" stroke-width="2.8"/>
-      <path d="M68 92 Q86 86 100 96" fill="none" stroke="#B8BCC2" stroke-width="1.6"/>
+      <path d="M52 134 L34 88 Q24 68 38 66 L54 84 V32 Q54 18 65 26 V64 V18 Q70 8 79 18 V62 V22 Q89 10 94 24 V66 V36 Q104 26 108 42 V88 L130 72 Q146 68 136 90 L114 134 Z" fill="#E5E7EB" stroke="#8C929A" stroke-width="2.6"/>
+      <path d="M68 92 Q86 86 100 96" fill="none" stroke="#8C929A" stroke-width="1.5"/>
     </g>
   
 </svg>

@@ -13,69 +13,78 @@ const C = {
   inner: '#4A4F55',        // Secondary internal tubes, coils, bezels
   tick: '#B8BCC2',         // Crisp subtle graduation ticks
   muted: '#8C929A',        // Secondary borders, guide marks
+  glassBack: '#B8BCC2',    // Rear occluded glass contour (e.g. behind 4th RBF neck)
   jointArc: '#DCE8EC',     // Subtle pale-ice curved inner glass joint arc
   lightGrid: '#D2D6DC',    // Light scale/reticle grid lines
   frostStroke: '#8C929A',  // Legacy subtle marking alias
-  frostFill: '#E3E6EB',    // Legacy brushed-metal sleeve alias
+  frostFill: '#E5E7EB',    // Legacy brushed-metal sleeve alias
 
   // Stroke weight tokens
   glassSw: 4.0,            // Bold uniform glass vessel contour weight
   outerSw: 2.8,            // Standard outer equipment/joint contour weight
   innerSw: 1.8,            // Internal fittings & subtle outlines
 
-  // Flat glass & solution palette (zero gradients)
+  // Flat glass, water & ice palette (zero gradients)
   glass: '#EEF4F7',
   glassTop: '#FFFFFF',
   glassMid: '#F5F7F9',
   glassBot: '#EEF4F7',
   glassEdge: '#DCE8EC',
-  coolant: '#D8EDF5',
-  coolantLight: '#E6F4F9',
-  coolantMid: '#D8EDF5',
-  coolantDeep: '#D8EDF5',
-  liquid: '#D8EDF5',
-  liquidLine: '#72C2DD',
+  coolant: '#DCF0F7',
+  coolantLight: '#E8F7FC',
+  coolantMid: '#DCF0F7',
+  coolantDeep: '#DCF0F7',
+  liquid: '#DCF0F7',
+  liquidLine: '#7ECAE6',
+  iceFill: '#E8F7FC',
+  iceEdge: '#A8DDF0',
   specular: '#FFFFFF',
 
-  // Neutral brushed-aluminum instrument housings & dark bezels
-  chassisTop: '#F5F6F8',
-  chassisMid: '#E3E6EB',
-  chassisBot: '#C4C9D0',
+  // Light brushed-silver instrument housings & dark bezels
+  chassisTop: '#F3F4F6',
+  chassisMid: '#E5E7EB',
+  chassisBot: '#C8CDD3',
   metalDark: '#7C828A',
   darkPanel: '#3A3E44',
   bezel: '#3A3E44',
   bezelDark: '#333333',
 
-  // Light crisp instrument LCD screens & oscilloscope traces
+  // Chemix LCD screens & oscilloscope traces
   lcdBg: '#E6EEF2',
+  lcdPale: '#E6EEF2',
   lcdGreenBg: '#E7F0EA',
+  lcdGreen: '#CBE590',
+  lcdCyan: '#CBEAF6',
   lcdText: '#22252A',
   lcdBlue: '#87D1E6',
   traceBlue: '#2D6DA3',
   traceAmber: '#C88A1E',
   traceRed: '#D13834',
-  lcdGreen: '#22252A',
-  lcdCyan: '#2D6DA3',
   lcdAmber: '#C88A1E',
 
-  // Realistic porcelain, elastomer, cork & realistic accents
+  // Realistic porcelain, sand, cork, elastomer & accents
   porcelainTop: '#F7F8FA',
   porcelainMid: '#EFEFEF',
   porcelainBot: '#DFDFDC',
+  ceramic: '#D0B498',
+  sandLight: '#E5D08F',
+  sandDark: '#C8AE63',
   ptfe: '#F5F6F8',
   steelBlue: '#3E74B4',
   teal: '#3E74B4',         // Neutral steel-blue realistic accent (replaces repetitive teal)
   tealDark: '#2E5A8F',
-  tealLight: '#D8EDF5',
+  tealLight: '#DCF0F7',
   tealSoft: '#E6EEF2',
   crimson: '#B8292F',
   red: '#B8292F',
+  subaRed: '#D9463E',
   amber: '#E4A838',
   rubberTop: '#7C828A',
   rubberMid: '#595E66',
   rubberDark: '#3A3E44',
+  cork: '#C98A54',
   corkLight: '#E4B879',
-  corkMid: '#CC914B',
+  corkMid: '#C98A54',
   corkDark: '#9E6A2E',
   amberDark: '#9A6B1C',
   amberMid: '#E4A838',
@@ -123,15 +132,15 @@ const safeId = (id) =>
 const URL_SUFFIX_FILLS = {
   glass: '#FFFFFF',
   'glass-v': '#FFFFFF',
-  coolant: '#D8EDF5',
+  coolant: '#DCF0F7',
   frost: '#FFFFFF',
-  liquid: '#D8EDF5',
-  metal: '#C4C9D0',
-  'metal-v': '#C4C9D0',
-  chassis: '#E3E6EB',
+  liquid: '#DCF0F7',
+  metal: '#C8CDD3',
+  'metal-v': '#C8CDD3',
+  chassis: '#E5E7EB',
   porcelain: '#EFEFEF',
   rubber: '#595E66',
-  cork: '#CC914B',
+  cork: '#C98A54',
   accent: '#3E74B4',
   amber: '#F0C76B',
   brass: '#E4A838',

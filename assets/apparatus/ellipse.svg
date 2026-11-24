@@ -2,6 +2,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="140" viewBox="0 0 180 140">
 <title>椭圆</title>
 
-    <ellipse cx="90" cy="70" rx="64" ry="44" fill="#D5DAE0" stroke="#333333" stroke-width="2.8"/>
+    <ellipse cx="90" cy="70" rx="64" ry="44" fill="#D5DAE0" stroke="#333333" stroke-width="2.4"/>
   
 </svg>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="144" height="172" viewBox="0 0 144 172">
 <title>量热杯</title>
-<path d="M29 22 L40 153 Q41 160 49 160 H95 Q103 160 104 153 L115 22" fill="none" stroke="#4A4F55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M20 14 Q24 15 25 22 L36 156 Q37 164 47 164 H97 Q107 164 108 156 L119 22 Q120 15 124 14" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M33 24 Q72 26.5 111 24" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M35 86 H109 L103 154 H41 Z" fill="#DCF0F7" stroke="none"/>
+  <line x1="35" y1="86" x2="109" y2="86" stroke="#7ECAE6" stroke-width="2.0"/>
+  <path d="M16 14 H26 L36 154 H108 L118 14 H128 L125 32 H120 L112 164 H32 L24 32 H19 Z" fill="#C8CDD3" stroke="#4A4F55" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M16 14 L24 156 Q25 164 33 164 H111 Q119 164 120 156 L128 14" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

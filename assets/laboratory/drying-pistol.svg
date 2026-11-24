@@ -8,13 +8,13 @@
       M76.7 110 V90 H20 Q10 90 10 80 V60 Q10 50 20 50"
       fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <rect x="14" y="59" width="150" height="22" rx="4" fill="#FFFFFF" stroke="#4A4F55" stroke-width="1.6"/>
-      <rect x="44" y="70" width="52" height="7" rx="2" fill="#E3E6EB" stroke="#4A4F55" stroke-width="1.2"/>
+      <rect x="44" y="70" width="52" height="7" rx="2" fill="#E5E7EB" stroke="#4A4F55" stroke-width="1.2"/>
   <path d="M166 60 H178 C184 44 214 44 214 70 C214 96 184 96 178 80 H166 Z" fill="none" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
-      <circle cx="192" cy="70" r="9" fill="#D8EDF5" stroke="#4A4F55" stroke-width="1.2" stroke-dasharray="2 2"/>
+      <circle cx="192" cy="70" r="9" fill="#DCF0F7" stroke="#4A4F55" stroke-width="1.2" stroke-dasharray="2 2"/>
   <g>
     <path d="M166 66.5 L178 67.7 L178 72.3 L166 73.5 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
     <rect x="159" y="63.5" width="7" height="13" rx="2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
-    <rect x="178" y="66.5" width="5" height="7" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+    <rect x="178" y="66.5" width="5" height="7" rx="1.5" fill="#C8CDD3" stroke="#333333" stroke-width="1.8"/>
     <line x1="169.5" y1="67.5" x2="174.5" y2="72.5" stroke="#4A4F55" stroke-width="1.4"/>
   </g>
   <path d="M74 4 L74.7 26 H76.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>

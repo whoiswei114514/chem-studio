@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="184" height="36" viewBox="0 0 184 36">
 <title>铁圈带石棉网</title>
-<rect x="10" y="9" width="15" height="18" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/><rect x="3" y="15.5" width="7" height="5" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/><line x1="4" y1="12" x2="4" y2="24" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
-      <rect x="25" y="15" width="54" height="6" rx="1.5" fill="#E3E6EB" stroke="#333333" stroke-width="2.0"/>
-      <rect x="78" y="14" width="96" height="8" rx="3" fill="#7C828A" stroke="#333333" stroke-width="2.4"/>
-      <rect x="96" y="11" width="60" height="8" rx="2" fill="#EFEFEF" stroke="#4A4F55" stroke-width="1.4"/>
-      <path d="M78 16 Q81 10 84 16 Q87 22 90 16 Q93 10 96 16 Q99 22 102 16 Q105 10 108 16 Q111 22 114 16 Q117 10 120 16 Q123 22 126 16 Q129 10 132 16 Q135 22 138 16 Q141 10 144 16 Q147 22 150 16 Q153 10 156 16 Q159 22 162 16 Q165 10 168 16 Q171 22 174 16" fill="none" stroke="#333333" stroke-width="2.4" stroke-linecap="round"/>
+<rect x="10" y="10" width="13" height="16" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/><rect x="4" y="16" width="6" height="4" rx="1.2" fill="#C8CDD3" stroke="#333333" stroke-width="1.4"/><line x1="4.5" y1="13" x2="4.5" y2="23" stroke="#333333" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="23" y="16" width="54" height="4" rx="1" fill="#C8CDD3" stroke="#333333" stroke-width="1.6"/>
+      <ellipse cx="126" cy="18" rx="49" ry="5" fill="none" stroke="#333333" stroke-width="2.8"/>
+      <path d="M78 14 Q81 9 84 14 Q87 19 90 14 Q93 9 96 14 Q99 19 102 14 Q105 9 108 14 Q111 19 114 14 Q117 9 120 14 Q123 19 126 14 Q129 9 132 14 Q135 19 138 14 Q141 9 144 14 Q147 19 150 14 Q153 9 156 14 Q159 19 162 14 Q165 9 168 14 Q171 19 174 14" fill="none" stroke="#4A4F55" stroke-width="2.4" stroke-linecap="round"/>
 </svg>

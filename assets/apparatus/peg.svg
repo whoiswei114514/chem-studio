@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="36" viewBox="0 0 160 36">
 <title>木夹</title>
-<path d="M12 14 L84 6 H148 V16 H84 L12 18 Z" fill="#CC914B" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M12 22 L84 30 H148 V20 H84 L12 18 Z" fill="#CC914B" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-      <circle cx="78" cy="18" r="6" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+<path d="M10 14 L84 8 H148 V17 H10 Z" fill="#F0C76B" stroke="#9E6A2E" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M10 22 L84 28 H148 V19 H10 Z" fill="#E4A838" stroke="#9E6A2E" stroke-width="1.8" stroke-linejoin="round"/>
+      <line x1="78" y1="10" x2="78" y2="26" stroke="#7C828A" stroke-width="2.0" stroke-linecap="round"/>
 </svg>

@@ -3,14 +3,14 @@
 <title>杆菌示意</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M40 94 Q24 80 14 96 Q24 114 10 120" fill="none" stroke="#4A4F55" stroke-width="2.2"/>
-      <path d="M42 104 Q26 116 18 106" fill="none" stroke="#4A4F55" stroke-width="2.0"/>
-      <rect x="38" y="66" width="106" height="48" rx="24" fill="#5F9A6E" stroke="#333333" stroke-width="2.8"/>
-      <rect x="44" y="72" width="94" height="36" rx="18" fill="#C5DEC9" stroke="#333333" stroke-width="1.5"/>
-      <path d="M62 90 Q72 78 82 90 T102 90 T120 90" fill="none" stroke="#B8292F" stroke-width="2.0"/>
-      <circle cx="58" cy="84" r="2" fill="#333333" stroke="none"/>
-      <circle cx="116" cy="82" r="2" fill="#333333" stroke="none"/>
-      <circle cx="90" cy="99" r="2" fill="#333333" stroke="none"/>
+      <path d="M40 94 Q24 80 14 96 Q24 114 10 120" fill="none" stroke="#4A4F55" stroke-width="2.0"/>
+      <path d="M42 104 Q26 116 18 106" fill="none" stroke="#4A4F55" stroke-width="1.8"/>
+      <rect x="38" y="66" width="106" height="48" rx="24" fill="#5F9A6E" stroke="#333333" stroke-width="2.4"/>
+      <rect x="44" y="72" width="94" height="36" rx="18" fill="#C5DEC9" stroke="#333333" stroke-width="1.4"/>
+      <path d="M62 90 Q72 78 82 90 T102 90 T120 90" fill="none" stroke="#B8292F" stroke-width="1.8"/>
+      <circle cx="58" cy="84" r="1.8" fill="#333333" stroke="none"/>
+      <circle cx="116" cy="82" r="1.8" fill="#333333" stroke="none"/>
+      <circle cx="90" cy="99" r="1.8" fill="#333333" stroke="none"/>
     </g>
   
 </svg>

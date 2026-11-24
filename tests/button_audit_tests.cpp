@@ -1316,6 +1316,105 @@ class ButtonAuditTests : public QObject {
         const QPixmap v5Shot = captureCurrentWindow(2);
         QVERIFY(!v5Shot.isNull());
         QVERIFY(v5Shot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas-v5.png")));
+
+        // Capture Round 6 v6 Deep Chemix Mastery showcase canvas (clean enough for docs/images/drawing.png)
+        window->drawing->restore({});
+        window->drawing->scene()->setProperty("precise", true);
+        for (int n = 1; n <= 4; ++n) {
+            window->drawing->addApparatus("studio:round-bottom-flask", {30.0 + (n - 1) * 168.0, 35.0});
+            auto* f = singleSelectedDrawingItem(window->drawing);
+            QVERIFY(f && f->setNeckCount(n));
+        }
+
+        // Sleek Chemix benchtop units under 1-4 neck flasks
+        for (const auto& spec : QList<QPair<QString, QPointF>>{
+                 {"studio:hot-plate", {30, 336}},
+                 {"studio:magnetic-stirrer-heater", {252, 302}},
+                 {"studio:balance", {462, 328}},
+             }) {
+            window->drawing->addApparatus(spec.first, spec.second);
+            auto* added = singleSelectedDrawingItem(window->drawing);
+            QVERIFY2(added && added->renderer && added->renderer->isValid(), qPrintable(spec.first));
+        }
+
+        // Stacked tripod + Bunsen burner + wire-gauze + beaker
+        window->drawing->addApparatus("studio:tripod", {746, 189});
+        window->drawing->addApparatus("studio:bunsen", {768, 169});
+        window->drawing->addApparatus("studio:wire-gauze", {730, 180});
+        auto* v6Gauze = singleSelectedDrawingItem(window->drawing);
+        window->drawing->addApparatus("studio:beaker", {735, 25});
+        auto* v6Beaker = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v6Gauze && v6Beaker && window->drawing->connectItems(v6Gauze->id, "surface", v6Beaker->id, "base"));
+
+        // Flasks seated inside open 2D sand-bath & water-bath
+        window->drawing->addApparatus("studio:sand-bath", {935, 300});
+        auto* v6SandBath = singleSelectedDrawingItem(window->drawing);
+        window->drawing->addApparatus("studio:round-bottom-flask", {955, 142});
+        auto* v6SandFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v6SandBath && v6SandFlask && window->drawing->connectItems(v6SandBath->id, "surface", v6SandFlask->id, "base"));
+
+        window->drawing->addApparatus("studio:water-bath", {1165, 297});
+        window->drawing->addApparatus("studio:round-bottom-flask", {1169, 183});
+        auto* v6WaterFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v6WaterFlask && v6WaterFlask->renderer && v6WaterFlask->renderer->isValid());
+
+        // Inverted U salt-bridge bridging two beakers cleanly vertically via connectItems
+        window->drawing->addApparatus("studio:beaker", {1415, 213});
+        auto* v6SbBeaker1 = singleSelectedDrawingItem(window->drawing);
+        window->drawing->addApparatus("studio:salt-bridge", {1460, 70});
+        auto* v6SaltBridge = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v6SbBeaker1 && v6SaltBridge);
+        v6SaltBridge->setScale(1.25);
+        QVERIFY(window->drawing->connectItems(v6SaltBridge->id, "inlet", v6SbBeaker1->id, "mouth"));
+        window->drawing->addApparatus("studio:beaker", {1580, 213});
+        auto* v6SbBeaker2 = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v6SbBeaker2);
+        v6SaltBridge->setSelected(false);
+        v6SbBeaker2->setSelected(true);
+        QVERIFY(window->drawing->connectItems(v6SbBeaker2->id, "mouth", v6SaltBridge->id, "outlet"));
+
+        // Snapped 5-part distillation rig with opposite-side Liebig coolant ports
+        window->drawing->addApparatus("studio:round-bottom-flask", {85, 580});
+        auto* v6Flask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(v6Flask && v6Flask->setNeckCount(3));
+        window->drawing->addApparatus("lab:plain-distillation-head", {85, 430});
+        auto* v6Head = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v6Flask->id, "mouth-2", v6Head->id, "outlet"));
+        window->drawing->addApparatus("studio:liebig-condenser", {285, 475});
+        auto* v6Cond = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v6Head->id, "side", v6Cond->id, "inlet"));
+        window->drawing->addApparatus("lab:vacuum-receiver-adapter", {505, 580});
+        auto* v6Recv = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v6Cond->id, "outlet", v6Recv->id, "inlet"));
+        window->drawing->addApparatus("lab:ground-conical-flask", {515, 710});
+        auto* v6RecFlask = singleSelectedDrawingItem(window->drawing);
+        QVERIFY(window->drawing->connectItems(v6Recv->id, "outlet", v6RecFlask->id, "mouth"));
+
+        // Chemix meters/probes & analytical instruments
+        for (const auto& spec : QList<QPair<QString, QPointF>>{
+                 {"studio:powerpack", {715, 575}},
+                 {"studio:digital-ammeter", {940, 565}},
+                 {"studio:ph-probe", {1155, 505}},
+                 {"bio:online-spectrophotometer", {1420, 445}},
+                 {"physics:digital-oscilloscope", {1400, 625}},
+             }) {
+            window->drawing->addApparatus(spec.first, spec.second);
+            auto* added = singleSelectedDrawingItem(window->drawing);
+            QVERIFY2(added && added->renderer && added->renderer->isValid(), qPrintable(spec.first));
+        }
+
+        window->drawing->scene()->clearSelection();
+        window->drawing->scene()->setProperty("precise", false);
+        window->drawing->fitCanvas();
+        QTest::qWait(220);
+        const auto v6Svg = window->drawing->svgData();
+        QVERIFY(QSvgRenderer(v6Svg).isValid());
+        QVERIFY(!v6Svg.contains("<image") && !v6Svg.contains("<linearGradient") && !v6Svg.contains("<radialGradient"));
+        const auto v6Upper = v6Svg.toUpper();
+        QVERIFY(!v6Upper.contains("#294454") && !v6Upper.contains("#258F89") && !v6Upper.contains("#0F172A"));
+        const QPixmap v6Shot = captureCurrentWindow(2);
+        QVERIFY(!v6Shot.isNull());
+        QVERIFY(v6Shot.save(QDir(screenshotDir).filePath("mixed-apparatus-canvas-v6.png")));
     }
 
     void cleanupTestCase() {

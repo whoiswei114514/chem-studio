@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="168" height="32" viewBox="0 0 168 32">
 <title>金属纱网</title>
-<rect x="52" y="11" width="64" height="10" rx="3" fill="#EFEFEF" stroke="#4A4F55" stroke-width="1.6"/>
-      <path d="M10 16 Q13 10 16 16 Q19 22 22 16 Q25 10 28 16 Q31 22 34 16 Q37 10 40 16 Q43 22 46 16 Q49 10 52 16 Q55 22 58 16 Q61 10 64 16 Q67 22 70 16 Q73 10 76 16 Q79 22 82 16 Q85 10 88 16 Q91 22 94 16 Q97 10 100 16 Q103 22 106 16 Q109 10 112 16 Q115 22 118 16 Q121 10 124 16 Q127 22 130 16 Q133 10 136 16 Q139 22 142 16 Q145 10 148 16 Q151 22 154 16 Q157 10 160 16 Q163 22 166 16" fill="none" stroke="#333333" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="6" y="13" width="6" height="6" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
-      <rect x="156" y="13" width="6" height="6" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+<path d="M10 16 Q14.5 9 19 16 Q23.5 23 28 16 Q32.5 9 37 16 Q41.5 23 46 16 Q50.5 9 55 16 Q59.5 23 64 16 Q68.5 9 73 16 Q77.5 23 82 16 Q86.5 9 91 16 Q95.5 23 100 16 Q104.5 9 109 16 Q113.5 23 118 16 Q122.5 9 127 16 Q131.5 23 136 16 Q140.5 9 145 16 Q149.5 23 154 16" fill="none" stroke="#4A4F55" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

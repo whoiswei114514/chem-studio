@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="172" viewBox="0 0 160 172">
 <title>排水罐</title>
-<path d="M12 14 L23 24 V152 Q23 164 36 164 H120 Q132 164 132 152 V59 L149 85 M155 80 L132 46 V21 Q132 16 136 14" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <g><line x1="122" y1="66" x2="107.5" y2="66" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="122" y1="78.333" x2="112" y2="78.333" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="122" y1="90.667" x2="107.5" y2="90.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="122" y1="103" x2="112" y2="103" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="122" y1="115.333" x2="107.5" y2="115.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="122" y1="127.667" x2="112" y2="127.667" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="122" y1="140" x2="107.5" y2="140" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
+<path d="M18 66 H112 V154 Q112 162 104 162 H26 Q18 162 18 154 Z" fill="#DCF0F7" stroke="none"/>
+  <line x1="20" y1="66" x2="112" y2="66" stroke="#7ECAE6" stroke-width="2.0"/>
+  <path d="M16 14 V154 Q16 164 26 164 H104 Q114 164 114 154 V66 L146 98 M152 92 L114 54 V14" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

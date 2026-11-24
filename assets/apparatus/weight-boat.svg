@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="54" viewBox="0 0 130 54">
 <title>称量舟</title>
-<path d="M8 10 L20 15 L30 45 H100 L110 15 L122 10 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
-      <path d="M18 16 H112" fill="none" stroke="#8C929A" stroke-width="1.3"/>
+<path d="M8 12 H18 L28 44 H102 L112 12 H122" fill="none" stroke="#333333" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="110" height="200" viewBox="0 0 110 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="172" height="148" viewBox="0 0 172 148">
 <title>干燥管</title>
-<path d="M45 10 V62 C12 78 12 128 45 144 V190 M65 190 V144 C98 128 98 78 65 62 V10" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="40" cy="82" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="54" cy="78" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="68" cy="84" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="34" cy="98" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="49" cy="94" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="64" cy="99" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="76" cy="100" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="38" cy="114" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="53" cy="110" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="68" cy="115" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="44" cy="128" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <circle cx="60" cy="126" r="5.0" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-  <path d="M34 70 Q46 65 56 70 Q66 74 76 69 M34 136 Q46 132 56 136 Q66 140 76 135" fill="none" stroke="#8C929A" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M11 136 Q9 116 12 96 H10 V62 Q10 34 41.2 34.8 A17 17 0 0 1 73.1 35.5 L161 56" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M29 136 Q31 116 28 96 H30 V62 Q30 49.8 42.5 49.8 A17 17 0 0 0 71.2 50.3 L159 73" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M86 42 Q89 47 85 52 M140 54 Q143 60 139 65" fill="none" stroke="#8C929A" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

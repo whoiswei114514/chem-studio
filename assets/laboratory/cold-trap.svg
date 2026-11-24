@@ -6,6 +6,6 @@
   <path d="M30 58 V192 C30 214 74 214 74 192 V58" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#4A4F55" stroke-width="4.4" stroke-linecap="round"/>
       <path d="M38 24 H48 Q52 24 52 29 V178" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
-  <rect x="26" y="52" width="52" height="10" rx="3" fill="#F5F6F8" stroke="#333333" stroke-width="2.6"/>
+  <rect x="26" y="52" width="52" height="10" rx="3" fill="#F3F4F6" stroke="#333333" stroke-width="2.6"/>
   <path d="M36 52 V18 C36 8 68 8 68 18 V52" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round"/>
 </svg>

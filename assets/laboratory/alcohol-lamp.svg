@@ -4,7 +4,7 @@
 <path d="M47 4 C59 22 58 36 47 39 C36 36 35 22 47 4 Z" fill="#F3D693" stroke="#9A6B1C" stroke-width="1.4"/>
       <path d="M47 15 C53 26 53 36 47 39 C41 36 41 26 47 15 Z" fill="#72C2DD"/>
   <path d="M33 57 H61 V66 C79 76 89 96 87 118 Q86 132 71 132 H23 Q8 132 7 118 C5 96 15 76 33 66 Z" fill="none" stroke="#333333" stroke-width="3.4" stroke-linejoin="round"/>
-      <path d="M11 104 Q47 107 83 104 L81 121 Q47 126 13 121 Z" fill="#D8EDF5" stroke="#72C2DD" stroke-width="1.4"/>
+      <path d="M11 104 Q47 107 83 104 L81 121 Q47 126 13 121 Z" fill="#DCF0F7" stroke="#7ECAE6" stroke-width="1.4"/>
       <path d="M47 48 V122" fill="none" stroke="#4A4F55" stroke-width="1.6" stroke-dasharray="3 2"/>
   <rect x="43" y="38" width="8" height="10" rx="1.5" fill="#E4A838" stroke="#333333" stroke-width="2.0"/>
       <rect x="35" y="48" width="24" height="9" rx="3" fill="#E4A838" stroke="#333333" stroke-width="2.2"/>

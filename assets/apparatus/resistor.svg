@@ -3,17 +3,14 @@
 <title>电阻</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="12" y="72.5" width="36" height="5" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <rect x="132" y="72.5" width="36" height="5" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <circle cx="10" cy="75" r="4.2" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <circle cx="170" cy="75" r="4.2" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <path d="M44 62 Q44 52 55 52 H62 Q68 57 73 57 H107 Q112 57 118 52 H125 Q136 52 136 62 V88 Q136 98 125 98 H118 Q112 93 107 93 H73 Q68 93 62 98 H55 Q44 98 44 88 Z" fill="#EAD7BD" stroke="#333333" stroke-width="2.8"/>
-      <rect x="55" y="53.5" width="7" height="43" fill="#9E6A2E" stroke="none"/>
-      <rect x="75" y="58.5" width="6.5" height="33" fill="#333333" stroke="none"/>
-      <rect x="90" y="58.5" width="6.5" height="33" fill="#B8292F" stroke="none"/>
-      <rect x="118" y="53.5" width="7" height="43" fill="#E4A838" stroke="none"/>
-      <path d="M52 58 H128" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="2.4"/>
-      <path d="M44 62 Q44 52 55 52 H62 Q68 57 73 57 H107 Q112 57 118 52 H125 Q136 52 136 62 V88 Q136 98 125 98 H118 Q112 93 107 93 H73 Q68 93 62 98 H55 Q44 98 44 88 Z" fill="none" stroke="#333333" stroke-width="2.8"/>
+      <line x1="10" y1="75" x2="46" y2="75" stroke="#333333" stroke-width="3.2"/>
+      <line x1="134" y1="75" x2="170" y2="75" stroke="#333333" stroke-width="3.2"/>
+      <path d="M46 64 Q46 56 56 56 H63 Q68 60 73 60 H107 Q112 60 117 56 H124 Q134 56 134 64 V86 Q134 94 124 94 H117 Q112 90 107 90 H73 Q68 90 63 94 H56 Q46 94 46 86 Z" fill="#EAE0CE" stroke="#333333" stroke-width="2.4"/>
+      <rect x="57" y="57.2" width="6" height="35.6" fill="#9E5EA8" stroke="none"/>
+      <rect x="76" y="61" width="6" height="28" fill="#333333" stroke="none"/>
+      <rect x="91" y="61" width="6" height="28" fill="#B8292F" stroke="none"/>
+      <rect x="117" y="57.2" width="6" height="35.6" fill="#E4A838" stroke="none"/>
+      <path d="M46 64 Q46 56 56 56 H63 Q68 60 73 60 H107 Q112 60 117 56 H124 Q134 56 134 64 V86 Q134 94 124 94 H117 Q112 90 107 90 H73 Q68 90 63 94 H56 Q46 94 46 86 Z" fill="none" stroke="#333333" stroke-width="2.4"/>
     </g>
   
 </svg>

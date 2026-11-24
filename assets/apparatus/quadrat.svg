@@ -2,8 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
 <title>样方框</title>
 <g stroke-linecap="round" stroke-linejoin="round">
-      <line x1="52.8" y1="28" x2="52.8" y2="152" stroke="#4A4F55" stroke-width="1.5"/><line x1="28" y1="52.8" x2="152" y2="52.8" stroke="#4A4F55" stroke-width="1.5"/><line x1="77.6" y1="28" x2="77.6" y2="152" stroke="#4A4F55" stroke-width="1.5"/><line x1="28" y1="77.6" x2="152" y2="77.6" stroke="#4A4F55" stroke-width="1.5"/><line x1="102.4" y1="28" x2="102.4" y2="152" stroke="#4A4F55" stroke-width="1.5"/><line x1="28" y1="102.4" x2="152" y2="102.4" stroke="#4A4F55" stroke-width="1.5"/><line x1="127.2" y1="28" x2="127.2" y2="152" stroke="#4A4F55" stroke-width="1.5"/><line x1="28" y1="127.2" x2="152" y2="127.2" stroke="#4A4F55" stroke-width="1.5"/>
-      <rect x="24" y="24" width="132" height="132" rx="3" fill="none" stroke="#333333" stroke-width="6.8"/>
-      <rect x="24" y="24" width="132" height="132" rx="3" fill="none" stroke="#C4C9D0" stroke-width="3.0"/>
+      <line x1="52.8" y1="28" x2="52.8" y2="152" stroke="#B8BCC2" stroke-width="1.5"/><line x1="28" y1="52.8" x2="152" y2="52.8" stroke="#B8BCC2" stroke-width="1.5"/><line x1="77.6" y1="28" x2="77.6" y2="152" stroke="#B8BCC2" stroke-width="1.5"/><line x1="28" y1="77.6" x2="152" y2="77.6" stroke="#B8BCC2" stroke-width="1.5"/><line x1="102.4" y1="28" x2="102.4" y2="152" stroke="#B8BCC2" stroke-width="1.5"/><line x1="28" y1="102.4" x2="152" y2="102.4" stroke="#B8BCC2" stroke-width="1.5"/><line x1="127.2" y1="28" x2="127.2" y2="152" stroke="#B8BCC2" stroke-width="1.5"/><line x1="28" y1="127.2" x2="152" y2="127.2" stroke="#B8BCC2" stroke-width="1.5"/>
+      <rect x="24" y="24" width="132" height="132" rx="2" fill="none" stroke="#C98A54" stroke-width="4.8"/>
     </g>
 </svg>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="120" viewBox="0 0 56 120">
 <title>回形针</title>
-<path d="M14 88 V28 Q14 10 28 10 Q42 10 42 28 V94 Q42 108 28 108 Q16 108 16 94 V34 Q16 24 26 24 Q35 24 35 34 V84" fill="none" stroke="#333333" stroke-width="4.6" stroke-linecap="round"/>
-      <path d="M14 88 V28 Q14 10 28 10 Q42 10 42 28 V94 Q42 108 28 108 Q16 108 16 94 V34 Q16 24 26 24 Q35 24 35 34 V84" fill="none" stroke="#E3E6EB" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M14 88 V28 Q14 10 28 10 Q42 10 42 28 V94 Q42 108 28 108 Q16 108 16 94 V34 Q16 24 26 24 Q35 24 35 34 V84" fill="none" stroke="#333333" stroke-width="3.6" stroke-linecap="round"/>
 </svg>

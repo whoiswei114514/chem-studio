@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="168" height="58" viewBox="0 0 168 58">
 <title>坩埚钳</title>
-<ellipse cx="24" cy="15" rx="13" ry="8" fill="none" stroke="#333333" stroke-width="3.6"/>
-      <ellipse cx="24" cy="43" rx="13" ry="8" fill="none" stroke="#333333" stroke-width="3.6"/>
-      <path d="M36 18 L74 30 C102 39 124 44 148 39 C155 37 158 34 158 31" fill="none" stroke="#333333" stroke-width="4.6" stroke-linecap="round"/>
-      <path d="M36 18 L74 30 C102 39 124 44 148 39 C155 37 158 34 158 31" fill="none" stroke="#E3E6EB" stroke-width="2.0" stroke-linecap="round"/>
-      <path d="M36 40 L74 28 C102 19 124 14 148 19 C155 21 158 24 158 27" fill="none" stroke="#333333" stroke-width="4.6" stroke-linecap="round"/>
-      <path d="M36 40 L74 28 C102 19 124 14 148 19 C155 21 158 24 158 27" fill="none" stroke="#E3E6EB" stroke-width="2.0" stroke-linecap="round"/>
-      <circle cx="72" cy="29" r="4.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/>
+<path d="M14 10 H36 Q42 10 42 18 Q42 26 36 26 H14 Z" fill="none" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M14 32 H36 Q42 32 42 40 Q42 48 36 48 H14 Z" fill="none" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M42 18 L78 30 C108 38 134 38 158 31" fill="none" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M42 40 L78 28 C108 20 134 20 158 27" fill="none" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

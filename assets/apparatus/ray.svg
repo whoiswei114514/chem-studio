@@ -3,9 +3,8 @@
 <title>光线</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <line x1="16" y1="98" x2="168" y2="54" stroke="#B8292F" stroke-width="3.0"/>
-      <path d="M84 70 L98 74 L89 86" fill="none" stroke="#B8292F" stroke-width="2.6"/>
-      <polygon points="176,52 158,50 163,64" fill="#B8292F" stroke="#333333" stroke-width="1.5"/>
+      <path d="M24 62 H112 L164 102" fill="none" stroke="#D13834" stroke-width="2.4"/>
+      <polygon points="168,105 154,102 162,92" fill="#D13834" stroke="none"/>
     </g>
   
 </svg>

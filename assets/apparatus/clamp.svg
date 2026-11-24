@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="184" height="32" viewBox="0 0 184 32">
 <title>万能夹</title>
-<rect x="10" y="7" width="15" height="18" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/><rect x="3" y="13.5" width="7" height="5" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/><line x1="4" y1="10" x2="4" y2="22" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
-      <rect x="25" y="13" width="106" height="6" rx="1.5" fill="#E3E6EB" stroke="#333333" stroke-width="2.0"/>
-      <path d="M130 13 L144 6 H172 C176 6 176 11 172 11 H148 L134 15 Z" fill="#3E74B4" stroke="#333333" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M130 19 L144 26 H172 C176 26 176 21 172 21 H148 L134 17 Z" fill="#3E74B4" stroke="#333333" stroke-width="1.8" stroke-linejoin="round"/>
-      <circle cx="131" cy="16" r="4.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/>
+<rect x="10" y="8" width="13" height="16" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/><rect x="4" y="14" width="6" height="4" rx="1.2" fill="#C8CDD3" stroke="#333333" stroke-width="1.4"/><line x1="4.5" y1="11" x2="4.5" y2="21" stroke="#333333" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="23" y="14" width="108" height="4" rx="1" fill="#C8CDD3" stroke="#333333" stroke-width="1.6"/>
+      <path d="M130 13.5 L145 7 H172 Q175 7 175 10 Q175 12 171 12 H148 L134 15.5 Z" fill="#3E74B4" stroke="#333333" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M130 18.5 L145 25 H172 Q175 25 175 22 Q175 20 171 20 H148 L134 16.5 Z" fill="#3E74B4" stroke="#333333" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="131" cy="16" r="4" fill="#E5E7EB" stroke="#333333" stroke-width="1.5"/>
 </svg>

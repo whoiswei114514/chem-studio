@@ -3,15 +3,15 @@
 <title>指南针</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="90" cy="75" r="52" fill="#C4C9D0" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="90" cy="75" r="44" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.6"/>
+      <circle cx="90" cy="75" r="52" fill="#C8CDD3" stroke="#333333" stroke-width="2.8"/>
+      <circle cx="90" cy="75" r="44" fill="#FFFFFF" stroke="#4A4F55" stroke-width="1.4"/>
       <text x="90" y="41" fill="#B8292F" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle">N</text>
       <text x="90" y="114" fill="#333333" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">S</text>
       <text x="53" y="78" fill="#8C929A" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">W</text>
       <text x="127" y="78" fill="#8C929A" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">E</text>
-      <polygon points="90,75 83,68 112,50 96,76" fill="#B8292F" stroke="#333333" stroke-width="1.6"/>
-      <polygon points="90,75 83,68 68,100 96,76" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/>
-      <circle cx="90" cy="75" r="4.5" fill="#E4A838" stroke="#333333" stroke-width="1.6"/>
+      <polygon points="90,75 83,68 112,50 96,76" fill="#B8292F" stroke="#333333" stroke-width="1.5"/>
+      <polygon points="90,75 83,68 68,100 96,76" fill="#C8CDD3" stroke="#333333" stroke-width="1.5"/>
+      <circle cx="90" cy="75" r="4" fill="#E4A838" stroke="#333333" stroke-width="1.5"/>
     </g>
   
 </svg>

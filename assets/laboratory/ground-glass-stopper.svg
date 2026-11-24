@@ -6,5 +6,5 @@
   <path d="M9.2 35.8 Q20 38.4 30.8 35.8" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>
   <line x1="9.5" y1="64" x2="30.5" y2="64" stroke="#333333" stroke-width="3.0" stroke-linecap="round"/>
   <path d="M4 19 C4 8 11 3 20 3 C29 3 36 8 36 19 C36 26 31 30 34 33 H6 C9 30 4 26 4 19 Z" fill="#FFFFFF" stroke="#333333" stroke-width="3.0" stroke-linejoin="round"/>
-      <rect x="5" y="30" width="30" height="3.2" rx="1.6" fill="#F5F6F8" stroke="#333333" stroke-width="2.0"/>
+      <rect x="5" y="30" width="30" height="3.2" rx="1.6" fill="#F3F4F6" stroke="#333333" stroke-width="2.0"/>
 </svg>

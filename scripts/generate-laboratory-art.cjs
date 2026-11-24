@@ -19,16 +19,17 @@ const C = {
   frostFill: '#FFFFFF',
   glassEdge: '#FFFFFF',
   glassMid: 'none',
-  glassDeep: '#D8EDF5',
-  coolFill: '#D8EDF5',
-  liquidLine: '#72C2DD',
+  glassBack: '#B8BCC2',
+  glassDeep: '#DCF0F7',
+  coolFill: '#DCF0F7',
+  liquidLine: '#7ECAE6',
   tealDark: '#2E5A8F',     // Muted steel-blue accent (never #1F6F6B)
   teal: '#3E74B4',         // Steel-blue accent (never #258F89)
-  tealLight: '#D8EDF5',
+  tealLight: '#DCF0F7',
   metalDark: '#7C828A',
-  chassisTop: '#F5F6F8',   // Brushed light aluminum panel
-  chassisMid: '#E3E6EB',   // Mid neutral chassis
-  chassisBot: '#C4C9D0',   // Brushed steel trim
+  chassisTop: '#F3F4F6',   // Round 6 brushed light silver chassis
+  chassisMid: '#E5E7EB',   // Mid neutral chassis
+  chassisBot: '#C8CDD3',   // Brushed steel trim
   bezel: '#3A3E44',        // Dark slate bezel & rubber feet
   bezelDark: '#333333',
   lcdBg: '#E6EEF2',        // Crisp backlit pale LCD
@@ -37,6 +38,8 @@ const C = {
   lcdAmber: '#C88A1E',
   ptfe: '#F5F6F8',
   redAccent: '#B8292F',    // Chemix crimson PTFE stopcock / high-temp indicator
+  subaRed: '#D9463E',
+  cork: '#C98A54',
   amberDark: '#9A6B1C',
   amberMid: '#E4A838',
   amberLight: '#F0C76B',

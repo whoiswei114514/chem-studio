@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="40" viewBox="0 0 200 40">
 <title>实验桌</title>
-<rect x="18" y="18" width="10" height="16" rx="1.5" fill="#9E6A2E" stroke="#333333" stroke-width="2.0"/>
-      <rect x="172" y="18" width="10" height="16" rx="1.5" fill="#9E6A2E" stroke="#333333" stroke-width="2.0"/>
-      <rect x="6" y="8" width="188" height="11" rx="2" fill="#CC914B" stroke="#333333" stroke-width="2.8"/>
+<rect x="18" y="18" width="10" height="16" rx="1" fill="#9E6A2E" stroke="#333333" stroke-width="1.6"/>
+      <rect x="172" y="18" width="10" height="16" rx="1" fill="#9E6A2E" stroke="#333333" stroke-width="1.6"/>
+      <rect x="6" y="8" width="188" height="10" rx="2" fill="#C98A54" stroke="#9E6A2E" stroke-width="1.8"/>
 </svg>

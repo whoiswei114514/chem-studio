@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="80" height="220" viewBox="0 0 80 220">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="230" viewBox="0 0 56 230">
 <title>注射器</title>
-<rect x="36" y="18" width="8" height="86" fill="#E3E6EB" stroke="#333333" stroke-width="2.2"/>
-  <rect x="18" y="12" width="44" height="7" rx="3" fill="#F5F6F8" stroke="#333333" stroke-width="2.4"/>
-  <rect x="14" y="54" width="52" height="118" rx="3" fill="none" stroke="#333333" stroke-width="3.2"/>
-  <rect x="17" y="102" width="46" height="14" rx="2" fill="#595E66" stroke="#333333" stroke-width="2.2"/><line x1="17" y1="109" x2="63" y2="109" stroke="#3A3E44" stroke-width="2.2"/>
-  <rect x="6" y="51" width="68" height="6" rx="3" fill="#F5F6F8" stroke="#333333" stroke-width="2.4"/>
-  <g><line x1="64" y1="74" x2="46.6" y2="74" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="64" y1="83.556" x2="52" y2="83.556" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="64" y1="93.111" x2="52" y2="93.111" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="64" y1="102.667" x2="46.6" y2="102.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="64" y1="112.222" x2="52" y2="112.222" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="64" y1="121.778" x2="52" y2="121.778" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="64" y1="131.333" x2="46.6" y2="131.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="64" y1="140.889" x2="52" y2="140.889" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="64" y1="150.444" x2="52" y2="150.444" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="64" y1="160" x2="46.6" y2="160" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
-  <path d="M31 172 H49 L47 188 H33 Z" fill="none" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
-  <rect x="36" y="188" width="8" height="7" rx="1" fill="#3E74B4" stroke="#333333" stroke-width="2.0"/><line x1="40" y1="195" x2="40" y2="212" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="19" y="122" width="18" height="44" fill="#DCF0F7" stroke="none"/>
+  <line x1="19" y1="122" x2="37" y2="122" stroke="#7ECAE6" stroke-width="1.8"/>
+  <rect x="21" y="14" width="14" height="100" fill="#F3F4F6" stroke="#333333" stroke-width="2.4"/>
+  <line x1="14" y1="12" x2="42" y2="12" stroke="#333333" stroke-width="4.2" stroke-linecap="round"/>
+  <line x1="8" y1="54" x2="48" y2="54" stroke="#333333" stroke-width="4.2" stroke-linecap="round"/>
+  <path d="M18 54 V162 Q18 166 23 166 H33 Q38 166 38 162 V54" fill="none" stroke="#333333" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M18 114 Q28 120 38 114" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round"/>
+  <g><line x1="36" y1="78" x2="25.85" y2="78" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="36" y1="90.667" x2="29" y2="90.667" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="36" y1="103.333" x2="25.85" y2="103.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="36" y1="116" x2="29" y2="116" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="36" y1="128.667" x2="25.85" y2="128.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="36" y1="141.333" x2="29" y2="141.333" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="36" y1="154" x2="25.85" y2="154" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
+  <path d="M22 166 H34 L32 190 H24 Z" fill="#5F9A6E" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+  <line x1="28" y1="190" x2="28" y2="222" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="154" height="206" viewBox="0 0 154 206">
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="206" viewBox="0 0 130 206">
 <title>侧支锥形瓶</title>
-<path d="M46 10 Q50 12 50 18 V56 L12 176 Q8 194 26 194 H104 Q122 194 118 176 L80 56 V45 L129.3 44.4 L131.3 46.5 L146 44.5 M146 35.5 L131.3 33.5 L129.3 35.6 L80 35 V18 Q80 12 84 10" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M54 19 Q65 21.5 76 19" fill="none" stroke="#DCE8EC" stroke-width="2" stroke-linecap="round"/>
-  <g><line x1="106" y1="122" x2="90.05" y2="122" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="106" y1="133.5" x2="95" y2="133.5" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="106" y1="145" x2="90.05" y2="145" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="106" y1="156.5" x2="95" y2="156.5" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="106" y1="168" x2="90.05" y2="168" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
+<path d="M44 10 Q48 12 48 18 V56 L11 176 Q8 194 26 194 H100 Q118 194 115 176 L78 56 V44 H112 M112 36 H78 V18 Q78 12 82 10" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 19 Q63 21.5 74 19" fill="none" stroke="#DCE8EC" stroke-width="2" stroke-linecap="round"/>
+  <g><line x1="102" y1="122" x2="86.05" y2="122" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="102" y1="133.5" x2="91" y2="133.5" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="102" y1="145" x2="86.05" y2="145" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="102" y1="156.5" x2="91" y2="156.5" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="102" y1="168" x2="86.05" y2="168" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
 </svg>

@@ -4,9 +4,9 @@
 <path d="M46 214 H22 Q12 214 12 204 V56 Q12 46 22 46 H38" fill="none" stroke="#333333" stroke-width="7.8" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M46 214 H22 Q12 214 12 204 V56 Q12 46 22 46 H38" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M76 178 H88 Q96 178 96 170 V86 C96 72 84 72 84 86 V196 Q84 204 76 204 H62" fill="none" stroke="#333333" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M76 178 H88 Q96 178 96 170 V86 C96 72 84 72 84 86 V196 Q84 204 76 204 H62" fill="none" stroke="#D8EDF5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M76 178 H88 Q96 178 96 170 V86 C96 72 84 72 84 86 V196 Q84 204 76 204 H62" fill="none" stroke="#DCF0F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M40.5 28 V48 Q32 54 32 64 V172 Q32 186 46 192 V238 M62 238 V192 Q76 186 76 172 V64 Q76 54 67.5 48 V28" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="40" y="90" width="28" height="86" rx="6" fill="#F5F6F8" stroke="#8C929A" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <rect x="40" y="90" width="28" height="86" rx="6" fill="#F3F4F6" stroke="#8C929A" stroke-width="1.2" stroke-dasharray="4 3"/>
   <path d="M38 4 L38.7 28 H40.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M70 4 L69.3 28 H67.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M42.7 29.4 Q54 32 65.3 29.4" fill="none" stroke="#DCE8EC" stroke-width="1.9" stroke-linecap="round"/>

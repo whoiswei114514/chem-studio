@@ -11,13 +11,13 @@ const P = {
   ink: '#333333',
   slate: '#4A4F55',
   muted: '#8C929A',
-  lightBorder: '#B8BCC2',
-  panelBg: '#F5F6F8',
-  panelAlt: '#E3E6EB',
+  lightBorder: '#C8CDD3',
+  panelBg: '#F3F4F6',
+  panelAlt: '#E5E7EB',
   chassisDark: '#3A3E44',
   tealDark: '#3A3E44',
   teal: '#3E74B4',
-  tealLight: '#D8EDF5',
+  tealLight: '#DCF0F7',
   glassFill: '#EEF4F7',
   glassHighlight: '#FFFFFF',
   screenBg: '#E6EEF2',
@@ -40,14 +40,14 @@ const MONO = 'Consolas, Segoe UI, monospace';
 const fmt = (n) => Number(n.toFixed(2));
 
 const FLAT_URL_FILLS = {
-  'g-chassis': '#E3E6EB',
-  'g-chassis-h': '#E3E6EB',
+  'g-chassis': '#E5E7EB',
+  'g-chassis-h': '#E5E7EB',
   'g-bezel': '#3A3E44',
-  'g-metal': '#C4C9D0',
-  'g-metal-v': '#C4C9D0',
+  'g-metal': '#C8CDD3',
+  'g-metal-v': '#C8CDD3',
   'g-teal': '#3E74B4',
   'g-glass': '#FFFFFF',
-  'g-liquid': '#D8EDF5',
+  'g-liquid': '#DCF0F7',
   'g-screen': '#E6EEF2',
   'g-brass': '#E4A838',
   'g-copper': '#D48242',
@@ -64,15 +64,18 @@ const FLAT_HEX_MAP = {
   '#3D5968': '#4A4F55',
   '#64748B': '#8C929A',
   '#7E939E': '#8C929A',
-  '#94A3B8': '#C4C9D0',
-  '#CBD5E1': '#C4C9D0',
-  '#C6D2D7': '#C4C9D0',
-  '#E2E8F0': '#E3E6EB',
-  '#E8EEF2': '#E3E6EB',
-  '#DCE5E8': '#E3E6EB',
-  '#F1F5F9': '#F5F6F8',
-  '#F8FAFC': '#F5F6F8',
-  '#F8FAF9': '#F5F6F8',
+  '#94A3B8': '#C8CDD3',
+  '#CBD5E1': '#C8CDD3',
+  '#C6D2D7': '#C8CDD3',
+  '#C4C9D0': '#C8CDD3',
+  '#E2E8F0': '#E5E7EB',
+  '#E8EEF2': '#E5E7EB',
+  '#DCE5E8': '#E5E7EB',
+  '#E3E6EB': '#E5E7EB',
+  '#F1F5F9': '#F3F4F6',
+  '#F8FAFC': '#F3F4F6',
+  '#F8FAF9': '#F3F4F6',
+  '#F5F6F8': '#F3F4F6',
   '#F8FCFE': '#EEF4F7',
   '#F4F9F8': '#EEF4F7',
   '#E6F2F7': '#EEF4F7',
@@ -83,12 +86,14 @@ const FLAT_HEX_MAP = {
   '#0F766E': '#3A3E44',
   '#115E59': '#3A3E44',
   '#1F6F6B': '#3A3E44',
-  '#CCFBF1': '#D8EDF5',
-  '#99F6E4': '#D8EDF5',
+  '#CCFBF1': '#DCF0F7',
+  '#99F6E4': '#DCF0F7',
   '#F0FDFA': '#EEF4F7',
   '#E6F4F3': '#E6EEF2',
-  '#E0F2FE': '#D8EDF5',
-  '#D9ECF2': '#D8EDF5',
+  '#E0F2FE': '#DCF0F7',
+  '#D9ECF2': '#DCF0F7',
+  '#D8EDF5': '#DCF0F7',
+  '#72C2DD': '#7ECAE6',
   '#EEF6F1': '#E6EEF2',
   '#34D399': '#22252A',
   '#38BDF8': '#2D6DA3',
@@ -127,30 +132,30 @@ function wrapSvg(w, h, title, body) {
   const raw = `<?xml version="1.0" encoding="utf-8"?>\n` +
     `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">` +
     `<title>${title}</title>` +
-    `<g stroke="${P.ink}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">${body}</g></svg>\n`;
+    `<g stroke="${P.ink}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">${body}</g></svg>\n`;
   return flattenSvgPaints(raw);
 }
 
 // ---------- Reusable Precision Hardware Primitives ----------
 function labFeet(x, y, w, footW = 18, footH = 7, inset = 14) {
-  return `<rect x="${fmt(x + inset)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#7C828A" stroke="${P.ink}" stroke-width="1.9"/>` +
-    `<rect x="${fmt(x + w - inset - footW)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#7C828A" stroke="${P.ink}" stroke-width="1.9"/>`;
+  return `<rect x="${fmt(x + inset)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#7C828A" stroke="${P.ink}" stroke-width="1.8"/>` +
+    `<rect x="${fmt(x + w - inset - footW)}" y="${fmt(y)}" width="${footW}" height="${footH}" rx="2" fill="#7C828A" stroke="${P.ink}" stroke-width="1.8"/>`;
 }
 
 function benchChassis(x, y, w, h, opts = {}) {
   const rx = opts.rx ?? 8;
   const feet = opts.feet !== false ? labFeet(x, y + h, w, opts.footW ?? 20, opts.footH ?? 7, opts.footInset ?? 18) : '';
-  const topHighlight = `<line x1="${fmt(x + rx + 2)}" y1="${fmt(y + 3)}" x2="${fmt(x + w - rx - 2)}" y2="${fmt(y + 3)}" stroke="${P.panelBg}" stroke-width="1.6"/>`;
-  const innerLine = `<rect x="${fmt(x + 6)}" y="${fmt(y + 8)}" width="${fmt(w - 12)}" height="${fmt(h - 14)}" rx="${Math.max(2, rx - 3)}" fill="none" stroke="#C4C9D0" stroke-width="1.1"/>`;
+  const topHighlight = `<line x1="${fmt(x + rx + 2)}" y1="${fmt(y + 3)}" x2="${fmt(x + w - rx - 2)}" y2="${fmt(y + 3)}" stroke="${P.panelBg}" stroke-width="1.5"/>`;
+  const innerLine = `<rect x="${fmt(x + 6)}" y="${fmt(y + 8)}" width="${fmt(w - 12)}" height="${fmt(h - 14)}" rx="${Math.max(2, rx - 3)}" fill="none" stroke="#C8CDD3" stroke-width="1.0"/>`;
   return feet +
-    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${opts.fill || P.panelAlt}" stroke="${P.ink}" stroke-width="2.8"/>` +
+    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${opts.fill || P.panelAlt}" stroke="${P.ink}" stroke-width="2.4"/>` +
     topHighlight + innerLine;
 }
 
 function oledScreen(x, y, w, h, innerSvg, opts = {}) {
   const rx = opts.rx ?? 4;
-  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx + 2}" fill="${P.screenBezel}" stroke="${P.ink}" stroke-width="2.0"/>` +
-    `<rect x="${x + 4}" y="${y + 4}" width="${w - 8}" height="${h - 8}" rx="${rx}" fill="${opts.green ? '#E7F0EA' : P.screenBg}" stroke="${P.ink}" stroke-width="1.3"/>` +
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx + 2}" fill="${P.screenBezel}" stroke="${P.ink}" stroke-width="1.8"/>` +
+    `<rect x="${x + 4}" y="${y + 4}" width="${w - 8}" height="${h - 8}" rx="${rx}" fill="${opts.green ? '#CBE590' : P.screenBg}" stroke="${P.ink}" stroke-width="1.2"/>` +
     innerSvg;
 }
 

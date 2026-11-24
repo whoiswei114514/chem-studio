@@ -6,7 +6,7 @@
   <g>
     <path d="M49 28 L63 29.2 L63 34.8 L49 36 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
     <rect x="42" y="25.5" width="7" height="13" rx="2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
-    <rect x="63" y="28.5" width="5" height="7" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+    <rect x="63" y="28.5" width="5" height="7" rx="1.5" fill="#C8CDD3" stroke="#333333" stroke-width="1.8"/>
     <line x1="53.5" y1="29.5" x2="58.5" y2="34.5" stroke="#4A4F55" stroke-width="1.4"/>
   </g>
   <path d="M14.7 64 H12.5 L15.2 88" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>

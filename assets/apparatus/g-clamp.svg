@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="124" height="188" viewBox="0 0 124 188">
 <title>G 形夹</title>
-<path d="M98 16 H38 Q14 16 14 40 V120 Q14 144 38 144 H98 V124 H42 Q34 124 34 116 V44 Q34 36 42 36 H98 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
-      <path d="M92 23 H40 Q23 23 23 40 V120 Q23 137 40 137 H92" fill="none" stroke="#3E74B4" stroke-width="1.5"/>
-      <rect x="80" y="48" width="9" height="126" rx="2" fill="#E3E6EB" stroke="#333333" stroke-width="2.2"/>
-      <g><line x1="80" y1="62" x2="93.05" y2="62" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="71.333" x2="93.05" y2="71.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="80.667" x2="93.05" y2="80.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="90" x2="93.05" y2="90" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="99.333" x2="93.05" y2="99.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="108.667" x2="93.05" y2="108.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="80" y1="118" x2="93.05" y2="118" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
-      <rect x="68" y="42" width="32" height="8" rx="2.5" fill="#E4A838" stroke="#333333" stroke-width="1.8"/>
-      <rect x="54" y="170" width="60" height="7" rx="3" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/>
+<path d="M96 16 H40 C16 16 12 36 12 64 V98 C12 126 16 144 40 144 H96 V124 H44 C34 124 34 114 34 98 V64 C34 46 34 36 44 36 H96 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <rect x="81" y="48" width="7" height="126" rx="2" fill="#E5E7EB" stroke="#333333" stroke-width="1.8"/>
+      <rect x="70" y="42" width="29" height="7" rx="2" fill="#C8CDD3" stroke="#333333" stroke-width="1.6"/>
+      <rect x="56" y="170" width="56" height="6" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="1.6"/>
 </svg>

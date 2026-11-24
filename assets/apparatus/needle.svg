@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="56" height="210" viewBox="0 0 56 210">
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="210" viewBox="0 0 40 210">
 <title>针头</title>
-<path d="M25 44 V196 L31 182 V44 Z" fill="#E3E6EB" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-  <rect x="10" y="10" width="36" height="34" rx="4" fill="#3E74B4" stroke="#333333" stroke-width="2.6"/>
-  <rect x="6" y="10" width="44" height="7" rx="2.5" fill="#3E74B4" stroke="#333333" stroke-width="2.4"/>
-  <line x1="18" y1="21" x2="18" y2="40" stroke="#F5F6F8" stroke-width="1.4"/>
-  <line x1="38" y1="21" x2="38" y2="40" stroke="#F5F6F8" stroke-width="1.4"/>
+<path d="M12 12 H28 L26 42 L24 44 L23 64 H17 L16 44 L14 42 Z" fill="#5F9A6E" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
+  <line x1="20" y1="64" x2="20" y2="198" stroke="#333333" stroke-width="3.2" stroke-linecap="round"/>
 </svg>

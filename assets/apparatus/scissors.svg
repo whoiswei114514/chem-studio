@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="136" height="116" viewBox="0 0 136 116">
 <title>剪刀</title>
-<path d="M40 62 L124 14 L116 26 L58 64 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M54 66 L48 10 L58 18 L66 64 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-      <ellipse cx="28" cy="76" rx="16" ry="11" fill="none" stroke="#333333" stroke-width="6.5"/>
-      <ellipse cx="28" cy="76" rx="16" ry="11" fill="none" stroke="#B8292F" stroke-width="3.2"/>
-      <ellipse cx="80" cy="88" rx="16" ry="11" fill="none" stroke="#333333" stroke-width="6.5"/>
-      <ellipse cx="80" cy="88" rx="16" ry="11" fill="none" stroke="#B8292F" stroke-width="3.2"/>
-      <circle cx="58" cy="61" r="4.5" fill="#E3E6EB" stroke="#333333" stroke-width="1.8"/>
+<path d="M40 62 L124 14 L116 26 L58 64 Z" fill="#C8CDD3" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+      <path d="M54 66 L48 10 L58 18 L66 64 Z" fill="#C8CDD3" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+      <ellipse cx="28" cy="76" rx="16" ry="11" fill="none" stroke="#D9463E" stroke-width="5.5"/>
+      <ellipse cx="80" cy="88" rx="16" ry="11" fill="none" stroke="#D9463E" stroke-width="5.5"/>
+      <circle cx="58" cy="61" r="4" fill="#E5E7EB" stroke="#333333" stroke-width="1.6"/>
 </svg>

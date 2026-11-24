@@ -3,19 +3,19 @@
 <title>电解装置</title>
 <path d="M34 69.2 L19.12 68.6 L17.12 70.5 L10 68.4 L10 59.6 L17.12 57.5 L19.12 59.4 L34 58.8 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M126 58.8 L140.88 59.4 L142.88 57.5 L150 59.6 L150 68.4 L142.88 70.5 L140.88 68.6 L126 69.2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="18" y="160" width="124" height="12" rx="4" fill="#F5F6F8" stroke="#333333" stroke-width="2.8"/>
-  <path d="M36 76 V122 A44 44 0 0 0 124 122 V76 H104 V122 A24 24 0 0 1 56 122 V76 Z" fill="#D8EDF5" stroke="none"/>
-  <line x1="36" y1="76" x2="56" y2="76" stroke="#72C2DD" stroke-width="1.6"/>
-  <line x1="104" y1="76" x2="124" y2="76" stroke="#72C2DD" stroke-width="1.6"/>
+  <rect x="18" y="160" width="124" height="12" rx="4" fill="#F3F4F6" stroke="#333333" stroke-width="2.8"/>
+  <path d="M36 76 V122 A44 44 0 0 0 124 122 V76 H104 V122 A24 24 0 0 1 56 122 V76 Z" fill="#DCF0F7" stroke="none"/>
+  <line x1="36" y1="76" x2="56" y2="76" stroke="#7ECAE6" stroke-width="1.6"/>
+  <line x1="104" y1="76" x2="124" y2="76" stroke="#7ECAE6" stroke-width="1.6"/>
   <path d="M34 40 V122 A46 46 0 0 0 126 122 V40 H102 V122 A22 22 0 0 1 58 122 V40 Z" fill="none" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
   <rect x="43" y="24" width="6" height="92" rx="1" fill="#4A4F55" stroke="#333333" stroke-width="1.8"/>
   <rect x="111" y="24" width="6" height="92" rx="1" fill="#4A4F55" stroke="#333333" stroke-width="1.8"/>
-  <circle cx="42" cy="92" r="2.2" fill="#FFFFFF" stroke="#72C2DD" stroke-width="1.0"/>
-  <circle cx="49" cy="82" r="2.5" fill="#FFFFFF" stroke="#72C2DD" stroke-width="1.0"/>
-  <circle cx="110" cy="90" r="2.2" fill="#FFFFFF" stroke="#72C2DD" stroke-width="1.0"/>
-  <circle cx="117" cy="81" r="2.6" fill="#FFFFFF" stroke="#72C2DD" stroke-width="1.0"/>
+  <circle cx="42" cy="92" r="2.2" fill="#FFFFFF" stroke="#7ECAE6" stroke-width="1.0"/>
+  <circle cx="49" cy="82" r="2.5" fill="#FFFFFF" stroke="#7ECAE6" stroke-width="1.0"/>
+  <circle cx="110" cy="90" r="2.2" fill="#FFFFFF" stroke="#7ECAE6" stroke-width="1.0"/>
+  <circle cx="117" cy="81" r="2.6" fill="#FFFFFF" stroke="#7ECAE6" stroke-width="1.0"/>
   <path d="M32 32 H60 L58 44 H34 Z" fill="#595E66" stroke="#333333" stroke-width="2.4"/>
   <path d="M100 32 H128 L126 44 H102 Z" fill="#595E66" stroke="#333333" stroke-width="2.4"/>
-  <circle cx="46" cy="18" r="6.2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/><circle cx="46" cy="18" r="3.1" fill="#F5F6F8" stroke="#333333" stroke-width="1.1"/><circle cx="46" cy="18" r="1.612" fill="#333333" stroke="none"/><text x="46" y="9" fill="#4A4F55" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">+</text>
-  <circle cx="114" cy="18" r="6.2" fill="#333333" stroke="#333333" stroke-width="2.0"/><circle cx="114" cy="18" r="3.1" fill="#F5F6F8" stroke="#333333" stroke-width="1.1"/><circle cx="114" cy="18" r="1.612" fill="#333333" stroke="none"/><text x="114" y="9" fill="#4A4F55" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">-</text>
+  <circle cx="46" cy="18" r="6.2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/><circle cx="46" cy="18" r="3.1" fill="#F3F4F6" stroke="#333333" stroke-width="1.1"/><circle cx="46" cy="18" r="1.612" fill="#333333" stroke="none"/><text x="46" y="9" fill="#4A4F55" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">+</text>
+  <circle cx="114" cy="18" r="6.2" fill="#333333" stroke="#333333" stroke-width="2.0"/><circle cx="114" cy="18" r="3.1" fill="#F3F4F6" stroke="#333333" stroke-width="1.1"/><circle cx="114" cy="18" r="1.612" fill="#333333" stroke="none"/><text x="114" y="9" fill="#4A4F55" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">-</text>
 </svg>

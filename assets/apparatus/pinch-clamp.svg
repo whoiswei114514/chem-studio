@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="96" viewBox="0 0 88 96">
 <title>止水夹</title>
-<path d="M20 18 H68 M20 30 H68" fill="none" stroke="#333333" stroke-width="5.8" stroke-linecap="round"/>
-      <path d="M20 18 H68 M20 30 H68" fill="none" stroke="#C4C9D0" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M26 18 V44 L64 80 M62 18 V44 L24 80" fill="none" stroke="#333333" stroke-width="4.8" stroke-linecap="round"/>
-      <path d="M26 18 V44 L64 80 M62 18 V44 L24 80" fill="none" stroke="#C4C9D0" stroke-width="2.0" stroke-linecap="round"/>
-      <circle cx="44" cy="52" r="4" fill="#E4A838" stroke="#333333" stroke-width="1.5"/>
-      <rect x="15" y="72" width="16" height="15" rx="3.5" fill="#3E74B4" stroke="#333333" stroke-width="1.8"/>
-      <rect x="57" y="72" width="16" height="15" rx="3.5" fill="#3E74B4" stroke="#333333" stroke-width="1.8"/>
+<path d="M20 18 H68 M20 30 H68" fill="none" stroke="#333333" stroke-width="5.2" stroke-linecap="round"/>
+      <path d="M20 18 H68 M20 30 H68" fill="none" stroke="#C8CDD3" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M26 18 V44 L64 80 M62 18 V44 L24 80" fill="none" stroke="#333333" stroke-width="4.4" stroke-linecap="round"/>
+      <path d="M26 18 V44 L64 80 M62 18 V44 L24 80" fill="none" stroke="#C8CDD3" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="44" cy="52" r="3.8" fill="#E5E7EB" stroke="#333333" stroke-width="1.4"/>
+      <rect x="16" y="72" width="15" height="14" rx="3" fill="#3E74B4" stroke="#333333" stroke-width="1.6"/>
+      <rect x="57" y="72" width="15" height="14" rx="3" fill="#3E74B4" stroke="#333333" stroke-width="1.6"/>
 </svg>

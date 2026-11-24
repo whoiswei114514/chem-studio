@@ -17,28 +17,28 @@
         <rect x="144" y="8" width="12" height="6" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.5"/>
         <path d="M150 8 V3 H178 V48" fill="none" stroke="#4A4F55" stroke-width="1.0"/>
         <text x="150" y="38" font-size="8" font-family="Segoe UI, sans-serif" fill="#333333" text-anchor="middle">D</text>
-  <rect x="22" y="48" width="172" height="10" rx="2" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
-  <rect x="20" y="58" width="176" height="46" rx="4" fill="#F5F6F8" stroke="#333333" stroke-width="2.4"/>
+  <rect x="22" y="48" width="172" height="10" rx="2" fill="#C8CDD3" stroke="#333333" stroke-width="2.2"/>
+  <rect x="20" y="58" width="176" height="46" rx="4" fill="#F3F4F6" stroke="#333333" stroke-width="2.4"/>
         <rect x="22" y="62" width="4" height="38" rx="1" fill="#7C828A"/>
         <rect x="32" y="68" width="92" height="26" rx="3" fill="#E6EEF2" stroke="#4A4F55" stroke-width="1.4"/>
         <text x="78" y="80" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#4A4F55" text-anchor="middle">UV-VIS 254 nm</text>
         <text x="78" y="92" font-size="7.8" font-family="Consolas, monospace" fill="#22252A" text-anchor="middle">0.00 AU</text>
         <polyline points="128,96 136,96 142,74 148,96 156,96 162,66 168,96 182,96" fill="none" stroke="#2D6DA3" stroke-width="1.8"/>
-  <rect x="20" y="106" width="176" height="48" rx="4" fill="#F5F6F8" stroke="#333333" stroke-width="2.4"/>
+  <rect x="20" y="106" width="176" height="48" rx="4" fill="#F3F4F6" stroke="#333333" stroke-width="2.4"/>
         <rect x="22" y="110" width="4" height="40" rx="1" fill="#7C828A"/>
         <rect x="32" y="116" width="92" height="28" rx="3" fill="#E6EEF2" stroke="#4A4F55" stroke-width="1.4"/>
         <text x="78" y="128" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#4A4F55" text-anchor="middle">COLUMN 35.0°C</text>
         <text x="78" y="140" font-size="7.8" font-family="Consolas, monospace" fill="#22252A" text-anchor="middle">C18 4.6x250</text>
         
-  <rect x="20" y="156" width="176" height="56" rx="4" fill="#F5F6F8" stroke="#333333" stroke-width="2.4"/>
+  <rect x="20" y="156" width="176" height="56" rx="4" fill="#F3F4F6" stroke="#333333" stroke-width="2.4"/>
         <rect x="22" y="160" width="4" height="48" rx="1" fill="#7C828A"/>
         <rect x="32" y="166" width="92" height="36" rx="3" fill="#E6EEF2" stroke="#4A4F55" stroke-width="1.4"/>
         <text x="78" y="178" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#4A4F55" text-anchor="middle">AUTOSAMPLER</text>
         <text x="78" y="190" font-size="7.8" font-family="Consolas, monospace" fill="#22252A" text-anchor="middle">VIAL #12</text>
         <rect x="134" y="166" width="44" height="36" rx="3" fill="#E6EEF2" stroke="#4A4F55" stroke-width="1.4"/>
            <circle cx="147" cy="184" r="5" fill="#3E74B4" stroke="#333333" stroke-width="1.4"/>
-           <circle cx="165" cy="184" r="5" fill="#C4C9D0" stroke="#333333" stroke-width="1.4"/>
-  <rect x="20" y="214" width="176" height="52" rx="4" fill="#F5F6F8" stroke="#333333" stroke-width="2.4"/>
+           <circle cx="165" cy="184" r="5" fill="#C8CDD3" stroke="#333333" stroke-width="1.4"/>
+  <rect x="20" y="214" width="176" height="52" rx="4" fill="#F3F4F6" stroke="#333333" stroke-width="2.4"/>
         <rect x="22" y="218" width="4" height="44" rx="1" fill="#7C828A"/>
         <rect x="32" y="224" width="92" height="32" rx="3" fill="#E6EEF2" stroke="#4A4F55" stroke-width="1.4"/>
         <text x="78" y="236" font-size="6.8" font-family="Segoe UI, sans-serif" fill="#4A4F55" text-anchor="middle">QUAT PUMP</text>

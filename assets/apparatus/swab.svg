@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="180" viewBox="0 0 120 180">
 <title>棉签</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="14" y="55" width="132" height="6" rx="2" fill="#E4B879" stroke="#333333" stroke-width="2.0"/>
-      <ellipse cx="155" cy="58" rx="15" ry="7.5" fill="#F7F8FA" stroke="#333333" stroke-width="2.2"/>
+      <rect x="57.5" y="14" width="5" height="134" rx="2" fill="#E4B879" stroke="#333333" stroke-width="1.6"/>
+      <ellipse cx="60" cy="156" rx="7" ry="14" fill="#F7F8FA" stroke="#333333" stroke-width="2.0"/>
     </g>
   
 </svg>

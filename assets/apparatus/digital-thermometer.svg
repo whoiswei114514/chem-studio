@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="200" viewBox="0 0 64 200">
 <title>数字温度计</title>
-<path d="M29 74 H35 V186 Q35 190 32 190 Q29 190 29 186 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <rect x="26" y="70" width="12" height="14" rx="2" fill="#3A3E44" stroke="#333333" stroke-width="1.6"/>
-  <rect x="8" y="8" width="48" height="64" rx="6" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
-      <rect x="13" y="15" width="38" height="24" rx="2.5" fill="#E6EEF2" stroke="#333333" stroke-width="1.4"/>
-      <text x="32" y="30.5" fill="#22252A" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="8.2" font-weight="700" text-anchor="middle">24.8°C</text>
-      <circle cx="32" cy="54" r="6" fill="#B8292F" stroke="#333333" stroke-width="1.5"/>
+<rect x="29.5" y="72" width="5" height="118" rx="2.5" fill="#C8CDD3" stroke="#333333" stroke-width="1.8"/>
+      <path d="M10 12 Q10 8 14 8 H50 Q54 8 54 12 V42 L42 64 V72 H22 V64 L10 42 Z" fill="#3A3E44" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+      <rect x="16" y="15" width="32" height="20" rx="2" fill="#E6EEF2" stroke="none"/>
+      <text x="32" y="28.5" fill="#22252A" stroke="none" font-family="Consolas, Segoe UI, monospace" font-size="8.5" font-weight="700" text-anchor="middle">20°C</text>
+      <circle cx="32" cy="49" r="5.5" fill="#D9463E" stroke="none"/>
 </svg>

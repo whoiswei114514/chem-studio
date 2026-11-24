@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="184" viewBox="0 0 160 184">
 <title>圆底烧瓶</title>
-<path d="M56.5 8 Q60 9.2 60 13 L59.779 47.076 A68 68 0 1 0 132.091 68.29 Q143.5 50.917 143.5 50 L141.718 22.634 Q142.956 19.041 146.183 18.884" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M91.5 8 Q88 9.2 88 13 L88.287 44.507 A68 68 0 0 1 107.658 49.879 Q115.5 34.938 115.5 34 L119.026 14.821 Q120.263 11.228 117.817 9.116" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M65.503 51.205 Q74.717 53.386 83.393 49.592" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
+<path d="M55 8 Q58.5 9.2 58.5 13 L58.423 47.514 A68 68 0 1 0 132.091 68.29 Q143.5 50.916 143.5 50 L141.096 22.632 Q142.396 19.061 145.626 18.959" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M89 8 Q85.5 9.2 85.5 13 L86.518 44.313 A68 68 0 0 1 107.658 49.879 Q115.5 34.908 115.5 34 L119.483 14.765 Q120.783 11.194 118.374 9.041" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64.182 51.535 Q73.336 53.511 81.811 49.526" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
   <path d="M109.496 56.898 Q115.361 65.074 124.837 68.458" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
 </svg>

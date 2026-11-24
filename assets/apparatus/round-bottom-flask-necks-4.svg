@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="184" viewBox="0 0 160 184">
 <title>圆底烧瓶</title>
-<path d="M12.797 18.3 Q15.094 18.704 16.456 22.252 L15.5 48 Q15.5 51.737 26.415 70.135 A68 68 0 1 0 133.585 70.135 Q144.5 51.737 144.5 48 L143.544 22.252 Q144.906 18.704 147.203 18.3" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M35.203 9.7 Q33.766 11.537 35.128 15.084 L39.5 34 Q39.5 37.15 44.977 53.713 A68 68 0 0 1 55.631 48.517 Q54.5 33.857 54.5 34 L51.684 14.181 Q51.221 10.41 49.089 9.462" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M72.911 6.538 Q71.072 7.972 71.535 11.744 L73.5 34 Q73.5 30.242 74.073 44.259 A68 68 0 0 1 85.927 44.259 Q86.5 30.242 86.5 34 L88.465 11.744 Q88.928 7.972 87.089 6.538" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M110.911 9.462 Q108.779 10.41 108.316 14.181 L105.5 34 Q105.5 33.857 104.369 48.517 A68 68 0 0 1 115.023 53.713 Q120.5 37.15 120.5 34 L124.872 15.084 Q126.234 11.537 124.797 9.7" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M33.089 70.701 Q40.895 67.8 44.726 60.406" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
-  <path d="M60.231 52.709 Q66.679 54.299 71.777 50.043" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
-  <path d="M88.223 50.043 Q93.321 54.299 99.769 52.709" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
-  <path d="M115.274 60.406 Q119.105 67.8 126.911 70.701" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
+<path d="M13.863 16.659 Q16.627 16.883 17.989 20.431 L15.5 48 Q15.5 49.684 27.909 68.29 A68 68 0 1 0 132.091 68.29 Q145.5 49.684 145.5 48 L143.011 20.431 Q144.373 16.883 147.137 16.659" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38.137 7.341 Q36.233 9.357 37.594 12.905 L42 34 Q42 34.445 50.191 50.882 A68 68 0 0 1 61.257 46.634 L60.277 13.569 Q60.078 9.774 57.519 8.707" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84.481 7.293 Q82.048 8.623 82.247 12.417 L84.743 44.166" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84.743 44.166 A68 68 0 0 1 110.871 51.412" fill="none" stroke="#B8BCC2" stroke-width="4.2" stroke-linecap="round"/>
+  <path d="M110.871 51.412 Q119 34.731 119 34 L123.406 12.905 Q124.767 9.357 122.863 7.341" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34.92 68.71 Q43.758 65.612 48.901 57.786" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M66.153 51.053 Q73.827 53.263 80.873 49.506" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M111.89 58.248 Q116.678 65.89 125.201 68.836" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
+  <polygon points="90.713,20.763 109.297,24.713 100.981,63.839 82.396,59.889" fill="#FFFFFF" stroke="none"/>
+  <path d="M90.762 8.505 Q92.958 10.199 92.168 13.916 L82.396 59.889 M114.238 13.495 Q111.543 14.149 110.753 17.866 L100.981 63.839" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M83.198 63.33 Q90.482 67.537 98.848 66.657" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
 </svg>

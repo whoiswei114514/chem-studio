@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="184" height="136" viewBox="0 0 184 136">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="196" viewBox="0 0 160 196">
 <title>活塞气室</title>
-<path d="M8 38 H22 M22 50 H8" fill="none" stroke="#333333" stroke-width="3.0" stroke-linecap="round"/>
-  <rect x="22" y="22" width="144" height="90" rx="4" fill="none" stroke="#333333" stroke-width="3.0"/>
-  <rect x="100" y="63" width="76" height="8" rx="2" fill="#E3E6EB" stroke="#333333" stroke-width="2.2"/>
-  <rect x="170" y="49" width="8" height="36" rx="3" fill="#3E74B4" stroke="#333333" stroke-width="2.4"/>
-  <rect x="82" y="24" width="18" height="86" rx="2" fill="#C4C9D0" stroke="#333333" stroke-width="2.4"/>
-  <rect x="82" y="28" width="4" height="78" fill="#595E66"/>
-  <line x1="40" y1="98" x2="40" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="60" y1="102" x2="60" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="80" y1="98" x2="80" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="100" y1="102" x2="100" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="120" y1="98" x2="120" y2="111" stroke="#B8BCC2" stroke-width="1.3"/><line x1="140" y1="102" x2="140" y2="111" stroke="#B8BCC2" stroke-width="1.3"/>
+<path d="M32 96 H128 V172 H32 Z" fill="#DCF0F7" stroke="none"/>
+  <line x1="32" y1="96" x2="128" y2="96" stroke="#7ECAE6" stroke-width="2.0"/>
+  <rect x="4" y="135" width="29" height="10" fill="#DCF0F7" stroke="none"/>
+  <path d="M18 14 H32 V134 H18 Z M18 146 H32 V172 H128 V14 H142 V186 H18 Z" fill="#C8CDD3" stroke="none"/>
+  <path d="M4 134 H32 V14 H18 V134 M18 146 V186 H142 V14 H128 V172 H32 V146 H4" fill="none" stroke="#333333" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="32" y="86" width="96" height="10" fill="#7C828A" stroke="#333333" stroke-width="2.6"/>
+  <rect x="73" y="12" width="14" height="74" fill="#E5E7EB" stroke="#333333" stroke-width="2.6"/>
 </svg>

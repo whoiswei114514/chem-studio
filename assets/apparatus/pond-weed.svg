@@ -2,12 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
 <title>水草</title>
 <g stroke-linecap="round" stroke-linejoin="round">
-      <line x1="20" y1="154" x2="160" y2="154" stroke="#3E74B4" stroke-width="2.0" stroke-dasharray="5 5"/>
-      <line x1="90" y1="164" x2="90" y2="28" stroke="#5F9A6E" stroke-width="4.0"/>
-      <line x1="90" y1="164" x2="90" y2="28" stroke="#333333" stroke-width="1.4"/>
-      <path d="M90 136 Q58 130 50 118 Q74 118 90 132 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.8"/><path d="M90 136 Q122 130 130 118 Q106 118 90 132 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.8"/><path d="M90 114 Q58 108 50 96 Q74 96 90 110 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.8"/><path d="M90 114 Q122 108 130 96 Q106 96 90 110 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.8"/><path d="M90 92 Q58 86 50 74 Q74 74 90 88 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.8"/><path d="M90 92 Q122 86 130 74 Q106 74 90 88 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.8"/><path d="M90 70 Q58 64 50 52 Q74 52 90 66 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.8"/><path d="M90 70 Q122 64 130 52 Q106 52 90 66 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.8"/><path d="M90 48 Q58 42 50 30 Q74 30 90 44 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.8"/><path d="M90 48 Q122 42 130 30 Q106 30 90 44 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.8"/>
-      <circle cx="72" cy="30" r="3.8" fill="#FFFFFF" stroke="#3E74B4" stroke-width="1.5"/>
-      <circle cx="108" cy="20" r="4.8" fill="#FFFFFF" stroke="#3E74B4" stroke-width="1.5"/>
-      <circle cx="94" cy="12" r="3.2" fill="#FFFFFF" stroke="#3E74B4" stroke-width="1.5"/>
+      <line x1="90" y1="164" x2="90" y2="28" stroke="#5F9A6E" stroke-width="3.6"/>
+      <path d="M90 140 Q58 134 50 124 Q74 124 90 136 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.6"/><path d="M90 140 Q122 134 130 124 Q106 124 90 136 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.6"/><path d="M90 118 Q58 112 50 102 Q74 102 90 114 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.6"/><path d="M90 118 Q122 112 130 102 Q106 102 90 114 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.6"/><path d="M90 96 Q58 90 50 80 Q74 80 90 92 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.6"/><path d="M90 96 Q122 90 130 80 Q106 80 90 92 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.6"/><path d="M90 74 Q58 68 50 58 Q74 58 90 70 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.6"/><path d="M90 74 Q122 68 130 58 Q106 58 90 70 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.6"/><path d="M90 52 Q58 46 50 36 Q74 36 90 48 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.6"/><path d="M90 52 Q122 46 130 36 Q106 36 90 48 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.6"/>
     </g>
 </svg>

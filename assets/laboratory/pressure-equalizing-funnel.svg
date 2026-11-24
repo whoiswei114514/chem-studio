@@ -8,7 +8,7 @@
   <g>
     <path d="M35 193.5 L57 194.7 L57 201.3 L35 202.5 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
     <rect x="28" y="191.5" width="7" height="13" rx="2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
-    <rect x="57" y="194.5" width="5" height="7" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+    <rect x="57" y="194.5" width="5" height="7" rx="1.5" fill="#C8CDD3" stroke="#333333" stroke-width="1.8"/>
     <line x1="43.5" y1="195.5" x2="48.5" y2="200.5" stroke="#4A4F55" stroke-width="1.4"/>
   </g>
   <path d="M33.5 4 L34.2 28 H36" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>

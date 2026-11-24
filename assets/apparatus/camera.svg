@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="136" height="146" viewBox="0 0 136 146">
 <title>相机</title>
-<path d="M40 34 L50 18 H84 L94 34 Z" fill="#3A3E44" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-      <rect x="18" y="24" width="16" height="8" rx="2" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
-      <rect x="10" y="34" width="116" height="96" rx="8" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="68" cy="84" r="32" fill="#C4C9D0" stroke="#333333" stroke-width="2.4"/>
-      <circle cx="68" cy="84" r="22" fill="#333333" stroke="#333333" stroke-width="1.8"/>
-      <circle cx="68" cy="84" r="14" fill="#EEF4F7" stroke="#3E74B4" stroke-width="1.6"/>
-      <circle cx="108" cy="46" r="3.8" fill="#B8292F" stroke="#333333" stroke-width="1.2"/>
+<path d="M40 34 L50 18 H84 L94 34 Z" fill="#3A3E44" stroke="none"/>
+      <rect x="10" y="34" width="116" height="96" rx="8" fill="#3A3E44" stroke="none"/>
+      <circle cx="68" cy="84" r="30" fill="#C8CDD3" stroke="#333333" stroke-width="2.0"/>
+      <circle cx="68" cy="84" r="20" fill="#333333" stroke="none"/>
+      <circle cx="68" cy="84" r="12" fill="#EEF4F7" stroke="#3E74B4" stroke-width="1.5"/>
 </svg>

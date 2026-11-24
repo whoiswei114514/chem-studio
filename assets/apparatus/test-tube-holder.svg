@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="176" height="48" viewBox="0 0 176 48">
 <title>试管夹</title>
-<path d="M164 14 L82 14 C62 14 48 34 30 34 C14 34 12 22 18 18" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M164 14 L82 14 C62 14 48 34 30 34 C14 34 12 22 18 18" fill="none" stroke="#C4C9D0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M164 34 L82 34 C62 34 48 14 30 14 C14 14 12 26 18 30" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M164 34 L82 34 C62 34 48 14 30 14 C14 14 12 26 18 30" fill="none" stroke="#C4C9D0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="116" y="8" width="52" height="10" rx="3" fill="#CC914B" stroke="#333333" stroke-width="2.0"/>
-      <rect x="116" y="30" width="52" height="10" rx="3" fill="#CC914B" stroke="#333333" stroke-width="2.0"/>
-      <circle cx="82" cy="24" r="5" fill="#E4A838" stroke="#333333" stroke-width="1.6"/>
+<path d="M164 16 L82 16 C64 16 48 33 30 33 C14 33 12 22 18 19" fill="none" stroke="#4A4F55" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M164 32 L82 32 C64 32 48 15 30 15 C14 15 12 26 18 29" fill="none" stroke="#4A4F55" stroke-width="2.6" stroke-linecap="round"/>
+      <rect x="122" y="11" width="44" height="26" rx="6" fill="none" stroke="#4A4F55" stroke-width="2.6"/>
 </svg>

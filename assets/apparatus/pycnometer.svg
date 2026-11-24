@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="118" height="196" viewBox="0 0 118 196">
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="200" viewBox="0 0 100 200">
 <title>比重瓶</title>
-<path d="M42 10 Q45 12 46 18 V52 C14 84 12 160 32 184 H86 C106 160 104 84 72 52 V18 Q73 12 76 10" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M49 54 Q59 56.5 69 54" fill="none" stroke="#DCE8EC" stroke-width="2" stroke-linecap="round"/>
-  <line x1="59" y1="28" x2="59" y2="112" stroke="#8C929A" stroke-width="1.4" stroke-dasharray="4 3"/>
+<path d="M36 104 H64 C88 134 92 174 72 190 H28 C8 174 12 134 36 104 Z" fill="#DCF0F7" stroke="none"/>
+  <line x1="36" y1="104" x2="64" y2="104" stroke="#7ECAE6" stroke-width="2.0"/>
+  <rect x="46" y="10" width="8" height="72" fill="#DCF0F7" stroke="none"/>
+  <path d="M34 54 L39 84 V92 L12 142 Q6 172 24 190 H76 Q94 172 88 142 L61 92 V84 L66 54" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M43 10 V48 L36 54 H64 L57 48 V10" fill="none" stroke="#333333" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="40" y1="84" x2="60" y2="84" stroke="#333333" stroke-width="3.2" stroke-linecap="round"/>
 </svg>

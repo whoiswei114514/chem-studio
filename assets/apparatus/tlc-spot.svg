@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
 <title>色谱斑点</title>
-<circle cx="40" cy="40" r="22" fill="#D8EDF5" stroke="#3E74B4" stroke-width="1.5" stroke-dasharray="3 2"/>
-      <circle cx="40" cy="40" r="14" fill="#3E74B4" stroke="#333333" stroke-width="2.2"/>
+<circle cx="40" cy="40" r="22" fill="#5F9A6E" stroke="none"/>
 </svg>

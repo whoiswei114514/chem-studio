@@ -59,9 +59,10 @@ function registerContainers(register) {
     register('displacement-beaker', '溢流杯', 'displacement beaker', {
       width: 160, height: 172,
       svg:
-        `<path d="M12 14 L23 24 V152 Q23 164 36 164 H120 Q132 164 132 152 V60 L150 71 M156 63 L132 48 V21 Q132 16 136 14" fill="none" ${glassStroke}/>\n` +
-        `  <path d="M25 53 H132" fill="none" stroke="${C.liquidLine}" stroke-width="1.6" stroke-dasharray="4 3"/>\n` +
-        `  ${gradTicks(122, 62, 140, 6, 2, 10, { dir: -1 })}`,
+        `<path d="M23 58 H132 V152 Q132 164 120 164 H35 Q23 164 23 152 Z" fill="${C.liquid}" stroke="none"/>\n` +
+        `  <line x1="25" y1="58" x2="132" y2="58" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+        `  <path d="M12 14 L23 24 V152 Q23 164 36 164 H120 Q132 164 132 152 V60 L150 71 M156 63 L132 48 V21 Q132 16 136 14" fill="none" ${glassStroke}/>\n` +
+        `  ${gradTicks(122, 66, 144, 6, 2, 10, { dir: -1 })}`,
       ports: [
         { id: 'mouth', x: 74, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 124, depth: 25, target: [78, 138], edge: [12, 14, 136, 14] },
         { id: 'outlet', x: 153, y: 67, dx: 0.814, dy: 0.581, type: 'tube', diameter: 10, edge: [156, 63, 150, 71] },
@@ -72,41 +73,35 @@ function registerContainers(register) {
     register('eureka', '排水罐', 'eureka', {
       width: 160, height: 172,
       svg:
-        `<path d="M12 14 L23 24 V152 Q23 164 36 164 H120 Q132 164 132 152 V59 L149 85 M155 80 L132 46 V21 Q132 16 136 14" fill="none" ${glassStroke}/>\n` +
-        `  ${gradTicks(122, 66, 140, 6, 2, 10, { dir: -1 })}`,
+        `<path d="M18 66 H112 V154 Q112 162 104 162 H26 Q18 162 18 154 Z" fill="${C.liquid}" stroke="none"/>\n` +
+        `  <line x1="20" y1="66" x2="112" y2="66" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+        `  <path d="M16 14 V154 Q16 164 26 164 H104 Q114 164 114 154 V66 L146 98 M152 92 L114 54 V14" fill="none" ${glassStroke}/>`,
       ports: [
-        { id: 'mouth', x: 74, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 124, depth: 25, target: [78, 138], edge: [12, 14, 136, 14] },
-        { id: 'outlet', x: 152, y: 82.5, dx: 0.625, dy: 0.781, type: 'tube', diameter: 8, edge: [155, 80, 149, 85] },
-        { id: 'base', x: 78, y: 166, dx: 0, dy: 1, type: 'base', diameter: 0 },
+        { id: 'mouth', x: 65, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 98, depth: 25, target: [65, 138], edge: [16, 14, 114, 14] },
+        { id: 'outlet', x: 149, y: 95, dx: 0.707, dy: 0.707, type: 'tube', diameter: 8.5, edge: [152, 92, 146, 98] },
+        { id: 'base', x: 65, y: 166, dx: 0, dy: 1, type: 'base', diameter: 0 },
       ],
     });
 
-    // 4. Tank (160x154)
+    // 4. Tank (160x154 — crisp rectangular trough with no top lip flare)
     register('tank', '水槽', 'tank', {
       width: 160, height: 154, search: 'tank',
       svg:
-        `<path d="M20 72 Q50 68 80 72 T140 72 V142 H20 Z" fill="${C.liquid}" stroke="none"/>\n` +
-        `  <path d="M20 72 Q50 68 80 72 T140 72" fill="none" stroke="${C.liquidLine}" stroke-width="2.0" stroke-linecap="round"/>\n` +
-        `  <path d="M14 14 Q19 16 19 22 V137 Q19 144 26 144 H134 Q141 144 141 137 V22 Q141 16 146 14" fill="none" ${glassStroke}/>`,
+        `<path d="M18 76 H142 V142 H18 Z" fill="${C.liquid}" stroke="none"/>\n` +
+        `  <line x1="18" y1="76" x2="142" y2="76" stroke="${C.liquidLine}" stroke-width="2.2"/>\n` +
+        `  <path d="M16 14 V144 H144 V14" fill="none" ${glassStroke}/>`,
       ports: [
-        { id: 'mouth', x: 80, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 132, depth: 25, target: [80, 120], edge: [14, 14, 146, 14] },
+        { id: 'mouth', x: 80, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 128, depth: 25, target: [80, 120], edge: [16, 14, 144, 14] },
         { id: 'base', x: 80, y: 146, dx: 0, dy: 1, type: 'base', diameter: 0 },
       ],
     });
 
-    // 5. TLC chamber (150x176)
+    // 5. TLC chamber (150x176 — clean empty rectangular tank + subtle solvent fill)
     register('tlc-chamber', '展开缸', 'tlc chamber', {
       width: 150, height: 176,
       svg:
-        `<path d="M20 124 H130 V158 Q130 164 124 164 H26 Q20 164 20 158 Z" fill="${C.liquid}" stroke="none"/>\n` +
-        `  <line x1="20" y1="124" x2="130" y2="124" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
-        `  <polygon points="48,42 94,38 102,150 56,152" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.8" stroke-linejoin="round"/>\n` +
-        `  <line x1="55" y1="134" x2="100" y2="132" stroke="${C.muted}" stroke-width="1.2" stroke-dasharray="3 2.5"/>\n` +
-        `  <line x1="51" y1="64" x2="96" y2="61" stroke="${C.liquidLine}" stroke-width="1.2" stroke-dasharray="3 2.5"/>\n` +
-        `  <circle cx="66" cy="108" r="3.8" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="1.3"/>\n` +
-        `  <circle cx="82" cy="80" r="4.0" fill="${C.amber}" stroke="${C.stroke}" stroke-width="1.3"/>\n` +
-        `  <circle cx="65" cy="133" r="2.2" fill="${C.muted}" stroke="none"/>\n` +
-        `  <circle cx="85" cy="132" r="2.2" fill="${C.muted}" stroke="none"/>\n` +
+        `<path d="M21 134 H129 V158 Q129 164 123 164 H27 Q21 164 21 158 Z" fill="${C.liquid}" stroke="none"/>\n` +
+        `  <line x1="21" y1="134" x2="129" y2="134" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
         `  <path d="M14 14 Q19 16 19 22 V158 Q19 165 26 165 H124 Q131 165 131 158 V22 Q131 16 136 14" fill="none" ${glassStroke}/>`,
       ports: [
         { id: 'mouth', x: 75, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 122, depth: 25, target: [75, 134], edge: [14, 14, 136, 14] },
@@ -115,38 +110,36 @@ function registerContainers(register) {
     });
   }
 
-  // 6. Calorimetry cup (144x172)
+  // 6. Calorimetry cup (144x172 — stepped top collar + double insulated tapered casing + pale liquid)
   register('calorimetry-cup', '量热杯', '容器', {
     width: 144, height: 172, search: 'calorimetry cup',
     svg:
-      `<path d="M29 22 L40 153 Q41 160 49 160 H95 Q103 160 104 153 L115 22" fill="none" stroke="${C.inner}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-      `  <path d="M20 14 Q24 15 25 22 L36 156 Q37 164 47 164 H97 Q107 164 108 156 L119 22 Q120 15 124 14" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-      `  ${jointArc(33, 24, 111, 24, 2.5, { sw: 1.8 })}`,
+      `<path d="M35 86 H109 L103 154 H41 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="35" y1="86" x2="109" y2="86" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <path d="M16 14 H26 L36 154 H108 L118 14 H128 L125 32 H120 L112 164 H32 L24 32 H19 Z" fill="${C.chassisBot}" stroke="${C.inner}" stroke-width="2.4" stroke-linejoin="round"/>\n` +
+      `  <path d="M16 14 L24 156 Q25 164 33 164 H111 Q119 164 120 156 L128 14" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`,
     ports: [
-      { id: 'mouth', x: 72, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 104, depth: 25, target: [72, 135], edge: [20, 14, 124, 14] },
+      { id: 'mouth', x: 72, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 112, depth: 25, target: [72, 135], edge: [16, 14, 128, 14] },
       { id: 'base', x: 72, y: 166, dx: 0, dy: 1, type: 'base', diameter: 0 },
     ],
   });
 
-  // 7. Watch glass (156x48)
+  // 7. Watch glass (156x40 — graceful single shallow downward arc)
   register('watch-glass', '表面皿', '容器', {
-    width: 156, height: 48, search: 'watch glass',
-    svg:
-      `<path d="M10 10 Q78 52 146 10" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-      `  <path d="M13 10 Q78 24 143 10" fill="none" stroke="${C.inner}" stroke-width="1.6" stroke-linecap="round"/>`,
-    ports: [{ id: 'base', x: 78, y: 32, dx: 0, dy: 1, type: 'base', diameter: 0 }],
+    width: 156, height: 40, search: 'watch glass',
+    svg: `<path d="M12 12 Q78 38 144 12" fill="none" stroke="${C.stroke}" stroke-width="4.2" stroke-linecap="round"/>`,
+    ports: [{ id: 'base', x: 78, y: 26, dx: 0, dy: 1, type: 'base', diameter: 0 }],
   });
 
-  // 8. Stemmed glass (130x190)
+  // 8. Stemmed glass (130x178 — sleek V-profile chalice + sturdy flat base)
   register('stemmed-glass', '高脚杯', '容器', {
-    width: 130, height: 190, search: 'stemmed glass',
+    width: 130, height: 178, search: 'stemmed glass',
     svg:
-      `<path d="M14 14 Q65 8 116 14" fill="none" stroke="${C.muted}" stroke-width="1.4" stroke-linecap="round"/>\n` +
-      `  <path d="M14 14 C15 90 42 106 65 106 C88 106 115 90 116 14" fill="none" stroke="${C.stroke}" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>\n` +
-      `  <path d="M14 14 Q65 20 116 14" fill="none" stroke="${C.inner}" stroke-width="1.5" stroke-linecap="round"/>\n` +
-      `  <line x1="65" y1="106" x2="65" y2="174" stroke="${C.stroke}" stroke-width="3.6" stroke-linecap="round"/>\n` +
-      `  <ellipse cx="65" cy="178" rx="40" ry="6" fill="none" stroke="${C.stroke}" stroke-width="3.0"/>`,
-    ports: [{ id: 'base', x: 65, y: 178, dx: 0, dy: 1, type: 'base', diameter: 0 }],
+      `<path d="M40 94 H90 L76 138 Q65 148 54 138 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="40" y1="94" x2="90" y2="94" stroke="${C.liquidLine}" stroke-width="2.2"/>\n` +
+      `  <path d="M14 12 L46 132 Q53 150 65 150 Q77 150 84 132 L116 12" fill="none" stroke="${C.stroke}" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <path d="M48 140 Q46 164 24 166 H106 Q84 164 82 140" fill="none" stroke="${C.stroke}" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>`,
+    ports: [{ id: 'base', x: 65, y: 166, dx: 0, dy: 1, type: 'base', diameter: 0 }],
   });
 
   // 9. Conical flask (140x206)
@@ -163,25 +156,19 @@ function registerContainers(register) {
     ],
   });
 
-  // 10. Conical flask with side arm (154x206, open-bore horizontal barbed suction nozzle)
-  {
-    const horizBarb = oliveBarb('conical-flask-with-side-arm', 80, 40, 1, 66, 5.2, 4.5);
-    const openBarbPath =
-      `M46 10 Q50 12 50 18 V56 L12 176 Q8 194 26 194 H104 Q122 194 118 176 L80 56 V45 ` +
-      `L129.3 44.4 L131.3 46.5 L146 44.5 M146 35.5 L131.3 33.5 L129.3 35.6 L80 35 V18 Q80 12 84 10`;
-    register('conical-flask-with-side-arm', '侧支锥形瓶', '容器', {
-      width: 154, height: 206,
-      svg:
-        `<path d="${openBarbPath}" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-        `  ${jointArc(54, 19, 76, 19, 2.5, { sw: 2.0 })}\n` +
-        `  ${gradTicks(106, 122, 168, 4, 2, 11, { dir: -1 })}`,
-      ports: [
-        { id: 'mouth', x: 65, y: 10, dx: 0, dy: -1, type: 'mouth', diameter: 38, depth: 24, target: [65, 156], edge: [46, 10, 84, 10] },
-        { ...horizBarb.port, id: 'outlet', type: 'tube' },
-        { id: 'base', x: 65, y: 196, dx: 0, dy: 1, type: 'base', diameter: 0 },
-      ],
-    });
-  }
+  // 10. Conical flask with side arm (130x206 — short smooth horizontal side spout)
+  register('conical-flask-with-side-arm', '侧支锥形瓶', '容器', {
+    width: 130, height: 206,
+    svg:
+      `<path d="M44 10 Q48 12 48 18 V56 L11 176 Q8 194 26 194 H100 Q118 194 115 176 L78 56 V44 H112 M112 36 H78 V18 Q78 12 82 10" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  ${jointArc(52, 19, 74, 19, 2.5, { sw: 2.0 })}\n` +
+      `  ${gradTicks(102, 122, 168, 4, 2, 11, { dir: -1 })}`,
+    ports: [
+      { id: 'mouth', x: 63, y: 10, dx: 0, dy: -1, type: 'mouth', diameter: 38, depth: 24, target: [63, 156], edge: [44, 10, 82, 10] },
+      { id: 'outlet', x: 112, y: 40, dx: 1, dy: 0, type: 'tube', diameter: 8, segment: [108, 40, 84, 40], edge: [112, 36, 112, 44] },
+      { id: 'base', x: 63, y: 196, dx: 0, dy: 1, type: 'base', diameter: 0 },
+    ],
+  });
 
   // 11-12. Test tubes (48x200 and 76x200)
   register('test-tube', '试管', '容器', {
@@ -203,14 +190,14 @@ function registerContainers(register) {
     ],
   });
 
-  // 13. Round-bottom flask (1, 2, 3, 4 necks): tight 160x184, R=68 globe at (80, 112), upright gentle S-curve Chemix necks!
-  function buildChemixRbf(necks) {
+  // 13. Round-bottom flask (1, 2, 3, 4 necks): tight 160x184, R=68 globe at (80, 112)
+  function buildChemixRbf(necks, opts = {}) {
     const cx0 = 80;
     const cy0 = 112;
     const R = 68;
     const sw = 4.2;
 
-    const geom = necks.map((n) => {
+    const makeNeck = (n) => {
       const a = rad(n.deg);
       const ux = Math.sin(a);
       const uy = -Math.cos(a);
@@ -228,13 +215,13 @@ function registerContainers(register) {
       const LF = P([mx, my], 5.0, -hw);
       const RF = P([mx, my], 5.0, hw);
 
-      const thBaseL = rad(n.baseDegL);
-      const thBaseR = rad(n.baseDegR);
+      const thBaseL = rad(n.baseDegL ?? 0);
+      const thBaseR = rad(n.baseDegR ?? 0);
       const LB = [r(cx0 + R * Math.sin(thBaseL)), r(cy0 - R * Math.cos(thBaseL))];
       const RB = [r(cx0 + R * Math.sin(thBaseR)), r(cy0 - R * Math.cos(thBaseR))];
-      const thArcMid = rad((n.baseDegL + n.baseDegR) / 2);
+      const thArcMid = rad(((n.baseDegL ?? 0) + (n.baseDegR ?? 0)) / 2);
       const arcR = R - 5.5;
-      const arcSpan = (n.baseDegR - n.baseDegL) * 0.34;
+      const arcSpan = ((n.baseDegR ?? 0) - (n.baseDegL ?? 0)) * 0.34;
       const AL = [r(cx0 + arcR * Math.sin(thArcMid - rad(arcSpan))), r(cy0 - arcR * Math.cos(thArcMid - rad(arcSpan)))];
       const AR = [r(cx0 + arcR * Math.sin(thArcMid + rad(arcSpan))), r(cy0 - arcR * Math.cos(thArcMid + rad(arcSpan)))];
 
@@ -253,10 +240,13 @@ function registerContainers(register) {
         edge: [LT[0], LT[1], RT[0], RT[1]],
         target,
         LT, RT, LC, RC, LF, RF, LB, RB, AL, AR, ctrlL, ctrlR,
+        P, hw,
         straightDrop: Boolean(n.straightDrop),
+        rearRimColor: n.rearRimColor || null,
       };
-    });
+    };
 
+    const geom = necks.map(makeNeck);
     const first = geom[0];
     const last = geom[geom.length - 1];
 
@@ -292,16 +282,45 @@ function registerContainers(register) {
         const midY = r((g.LF[1] + g.LB[1]) * 0.54);
         return `Q${g.ctrlL[0]} ${midY} ${g.ctrlL[0]} ${g.ctrlL[1]} L${g.LF[0]} ${g.LF[1]}`;
       };
-      bridges +=
-        `\n  <path d="M${leftN.RT[0]} ${leftN.RT[1]} Q${leftN.RC[0]} ${leftN.RC[1]} ${leftN.RF[0]} ${leftN.RF[1]} ` +
-        `${downRight(leftN)} ` +
-        `A${R} ${R} 0 0 1 ${rightN.LB[0]} ${rightN.LB[1]} ` +
-        `${upLeft(rightN)} Q${rightN.LC[0]} ${rightN.LC[1]} ${rightN.LT[0]} ${rightN.LT[1]}" ` +
+      if (leftN.rearRimColor) {
+        bridges +=
+          `\n  <path d="M${leftN.RT[0]} ${leftN.RT[1]} Q${leftN.RC[0]} ${leftN.RC[1]} ${leftN.RF[0]} ${leftN.RF[1]} ${downRight(leftN)}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>` +
+          `\n  <path d="M${leftN.RB[0]} ${leftN.RB[1]} A${R} ${R} 0 0 1 ${rightN.LB[0]} ${rightN.LB[1]}" fill="none" stroke="${leftN.rearRimColor}" stroke-width="${sw}" stroke-linecap="round"/>` +
+          `\n  <path d="M${rightN.LB[0]} ${rightN.LB[1]} ${upLeft(rightN)} Q${rightN.LC[0]} ${rightN.LC[1]} ${rightN.LT[0]} ${rightN.LT[1]}" fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+      } else {
+        bridges +=
+          `\n  <path d="M${leftN.RT[0]} ${leftN.RT[1]} Q${leftN.RC[0]} ${leftN.RC[1]} ${leftN.RF[0]} ${leftN.RF[1]} ` +
+          `${downRight(leftN)} ` +
+          `A${R} ${R} 0 0 1 ${rightN.LB[0]} ${rightN.LB[1]} ` +
+          `${upLeft(rightN)} Q${rightN.LC[0]} ${rightN.LC[1]} ${rightN.LT[0]} ${rightN.LT[1]}" ` +
+          `fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+      }
+    }
+
+    let frontSvg = '';
+    const orderedGeom = [...geom];
+    if (opts.frontNeck) {
+      const f = makeNeck(opts.frontNeck);
+      const dropLen = opts.frontNeck.dropLen || 54;
+      const mL = f.P([f.mx, f.my], 12, -f.hw);
+      const mR = f.P([f.mx, f.my], 12, f.hw);
+      const bL = f.P([f.mx, f.my], dropLen, -f.hw);
+      const bR = f.P([f.mx, f.my], dropLen, f.hw);
+      const aL = f.P([f.mx, f.my], dropLen + 3.2, -(f.hw - 1.5));
+      const aR = f.P([f.mx, f.my], dropLen + 3.2, f.hw - 1.5);
+      // White mask below y=20 occludes the #B8BCC2 rear rim behind front neck without touching lip opening
+      const mask = `<polygon points="${mL.join(',')} ${mR.join(',')} ${bR.join(',')} ${bL.join(',')}" fill="#FFFFFF" stroke="none"/>`;
+      const fWalls =
+        `<path d="M${f.LT[0]} ${f.LT[1]} Q${f.LC[0]} ${f.LC[1]} ${f.LF[0]} ${f.LF[1]} L${bL[0]} ${bL[1]} ` +
+        `M${f.RT[0]} ${f.RT[1]} Q${f.RC[0]} ${f.RC[1]} ${f.RF[0]} ${f.RF[1]} L${bR[0]} ${bR[1]}" ` +
         `fill="none" stroke="${C.stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+      const fArc = jointArc(aL[0], aL[1], aR[0], aR[1], 2.6, { sw: 2.3 });
+      frontSvg = `\n  ${mask}\n  ${fWalls}\n  ${fArc}`;
+      orderedGeom.splice(opts.frontNeck.insertIndex ?? geom.length, 0, f);
     }
 
     const arcs = geom.map((g) => jointArc(g.AL[0], g.AL[1], g.AR[0], g.AR[1], 3.0, { sw: 2.3 })).join('\n  ');
-    const ports = geom.map((g) => ({
+    const ports = orderedGeom.map((g) => ({
       id: g.id,
       x: g.mx,
       y: g.my,
@@ -314,31 +333,36 @@ function registerContainers(register) {
       edge: g.edge,
     }));
     ports.push({ id: 'contents-seat', x: 80, y: 162, dx: 0, dy: -1, type: 'contents-seat', diameter: 0 });
-    return { svg: `${outerPath}${bridges}\n  ${arcs}`, ports };
+    return { svg: `${outerPath}${bridges}\n  ${arcs}${frontSvg}`, ports };
   }
 
   const rbf1 = buildChemixRbf([
-    { id: 'mouth', deg: 0, mx: 80, my: 6, hw: 15, lipHw: 18.5, baseDegL: -12.7, baseDegR: 12.7, straightDrop: true, depth: 25 },
+    { id: 'mouth', deg: 0, mx: 80, my: 6, hw: 13.5, lipHw: 17.5, baseDegL: -11.5, baseDegR: 11.5, straightDrop: true, depth: 25 },
   ]);
   rbf1.ports.push({ id: 'base', x: 80, y: 180, dx: 0, dy: 1, type: 'base', diameter: 0 });
 
   const rbf2 = buildChemixRbf([
-    { id: 'mouth', deg: 0, mx: 74, my: 8, hw: 14, lipHw: 17.5, baseDegL: -17.3, baseDegR: 7.0, straightDrop: true },
-    { id: 'mouth-2', deg: 19, mx: 132, my: 14, hw: 12, lipHw: 15, baseDegL: 24, baseDegR: 50, ctrlL: [115.5, 34], ctrlR: [143.5, 50] },
+    { id: 'mouth', deg: 0, mx: 72, my: 8, hw: 13.5, lipHw: 17.0, baseDegL: -18.5, baseDegR: 5.5, straightDrop: true },
+    { id: 'mouth-2', deg: 20, mx: 132, my: 14, hw: 11.5, lipHw: 14.5, baseDegL: 24, baseDegR: 50, ctrlL: [115.5, 34], ctrlR: [143.5, 50] },
   ]);
 
   const rbf3 = buildChemixRbf([
-    { id: 'mouth', deg: -19, mx: 28, my: 14, hw: 12, lipHw: 15, baseDegL: -50, baseDegR: -24, ctrlL: [16.5, 50], ctrlR: [44.5, 34] },
-    { id: 'mouth-2', deg: 0, mx: 80, my: 8, hw: 13, lipHw: 16.5, baseDegL: -11.0, baseDegR: 11.0, straightDrop: true },
-    { id: 'mouth-3', deg: 19, mx: 132, my: 14, hw: 12, lipHw: 15, baseDegL: 24, baseDegR: 50, ctrlL: [115.5, 34], ctrlR: [143.5, 50] },
+    { id: 'mouth', deg: -20, mx: 28, my: 14, hw: 11.5, lipHw: 14.5, baseDegL: -50, baseDegR: -24, ctrlL: [16.5, 50], ctrlR: [44.5, 34] },
+    { id: 'mouth-2', deg: 0, mx: 80, my: 8, hw: 12.5, lipHw: 15.5, baseDegL: -10.5, baseDegR: 10.5, straightDrop: true },
+    { id: 'mouth-3', deg: 20, mx: 132, my: 14, hw: 11.5, lipHw: 14.5, baseDegL: 24, baseDegR: 50, ctrlL: [115.5, 34], ctrlR: [143.5, 50] },
   ]);
 
-  const rbf4 = buildChemixRbf([
-    { id: 'mouth', deg: -21, mx: 24, my: 14, hw: 10, lipHw: 12, baseDegL: -52, baseDegR: -31, ctrlL: [15.5, 48], ctrlR: [39.5, 34] },
-    { id: 'mouth-2', deg: -7, mx: 61, my: 8, hw: 10, lipHw: 12, baseDegL: -21, baseDegR: -5, ctrlL: [54.5, 34], ctrlR: [73.5, 34] },
-    { id: 'mouth-3', deg: 7, mx: 99, my: 8, hw: 10, lipHw: 12, baseDegL: 5, baseDegR: 21, ctrlL: [86.5, 34], ctrlR: [105.5, 34] },
-    { id: 'mouth-4', deg: 21, mx: 136, my: 14, hw: 10, lipHw: 12, baseDegL: 31, baseDegR: 52, ctrlL: [120.5, 34], ctrlR: [144.5, 48] },
-  ]);
+  // 4-neck RBF matching Chemix: 3 crown necks + #B8BCC2 occluded rear sphere rim + foreground 4th neck (mouth-3)
+  const rbf4 = buildChemixRbf(
+    [
+      { id: 'mouth', deg: -21, mx: 26, my: 12, hw: 10.5, lipHw: 13.0, baseDegL: -50, baseDegR: -26, ctrlL: [15.5, 48], ctrlR: [42, 34] },
+      { id: 'mouth-2', deg: -3, mx: 71, my: 8, hw: 11.0, lipHw: 13.5, baseDegL: -16, baseDegR: 4, straightDrop: true, rearRimColor: C.glassBack },
+      { id: 'mouth-4', deg: 21, mx: 135, my: 12, hw: 10.5, lipHw: 13.0, baseDegL: 27, baseDegR: 50, ctrlL: [119, 34], ctrlR: [145.5, 48] },
+    ],
+    {
+      frontNeck: { id: 'mouth-3', deg: 12, mx: 102.5, my: 11, hw: 9.5, lipHw: 12.0, dropLen: 52, insertIndex: 2 },
+    }
+  );
 
   register('round-bottom-flask', '圆底烧瓶', '容器', {
     width: 160, height: 184, neckCount: 1,
@@ -445,16 +469,19 @@ function registerContainers(register) {
     ],
   });
 
-  // 18. Pycnometer (118x196)
+  // 18. Pycnometer (100x200 — conical/pear body + stepped ground stopper + tall slender capillary neck)
   register('pycnometer', '比重瓶', '容器', {
-    width: 118, height: 196, neckCount: 1,
+    width: 100, height: 200, neckCount: 1,
     svg:
-      `<path d="M42 10 Q45 12 46 18 V52 C14 84 12 160 32 184 H86 C106 160 104 84 72 52 V18 Q73 12 76 10" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-      `  ${jointArc(49, 54, 69, 54, 2.5, { sw: 2.0 })}\n` +
-      `  <line x1="59" y1="28" x2="59" y2="112" stroke="${C.muted}" stroke-width="1.4" stroke-dasharray="4 3"/>`,
+      `<path d="M36 104 H64 C88 134 92 174 72 190 H28 C8 174 12 134 36 104 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="36" y1="104" x2="64" y2="104" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <rect x="46" y="10" width="8" height="72" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <path d="M34 54 L39 84 V92 L12 142 Q6 172 24 190 H76 Q94 172 88 142 L61 92 V84 L66 54" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <path d="M43 10 V48 L36 54 H64 L57 48 V10" fill="none" stroke="${C.stroke}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <line x1="40" y1="84" x2="60" y2="84" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round"/>`,
     ports: [
-      { id: 'mouth', x: 59, y: 10, dx: 0, dy: -1, type: 'glass-female', diameter: 34, depth: 25, target: [59, 145], edge: [42, 10, 76, 10] },
-      { id: 'base', x: 59, y: 186, dx: 0, dy: 1, type: 'base', diameter: 0 },
+      { id: 'mouth', x: 50, y: 10, dx: 0, dy: -1, type: 'glass-female', diameter: 14, depth: 22, target: [50, 145], edge: [43, 10, 57, 10] },
+      { id: 'base', x: 50, y: 192, dx: 0, dy: 1, type: 'base', diameter: 0 },
     ],
   });
 
@@ -470,27 +497,34 @@ function registerContainers(register) {
     ],
   });
 
-  // 20-22. Reagent bottle (116x196), Bottle (116x196 amber), Thermos (108x200 Dewar)
-  for (const [id, name, mode] of [
-    ['reagent-bottle', '试剂瓶', 'clear'],
-    ['bottle', '玻璃瓶', 'amber'],
-  ]) {
-    const isAmber = mode === 'amber';
-    const fill = isAmber ? C.amberLight : 'none';
-    const arc = isAmber ? '' : `\n  ${jointArc(46, 26, 70, 26, 2.4, { sw: 2.0 })}`;
-    const svg =
-      `<path d="M38 12 Q42 14 42 20 V46 Q12 58 12 82 V174 Q12 186 24 186 H92 Q104 186 104 174 V82 Q104 58 74 46 V20 Q74 14 78 12" fill="${fill}" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>${arc}\n` +
-      `  <rect x="28" y="92" width="60" height="44" rx="2.5" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.5"/>\n` +
-      `  <line x1="38" y1="108" x2="78" y2="108" stroke="${C.tick}" stroke-width="1.3"/>\n` +
-      `  <line x1="38" y1="120" x2="70" y2="120" stroke="${C.tick}" stroke-width="1.3"/>`;
-    register(id, name, '容器', {
-      width: 116, height: 196, svg,
-      ports: [
-        { id: 'mouth', x: 58, y: 12, dx: 0, dy: -1, type: 'mouth', diameter: 40, depth: 24, target: [58, 150], edge: [38, 12, 78, 12] },
-        { id: 'base', x: 58, y: 188, dx: 0, dy: 1, type: 'base', diameter: 0 },
-      ],
-    });
-  }
+  // 20-21. Reagent bottle (112x196 — square shoulder + ground stopper collar + pale water) & Bottle (84x206 — sleek capped bottle)
+  register('reagent-bottle', '试剂瓶', '容器', {
+    width: 112, height: 196,
+    svg:
+      `<path d="M12 114 H100 V184 H12 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="12" y1="114" x2="100" y2="114" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <path d="M36 22 Q40 24 41 30 V54 Q12 56 12 72 V184 H100 V72 Q100 56 71 54 V30 Q72 24 76 22" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <rect x="28" y="10" width="56" height="8" rx="1.5" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="3.4"/>\n` +
+      `  <path d="M40 18 L43 44 H69 L72 18" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>`,
+    ports: [
+      { id: 'mouth', x: 56, y: 10, dx: 0, dy: -1, type: 'mouth', diameter: 40, depth: 24, target: [56, 150], edge: [28, 10, 84, 10] },
+      { id: 'base', x: 56, y: 186, dx: 0, dy: 1, type: 'base', diameter: 0 },
+    ],
+  });
+
+  register('bottle', '玻璃瓶', '容器', {
+    width: 84, height: 206,
+    svg:
+      `<path d="M14 114 H70 V186 Q60 198 48 190 Q42 198 36 190 Q24 198 14 186 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="14" y1="114" x2="70" y2="114" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <path d="M32 22 V34 Q14 48 14 72 V184 Q20 198 34 192 Q42 200 50 192 Q64 198 70 184 V72 Q70 48 52 34 V22" fill="none" stroke="${C.stroke}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <rect x="26" y="8" width="32" height="14" rx="3" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
+      `  <rect x="24" y="21" width="36" height="5" rx="2" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.0"/>`,
+    ports: [
+      { id: 'mouth', x: 42, y: 8, dx: 0, dy: -1, type: 'mouth', diameter: 28, depth: 20, target: [42, 150], edge: [26, 8, 58, 8] },
+      { id: 'base', x: 42, y: 196, dx: 0, dy: 1, type: 'base', diameter: 0 },
+    ],
+  });
 
   // Thermos (108x200)
   register('thermos', '真空保温瓶', '容器', {
@@ -504,20 +538,20 @@ function registerContainers(register) {
     ],
   });
 
-  // 23. Wash bottle (140x200)
+  // 23. Wash bottle (120x204 — crisp left-angling delivery spout + pale liquid + white cap collar)
   register('wash-bottle', '洗瓶', '容器', {
-    width: 140, height: 200,
+    width: 120, height: 204,
     svg:
-      `<path d="M58 172 V11 Q58 6 64 6 H104 L118 20" fill="none" stroke="${C.stroke}" stroke-width="7.4" stroke-linecap="butt" stroke-linejoin="round"/>\n` +
-      `  <path d="M58 172 V11 Q58 6 64 6 H104 L119 21" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="butt" stroke-linejoin="round"/>\n` +
-      `  <path d="M120 17.5 L133.5 27.5 M126.5 34.5 L115 23" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-      `  <path d="M38 28 V48 Q10 60 10 84 V175 Q10 186 22 186 H94 Q106 186 106 175 V84 Q106 60 78 48 V28" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-      `  <line x1="58" y1="45" x2="58" y2="170" stroke="${C.inner}" stroke-width="2.2" stroke-linecap="round"/>\n` +
-      `  <rect x="35" y="14" width="46" height="14" rx="2.5" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="2.6"/>`,
+      `<path d="M38 122 H106 V182 Q106 192 96 192 H48 Q38 192 38 182 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="38" y1="122" x2="106" y2="122" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <path d="M72 178 V14 Q72 8 64 14 L8 53" fill="none" stroke="${C.stroke}" stroke-width="9.0" stroke-linecap="butt" stroke-linejoin="round"/>\n` +
+      `  <path d="M72 178 V14 Q72 8 64 14 L8 53" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="butt" stroke-linejoin="round"/>\n` +
+      `  <path d="M56 58 V66 Q36 74 36 92 V182 Q36 194 48 194 H96 Q108 194 108 182 V92 Q108 74 88 66 V58" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <rect x="52" y="44" width="40" height="14" rx="2" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="3.0"/>`,
     ports: [
-      { id: 'mouth', x: 58, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 40, depth: 24, target: [58, 150], edge: [38, 14, 78, 14] },
-      { id: 'outlet', x: 130, y: 31, dx: 0.707, dy: 0.707, type: 'tube', diameter: 10, edge: [126.5, 34.5, 133.5, 27.5] },
-      { id: 'base', x: 58, y: 188, dx: 0, dy: 1, type: 'base', diameter: 0 },
+      { id: 'mouth', x: 72, y: 44, dx: 0, dy: -1, type: 'mouth', diameter: 40, depth: 24, target: [72, 150], edge: [52, 44, 92, 44] },
+      { id: 'outlet', x: 8, y: 53, dx: -0.822, dy: 0.569, type: 'tube', diameter: 9, edge: [5.4, 49.3, 10.6, 56.7] },
+      { id: 'base', x: 72, y: 196, dx: 0, dy: 1, type: 'base', diameter: 0 },
     ],
   });
 }
@@ -531,7 +565,7 @@ function registerTubing(register) {
       const tx = -uy;
       const ty = ux;
       return {
-        id: i === 0 ? 'inlet' : i === 1 ? 'outlet' : `branch-${i}`,
+        id: i === 0 ? 'inlet' : i === 1 ? 'outlet' : 'branch',
         x, y, dx, dy,
         type: portType,
         diameter: wOuter,
@@ -570,42 +604,42 @@ function registerTubing(register) {
     });
   }
 
-  // S-bent-tube (120x170) & U-bent-tube (108x160)
+  // S-bent-tube (160x110 — Chemix horizontal curved delivery glass tube)
   register('s-bent-tube', 'S 形管', '导管', {
-    width: 120, height: 170,
-    svg: openTubeWall('M88 12 V42 C88 82 32 82 32 122 V158', 20, '#FFFFFF', 'butt'),
-    ports: endsToPorts([[88, 12, 0, -1], [32, 158, 0, 1]], 20, 8.2, 'tube'),
+    width: 160, height: 110,
+    svg: openTubeWall('M20 12 V38 C20 56 36 56 56 56 H104 C124 56 140 56 140 74 V98', 20, '#FFFFFF', 'butt'),
+    ports: endsToPorts([[20, 12, 0, -1], [140, 98, 0, 1]], 20, 8.2, 'tube'),
   });
 
+  // U-bent-tube (144x132 — wide Chemix U-bend)
   register('u-bent-tube', 'U 形管', '导管', {
-    width: 108, height: 160,
-    svg: openTubeWall('M20 12 V112 A34 34 0 0 0 88 112 V12', 20, '#FFFFFF', 'butt'),
-    ports: endsToPorts([[20, 12, 0, -1], [88, 12, 0, -1]], 20, 8.2, 'tube'),
+    width: 144, height: 132,
+    svg: openTubeWall('M22 12 V68 A50 50 0 0 0 122 68 V12', 20, '#FFFFFF', 'butt'),
+    ports: endsToPorts([[22, 12, 0, -1], [122, 12, 0, -1]], 20, 8.2, 'tube'),
   });
 
-  // Salt bridge (108x160)
+  // Salt bridge (164x148 — inverted ∩-shape matching Chemix; inlet bottom-left dy:1, outlet bottom-right dy:1)
   {
-    const d = 'M20 12 V112 A34 34 0 0 0 88 112 V12';
+    const d = 'M22 134 V68 Q22 16 74 16 H90 Q142 16 142 68 V134';
     const svg =
       `${openTubeWall(d, 20, C.liquid, 'butt')}\n` +
-      `  <rect x="14" y="14" width="12" height="7" rx="1.5" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.2"/>\n` +
-      `  <rect x="82" y="14" width="12" height="7" rx="1.5" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.2"/>`;
+      `  <line x1="16" y1="126" x2="28" y2="126" stroke="${C.liquidLine}" stroke-width="1.6"/>\n` +
+      `  <line x1="136" y1="126" x2="148" y2="126" stroke="${C.liquidLine}" stroke-width="1.6"/>`;
     register('salt-bridge', '盐桥', '导管', {
-      width: 108, height: 160, svg,
-      ports: endsToPorts([[20, 12, 0, -1], [88, 12, 0, -1]], 20, 8.2, 'tube'),
+      width: 164, height: 148, svg,
+      ports: endsToPorts([[22, 134, 0, 1], [142, 134, 0, 1]], 20, 8.2, 'tube'),
     });
   }
 
-  // Rubber hose (136x168)
+  // Rubber hose (200x68 — sleek horizontal natural-rubber S-wave hose)
   {
-    const d = 'M14 26 C112 2 20 138 120 144';
+    const d = 'M12 40 C66 8 134 60 188 28';
     const svg =
-      `${openTubeWall(d, 20, C.rubberMid)}\n` +
-      `  <rect x="12" y="15" width="7" height="22" rx="2" fill="${C.rubberTop}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
-      `  <rect x="115" y="133" width="7" height="22" rx="2" fill="${C.rubberTop}" stroke="${C.stroke}" stroke-width="2.4"/>`;
+      `<path d="${d}" fill="none" stroke="${C.stroke}" stroke-width="15.0" stroke-linecap="butt"/>\n` +
+      `  <path d="${d}" fill="none" stroke="#D0735B" stroke-width="8.8" stroke-linecap="butt"/>`;
     register('rubber-tube', '橡胶软管', '导管', {
-      width: 136, height: 168, svg,
-      ports: endsToPorts([[14, 26, -1, 0], [120, 144, 1, 0]], 20, 8.2, 'hose'),
+      width: 200, height: 68, svg,
+      ports: endsToPorts([[12, 40, -0.92, 0.39], [188, 28, 0.92, -0.39]], 15, 6.0, 'hose'),
     });
   }
 
@@ -620,13 +654,13 @@ function registerTubing(register) {
     ],
   });
 
-  // 3-way-crossing (130x160)
+  // 3-way-crossing (96x156 — Chemix 3-port T-junction)
   {
-    const ends = [[14, 72, -1, 0], [116, 72, 1, 0], [65, 10, 0, -1], [65, 150, 0, 1]];
+    const ends = [[28, 10, 0, -1], [28, 146, 0, 1], [86, 78, 1, 0]];
     const svg =
-      `<path d="M55 10 V62 H14 M75 10 V62 H116 M14 82 H55 V150 M116 82 H75 V150" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>`;
+      `<path d="M18 10 V146 M38 10 V68 H86 M86 88 H38 V146" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>`;
     register('3-way-crossing', '交叉导管', '导管', {
-      width: 130, height: 160, svg,
+      width: 96, height: 156, svg,
       ports: endsToPorts(ends, 20, 10, 'tube'),
     });
   }
@@ -746,19 +780,27 @@ function registerCondensersAndDistillation(register) {
     ports: [{ id: 'mouth', x: 38.5, y: 10, dx: 0, dy: -1, type: 'mouth', diameter: 45, edge: [16, 10, 61, 10] }],
   });
 
-  // 38. Cold finger (96x200)
-  register('cold-finger', '冷指', '冷凝与蒸馏', {
-    width: 96, height: 200,
-    svg:
-      `<path d="M36 10 V78 M44 10 V156 M52 10 V78 M60 10 V78" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>\n` +
-      `  <path d="M25 90 V162 A23 23 0 0 0 71 162 V90" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-      `  <line x1="48" y1="90" x2="48" y2="170" stroke="${C.inner}" stroke-width="2.2" stroke-linecap="round"/>\n` +
-      `  <path d="M18 78 H78 L73 92 H23 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>`,
-    ports: [
-      { id: 'inlet', x: 40, y: 10, dx: 0, dy: -1, type: 'coolant', diameter: 8, edge: [36, 10, 44, 10] },
-      { id: 'outlet', x: 56, y: 10, dx: 0, dy: -1, type: 'coolant', diameter: 8, edge: [52, 10, 60, 10] },
-    ],
-  });
+  // 38. Cold finger (112x196 — Chemix tapered collar + inner coolant dip tube + left & top-right olive barbs)
+  {
+    const id = 'cold-finger';
+    const bL = oliveBarb(`${id}-in`, 44, 52, -1, 32, 4.5, 3.8);
+    const bR = oliveBarb(`${id}-out`, 80, 14, 1, 22, 4.5, 3.8);
+    const outer =
+      `<path d="M44 47.5 C44 39 48 35 52 34 M60 34 C64 35 68 39 68 47.5 V174 A12 12 0 0 1 44 174 V56.5" fill="none" stroke="${C.stroke}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const dipTube =
+      `<path d="M52 158 V16 Q52 10 58 10 H80 M80 18 H60 V158 H52" fill="none" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const collar =
+      `<path d="M34 92 H78 V98 H74 L70 132 H42 L38 98 H34 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>\n` +
+      `  <path d="M44 98 V132 M52 98 V132 M60 98 V132 M68 98 V132" fill="none" stroke="${C.inner}" stroke-width="1.6"/>`;
+    register(id, '冷指', '冷凝与蒸馏', {
+      width: 112, height: 196,
+      svg: `${bL.svg}\n  ${bR.svg}\n  ${outer}\n  ${dipTube}\n  ${collar}`,
+      ports: [
+        { id: 'inlet', ...bL.port, type: 'tube' },
+        { id: 'outlet', ...bR.port, type: 'tube' },
+      ],
+    });
+  }
 
   // 39. Distillation head (120x190 — Chemix stepped-collar joints + #DCE8EC inner arcs + curved junction)
   {
@@ -839,21 +881,21 @@ function registerCondensersAndDistillation(register) {
     });
   }
 
-  // 42. Drying tube (110x200)
+  // 42. Drying tube (172x148 — Chemix bent L-shaped bulb drying tube; inlet & outlet segments >= 34px)
   {
-    const cx = 55;
-    const outline =
-      `<path d="M45 10 V62 C12 78 12 128 45 144 V190 M65 190 V144 C98 128 98 78 65 62 V10" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const pts = [[40, 82], [54, 78], [68, 84], [34, 98], [49, 94], [64, 99], [76, 100], [38, 114], [53, 110], [68, 115], [44, 128], [60, 126]];
-    const beads = pts.map(([bx, by]) => `<circle cx="${bx}" cy="${by}" r="5.0" fill="${C.chassisTop}" stroke="${C.inner}" stroke-width="1.4"/>`).join('\n  ');
+    const topWall = 'M11 136 Q9 116 12 96 H10 V62 Q10 34 41.2 34.8 A17 17 0 0 1 73.1 35.5 L161 56';
+    const botWall = 'M29 136 Q31 116 28 96 H30 V62 Q30 49.8 42.5 49.8 A17 17 0 0 0 71.2 50.3 L159 73';
     const wool =
-      `<path d="M34 70 Q46 65 56 70 Q66 74 76 69 M34 136 Q46 132 56 136 Q66 140 76 135" fill="none" stroke="${C.muted}" stroke-width="2.0" stroke-linecap="round"/>`;
+      `<path d="M86 42 Q89 47 85 52 M140 54 Q143 60 139 65" fill="none" stroke="${C.muted}" stroke-width="1.8" stroke-linecap="round"/>`;
     register('drying-tube', '干燥管', '冷凝与蒸馏', {
-      width: 110, height: 200,
-      svg: `${outline}\n  ${beads}\n  ${wool}`,
+      width: 172, height: 148,
+      svg:
+        `<path d="${topWall}" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+        `  <path d="${botWall}" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+        `  ${wool}`,
       ports: [
-        { id: 'inlet', x: cx, y: 10, dx: 0, dy: -1, type: 'tube', diameter: 20, edge: [45, 10, 65, 10] },
-        { id: 'outlet', x: cx, y: 190, dx: 0, dy: 1, type: 'tube', diameter: 20, edge: [45, 190, 65, 190] },
+        { id: 'inlet', x: 20, y: 136, dx: 0, dy: 1, type: 'tube', diameter: 18, segment: [20, 130, 20, 96], edge: [11, 136, 29, 136] },
+        { id: 'outlet', x: 160, y: 64.5, dx: 0.974, dy: 0.228, type: 'tube', diameter: 17, segment: [154, 63.1, 118, 54.9], edge: [161, 56, 159, 73] },
       ],
     });
   }
@@ -871,14 +913,16 @@ function registerFunnels(register) {
     ],
   });
 
-  // 44. Thistle tube (64x256 — open flared tulip cup + long slender open stem)
+  // 44. Thistle tube (64x256 — Chemix flared tulip rim + bulbous thistle top + long slender stem)
   register('thistle-tube', '长颈漏斗', '过滤与分液', {
     width: 64, height: 256,
     svg:
-      `<path d="M10 12 Q8 28 14 42 C18 52 26 58 27 68 V248 M54 12 Q56 28 50 42 C46 52 38 58 37 68 V248" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>`,
+      `<path d="M9 40 H55 C53 54 41 60 37 64 V248 H27 V64 C23 60 11 54 9 40 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="9" y1="40" x2="55" y2="40" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <path d="M16 10 L23 21 C7 28 7 58 27 64 V248 M48 10 L41 21 C57 28 57 58 37 64 V248" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>`,
     ports: [
-      { id: 'mouth', x: 32, y: 12, dx: 0, dy: -1, type: 'mouth', diameter: 44, edge: [10, 12, 54, 12] },
-      { id: 'stem', x: 32, y: 248, dx: 0, dy: 1, type: 'stem', diameter: 10, segment: [32, 240, 32, 150], depth: 90 },
+      { id: 'mouth', x: 32, y: 10, dx: 0, dy: -1, type: 'mouth', diameter: 32, edge: [16, 10, 48, 10] },
+      { id: 'stem', x: 32, y: 248, dx: 0, dy: 1, type: 'stem', diameter: 10, segment: [32, 240, 32, 150], depth: 90, edge: [27, 248, 37, 248] },
     ],
   });
 
@@ -1008,95 +1052,118 @@ function registerMeasuring(register) {
 }
 
 function registerTransferAndSyringes(register) {
-  for (const [id, name, isPump, W, H] of [
-    ['pump', '三阀吸球', true, 84, 200],
-    ['suction-pear', '吸耳球', false, 80, 190],
-  ]) {
-    const cx = W / 2;
-    const yBot = H - 20;
-    const bulb = isPump
-      ? `<path d="M${cx - 6} ${yBot} V140 C0 126 6 42 ${cx} 42 C${W - 6} 42 ${W} 126 ${cx + 6} 140 V${yBot}" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-        `  <rect x="${cx - 6}" y="14" width="12" height="29" rx="4" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
-        `  <rect x="${cx - 8}" y="${yBot - 16}" width="16" height="16" rx="2" fill="${C.rubberMid}" stroke="${C.stroke}" stroke-width="2.4"/>`
-      : `<path d="M${cx - 6} ${yBot} V142 C20 112 4 74 6 48 C8 22 22 10 ${cx} 10 C${W - 22} 10 ${W - 8} 22 ${W - 6} 48 C${W - 4} 74 ${cx + 20} 112 ${cx + 6} 142 V${yBot}" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>\n` +
-        `  <rect x="${cx - 8}" y="${yBot - 16}" width="16" height="16" rx="2" fill="${C.rubberMid}" stroke="${C.stroke}" stroke-width="2.4"/>`;
-    const valves = isPump
-      ? `<circle cx="${cx}" cy="28" r="7" fill="${C.corkLight}" stroke="${C.stroke}" stroke-width="1.8"/>${labelText(cx, 30.8, 'A', 7.5, C.stroke)}` +
-        `<circle cx="${cx - 18}" cy="86" r="8" fill="${C.corkLight}" stroke="${C.stroke}" stroke-width="1.8"/>${labelText(cx - 18, 88.8, 'S', 8, C.stroke)}` +
-        `<circle cx="${cx + 18}" cy="86" r="8" fill="${C.corkLight}" stroke="${C.stroke}" stroke-width="1.8"/>${labelText(cx + 18, 88.8, 'E', 8, C.stroke)}`
-      : '';
-    register(id, name, '移液与注射', {
-      width: W, height: H, svg: `${bulb}\n  ${valves}`,
+  // 54. Pump (64x210 — Chemix vertical thumb-wheel pipette pump, preserves mouth pipette-filler)
+  {
+    const cx = 26;
+    const svg =
+      `<path d="M18 12 V68 M32 12 V68" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>\n` +
+      `  <path d="M32 18 Q28 21 32 24 M32 28 Q28 31 32 34 M32 38 Q28 41 32 44 M32 48 Q28 51 32 54" fill="none" stroke="${C.stroke}" stroke-width="2.0" stroke-linecap="round"/>\n` +
+      `  <line x1="10" y1="12" x2="40" y2="12" stroke="${C.stroke}" stroke-width="3.6" stroke-linecap="round"/>\n` +
+      `  <path d="M44 90 C58 90 58 134 44 134 Z" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>\n` +
+      `  <circle cx="51" cy="100" r="1.5" fill="${C.stroke}"/><circle cx="53" cy="112" r="1.5" fill="${C.stroke}"/><circle cx="51" cy="124" r="1.5" fill="${C.stroke}"/>\n` +
+      `  <rect x="8" y="68" width="36" height="126" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="3.2"/>\n` +
+      `  <rect x="13" y="71" width="12" height="120" fill="${C.chassisTop}" stroke="none"/>\n` +
+      `  <path d="M18 194 V204 M34 194 V204" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round"/>`;
+    register('pump', '三阀吸球', '移液与注射', {
+      width: 64, height: 210, svg,
+      ports: [{ id: 'mouth', x: cx, y: 204, dx: 0, dy: 1, type: 'pipette-filler', diameter: 16, edge: [18, 204, 34, 204] }],
+    });
+  }
+
+  // 55. Suction pear (80x190)
+  {
+    const W = 80, H = 190, cx = 40, yBot = 170;
+    const bulb =
+      `<path d="M${cx - 6} ${yBot} V142 C20 112 4 74 6 48 C8 22 22 10 ${cx} 10 C${W - 22} 10 ${W - 8} 22 ${W - 6} 48 C${W - 4} 74 ${cx + 20} 112 ${cx + 6} 142 V${yBot}" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <rect x="${cx - 8}" y="${yBot - 16}" width="16" height="16" rx="2" fill="${C.rubberMid}" stroke="${C.stroke}" stroke-width="2.4"/>`;
+    register('suction-pear', '吸耳球', '移液与注射', {
+      width: W, height: H, svg: bulb,
       ports: [{ id: 'mouth', x: cx, y: yBot, dx: 0, dy: 1, type: 'pipette-filler', diameter: 12, edge: [cx - 6, yBot, cx + 6, yBot] }],
     });
   }
 
-  for (const [id, name, isPlastic] of [
-    ['dropper-pipette', '滴管', false],
-    ['plastic-pipette', '塑料滴管', true],
-  ]) {
-    const cx = 25;
-    const stem =
-      `<path d="M16 64 V180 L22 208 M28 208 L34 180 V64" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`;
-    const bulb = isPlastic
-      ? `<path d="M16 64 C5 14 45 14 34 64" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>`
-      : `<path d="M14 64 C4 14 46 14 36 64 Z" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="2.8" stroke-linejoin="round"/>` +
-        `<rect x="13" y="59" width="24" height="6" rx="2.5" fill="${C.rubberMid}" stroke="${C.stroke}" stroke-width="2.2"/>`;
-    const ticks = isPlastic ? gradTicks(32, 78, 156, 6, 2, 6, { dir: -1 }) : '';
-    register(id, name, '移液与注射', {
-      width: 50, height: 220, svg: `${stem}\n  ${bulb}\n  ${ticks}`,
-      ports: [{ id: 'tip', x: cx, y: 208, dx: 0, dy: 1, type: 'stem', diameter: 6, segment: [cx, 198, cx, 90] }],
+  // 56-57. Dropper pipette (48x220, charcoal bulb) & Plastic pipette (44x220)
+  {
+    const cx = 24;
+    const svg =
+      `<path d="M16 142 H32 L28 182 L26 208 H22 L20 182 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="16" y1="142" x2="32" y2="142" stroke="${C.liquidLine}" stroke-width="1.8"/>\n` +
+      `  <path d="M16 64 V182 L22 208 M26 208 L32 182 V64" fill="none" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <path d="M16 58 C12 28 16 10 24 10 C32 10 36 28 32 58 Z" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>\n` +
+      `  <rect x="13" y="56" width="22" height="8" rx="3" fill="${C.bezel}" stroke="${C.stroke}" stroke-width="2.4"/>`;
+    register('dropper-pipette', '滴管', '移液与注射', {
+      width: 48, height: 220, svg,
+      ports: [{ id: 'tip', x: cx, y: 208, dx: 0, dy: 1, type: 'stem', diameter: 6, segment: [cx, 198, cx, 90], edge: [21, 208, 27, 208] }],
     });
   }
 
-  register('pipette-bottle', '滴瓶', '移液与注射', {
-    width: 86, height: 200,
-    svg:
-      `<path d="M26 78 Q8 88 8 104 V186 H78 V104 Q78 88 60 78 V60 H26 Z" fill="${C.amberLight}" stroke="${C.stroke}" stroke-width="3.4" stroke-linejoin="round"/>\n` +
-      `  <rect x="23" y="50" width="40" height="14" rx="2.5" fill="${C.rubberMid}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
-      `  <path d="M33 50 C19 10 67 10 53 50 Z" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="2.4" stroke-linejoin="round"/>\n` +
-      `  <rect x="20" y="114" width="46" height="44" rx="2" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.5"/>\n` +
-      `  <line x1="28" y1="130" x2="58" y2="130" stroke="${C.tick}" stroke-width="1.3"/>\n` +
-      `  <line x1="28" y1="142" x2="52" y2="142" stroke="${C.tick}" stroke-width="1.3"/>`,
-    ports: [{ id: 'base', x: 43, y: 188, dx: 0, dy: 1, type: 'base', diameter: 0 }],
-  });
-
-  for (const [id, name, isGas] of [
-    ['syringe', '注射器', false],
-    ['gas-syringe', '气体注射器', true],
-  ]) {
-    const cx = 40;
-    const plungerStick = `<rect x="36" y="18" width="8" height="86" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.2"/>`;
-    const thumbPad = `<rect x="18" y="12" width="44" height="7" rx="3" fill="${isGas ? C.amber : C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>`;
-    const piston = isGas
-      ? `<rect x="17" y="96" width="46" height="22" rx="2" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="2.4"/>`
-      : `<rect x="17" y="102" width="46" height="14" rx="2" fill="${C.rubberMid}" stroke="${C.stroke}" stroke-width="2.2"/>` +
-        `<line x1="17" y1="109" x2="63" y2="109" stroke="${C.rubberDark}" stroke-width="2.2"/>`;
-    const barrel = `<rect x="14" y="54" width="52" height="118" rx="3" fill="none" stroke="${C.stroke}" stroke-width="3.2"/>`;
-    const flange = `<rect x="6" y="51" width="68" height="6" rx="3" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>`;
-    const luerTip = `<path d="M31 172 H49 L47 188 H33 Z" fill="none" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>`;
-    const needleStem = isGas
-      ? ''
-      : `<rect x="36" y="188" width="8" height="7" rx="1" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="2.0"/><line x1="${cx}" y1="195" x2="${cx}" y2="212" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>`;
+  {
+    const cx = 22;
     const svg =
-      `${plungerStick}\n  ${thumbPad}\n  ${barrel}\n  ${piston}\n  ${flange}\n` +
-      `  ${gradTicks(64, 74, 160, 9, 3, 12, { dir: -1 })}\n` +
-      `  ${luerTip}\n  ${needleStem}`;
-    const ports = isGas
-      ? [{ id: 'outlet', x: cx, y: 188, dx: 0, dy: 1, type: 'luer-male', diameter: 14, edge: [33, 188, 47, 188] }]
-      : [{ id: 'outlet', x: cx, y: 212, dx: 0, dy: 1, type: 'probe', diameter: 2.6, segment: [cx, 210, cx, 190] }];
-    register(id, name, '移液与注射', { width: 80, height: 220, svg, ports });
+      `<path d="M17 156 H27 L25 186 L24 208 H20 L19 186 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <path d="M16 62 C11 32 14 10 22 10 C30 10 33 32 28 62 L27 180 L24 208 M20 208 L17 180 Z" fill="none" stroke="${C.stroke}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  ${gradTicks(26, 78, 152, 6, 2, 5, { dir: -1 })}`;
+    register('plastic-pipette', '塑料滴管', '移液与注射', {
+      width: 44, height: 220, svg,
+      ports: [{ id: 'tip', x: cx, y: 208, dx: 0, dy: 1, type: 'stem', diameter: 6, segment: [cx, 198, cx, 90], edge: [19, 208, 25, 208] }],
+    });
   }
 
-  register('needle', '针头', '移液与注射', {
-    width: 56, height: 210,
+  // 58. Pipette bottle (84x200 — Chemix clear tapered dropper bottle + pale liquid)
+  register('pipette-bottle', '滴瓶', '移液与注射', {
+    width: 84, height: 200,
     svg:
-      `<path d="M25 44 V196 L31 182 V44 Z" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>\n` +
-      `  <rect x="10" y="10" width="36" height="34" rx="4" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
-      `  <rect x="6" y="10" width="44" height="7" rx="2.5" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
-      `  <line x1="18" y1="21" x2="18" y2="40" stroke="${C.chassisTop}" stroke-width="1.4"/>\n` +
-      `  <line x1="38" y1="21" x2="38" y2="40" stroke="${C.chassisTop}" stroke-width="1.4"/>`,
-    ports: [{ id: 'tip', x: 28, y: 194, dx: 0, dy: 1, type: 'probe', diameter: 6, segment: [28, 190, 28, 56] }],
+      `<path d="M12 128 H72 V186 Q72 190 66 190 H18 Q12 190 12 186 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="12" y1="128" x2="72" y2="128" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <path d="M31 12 L29 48 C15 62 12 78 12 96 V186 Q12 190 18 190 H66 Q72 190 72 186 V96 C72 78 69 62 55 48 L53 12" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <line x1="29" y1="48" x2="55" y2="48" stroke="${C.inner}" stroke-width="1.6"/>`,
+    ports: [{ id: 'base', x: 42, y: 192, dx: 0, dy: 1, type: 'base', diameter: 0 }],
+  });
+
+  // 59. Syringe (56x230 — sleek Chemix syringe + pale liquid + #5F9A6E green needle hub + needle)
+  {
+    const cx = 28;
+    const svg =
+      `<rect x="19" y="122" width="18" height="44" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="19" y1="122" x2="37" y2="122" stroke="${C.liquidLine}" stroke-width="1.8"/>\n` +
+      `  <rect x="21" y="14" width="14" height="100" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
+      `  <line x1="14" y1="12" x2="42" y2="12" stroke="${C.stroke}" stroke-width="4.2" stroke-linecap="round"/>\n` +
+      `  <line x1="8" y1="54" x2="48" y2="54" stroke="${C.stroke}" stroke-width="4.2" stroke-linecap="round"/>\n` +
+      `  <path d="M18 54 V162 Q18 166 23 166 H33 Q38 166 38 162 V54" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>\n` +
+      `  <path d="M18 114 Q28 120 38 114" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round"/>\n` +
+      `  ${gradTicks(36, 78, 154, 6, 2, 7, { dir: -1 })}\n` +
+      `  <path d="M22 166 H34 L32 190 H24 Z" fill="${C.leaf}" stroke="${C.stroke}" stroke-width="2.0" stroke-linejoin="round"/>\n` +
+      `  <line x1="${cx}" y1="190" x2="${cx}" y2="222" stroke="${C.stroke}" stroke-width="2.6" stroke-linecap="round"/>`;
+    register('syringe', '注射器', '移液与注射', {
+      width: 56, height: 230, svg,
+      ports: [{ id: 'outlet', x: cx, y: 222, dx: 0, dy: 1, type: 'probe', diameter: 2.6, segment: [cx, 218, cx, 190] }],
+    });
+  }
+
+  // 60. Gas syringe (60x230 — sleek glass cylinder + ground glass plunger + Luer male tip)
+  {
+    const cx = 30;
+    const svg =
+      `<rect x="17" y="172" width="26" height="24" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="17" y1="172" x2="43" y2="172" stroke="${C.liquidLine}" stroke-width="1.8"/>\n` +
+      `  <rect x="20" y="14" width="20" height="128" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
+      `  <line x1="12" y1="12" x2="48" y2="12" stroke="${C.stroke}" stroke-width="4.4" stroke-linecap="round"/>\n` +
+      `  <path d="M17 142 Q30 148 43 142" fill="none" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round"/>\n` +
+      `  <path d="M10 56 Q16 58 16 66 V196 Q16 202 25 204 V222 M35 222 V204 Q44 202 44 196 V66 Q44 58 50 56" fill="none" stroke="${C.stroke}" stroke-width="${GSW}" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  ${gradTicks(42, 82, 188, 7, 2, 8, { dir: -1 })}`;
+    register('gas-syringe', '气体注射器', '移液与注射', {
+      width: 60, height: 230, svg,
+      ports: [{ id: 'outlet', x: cx, y: 222, dx: 0, dy: 1, type: 'luer-male', diameter: 10, edge: [25, 222, 35, 222] }],
+    });
+  }
+
+  // 61. Needle (40x210 — Chemix tapered green Luer hub + clean vertical shaft)
+  register('needle', '针头', '移液与注射', {
+    width: 40, height: 210,
+    svg:
+      `<path d="M12 12 H28 L26 42 L24 44 L23 64 H17 L16 44 L14 42 Z" fill="${C.leaf}" stroke="${C.stroke}" stroke-width="2.2" stroke-linejoin="round"/>\n` +
+      `  <line x1="20" y1="64" x2="20" y2="198" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round"/>`,
+    ports: [{ id: 'tip', x: 20, y: 198, dx: 0, dy: 1, type: 'probe', diameter: 4, segment: [20, 192, 20, 76] }],
   });
 }
 
@@ -1105,108 +1172,115 @@ function registerStoppersAndMisc(register) {
   register('bung', '木塞 / 橡胶塞', '塞子与密封', {
     width: 100, height: 75, boreCount: 0,
     svg:
-      `<path d="M14 4 H86 L76 65 H24 Z" fill="${C.corkMid}" stroke="${C.stroke}" stroke-width="3.0" stroke-linejoin="round"/>\n` +
-      `  <line x1="21" y1="11" x2="79" y2="11" stroke="${C.corkLight}" stroke-width="2.2" stroke-linecap="round"/>\n` +
-      `  <line x1="28" y1="57" x2="72" y2="57" stroke="${C.corkDark}" stroke-width="1.5" stroke-linecap="round"/>`,
-    ports: [{ id: 'plug', x: 50, y: 65, dx: 0, dy: 1, type: 'plug', diameter: 52, depth: 36, edge: [24, 65, 76, 65] }],
+      `<path d="M14 5 H86 L76 62 Q75 66 70 66 H30 Q25 66 24 62 Z" fill="${C.cork}" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>\n` +
+      `  <line x1="22" y1="12" x2="78" y2="12" stroke="${C.corkLight}" stroke-width="2.0" stroke-linecap="round"/>`,
+    ports: [{ id: 'plug', x: 50, y: 66, dx: 0, dy: 1, type: 'plug', diameter: 50, depth: 36, edge: [25, 66, 75, 66] }],
   });
 
-  // 63. Glass stopper (80x76 — bold #333333 T-head glass stopper)
+  // 63. Glass stopper (80x96 — Chemix tall T-head ground-glass stopper)
   register('glass-stopper', '玻璃塞', '塞子与密封', {
-    width: 80, height: 76, boreCount: 0,
+    width: 80, height: 96, boreCount: 0,
     svg:
-      `<path d="M12 10 Q12 6 17 6 H63 Q68 6 68 10 V18 Q68 22 63 22 H49 V30 H54 L51 68 H29 L26 30 H31 V22 H17 Q12 22 12 18 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="3.0" stroke-linejoin="round"/>\n` +
-      `  ${jointArc(31, 33, 49, 33, 2.2, { sw: 1.8 })}\n` +
-      `  <line x1="31" y1="62" x2="49" y2="62" stroke="${C.muted}" stroke-width="1.3"/>`,
-    ports: [{ id: 'plug', x: 40, y: 68, dx: 0, dy: 1, type: 'plug', diameter: 22, depth: 30, edge: [29, 68, 51, 68] }],
+      `<path d="M14 14 Q14 8 20 8 H60 Q66 8 66 14 V22 Q66 28 60 28 H49 V34 L55 37 L51 86 Q50 90 46 90 H34 Q30 90 29 86 L25 37 L31 34 V28 H20 Q14 28 14 22 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>\n` +
+      `  ${jointArc(30, 38, 50, 38, 2.2, { sw: 1.8 })}`,
+    ports: [{ id: 'plug', x: 40, y: 90, dx: 0, dy: 1, type: 'plug', diameter: 20, depth: 34, edge: [30, 90, 50, 90] }],
   });
 
-  // 64. Septum seal (84x68)
+  // 64. Septum seal (76x112 — Chemix red ribbed fold-over Suba-Seal; plug port)
   register('septum-seal', '隔膜密封盖', '塞子与密封', {
-    width: 84, height: 68, boreCount: -1,
+    width: 76, height: 112, boreCount: -1,
     svg:
-      `<rect x="8" y="18" width="68" height="36" rx="6" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.8"/>\n` +
-      `  <ellipse cx="42" cy="18" rx="34" ry="9" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
-      `  <ellipse cx="42" cy="18" rx="20" ry="5" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="1.8"/>\n` +
-      `  <line x1="17" y1="28" x2="17" y2="48" stroke="${C.tick}" stroke-width="1.3"/>\n` +
-      `  <line x1="67" y1="28" x2="67" y2="48" stroke="${C.tick}" stroke-width="1.3"/>`,
-    ports: [{ id: 'plug', x: 42, y: 54, dx: 0, dy: 1, type: 'lid', diameter: 68, depth: 36, edge: [8, 54, 76, 54] }],
+      `<path d="M18 62 H58 V94 L52 102 H24 L18 94 Z" fill="${C.subaRed}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>\n` +
+      `  <g fill="${C.subaRed}" stroke="${C.stroke}" stroke-width="1.8" stroke-linejoin="round">\n` +
+      `    <polygon points="15,67 61,69 61,73 15,71"/>\n` +
+      `    <polygon points="15,75 61,77 61,81 15,79"/>\n` +
+      `    <polygon points="15,83 61,85 61,89 15,87"/>\n` +
+      `    <polygon points="15,91 61,93 61,97 15,95"/>\n` +
+      `  </g>\n` +
+      `  <path d="M13 18 H63 V48 Q63 60 55 62 H21 Q13 60 13 48 Z" fill="${C.subaRed}" stroke="${C.stroke}" stroke-width="2.8" stroke-linejoin="round"/>\n` +
+      `  <rect x="9" y="10" width="58" height="10" rx="3" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="2.6"/>`,
+    ports: [{ id: 'plug', x: 38, y: 102, dx: 0, dy: 1, type: 'plug', diameter: 28, depth: 38, edge: [24, 102, 52, 102] }],
   });
 
-  // 65. Plastic Keck joint clip (136x146)
+  // 65. Plastic Keck joint clip (144x72 — Chemix compact horizontal side-elevation red Keck clip)
   register('plastic-joint-clip', '磨口夹', '支撑与夹持', {
-    width: 136, height: 146,
+    width: 144, height: 72,
     svg:
-      `<path d="M22 48 C22 16 114 16 114 48 L128 54 V74 L112 78 C110 100 100 116 86 122 V98 C94 92 96 56 88 46 C76 34 60 34 48 46 C40 56 42 92 50 98 V122 C36 116 26 100 24 78 L8 74 V54 Z" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="2.8" stroke-linejoin="round"/>\n` +
-      `  <path d="M34 44 C50 26 86 26 102 44" fill="none" stroke="${C.chassisTop}" stroke-width="1.8" stroke-linecap="round"/>`,
-    ports: [{ id: 'clip', x: 68, y: 56, dx: 0, dy: -1, type: 'clip', diameter: 24 }],
+      `<path d="M26 18 C6 22 6 50 26 54 L26 42 C18 40 18 32 26 30 Z M118 18 C138 22 138 50 118 54 L118 42 C126 40 126 32 118 30 Z" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>\n` +
+      `  <rect x="26" y="10" width="92" height="14" rx="5" fill="${C.subaRed}" stroke="${C.stroke}" stroke-width="2.8"/>\n` +
+      `  <rect x="26" y="48" width="92" height="14" rx="5" fill="${C.subaRed}" stroke="${C.stroke}" stroke-width="2.8"/>\n` +
+      `  <rect x="64" y="12" width="16" height="48" fill="${C.crimson}" stroke="${C.stroke}" stroke-width="2.4"/>`,
+    ports: [{ id: 'clip', x: 72, y: 36, dx: 0, dy: -1, type: 'clip', diameter: 24 }],
   });
 
-  // 66. Stirring rod (170x44)
+  // 66. Stirring rod (36x200 — Chemix vertical rod, bottom probe dy: 1, segment >= 30px)
   register('stirring-rod', '玻璃搅拌棒', '实验小工具', {
-    width: 170, height: 44,
-    svg: `<rect x="10" y="16" width="150" height="12" rx="6" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="3.0"/>`,
-    ports: [{ id: 'probe', x: 160, y: 22, dx: 1, dy: 0, type: 'probe', diameter: 12, segment: [142, 22, 22, 22] }],
+    width: 36, height: 200,
+    svg: `<rect x="13" y="10" width="10" height="176" rx="5" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="3.0"/>`,
+    ports: [{ id: 'probe', x: 18, y: 186, dx: 0, dy: 1, type: 'probe', diameter: 10, segment: [18, 178, 18, 30] }],
   });
 
-  // 67. Syringe filter (140x92)
+  // 67. Syringe filter (112x124 — Chemix vertical Luer filter: top inlet dy: -1, bottom outlet dy: 1)
   register('syringe-filter', '针式过滤器', '实验小工具', {
-    width: 140, height: 92,
+    width: 112, height: 124,
     svg:
-      `<rect x="12" y="40" width="22" height="12" rx="2" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
-      `  <path d="M106 40 H128 V52 H106 Z" fill="${C.glassTop}" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>\n` +
-      `  <ellipse cx="70" cy="46" rx="38" ry="26" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="2.8"/>\n` +
-      `  <ellipse cx="70" cy="46" rx="26" ry="17" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.6"/>\n` +
-      `  <line x1="52" y1="46" x2="88" y2="46" stroke="${C.muted}" stroke-width="1.3" stroke-dasharray="3 2.5"/>`,
+      `<path d="M42 12 L46 42 H66 L70 12" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <path d="M46 74 L50 112 M62 112 L66 74" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <rect x="14" y="42" width="84" height="32" rx="10" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="3.2"/>\n` +
+      `  <line x1="26" y1="58" x2="86" y2="58" stroke="${C.muted}" stroke-width="1.6" stroke-dasharray="4 3"/>`,
     ports: [
-      { id: 'inlet', x: 12, y: 46, dx: -1, dy: 0, type: 'luer-female', diameter: 12, edge: [12, 40, 12, 52] },
-      { id: 'outlet', x: 128, y: 46, dx: 1, dy: 0, type: 'luer-male', diameter: 12, edge: [128, 40, 128, 52] },
+      { id: 'inlet', x: 56, y: 12, dx: 0, dy: -1, type: 'luer-female', diameter: 28, depth: 26, edge: [42, 12, 70, 12] },
+      { id: 'outlet', x: 56, y: 112, dx: 0, dy: 1, type: 'luer-male', diameter: 12, segment: [56, 108, 56, 74], depth: 24, edge: [50, 112, 62, 112] },
     ],
   });
 
-  // 68. SPE cartridge (156x86)
+  // 68. SPE cartridge (44x196 — Chemix slim vertical column, bottom outlet dy: 1)
   register('spe-cartridge', '固相萃取柱', '实验小工具', {
-    width: 156, height: 86,
+    width: 44, height: 196,
     svg:
-      `<path d="M104 38 H144 V48 H104 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
-      `  <rect x="20" y="15" width="84" height="56" rx="4" fill="none" stroke="${C.stroke}" stroke-width="3.0"/>\n` +
-      `  <rect x="18" y="11" width="6" height="64" rx="2" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
-      `  <rect x="40" y="18" width="5" height="50" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.2"/>\n` +
-      `  <rect x="45" y="18" width="38" height="50" fill="#FFFFFF" stroke="${C.inner}" stroke-width="1.2"/>\n` +
-      `  <rect x="83" y="18" width="5" height="50" fill="${C.chassisMid}" stroke="${C.inner}" stroke-width="1.2"/>`,
-    ports: [{ id: 'outlet', x: 144, y: 43, dx: 1, dy: 0, type: 'luer-male', diameter: 10, edge: [144, 38, 144, 48] }],
-  });
-
-  // 69. Piston chamber (184x136)
-  register('piston-chamber', '活塞气室', '设备', {
-    width: 184, height: 136,
-    svg:
-      `<path d="M8 38 H22 M22 50 H8" fill="none" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round"/>\n` +
-      `  <rect x="22" y="22" width="144" height="90" rx="4" fill="none" stroke="${C.stroke}" stroke-width="3.0"/>\n` +
-      `  <rect x="100" y="63" width="76" height="8" rx="2" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.2"/>\n` +
-      `  <rect x="170" y="49" width="8" height="36" rx="3" fill="${C.steelBlue}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
-      `  <rect x="82" y="24" width="18" height="86" rx="2" fill="${C.chassisBot}" stroke="${C.stroke}" stroke-width="2.4"/>\n` +
-      `  <rect x="82" y="28" width="4" height="78" fill="${C.rubberMid}"/>\n` +
-      `  ${[40, 60, 80, 100, 120, 140].map((tx, i) => `<line x1="${tx}" y1="${i % 2 ? 102 : 98}" x2="${tx}" y2="111" stroke="${C.tick}" stroke-width="1.3"/>`).join('')}`,
-    ports: [{ id: 'inlet', x: 8, y: 44, dx: -1, dy: 0, type: 'tube', diameter: 12, edge: [8, 38, 8, 50] }],
-  });
-
-  // 70. Desiccator (180x154)
-  register('desiccator', '干燥器', '设备', {
-    width: 180, height: 154,
-    svg:
-      `<path d="M12 52 H168 L145 142 H35 Z" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>\n` +
-      `  <path d="M38 120 L142 120 L137 138 H43 Z" fill="${C.liquid}" stroke="none"/>\n` +
-      `  ${[48, 62, 76, 90, 104, 118, 132].map((bx) => `<circle cx="${bx}" cy="131" r="4" fill="${C.steelBlue}" stroke="${C.inner}" stroke-width="1.0"/>`).join('')}\n` +
-      `  <rect x="24" y="100" width="132" height="6" rx="2" fill="${C.porcelainMid}" stroke="${C.stroke}" stroke-width="2.2"/>\n` +
-      `  <path d="M12 50 Q90 -8 168 50 Z" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>\n` +
-      `  <rect x="8" y="47" width="164" height="7" rx="3" fill="${C.chassisTop}" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
-      `  <path d="M74 18 L77 7 H103 L106 18 Q90 22 74 18 Z" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.6" stroke-linejoin="round"/>`,
+      `<path d="M16 108 H28 V144 L25 150 V184 H19 V150 L16 144 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="16" y1="108" x2="28" y2="108" stroke="${C.liquidLine}" stroke-width="1.8"/>\n` +
+      `  <path d="M11 14 H16 V144 L18 150 V184 M26 184 V150 L28 144 V14 H33" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`,
     ports: [
-      { id: 'base', x: 90, y: 142, dx: 0, dy: 1, type: 'base', diameter: 0 },
-      { id: 'surface', x: 90, y: 103, dx: 0, dy: -128, type: 'surface', diameter: 0, segment: [26, 103, 154, 103] },
+      { id: 'mouth', x: 22, y: 14, dx: 0, dy: -1, type: 'mouth', diameter: 14, depth: 24, target: [22, 130], edge: [11, 14, 33, 14] },
+      { id: 'outlet', x: 22, y: 184, dx: 0, dy: 1, type: 'luer-male', diameter: 8, edge: [18, 184, 26, 184] },
     ],
   });
+
+  // 69. Piston chamber (160x196 — Chemix upright cylinder + plunger + open continuous left inlet channel)
+  register('piston-chamber', '活塞气室', '设备', {
+    width: 160, height: 196,
+    svg:
+      `<path d="M32 96 H128 V172 H32 Z" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <line x1="32" y1="96" x2="128" y2="96" stroke="${C.liquidLine}" stroke-width="2.0"/>\n` +
+      `  <rect x="4" y="135" width="29" height="10" fill="${C.liquid}" stroke="none"/>\n` +
+      `  <path d="M18 14 H32 V134 H18 Z M18 146 H32 V172 H128 V14 H142 V186 H18 Z" fill="${C.chassisBot}" stroke="none"/>\n` +
+      `  <path d="M4 134 H32 V14 H18 V134 M18 146 V186 H142 V14 H128 V172 H32 V146 H4" fill="none" stroke="${C.stroke}" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>\n` +
+      `  <rect x="32" y="86" width="96" height="10" fill="${C.metalDark}" stroke="${C.stroke}" stroke-width="2.6"/>\n` +
+      `  <rect x="73" y="12" width="14" height="74" fill="${C.chassisMid}" stroke="${C.stroke}" stroke-width="2.6"/>`,
+    ports: [{ id: 'inlet', x: 4, y: 140, dx: -1, dy: 0, type: 'tube', diameter: 12, segment: [8, 140, 28, 140], edge: [4, 134, 4, 146] }],
+  });
+
+  // 70. Desiccator (180x154 — Chemix flat-rimmed tapered jar + perforated dashed plate + silica beads)
+  {
+    const beads = [
+      [40, 133], [55, 132], [70, 134], [85, 133], [100, 132], [116, 134], [131, 133],
+      [47, 121], [63, 120], [78, 121], [93, 120], [108, 121], [124, 120], [139, 122],
+      [38, 111], [54, 109], [71, 110], [88, 109], [104, 110], [120, 109], [136, 111],
+    ].map(([bx, by]) => `<circle cx="${bx}" cy="${by}" r="6.2" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.2"/>`).join('');
+    register('desiccator', '干燥器', '设备', {
+      width: 180, height: 154,
+      svg:
+        `<path d="M12 18 L24 92 Q25 97 30 97 L34 137 Q35 144 43 144 H137 Q145 144 146 137 L150 97 Q155 97 156 92 L168 18" fill="none" stroke="${C.stroke}" stroke-width="3.2" stroke-linejoin="round"/>\n` +
+        `  <rect x="6" y="12" width="168" height="6" rx="1.5" fill="#FFFFFF" stroke="${C.stroke}" stroke-width="2.8"/>\n` +
+        `  <line x1="31" y1="97" x2="149" y2="97" stroke="${C.stroke}" stroke-width="2.6" stroke-dasharray="8 6" stroke-linecap="round"/>\n` +
+        `  ${beads}`,
+      ports: [
+        { id: 'base', x: 90, y: 144, dx: 0, dy: 1, type: 'base', diameter: 0 },
+        { id: 'surface', x: 90, y: 97, dx: 0, dy: -128, type: 'surface', diameter: 0, segment: [31, 97, 149, 97] },
+      ],
+    });
+  }
 }
 
 function registerNewGlassware(register) {

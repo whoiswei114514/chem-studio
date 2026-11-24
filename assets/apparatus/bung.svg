@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="75" viewBox="0 0 100 75">
 <title>木塞 / 橡胶塞</title>
-<path d="M14 4 H86 L76 65 H24 Z" fill="#CC914B" stroke="#333333" stroke-width="3.0" stroke-linejoin="round"/>
-  <line x1="21" y1="11" x2="79" y2="11" stroke="#E4B879" stroke-width="2.2" stroke-linecap="round"/>
-  <line x1="28" y1="57" x2="72" y2="57" stroke="#9E6A2E" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M14 5 H86 L76 62 Q75 66 70 66 H30 Q25 66 24 62 Z" fill="#C98A54" stroke="#333333" stroke-width="3.2" stroke-linejoin="round"/>
+  <line x1="22" y1="12" x2="78" y2="12" stroke="#E4B879" stroke-width="2.0" stroke-linecap="round"/>
 </svg>

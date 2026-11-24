@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="96" height="200" viewBox="0 0 96 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="196" viewBox="0 0 112 196">
 <title>冷指</title>
-<path d="M36 10 V78 M44 10 V156 M52 10 V78 M60 10 V78" fill="none" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M25 90 V162 A23 23 0 0 0 71 162 V90" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="48" y1="90" x2="48" y2="170" stroke="#4A4F55" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M18 78 H78 L73 92 H23 Z" fill="#E3E6EB" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M44 56.5 L24.16 55.9 L22.16 57.8 L12 55.8 L12 48.2 L22.16 46.2 L24.16 48.1 L44 47.5 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M80 9.5 L93.64 10.1 L95.64 8.2 L102 10.2 L102 17.8 L95.64 19.8 L93.64 17.9 L80 18.5 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 47.5 C44 39 48 35 52 34 M60 34 C64 35 68 39 68 47.5 V174 A12 12 0 0 1 44 174 V56.5" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 158 V16 Q52 10 58 10 H80 M80 18 H60 V158 H52" fill="none" stroke="#333333" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 92 H78 V98 H74 L70 132 H42 L38 98 H34 Z" fill="#C8CDD3" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M44 98 V132 M52 98 V132 M60 98 V132 M68 98 V132" fill="none" stroke="#4A4F55" stroke-width="1.6"/>
 </svg>

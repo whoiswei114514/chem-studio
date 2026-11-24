@@ -3,13 +3,11 @@
 <title>植物幼苗</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M90 152 V172 M90 156 L70 168 M90 160 L110 170 M82 162 L76 172" fill="none" stroke="#9E6A2E" stroke-width="2.0"/>
-      <path d="M90 152 Q86 100 92 26" fill="none" stroke="#5F9A6E" stroke-width="4.4"/>
-      <path d="M90 152 Q86 100 92 26" fill="none" stroke="#333333" stroke-width="1.4"/>
-      <path d="M89 124 Q42 114 38 88 Q74 86 89 116 Z" fill="#C5DEC9" stroke="#333333" stroke-width="2.2"/>
-      <path d="M91 96 Q138 86 142 60 Q106 58 91 88 Z" fill="#5F9A6E" stroke="#333333" stroke-width="2.2"/>
-      <path d="M91 64 Q50 54 48 30 Q78 30 91 56 Z" fill="#5F9A6E" stroke="#333333" stroke-width="2.2"/>
-      <path d="M92 40 Q124 30 128 14 Q102 14 92 34 Z" fill="#C5DEC9" stroke="#333333" stroke-width="2.0"/>
+      <path d="M90 152 V170 M90 156 L72 168 M90 160 L108 169" fill="none" stroke="#9E6A2E" stroke-width="1.8"/>
+      <path d="M90 152 Q86 100 92 26" fill="none" stroke="#5F9A6E" stroke-width="4.2"/>
+      <path d="M89 124 Q42 114 38 88 Q74 86 89 116 Z" fill="#C5DEC9" stroke="#333333" stroke-width="1.8"/>
+      <path d="M91 96 Q138 86 142 60 Q106 58 91 88 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.8"/>
+      <path d="M91 64 Q50 54 48 30 Q78 30 91 56 Z" fill="#5F9A6E" stroke="#333333" stroke-width="1.8"/>
     </g>
   
 </svg>

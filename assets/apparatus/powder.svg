@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="170" height="130" viewBox="0 0 170 130">
 <title>粉末</title>
 <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M16 112 Q46 102 68 62 Q85 34 102 62 Q124 102 154 112 Z" fill="#EFEFEF" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="85" cy="62" r="1.4" fill="#333333" stroke="none"/><circle cx="75" cy="76" r="1.4" fill="#333333" stroke="none"/><circle cx="95" cy="76" r="1.4" fill="#333333" stroke="none"/><circle cx="66" cy="90" r="1.4" fill="#333333" stroke="none"/><circle cx="85" cy="88" r="1.4" fill="#333333" stroke="none"/><circle cx="104" cy="90" r="1.4" fill="#333333" stroke="none"/><circle cx="54" cy="102" r="1.4" fill="#333333" stroke="none"/><circle cx="74" cy="101" r="1.4" fill="#333333" stroke="none"/><circle cx="94" cy="102" r="1.4" fill="#333333" stroke="none"/><circle cx="116" cy="102" r="1.4" fill="#333333" stroke="none"/>
+      <path d="M16 112 Q46 102 68 62 Q85 34 102 62 Q124 102 154 112 Z" fill="#EFEFEF" stroke="#8C929A" stroke-width="2.2"/>
+      <circle cx="85" cy="62" r="1.5" fill="#8C929A" stroke="none"/><circle cx="75" cy="76" r="1.5" fill="#8C929A" stroke="none"/><circle cx="95" cy="76" r="1.5" fill="#8C929A" stroke="none"/><circle cx="66" cy="90" r="1.5" fill="#8C929A" stroke="none"/><circle cx="85" cy="88" r="1.5" fill="#8C929A" stroke="none"/><circle cx="104" cy="90" r="1.5" fill="#8C929A" stroke="none"/><circle cx="54" cy="102" r="1.5" fill="#8C929A" stroke="none"/><circle cx="74" cy="101" r="1.5" fill="#8C929A" stroke="none"/><circle cx="94" cy="102" r="1.5" fill="#8C929A" stroke="none"/><circle cx="116" cy="102" r="1.5" fill="#8C929A" stroke="none"/>
     </g>
 </svg>

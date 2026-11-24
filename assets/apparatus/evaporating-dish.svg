@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="66" viewBox="0 0 130 66">
 <title>蒸发皿</title>
-<path d="M10 14 L18 22 C24 44 36 56 48 56 H82 C94 56 106 44 112 22 L120 14 Z" fill="#EFEFEF" stroke="none"/>
-  <path d="M20 22 Q65 27 110 22" fill="none" stroke="#B8BCC2" stroke-width="1.3" stroke-linecap="round"/>
-      <path d="M46 56 H84" fill="none" stroke="#333333" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M10 14 L18 22 C24 44 36 56 48 56 H82 C94 56 106 44 112 22 L120 14" fill="none" stroke="#333333" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 14 L22 44 Q28 56 65 56 Q100 56 106 42 L114 18 L122 12 Z" fill="#F7F8FA" stroke="none"/>
+  <path d="M10 14 L22 44 Q28 56 65 56 Q100 56 106 42 L114 18 Q116 13 122 12" fill="none" stroke="#333333" stroke-width="4.0" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -3,9 +3,8 @@
 <title>液滴</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M85 14 C68 46 42 64 46 92 C50 116 70 120 85 120 C100 120 120 116 124 92 C128 64 102 46 85 14 Z" fill="#D8EDF5" stroke="#333333" stroke-width="4"/>
-      <path d="M62 74 C57 86 60 100 72 106" fill="none" stroke="#FFFFFF" stroke-width="3.2"/>
-      <circle cx="65" cy="64" r="2.2" fill="#FFFFFF" stroke="none"/>
+      <path d="M85 16 C68 46 44 64 48 92 C52 114 70 118 85 118 C100 118 118 114 122 92 C126 64 102 46 85 16 Z" fill="#DCF0F7" stroke="#7ECAE6" stroke-width="3.2"/>
+      <path d="M62 74 C57 86 60 100 72 106" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
     </g>
   
 </svg>

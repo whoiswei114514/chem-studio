@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="30" viewBox="0 0 160 30">
 <title>铅笔</title>
-<rect x="8" y="9" width="12" height="12" rx="2.5" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
-      <rect x="19" y="9" width="8" height="12" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
-      <rect x="27" y="9" width="102" height="12" fill="#E4A838" stroke="#333333" stroke-width="2.2"/>
-      <line x1="29" y1="15" x2="127" y2="15" stroke="#F0C76B" stroke-width="1.4"/>
-      <path d="M129 9 L152 15 L129 21 Z" fill="#E4B879" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
+<rect x="8" y="10" width="122" height="10" rx="1" fill="#E4A838" stroke="#333333" stroke-width="1.8"/>
+      <path d="M130 10 L152 15 L130 20 Z" fill="#E4B879" stroke="#333333" stroke-width="1.8" stroke-linejoin="round"/>
       <path d="M144 13 L152 15 L144 17 Z" fill="#333333"/>
 </svg>

@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="150" viewBox="0 0 180 150">
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="180" viewBox="0 0 150 180">
 <title>电容</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="12" y="72.5" width="38" height="5" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <rect x="130" y="72.5" width="38" height="5" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <circle cx="10" cy="75" r="4.2" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <circle cx="170" cy="75" r="4.2" fill="#C4C9D0" stroke="#333333" stroke-width="2.0"/>
-      <rect x="49" y="50" width="82" height="50" rx="5.5" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
-      <rect x="50.2" y="51.2" width="8" height="47.6" rx="3" fill="#C4C9D0" stroke="none"/>
-      <rect x="121.8" y="51.2" width="8" height="47.6" rx="3" fill="#C4C9D0" stroke="none"/>
-      <rect x="105" y="51.2" width="12" height="47.6" fill="#E3E6EB" stroke="none"/>
-      <line x1="60" y1="51" x2="60" y2="99" stroke="#333333" stroke-width="1.6"/>
-      <line x1="120" y1="51" x2="120" y2="99" stroke="#333333" stroke-width="1.6"/>
-      <rect x="49" y="50" width="82" height="50" rx="5.5" fill="none" stroke="#333333" stroke-width="2.8"/>
-      <text x="82" y="78" fill="#FFFFFF" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="9.2" font-weight="700" text-anchor="middle">100 µF</text>
-      <text x="111" y="78" fill="#333333" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">−</text>
+      <line x1="62" y1="110" x2="62" y2="162" stroke="#333333" stroke-width="3.0"/>
+      <line x1="88" y1="110" x2="88" y2="162" stroke="#333333" stroke-width="3.0"/>
+      <path d="M47 32 V102 A28 10 0 0 0 103 102 V32 Z" fill="#3A3E44" stroke="#333333" stroke-width="2.4"/>
+      <rect x="54" y="42" width="6" height="60" rx="2" fill="#FFFFFF" fill-opacity="0.18" stroke="none"/>
+      <rect x="86" y="42" width="11" height="62" fill="#C8CDD3" fill-opacity="0.85" stroke="none"/>
+      <ellipse cx="75" cy="32" rx="28" ry="10" fill="#E5E7EB" stroke="#333333" stroke-width="2.4"/>
+      <ellipse cx="75" cy="32" rx="21" ry="6.5" fill="#F3F4F6" stroke="#4A4F55" stroke-width="1.2"/>
     </g>
   
 </svg>

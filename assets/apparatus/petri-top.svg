@@ -3,10 +3,9 @@
 <title>培养皿俯视图</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="90" cy="90" r="66" fill="#EEF4F7" stroke="#333333" stroke-width="4"/>
-      <circle cx="90" cy="90" r="56" fill="#FFFFFF" stroke="#4A4F55" stroke-width="1.6"/>
-      <path d="M46 66 A48 48 0 0 1 82 38" fill="none" stroke="#FFFFFF" stroke-width="3.2"/>
-      <path d="M126 122 A48 48 0 0 1 98 136" fill="none" stroke="#FFFFFF" stroke-width="2.0"/>
+      <circle cx="90" cy="90" r="66" fill="#DCF0F7" stroke="#333333" stroke-width="3.0"/>
+      <circle cx="90" cy="90" r="58" fill="#EEF4F7" fill-opacity="0.45" stroke="none"/>
+      <path d="M46 66 A48 48 0 0 1 82 38" fill="none" stroke="#FFFFFF" stroke-width="2.6"/>
     </g>
   
 </svg>

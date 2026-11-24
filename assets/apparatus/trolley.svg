@@ -3,24 +3,15 @@
 <title>小车</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Front spring-plunger bumper -->
-      <line x1="12" y1="88" x2="26" y2="88" stroke="#333333" stroke-width="2.6"/>
-      <rect x="9" y="80" width="5" height="16" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.8"/>
-      <!-- Hitch hook at exact (172, 90) -->
-      <path d="M164 90 H172 C177 90 177 98 171 98" fill="none" stroke="#333333" stroke-width="2.6"/>
-      <!-- Top machined mass tray step -->
-      <rect x="34" y="62" width="114" height="10" rx="2.5" fill="#F5F6F8" stroke="#333333" stroke-width="2.0"/>
-      <!-- Low-profile brushed-aluminum & charcoal cart chassis -->
-      <rect x="24" y="70" width="140" height="38" rx="6" fill="#E3E6EB" stroke="#333333" stroke-width="2.8"/>
-      <rect x="26" y="72" width="136" height="8" rx="2" fill="#3A3E44" stroke="none"/>
-      <text x="94" y="96" fill="#333333" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="7" font-weight="700" text-anchor="middle">DYNAMICS CART</text>
-      <!-- Precision wheels with hub bearings -->
-      <circle cx="52" cy="118" r="15" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="52" cy="118" r="9.5" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-      <circle cx="52" cy="118" r="3.8" fill="#333333" stroke="none"/>
-      <circle cx="136" cy="118" r="15" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="136" cy="118" r="9.5" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.4"/>
-      <circle cx="136" cy="118" r="3.8" fill="#333333" stroke="none"/>
+      <line x1="12" y1="88" x2="26" y2="88" stroke="#333333" stroke-width="2.2"/>
+      <rect x="9" y="81" width="4" height="14" rx="1" fill="#3A3E44" stroke="#333333" stroke-width="1.6"/>
+      <rect x="92" y="42" width="5" height="44" rx="1" fill="#C8CDD3" stroke="#333333" stroke-width="1.6"/>
+      <path d="M164 90 H172 C177 90 177 98 171 98" fill="none" stroke="#333333" stroke-width="2.4"/>
+      <rect x="24" y="84" width="140" height="20" rx="4" fill="#C98A54" stroke="#333333" stroke-width="2.2"/>
+      <circle cx="52" cy="112" r="14" fill="#3A3E44" stroke="#333333" stroke-width="2.2"/>
+      <circle cx="52" cy="112" r="4" fill="#C8CDD3" stroke="none"/>
+      <circle cx="136" cy="112" r="14" fill="#3A3E44" stroke="#333333" stroke-width="2.2"/>
+      <circle cx="136" cy="112" r="4" fill="#C8CDD3" stroke="none"/>
     </g>
   
 </svg>

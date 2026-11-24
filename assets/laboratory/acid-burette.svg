@@ -8,7 +8,7 @@
   <g>
     <path d="M11 286 L29 287.2 L29 292.8 L11 294 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
     <rect x="4" y="283.5" width="7" height="13" rx="2" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
-    <rect x="29" y="286.5" width="5" height="7" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.8"/>
+    <rect x="29" y="286.5" width="5" height="7" rx="1.5" fill="#C8CDD3" stroke="#333333" stroke-width="1.8"/>
     <line x1="17.5" y1="287.5" x2="22.5" y2="292.5" stroke="#4A4F55" stroke-width="1.4"/>
   </g>
 </svg>

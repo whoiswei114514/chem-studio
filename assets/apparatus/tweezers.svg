@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="156" height="28" viewBox="0 0 156 28">
 <title>镊子</title>
-<path d="M144 6 C152 6 152 22 144 22 L46 20 L8 15 V13 L46 8 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M140 10 L10 13.5 M140 18 L10 14.5" fill="none" stroke="#4A4F55" stroke-width="1.3"/>
+<path d="M144 8 C152 8 152 20 144 20 L48 19 L8 15 V13 L48 9 Z" fill="#C8CDD3" stroke="#4A4F55" stroke-width="1.8" stroke-linejoin="round"/>
+      <line x1="140" y1="14" x2="10" y2="14" stroke="#FFFFFF" stroke-width="1.2"/>
 </svg>

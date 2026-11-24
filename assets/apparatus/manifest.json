@@ -63,7 +63,7 @@
       "category": "displacement beaker",
       "search": "displacement beaker",
       "svg": "displacement-beaker.svg",
-      "sha256": "7948c1715fa54519379c3871c50c18b3f678ddcec60ef68a786c9df5d77d3efa",
+      "sha256": "6de8d14aa1e655fe2147ee8e475fbfdd3f996704f6221cc8019b60ce75c5f316",
       "width": 160,
       "height": 172,
       "ports": [
@@ -121,48 +121,48 @@
       "category": "eureka",
       "search": "eureka",
       "svg": "eureka.svg",
-      "sha256": "723f6d0a7558a1b5bd0a84ce562c332177554d8ea68abde11ed7a72c235290f6",
+      "sha256": "b901ada8bdcb12bacfd676dcb598204f5a1bc73ab5ba2d74fe3d214832469e46",
       "width": 160,
       "height": 172,
       "ports": [
         {
           "id": "mouth",
-          "x": 74,
+          "x": 65,
           "y": 14,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 124,
+          "diameter": 98,
           "depth": 25,
           "target": [
-            78,
+            65,
             138
           ],
           "edge": [
-            12,
+            16,
             14,
-            136,
+            114,
             14
           ]
         },
         {
           "id": "outlet",
-          "x": 152,
-          "y": 82.5,
-          "dx": 0.625,
-          "dy": 0.781,
+          "x": 149,
+          "y": 95,
+          "dx": 0.707,
+          "dy": 0.707,
           "type": "tube",
-          "diameter": 8,
+          "diameter": 8.5,
           "edge": [
-            155,
-            80,
-            149,
-            85
+            152,
+            92,
+            146,
+            98
           ]
         },
         {
           "id": "base",
-          "x": 78,
+          "x": 65,
           "y": 166,
           "dx": 0,
           "dy": 1,
@@ -179,7 +179,7 @@
       "category": "tank",
       "search": "tank",
       "svg": "tank.svg",
-      "sha256": "2fd954e95c4d75cc4da6ef556583235b522d5713978d62ece8cae2f9c12dc5c1",
+      "sha256": "6fbc644a2038eddaad3df04a9987330d07b5943a8a66e6f439190bcd92435781",
       "width": 160,
       "height": 154,
       "ports": [
@@ -190,16 +190,16 @@
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 132,
+          "diameter": 128,
           "depth": 25,
           "target": [
             80,
             120
           ],
           "edge": [
+            16,
             14,
-            14,
-            146,
+            144,
             14
           ]
         },
@@ -222,7 +222,7 @@
       "category": "tlc chamber",
       "search": "tlc chamber",
       "svg": "tlc-chamber.svg",
-      "sha256": "4b1d6ba565388ca01afc0851410411276bef7375323e060e26f3f458e58dca77",
+      "sha256": "618793ada39edef4c898e503efeb77802cc4c79869ef4a2bf07cab2640217ec9",
       "width": 150,
       "height": 176,
       "ports": [
@@ -265,7 +265,7 @@
       "category": "容器",
       "search": "calorimetry cup",
       "svg": "calorimetry-cup.svg",
-      "sha256": "c64e4a3729be433aa95ac367a3cf271e35cc419eeb76180ef9f827add83674f9",
+      "sha256": "52920354e73bb7021318a69e7a6326c550393184043de225db245fd3154db981",
       "width": 144,
       "height": 172,
       "ports": [
@@ -276,16 +276,16 @@
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 104,
+          "diameter": 112,
           "depth": 25,
           "target": [
             72,
             135
           ],
           "edge": [
-            20,
+            16,
             14,
-            124,
+            128,
             14
           ]
         },
@@ -308,14 +308,14 @@
       "category": "容器",
       "search": "watch glass",
       "svg": "watch-glass.svg",
-      "sha256": "3e1ebe06a79117b3c9c24c667a583c49a7539b22fdbc3dd9309fb197619b755e",
+      "sha256": "b10d7fb75db92689959cfda0553524b7fddff6cee39791467188374aabbab8e1",
       "width": 156,
-      "height": 48,
+      "height": 40,
       "ports": [
         {
           "id": "base",
           "x": 78,
-          "y": 32,
+          "y": 26,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -331,14 +331,14 @@
       "category": "容器",
       "search": "stemmed glass",
       "svg": "stemmed-glass.svg",
-      "sha256": "64b5eacdad11a9c8c95faaf7112441b0386152a838ac0005da7d84edff00779f",
+      "sha256": "cf91afbbec4dc4a13a13be063b402631576c3df1af83027b3a5e1347e134ff4a",
       "width": 130,
-      "height": 190,
+      "height": 178,
       "ports": [
         {
           "id": "base",
           "x": 65,
-          "y": 178,
+          "y": 166,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -406,13 +406,13 @@
       "category": "容器",
       "search": "conical flask with side arm",
       "svg": "conical-flask-with-side-arm.svg",
-      "sha256": "2b39fdf3f5e22115ed941dae6ce0dfc0dbb431f0ee9c4d69af98a8ca1c9045aa",
-      "width": 154,
+      "sha256": "1d0aba861431bbfae47eb50c6c5589a64aa1bef29ca017e4347af5dce9b7e00e",
+      "width": 130,
       "height": 206,
       "ports": [
         {
           "id": "mouth",
-          "x": 65,
+          "x": 63,
           "y": 10,
           "dx": 0,
           "dy": -1,
@@ -420,35 +420,40 @@
           "diameter": 38,
           "depth": 24,
           "target": [
-            65,
+            63,
             156
           ],
           "edge": [
-            46,
+            44,
             10,
-            84,
+            82,
             10
           ]
         },
         {
-          "x": 146,
+          "id": "outlet",
+          "x": 112,
           "y": 40,
           "dx": 1,
           "dy": 0,
-          "diameter": 9,
-          "depth": 8,
-          "edge": [
-            146,
-            35.5,
-            146,
-            44.5
+          "type": "tube",
+          "diameter": 8,
+          "segment": [
+            108,
+            40,
+            84,
+            40
           ],
-          "id": "outlet",
-          "type": "tube"
+          "edge": [
+            112,
+            36,
+            112,
+            44
+          ]
         },
         {
           "id": "base",
-          "x": 65,
+          "x": 63,
           "y": 196,
           "dx": 0,
           "dy": 1,
@@ -548,7 +553,7 @@
       "category": "容器",
       "search": "round bottom flask",
       "svg": "round-bottom-flask.svg",
-      "sha256": "a70b382757fe254cd191579ed83988eebb8762efc309f78c0657078211437a16",
+      "sha256": "c6c270073d2022f173265a29d3128737a3228a0e57bd03266bd86fe72111f497",
       "width": 160,
       "height": 184,
       "ports": [
@@ -559,16 +564,16 @@
           "dx": 0,
           "dy": -1,
           "type": "glass-female",
-          "diameter": 37,
+          "diameter": 35,
           "depth": 25,
           "target": [
             80,
             108
           ],
           "edge": [
-            61.5,
+            62.5,
             6,
-            98.5,
+            97.5,
             6
           ]
         },
@@ -596,7 +601,7 @@
       "variants": [
         {
           "svg": "round-bottom-flask.svg",
-          "sha256": "a70b382757fe254cd191579ed83988eebb8762efc309f78c0657078211437a16",
+          "sha256": "c6c270073d2022f173265a29d3128737a3228a0e57bd03266bd86fe72111f497",
           "width": 160,
           "height": 184,
           "ports": [
@@ -607,16 +612,16 @@
               "dx": 0,
               "dy": -1,
               "type": "glass-female",
-              "diameter": 37,
+              "diameter": 35,
               "depth": 25,
               "target": [
                 80,
                 108
               ],
               "edge": [
-                61.5,
+                62.5,
                 6,
-                98.5,
+                97.5,
                 6
               ]
             },
@@ -644,27 +649,27 @@
         },
         {
           "svg": "round-bottom-flask-necks-2.svg",
-          "sha256": "2ecf157c3fb795aa84fb97be4d7b3e80c305a25c5fdec2b460b941aa266ec6da",
+          "sha256": "16ab00c299a444ca9ade6b24dc15c7f8f8ce5b3913125fec6c735658e255f065",
           "width": 160,
           "height": 184,
           "ports": [
             {
               "id": "mouth",
-              "x": 74,
+              "x": 72,
               "y": 8,
               "dx": 0,
               "dy": -1,
               "type": "glass-female",
-              "diameter": 35,
+              "diameter": 34,
               "depth": 22,
               "target": [
-                74,
+                72,
                 110
               ],
               "edge": [
-                56.5,
+                55,
                 8,
-                91.5,
+                89,
                 8
               ]
             },
@@ -672,20 +677,20 @@
               "id": "mouth-2",
               "x": 132,
               "y": 14,
-              "dx": 0.326,
-              "dy": -0.946,
+              "dx": 0.342,
+              "dy": -0.94,
               "type": "glass-female",
-              "diameter": 30,
+              "diameter": 29,
               "depth": 22,
               "target": [
-                98.792,
-                110.443
+                97.114,
+                109.849
               ],
               "edge": [
-                117.817,
-                9.116,
-                146.183,
-                18.884
+                118.374,
+                9.041,
+                145.626,
+                18.959
               ]
             },
             {
@@ -703,7 +708,7 @@
         },
         {
           "svg": "round-bottom-flask-necks-3.svg",
-          "sha256": "30062c6bb8156c1fa9f25769cfa6df7d45e440bd9d82bd99b32eeb427bee6641",
+          "sha256": "de14d3da0e4ce32ee23417d647b602c4759faad0fbd809fb0d55801fb05ec1c8",
           "width": 160,
           "height": 184,
           "ports": [
@@ -711,20 +716,20 @@
               "id": "mouth",
               "x": 28,
               "y": 14,
-              "dx": -0.326,
-              "dy": -0.946,
+              "dx": -0.342,
+              "dy": -0.94,
               "type": "glass-female",
-              "diameter": 30,
+              "diameter": 29,
               "depth": 22,
               "target": [
-                61.208,
-                110.443
+                62.886,
+                109.849
               ],
               "edge": [
-                13.817,
-                18.884,
-                42.183,
-                9.116
+                14.374,
+                18.959,
+                41.626,
+                9.041
               ]
             },
             {
@@ -734,16 +739,16 @@
               "dx": 0,
               "dy": -1,
               "type": "glass-female",
-              "diameter": 33,
+              "diameter": 31,
               "depth": 22,
               "target": [
                 80,
                 110
               ],
               "edge": [
-                63.5,
+                64.5,
                 8,
-                96.5,
+                95.5,
                 8
               ]
             },
@@ -751,20 +756,20 @@
               "id": "mouth-3",
               "x": 132,
               "y": 14,
-              "dx": 0.326,
-              "dy": -0.946,
+              "dx": 0.342,
+              "dy": -0.94,
               "type": "glass-female",
-              "diameter": 30,
+              "diameter": 29,
               "depth": 22,
               "target": [
-                98.792,
-                110.443
+                97.114,
+                109.849
               ],
               "edge": [
-                117.817,
-                9.116,
-                146.183,
-                18.884
+                118.374,
+                9.041,
+                145.626,
+                18.959
               ]
             },
             {
@@ -782,88 +787,88 @@
         },
         {
           "svg": "round-bottom-flask-necks-4.svg",
-          "sha256": "25b185b4e1c14e7e34ea45af5ea872d2975bed1d7107d76b1f05c603841e1ec9",
+          "sha256": "08fd599a2eeb47862d16630f697fb66f16c5789901fbd0f2322e8e2470d959b5",
           "width": 160,
           "height": 184,
           "ports": [
             {
               "id": "mouth",
-              "x": 24,
-              "y": 14,
+              "x": 26,
+              "y": 12,
               "dx": -0.358,
               "dy": -0.934,
               "type": "glass-female",
-              "diameter": 24,
+              "diameter": 26,
               "depth": 22,
               "target": [
-                60.554,
-                109.225
+                62.554,
+                107.225
               ],
               "edge": [
-                12.797,
-                18.3,
-                35.203,
-                9.7
+                13.863,
+                16.659,
+                38.137,
+                7.341
               ]
             },
             {
               "id": "mouth-2",
-              "x": 61,
+              "x": 71,
               "y": 8,
-              "dx": -0.122,
-              "dy": -0.993,
+              "dx": -0.052,
+              "dy": -0.999,
               "type": "glass-female",
-              "diameter": 24,
+              "diameter": 27,
               "depth": 22,
               "target": [
-                73.431,
-                109.24
+                76.338,
+                109.86
               ],
               "edge": [
-                49.089,
-                9.462,
-                72.911,
-                6.538
+                57.519,
+                8.707,
+                84.481,
+                7.293
               ]
             },
             {
               "id": "mouth-3",
-              "x": 99,
-              "y": 8,
-              "dx": 0.122,
-              "dy": -0.993,
+              "x": 102.5,
+              "y": 11,
+              "dx": 0.208,
+              "dy": -0.978,
               "type": "glass-female",
               "diameter": 24,
               "depth": 22,
               "target": [
-                86.569,
-                109.24
+                81.293,
+                110.771
               ],
               "edge": [
-                87.089,
-                6.538,
-                110.911,
-                9.462
+                90.762,
+                8.505,
+                114.238,
+                13.495
               ]
             },
             {
               "id": "mouth-4",
-              "x": 136,
-              "y": 14,
+              "x": 135,
+              "y": 12,
               "dx": 0.358,
               "dy": -0.934,
               "type": "glass-female",
-              "diameter": 24,
+              "diameter": 26,
               "depth": 22,
               "target": [
-                99.446,
-                109.225
+                98.446,
+                107.225
               ],
               "edge": [
-                124.797,
-                9.7,
-                147.203,
-                18.3
+                122.863,
+                7.341,
+                147.137,
+                16.659
               ]
             },
             {
@@ -1012,7 +1017,7 @@
       "category": "容器",
       "search": "schlenk flask",
       "svg": "schlenk-flask.svg",
-      "sha256": "4463e7bdbaddeb657a27ce24e6c5ed729cd99db6594de2fd74338c8c63327aac",
+      "sha256": "a1f77fc92b3f32e424b58e68b8ba0db73def973e63c49af1cb40ead0020fd69e",
       "width": 154,
       "height": 190,
       "ports": [
@@ -1122,34 +1127,34 @@
       "category": "容器",
       "search": "pycnometer",
       "svg": "pycnometer.svg",
-      "sha256": "6cc2dbb6ffcb91bf671c9d10125e3ca3cc590941bd63207311409810815a7a3d",
-      "width": 118,
-      "height": 196,
+      "sha256": "912b7eea7a033b580a945f66659e985d09aab2f5252a6fe608f9f520d6c7900b",
+      "width": 100,
+      "height": 200,
       "ports": [
         {
           "id": "mouth",
-          "x": 59,
+          "x": 50,
           "y": 10,
           "dx": 0,
           "dy": -1,
           "type": "glass-female",
-          "diameter": 34,
-          "depth": 25,
+          "diameter": 14,
+          "depth": 22,
           "target": [
-            59,
+            50,
             145
           ],
           "edge": [
-            42,
+            43,
             10,
-            76,
+            57,
             10
           ]
         },
         {
           "id": "base",
-          "x": 59,
-          "y": 186,
+          "x": 50,
+          "y": 192,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -1208,34 +1213,34 @@
       "category": "容器",
       "search": "reagent bottle",
       "svg": "reagent-bottle.svg",
-      "sha256": "86f42b5c675dca14c1c3db106ffe88b32585e71c3d98e89314b88cb0dde6c0d8",
-      "width": 116,
+      "sha256": "987cf607877d04eaef5caa3bc844750cbbfde86949cec3bee97ef97a92e20f8f",
+      "width": 112,
       "height": 196,
       "ports": [
         {
           "id": "mouth",
-          "x": 58,
-          "y": 12,
+          "x": 56,
+          "y": 10,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
           "diameter": 40,
           "depth": 24,
           "target": [
-            58,
+            56,
             150
           ],
           "edge": [
-            38,
-            12,
-            78,
-            12
+            28,
+            10,
+            84,
+            10
           ]
         },
         {
           "id": "base",
-          "x": 58,
-          "y": 188,
+          "x": 56,
+          "y": 186,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -1251,34 +1256,34 @@
       "category": "容器",
       "search": "bottle",
       "svg": "bottle.svg",
-      "sha256": "3edeb2d70d0cc6b5659a248feb303f3ce36d2c717f59f6c546f0e85016d080c2",
-      "width": 116,
-      "height": 196,
+      "sha256": "2a886e307903a10a6649dc1a1c29f6373429a5bc73357cd5d03f0d4dbe022918",
+      "width": 84,
+      "height": 206,
       "ports": [
         {
           "id": "mouth",
-          "x": 58,
-          "y": 12,
+          "x": 42,
+          "y": 8,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 40,
-          "depth": 24,
+          "diameter": 28,
+          "depth": 20,
           "target": [
-            58,
+            42,
             150
           ],
           "edge": [
-            38,
-            12,
-            78,
-            12
+            26,
+            8,
+            58,
+            8
           ]
         },
         {
           "id": "base",
-          "x": 58,
-          "y": 188,
+          "x": 42,
+          "y": 196,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -1337,49 +1342,49 @@
       "category": "容器",
       "search": "wash bottle",
       "svg": "wash-bottle.svg",
-      "sha256": "18101dbf0f9376bd7b381e8de1759de50ec6ec6173e895bc980d8e42696695b8",
-      "width": 140,
-      "height": 200,
+      "sha256": "82a94b3ec43dc6b4fc4e24a548b9304e472ed82e19364c648d2f9b4b3d28d369",
+      "width": 120,
+      "height": 204,
       "ports": [
         {
           "id": "mouth",
-          "x": 58,
-          "y": 14,
+          "x": 72,
+          "y": 44,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
           "diameter": 40,
           "depth": 24,
           "target": [
-            58,
+            72,
             150
           ],
           "edge": [
-            38,
-            14,
-            78,
-            14
+            52,
+            44,
+            92,
+            44
           ]
         },
         {
           "id": "outlet",
-          "x": 130,
-          "y": 31,
-          "dx": 0.707,
-          "dy": 0.707,
+          "x": 8,
+          "y": 53,
+          "dx": -0.822,
+          "dy": 0.569,
           "type": "tube",
-          "diameter": 10,
+          "diameter": 9,
           "edge": [
-            126.5,
-            34.5,
-            133.5,
-            27.5
+            5.4,
+            49.3,
+            10.6,
+            56.7
           ]
         },
         {
           "id": "base",
-          "x": 58,
-          "y": 188,
+          "x": 72,
+          "y": 196,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -1563,65 +1568,9 @@
       "category": "导管",
       "search": "s bent tube",
       "svg": "s-bent-tube.svg",
-      "sha256": "7bcaee251fab8d80503bf9e11975da1251bf1ce75c5b56047291cec894ce77db",
-      "width": 120,
-      "height": 170,
-      "ports": [
-        {
-          "id": "inlet",
-          "x": 88,
-          "y": 12,
-          "dx": 0,
-          "dy": -1,
-          "type": "tube",
-          "diameter": 20,
-          "segment": [
-            88,
-            17,
-            88,
-            47
-          ],
-          "edge": [
-            79.8,
-            12,
-            96.2,
-            12
-          ]
-        },
-        {
-          "id": "outlet",
-          "x": 32,
-          "y": 158,
-          "dx": 0,
-          "dy": 1,
-          "type": "tube",
-          "diameter": 20,
-          "segment": [
-            32,
-            153,
-            32,
-            123
-          ],
-          "edge": [
-            40.2,
-            158,
-            23.8,
-            158
-          ]
-        }
-      ],
-      "boreCount": -1,
-      "neckCount": 0
-    },
-    {
-      "id": "studio:u-bent-tube",
-      "name": "U 形管",
-      "category": "导管",
-      "search": "u bent tube",
-      "svg": "u-bent-tube.svg",
-      "sha256": "05ee7b3af58de3a0dc2cd7df3acf71ef1a2bd9b236c7c24af694a04c33cf3462",
-      "width": 108,
-      "height": 160,
+      "sha256": "86fb04ed7352e278c28f0eeaf5827c01167c040de752263c9e4a0faaf70d82df",
+      "width": 160,
+      "height": 110,
       "ports": [
         {
           "id": "inlet",
@@ -1646,22 +1595,78 @@
         },
         {
           "id": "outlet",
-          "x": 88,
+          "x": 140,
+          "y": 98,
+          "dx": 0,
+          "dy": 1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            140,
+            93,
+            140,
+            63
+          ],
+          "edge": [
+            148.2,
+            98,
+            131.8,
+            98
+          ]
+        }
+      ],
+      "boreCount": -1,
+      "neckCount": 0
+    },
+    {
+      "id": "studio:u-bent-tube",
+      "name": "U 形管",
+      "category": "导管",
+      "search": "u bent tube",
+      "svg": "u-bent-tube.svg",
+      "sha256": "d7c153149f957c95370793bff523247417f59d5b0626add71fbd534dca8276d8",
+      "width": 144,
+      "height": 132,
+      "ports": [
+        {
+          "id": "inlet",
+          "x": 22,
           "y": 12,
           "dx": 0,
           "dy": -1,
           "type": "tube",
           "diameter": 20,
           "segment": [
-            88,
+            22,
             17,
-            88,
+            22,
             47
           ],
           "edge": [
-            79.8,
+            13.8,
             12,
-            96.2,
+            30.2,
+            12
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 122,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            122,
+            17,
+            122,
+            47
+          ],
+          "edge": [
+            113.8,
+            12,
+            130.2,
             12
           ]
         }
@@ -1675,50 +1680,50 @@
       "category": "导管",
       "search": "salt bridge",
       "svg": "salt-bridge.svg",
-      "sha256": "760bbe6e40ced2f7e285f7189c35fe49f8f9710b9a67ddd1c58db4d0dc36aab8",
-      "width": 108,
-      "height": 160,
+      "sha256": "f68f6a55e30fc71d5d9b09f2b8ecd42c347df7d2a9f8165ad431ea2778965350",
+      "width": 164,
+      "height": 148,
       "ports": [
         {
           "id": "inlet",
-          "x": 20,
-          "y": 12,
+          "x": 22,
+          "y": 134,
           "dx": 0,
-          "dy": -1,
+          "dy": 1,
           "type": "tube",
           "diameter": 20,
           "segment": [
-            20,
-            17,
-            20,
-            47
+            22,
+            129,
+            22,
+            99
           ],
           "edge": [
-            11.8,
-            12,
-            28.2,
-            12
+            30.2,
+            134,
+            13.8,
+            134
           ]
         },
         {
           "id": "outlet",
-          "x": 88,
-          "y": 12,
+          "x": 142,
+          "y": 134,
           "dx": 0,
-          "dy": -1,
+          "dy": 1,
           "type": "tube",
           "diameter": 20,
           "segment": [
-            88,
-            17,
-            88,
-            47
+            142,
+            129,
+            142,
+            99
           ],
           "edge": [
-            79.8,
-            12,
-            96.2,
-            12
+            150.2,
+            134,
+            133.8,
+            134
           ]
         }
       ],
@@ -1731,50 +1736,50 @@
       "category": "导管",
       "search": "rubber tube",
       "svg": "rubber-tube.svg",
-      "sha256": "372f05e6a34e34ae6b91eb8c2baf3b870b1e36fa7b661d9796f2770800c43c8d",
-      "width": 136,
-      "height": 168,
+      "sha256": "8219aa5d464a282f89080e6d91cc1fc03527b6aa383936527bbd74d99e03d025",
+      "width": 200,
+      "height": 68,
       "ports": [
         {
           "id": "inlet",
-          "x": 14,
-          "y": 26,
-          "dx": -1,
-          "dy": 0,
+          "x": 12,
+          "y": 40,
+          "dx": -0.92,
+          "dy": 0.39,
           "type": "hose",
-          "diameter": 20,
+          "diameter": 15,
           "segment": [
-            19,
-            26,
-            49,
-            26
+            16.603,
+            38.049,
+            44.224,
+            26.34
           ],
           "edge": [
-            14,
-            34.2,
-            14,
-            17.8
+            14.342,
+            45.524,
+            9.658,
+            34.476
           ]
         },
         {
           "id": "outlet",
-          "x": 120,
-          "y": 144,
-          "dx": 1,
-          "dy": 0,
+          "x": 188,
+          "y": 28,
+          "dx": 0.92,
+          "dy": -0.39,
           "type": "hose",
-          "diameter": 20,
+          "diameter": 15,
           "segment": [
-            115,
-            144,
-            85,
-            144
+            183.397,
+            29.951,
+            155.776,
+            41.66
           ],
           "edge": [
-            120,
-            135.8,
-            120,
-            152.2
+            185.658,
+            22.476,
+            190.342,
+            33.524
           ]
         }
       ],
@@ -1831,92 +1836,71 @@
       "category": "导管",
       "search": "3 way crossing",
       "svg": "3-way-crossing.svg",
-      "sha256": "5353592106e4dc6cd9df0d46a5e88c2166eb202399b79b2c07c009d5cc1849bb",
-      "width": 130,
-      "height": 160,
+      "sha256": "81c8dafeb6708b5491708dc23c7111b201c48ea301116901e332e37a94cb44e1",
+      "width": 96,
+      "height": 156,
       "ports": [
         {
           "id": "inlet",
-          "x": 14,
-          "y": 72,
-          "dx": -1,
-          "dy": 0,
-          "type": "tube",
-          "diameter": 20,
-          "segment": [
-            19,
-            72,
-            49,
-            72
-          ],
-          "edge": [
-            14,
-            82,
-            14,
-            62
-          ]
-        },
-        {
-          "id": "outlet",
-          "x": 116,
-          "y": 72,
-          "dx": 1,
-          "dy": 0,
-          "type": "tube",
-          "diameter": 20,
-          "segment": [
-            111,
-            72,
-            81,
-            72
-          ],
-          "edge": [
-            116,
-            62,
-            116,
-            82
-          ]
-        },
-        {
-          "id": "branch-2",
-          "x": 65,
+          "x": 28,
           "y": 10,
           "dx": 0,
           "dy": -1,
           "type": "tube",
           "diameter": 20,
           "segment": [
-            65,
+            28,
             15,
-            65,
+            28,
             45
           ],
           "edge": [
-            55,
+            18,
             10,
-            75,
+            38,
             10
           ]
         },
         {
-          "id": "branch-3",
-          "x": 65,
-          "y": 150,
+          "id": "outlet",
+          "x": 28,
+          "y": 146,
           "dx": 0,
           "dy": 1,
           "type": "tube",
           "diameter": 20,
           "segment": [
-            65,
-            145,
-            65,
-            115
+            28,
+            141,
+            28,
+            111
           ],
           "edge": [
-            75,
-            150,
-            55,
-            150
+            38,
+            146,
+            18,
+            146
+          ]
+        },
+        {
+          "id": "branch",
+          "x": 86,
+          "y": 78,
+          "dx": 1,
+          "dy": 0,
+          "type": "tube",
+          "diameter": 20,
+          "segment": [
+            81,
+            78,
+            51,
+            78
+          ],
+          "edge": [
+            86,
+            68,
+            86,
+            88
           ]
         }
       ],
@@ -2283,39 +2267,41 @@
       "category": "冷凝与蒸馏",
       "search": "cold finger",
       "svg": "cold-finger.svg",
-      "sha256": "d8494b5567ea6258d11accf4e03d547ad1ed6cd95e44de5b96c7384fc7d1ff4b",
-      "width": 96,
-      "height": 200,
+      "sha256": "0d42a8df4d1144ab2cdd969440e6869839054fae85a737678c0caac28d70feaa",
+      "width": 112,
+      "height": 196,
       "ports": [
         {
           "id": "inlet",
-          "x": 40,
-          "y": 10,
-          "dx": 0,
-          "dy": -1,
-          "type": "coolant",
-          "diameter": 8,
+          "x": 12,
+          "y": 52,
+          "dx": -1,
+          "dy": 0,
+          "diameter": 7.6,
+          "depth": 8,
           "edge": [
-            36,
-            10,
-            44,
-            10
-          ]
+            12,
+            55.8,
+            12,
+            48.2
+          ],
+          "type": "tube"
         },
         {
           "id": "outlet",
-          "x": 56,
-          "y": 10,
-          "dx": 0,
-          "dy": -1,
-          "type": "coolant",
-          "diameter": 8,
+          "x": 102,
+          "y": 14,
+          "dx": 1,
+          "dy": 0,
+          "diameter": 7.6,
+          "depth": 8,
           "edge": [
-            52,
-            10,
-            60,
-            10
-          ]
+            102,
+            10.2,
+            102,
+            17.8
+          ],
+          "type": "tube"
         }
       ],
       "boreCount": -1,
@@ -2460,7 +2446,7 @@
       "category": "冷凝与蒸馏",
       "search": "dean stark trap",
       "svg": "dean-stark-trap.svg",
-      "sha256": "c894e3d6370af47a7b52d730524f1a95e34af20db401e8f89b063b9dcf471488",
+      "sha256": "fe958cbeb3cc0e9bb27f152a459bce0a828e10a6311c75af8be08354ecf20bd8",
       "width": 130,
       "height": 210,
       "ports": [
@@ -2525,38 +2511,50 @@
       "category": "冷凝与蒸馏",
       "search": "drying tube",
       "svg": "drying-tube.svg",
-      "sha256": "f569172ab253ecf330776d5dcc45b86a2717bff4e6b587472142b45fcaced5c6",
-      "width": 110,
-      "height": 200,
+      "sha256": "2f3dad800c40770ad006f02a79991150553371bda1363cbb164cd7c013a17cad",
+      "width": 172,
+      "height": 148,
       "ports": [
         {
           "id": "inlet",
-          "x": 55,
-          "y": 10,
+          "x": 20,
+          "y": 136,
           "dx": 0,
-          "dy": -1,
+          "dy": 1,
           "type": "tube",
-          "diameter": 20,
+          "diameter": 18,
+          "segment": [
+            20,
+            130,
+            20,
+            96
+          ],
           "edge": [
-            45,
-            10,
-            65,
-            10
+            11,
+            136,
+            29,
+            136
           ]
         },
         {
           "id": "outlet",
-          "x": 55,
-          "y": 190,
-          "dx": 0,
-          "dy": 1,
+          "x": 160,
+          "y": 64.5,
+          "dx": 0.974,
+          "dy": 0.228,
           "type": "tube",
-          "diameter": 20,
+          "diameter": 17,
+          "segment": [
+            154,
+            63.1,
+            118,
+            54.9
+          ],
           "edge": [
-            45,
-            190,
-            65,
-            190
+            161,
+            56,
+            159,
+            73
           ]
         }
       ],
@@ -2614,23 +2612,23 @@
       "category": "过滤与分液",
       "search": "thistle tube",
       "svg": "thistle-tube.svg",
-      "sha256": "e1b244317ff23df9a34d8f0c9ce04638d51196121ff57245cf9645feea4841a9",
+      "sha256": "fcc95cf0eac3d4671c4a7c72d69155ef10731ce22b792b1c0ab3da713b09f5da",
       "width": 64,
       "height": 256,
       "ports": [
         {
           "id": "mouth",
           "x": 32,
-          "y": 12,
+          "y": 10,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 44,
+          "diameter": 32,
           "edge": [
+            16,
             10,
-            12,
-            54,
-            12
+            48,
+            10
           ]
         },
         {
@@ -2647,7 +2645,13 @@
             32,
             150
           ],
-          "depth": 90
+          "depth": 90,
+          "edge": [
+            27,
+            248,
+            37,
+            248
+          ]
         }
       ],
       "boreCount": -1,
@@ -2659,7 +2663,7 @@
       "category": "过滤与分液",
       "search": "separatory funnel",
       "svg": "separatory-funnel.svg",
-      "sha256": "1b3dcaa17a04a9174e5fa90b989bfc79c7581552faf6db1f421543f46dc4a21a",
+      "sha256": "c52bf616f10f1628e0613962f031d4b860f4f7895c5e7948da649b3cb64d8484",
       "width": 106,
       "height": 236,
       "ports": [
@@ -2704,7 +2708,7 @@
       "category": "过滤与分液",
       "search": "dropping funnel",
       "svg": "dropping-funnel.svg",
-      "sha256": "99d12087ec06547a759abb891a2015c498d2b94ddb7a9a4964f6a773838baa01",
+      "sha256": "a8884c76950c8b344d0795747a677a2adc2897b1613718346163314149c46f76",
       "width": 92,
       "height": 236,
       "ports": [
@@ -2749,7 +2753,7 @@
       "category": "测量",
       "search": "cylinder",
       "svg": "cylinder.svg",
-      "sha256": "2f74261f055377f3bd37106794a6fa63768fa372e697aa9d7464cd69f739546b",
+      "sha256": "51570aa900d32bb4d322a23609f724eafd6300f6446c2570a8b3b43b9f179691",
       "width": 64,
       "height": 250,
       "ports": [
@@ -2875,7 +2879,7 @@
       "category": "测量",
       "search": "burette",
       "svg": "burette.svg",
-      "sha256": "6d1f3c24ca083d9fec0dcc32a9a3762f48d49aad7e3b89d9ced2b3037bc11d8b",
+      "sha256": "da0af5764da3b79c555ce380017524f6f2de4343dad9411310f51857bbc33c30",
       "width": 46,
       "height": 310,
       "ports": [
@@ -2986,7 +2990,7 @@
       "category": "测量",
       "search": "hydrometer",
       "svg": "hydrometer.svg",
-      "sha256": "f27c4abcbe6d90c565f4cc1c465a3112c49a8f7956c8d30f9ad57f47a479c235",
+      "sha256": "dfdfea804e30868c4cbad1623cd5a5f720c23458ec3da785ce17aa87d184448a",
       "width": 56,
       "height": 250,
       "ports": [
@@ -3015,23 +3019,23 @@
       "category": "移液与注射",
       "search": "pump",
       "svg": "pump.svg",
-      "sha256": "d1d7d163eeb039168b8948b0834b911cafb1adee0ddf1d835a635cceac723968",
-      "width": 84,
-      "height": 200,
+      "sha256": "528196b969a086c4cfc802e919d2a856393b23628a3839d8e742723fedcadb30",
+      "width": 64,
+      "height": 210,
       "ports": [
         {
           "id": "mouth",
-          "x": 42,
-          "y": 180,
+          "x": 26,
+          "y": 204,
           "dx": 0,
           "dy": 1,
           "type": "pipette-filler",
-          "diameter": 12,
+          "diameter": 16,
           "edge": [
-            36,
-            180,
-            48,
-            180
+            18,
+            204,
+            34,
+            204
           ]
         }
       ],
@@ -3044,7 +3048,7 @@
       "category": "移液与注射",
       "search": "suction pear",
       "svg": "suction-pear.svg",
-      "sha256": "073976228dc6320f57095b2c66ed59cff469031c5173a8e3129540689fd9c749",
+      "sha256": "be9790ecef471f65fe08d73cc73c028758acf0d6b6038ffa582fe8b1d30782a5",
       "width": 80,
       "height": 190,
       "ports": [
@@ -3073,23 +3077,29 @@
       "category": "移液与注射",
       "search": "dropper pipette",
       "svg": "dropper-pipette.svg",
-      "sha256": "b8a1866dd224fcb78a33a45a5948b7dfb8a2cdbbdcae0ded4b8eb88473d3d662",
-      "width": 50,
+      "sha256": "b3824b7dad955711449fece9e802a0f6468f3cd811241cadb04c6d0ccb58a79a",
+      "width": 48,
       "height": 220,
       "ports": [
         {
           "id": "tip",
-          "x": 25,
+          "x": 24,
           "y": 208,
           "dx": 0,
           "dy": 1,
           "type": "stem",
           "diameter": 6,
           "segment": [
-            25,
+            24,
             198,
-            25,
+            24,
             90
+          ],
+          "edge": [
+            21,
+            208,
+            27,
+            208
           ]
         }
       ],
@@ -3102,23 +3112,29 @@
       "category": "移液与注射",
       "search": "plastic pipette",
       "svg": "plastic-pipette.svg",
-      "sha256": "f812b66092de492c0c37722daad0634f91108717dbf5e5836d846ef8e220d893",
-      "width": 50,
+      "sha256": "1a0576eab451b8a9349c30e7ae18708e15e4933e229f0b11db017bfb2ae5d8bb",
+      "width": 44,
       "height": 220,
       "ports": [
         {
           "id": "tip",
-          "x": 25,
+          "x": 22,
           "y": 208,
           "dx": 0,
           "dy": 1,
           "type": "stem",
           "diameter": 6,
           "segment": [
-            25,
+            22,
             198,
-            25,
+            22,
             90
+          ],
+          "edge": [
+            19,
+            208,
+            25,
+            208
           ]
         }
       ],
@@ -3131,14 +3147,14 @@
       "category": "移液与注射",
       "search": "pipette bottle",
       "svg": "pipette-bottle.svg",
-      "sha256": "8402711a4b81d2314a034723d80d4b654985799d5a55f8571f4f86b2017cf655",
-      "width": 86,
+      "sha256": "87354b5bb082154316f5c9175c0738c414faf1a384883edf98aecae6e0cd8600",
+      "width": 84,
       "height": 200,
       "ports": [
         {
           "id": "base",
-          "x": 43,
-          "y": 188,
+          "x": 42,
+          "y": 192,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3154,22 +3170,22 @@
       "category": "移液与注射",
       "search": "syringe",
       "svg": "syringe.svg",
-      "sha256": "db21c9b16fcdf3e640acd9a8457649c4b122e10d2fd221c29cf9f6722879e2ed",
-      "width": 80,
-      "height": 220,
+      "sha256": "3c33661bed5ebf83d726b48c6b1d19ef7cc4639dbce16b9b5696025266a4dda9",
+      "width": 56,
+      "height": 230,
       "ports": [
         {
           "id": "outlet",
-          "x": 40,
-          "y": 212,
+          "x": 28,
+          "y": 222,
           "dx": 0,
           "dy": 1,
           "type": "probe",
           "diameter": 2.6,
           "segment": [
-            40,
-            210,
-            40,
+            28,
+            218,
+            28,
             190
           ]
         }
@@ -3183,23 +3199,23 @@
       "category": "移液与注射",
       "search": "gas syringe",
       "svg": "gas-syringe.svg",
-      "sha256": "28aa390888d7752fabb747f6cdb9da3b90611ef8f5b61871549a1c0603a6d7b2",
-      "width": 80,
-      "height": 220,
+      "sha256": "842d0bff29e5a8434a3973507416169383a75a6830e109e20477afb5baee772a",
+      "width": 60,
+      "height": 230,
       "ports": [
         {
           "id": "outlet",
-          "x": 40,
-          "y": 188,
+          "x": 30,
+          "y": 222,
           "dx": 0,
           "dy": 1,
           "type": "luer-male",
-          "diameter": 14,
+          "diameter": 10,
           "edge": [
-            33,
-            188,
-            47,
-            188
+            25,
+            222,
+            35,
+            222
           ]
         }
       ],
@@ -3212,23 +3228,23 @@
       "category": "移液与注射",
       "search": "needle",
       "svg": "needle.svg",
-      "sha256": "70247133bbea7f61ea36a8fd9c91de3e0c76270e4b347e667650a737b7e7e85e",
-      "width": 56,
+      "sha256": "79669bc7fb8efd9e183ef94adfd9045659765a080263c47d07fad0f2b02be851",
+      "width": 40,
       "height": 210,
       "ports": [
         {
           "id": "tip",
-          "x": 28,
-          "y": 194,
+          "x": 20,
+          "y": 198,
           "dx": 0,
           "dy": 1,
           "type": "probe",
-          "diameter": 6,
+          "diameter": 4,
           "segment": [
-            28,
-            190,
-            28,
-            56
+            20,
+            192,
+            20,
+            76
           ]
         }
       ],
@@ -3241,24 +3257,24 @@
       "category": "塞子与密封",
       "search": "bung",
       "svg": "bung.svg",
-      "sha256": "940f5e158a6dd2532e9389d297b291b6c371f7490344e1fea8f4e66c4851a0e6",
+      "sha256": "cde16207d15fba97ef399f37124eb8a7929d50b169de79fa5dc44abf271c1fbe",
       "width": 100,
       "height": 75,
       "ports": [
         {
           "id": "plug",
           "x": 50,
-          "y": 65,
+          "y": 66,
           "dx": 0,
           "dy": 1,
           "type": "plug",
-          "diameter": 52,
+          "diameter": 50,
           "depth": 36,
           "edge": [
-            24,
-            65,
-            76,
-            65
+            25,
+            66,
+            75,
+            66
           ]
         }
       ],
@@ -3271,24 +3287,24 @@
       "category": "塞子与密封",
       "search": "glass stopper",
       "svg": "glass-stopper.svg",
-      "sha256": "826a1ad0105f06f89ad323b3ee4b95414781d732d99b9baa267d7efa0b7adb54",
+      "sha256": "c65eeefc63592e39ccc2c13eed29e6888a85de9f76250b1a49c800070ee3b0fe",
       "width": 80,
-      "height": 76,
+      "height": 96,
       "ports": [
         {
           "id": "plug",
           "x": 40,
-          "y": 68,
+          "y": 90,
           "dx": 0,
           "dy": 1,
           "type": "plug",
-          "diameter": 22,
-          "depth": 30,
+          "diameter": 20,
+          "depth": 34,
           "edge": [
-            29,
-            68,
-            51,
-            68
+            30,
+            90,
+            50,
+            90
           ]
         }
       ],
@@ -3301,24 +3317,24 @@
       "category": "塞子与密封",
       "search": "septum seal",
       "svg": "septum-seal.svg",
-      "sha256": "fb9d75cac7384f3244494129a62bd2769004f15434d50b8163e37a8dcf45efcc",
-      "width": 84,
-      "height": 68,
+      "sha256": "836a2fca07eccdfaa6ce8b8e1e18590db02d084f58a60108ab191555de8b2103",
+      "width": 76,
+      "height": 112,
       "ports": [
         {
           "id": "plug",
-          "x": 42,
-          "y": 54,
+          "x": 38,
+          "y": 102,
           "dx": 0,
           "dy": 1,
-          "type": "lid",
-          "diameter": 68,
-          "depth": 36,
+          "type": "plug",
+          "diameter": 28,
+          "depth": 38,
           "edge": [
-            8,
-            54,
-            76,
-            54
+            24,
+            102,
+            52,
+            102
           ]
         }
       ],
@@ -3331,14 +3347,14 @@
       "category": "支撑与夹持",
       "search": "plastic joint clip",
       "svg": "plastic-joint-clip.svg",
-      "sha256": "b7abb96fcbe381da00266ef67c1bc32139497b5971c2d6a33d576af4291808ce",
-      "width": 136,
-      "height": 146,
+      "sha256": "0ad34f1f7fecc01c2c6be79260fa4dc2ba251b316196365c17e36830612357d8",
+      "width": 144,
+      "height": 72,
       "ports": [
         {
           "id": "clip",
-          "x": 68,
-          "y": 56,
+          "x": 72,
+          "y": 36,
           "dx": 0,
           "dy": -1,
           "type": "clip",
@@ -3354,23 +3370,23 @@
       "category": "实验小工具",
       "search": "stirring rod",
       "svg": "stirring-rod.svg",
-      "sha256": "26a1408828796b7941511825143a69e50364e2675d430ff645091b957ebc518d",
-      "width": 170,
-      "height": 44,
+      "sha256": "1d7c7b7bdc644f2ac89a3688fcbb7a8b7f49cfc30381228134ab1a264035eec6",
+      "width": 36,
+      "height": 200,
       "ports": [
         {
           "id": "probe",
-          "x": 160,
-          "y": 22,
-          "dx": 1,
-          "dy": 0,
+          "x": 18,
+          "y": 186,
+          "dx": 0,
+          "dy": 1,
           "type": "probe",
-          "diameter": 12,
+          "diameter": 10,
           "segment": [
-            142,
-            22,
-            22,
-            22
+            18,
+            178,
+            18,
+            30
           ]
         }
       ],
@@ -3383,38 +3399,46 @@
       "category": "实验小工具",
       "search": "syringe filter",
       "svg": "syringe-filter.svg",
-      "sha256": "cbf93c376c5ef8cc0aa749f648d8c613c01ba6436912b994a871d13e3b1f67ff",
-      "width": 140,
-      "height": 92,
+      "sha256": "c3457fcde2537b45ed42f8fe755743238ee15c13ab1d884229e347e21e3da21a",
+      "width": 112,
+      "height": 124,
       "ports": [
         {
           "id": "inlet",
-          "x": 12,
-          "y": 46,
-          "dx": -1,
-          "dy": 0,
+          "x": 56,
+          "y": 12,
+          "dx": 0,
+          "dy": -1,
           "type": "luer-female",
-          "diameter": 12,
+          "diameter": 28,
+          "depth": 26,
           "edge": [
+            42,
             12,
-            40,
-            12,
-            52
+            70,
+            12
           ]
         },
         {
           "id": "outlet",
-          "x": 128,
-          "y": 46,
-          "dx": 1,
-          "dy": 0,
+          "x": 56,
+          "y": 112,
+          "dx": 0,
+          "dy": 1,
           "type": "luer-male",
           "diameter": 12,
+          "segment": [
+            56,
+            108,
+            56,
+            74
+          ],
+          "depth": 24,
           "edge": [
-            128,
-            40,
-            128,
-            52
+            50,
+            112,
+            62,
+            112
           ]
         }
       ],
@@ -3427,23 +3451,43 @@
       "category": "实验小工具",
       "search": "spe cartridge",
       "svg": "spe-cartridge.svg",
-      "sha256": "a63c69fbd6da870ef81e1a6e6a1ad06b27be41d5c2e482b7bcc4f226ad6b963f",
-      "width": 156,
-      "height": 86,
+      "sha256": "35c4d65b47ca9a56651a09194618aeeed5f9eaf292e0df066144564eecac864a",
+      "width": 44,
+      "height": 196,
       "ports": [
         {
-          "id": "outlet",
-          "x": 144,
-          "y": 43,
-          "dx": 1,
-          "dy": 0,
-          "type": "luer-male",
-          "diameter": 10,
+          "id": "mouth",
+          "x": 22,
+          "y": 14,
+          "dx": 0,
+          "dy": -1,
+          "type": "mouth",
+          "diameter": 14,
+          "depth": 24,
+          "target": [
+            22,
+            130
+          ],
           "edge": [
-            144,
-            38,
-            144,
-            48
+            11,
+            14,
+            33,
+            14
+          ]
+        },
+        {
+          "id": "outlet",
+          "x": 22,
+          "y": 184,
+          "dx": 0,
+          "dy": 1,
+          "type": "luer-male",
+          "diameter": 8,
+          "edge": [
+            18,
+            184,
+            26,
+            184
           ]
         }
       ],
@@ -3456,23 +3500,29 @@
       "category": "设备",
       "search": "piston chamber",
       "svg": "piston-chamber.svg",
-      "sha256": "d762d97beb01edab184576850ce97d535ecb9fda947a8880f79d032f8fa55c19",
-      "width": 184,
-      "height": 136,
+      "sha256": "6a23ab5ca4f203803ac6a5fc35f164a5021a40d3ff16731fc323ee19193d0bd5",
+      "width": 160,
+      "height": 196,
       "ports": [
         {
           "id": "inlet",
-          "x": 8,
-          "y": 44,
+          "x": 4,
+          "y": 140,
           "dx": -1,
           "dy": 0,
           "type": "tube",
           "diameter": 12,
+          "segment": [
+            8,
+            140,
+            28,
+            140
+          ],
           "edge": [
-            8,
-            38,
-            8,
-            50
+            4,
+            134,
+            4,
+            146
           ]
         }
       ],
@@ -3485,14 +3535,14 @@
       "category": "设备",
       "search": "desiccator",
       "svg": "desiccator.svg",
-      "sha256": "9789784189d931d9553b38ed10f805c17c45efb6b5d9e9f0d86a3df7b2b499de",
+      "sha256": "256a307ddf52f3a0cb27ba5a6339a7060e06dc8554925e35dfcf91140d113631",
       "width": 180,
       "height": 154,
       "ports": [
         {
           "id": "base",
           "x": 90,
-          "y": 142,
+          "y": 144,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -3501,16 +3551,16 @@
         {
           "id": "surface",
           "x": 90,
-          "y": 103,
+          "y": 97,
           "dx": 0,
           "dy": -128,
           "type": "surface",
           "diameter": 0,
           "segment": [
-            26,
-            103,
-            154,
-            103
+            31,
+            97,
+            149,
+            97
           ]
         }
       ],
@@ -3523,7 +3573,7 @@
       "category": "冷凝与蒸馏",
       "search": "u drying tube u tube desiccant",
       "svg": "u-drying-tube.svg",
-      "sha256": "0a55c6885c68c68908e39e464e676407eb1d56669a17968f8222687f930d608e",
+      "sha256": "6b6f9579edd68585149dbb8c757cee9d02e4de9bd66c925c985aff189144bae0",
       "width": 130,
       "height": 186,
       "ports": [
@@ -3714,7 +3764,7 @@
       "category": "塞子与密封",
       "search": "glass stopcock valve plug",
       "svg": "glass-stopcock.svg",
-      "sha256": "a9aee2d512eebc19afab28ba951f2307047d9eb02b0009d63c61bf7544045cc2",
+      "sha256": "a4ad1d14011a3196652ef48c815ea0a8dcb4d2e9d1d09c8aaff530b8886ad7b1",
       "width": 96,
       "height": 64,
       "ports": [
@@ -3744,7 +3794,7 @@
       "category": "实验装置",
       "search": "simple kipp generator gas",
       "svg": "simple-kipp-generator.svg",
-      "sha256": "0b007a1b483809cbdc3b1ec2f1f4d9157a95fd3f284bd22eeecb333cf2122824",
+      "sha256": "16fe7d914318035b44be0b6f171a0f607d9e6a0d498ccb98502466f0123dca67",
       "width": 148,
       "height": 224,
       "ports": [
@@ -3788,7 +3838,7 @@
       "category": "实验装置",
       "search": "solid liquid heating gas setup",
       "svg": "solid-liquid-gas-setup.svg",
-      "sha256": "82af4ce19c95b6fd65b74a7508e56920f1abd2b752e05696322e2195ad37f19a",
+      "sha256": "0f9c0fb3a637b64e2f3290ad5dd6ff9fa9995633ad761cb9f9707de13b65ad21",
       "width": 188,
       "height": 228,
       "ports": [
@@ -3832,7 +3882,7 @@
       "category": "实验装置",
       "search": "electrolysis cell hofmann",
       "svg": "electrolysis-cell.svg",
-      "sha256": "5b9463eda5e711d1564418ce105bd180a508a77a70409b996660af2f30059f7f",
+      "sha256": "4746316a767267fe7ebec64d5a94d1810643033f9db4d6ef6c41e4317a0fbe79",
       "width": 160,
       "height": 188,
       "ports": [
@@ -3905,7 +3955,7 @@
       "category": "加热",
       "search": "bunsen burner 本生灯 煤气灯 燃气加热器 可调风门高温火焰",
       "svg": "bunsen.svg",
-      "sha256": "0521ef94e738b687dccd9472c16426b8bc51a3d9190fc8d92393db5f80dd64d3",
+      "sha256": "31072af0b9ca58bfbc0e7568146512da9adf36a5b3b68dc4ff74e010133b245a",
       "width": 92,
       "height": 216,
       "ports": [
@@ -3937,7 +3987,7 @@
       "category": "加热",
       "search": "flame 火焰 加热焰 外焰 内焰 焰心",
       "svg": "flame.svg",
-      "sha256": "787f93a05072210dd21d202df078bd247a07a5b63d2b558d7023d370ff691b60",
+      "sha256": "d736f060ed36cc3ceac7c60fd5342b949f9abc458eccf877fc7d83ece03c64a0",
       "width": 80,
       "height": 160,
       "ports": [],
@@ -3950,7 +4000,7 @@
       "category": "加热",
       "search": "hot plate 加热板 电热板 恒温加热台",
       "svg": "hot-plate.svg",
-      "sha256": "a055d9a152809740d5045f9c5a2b34117f29e77a7d54db93bbe85babddb7fa8d",
+      "sha256": "8103e982797a998d6b84d88b47e2f30156b0c89db956fe01b73cdbff8daf0dfb",
       "width": 196,
       "height": 48,
       "ports": [
@@ -3973,7 +4023,7 @@
       "category": "加热",
       "search": "magnetic stirrer heater 磁力加热搅拌器 磁力搅拌恒温加热台",
       "svg": "magnetic-stirrer-heater.svg",
-      "sha256": "539da72125ca889acf44d1aa87ea52ab35d5576d1f8991379f0f024b14e0de38",
+      "sha256": "772d234d77c0b6ade26c441596223209d80e2a7125a607e93940cb3c984c82e6",
       "width": 184,
       "height": 82,
       "ports": [
@@ -3996,14 +4046,14 @@
       "category": "加热",
       "search": "heating mantle 电热套 调温电热套 圆底烧瓶加热套",
       "svg": "heating-mantle.svg",
-      "sha256": "5e5d034e8904c101bd0c32eb3f1c4ef12e94cf2ac788a54da58b7c33a11f9357",
+      "sha256": "ef1ba214c4a58e31e846bfbbc986d688d0dd00e06cf08ef7cc1a5018a5711e1f",
       "width": 154,
       "height": 132,
       "ports": [
         {
           "id": "surface",
           "x": 77,
-          "y": 16,
+          "y": 14,
           "dx": 0,
           "dy": -1,
           "type": "surface",
@@ -4019,14 +4069,14 @@
       "category": "加热",
       "search": "sand bath 砂浴 高温砂浴锅 均匀加热",
       "svg": "sand-bath.svg",
-      "sha256": "26750a5334ef1520416cd719798e649f56805767fd8758eae1a876dd2bde3435",
+      "sha256": "26405e52e090b7778f28290bed87922dfc0faaf573c1ac82c9ded1e826675d1b",
       "width": 200,
       "height": 84,
       "ports": [
         {
           "id": "surface",
           "x": 100,
-          "y": 26,
+          "y": 22,
           "dx": 0,
           "dy": -1,
           "type": "surface",
@@ -4042,7 +4092,7 @@
       "category": "加热",
       "search": "kettle 电水壶 烧水壶 实验室热水壶",
       "svg": "kettle.svg",
-      "sha256": "11d3fd34b6235c85b6e24ed946a2a3fd3a753bed3d1f738605b4dbdb655fcef9",
+      "sha256": "ddaf29ffbe3cc5fa7ef716290351cc1340199cb11b56dd36bb2aadb554621645",
       "width": 160,
       "height": 182,
       "ports": [
@@ -4065,7 +4115,7 @@
       "category": "容器",
       "search": "ice bath 冰浴 冰水浴槽 低温冷却槽",
       "svg": "ice-bath.svg",
-      "sha256": "7d485c02703792904a722c2cc0fde698507b59a975f9471fdcfb77a35f300c9e",
+      "sha256": "64d5d4b626f0702b6953288265cd8be9de3cdbddd7b76163c86d9b96c7e82804",
       "width": 180,
       "height": 112,
       "ports": [
@@ -4108,34 +4158,34 @@
       "category": "容器",
       "search": "water bath thermostatic bath 水浴锅 恒温水浴锅 恒温加热水浴槽",
       "svg": "water-bath.svg",
-      "sha256": "e684b9c489c56f0de74a795b6503990c4038d30a6b70c907245e1a1ddbf30083",
+      "sha256": "833733e20b5793bd28b2710bdf3ab3a560290c8104689db82dc4bc61f062b1be",
       "width": 210,
       "height": 88,
       "ports": [
         {
           "id": "mouth",
-          "x": 83,
+          "x": 84,
           "y": 14,
           "dx": 0,
           "dy": -1,
           "type": "mouth",
-          "diameter": 142,
+          "diameter": 144,
           "depth": 18,
           "target": [
-            83,
+            84,
             62
           ],
           "edge": [
             12,
             14,
-            154,
+            156,
             14
           ]
         },
         {
           "id": "base",
           "x": 105,
-          "y": 84,
+          "y": 80,
           "dx": 0,
           "dy": 1,
           "type": "base",
@@ -4151,7 +4201,7 @@
       "category": "加热",
       "search": "drying oven 烘箱 干燥箱 恒温干燥箱",
       "svg": "oven.svg",
-      "sha256": "9ad82a8caa291faa1e0952e312f6a1e4ebdf6404d85e45f08930028e9daafb4f",
+      "sha256": "b73ac8a24f42b5e6509f7ba80f9599db76aeb53ce4d5854e51fedeecf4162680",
       "width": 154,
       "height": 170,
       "ports": [
@@ -4167,16 +4217,16 @@
         {
           "id": "surface",
           "x": 77,
-          "y": 98,
+          "y": 108,
           "dx": 0,
-          "dy": -90,
+          "dy": -98,
           "type": "surface",
           "diameter": 0,
           "segment": [
-            32,
-            98,
-            122,
-            98
+            28,
+            108,
+            126,
+            108
           ]
         }
       ],
@@ -4189,7 +4239,7 @@
       "category": "实验小工具",
       "search": "magnetic stir bar 磁力搅拌子 PTFE聚四氟乙烯搅拌磁子",
       "svg": "magnetic-stir-bar.svg",
-      "sha256": "09330c55befe2083c6e8bc4550a200f0a4c0502f42c878a97b07c94c0cedc9fb",
+      "sha256": "e8e445777548857f2a1a54a1cb03e96091b0dd949765e03dd9d9ba4aa370a747",
       "width": 130,
       "height": 38,
       "ports": [
@@ -4212,7 +4262,7 @@
       "category": "实验小工具",
       "search": "oval stir bar 椭圆搅拌子 橄榄型磁力搅拌子",
       "svg": "stirbar2.svg",
-      "sha256": "a5f4c101f74927f238cdb336f27c81f40be9349a6f70d43cde78651fcafdeac6",
+      "sha256": "e94cd7ee21c012fe1379cf983a7bf08d3c02f13f227a8b5ff3764b84951fb83c",
       "width": 110,
       "height": 54,
       "ports": [
@@ -4235,14 +4285,14 @@
       "category": "实验小工具",
       "search": "wire gauze 石棉网 金属纱网 陶土网 加热隔热网",
       "svg": "wire-gauze.svg",
-      "sha256": "dc80052e933d276131df5ec5999e73ab5d9eff9e3047f5694ae0744256c031b3",
+      "sha256": "d4da05178c06a867fefcf5600a783495112561156668a70eb32d84428b5e65f3",
       "width": 168,
       "height": 32,
       "ports": [
         {
           "id": "surface",
           "x": 84,
-          "y": 10,
+          "y": 11,
           "dx": 0,
           "dy": -1,
           "type": "surface",
@@ -4258,14 +4308,14 @@
       "category": "实验小工具",
       "search": "clay triangle pipe clay triangle 泥三角 坩埚架 灼烧支撑",
       "svg": "clay-triangle.svg",
-      "sha256": "5200db858c3a45d90916d81f847d344c98c543d2059dee09e95f25d9f70c6d28",
+      "sha256": "bd4ff12c51fe691e6c91cba215f619604b1ced555484e688da66f2211e1358c5",
       "width": 176,
       "height": 24,
       "ports": [
         {
           "id": "surface",
           "x": 88,
-          "y": 6,
+          "y": 7,
           "dx": 0,
           "dy": -1,
           "type": "surface",
@@ -4281,7 +4331,7 @@
       "category": "支撑与夹持",
       "search": "tripod 三脚架 加热铁三脚架 酒精灯支撑架",
       "svg": "tripod.svg",
-      "sha256": "0f77e1ec29aa44aa977c7d917f2b597129dfe0f5eea47ef2a337d9718e1e77c0",
+      "sha256": "37b421f303f91acbd5628d406202a922bf63e918c8014ff7ecc8b73423d5e44f",
       "width": 136,
       "height": 200,
       "ports": [
@@ -4304,7 +4354,7 @@
       "category": "陶瓷",
       "search": "crucible 坩埚 瓷坩埚 灼烧容器 高温灰化",
       "svg": "crucible.svg",
-      "sha256": "c6d22d380291847fb8988997f3aae301b114cb2a319340f15f56608a78c055fa",
+      "sha256": "3da41a33bec801c5fea87c0a0b816374dcf3e51f623167f21c53fa9685fd31ab",
       "width": 90,
       "height": 94,
       "ports": [
@@ -4338,7 +4388,7 @@
       "category": "陶瓷",
       "search": "crucible cover lid 坩埚盖 瓷坩埚盖",
       "svg": "crucible-cover.svg",
-      "sha256": "65af1700e1dbcf70fd923ff82cb93810e52563574178d69fecf3f3a9c02884e5",
+      "sha256": "d536e20cc48f02046242884bfd874a770f38fcd716d01abf27789707d1485c45",
       "width": 100,
       "height": 36,
       "ports": [
@@ -4361,7 +4411,7 @@
       "category": "容器",
       "search": "evaporating dish 蒸发皿 瓷蒸发皿 浓缩结晶",
       "svg": "evaporating-dish.svg",
-      "sha256": "a6bd010a33103c10fe8f5d3474034c4889142c936eedd43df4e16658c11f9a1b",
+      "sha256": "3a858426ce84c3439778cb06688d2281c81d0e8b5e75032300620ea51a0d5aed",
       "width": 130,
       "height": 66,
       "ports": [
@@ -4384,7 +4434,7 @@
       "category": "陶瓷",
       "search": "mortar 研钵 瓷研钵 研磨固体",
       "svg": "mortar.svg",
-      "sha256": "2b2fd8063257a89753f2cf92c5d46108a508b797b43e05e37bef2990787655cc",
+      "sha256": "b3f58bd357ed45bf3066c341d92032c641cdbbcf7048a195ae01d5b9bb170729",
       "width": 148,
       "height": 76,
       "ports": [
@@ -4418,23 +4468,23 @@
       "category": "实验小工具",
       "search": "pestle 研杵 研棒 研磨棒",
       "svg": "pestle.svg",
-      "sha256": "986450874363f0cdba289c26d0569d40965fbbaa09be698f905eeceb058b2d1c",
+      "sha256": "27fab0370c7e10cbc5fed1bc261ff24dbbc209541dca5198541f342986328e77",
       "width": 136,
       "height": 88,
       "ports": [
         {
           "id": "probe",
-          "x": 114,
-          "y": 64,
-          "dx": 0.91,
-          "dy": 0.41,
+          "x": 22,
+          "y": 66,
+          "dx": -0.89,
+          "dy": 0.45,
           "type": "probe",
           "diameter": 14,
           "segment": [
+            112,
+            20,
             24,
-            24,
-            110,
-            62
+            65
           ]
         }
       ],
@@ -4447,7 +4497,7 @@
       "category": "陶瓷",
       "search": "spotting tile 点滴板 白色点滴反应板 九孔点滴板",
       "svg": "spotting-tile.svg",
-      "sha256": "d1fc2bb1d35e6ff499e037a141ac03078ab636cf5b21c90e3ff78fbf41936492",
+      "sha256": "b699f204948de9b62e0703db7b9777635788dc34c60e9b66648572c39c721f2c",
       "width": 148,
       "height": 118,
       "ports": [
@@ -4542,7 +4592,7 @@
       "category": "容器",
       "search": "weighing boat 称量舟 称量盘 塑料称量皿",
       "svg": "weight-boat.svg",
-      "sha256": "2b2d01316fecbf20c72cafa96a3064dd156cebd18bdffa546f0bd7f4add566b5",
+      "sha256": "7b2efb1a0d99ddb59c34ac04e6f60676c2b334e4aeff47e159149065f4a94643",
       "width": 130,
       "height": 54,
       "ports": [
@@ -4565,7 +4615,7 @@
       "category": "实验小工具",
       "search": "bench mat 实验台垫 防火垫 隔热实验垫",
       "svg": "bench-mat.svg",
-      "sha256": "6f36994a8e3e97624775a2a2cc79e7df51ba69d48306b1cd77c630dbfe7c0618",
+      "sha256": "7fc2b3d972908a9231dbc0ddd2970262da820ebb6730a48dd021215d2ecbc89f",
       "width": 184,
       "height": 26,
       "ports": [
@@ -4588,7 +4638,7 @@
       "category": "实验小工具",
       "search": "filter paper 滤纸 定性滤纸 定量滤纸 圆形滤纸",
       "svg": "filter-paper.svg",
-      "sha256": "12aedae006f71babcdef019ab130175607d2888ce7d535aa638ec520630f2a9f",
+      "sha256": "1145b0651d163203fe170d96f7d0ed9e8be712d1407657e5691347cff3e6944e",
       "width": 116,
       "height": 80,
       "ports": [
@@ -4611,14 +4661,14 @@
       "category": "实验小工具",
       "search": "sieve 筛网 分样筛 金属试验筛",
       "svg": "sieve.svg",
-      "sha256": "aef1fdea9edb06c9a5dd744c96cee61caf8fb0f846814e0a398674a09e5330a5",
+      "sha256": "b16708375f281c38516d993dcac050e5fa7c6af7c259841945e12fc116963213",
       "width": 140,
       "height": 42,
       "ports": [
         {
           "id": "surface",
           "x": 70,
-          "y": 8,
+          "y": 12,
           "dx": 0,
           "dy": -1,
           "type": "surface",
@@ -4634,7 +4684,7 @@
       "category": "测量与防护",
       "search": "tlc plate 薄层色谱板 硅胶板 层析板",
       "svg": "tlc-plate.svg",
-      "sha256": "60e238b98d8e480889cae3cb9200fe4da46f3cf40ccb95faa56400f85e1b3e1b",
+      "sha256": "b09e1de432106e23380497f7ed98fc897414488d762217d103f8a919c5dc94d9",
       "width": 58,
       "height": 184,
       "ports": [
@@ -4663,7 +4713,7 @@
       "category": "测量与防护",
       "search": "tlc spot 色谱斑点 显色斑点 层析斑点",
       "svg": "tlc-spot.svg",
-      "sha256": "f07219508fe56e51fb79277e32926ca692e967c2114886f2ed8a5098c389d763",
+      "sha256": "a1caf77b4e59c71087938da077c6138a89eb426db079e18410bc70d17614d395",
       "width": 80,
       "height": 80,
       "ports": [
@@ -4686,7 +4736,7 @@
       "category": "设备",
       "search": "vacuum pump 真空泵 隔膜真空泵 减压抽滤泵",
       "svg": "vacuum-pump.svg",
-      "sha256": "3425be3178ab78710493171450ae8513ad324cddb8d7ed7e4b63be06308b9f70",
+      "sha256": "6673358ea67575b62549a81b7e7b7b313fbc99baa28d06b7c0f9003dd42f158a",
       "width": 184,
       "height": 118,
       "ports": [
@@ -4709,7 +4759,7 @@
       "category": "设备",
       "search": "syringe pump 注射泵 微量注射泵 精密进样泵",
       "svg": "syringe-pump.svg",
-      "sha256": "cbf591ef70c7e8a301a9d5f6afe4dcf7f66900c306c9ff5c8067aad8423cc9a7",
+      "sha256": "58fd2558782119cbb385aaf65ae1188ef29f8ec49693d45af43c5dd8398c2209",
       "width": 180,
       "height": 110,
       "ports": [
@@ -4732,7 +4782,7 @@
       "category": "设备",
       "search": "gas cylinder 气瓶 高压钢瓶 气体钢瓶 氮气瓶 氧气瓶",
       "svg": "gas-cylinder.svg",
-      "sha256": "ccd13d8c969e533f7e59554d35a5f5ab882b7e5f2568a3bb67ad5a5d893a86a4",
+      "sha256": "26777c07938c7f941c64e2fe3cf7a627bea906382d3f8d475decd058e5793e84",
       "width": 84,
       "height": 228,
       "ports": [
@@ -4755,7 +4805,7 @@
       "category": "加热",
       "search": "retort ring with wire gauze 铁圈带石棉网 铁架台铁圈陶土网 烧杯加热支撑",
       "svg": "ring-with-gauze.svg",
-      "sha256": "2d704f1ab02b8f88994c3e613191a0cbc95580dc5ad519395e29d06c886492a7",
+      "sha256": "936c79eb4cb413c1599d25d396bf127839c3b31e747f0bcbb1521749fc795e11",
       "width": 184,
       "height": 36,
       "ports": [
@@ -4771,16 +4821,16 @@
         {
           "id": "surface",
           "x": 126,
-          "y": 10,
+          "y": 11,
           "dx": 0,
           "dy": -88,
           "type": "surface",
           "diameter": 0,
           "segment": [
             82,
-            10,
+            11,
             170,
-            10
+            11
           ]
         }
       ],
@@ -4793,7 +4843,7 @@
       "category": "加热",
       "search": "combustion spoon deflagrating spoon 燃烧匙 集气瓶燃烧实验 硫粉红磷燃烧",
       "svg": "combustion-spoon.svg",
-      "sha256": "f2c4a7d51b9efa395127a884234f834c62a60b9b0422609db15dc59e33ec8626",
+      "sha256": "4a2fdd1152a6b4f370da34a3d8d9129359520ead7d72854c90f3540d941e7438",
       "width": 48,
       "height": 210,
       "ports": [
@@ -4838,7 +4888,7 @@
       "category": "支撑与夹持",
       "search": "retort stand ring stand 铁架台 铁架底座 支撑立杆",
       "svg": "retort-stand.svg",
-      "sha256": "f8b3abe65dd7da59b70940c8259b6892da9a17b2c9dfb91dd27a529b0f37bf2f",
+      "sha256": "71a5a320c5ede26488a938ba2a9fd43011d82bc9dceefee8f759e688af3577c3",
       "width": 116,
       "height": 268,
       "ports": [
@@ -4867,7 +4917,7 @@
       "category": "支撑与夹持",
       "search": "clamp universal clamp 万能夹 三爪夹 烧瓶夹 冷凝管夹",
       "svg": "clamp.svg",
-      "sha256": "04380f71224565d1a89a0ccb0d9f1c9f567256f1f6ab3f9cc0fdb035c494fec2",
+      "sha256": "a9675847fa2c02b6354b487b5ba8c7d65ed01c45f9474b3110ec361da1b0f69a",
       "width": 184,
       "height": 32,
       "ports": [
@@ -4899,7 +4949,7 @@
       "category": "支撑与夹持",
       "search": "clamp front 夹具正视图 双爪夹 正视铁夹",
       "svg": "clamp-front.svg",
-      "sha256": "22d940c4e1f1c47e7b0f882ecb9191d8d23975fff34835b2f8f1e500ff7148d1",
+      "sha256": "23286d9eafcaa3579734ed0b03a3ced6a8d16a836cb2b2103d94a5987b1838c4",
       "width": 110,
       "height": 44,
       "ports": [
@@ -4931,7 +4981,7 @@
       "category": "支撑与夹持",
       "search": "retort ring 铁圈 铁环 铁架台圆环",
       "svg": "retort-ring.svg",
-      "sha256": "b868fb340ab2e16d7cf2b588dd91a6baddd71d2ebe55b37cc8d1188e07cac3e4",
+      "sha256": "076a3e24c5ebad2bb0a3183cad299da28457f0006e01ab8a1096f2283671cdca",
       "width": 184,
       "height": 28,
       "ports": [
@@ -4963,7 +5013,7 @@
       "category": "支撑与夹持",
       "search": "g clamp c clamp G形夹 台面固定夹",
       "svg": "g-clamp.svg",
-      "sha256": "da3c5364a19dbd01115b05b89b8479a744328e335f9428b25e580ec0adfd9ce0",
+      "sha256": "bd3a4a467627157b712bcb314846393fc5968b5c18b9195b64c99d9b05b9fb51",
       "width": 124,
       "height": 188,
       "ports": [],
@@ -4976,7 +5026,7 @@
       "category": "支撑与夹持",
       "search": "test tube rack 试管架 四孔试管架 木质试管架",
       "svg": "test-tube-rack.svg",
-      "sha256": "9177fa25f6a8681abab1bdd859f8244cb324d54f3d6f219bf32fd8f7bba45343",
+      "sha256": "1385853e9f61cc36179a2763d09efebbf94a7631609fa27fede9aa51fe95055f",
       "width": 160,
       "height": 106,
       "ports": [
@@ -5026,7 +5076,7 @@
       "category": "支撑与夹持",
       "search": "test tube holder 试管夹 弹簧试管钳",
       "svg": "test-tube-holder.svg",
-      "sha256": "542b7299fae1a06607056ab0b9635390232cb96054315394bd133e2de665e2ed",
+      "sha256": "d5f4c1ee187a158a1f156d3538cd3c4d31dd38052fb2df6debb0f9caeeefaaf9",
       "width": 176,
       "height": 48,
       "ports": [
@@ -5049,7 +5099,7 @@
       "category": "支撑与夹持",
       "search": "peg wooden clip 木夹 弹簧木质试管夹",
       "svg": "peg.svg",
-      "sha256": "1b4fdc1ab370a01429d74cc7e558ad3154a1797bfaf2431b62ca1df910cf058f",
+      "sha256": "4c7783b4d7eb9ff811d89cf999ce42998220a31be67746a6ccdea4c1e13edea5",
       "width": 160,
       "height": 36,
       "ports": [
@@ -5072,7 +5122,7 @@
       "category": "支撑与夹持",
       "search": "tongs crucible tongs 坩埚钳 不锈钢坩埚钳",
       "svg": "tongs.svg",
-      "sha256": "b8bc0b39df81ca8f3e05ee26d73acc5a38c819b95e24f4d195cf661e881bdde9",
+      "sha256": "d69d701ef0dc623ddd9e6e51616cbd7ed8df99cd894886edc0038d99cbea3ad1",
       "width": 168,
       "height": 58,
       "ports": [
@@ -5095,7 +5145,7 @@
       "category": "支撑与夹持",
       "search": "tweezers forceps 镊子 不锈钢镊子",
       "svg": "tweezers.svg",
-      "sha256": "57cb4fb4c600ab1d7fd780eaef8c7df73697625a9bf6cc468a7f763d561245c1",
+      "sha256": "9382e079a7e9c1c410a318cb00a244d41ea6e8973d456431291d381f11f25237",
       "width": 156,
       "height": 28,
       "ports": [],
@@ -5108,7 +5158,7 @@
       "category": "设备",
       "search": "fume hood 通风橱 排风柜 化学通风柜",
       "svg": "fume-hood.svg",
-      "sha256": "d6278ce7670bdc3611499cb39645061ffcf38c3c421a3e8a16402c9ac16098ce",
+      "sha256": "2029c598cf9ac12dc279dc751a271cc622f55586574a63ab3ff90fad19d2446f",
       "width": 176,
       "height": 176,
       "ports": [
@@ -5124,16 +5174,16 @@
         {
           "id": "surface",
           "x": 88,
-          "y": 144,
+          "y": 154,
           "dx": 0,
-          "dy": -128,
+          "dy": -140,
           "type": "surface",
           "diameter": 0,
           "segment": [
-            24,
-            144,
-            152,
-            144
+            18,
+            154,
+            158,
+            154
           ]
         }
       ],
@@ -5146,7 +5196,7 @@
       "category": "测量与防护",
       "search": "glove nitrile glove 手套 丁腈手套 实验防护手套",
       "svg": "glove.svg",
-      "sha256": "398015836beaa8bbafc8c752aeab0300afd267a24fc07376ffb7398c2e9627b8",
+      "sha256": "ae093e6c81bb56623f8392b2e63d324770137a8ce7460d9545cf6fb6efa03a93",
       "width": 130,
       "height": 140,
       "ports": [],
@@ -5159,7 +5209,7 @@
       "category": "测量与防护",
       "search": "safety goggles 护目镜 防护眼镜 实验护目镜",
       "svg": "goggles.svg",
-      "sha256": "96b74f7d8339eebcd97988298f37d93f022dd848352010d106df6e32d81a645d",
+      "sha256": "0eaf2eee0c8c533341288a4f7d1562269f02fa60412027a758ce593411166545",
       "width": 164,
       "height": 76,
       "ports": [],
@@ -5172,7 +5222,7 @@
       "category": "测量与防护",
       "search": "lab coat 实验服 白大褂 防护服",
       "svg": "lab-coat.svg",
-      "sha256": "afd8a7dac054d948832aa0eb9b4c3534a80ea17bb39015ff73fbd447884a279b",
+      "sha256": "63c7df691e5f4c090c95652bae5afe6147a6da1cf5f8892158ae678a42896143",
       "width": 136,
       "height": 168,
       "ports": [],
@@ -5185,7 +5235,7 @@
       "category": "图形与标记",
       "search": "ghs hazard warning diamond 危险提示菱形 化学品警示标志",
       "svg": "ghs-hazard.svg",
-      "sha256": "10c9c7e30e8770f4fd73e16d0dbdf8a2cec426538ce024c001287c9138bdd07d",
+      "sha256": "bdd333d0f4896c4a84b2993fcf89d1efb591e57698db0649e0ef6254773d1812",
       "width": 140,
       "height": 140,
       "ports": [],
@@ -5198,7 +5248,7 @@
       "category": "设备",
       "search": "lab bench table 实验桌 实验台 化学操作台",
       "svg": "table.svg",
-      "sha256": "aceb30e023cb3af55219068deaafa7c462994b0a3df8479987e2fb1cbe6601fb",
+      "sha256": "b62a7522d7bbcb3f5e44d1238f1a806b5e5c8ac386d9eeff01cb12b68a3b7ceb",
       "width": 200,
       "height": 40,
       "ports": [
@@ -5227,7 +5277,7 @@
       "category": "实验小工具",
       "search": "spatula 药匙 不锈钢药匙 取药勺",
       "svg": "spatula.svg",
-      "sha256": "a5fce1bfae0b403f09b586bb2632bdcf7596e19aa9b34210103ee7b101d6c223",
+      "sha256": "3fe0adbf3a83d95a520b9e5dc3b1d596b00ad74d69eea6806d011d5989bdc2ff",
       "width": 152,
       "height": 90,
       "ports": [
@@ -5240,7 +5290,7 @@
           "type": "probe",
           "diameter": 10,
           "segment": [
-            52,
+            54,
             76,
             18,
             76
@@ -5256,7 +5306,7 @@
       "category": "实验小工具",
       "search": "cork borer 打孔器 橡皮塞打孔器",
       "svg": "corkborer.svg",
-      "sha256": "1287dfa4db1f4ae79ee753191601ba6d108c31fe9ffb2c81e1ca90fcb576fd6b",
+      "sha256": "d107916c009d5a3480a185b12a8b3469c5739d02c9c8bfd0a148840a3024f732",
       "width": 110,
       "height": 130,
       "ports": [],
@@ -5269,7 +5319,7 @@
       "category": "实验小工具",
       "search": "scissors 剪刀 实验剪刀 解剖剪",
       "svg": "scissors.svg",
-      "sha256": "0b7c9b9cb930e09fa94d2783278e8fd419956b917edb6f573327a6f883b9a40c",
+      "sha256": "759244752bf986fd58df6a0192d3f24ab76c72ab3ed7d7a9ee70beb19a52be5a",
       "width": 136,
       "height": 116,
       "ports": [],
@@ -5282,7 +5332,7 @@
       "category": "测量与防护",
       "search": "magnifying glass hand lens 放大镜 手持放大镜",
       "svg": "magnifying-glass.svg",
-      "sha256": "0de74f7a418444f0763d836d4f2205b76606ef5c0dc79507a1c0aece94a9e5dc",
+      "sha256": "427c9938fbfdf98720fcc66516b45fec069ef7d74760bd29085e6cd27ea255a6",
       "width": 100,
       "height": 170,
       "ports": [],
@@ -5295,7 +5345,7 @@
       "category": "设备",
       "search": "desk lamp 台灯 实验照明灯",
       "svg": "desk-lamp.svg",
-      "sha256": "a74f7d2c61278a4fc650fe1dd78ca37d369b9a57dd3b7f92db3e54f026b4dcb4",
+      "sha256": "f0683d0ef554d5dfd46a7385b8e10930428d3cde595e196ccf831700b6d56efa",
       "width": 144,
       "height": 176,
       "ports": [
@@ -5318,7 +5368,7 @@
       "category": "设备",
       "search": "desk fan 台式风扇 风扇",
       "svg": "desk-fan.svg",
-      "sha256": "b72f6ac0a5890de843e73e4ecde6f0d932316df9dd126851a64ba9ef8b5cdb92",
+      "sha256": "2af0b75bf268117214c9ed1956e55bdc00a76ba32e2e0c26689db5ba1193b49e",
       "width": 108,
       "height": 176,
       "ports": [
@@ -5341,7 +5391,7 @@
       "category": "设备",
       "search": "computer monitor workstation 电脑 工作站 数据采集仪",
       "svg": "computer.svg",
-      "sha256": "d5569208a14cef7cd610f06312cd81ced1b49e63c339a27a205074c28a7331de",
+      "sha256": "94d14194a436b650430a93dde73f43aa1ece565bd7cffd5a14fd24a07904daa4",
       "width": 176,
       "height": 136,
       "ports": [
@@ -5364,7 +5414,7 @@
       "category": "设备",
       "search": "camera 相机 数码相机 实验摄影",
       "svg": "camera.svg",
-      "sha256": "40af314f172ba99898299455078e29f14effbeeeda106d764c23fd66c2dcc632",
+      "sha256": "d2d3b0fc7b26aa52ce9b089b22b5cf0438d4726f6695cbc4243cbe7fb8ffdab8",
       "width": 136,
       "height": 146,
       "ports": [],
@@ -5377,7 +5427,7 @@
       "category": "设备",
       "search": "videocamera camcorder 摄像机 录像机",
       "svg": "videocamera.svg",
-      "sha256": "339d528d7c92d5f499d1bef1aec4a87efc2b6a9e93bb5b19ff777692e87ac2ac",
+      "sha256": "1af910a066eda880eef7f3cbbf600058e2d4d0cd0b13a49a89baef7f5bf4a447",
       "width": 176,
       "height": 90,
       "ports": [],
@@ -5390,7 +5440,7 @@
       "category": "实验小工具",
       "search": "pencil 铅笔 绘图铅笔 色谱画线铅笔",
       "svg": "pencil.svg",
-      "sha256": "f6e8f55ad3bd5244f08a5229f0a23477f170a991785c8814d393bec081653f70",
+      "sha256": "435964d11b684cc64a3f7de99596885d67b7b3d4fd29911ce926ec8eed577797",
       "width": 160,
       "height": 30,
       "ports": [
@@ -5403,9 +5453,9 @@
           "type": "probe",
           "diameter": 10,
           "segment": [
-            134,
+            108,
             15,
-            24,
+            150,
             15
           ]
         }
@@ -5419,7 +5469,7 @@
       "category": "实验小工具",
       "search": "marker felt tip pen 记号笔 玻璃记号笔 标签笔",
       "svg": "felt-tip-pen.svg",
-      "sha256": "00f830b0d88c332d15cb14d2287b63be4c7b256f0a2e4de34c145f4f007fa578",
+      "sha256": "e9096c0f634e840c6e76173bc7b76c1f826dbf4d75eba3884ca375ea78c5a56b",
       "width": 160,
       "height": 32,
       "ports": [
@@ -5432,9 +5482,9 @@
           "type": "probe",
           "diameter": 10,
           "segment": [
-            134,
+            108,
             16,
-            24,
+            150,
             16
           ]
         }
@@ -5448,7 +5498,7 @@
       "category": "实验小工具",
       "search": "adhesive tape 胶带 标签胶带 封口膜",
       "svg": "adhesive-tape.svg",
-      "sha256": "86db3c7ae5673d2b46b54b5d893e0d2866e40c68c5c7cba9f7d8b86a4fbc0e2d",
+      "sha256": "1c20e36a2c271d3773ea95ebff840bb856d688ef5021058cad85ed5bad1a0e57",
       "width": 150,
       "height": 60,
       "ports": [],
@@ -5461,7 +5511,7 @@
       "category": "实验小工具",
       "search": "paperclip 回形针 金属曲别针",
       "svg": "paperclip.svg",
-      "sha256": "830964df67a499eb2de2e8effd5b62afad7e5835c47cbb9e117098b663062b41",
+      "sha256": "7e6ca49d4b26742d8e6d8a5b1318e0fe28639a90c2e097a3eadb5699349e30d0",
       "width": 56,
       "height": 120,
       "ports": [],
@@ -5474,7 +5524,7 @@
       "category": "实验小工具",
       "search": "wooden splint 木条 带火星木条 燃着木条 气体检验",
       "svg": "wooden-splint.svg",
-      "sha256": "128fb1851e67323bf9dd1abe7930eb20ff287163abb0c21a7744b577cbf6f898",
+      "sha256": "6de16de27bdb2b47881b61479e9541cea58de026c7ec1064f2d0469bbc44958e",
       "width": 44,
       "height": 168,
       "ports": [
@@ -5488,9 +5538,9 @@
           "diameter": 10,
           "segment": [
             22,
-            144,
+            118,
             22,
-            22
+            158
           ]
         }
       ],
@@ -5503,7 +5553,7 @@
       "category": "物质与填充",
       "search": "cotton wool 脱脂棉 棉花 过滤棉塞",
       "svg": "cotton-wool.svg",
-      "sha256": "fedc064463fe06b766e9c54bdcf937a674f6b84e5a59c0f0bdc461f7ac77a2f4",
+      "sha256": "886587848f6028ab3368b835bb708b5f4a994356d1656b88fb42dc16d756fc7e",
       "width": 120,
       "height": 120,
       "ports": [],
@@ -5516,7 +5566,7 @@
       "category": "物质与填充",
       "search": "steel wool 钢丝绒 铁丝绵",
       "svg": "steel-wool.svg",
-      "sha256": "314e95b1a0bcd2f2da9065c556223aaa6c0988efcd94376d44304af7819e3857",
+      "sha256": "86de5840eb94449d5541256616a7c6c1edb336a2ad306c19454cd6e7353effd1",
       "width": 140,
       "height": 110,
       "ports": [],
@@ -5529,7 +5579,7 @@
       "category": "物质与填充",
       "search": "glass wool 玻璃棉 玻璃纤维棉 填料",
       "svg": "glass-wool.svg",
-      "sha256": "aae7ae34fb50439de31a28849b74436a8864d977ae0f433041f6aa855aed4025",
+      "sha256": "41c9d4870adfe5b8f780a075fd36967ab7c790892e5161d5289bdd4889150225",
       "width": 120,
       "height": 110,
       "ports": [],
@@ -5542,7 +5592,7 @@
       "category": "测量与防护",
       "search": "soda can aluminum can 易拉罐 铝罐 量热罐",
       "svg": "soda-can.svg",
-      "sha256": "d36ce8a7f8c24473c6c8b42a078a4fba0aeffecebcc05fd2a1ebede5b6a817a2",
+      "sha256": "3aef475af380ab649581ebc046fe0898e27a92b99f410379118f38baa51f87aa",
       "width": 96,
       "height": 156,
       "ports": [
@@ -5565,7 +5615,7 @@
       "category": "测量与防护",
       "search": "faucet water tap 水龙头 冷凝水龙头 给水口",
       "svg": "faucet.svg",
-      "sha256": "a7d354bf7ec59e3eb71efa1bdfe4b8224eda998fb1fbf2b768a668fd83bb6edb",
+      "sha256": "0e076e0b32394031075c540eee80ebb5a6c465b42d43a575d8c3b7a6cebf42dd",
       "width": 116,
       "height": 168,
       "ports": [
@@ -5588,7 +5638,7 @@
       "category": "测量与防护",
       "search": "balloon 气球 气体收集气球 弹性气球",
       "svg": "balloon.svg",
-      "sha256": "1a2ef898503c08a4838d01259f73ad93016cb2083e763353bef4e68ae400d1cd",
+      "sha256": "416b24893dff23966a5603b1cf6b3221b78e841634243d0b32ec6f986bf89381",
       "width": 112,
       "height": 160,
       "ports": [
@@ -5627,7 +5677,7 @@
       "category": "支撑与夹持",
       "search": "burette clamp butterfly clamp 滴定管夹 蝴蝶夹 双联滴定夹",
       "svg": "burette-clamp.svg",
-      "sha256": "32c9b6dff85262df69dcea08e22cc5b6f7e1f2ab932b94b0138f9483fdcc0120",
+      "sha256": "ff7e06f19b392e3c6ad5ae364ba521afe7807997cbe99bf727edaf6d9ffa3e22",
       "width": 184,
       "height": 52,
       "ports": [
@@ -5668,7 +5718,7 @@
       "category": "导管",
       "search": "pinch clamp Mohr clip pinchcock 止水夹 弹簧夹 螺旋夹 胶管夹",
       "svg": "pinch-clamp.svg",
-      "sha256": "31d1c45ac3b125b94fb40f66976eff004afcc7f6f6150e5194fdff9c1a42afc4",
+      "sha256": "6cffb352f6123f936e26d5ee9db35272a61bea8b21e5303505b5fb426e0223c7",
       "width": 88,
       "height": 96,
       "ports": [
@@ -5691,7 +5741,7 @@
       "category": "设备",
       "search": "balance electronic scale 电子天平 分析天平 精密称量天平",
       "svg": "balance.svg",
-      "sha256": "4b32969e69b2ca6823c0ddf7e2b5e5e0c425505ddeac39b6ae6a0a34d1ab6853",
+      "sha256": "4f85dfcf2012d1823940da8ce6c972c1a2e62d186c9d28e992e9ea3dc342a41d",
       "width": 196,
       "height": 56,
       "ports": [
@@ -5714,7 +5764,7 @@
       "category": "测量",
       "search": "digital thermometer 数字温度计 数显温度探针 测温仪",
       "svg": "digital-thermometer.svg",
-      "sha256": "85f963f398f9f16504377f4ae7fd8f3c9d7d07d5446516becfc7fa5c0c2f744e",
+      "sha256": "793a86c940a8744e82d4782c06b85aa7949b36c7291f8df06ba37bd3a3360572",
       "width": 64,
       "height": 200,
       "ports": [
@@ -5728,9 +5778,9 @@
           "diameter": 7,
           "segment": [
             32,
-            176,
+            140,
             32,
-            96
+            190
           ]
         }
       ],
@@ -5743,7 +5793,7 @@
       "category": "测量与防护",
       "search": "ruler 直尺 刻度尺 长度测量",
       "svg": "ruler.svg",
-      "sha256": "a3bb6c287665b8b2e8837b95c2f52c074fa47fe80756666be822101bc596334e",
+      "sha256": "3cff145dd0be0318db5b1c43938de4829e925728d768bb393cac711e89848b4b",
       "width": 184,
       "height": 34,
       "ports": [],
@@ -5756,7 +5806,7 @@
       "category": "测量与防护",
       "search": "tape measure 卷尺 软尺 钢卷尺",
       "svg": "tape-measure.svg",
-      "sha256": "59c8f1cf11d1153ae833f0b7a77274f9dec138698fc023ea4795f97cbf08609f",
+      "sha256": "6860898d40dbf0dfa39fb6487c6ff2b5e253cf34a852de3d2832cbfb746db03e",
       "width": 168,
       "height": 54,
       "ports": [],
@@ -5769,7 +5819,7 @@
       "category": "测量与防护",
       "search": "protractor 量角器 半圆仪 角度测量",
       "svg": "protractor.svg",
-      "sha256": "ce896cdccf9fee75002e62a9a23c5d5e851ef9cf1af10393fc17d6cbc31c1905",
+      "sha256": "d1dbd9b3c46587d548fe182c61a3ab9b4b79cde76d68e01e5ae18d989158bfa1",
       "width": 160,
       "height": 96,
       "ports": [],
@@ -5782,7 +5832,7 @@
       "category": "设备",
       "search": "timer stopwatch 秒表 计时器 实验秒表",
       "svg": "timer.svg",
-      "sha256": "ec51892e8d8f6895f3024270986f2498b234fe3b63c8c1d70216fab443768a01",
+      "sha256": "64ec9877172be7774b8d19f9b57200d035e6fc888a614f80cbfbc7e39fb17880",
       "width": 130,
       "height": 110,
       "ports": [],
@@ -5795,23 +5845,23 @@
       "category": "测量",
       "search": "ph probe ph electrode meter pH探头 酸度计电极 pH计",
       "svg": "ph-probe.svg",
-      "sha256": "6262961e477142c402b5f5aceee7a141817df4d329ed882d35294f8164996759",
-      "width": 74,
-      "height": 200,
+      "sha256": "6f5fe2dca035e5c5baff44f53cd7e656ce442fa97dd0bccdc1ff4d2687986597",
+      "width": 132,
+      "height": 176,
       "ports": [
         {
           "id": "probe",
-          "x": 37,
-          "y": 190,
+          "x": 110,
+          "y": 166,
           "dx": 0,
           "dy": 1,
           "type": "probe",
           "diameter": 8,
           "segment": [
-            37,
-            176,
-            37,
-            96
+            110,
+            120,
+            110,
+            166
           ]
         }
       ],
@@ -5824,7 +5874,7 @@
       "category": "测量与防护",
       "search": "ph paper indicator strips pH试纸 广泛pH试纸 酸碱试纸",
       "svg": "ph-paper.svg",
-      "sha256": "9ba349b04c892e747807bcf7397cba9ad840d1c3998d01103d9bed3fda616a95",
+      "sha256": "30498251b54db81a1d9a4dea5292b4b46f70452afe8e5d1e2db393e71ed65c98",
       "width": 76,
       "height": 160,
       "ports": [],
@@ -5837,7 +5887,7 @@
       "category": "测量与防护",
       "search": "litmus paper 石蕊试纸 红蓝石蕊试纸 酸碱指示试纸",
       "svg": "litmus-paper.svg",
-      "sha256": "a3cea862ca345000b057f93684f73f5ce3f78062387f0dde6bbff745a1876001",
+      "sha256": "c447d98f7277a2156b8d30e44f7cc5fae42999643842c83bdd93256c5992e226",
       "width": 76,
       "height": 160,
       "ports": [],
@@ -5850,7 +5900,7 @@
       "category": "实验小工具",
       "search": "electrode 电极 金属电极 石墨电极 铂电极",
       "svg": "electrode.svg",
-      "sha256": "4bd5a0f977767b0f0fd170725f9798ab7f434a6e97a7a471070f72a751d031dc",
+      "sha256": "93dc7d779d74db5f8330f0ff7d016027602d4a778d1e9021cc412ee5b3383b5d",
       "width": 54,
       "height": 176,
       "ports": [
@@ -5864,7 +5914,7 @@
           "diameter": 12,
           "segment": [
             27,
-            28,
+            14,
             27,
             158
           ]
@@ -5879,7 +5929,7 @@
       "category": "测量",
       "search": "dynamometer spring balance 测力计 弹簧测力计 牛顿计",
       "svg": "dynamometer.svg",
-      "sha256": "689c1da3f43a40271730ae8748230b621254cee162cb799dc5870d6d33aab2b4",
+      "sha256": "b8d9d590a9fa6efb0e0f3523d68f702fa41aaf067fb5be5e11290487cf69bfdb",
       "width": 58,
       "height": 210,
       "ports": [
@@ -5902,7 +5952,7 @@
       "category": "电学",
       "search": "multimeter 数字万用表 万用表 电表",
       "svg": "multimeter.svg",
-      "sha256": "49c155be88fb98cbfb729c261ecf73269b0242a9284a6145f6daba4941dc0238",
+      "sha256": "56b989c6cf83f3545ae70dffe2064fc94b9f161fd03f92ec47f70951472fef04",
       "width": 116,
       "height": 196,
       "ports": [
@@ -5934,7 +5984,7 @@
       "category": "设备",
       "search": "microscope 显微镜 光学显微镜 生物显微镜",
       "svg": "microscope.svg",
-      "sha256": "2db3dce2c034268b81c2bbefaa977e1260e19a97b4e7bb2694f2225127d2379d",
+      "sha256": "ce3ed8a8becb1d433713d447e0d45f8d9efe3f06dc934e1c20dc9a645394bf10",
       "width": 140,
       "height": 196,
       "ports": [
@@ -5972,7 +6022,7 @@
       "category": "测量",
       "search": "calibration weight brass weight 砝码 托盘天平砝码 金属砝码",
       "svg": "calibration-weights.svg",
-      "sha256": "be29d671b056046b5ff454c7f3bef281cf9e388c8918cc26d451bb2fc416483c",
+      "sha256": "6a1c139157913b1fa52758b0791a7827a3a971fad277000c9d3154e9d965ea9d",
       "width": 96,
       "height": 136,
       "ports": [
@@ -6004,50 +6054,50 @@
       "category": "导管",
       "search": "cable 电缆",
       "svg": "cable.svg",
-      "sha256": "6d879d1acec1c5c4644da1abb0d351675efbb01e5d6d66bd086f21afddf14873",
-      "width": 140,
-      "height": 180,
+      "sha256": "430d70b57e590211e3882a964db269058293ba8e31044e7cb0c141831635fce5",
+      "width": 180,
+      "height": 60,
       "ports": [
         {
           "id": "inlet",
-          "x": 16,
-          "y": 32,
+          "x": 8,
+          "y": 30,
           "dx": -1,
           "dy": 0,
           "type": "wire",
-          "diameter": 9,
+          "diameter": 4,
           "segment": [
-            21,
-            32,
-            51,
-            32
+            12,
+            30,
+            44,
+            30
           ],
           "edge": [
-            16,
-            29.5,
-            16,
-            34.5
+            8,
+            28,
+            8,
+            32
           ]
         },
         {
           "id": "outlet",
-          "x": 122,
-          "y": 152,
+          "x": 172,
+          "y": 30,
           "dx": 1,
           "dy": 0,
           "type": "wire",
-          "diameter": 9,
+          "diameter": 4,
           "segment": [
-            117,
-            152,
-            87,
-            152
+            168,
+            30,
+            136,
+            30
           ],
           "edge": [
-            122,
-            154.5,
-            122,
-            149.5
+            172,
+            32,
+            172,
+            28
           ]
         }
       ],
@@ -6060,7 +6110,7 @@
       "category": "电学",
       "search": "powerpack 直流电源",
       "svg": "powerpack.svg",
-      "sha256": "e80b3b7146fa3b4e7bf386f40b543d85e30ce1d2c3563db596169a8e6bcd2ee1",
+      "sha256": "b528a710cfcad33325f58ee21ef904307f389be9b5b3df8a0ce00e63feeaf01f",
       "width": 182,
       "height": 102,
       "ports": [
@@ -6092,7 +6142,7 @@
       "category": "电学",
       "search": "battery 电池",
       "svg": "battery.svg",
-      "sha256": "717f80a5e249f750508d8459d2249782661241774db681bf17b70019166c2cf7",
+      "sha256": "680767e76b0a1220b2419fb7caca28be8f059d566634d937b9d1af3f1b110e19",
       "width": 90,
       "height": 170,
       "ports": [
@@ -6124,23 +6174,23 @@
       "category": "电学",
       "search": "digital ammeter 数字电流表",
       "svg": "digital-ammeter.svg",
-      "sha256": "a10346197b22c00d208ae147736ca211b18832af7b4859206e8a6130002c4027",
+      "sha256": "ee025988f9504017e223d7340b6851181a66be5faefd946a1182c8320d67825d",
       "width": 164,
       "height": 112,
       "ports": [
         {
-          "id": "positive",
-          "x": 38,
-          "y": 86,
+          "id": "negative",
+          "x": 42,
+          "y": 82,
           "dx": 0,
           "dy": 1,
           "type": "wire",
           "diameter": 0
         },
         {
-          "id": "negative",
-          "x": 126,
-          "y": 86,
+          "id": "positive",
+          "x": 122,
+          "y": 82,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -6156,23 +6206,23 @@
       "category": "电学",
       "search": "digital voltmeter 数字电压表",
       "svg": "digital-voltmeter.svg",
-      "sha256": "1de8970f2894c650c59e5313c654141f41114211689f5dad94b1d63583ebf71e",
+      "sha256": "98a4d5bb829370bbab230d8f4cd979d4d91f518b495486de256e346a0260e808",
       "width": 164,
       "height": 112,
       "ports": [
         {
-          "id": "positive",
-          "x": 38,
-          "y": 86,
+          "id": "negative",
+          "x": 42,
+          "y": 82,
           "dx": 0,
           "dy": 1,
           "type": "wire",
           "diameter": 0
         },
         {
-          "id": "negative",
-          "x": 126,
-          "y": 86,
+          "id": "positive",
+          "x": 122,
+          "y": 82,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -6188,7 +6238,7 @@
       "category": "电学",
       "search": "resistor 电阻",
       "svg": "resistor.svg",
-      "sha256": "bb3b04c93327c22a593c4ef1acfa6d57d1b5761583dfb568e1fc85d24b7eefa1",
+      "sha256": "62ae5a13063b401e9c32951cfd95ba7dd8c8b5f6bb1ab88305829e2da076bae5",
       "width": 180,
       "height": 150,
       "ports": [
@@ -6220,7 +6270,7 @@
       "category": "电学",
       "search": "lamp 灯泡",
       "svg": "lamp.svg",
-      "sha256": "8e9c29580023654dfc849be045059ab209718f7e49ab1aae348c59e52150449d",
+      "sha256": "c255b8dbd9df0cd5612cc9bacf985a53323e9087670d77d3163a9a16d66f3b88",
       "width": 180,
       "height": 150,
       "ports": [
@@ -6252,25 +6302,25 @@
       "category": "电学",
       "search": "diode 二极管",
       "svg": "diode.svg",
-      "sha256": "499f4611bfc345cc474957f38237872ca763f744b52b18bf48103e09b09a55cc",
-      "width": 180,
-      "height": 150,
+      "sha256": "c0371ea7d872fd2077ba2cf5ab4deb797381783d5c9f553a33be5d4e957ec9b1",
+      "width": 150,
+      "height": 180,
       "ports": [
         {
           "id": "a",
-          "x": 10,
-          "y": 75,
-          "dx": -1,
-          "dy": 0,
+          "x": 75,
+          "y": 10,
+          "dx": 0,
+          "dy": -1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "b",
-          "x": 170,
-          "y": 75,
-          "dx": 1,
-          "dy": 0,
+          "x": 75,
+          "y": 170,
+          "dx": 0,
+          "dy": 1,
           "type": "wire",
           "diameter": 0
         }
@@ -6284,7 +6334,7 @@
       "category": "电学",
       "search": "led 发光二极管",
       "svg": "led.svg",
-      "sha256": "4dc2c17df3c43bfce8a53bad6e6150e1d223cf35f2b8c873a867bf37744aaad5",
+      "sha256": "e9248483782a7e92cd56dc88b817d84c628115d1b658f25a7aa650af42be60b0",
       "width": 180,
       "height": 150,
       "ports": [
@@ -6316,25 +6366,25 @@
       "category": "电学",
       "search": "capacitor 电容",
       "svg": "capacitor.svg",
-      "sha256": "ee0a84dd4b1d123a7228805ee6b06212c80da860fffbed3de8f3c5a3e2d5a211",
-      "width": 180,
-      "height": 150,
+      "sha256": "d7c3a81cf7ddaf91e442df8d5af4c54b5fe3bafbcaf98950037d5bf14141dcb4",
+      "width": 150,
+      "height": 180,
       "ports": [
         {
           "id": "a",
-          "x": 10,
-          "y": 75,
-          "dx": -1,
-          "dy": 0,
+          "x": 62,
+          "y": 162,
+          "dx": 0,
+          "dy": 1,
           "type": "wire",
           "diameter": 0
         },
         {
           "id": "b",
-          "x": 170,
-          "y": 75,
-          "dx": 1,
-          "dy": 0,
+          "x": 88,
+          "y": 162,
+          "dx": 0,
+          "dy": 1,
           "type": "wire",
           "diameter": 0
         }
@@ -6348,7 +6398,7 @@
       "category": "电学",
       "search": "magnet 磁铁",
       "svg": "magnet.svg",
-      "sha256": "7da2315b9d41f89e3f3f1fb4311bf7be6c54c08926086b729b49351dabc9f45e",
+      "sha256": "b890a61bfccc9386df6f11f4bb2592ee7ac9c7bc5d9e9343086d69f1a3f388bf",
       "width": 180,
       "height": 150,
       "ports": [],
@@ -6361,7 +6411,7 @@
       "category": "电学",
       "search": "compass 指南针",
       "svg": "compass.svg",
-      "sha256": "3fd8ff7d125453ae1ed1bd5ff76ef19476bc0676307e9954a6c86d435047f1e1",
+      "sha256": "2a58c591e548806ca4e45d16abf22e6a10b4f8021e925a9024c2afd319a59476",
       "width": 180,
       "height": 150,
       "ports": [],
@@ -6374,7 +6424,7 @@
       "category": "电学",
       "search": "solenoid 螺线管",
       "svg": "solenoid.svg",
-      "sha256": "3c8b97cb93637c572850cc76868c233589a9cc400e9369755aa71575d206ae3b",
+      "sha256": "8e10a92c8087df1589cdba6ac95e52316a7cd687230e18b407ed321bde1ead79",
       "width": 180,
       "height": 150,
       "ports": [
@@ -6406,7 +6456,7 @@
       "category": "生物实验",
       "search": "petri dish 培养皿",
       "svg": "petri-dish.svg",
-      "sha256": "170e855ae8ed2689e915d91635f026f1544651bf8cfc23ff1a62aee1b0adbdd2",
+      "sha256": "fed285835fe100d1bd632ddd8d621c7a42368eed1963746dbc9c8793a2592fe4",
       "width": 160,
       "height": 38,
       "ports": [
@@ -6429,7 +6479,7 @@
       "category": "生物实验",
       "search": "petri top 培养皿俯视图",
       "svg": "petri-top.svg",
-      "sha256": "ddf672254730b9d42cb329c9d2d8728858940ee8ae40f85104290fce39e3356c",
+      "sha256": "f81e2406e826d68db9ed79c83cfe00939e4aaa2f00c9519e601dd106cfc117b5",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6442,7 +6492,7 @@
       "category": "生物实验",
       "search": "choice chamber 选择室",
       "svg": "choice-chamber.svg",
-      "sha256": "6c78db9958a21766da9daa91213320c068ed7d64fb7186d218dc8c9fa2596ac9",
+      "sha256": "edb182675437646574e3aa6fff9bb0bf102ebead1b087809399088f86328379c",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6455,7 +6505,7 @@
       "category": "生物实验",
       "search": "microscope slide 载玻片",
       "svg": "microscope-slide.svg",
-      "sha256": "1603fa336d993532730781603a1fb26cc8298c27d9604bb8afbde7f18a5293c6",
+      "sha256": "f6421137d3d5bdd5ce4b28b57b72bfdde8a66b445b6f55fa295c0146c19fee2d",
       "width": 180,
       "height": 100,
       "ports": [],
@@ -6468,7 +6518,7 @@
       "category": "生物实验",
       "search": "cover slip 盖玻片",
       "svg": "cover-slip.svg",
-      "sha256": "571c08b673b28e1b2a28b2ded380e58bc0163323d64b8c5f13afdb29163c45d8",
+      "sha256": "1db72c82b1f129d5172ae4d2f72181fcc82ea7fec795db562ea739ded2542e22",
       "width": 180,
       "height": 100,
       "ports": [],
@@ -6481,7 +6531,7 @@
       "category": "生物实验",
       "search": "quadrat 样方框",
       "svg": "quadrat.svg",
-      "sha256": "483419285729aa5488f6df089b36957c7b36924ba13cb5e74650b65a7522cfc6",
+      "sha256": "ba13bdd8bd220186c5f4804be4ede463ecac41be2e7f3cc8cb1a086feb1f02d6",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6494,7 +6544,7 @@
       "category": "生物实验",
       "search": "bacteria 杆菌示意",
       "svg": "bacteria.svg",
-      "sha256": "4cf3c0a84b42787bcd562ef9a03fc29dd6205a83314b5c82847e79f3c3235128",
+      "sha256": "a5a1ecf20cd0de8d51aa1265d5121309ead82eec6e1bac7db08f8139c56add5b",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6507,7 +6557,7 @@
       "category": "生物实验",
       "search": "seed 种子",
       "svg": "seed.svg",
-      "sha256": "879fbe56541f6af561946abfeceb8aadc7b4347af479d189b53ad197a8bfa7ea",
+      "sha256": "53f7d7105eb352179ba4830e2e5b359395b4a99b1f7c6219f8b7b10b2feaf425",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6520,7 +6570,7 @@
       "category": "生物实验",
       "search": "potato 马铃薯",
       "svg": "potato.svg",
-      "sha256": "c7a89a2b165bb3d9467c928d7ff9661be32d8e8d3178bf8d8877ad86387d57a4",
+      "sha256": "0aad8018d324c3ce8180fbf1152e158d4092ee05d22025873e9da04e5ec819af",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6533,7 +6583,7 @@
       "category": "生物实验",
       "search": "agar 琼脂块",
       "svg": "agar.svg",
-      "sha256": "51476dc917585df53db9b1dff994ce4b44c33ebe01538d72a450f1dd5ec9f295",
+      "sha256": "140211781da517ed1f089f28194e06498dee9c61ad0c3f489a64416b71176e70",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6546,7 +6596,7 @@
       "category": "生物实验",
       "search": "pot 花盆",
       "svg": "pot.svg",
-      "sha256": "c97b8f68c770e22d12f07b07844b3d64305a92830b31b95ebf78175c74612c17",
+      "sha256": "56c3c8a9653c61e918d4966bb60b212e7d8eb7a0c88b36c74e58bb62a186bf04",
       "width": 180,
       "height": 180,
       "ports": [
@@ -6569,7 +6619,7 @@
       "category": "生物实验",
       "search": "daisy 雏菊",
       "svg": "daisy.svg",
-      "sha256": "a4c185d2129e72b07eae285bb293d116792ad86d493d41727689838df741fa75",
+      "sha256": "5eb0cbebc92a0047f8bd5ff7e31ab3e4d694a98cc5d0f8075cb5e7bc4eade0cf",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6582,7 +6632,7 @@
       "category": "生物实验",
       "search": "tree 树",
       "svg": "tree.svg",
-      "sha256": "9be800cb4fa711a245199a1db576e547718878239a9b284a6b77520866d11179",
+      "sha256": "2d97fb7ce49c65a55470256aa8c89c6ba223fa46d3b9c4d51a13dca777c59d5b",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6595,7 +6645,7 @@
       "category": "生物实验",
       "search": "leaf 叶片",
       "svg": "leaf.svg",
-      "sha256": "1d0f4efc3bf93bd6c8f0e4c2a2e1c75b5192f1821a04a8c6d13c5c9b0a6ce224",
+      "sha256": "cd3c31b04224a38257334f05a32659fcccefff2ddcc84f642c74df7038fba137",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6608,7 +6658,7 @@
       "category": "生物实验",
       "search": "plant shoot 植物幼苗",
       "svg": "plant-shoot.svg",
-      "sha256": "baadb0291b7f79132d2da6841bfb2a364349daa858e7eb7214b58a590b096eed",
+      "sha256": "e47ed50bdeffba023f9b5803a9919e3c9760ee86e15ef808f5b73ec2de2c195a",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6621,7 +6671,7 @@
       "category": "生物实验",
       "search": "shoot 嫩枝",
       "svg": "shoot.svg",
-      "sha256": "82a1b1b352d9873a83575109f7f232947d6cdfffc8be0d5d399c47548760bee5",
+      "sha256": "b5b231da06d41707b9e530364b0d2b6458e597a1b2774e67ce4489367d0dc501",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6634,7 +6684,7 @@
       "category": "生物实验",
       "search": "pond weed 水草",
       "svg": "pond-weed.svg",
-      "sha256": "2756017704aad43bf82ab554acab8358f9024b0454b5daf8f0564ab4ef9badc0",
+      "sha256": "4450161cda3ec9ed8e2218b987fdad664336c9ac15d25aefe1d3954cef3aa8f8",
       "width": 180,
       "height": 180,
       "ports": [],
@@ -6647,23 +6697,23 @@
       "category": "实验小工具",
       "search": "metal strip 金属条",
       "svg": "metal-strip.svg",
-      "sha256": "04dfd75d85c1ce163572a6ca7bef09cbf696f97ce917161e44f9c268830b9bd9",
-      "width": 180,
-      "height": 120,
+      "sha256": "9445e39e1910f22deb06f2ddf2bea330a24d44d0ee5caa22e594166a1bb442b2",
+      "width": 120,
+      "height": 180,
       "ports": [
         {
           "id": "probe",
-          "x": 170,
-          "y": 58,
-          "dx": 1,
-          "dy": 0,
+          "x": 60,
+          "y": 170,
+          "dx": 0,
+          "dy": 1,
           "type": "probe",
           "diameter": 12,
           "segment": [
+            60,
             150,
-            58,
-            30,
-            58
+            60,
+            30
           ]
         }
       ],
@@ -6676,23 +6726,23 @@
       "category": "实验小工具",
       "search": "swab 棉签",
       "svg": "swab.svg",
-      "sha256": "d774531e8e61404acbc5e30e7cfa3290225312bf94567b821cb116d8afd8cca1",
-      "width": 180,
-      "height": 120,
+      "sha256": "599466d6403adc09998cfa682d070aa224d2aeb72ee0d933d03fbbac4acf4660",
+      "width": 120,
+      "height": 180,
       "ports": [
         {
           "id": "probe",
-          "x": 170,
-          "y": 58,
-          "dx": 1,
-          "dy": 0,
+          "x": 60,
+          "y": 170,
+          "dx": 0,
+          "dy": 1,
           "type": "probe",
           "diameter": 12,
           "segment": [
+            60,
             150,
-            58,
-            30,
-            58
+            60,
+            30
           ]
         }
       ],
@@ -6705,23 +6755,23 @@
       "category": "实验小工具",
       "search": "nail 铁钉",
       "svg": "nail.svg",
-      "sha256": "d018fb7b50cbbdfcc1bb060461c215979c1bf240c3e842d9acfd6729f9e8b784",
-      "width": 180,
-      "height": 120,
+      "sha256": "fc71477fdd0ca05fcaebce509eb770e9dc50ae17c915f04bffdabf6c3a7c4a4f",
+      "width": 120,
+      "height": 180,
       "ports": [
         {
           "id": "probe",
-          "x": 170,
-          "y": 58,
-          "dx": 1,
-          "dy": 0,
+          "x": 60,
+          "y": 170,
+          "dx": 0,
+          "dy": 1,
           "type": "probe",
           "diameter": 12,
           "segment": [
+            60,
             150,
-            58,
-            30,
-            58
+            60,
+            30
           ]
         }
       ],
@@ -6734,7 +6784,7 @@
       "category": "实验小工具",
       "search": "capsule pill 胶囊",
       "svg": "capsule-pill.svg",
-      "sha256": "3fb1163e004464e1149114f2a3de11ad82d2126403724f7493bf94c9092820a4",
+      "sha256": "726e2fd67d1b9f0051da613b26c276b349dcd3cb13266f220d1517fc48b051f8",
       "width": 180,
       "height": 120,
       "ports": [],
@@ -6747,7 +6797,7 @@
       "category": "物质与填充",
       "search": "bubbles 气泡",
       "svg": "bubbles.svg",
-      "sha256": "fb150d4c6c8734ce597b828ffa52601414bead12c70d580ef0a7ca585112c8f7",
+      "sha256": "6d2cb87597d24a891ec96d6757e492320ce649fa3a038305a36ef6493ea907b5",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6760,7 +6810,7 @@
       "category": "物质与填充",
       "search": "beads 微珠",
       "svg": "beads.svg",
-      "sha256": "81286b6d1fafe86307fe68f97fda1dba0c770418d23d42c5caaae349b2b3f766",
+      "sha256": "348e7b856a902c4d267265842b28e5e6bfb5396012deb55429a153eb47ca0c93",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6773,7 +6823,7 @@
       "category": "物质与填充",
       "search": "particles 颗粒",
       "svg": "particles.svg",
-      "sha256": "1e6c68fad589ad0594b838bef4946e5c33d0e0c0d7c69d3aa4cdd6754ed057b3",
+      "sha256": "53b12ef6b02a5c7dfb5817003ac6cd961a300304ab58bfe38d4abbde6d9e1df7",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6786,7 +6836,7 @@
       "category": "物质与填充",
       "search": "crystals 晶体",
       "svg": "crystals.svg",
-      "sha256": "b713644cf0010caea9402e6a59a6761f87a10249e7699f44651264ddef3f4181",
+      "sha256": "dfe2cbd9e777d0ef4ecd6586ec3f6b0cd805d5898768dbab54c442c2344a7bd7",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6799,7 +6849,7 @@
       "category": "物质与填充",
       "search": "drop 液滴",
       "svg": "drop.svg",
-      "sha256": "6885b5f6157da8ff164d6119468a8ff22d8de35c31bc482b6e3a5d0cf670fa37",
+      "sha256": "d640ecf877fb445fa7c02ce26dee5ac03fa4a0bbafd705280fbdfd99b98dc37a",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6812,7 +6862,7 @@
       "category": "物质与填充",
       "search": "ice cube 冰块",
       "svg": "ice-cube.svg",
-      "sha256": "b7914c016262a0f3b8be8fa607a9726589378c96cfd9ad93d586b0d7e8532208",
+      "sha256": "2c7b4b8f8439521c5266df6e1b9d879ba0c9d259c2e252c5e04f9d1b0a2d1265",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6825,7 +6875,7 @@
       "category": "物质与填充",
       "search": "powder 粉末",
       "svg": "powder.svg",
-      "sha256": "3b7b9cfa4616ba3225a5bc56ab9a6b2378ca9d5d640b92386ba3bfdea067f385",
+      "sha256": "6e27ef6c231ddc4fffb704f86adc4b84bb28b6748d4c79761e237d237bfe368b",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6838,7 +6888,7 @@
       "category": "物质与填充",
       "search": "dirt 土壤",
       "svg": "dirt.svg",
-      "sha256": "09ce235c715181d6b727641f38d1d804803313aa265460b0a3031c57182a31cf",
+      "sha256": "b0fdfb5ed3b3c7768032a061b3ccf61d5c754e3b7b75fb1c14c71a80b017901d",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6851,7 +6901,7 @@
       "category": "物质与填充",
       "search": "smoke 烟雾",
       "svg": "smoke.svg",
-      "sha256": "18f9546fdcf5ed7b4dd04889ef56ca5c8ebcf85bd675a898d15d00cfe8fe0e42",
+      "sha256": "0750edfc5a6ef90abe9b6da4e3733fa9bda2503b0795b149295884d8ef4a21d8",
       "width": 170,
       "height": 130,
       "ports": [],
@@ -6864,7 +6914,7 @@
       "category": "测量与防护",
       "search": "hand 手部示意",
       "svg": "hand.svg",
-      "sha256": "2f60dd604d7bc2087b640731eaa16f22d48f166a122709aa4e7e58c7e1d6458b",
+      "sha256": "56a170d71bce8ed6085166eb28fac458dea7d92414281fa5c6468295c3738bdb",
       "width": 180,
       "height": 150,
       "ports": [],
@@ -6877,7 +6927,7 @@
       "category": "光学",
       "search": "prism 三棱镜",
       "svg": "prism.svg",
-      "sha256": "f44e52b16bd364907a424a6939c8f516496955176d464616ddedb3b879575e13",
+      "sha256": "9d4c18426fb4e713e2bc8b576881833f2d2352d8f1848cd96ff36c900da2379f",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6890,7 +6940,7 @@
       "category": "光学",
       "search": "lens 凸透镜",
       "svg": "lens.svg",
-      "sha256": "63f5bdc60fa363f08fd2ab2d44e57a22ad81937339eca62eb93bc4d2ba3bfe36",
+      "sha256": "f697ee49f605c4af381866aca9912ac10f5839f08e6484630c9836db46242c0d",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6903,7 +6953,7 @@
       "category": "光学",
       "search": "glass block 玻璃砖",
       "svg": "glass-block.svg",
-      "sha256": "bde33e386c0ca4afcd5639051c09def28dd91b58095c6e8fb017a58e41f78f13",
+      "sha256": "5cf55654cc55c9fd27ac218bac37b6fad2b9451423470308a9d0090092cfefbf",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6916,7 +6966,7 @@
       "category": "光学",
       "search": "mirror 平面镜",
       "svg": "mirror.svg",
-      "sha256": "e84a5958be64b049ab40f39446c9f2c2abb76197e0e3915c162ed373195a4ff5",
+      "sha256": "6715f884a0f29001537b1affaea33bde9f2bb2c10ceaa430a51424a4a6e5f8fa",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6929,7 +6979,7 @@
       "category": "光学",
       "search": "curved mirror 凹面镜",
       "svg": "curved-mirror.svg",
-      "sha256": "776dea2194826b5865760b21088a87b76155c9e23948eb02ce33127ecf52668e",
+      "sha256": "43e801284e3b20b204964d8a078959b1b72ad15b7dca0ce04d0b30beedcb2534",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6942,7 +6992,7 @@
       "category": "光学",
       "search": "raybox 光源盒",
       "svg": "raybox.svg",
-      "sha256": "7a2ff3bd91b0a7efdb7a5612b9609f1adb599dee230cf45c5b6c2d1bf56cb410",
+      "sha256": "e75a2aee74906fbd6375213c921a87baee78aef8590c6fec42b4ec10ae16b607",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6955,7 +7005,7 @@
       "category": "光学",
       "search": "ray 光线",
       "svg": "ray.svg",
-      "sha256": "767293c375e4afaaf2aa2da5917e809ea8303cbda18d78cbd1a60cd62cd9eba0",
+      "sha256": "2e6af64209262751a321dfe352d860a29fb23a5358314d67692e253279cc151f",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6968,7 +7018,7 @@
       "category": "光学",
       "search": "sun 太阳",
       "svg": "sun.svg",
-      "sha256": "1252363380ad014f475ee95a0ea3af54d5f42b167e50b0d9beb324f3a61d93aa",
+      "sha256": "6ea88e52779f9cb30ae2b0ef0e3c4e7bddaa61ad1736c803c6d1b9a0f576617b",
       "width": 190,
       "height": 160,
       "ports": [],
@@ -6981,7 +7031,7 @@
       "category": "力学",
       "search": "trolley 小车",
       "svg": "trolley.svg",
-      "sha256": "762c5885ae347ee94d1f1ec7841bea61d9bfb553cace643c2eb62a0b83002af7",
+      "sha256": "88439ee57660699cdf606063e229583603c6b2f994dc5a97bca905fcdd5ba0d7",
       "width": 190,
       "height": 165,
       "ports": [
@@ -7004,7 +7054,7 @@
       "category": "力学",
       "search": "ramp 斜面",
       "svg": "ramp.svg",
-      "sha256": "a00985849216779f51c54241c30769292ec86348770d87b06248e50395ce9fcc",
+      "sha256": "d40d5b50ffc133b52b04de62262b6eb7a50bc75177d8f99f619ba7955e467f46",
       "width": 190,
       "height": 165,
       "ports": [
@@ -7033,14 +7083,14 @@
       "category": "力学",
       "search": "light gate 光电门",
       "svg": "light-gate.svg",
-      "sha256": "25f8dfa0e11e3063c7833a31723c585b99318835b80224a7f8a8f7b62062c523",
+      "sha256": "d1b1efc1d02cb03fae78a09b33641222e529d76eb0d1c34c1cf0af5c50036c00",
       "width": 190,
       "height": 165,
       "ports": [
         {
           "id": "signal",
-          "x": 141,
-          "y": 43,
+          "x": 118,
+          "y": 30,
           "dx": 0,
           "dy": 1,
           "type": "wire",
@@ -7048,7 +7098,7 @@
         },
         {
           "id": "grip-site",
-          "x": 48,
+          "x": 72,
           "y": 100,
           "dx": 1,
           "dy": 0,
@@ -7065,7 +7115,7 @@
       "category": "力学",
       "search": "pulley 滑轮",
       "svg": "pulley.svg",
-      "sha256": "aefcf45f7b4845fbe7cf068827d3506cd3779ed141a5d1a73f4ec846bfa2e265",
+      "sha256": "3c9e5c7ffac78cd7b97f4b28cb5e7348f14cf178d118fc51bb95f699cff334ad",
       "width": 190,
       "height": 165,
       "ports": [
@@ -7088,7 +7138,7 @@
       "category": "力学",
       "search": "spring 弹簧",
       "svg": "spring.svg",
-      "sha256": "75470384eeaecf4495b5b73a56e87b66ef1c2c5b8887578070bccf4da6a09556",
+      "sha256": "89fcc7102ae63ca58de0f000f5a6aafcab8ab9c469ea30b1c7dafcd702854689",
       "width": 190,
       "height": 165,
       "ports": [
@@ -7120,7 +7170,7 @@
       "category": "力学",
       "search": "slotted weight 钩码",
       "svg": "slotted-weight.svg",
-      "sha256": "6212bccb0bac7dd766cfe662cf18e903b4e1c621d878a567c1574e31dcf720e4",
+      "sha256": "596359d9a4e607b8feda60c9ad2e04cfc57233f7f618744af5202126fb964074",
       "width": 190,
       "height": 165,
       "ports": [
@@ -7143,7 +7193,7 @@
       "category": "图形与标记",
       "search": "rectangle 矩形框",
       "svg": "rectangle.svg",
-      "sha256": "7676373bce308b69baf564bd9f2d98d6b7ee91b241a3645afddd09f27f185e4e",
+      "sha256": "e6cf58f86279a76a5aa27b04c7dc3fbc2a35af9c33d6756ae0f22fbf1b073b7b",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7156,7 +7206,7 @@
       "category": "图形与标记",
       "search": "ellipse 椭圆",
       "svg": "ellipse.svg",
-      "sha256": "97c41cea0e868d9039387a1a35a765ac7600b679673c318d27c5200919ad2ba6",
+      "sha256": "b3baccdea7682ff0b60ba2793756cd8b9afd0a083e427cdc103651f87ca8102c",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7169,7 +7219,7 @@
       "category": "图形与标记",
       "search": "triangle 三角形",
       "svg": "triangle.svg",
-      "sha256": "da44daceff131a99b2d2537d954dc052a5db47890154e5bdb9f4d31b46acc426",
+      "sha256": "45777681483fc6fbf3e2a6d8456c1f1e686e29c34a6792dda4224101920d2963",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7182,7 +7232,7 @@
       "category": "图形与标记",
       "search": "line 直线",
       "svg": "line.svg",
-      "sha256": "6433207e36537b12e5b394805895593108ed312e5839d766f973ab3be8936b2f",
+      "sha256": "a2b979ae16d943373fd82b3e92581b99f44e5b69e23c2b97d4a73317d7675173",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7195,7 +7245,7 @@
       "category": "图形与标记",
       "search": "arrow 箭头",
       "svg": "arrow.svg",
-      "sha256": "36bcb7024132a2f7780728489ae5750a06246481665c10eae09cc5f9a888964e",
+      "sha256": "2b21a519dff96aac06779ef18eb45510f001b1db6c616b3997236024d5d33c39",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7208,7 +7258,7 @@
       "category": "图形与标记",
       "search": "curve 曲线",
       "svg": "curve.svg",
-      "sha256": "a42f8b568dcb79c2c6174af3ee1001295ed15789f73a418c2adb68e4cd9e958c",
+      "sha256": "2c9f431543e622a4eaf955a6c9ae36768eeefd52746285c33b78b30fb0971e2a",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7221,7 +7271,7 @@
       "category": "图形与标记",
       "search": "curved arrow 曲线箭头",
       "svg": "curved-arrow.svg",
-      "sha256": "3fa6228f1308cb9605b5e85b80356197a133b91b9f82342a9002acc7b6510d69",
+      "sha256": "8412da9515f04416fa3961ff473d416aa8e3e7192fe7ea5447865f3916139179",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7234,7 +7284,7 @@
       "category": "图形与标记",
       "search": "stir arrow 旋转箭头",
       "svg": "stir-arrow.svg",
-      "sha256": "057696a824c95994a9e6620d4369fae12ffae415ad42e1dc4bd62da944318c97",
+      "sha256": "70745180507c91f55f23519d77466f2d42baeac265455518684c5f866dc01977",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7247,7 +7297,7 @@
       "category": "图形与标记",
       "search": "cross 十字",
       "svg": "cross.svg",
-      "sha256": "5f004344c0d941cd719b5922b48eb9db22efdd9cf82d1aeedad4bff5e8103e8c",
+      "sha256": "c6637b732027e1fac6793a2d9361f5483248a71b2b5656c9eb109bdd00f507a6",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7260,7 +7310,7 @@
       "category": "图形与标记",
       "search": "cuboid 长方体",
       "svg": "cuboid.svg",
-      "sha256": "f2964ca41d86833c287842f95b0ebf3f719752cbd0eef180e96a47d2418c268e",
+      "sha256": "22b3467b51099737a289a1c39645197f0aa1ddf16cd112916023f33889f3c268",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7273,7 +7323,7 @@
       "category": "图形与标记",
       "search": "isocube 立方体",
       "svg": "isocube.svg",
-      "sha256": "b07edb1805c995ca5edaeac5d232f272efbcc89e362e37e219b6e7071466510e",
+      "sha256": "82754d1b2961cadcb71444f6c12f7a1d2483c7e0126f1cb8eb943c2dcaa45bff",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7286,7 +7336,7 @@
       "category": "图形与标记",
       "search": "3dcylinder 圆柱体",
       "svg": "3dcylinder.svg",
-      "sha256": "f80898c12f653ffca95ce26eac3b2f93cfd1919eb73d97ca955d9cc3481660a7",
+      "sha256": "8b4a6288ac9873b7607eb50ad77eb92505605531658faf1bbb43c92a96a9849a",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7299,7 +7349,7 @@
       "category": "图形与标记",
       "search": "label 标签",
       "svg": "label.svg",
-      "sha256": "374ba6d0306dae0635ab4988648a4f5e4a4f4a62d79a83996661ea68d1f6f353",
+      "sha256": "783c61c2176beb53e005bd09996097683066b5597e7009011e6de059225dfc6d",
       "width": 180,
       "height": 140,
       "ports": [],
@@ -7312,7 +7362,7 @@
       "category": "图形与标记",
       "search": "eye 眼睛",
       "svg": "eye.svg",
-      "sha256": "4ba30f17077a2a7fe30168d6283f8c06e507fc27a711b7ffe3c8adf91753612a",
+      "sha256": "0162b3b6a56eea81aa11cd94dfefbb0692688ee7120a36800070be40f0231165",
       "width": 180,
       "height": 140,
       "ports": [],

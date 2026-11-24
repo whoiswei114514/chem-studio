@@ -5,7 +5,7 @@
   <path d="M66 29.2 L88.32 29.8 L90.32 27.9 L102 30 L102 38 L90.32 40.1 L88.32 38.2 L66 38.8 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
   <path d="M36 58 V70 L22 84 V212 Q22 224 34 224 H74 Q86 224 86 212 V84 L72 70 V58" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M42 24 H50 Q54 24 54 29 V196" fill="none" stroke="#4A4F55" stroke-width="3.2" stroke-linecap="round"/>
-      <rect x="48" y="196" width="12" height="15" rx="3" fill="#E3E6EB" stroke="#4A4F55" stroke-width="1.6"/>
+      <rect x="48" y="196" width="12" height="15" rx="3" fill="#E5E7EB" stroke="#4A4F55" stroke-width="1.6"/>
   <path d="M39 50 H37 L39.5 70" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M69 50 H71 L68.5 70" fill="none" stroke="#333333" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M40.2 52.8 Q54 55.4 67.8 52.8" fill="none" stroke="#DCE8EC" stroke-width="1.8" stroke-linecap="round"/>

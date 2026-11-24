@@ -3,8 +3,8 @@
 <title>曲线箭头</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M26 98 Q90 22 148 92" fill="none" stroke="#4A4F55" stroke-width="3.2"/>
-      <polygon points="154,100 134,92 148,80" fill="#4A4F55" stroke="#333333" stroke-width="2.2"/>
+      <path d="M26 98 Q90 22 148 92" fill="none" stroke="#4A4F55" stroke-width="2.6"/>
+      <polygon points="154,100 134,92 148,80" fill="#4A4F55" stroke="#333333" stroke-width="2.0"/>
     </g>
   
 </svg>

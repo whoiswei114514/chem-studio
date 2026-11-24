@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="108" height="160" viewBox="0 0 108 160">
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="132" viewBox="0 0 144 132">
 <title>U 形管</title>
-<path d="M20 12 V112 A34 34 0 0 0 88 112 V12" fill="none" stroke="#333333" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M20 12 V112 A34 34 0 0 0 88 112 V12" fill="none" stroke="#FFFFFF" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+<path d="M22 12 V68 A50 50 0 0 0 122 68 V12" fill="none" stroke="#333333" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M22 12 V68 A50 50 0 0 0 122 68 V12" fill="none" stroke="#FFFFFF" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
 </svg>

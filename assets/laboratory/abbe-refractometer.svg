@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="186" height="196" viewBox="0 0 186 196">
 <title>阿贝折光仪</title>
-<rect x="78" y="76" width="30" height="58" rx="3" fill="#E3E6EB" stroke="#333333" stroke-width="2.4"/>
-      <circle cx="93" cy="110" r="14" fill="#F5F6F8" stroke="#333333" stroke-width="2.2"/>
+<rect x="78" y="76" width="30" height="58" rx="3" fill="#E5E7EB" stroke="#333333" stroke-width="2.4"/>
+      <circle cx="93" cy="110" r="14" fill="#F3F4F6" stroke="#333333" stroke-width="2.2"/>
       <circle cx="93" cy="110" r="6" fill="#3A3E44" stroke="#333333" stroke-width="1.6"/>
   
       <line x1="108" y1="98" x2="136" y2="98" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
       <ellipse cx="144" cy="98" rx="8" ry="13" fill="#FFFFFF" stroke="#333333" stroke-width="2.2"/>
-      <rect x="40" y="66" width="38" height="28" rx="4" fill="#F5F6F8" stroke="#333333" stroke-width="2.4"/>
-      <rect x="44" y="54" width="30" height="12" rx="2" fill="#E3E6EB" stroke="#333333" stroke-width="2.0"/>
-      <path d="M104 78 L142 36 L152 46 L112 90 Z" fill="#E3E6EB" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
+      <rect x="40" y="66" width="38" height="28" rx="4" fill="#F3F4F6" stroke="#333333" stroke-width="2.4"/>
+      <rect x="44" y="54" width="30" height="12" rx="2" fill="#E5E7EB" stroke="#333333" stroke-width="2.0"/>
+      <path d="M104 78 L142 36 L152 46 L112 90 Z" fill="#E5E7EB" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
       <rect x="142" y="28" width="16" height="22" rx="3" transform="rotate(42 150 39)" fill="#3A3E44" stroke="#333333" stroke-width="2.2"/>
-      <circle cx="93" cy="64" r="9" fill="#E3E6EB" stroke="#333333" stroke-width="2.0"/>
+      <circle cx="93" cy="64" r="9" fill="#E5E7EB" stroke="#333333" stroke-width="2.0"/>
       <line x1="93" y1="64" x2="98" y2="58" stroke="#3A3E44" stroke-width="2.0" stroke-linecap="round"/>
-  <path d="M24 186 L42 132 H144 L162 186 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
-      <rect x="16" y="180" width="154" height="10" rx="3" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
+  <path d="M24 186 L42 132 H144 L162 186 Z" fill="#F3F4F6" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
+      <rect x="16" y="180" width="154" height="10" rx="3" fill="#C8CDD3" stroke="#333333" stroke-width="2.2"/>
       <rect x="52" y="144" width="82" height="26" rx="3" fill="#E6EEF2" stroke="#3A3E44" stroke-width="1.8"/>
       <text x="93" y="156" font-size="8.5" font-family="Consolas, monospace" fill="#22252A" text-anchor="middle">nD 1.3330</text>
       <text x="93" y="166" font-size="7.5" font-family="Consolas, monospace" fill="#2D6DA3" text-anchor="middle">20.0°C  0.0% Brix</text>

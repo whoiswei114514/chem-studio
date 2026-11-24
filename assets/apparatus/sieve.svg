@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="140" height="42" viewBox="0 0 140 42">
 <title>筛网</title>
-<rect x="10" y="8" width="120" height="26" rx="2" fill="#E3E6EB" stroke="#333333" stroke-width="2.8"/>
-      <rect x="14" y="8" width="112" height="5" fill="#F5F6F8" stroke="#333333" stroke-width="1.6"/>
-      <line x1="14" y1="29" x2="126" y2="29" stroke="#333333" stroke-width="2.0" stroke-dasharray="4 3"/>
+<path d="M12 12 V30" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M128 12 V30" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round"/>
+      <line x1="12" y1="30" x2="128" y2="30" stroke="#333333" stroke-width="2.6" stroke-dasharray="6 4" stroke-linecap="round"/>
 </svg>

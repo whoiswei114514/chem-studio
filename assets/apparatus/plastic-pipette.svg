@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="220" viewBox="0 0 50 220">
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="220" viewBox="0 0 44 220">
 <title>塑料滴管</title>
-<path d="M16 64 V180 L22 208 M28 208 L34 180 V64" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 64 C5 14 45 14 34 64" fill="#FFFFFF" stroke="#333333" stroke-width="3.2" stroke-linejoin="round"/>
-  <g><line x1="32" y1="78" x2="23.3" y2="78" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="32" y1="91" x2="26" y2="91" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="32" y1="104" x2="23.3" y2="104" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="32" y1="117" x2="26" y2="117" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="32" y1="130" x2="23.3" y2="130" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="32" y1="143" x2="26" y2="143" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="32" y1="156" x2="23.3" y2="156" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
+<path d="M17 156 H27 L25 186 L24 208 H20 L19 186 Z" fill="#DCF0F7" stroke="none"/>
+  <path d="M16 62 C11 32 14 10 22 10 C30 10 33 32 28 62 L27 180 L24 208 M20 208 L17 180 Z" fill="none" stroke="#333333" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g><line x1="26" y1="78" x2="18.75" y2="78" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="26" y1="90.333" x2="21" y2="90.333" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="26" y1="102.667" x2="18.75" y2="102.667" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="26" y1="115" x2="21" y2="115" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="26" y1="127.333" x2="18.75" y2="127.333" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/><line x1="26" y1="139.667" x2="21" y2="139.667" stroke="#B8BCC2" stroke-width="1" stroke-linecap="round"/><line x1="26" y1="152" x2="18.75" y2="152" stroke="#B8BCC2" stroke-width="1.4" stroke-linecap="round"/></g>
 </svg>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="220" viewBox="0 0 50 220">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="220" viewBox="0 0 48 220">
 <title>滴管</title>
-<path d="M16 64 V180 L22 208 M28 208 L34 180 V64" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 64 C4 14 46 14 36 64 Z" fill="#B8292F" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/><rect x="13" y="59" width="24" height="6" rx="2.5" fill="#595E66" stroke="#333333" stroke-width="2.2"/>
-  
+<path d="M16 142 H32 L28 182 L26 208 H22 L20 182 Z" fill="#DCF0F7" stroke="none"/>
+  <line x1="16" y1="142" x2="32" y2="142" stroke="#7ECAE6" stroke-width="1.8"/>
+  <path d="M16 64 V182 L22 208 M26 208 L32 182 V64" fill="none" stroke="#333333" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 58 C12 28 16 10 24 10 C32 10 36 28 32 58 Z" fill="#3A3E44" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
+  <rect x="13" y="56" width="22" height="8" rx="3" fill="#3A3E44" stroke="#333333" stroke-width="2.4"/>
 </svg>

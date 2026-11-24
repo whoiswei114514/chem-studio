@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="110" viewBox="0 0 130 110">
 <title>秒表</title>
-<rect x="58" y="6" width="14" height="14" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="1.8"/>
-      <rect x="94" y="20" width="10" height="12" rx="2" transform="rotate(38 99 26)" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/>
-      <circle cx="65" cy="60" r="44" fill="#C4C9D0" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="65" cy="60" r="37" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.6"/>
-      <line x1="65" y1="29" x2="65" y2="24" stroke="#333333" stroke-width="2"/><line x1="80.5" y1="33.153" x2="83" y2="28.823" stroke="#333333" stroke-width="1.2"/><line x1="91.847" y1="44.5" x2="96.177" y2="42" stroke="#333333" stroke-width="1.2"/><line x1="96" y1="60" x2="101" y2="60" stroke="#333333" stroke-width="2"/><line x1="91.847" y1="75.5" x2="96.177" y2="78" stroke="#333333" stroke-width="1.2"/><line x1="80.5" y1="86.847" x2="83" y2="91.177" stroke="#333333" stroke-width="1.2"/><line x1="65" y1="91" x2="65" y2="96" stroke="#333333" stroke-width="2"/><line x1="49.5" y1="86.847" x2="47" y2="91.177" stroke="#333333" stroke-width="1.2"/><line x1="38.153" y1="75.5" x2="33.823" y2="78" stroke="#333333" stroke-width="1.2"/><line x1="34" y1="60" x2="29" y2="60" stroke="#333333" stroke-width="2"/><line x1="38.153" y1="44.5" x2="33.823" y2="42" stroke="#333333" stroke-width="1.2"/><line x1="49.5" y1="33.153" x2="47" y2="28.823" stroke="#333333" stroke-width="1.2"/>
-      <line x1="65" y1="60" x2="65" y2="30" stroke="#333333" stroke-width="2.4" stroke-linecap="round"/>
-      <line x1="65" y1="60" x2="88" y2="68" stroke="#B8292F" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="65" cy="60" r="3.8" fill="#3A3E44" stroke="#333333" stroke-width="1.4"/>
+<rect x="58" y="6" width="14" height="14" rx="2" fill="#3A3E44" stroke="#333333" stroke-width="1.6"/>
+      <rect x="94" y="20" width="9" height="12" rx="1.5" transform="rotate(38 98 26)" fill="#C8CDD3" stroke="#333333" stroke-width="1.4"/>
+      <circle cx="65" cy="60" r="44" fill="#E5E7EB" stroke="#333333" stroke-width="2.4"/>
+      <circle cx="65" cy="60" r="37" fill="#FFFFFF" stroke="#4A4F55" stroke-width="1.4"/>
+      <line x1="65" y1="29" x2="65" y2="24" stroke="#4A4F55" stroke-width="1.8"/><line x1="80.5" y1="33.153" x2="83" y2="28.823" stroke="#4A4F55" stroke-width="1"/><line x1="91.847" y1="44.5" x2="96.177" y2="42" stroke="#4A4F55" stroke-width="1"/><line x1="96" y1="60" x2="101" y2="60" stroke="#4A4F55" stroke-width="1.8"/><line x1="91.847" y1="75.5" x2="96.177" y2="78" stroke="#4A4F55" stroke-width="1"/><line x1="80.5" y1="86.847" x2="83" y2="91.177" stroke="#4A4F55" stroke-width="1"/><line x1="65" y1="91" x2="65" y2="96" stroke="#4A4F55" stroke-width="1.8"/><line x1="49.5" y1="86.847" x2="47" y2="91.177" stroke="#4A4F55" stroke-width="1"/><line x1="38.153" y1="75.5" x2="33.823" y2="78" stroke="#4A4F55" stroke-width="1"/><line x1="34" y1="60" x2="29" y2="60" stroke="#4A4F55" stroke-width="1.8"/><line x1="38.153" y1="44.5" x2="33.823" y2="42" stroke="#4A4F55" stroke-width="1"/><line x1="49.5" y1="33.153" x2="47" y2="28.823" stroke="#4A4F55" stroke-width="1"/>
+      <line x1="65" y1="60" x2="65" y2="30" stroke="#333333" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="65" y1="60" x2="88" y2="68" stroke="#D9463E" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="65" cy="60" r="3.4" fill="#3A3E44"/>
 </svg>

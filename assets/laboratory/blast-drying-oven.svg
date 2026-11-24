@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="210" height="252" viewBox="0 0 210 252">
 <title>电热鼓风干燥箱</title>
-<rect x="14" y="12" width="182" height="228" rx="6" fill="#F5F6F8" stroke="#333333" stroke-width="2.6"/>
+<rect x="14" y="12" width="182" height="228" rx="6" fill="#F3F4F6" stroke="#333333" stroke-width="2.6"/>
       <rect x="28" y="240" width="18" height="6" rx="2" fill="#3A3E44"/>
       <rect x="164" y="240" width="18" height="6" rx="2" fill="#3A3E44"/>
-  <rect x="26" y="24" width="158" height="148" rx="4" fill="#F5F6F8" stroke="#3A3E44" stroke-width="2.0"/>
-      <rect x="44" y="40" width="112" height="114" rx="4" fill="#D8EDF5" stroke="#3A3E44" stroke-width="2.2"/>
+  <rect x="26" y="24" width="158" height="148" rx="4" fill="#F3F4F6" stroke="#3A3E44" stroke-width="2.0"/>
+      <rect x="44" y="40" width="112" height="114" rx="4" fill="#DCF0F7" stroke="#3A3E44" stroke-width="2.2"/>
       <line x1="48" y1="86" x2="152" y2="86" stroke="#4A4F55" stroke-width="2.2"/>
       <line x1="48" y1="126" x2="152" y2="126" stroke="#4A4F55" stroke-width="2.2"/>
-      <rect x="165" y="76" width="9" height="44" rx="3" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/>
-  <rect x="26" y="182" width="158" height="46" rx="4" fill="#E3E6EB" stroke="#333333" stroke-width="2.0"/>
+      <rect x="165" y="76" width="9" height="44" rx="3" fill="#C8CDD3" stroke="#333333" stroke-width="1.6"/>
+  <rect x="26" y="182" width="158" height="46" rx="4" fill="#E5E7EB" stroke="#333333" stroke-width="2.0"/>
       <rect x="36" y="190" width="84" height="30" rx="3" fill="#E6EEF2" stroke="#333333" stroke-width="1.6"/>
       <text x="78" y="203" font-size="9.5" font-family="Consolas, monospace" fill="#22252A" text-anchor="middle">105.0 °C</text>
       <text x="78" y="215" font-size="7.5" font-family="Consolas, monospace" fill="#2D6DA3" text-anchor="middle">FAN ON · TIMING</text>

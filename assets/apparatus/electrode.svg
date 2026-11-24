@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="176" viewBox="0 0 54 176">
 <title>电极</title>
-<rect x="21" y="12" width="12" height="12" rx="2.5" fill="#E4A838" stroke="#333333" stroke-width="2.0"/>
-      <rect x="15" y="24" width="24" height="18" rx="3" fill="#3A3E44" stroke="#333333" stroke-width="2.0"/>
-      <rect x="17" y="42" width="20" height="114" rx="2" fill="#E6F4F9" stroke="#333333" stroke-width="2.2"/>
-      <line x1="27" y1="44" x2="27" y2="148" stroke="#4A4F55" stroke-width="2.2" stroke-linecap="round"/>
-      <rect x="19" y="156" width="16" height="10" rx="3" fill="#EFEFEF" stroke="#333333" stroke-width="2.0"/>
+<rect x="19" y="14" width="16" height="148" rx="7" fill="#C8CDD3" stroke="#4A4F55" stroke-width="2.0"/>
+      <line x1="23" y1="22" x2="23" y2="154" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.6"/>
 </svg>

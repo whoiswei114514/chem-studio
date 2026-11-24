@@ -3,12 +3,10 @@
 <title>滑轮</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M95 28 V12 C95 7 103 7 103 12" fill="none" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="95" cy="90" r="46" fill="#C4C9D0" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="95" cy="90" r="37" fill="#F5F6F8" stroke="#4A4F55" stroke-width="1.6"/>
-      <circle cx="95" cy="90" r="28" fill="none" stroke="#8C929A" stroke-width="1.2" stroke-dasharray="6 4"/>
-      <rect x="87" y="28" width="16" height="66" rx="4" fill="#3A3E44" stroke="#333333" stroke-width="2.8"/>
-      <circle cx="95" cy="90" r="6.5" fill="#E4A838" stroke="#333333" stroke-width="1.8"/>
+      <path d="M95 28 V12 C95 7 103 7 103 12" fill="none" stroke="#333333" stroke-width="2.2"/>
+      <circle cx="95" cy="92" r="44" fill="#C8CDD3" stroke="#333333" stroke-width="2.4"/>
+      <rect x="88" y="28" width="14" height="68" rx="4" fill="#E5E7EB" stroke="#333333" stroke-width="2.0"/>
+      <circle cx="95" cy="92" r="5" fill="#4A4F55" stroke="#333333" stroke-width="1.4"/>
     </g>
   
 </svg>

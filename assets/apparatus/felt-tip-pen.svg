@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="32" viewBox="0 0 160 32">
 <title>记号笔</title>
-<rect x="8" y="8" width="22" height="16" rx="3.5" fill="#B8292F" stroke="#333333" stroke-width="2.0"/>
-      <rect x="29" y="8" width="90" height="16" rx="2" fill="#F5F6F8" stroke="#333333" stroke-width="2.2"/>
-      <path d="M119 9 L142 13 V19 L119 23 Z" fill="#3A3E44" stroke="#333333" stroke-width="2.0" stroke-linejoin="round"/>
-      <path d="M142 13.5 L152 15 V17 L142 18.5 Z" fill="#B8292F" stroke="#333333" stroke-width="1.6"/>
+<rect x="8" y="9" width="110" height="14" rx="4" fill="#E5E7EB" stroke="#333333" stroke-width="1.8"/>
+      <path d="M118 9 L142 13 V19 L118 23 Z" fill="#D9463E" stroke="#333333" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M142 14 L152 15.2 V16.8 L142 18 Z" fill="#D9463E"/>
 </svg>

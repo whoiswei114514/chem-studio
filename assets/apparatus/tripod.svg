@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="136" height="200" viewBox="0 0 136 200">
 <title>三脚架</title>
-<path d="M22 19 L14 192 H21 L29 19 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
-      <path d="M114 19 L122 192 H115 L107 19 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.4" stroke-linejoin="round"/>
-      <rect x="65" y="19" width="6" height="173" fill="#C4C9D0" stroke="#333333" stroke-width="2.2"/>
-      <rect x="10" y="12" width="116" height="8" rx="3" fill="#7C828A" stroke="#333333" stroke-width="2.8"/>
-      <rect x="12" y="189" width="11" height="5" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.5"/>
-      <rect x="62.5" y="189" width="11" height="5" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.5"/>
-      <rect x="113" y="189" width="11" height="5" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.5"/>
+<path d="M12 192 L17 15 Q17 12 21 12 H115 Q119 12 119 15 L124 192" fill="none" stroke="#333333" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 192 L17 15 Q17 12 21 12 H115 Q119 12 119 15 L124 192" fill="none" stroke="#C8CDD3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

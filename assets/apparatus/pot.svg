@@ -3,10 +3,8 @@
 <title>花盆</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <rect x="48" y="150" width="84" height="8" rx="3" fill="#9E6A2E" stroke="#333333" stroke-width="2.2"/>
-      <path d="M46 58 L60 150 H120 L134 58 Z" fill="#CC914B" stroke="#333333" stroke-width="2.8"/>
-      <path d="M52 38 Q90 25 128 38 Z" fill="#9E6A2E" stroke="#333333" stroke-width="1.8"/>
-      <rect x="38" y="38" width="104" height="20" rx="4" fill="#E4B879" stroke="#333333" stroke-width="2.8"/>
+      <path d="M44 58 L58 158 H122 L136 58 Z" fill="#C98A54" stroke="#333333" stroke-width="2.4"/>
+      <rect x="36" y="38" width="108" height="20" rx="3" fill="#9E6A2E" stroke="#333333" stroke-width="2.4"/>
     </g>
   
 </svg>

@@ -7,7 +7,7 @@
   <g>
     <path d="M35 177 L57 178.2 L57 185.8 L35 187 Z" fill="#F5F6F8" stroke="#333333" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
     <rect x="28" y="175.5" width="7" height="13" rx="2" fill="#B8292F" stroke="#333333" stroke-width="1.8"/>
-    <rect x="57" y="178.5" width="5" height="7" rx="1.5" fill="#C4C9D0" stroke="#333333" stroke-width="1.6"/>
+    <rect x="57" y="178.5" width="5" height="7" rx="1.5" fill="#C8CDD3" stroke="#333333" stroke-width="1.6"/>
     <line x1="43.5" y1="179.5" x2="48.5" y2="184.5" stroke="#4A4F55" stroke-width="1.3" stroke-linecap="round"/>
   </g>
 </svg>

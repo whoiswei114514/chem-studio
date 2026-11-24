@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="84" height="228" viewBox="0 0 84 228">
 <title>气瓶</title>
-<rect x="35" y="15" width="14" height="16" rx="2" fill="#E4A838" stroke="#333333" stroke-width="2.0"/>
-      <rect x="27" y="7" width="30" height="6" rx="2.5" fill="#3A3E44" stroke="#333333" stroke-width="1.9"/>
-      <path d="M49 15 H66 V25 H49 Z" fill="#E4A838" stroke="#333333" stroke-width="2.0"/>
-      <circle cx="28" cy="22" r="6.5" fill="#F5F6F8" stroke="#333333" stroke-width="1.8"/>
-      <line x1="28" y1="22" x2="31.5" y2="18" stroke="#B8292F" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M16 216 V62 C16 40 28 31 42 31 C56 31 68 40 68 62 V216 Q68 222 62 222 H22 Q16 222 16 216 Z" fill="#C4C9D0" stroke="#333333" stroke-width="2.8" stroke-linejoin="round"/>
-      <path d="M18 58 C18 40 28 32 42 32 C56 32 66 40 66 58 Z" fill="#3E74B4" stroke="#333333" stroke-width="2.2"/>
-      <line x1="24" y1="74" x2="24" y2="200" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
-      <rect x="16" y="210" width="52" height="10" rx="2" fill="#3A3E44" stroke="#333333" stroke-width="1.8"/>
+<rect x="36" y="15" width="12" height="16" rx="1.5" fill="#3A3E44" stroke="#333333" stroke-width="1.8"/>
+      <rect x="28" y="8" width="28" height="5" rx="2" fill="#3A3E44" stroke="#333333" stroke-width="1.6"/>
+      <path d="M48 15 H66 V25 H48 Z" fill="#E4A838" stroke="#333333" stroke-width="1.8"/>
+  <path d="M18 218 V62 C18 40 28 31 42 31 C56 31 66 40 66 62 V218 Q66 222 61 222 H23 Q18 222 18 218 Z" fill="#C8CDD3" stroke="#333333" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M19.5 62 C19.5 41 29 32.5 42 32.5 C55 32.5 64.5 41 64.5 62 Z" fill="#5F9A6E" stroke="none"/>
+      <line x1="25" y1="74" x2="25" y2="206" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
 </svg>

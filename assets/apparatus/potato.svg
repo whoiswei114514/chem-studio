@@ -3,12 +3,9 @@
 <title>马铃薯</title>
 
     <g stroke-linecap="round" stroke-linejoin="round">
-      <path d="M28 104 C18 66 54 40 104 44 C150 48 164 82 148 114 C132 144 40 142 28 104 Z" fill="#E4B879" stroke="#333333" stroke-width="2.8"/>
-      <path d="M46 66 C70 50 112 52 130 62" fill="none" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2.6"/>
-      <path d="M62 74 Q66 78 72 74 M108 88 Q114 92 120 88 M78 108 Q84 112 88 108" fill="none" stroke="#9E6A2E" stroke-width="1.8"/>
-      <circle cx="67" cy="72" r="1.5" fill="#9E6A2E" stroke="none"/>
-      <circle cx="114" cy="86" r="1.5" fill="#9E6A2E" stroke="none"/>
-      <circle cx="83" cy="106" r="1.4" fill="#9E6A2E" stroke="none"/>
+      <path d="M28 104 C18 66 54 40 104 44 C150 48 164 82 148 114 C132 144 40 142 28 104 Z" fill="#E4B879" stroke="#333333" stroke-width="2.4"/>
+      <path d="M46 66 C70 50 112 52 130 62" fill="none" stroke="#FFFFFF" stroke-opacity="0.38" stroke-width="2.4"/>
+      <path d="M62 74 Q66 78 72 74 M108 88 Q114 92 120 88 M78 108 Q84 112 88 108" fill="none" stroke="#9E6A2E" stroke-width="1.6"/>
     </g>
   
 </svg>

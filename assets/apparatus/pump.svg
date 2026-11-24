@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="84" height="200" viewBox="0 0 84 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="210" viewBox="0 0 64 210">
 <title>三阀吸球</title>
-<path d="M36 180 V140 C0 126 6 42 42 42 C78 42 84 126 48 140 V180" fill="#B8292F" stroke="#333333" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="36" y="14" width="12" height="29" rx="4" fill="#B8292F" stroke="#333333" stroke-width="2.6"/>
-  <rect x="34" y="164" width="16" height="16" rx="2" fill="#595E66" stroke="#333333" stroke-width="2.4"/>
-  <circle cx="42" cy="28" r="7" fill="#E4B879" stroke="#333333" stroke-width="1.8"/><text x="42" y="30.8" fill="#333333" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">A</text><circle cx="24" cy="86" r="8" fill="#E4B879" stroke="#333333" stroke-width="1.8"/><text x="24" y="88.8" fill="#333333" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">S</text><circle cx="60" cy="86" r="8" fill="#E4B879" stroke="#333333" stroke-width="1.8"/><text x="60" y="88.8" fill="#333333" stroke="none" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">E</text>
+<path d="M18 12 V68 M32 12 V68" fill="none" stroke="#333333" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M32 18 Q28 21 32 24 M32 28 Q28 31 32 34 M32 38 Q28 41 32 44 M32 48 Q28 51 32 54" fill="none" stroke="#333333" stroke-width="2.0" stroke-linecap="round"/>
+  <line x1="10" y1="12" x2="40" y2="12" stroke="#333333" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M44 90 C58 90 58 134 44 134 Z" fill="#C8CDD3" stroke="#333333" stroke-width="2.6" stroke-linejoin="round"/>
+  <circle cx="51" cy="100" r="1.5" fill="#333333"/><circle cx="53" cy="112" r="1.5" fill="#333333"/><circle cx="51" cy="124" r="1.5" fill="#333333"/>
+  <rect x="8" y="68" width="36" height="126" rx="2" fill="#E5E7EB" stroke="#333333" stroke-width="3.2"/>
+  <rect x="13" y="71" width="12" height="120" fill="#F3F4F6" stroke="none"/>
+  <path d="M18 194 V204 M34 194 V204" fill="none" stroke="#333333" stroke-width="3.2" stroke-linecap="round"/>
 </svg>

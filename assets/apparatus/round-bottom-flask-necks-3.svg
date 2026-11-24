@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="184" viewBox="0 0 160 184">
 <title>圆底烧瓶</title>
-<path d="M13.817 18.884 Q17.044 19.041 18.282 22.634 L16.5 50 Q16.5 50.917 27.909 68.29 A68 68 0 1 0 132.091 68.29 Q143.5 50.917 143.5 50 L141.718 22.634 Q142.956 19.041 146.183 18.884" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M42.183 9.116 Q39.737 11.228 40.974 14.821 L44.5 34 Q44.5 34.938 52.342 49.879 A68 68 0 0 1 67.025 45.249 L67 13 Q67 9.2 63.5 8" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M96.5 8 Q93 9.2 93 13 L92.975 45.249 A68 68 0 0 1 107.658 49.879 Q115.5 34.938 115.5 34 L119.026 14.821 Q120.263 11.228 117.817 9.116" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.374 18.959 Q17.604 19.061 18.904 22.632 L16.5 50 Q16.5 50.916 27.909 68.29 A68 68 0 1 0 132.091 68.29 Q143.5 50.916 143.5 50 L141.096 22.632 Q142.396 19.061 145.626 18.959" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41.626 9.041 Q39.217 11.194 40.517 14.765 L44.5 34 Q44.5 34.908 52.342 49.879 A68 68 0 0 1 67.608 45.139 L67.5 13 Q67.5 9.2 64.5 8" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M95.5 8 Q92.5 9.2 92.5 13 L92.392 45.139 A68 68 0 0 1 107.658 49.879 Q115.5 34.908 115.5 34 L119.483 14.765 Q120.783 11.194 118.374 9.041" fill="none" stroke="#333333" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M35.163 68.458 Q44.639 65.074 50.504 56.898" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
-  <path d="M71.864 50.032 Q80 53.032 88.136 50.032" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M72.232 49.985 Q80 52.985 87.768 49.985" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
   <path d="M109.496 56.898 Q115.361 65.074 124.837 68.458" fill="none" stroke="#DCE8EC" stroke-width="2.3" stroke-linecap="round"/>
 </svg>
